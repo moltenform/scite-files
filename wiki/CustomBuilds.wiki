@@ -1,0 +1,16 @@
+#summary Patches, custom builds, projects.
+
+  * [http://code.google.com/p/scintillua/ SciTE-st], Scintilla/SciTE that has dynamic lexing capabilities.
+  * [http://scite.ruteam.ru/ SciteRU], Russian Scite with many modifications/improvements. (Remove the locale.properties file to display in English, I seem to recall).
+  * [http://llt.chez-alice.fr/ FilerX], project management and macro features on Windows. (Currently unmaintained?)
+  * [http://gisdeveloper.tripod.com/scite.html SciTE with Extensions], Windows installer, some extensions included.
+
+== SciTE tools ==
+  * [http://caladbolg.net/scite_snippets.php Caladbolg SciTE Snippets] Textmate-like snippets for SciTE
+  * [http://caladbolg.net/luadoc/scite/manual.html Caladbolg SciTE Tools] powerful text-editing utilities and modes
+  * [http://www.burgaud.com/scite-context-menu/ SciTE Context menu] a context menu handler that gives the ability, on Windows, to quickly open selected files with SciTE.
+  * [http://www.frykholm.se/scitecmd.html scitecmd], a simple utility for opening files as tabs in SciTE from the command line on Windows.
+
+
+== Extensions to SciTE ==
+  * [http://hilfer.rubyforge.org/hilfer/ Hilfer], a keyboard-rich directory browser using ruby-gtk that talks to SciTE, and understands Rails projects.
