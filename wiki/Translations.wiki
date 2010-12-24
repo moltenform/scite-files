@@ -1,0 +1,19 @@
+#summary Display SciTE interface in other languages.
+
+= Set language =
+
+To set the language, download a properties file, place it in the SciTE directory, and rename it locale.properties. The next time that you run SciTE, the menus will be translated. 
+
+= Language files =
+
+
+= Creating a locale file =
+The menus and dialogs can be translated into another language by modifying the [http://www.scintilla.org/locale.properties locale.properties] file which should be stored in the same directory as the global properties.
+
+If you translate SciTE, please make the translation available to others. You can either put it on your own web server and include a link on this page or add it as a file in this group.
+
+The file names should use [http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes ISO 639-1 language codes].
+
+If you contribute a translation, then I'll assume you want it to be made freely available under the same conditions as SciTE, unless there is a comment in the file stating otherwise.
+
+(From [http://www.scintilla.org/SciTETranslation.html SciTE translation]).
