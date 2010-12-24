@@ -3,5 +3,5 @@
 Currently, many scripts are on the [http://lua-users.org/wiki/SciteScripts Lua users wiki].
 
 == Formatting and Text manipulation ==
-  * [General_Scripts/PerlFormat Perl scripts] for formatall, striplines, stripsppace.
+  * [Scripts_PerlFormat Perl scripts] for formatall, striplines, stripsppace.
   * HTMLTidy, from SciteWin
