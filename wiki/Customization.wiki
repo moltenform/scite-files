@@ -1,0 +1,23 @@
+#summary Properties files, api files, other material for computer languages.
+
+== How to enable a language disabled by default ==
+At the end of SciTEGlobal.properties there is a list of files that can be imported. Uncomment one of these lines, or enter it into SciTEUser.properties, to enable support for that language.
+
+== How to install a .properties file ==
+A .properties file allows you to set up highlighting of keywords, and commands for the Tools menu, for a file type. To install such a file, for example "ahk.properties", place the ahk.properties file in the SciTE directory. Then, edit the Global Options file or User Options file and add the line "import ahk". 
+
+== How to install a .api file ==
+A .api file can be used to add tooltips that describe a function's signature. As an example, use cpp.api, for c++ tooltips. Make a directory in the SciTE folder called "api" and move the cpp.api file there. Then, edit cpp.properties to add the line <tt>api.$(file.patterns.cpp)=$(SciteDefaultHome)\api\cpp.api</tt>. Now, if you edit a .cpp file, and type <tt>fclose(</tt>, a tooltip should come up with the syntax.
+
+Other relevant settings are <tt>calltip.cpp.ignorecase</tt> and 
+<tt>calltip.cpp.end.definition</tt>.
+== How to make .api files for your own sources ==
+From the Scite documentation:
+
+  * For C/C++ headers, an API file can be generated using [http://ctags.sourceforge.net/ ctags] and then the [http://www.scintilla.org/tags2api.py tags2api] Python script (which assumes C/C++ source) on the tags file to grab complete multiple line function prototypes. Some common headers surround parameter lists with a __P macro and may have comments. The [http://www.scintilla.org/cleanapi.cc cleanapi] utility may be used on these files.
+
+  * To generate an API file for Python modules, there is a [http://www.scintilla.org/gen_python_api.zip gen_python] script.
+
+  * To generate an API file for Java classes, there is a [http://www.scintilla.org/ApiBuilder.java ApiBuilder.java] program.
+  * To generate an API file for C# classes, use genapi.cs in [[media:Csharp_api.zip|Csharp_api.zip]].
+  * To generate an API file for PHP, use [http://scintilla.sourceforge.net/phpapi.php.txt phpapi.php].
