@@ -2,7 +2,7 @@
 
 = Introduction =
 
-This wiki is a place to share files and information regarding the text editor SciTE. You are welcome to contribute information or links to relevant projects under the appropriate pages.
+This wiki is a place to share files and information regarding the code editor [http://www.scintilla.org/SciTE.html SciTE]. You are welcome to contribute information or links to relevant projects under the appropriate pages.
 
 = Categories =
 <font size="4">[Translations]</font> <br/> Display SciTE interface in other languages.
