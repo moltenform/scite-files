@@ -5,13 +5,23 @@
 This wiki is a place to share files and information regarding the text editor SciTE. You are welcome to contribute information or links to relevant projects under the appropriate pages.
 
 = Categories =
-
-
+<font size="4">[Translations]</font> <br/> Display SciTE interface in other languages.
+<br/><br/>
+<font size="4">[Customization Programming language add-ons]</font> <br/> properties files, api files, other material for computer languages.
+<br/><br/>
+<font size="4">[http://code.google.com/p/scitedocs/ Documentation and tips]</font> <br/> Collection of SciTE documentation.
+<br/><br/>
+<font size="4">[Scripts Scripts and macros]</font> <br/> Scripts for text editing, productivity.
+<br/><br/>
+<font size="4">[CustomBuilds SciTE extensions, modifications, tools]</font> <br/> Patches, custom builds, projects.
+<br/><br/>
 
 = Links =
   * [http://www.scintilla.org/SciTE.html SciTE Home Page]
   * [http://www.scintilla.org/SciTEDownload.html Download SciTE]
   * [http://groups.google.com/group/scite-interest Scite-interest mailing list] on Google groups
   * [http://www.scintilla.org/ Scintilla Home Page]
+
+<br/><br/><br/><br/>
 
 Scitewiki is maintained by Ben Fisher. <br/> Contact scitewiki at gmail dot com with questions or suggestions.
