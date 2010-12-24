@@ -1,0 +1,17 @@
+#summary Files and information related to the code editor SciTE.
+
+= Introduction =
+
+This wiki is a place to share files and information regarding the text editor SciTE. You are welcome to contribute information or links to relevant projects under the appropriate pages.
+
+= Categories =
+
+
+
+= Links =
+  * [http://www.scintilla.org/SciTE.html SciTE Home Page]
+  * [http://www.scintilla.org/SciTEDownload.html Download SciTE]
+  * [http://groups.google.com/group/scite-interest Scite-interest mailing list] on Google groups
+  * [http://www.scintilla.org/ Scintilla Home Page]
+
+Scitewiki is maintained by Ben Fisher. <br/> Contact scitewiki at gmail dot com with questions or suggestions.
