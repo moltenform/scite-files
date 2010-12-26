@@ -1,0 +1,290 @@
+// Reserved words
+absolute
+and
+array
+asm
+at
+begin
+Break
+case
+class
+const
+constructor
+Continue
+default
+destructor
+div
+do
+downto
+else
+end
+except
+exports
+false
+finalization
+finally
+for
+function
+generic
+goto
+if
+implementation
+in
+index
+inherited
+initialization
+interface
+is
+label
+library
+mod
+name
+nil
+not
+object
+of
+on
+operator
+or
+otherwise
+out
+packed
+private
+procedure
+program
+property
+protected
+public
+published
+raise
+record
+reintroduce
+repeat
+Self
+set
+shl
+shr
+specialize
+then
+threadvar
+to
+true
+try
+type
+unit
+until
+uses
+var
+variant
+while
+with
+xor
+// Modifiers
+abstract
+alias
+assembler
+cdecl
+cppdecl
+export
+external
+far
+far16
+forward
+inline
+local
+nostackframe
+oldfpccall
+overload
+override
+pascal
+register
+safecall
+softfloat
+stdcall
+virtual
+// Types
+AnsiString
+Boolean
+Byte
+ByteBool
+Cardinal
+Char
+Comp
+Currency
+Extended
+File
+Double
+DWord
+HRESULT
+Int64
+Integer
+LongBool
+LongInt
+LongWord
+PBoolean
+PByte
+PChar
+PComp
+PLongWord
+Pointer
+PPChar
+PtrInt
+PtrUInt
+Real
+QWord
+ShortInt
+ShortString
+Single
+SizeInt
+SizeUInt
+SmallInt
+String
+TDateTime
+Text
+UInt64
+UTF8String
+ValReal
+ValSInt
+ValUInt
+Word
+WordBool
+// Variables
+Argc
+Argv
+CmdLine
+ErrOutput
+Input
+Output
+StdErr
+StdOut
+Result
+// Constants
+DirectorySeparator
+DriveSeparator
+LineEnding
+PathSeparator
+// Standard units
+Classes
+Crt
+DateUtils
+Dos
+DynLibs
+GetOpts
+Graph
+Keyboard
+Math
+Matrix
+MMX
+Mouse
+Objects
+Printer
+Sockets
+Strings
+StrUtils
+System
+SysUtils
+Video
+// Functions/Procedures
+Addr(X: TAnytype): Pointer;
+Align(Addr: PtrUInt; Alignment: PtrUInt): PtrUInt;
+Align(Addr: Pointer; Alignment: PtrUInt): Pointer;
+Append(var t: Text);
+Assert(Expr: Boolean);
+Assert(Expr: Boolean; const Msg: String);
+Assign(var f: File; const Name: String);
+Assign(var f: File; p: PChar);
+Assign(var f: File; c: Char);
+Assign(var f: TypedFile; const Name: String);
+Assign(var f: TypedFile; p: PChar);
+Assign(var f: TypedFile; c: Char);
+Assign(var t: Text; const s: String);
+Assign(var t: Text; p: PChar);
+Assign(var t: Text; c: Char);
+Assigned(P: Pointer): Boolean;
+Chr(b: Byte): Char;
+Close(var f: File);
+Close(var t: Text);
+CompareByte(const buf1; const buf2; len: SizeInt): SizeInt;
+CompareChar(const buf1; const buf2; len: SizeInt): SizeInt;
+CompareChar0(const buf1; const buf2; len: SizeInt): SizeInt;
+CompareWord(const buf1; const buf2; len: SizeInt): SizeInt;
+CompareDWord(const buf1; const buf2; len: SizeInt): SizeInt;
+Dec(var x: TOrdinal);
+Dec(var x: TOrdinal; Decrement: TOrdinal);
+Dispose(P: Pointer);
+Dispose(P: TypedPointer; Des: TProcedure);
+EOF(var f: File): Boolean;
+EOF(var f: Text): Boolean;
+Exclude(var S: TSetType; E: TSetElement);
+Exit(const X: TAnyType);
+FillByte(var x; count: SizeInt; value: Byte);
+FillChar(var x; count: SizeInt; value: Boolean);
+FillChar(var x; count: SizeInt; value: Byte);
+FillChar(var x; count: SizeInt; value: Char);
+FillDWord(var x; count: SizeInt; value: DWord);
+FillWord(var x; count: SizeInt; value: Word);
+Move(const source; var dest; count: SizeInt);
+MoveChar0(const buf1; var buf2; len: SizeInt);
+Flush(var t: Text);
+Frac(d: ValReal): ValReal;
+FreeMem(p: Pointer; Size: PtrInt);
+FreeMem(p: Pointer): PtrInt;
+GetMem(var p: Pointer; Size: PtrInt);
+GetMem(Size: PtrInt): Pointer;
+Halt(errnum: Byte);
+Hi(b: Byte): Byte;
+Hi(i: Integer): Byte;
+Hi(w: Word): Byte;
+Hi(l: LongInt): Word;
+Hi(l: DWord): Word;
+Hi(i: Int64): DWord;
+Hi(q: QWord): DWord;
+High(Arg: TypeOrVariable):TOrdinal;
+Inc(var X: TOrdinal);
+Inc(var X: TOrdinal; Increment: TOrdinal);
+Include(var S: TSetType; E: TSetElement);
+IOResult(): Word;
+Length(const S: String): LongInt;
+Lo(b: Byte): Byte;
+Lo(i: Integer): Byte;
+Lo(w: Word): Byte;
+Lo(l: LongInt): Word;
+Lo(l: DWord): Word;
+Lo(i: Int64): DWord;
+Lo(q: QWord): DWord;
+Low(Arg: TypeOrVariable):TOrdinal;
+New(var P: Pointer);
+New(var P: Pointer; Cons: TProcedure);
+Ord(X: TOrdinal): LongInt;
+ParamCount();
+ParamStr(l: LongInt): String;
+Pred(X: TOrdinal): TOrdinal;
+Random(l: LongInt): LongInt;
+Random(l: Int64): Int64;
+Randomize();
+Read(Args: Arguments);
+Read(var F: Text; Args: Arguments);
+ReadLn(Args: Arguments);
+ReadLn(var F: Text; Args: Arguments);
+Reset(var f: File; l: LongInt);
+Reset(var f: File);
+Reset(var f: TypedFile);
+Reset(var t: Text);
+Rewrite(var f: File; l: LongInt);
+Rewrite(var f: File);
+Rewrite(var f: TypedFile);
+Rewrite(var t: Text);
+Round(d: ValReal): Int64;
+SetLength(var p: Pointer; Size: PtrInt);
+SizeOf(X: TAnyType): LongInt;
+Sqr(l: LongInt): LongInt;
+Sqr(l: Int64): Int64;
+Sqr(l: QWord): QWord;
+Sqr(d: ValReal): ValReal;
+Sqrt(d: ValReal): ValReal;
+Succ(X: TOrdinal): TOrdinal;
+Trunc(d: ValReal): Int64;
+Write(Args: Arguments);
+Write(var F: Text; Args: Arguments);
+WriteLn(Args: Arguments);
+WriteLn(var F: Text; Args: Arguments);

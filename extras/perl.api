@@ -1,0 +1,183 @@
+abs(VALUE) Returns the absolute value of its argument.
+accept(NEWSOCKET,GENERICSOCKET) Accepts an incoming socket connect, just as the accept(2) system calldoes.
+alarm(SECONDS) Arranges to have a SIGALRM delivered to this process after thespecified number of seconds have elapsed.
+atan(2 Y,X) Returns the arctangent of Y/X in the range -PI to PI.
+bind(SOCKET,NAME) Binds a network address to a socket, just as the bind system calldoes.
+binmode(FILEHANDLE, DISCIPLINE) Arranges for FILEHANDLE to be read or written in "binary" or "text" modeon systems where the run-time libraries distinguish between binary andtext files.
+bless(REF,CLASSNAME) This function tells the thingy referenced by REF that it is now an objectin the CLASSNAME package.
+caller(EXPR) Returns the context of the current subroutine call.
+chdir(EXPR) Changes the working directory to EXPR, if possible.
+chmod(LIST) Changes the permissions of a list of files.
+chomp(VARIABLE) This safer version of L</chop> removes any trailing stringthat corresponds to the current value of C<$/> (also known asnumber of characters removed from all its arguments.
+chop(VARIABLE) Chops off the last character of a string and returns the characterchopped.
+chown(LIST) Changes the owner (and group) of a list of files.
+chr(NUMBER) Returns the character represented by that NUMBER in the character set.
+chroot(FILENAME) This function works like the system call by the same name: it makes thenamed directory the new root directory for all further pathnames thatbegin with a C</> by your process and all its children.
+close(FILEHANDLE) Closes the file or pipe associated with the file handle, returning trueonly if stdio successfully flushes buffers and closes the system filedescriptor.
+closedir(DIRHANDLE) Closes a directory opened by opendir and returns the success of thatsystem call.
+connect(SOCKET,NAME) Attempts to connect to a remote socket, just as the connect system calldoes.
+continue(BLOCK) Actually a flow control statement rather than a function.
+cos(EXPR) Returns the cosine of EXPR (expressed in radians).
+crypt(PLAINTEXT,SALT) Encrypts a string exactly like the crypt(3) function in the C libraryextirpated as a potential munition).
+dbmclose(HASH) Breaks the binding between a DBM file and a hash.
+dbmopen(HASH,DBNAME,MASK) This binds a dbm(3), ndbm(3), sdbm(3), gdbm(3), or Berkeley DB file to ahash.
+defined(EXPR) Returns a Boolean value telling whether EXPR has a value other thanthe undefined value undef .
+delete(EXPR) Given an expression that specifies a hash element, array element, hash slice,or array slice, deletes the specified element(s) from the hash or array.
+die(LIST) Outside an eval , prints the value of LIST to STDERR andexits with the current value of C<$!> (errno).
+do(BLOCK) Not really a function.
+do(SUBROUTINE(LIST)) A deprecated form of subroutine call.
+do(EXPR) Uses the value of EXPR as a filename and executes the contents of thefile as a Perl script.
+dump(LABEL) This function causes an immediate core dump.
+each(HASH) When called in list context, returns a 2-element list consisting of thekey and value for the next element of a hash, so that you can iterate overit.
+eof(FILEHANDLE) Returns 1 if the next read on FILEHANDLE will return end of file, or ifFILEHANDLE is not open.
+eval(EXPR) In the first form, the return value of EXPR is parsed and executed as if itwere a little Perl program.
+exec(LIST) The exec function executes a system command I<and never returns>--use system instead of exec if you want it to return.
+exists(EXPR) Given an expression that specifies a hash element or array element,returns true if the specified element in the hash or array has everbeen initialized, even if the corresponding value is undefined.
+exit(EXPR) Evaluates EXPR and exits immediately with that value.
+exp(EXPR) Returns I<e> (the natural logarithm base) to the power of EXPR.
+fcntl(FILEHANDLE,FUNCTION,SCALAR) Implements the fcntl(2) function.
+fileno(FILEHANDLE) Returns the file descriptor for a filehandle, or undefined if thefilehandle is not open.
+flock(FILEHANDLE,OPERATION) Calls flock(2), or an emulation of it, on FILEHANDLE.
+fork() Does a fork(2) system call to create a new process running thesame program at the same point.
+format() Declare a picture format for use by the write function.
+formline(PICTURE,LIST) This is an internal function used by format s, though you may call it,too.
+getc(FILEHANDLE) Returns the next character from the input file attached to FILEHANDLE,or the undefined value at end of file, or if there was an error.
+getlogin() Implements the C library function of the same name, which on mostsystems returns the current login from F</etc/utmp>, if any.
+getpeername(SOCKET) Returns the packed sockaddr address of other end of the SOCKET connection.
+getpgrp(PID) Returns the current process group for the specified PID.
+getppid() Returns the process id of the parent process.
+getpriority(WHICH,WHO) Returns the current priority for a process, a process group, or a user.
+getpwnam(NAME) These routines perform the same functions as their counterparts in thesystem library.
+getsockname(SOCKET) Returns the packed sockaddr address of this end of the SOCKET connection,in case you don't know the address because you have several differentIPs that the connection might have come in on.
+getsockopt(SOCKET,LEVEL,OPTNAME) Returns the socket option requested, or undef if there is an error.
+glob(EXPR) Returns the value of EXPR with filename expansions such as thestandard Unix shell F</bin/csh> would do.
+gmtime(EXPR) Converts a time as returned by the time function to a 8-element listwith the time localized for the standard Greenwich time zone.
+goto(LABEL) The goto-LABEL form finds the statement labeled with LABEL and resumesexecution there.
+grep(BLOCK LIST) This is similar in spirit to, but not the same as, grep(1) and itsrelatives.
+hex(EXPR) Interprets EXPR as a hex string and returns the corresponding value.
+import() There is no builtin import function.
+index(STR,SUBSTR,POSITION) The index function searches for one string within another, but withoutthe wildcard-like behavior of a full regular-expression pattern match.
+int(EXPR) Returns the integer portion of EXPR.
+ioctl(FILEHANDLE,FUNCTION,SCALAR) Implements the ioctl(2) function.
+join(EXPR,LIST) Joins the separate strings of LIST into a single string with fieldsseparated by the value of EXPR, and returns that new string.
+keys(HASH) Returns a list consisting of all the keys of the named hash.
+kill(SIGNAL, LIST) Sends a signal to a list of processes.
+last(LABEL) The last command is like the break statement in C (as used inloops); it immediately exits the loop in question.
+lc(EXPR) Returns an lowercased version of EXPR.
+lcfirst(EXPR) Returns the value of EXPR with the first character lowercased.
+length(EXPR) Returns the length in characters of the value of EXPR.
+link(OLDFILE,NEWFILE) Creates a new filename linked to the old filename.
+listen(SOCKET,QUEUESIZE) Does the same thing that the listen system call does.
+local(EXPR) You really probably want to be using my instead, because local isn'twhat most people think of as "local".
+localtime(EXPR) Converts a time as returned by the time function to a 9-element listwith the time analyzed for the local time zone.
+lock() This function places an advisory lock on a variable, subroutine,or referenced object contained in I<THING> until the lock goes outof scope.
+log(EXPR) Returns the natural logarithm (base I<e>) of EXPR.
+lstat(FILEHANDLE) Does the same thing as the stat function (including setting thespecial C<_> filehandle) but stats a symbolic link instead of the filethe symbolic link points to.
+m(//) The match operator.
+map(BLOCK LIST) Evaluates the BLOCK or EXPR for each element of LIST (locally settingC<$_> to each element) and returns the list value composed of theresults of each such evaluation.
+mkdir(FILENAME,MASK) Creates the directory specified by FILENAME, with permissionsspecified by MASK (as modified by umask ).
+msgctl(ID,CMD,ARG) Calls the System V IPC function msgctl(2).
+msgget(KEY,FLAGS) Calls the System V IPC function msgget(2).
+msgrcv(ID,VAR,SIZE,TYPE,FLAGS) Calls the System V IPC function msgrcv to receive a message frommessage queue ID into variable VAR with a maximum message size ofSIZE.
+msgsnd(ID,MSG,FLAGS) Calls the System V IPC function msgsnd to send the message MSG to themessage queue ID.
+my(EXPR) A my declares the listed variables to be local (lexically) to theenclosing block, file, or eval .
+next(LABEL) The next command is like the continue statement in C; it startsthe next iteration of the loop:Note that if there were a continue block on the above, it would getexecuted even on discarded lines.
+no(Module LIST) See the L</use> function, which no is the opposite of.
+oct(EXPR) Interprets EXPR as an octal string and returns the correspondingvalue.
+open(FILEHANDLE,MODE,LIST) Opens the file whose filename is given by EXPR, and associates it withFILEHANDLE.
+opendir(DIRHANDLE,EXPR) Opens a directory named EXPR for processing by readdir , telldir , seekdir , rewinddir , and closedir .
+ord(EXPR) Returns the numeric (ASCII or Unicode) value of the first character of EXPR.
+our(EXPR) An our declares the listed variables to be valid globals withinthe enclosing block, file, or eval .
+pack(TEMPLATE,LIST) Takes a LIST of values and converts it into a string using the rulesgiven by the TEMPLATE.
+package(NAMESPACE) Declares the compilation unit as being in the given namespace.
+pipe(READHANDLE,WRITEHANDLE) Opens a pair of connected pipes like the corresponding system call.
+pop(ARRAY) Pops and returns the last value of the array, shortening the array byone element.
+pos(SCALAR) Returns the offset of where the last C<m//g> search left off for the variablein question (C<$_> is used when the variable is not specified).
+print(FILEHANDLE LIST) Prints a string or a list of strings.
+printf(FILEHANDLE FORMAT, LIST) Equivalent to C<print FILEHANDLE sprintf(FORMAT, LIST)>, except that C<$\>of the list will be interpreted as the printf format.
+prototype(FUNCTION) Returns the prototype of a function as a string (or undef if thefunction has no prototype).
+push(ARRAY,LIST) Treats ARRAY as a stack, and pushes the values of LISTonto the end of ARRAY.
+q(/STRING/) Generalized quotes.
+quotemeta(EXPR) Returns the value of EXPR with all non-"word"characters backslashed.
+rand(EXPR) Returns a random fractional number greater than or equal to 0 and lessthan the value of EXPR.
+read(FILEHANDLE,SCALAR,LENGTH,OFFSET) Attempts to read LENGTH bytes of data into variable SCALAR from thespecified FILEHANDLE.
+readdir(DIRHANDLE) Returns the next directory entry for a directory opened by opendir .
+readline(EXPR) Reads from the filehandle whose typeglob is contained in EXPR.
+readlink(EXPR) Returns the value of a symbolic link, if symbolic links areimplemented.
+readpipe(EXPR) EXPR is executed as a system command.
+recv(SOCKET,SCALAR,LENGTH,FLAGS) Receives a message on a socket.
+redo(LABEL) The redo command restarts the loop block without evaluating theconditional again.
+ref(EXPR) Returns a true value if EXPR is a reference, false otherwise.
+rename(OLDNAME,NEWNAME) Changes the name of a file; an existing file NEWNAME will beclobbered.
+require(VERSION) Demands some semantics specified by EXPR, or by C<$_> if EXPR is notsupplied.
+reset(EXPR) Generally used in a continue block at the end of a loop to clearvariables and reset C<??> searches so that they work again.
+return(EXPR) Returns from a subroutine, eval , or C<do FILE> with the value given in EXPR.
+reverse(LIST) In list context, returns a list value consisting of the elementsof LIST in the opposite order.
+rewinddir(DIRHANDLE) Sets the current position to the beginning of the directory for the readdir routine on DIRHANDLE.
+rindex(STR,SUBSTR,POSITION) Works just like index() except that it returns the position of the LASToccurrence of SUBSTR in STR.
+rmdir(FILENAME) Deletes the directory specified by FILENAME if that directory is empty.
+s(///) The substitution operator.
+scalar(EXPR) Forces EXPR to be interpreted in scalar context and returns the valueof EXPR.
+seek(FILEHANDLE,POSITION,WHENCE) Sets FILEHANDLE's position, just like the fseek call of stdio .
+seekdir(DIRHANDLE,POS) Sets the current position for the readdir routine on DIRHANDLE.
+select(FILEHANDLE) Returns the currently selected filehandle.
+select(RBITS,WBITS,EBITS,TIMEOUT) This calls the select(2) system call with the bit masks specified, whichcan be constructed using fileno and vec , along these lines:If you want to select on many filehandles you might wish to write asubroutine:The usual idiom is:or to block until something becomes ready just do thisMost systems do not bother to return anything useful in $timeleft, socalling select() in scalar context just returns $nfound.
+semctl(ID,SEMNUM,CMD,ARG) Calls the System V IPC function semctl .
+semget(KEY,NSEMS,FLAGS) Calls the System V IPC function semget.
+semop(KEY,OPSTRING) Calls the System V IPC function semop to perform semaphore operationssuch as signaling and waiting.
+send(SOCKET,MSG,FLAGS,TO) Sends a message on a socket.
+setpgrp(PID,PGRP) Sets the current process group for the specified PID, 0 for the currentprocess.
+setpriority(WHICH,WHO,PRIORITY) Sets the current priority for a process, a process group, or a user.
+setsockopt(SOCKET,LEVEL,OPTNAME,OPTVAL) Sets the socket option requested.
+shift(ARRAY) Shifts the first value of the array off and returns it, shortening thearray by 1 and moving everything down.
+shmctl(ID,CMD,ARG) Calls the System V IPC function shmctl.
+shmget(KEY,SIZE,FLAGS) Calls the System V IPC function shmget.
+shmread(ID,VAR,POS,SIZE) Reads or writes the System V shared memory segment ID starting atposition POS for size SIZE by attaching to it, copying in/out, anddetaching from it.
+shutdown(SOCKET,HOW) Shuts down a socket connection in the manner indicated by HOW, whichhas the same interpretation as in the system call of the same name.
+sin(EXPR) Returns the sine of EXPR (expressed in radians).
+sleep(EXPR) Causes the script to sleep for EXPR seconds, or forever if no EXPR.
+socket(SOCKET,DOMAIN,TYPE,PROTOCOL) Opens a socket of the specified kind and attaches it to filehandleSOCKET.
+socketpair(SOCKET1,SOCKET2,DOMAIN,TYPE,PROTOCOL) Creates an unnamed pair of sockets in the specified domain, of thespecified type.
+sort(SUBNAME LIST) Sorts the LIST and returns the sorted list value.
+splice(ARRAY,OFFSET,LENGTH,LIST) Removes the elements designated by OFFSET and LENGTH from an array, andreplaces them with the elements of LIST, if any.
+split(/PATTERN/,EXPR,LIMIT) Splits a string into a list of strings and returns that list.
+sprintf(FORMAT, LIST) Returns a string formatted by the usual printf conventions of the Clibrary function sprintf .
+sqrt(EXPR) Return the square root of EXPR.
+srand(EXPR) Sets the random number seed for the rand operator.
+stat(FILEHANDLE) Returns a 13-element list giving the status info for a file, eitherthe file opened via FILEHANDLE, or named by EXPR.
+study(SCALAR) Takes extra time to study SCALAR (C<$_> if unspecified) in anticipation ofdoing many pattern matches on the string before it is next modified.
+sub(BLOCK) This is subroutine definition, not a real function I<per se>.
+substr(EXPR,OFFSET,LENGTH,REPLACEMENT) Extracts a substring out of EXPR and returns it.
+symlink(OLDFILE,NEWFILE) Creates a new filename symbolically linked to the old filename.
+syscall(LIST) Calls the system call specified as the first element of the list,passing the remaining elements as arguments to the system call.
+sysopen(FILEHANDLE,FILENAME,MODE) Opens the file whose filename is given by FILENAME, and associates itwith FILEHANDLE.
+sysread(FILEHANDLE,SCALAR,LENGTH,OFFSET) Attempts to read LENGTH bytes of data into variable SCALAR from thespecified FILEHANDLE, using the system call read(2).
+sysseek(FILEHANDLE,POSITION,WHENCE) Sets FILEHANDLE's system position using the system call lseek(2).
+system(LIST) Does exactly the same thing as C<exec LIST>, except that a fork isdone first, and the parent process waits for the child process tocomplete.
+syswrite(FILEHANDLE,SCALAR,LENGTH,OFFSET) Attempts to write LENGTH bytes of data from variable SCALAR to thespecified FILEHANDLE, using the system call write(2).
+tell(FILEHANDLE) Returns the current position for FILEHANDLE, or -1 on error.
+telldir(DIRHANDLE) Returns the current position of the readdir routines on DIRHANDLE.
+tie(VARIABLE,CLASSNAME,LIST) This function binds a variable to a package class that will provide theimplementation for the variable.
+tied(VARIABLE) Returns a reference to the object underlying VARIABLE (the same valuethat was originally returned by the tie call that bound the variableto a package.
+time() Returns the number of non-leap seconds since whatever time the systemconsiders to be the epoch (that's 00:00:00, January 1, 1904 for MacOS,and 00:00:00 UTC, January 1, 1970 for most other systems).
+times() Returns a four-element list giving the user and system times, inseconds, for this process and the children of this process.
+tr(///) The transliteration operator.
+truncate(FILEHANDLE,LENGTH) Truncates the file opened on FILEHANDLE, or named by EXPR, to thespecified length.
+uc(EXPR) Returns an uppercased version of EXPR.
+ucfirst(EXPR) Returns the value of EXPR with the first characterin uppercase (titlecase in Unicode).
+umask(EXPR) Sets the umask for the process to EXPR and returns the previous value.
+undef(EXPR) Undefines the value of EXPR, which must be an lvalue.
+unlink(LIST) Deletes a list of files.
+unpack(TEMPLATE,EXPR)  unpack does the reverse of pack : it takes a stringand expands it out into a list of values.
+untie(VARIABLE) Breaks the binding between a variable and a package.
+unshift(ARRAY,LIST) Does the opposite of a shift .
+use(Module VERSION LIST) Imports some semantics into the current package from the named module,generally by aliasing certain subroutine or variable names into yourpackage.
+utime(LIST) Changes the access and modification times on each file of a list offiles.
+values(HASH) Returns a list consisting of all the values of the named hash.
+vec(EXPR,OFFSET,BITS) Treats the string in EXPR as a bit vector made up of elements ofwidth BITS, and returns the value of the element specified by OFFSETas an unsigned integer.
+wait() Behaves like the wait(2) system call on your system: it waits for a childprocess to terminate and returns the pid of the deceased process, or -1 if there are no child processes.
+waitpid(PID,FLAGS) Waits for a particular child process to terminate and returns the pid ofthe deceased process, or -1 if there is no such child process.
+wantarray() Returns true if the context of the currently executing subroutine islooking for a list value.
+warn(LIST) Produces a message on STDERR just like die , but doesn't exit or throwan exception.
+write(FILEHANDLE) Writes a formatted record (possibly multi-line) to the specified FILEHANDLE,using the format associated with that file.
+y(///) The transliteration operator.

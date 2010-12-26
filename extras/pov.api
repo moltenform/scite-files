@@ -1,0 +1,461 @@
+#break
+#case(FLOAT) TOKENS [#break]
+#debug
+#declare
+#default
+#else
+#end
+#error
+#fclose
+#fopen
+#if(Cond) TOKENS... [#else TOKENS...] #end
+#ifdef(IDENTIFIER) TOKENS... [#else TOKENS...] #end
+#ifndef(IDENTIFIER) TOKENS... [#else TOKENS...] #end
+#include
+#local
+#macro
+#range(F_LOW, F_HIGH) TOKENS [#break]
+#read
+#render
+#statistics
+#switch(FLOAT) SWITCH_CLAUSE... [#else TOKENS] #end 
+#undef
+#version
+#warning
+#while(Cond) TOKENS... #end
+#write
+aa_level
+aa_threshold
+abs(A) Absolute value of A
+absorption
+accuracy
+acos(A) Arc-cosine of A
+acosh(A) Inverse hyperbolic cosine of A
+adaptive
+adc_bailout
+agate
+agate_turb
+all
+all_intersections
+alpha
+altitude
+always_sample
+ambient
+ambient_light
+angle
+aperture
+append
+arc_angle
+area_light
+array
+asc(S) Returns an integer value in the range 0 to 255 that is the ASCII value of the first character of the string S
+ascii
+asin(A) Arc-sine of A
+asinh(A) Inverse hyperbolic sine of A
+assumed_gamma
+atan(A) Inverse hyperbolic tangent of A
+atan2(A,B) Arc-tangent of (A/B)
+atanh(A) Invers hyperbolic tangent of A
+autostop
+average
+b_spline
+background
+bezier_spline
+bicubic_patch
+black_hole
+blob
+blue
+blur_samples
+bounded_by
+box
+boxed
+bozo
+brick
+brick_size
+brightness
+brilliance
+bump_map
+bump_size
+bumps
+camera
+caustics
+ceil(A) Ceiling of A
+cells
+charset
+checker
+chr(B) Character whose character value is B
+circular
+clipped_by
+clock
+clock_delta
+clock_on
+collect
+color
+color_map
+colour
+colour_map
+component
+composite
+concat(S1,S2,...) Concatenate strings S1 and S2
+cone
+confidence
+conic_sweep
+conserve_energy
+contained_by
+control0
+control1
+coords
+cos(A) Cosine of A
+cosh(A) The hyperbolic cosine of A
+count
+crackle
+crand
+cube
+cubic
+cubic_spline
+cubic_wave
+cutaway_textures
+cylinder
+cylindrical
+defined(IDENTIFIER) Returns true if the identifier is currently defined, false otherwise
+degrees(A) Convert radians to degrees
+density
+density_file
+density_map
+dents
+df3
+difference
+diffuse
+dimension_size( ARRAY_IDENTIFIER, FLOAT ) Returns the size of a given dimension of a previously declared array identifier
+dimensions( ARRAY_IDENTIFIER ) Returns the number of dimensions of a previously declared array identifier
+direction
+disc
+dispersion
+dispersion_samples
+dist_exp
+distance
+distance_maximum
+div(A,B) Integer division
+double_illuminate
+eccentricity
+emission
+error_bound
+evaluate
+exp(A) Exponential of A
+expand_thresholds
+exponent
+exterior
+extinction
+face_indices
+facets
+fade_color
+fade_colour
+fade_distance
+fade_power
+falloff
+falloff_angle
+false
+file_exists(S) Attempts to open the file specified by the string S
+filter
+final_clock
+final_frame
+finish
+fisheye
+flatness
+flip
+floor(A) Floor of A
+focal_point
+fog
+fog_alt
+fog_offset
+fog_type
+form
+frame_number
+frequency
+fresnel
+function
+gather
+gif
+global_lights
+global_settings
+gradient
+granite
+gray
+gray_threshold
+green
+height_field
+hexagon
+hf_gray_16
+hierarchy
+hollow
+hypercomplex
+iff
+image_height
+image_map
+image_pattern
+image_width
+initial_clock
+initial_frame
+inside(O,V) It returns either 0.0, when the vector V is outside the object, specified by the object-identifier O, or 1.0 if it is inside
+inside_vector
+int(A) Integer part of A
+interior
+interior_texture
+internal
+interpolate
+intersection
+intervals
+inverse
+ior
+irid
+irid_wavelength
+isosurface
+jitter
+jpeg
+julia
+julia_fractal
+lambda
+lathe
+leopard
+light_group
+light_source
+linear_spline
+linear_sweep
+ln(A) Natural logarithm of A
+load_file
+location
+log(A) Logarithm of A
+look_at
+looks_like
+low_error_factor
+macro
+magnet
+major_radius
+mandel
+map_type
+marble
+material
+material_map
+matrix
+max(A,B,...) Maximum of two or more float values
+max_extent( OBJECT_IDENTIFIER ) The maximum coordinates of a #declared object's bounding box
+max_gradient
+max_intersections
+max_iteration
+max_sample
+max_trace
+max_trace_level
+media
+media_attenuation
+media_interaction
+merge
+mesh
+mesh2
+metallic
+method
+metric
+min(A,B,...) Minimum of two or more float values
+min_extent( OBJECT_IDENTIFIER )The minimum coordinates of a #declared object's bounding box
+minimum_reuse
+mod(A,B) Value of A modulo B
+mortar
+natural_spline
+nearest_count
+no
+no_bump_scale
+no_image
+no_reflection
+no_shadow
+noise_generator
+normal
+normal_indices
+normal_map
+normal_vectors
+number_of_waves
+object
+octaves
+off
+offset
+omega
+omnimax
+on
+once
+onion
+open
+orient
+orientation
+orthographic
+panoramic
+parallel
+parametric
+pass_through
+pattern
+perspective
+pgm
+phase
+phong
+phong_size
+photons
+pi
+pigment
+pigment_map
+pigment_pattern
+planar
+plane
+png
+point_at
+poly
+poly_wave
+polygon
+pot
+pow(A,B) Exponentiation
+ppm
+precision
+precompute
+pretrace_end
+pretrace_start
+prism
+prod(i, b, n, a) The product function
+projected_through
+pwr
+quadratic_spline
+quadric
+quartic
+quaternion
+quick_color
+quick_colour
+quilted
+radial
+radians(A) Convert degrees to radians
+radiosity
+radius
+rainbow
+ramp_wave
+rand(I) Returns the next pseudo-random number from the stream specified by the positive integer I
+ratio
+reciprocal
+recursion_limit
+red
+reflection
+reflection_exponent
+refraction
+repeat
+rgb
+rgbf
+rgbft
+rgbt
+right
+ripples
+rotate
+roughness
+samples
+save_file
+scale
+scallop_wave
+scattering
+seed(I) Initializes a new pseudo-random stream with the initial seed value A
+select(A, B, C [,D])
+shadowless
+sin(A) Sine of A
+sine_wave
+sinh(A) The hyperbolic sine of A
+size
+sky
+sky_sphere
+slice
+slope
+slope_map
+smooth
+smooth_triangle
+solid
+sor
+spacing
+specular
+sphere
+sphere_sweep
+spherical
+spiral1
+spiral2
+spline
+split_union
+spotlight
+spotted
+sqr
+sqrt(A) Square root of A
+steps
+str(A,L,P) Convert float A to a formatted string
+strcmp(S1,S2) Compare string S1 to S2
+strength
+strlen(S) Length of S
+strlwr(S) Lower case of S
+strupr(S) Upper case of S
+sturm
+substr(S,P,L) Sub-string from S
+sum(i, b, n, a) The sum function
+superellipsoid
+sys
+t
+tan(A) Tangent of A
+tanh(A) The hyperbolic tangent of A
+target
+text
+texture
+texture_list
+texture_map
+tga
+thickness
+threshold
+tiff
+tightness
+tile2
+tiles
+tolerance
+toroidal
+torus
+trace(OBJECT_IDENTIFIER, A, B, [VECTOR_IDENTIFIER]) Trace helps you finding the exact location of a ray intersecting with an object's surface
+transform
+translate
+transmit
+triangle
+triangle_wave
+true
+ttf
+turb_depth
+turbulence
+type
+u
+u_steps
+ultra_wide_angle
+union
+up
+use_alpha
+use_color
+use_colour
+use_index
+utf8
+uv_indices
+uv_mapping
+uv_vectors
+v
+v_steps
+val(S) Convert string S to float
+variance
+vaxis_rotate(A,B,F) Rotate A about B by F
+vcross(A,B) Cross product of A and B
+vdot(V1,V2) Dot product (sometimes called scalar product) of V1 and V2
+vertex_vectors
+vlength(V) Length of V
+vnormalize(A) Normalize vector A
+vrotate(A,B) Rotate A about origin by B
+vstr(N,A,S,L,P) Convert vector A to a formatted string
+vturbulence(Lambda, Omega, Octaves, A) Turbulence vector at A
+warp
+water_level
+waves
+width
+wood
+wrinkles
+x
+y
+yes
+z
