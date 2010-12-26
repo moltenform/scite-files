@@ -5,6 +5,93 @@ At the end of SciTEGlobal.properties there is a list of files that can be import
 
 abaqus, asn1, au3, freebasic, blitzbasic, bullant, cobol, cmake, csound, flagship, forth, gap, inno, kix, lout, nimrod, nncrontab, nsis, opal, powerpro, powershell, purebasic, r, rebol, scripol, smalltalk, spice, specman, tacl, tal, txt2tags, verilog, vhdl.
 
+== User-contributed properties ==
+
+
+<h5>APDL </h5>
+<ul>
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/apdl.zip">APDL properties and API</a></li></ul>
+<h5>ASP </h5>
+<ul>
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/asp.api">ASP API methods</a></li></ul>
+<h5>Auto Hotkey </h5>
+<ul>
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/ahk.properties">AutoHotkey properties</a></li></ul>
+<h5>Auto It3 </h5>
+<ul>
+<li><a href="http://www.autoitscript.com/autoit3/scite">SciTE4AutoIt3 Website containing AutoIt3 related properties and API files.</a></li></ul>
+<h5>Batch Scripting (Windows)</h5>
+<ul>
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/batch_api.zip">Batch API Files</a> (API files for NT, XP/2003, GNUWin32 and SysInternals commands)</li></ul>
+<h5>C </h5>
+<ul>
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/c.api">C standard library</a></li></ul>
+<h5>C++ </h5>
+<ul>
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/cpp.api.zip">Windows API</a>
+</li><li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/opengl.zip">OpenGL API</a>
+</li><li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/glut.zip" style="text-decoration: none;">Glut API</a></li></ul>
+<h5>C# </h5>
+<ul>
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/csgenapi.zip">C# API file and generator program.</a></li></ul>
+<h5>CIL </h5>
+<ul>
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/il.properties">Properties for CIL/MSIL</a></li></ul>
+<h5>Clojure</h5><ul><li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/clojure.api?hl=en">Properties for Clojure</a></li></ul><h5>CMake</h5>
+<ul>
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/cmake.api">CMake API</a></li></ul>
+<h5>FORTRAN </h5>
+<ul>
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/fortran.api">Standard FORTRAN API functions</a></li></ul>
+<h5>Java </h5>
+<ul>
+<li><a href="http://www.burgaud.com/scite.php">Java API and Java Help</a></li></ul>
+<h5>Lua </h5>
+<ul>
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/lua5api.zip">Lua 5.0 C API and Lua functions</a></li></ul>
+<h5>Microsoft SQL </h5>
+<ul>
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/mssql.properties">Replaces sql.properties</a></li></ul>
+<h5>nncron</h5>
+<ul>
+<li><a href="http://www.nbk.orc.ru/scintilla/nncron.api">nncron.api</a> </li></ul>
+<h5>Octave</h5>
+<ul>
+<li>
+<p><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/octave.api">octave.api</a></p></li></ul>
+<h5>Oracle </h5>
+<ul>
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/sql.properties_ext">Extended properties file</a> with additional keywords and standard package names.</li></ul>
+<h5>Pascal / Delphi</h5><ul><li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/pascal.api">API</a> </li><li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/pascal.abbrev">Abbreviations</a> </li></ul><h5>Perl </h5>
+<ul>
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/perl.api">Perl API</a></li></ul>
+<h5>PHP </h5>
+<ul>
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/html.properties">html.properties</a>
+</li><li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/php.api">php.api for PHP 4.3.3</a>
+</li><li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/php.properties">PHP properties</a>
+</li><li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/phpfunctions.properties">PHP functions</a>
+</li><li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/phpapi.php.txt">A script for creating api file out of your own php source code</a></li></ul>
+<h5>POV-Ray </h5>
+<ul>
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/pov.api">POV-Ray API</a></li></ul>
+<h5>Progress</h5>
+<ul>
+<li>
+<h5><a  href="http://scite-files.googlecode.com/svn-history/trunk/extras/progress.properties">Progress properties</a></h5>
+</li><li>
+<p>The author original properties files, made for Notepad++. Please see <a href="http://www.yuvcom.com/progress4gl">http://www.yuvcom.com/progress4gl</a> for more information.</p></li></ul>
+<h5>SDL </h5>
+<ul><li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/sdl.api">SDL API</a></li></ul>
+<h5>TADS3 </h5>
+<ul>
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/tads3.properties">TADS3 property file</a>
+</li><li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/TADS3.txt">Explanation</a></li></ul>
+<h5>Windows Scripting </h5>
+<ul>
+<li><a href="http://dev.remotenetworktechnology.com/SciTE/index.htm">Properties files and scripts.</a></li></ul>
+
+
 == How to install a .properties file ==
 A .properties file allows you to set up highlighting of keywords, and commands for the Tools menu, for a file type. To install such a file, for example "ahk.properties", place the ahk.properties file in the SciTE directory. Then, edit the Global Options file or User Options file and add the line "import ahk". 
 
