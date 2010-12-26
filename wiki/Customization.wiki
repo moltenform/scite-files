@@ -1,7 +1,9 @@
 #summary Properties files, api files, other material for computer languages.
 
 == How to enable a language disabled by default ==
-At the end of SciTEGlobal.properties there is a list of files that can be imported. Uncomment one of these lines, or enter it into SciTEUser.properties, to enable support for that language.
+At the end of SciTEGlobal.properties there is a list of files that can be imported. Remove the # from one of these lines (or add an entry to SciTEUser.properties) to enable support for that language.  As of SciTE 2.23, languages that can be enabled in this way are:
+
+abaqus, asn1, au3, freebasic, blitzbasic, bullant, cobol, cmake, csound, flagship, forth, gap, inno, kix, lout, nimrod, nncrontab, nsis, opal, powerpro, powershell, purebasic, r, rebol, scripol, smalltalk, spice, specman, tacl, tal, txt2tags, verilog, vhdl.
 
 == How to install a .properties file ==
 A .properties file allows you to set up highlighting of keywords, and commands for the Tools menu, for a file type. To install such a file, for example "ahk.properties", place the ahk.properties file in the SciTE directory. Then, edit the Global Options file or User Options file and add the line "import ahk". 
