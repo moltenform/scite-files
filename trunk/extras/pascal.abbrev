@@ -1,0 +1,66 @@
+asm=asm\n\t|\nend;
+asmfunc=function |(): ; assembler;\nasm\n\t\nend;
+asmproc=procedure |(); assembler;\nasm\n\t\nend;
+arr=array of |;
+arrc=array of const|
+arr1=array [|..] of ;
+arr2=array [|..,..] of ;
+be=begin\n\t|\nend;
+bparr=bitpacked array of |;
+bparrc=bitpacked array of const|
+bparr1=bitpacked array [|..] of ;
+bparr2=bitpacked array [|..,..] of ;
+bprec=| = bitpacked record\n\t\nend;
+cas=case | of\n\t:\nend;
+case=case | of\n\t:\n\telse\nend;
+caso=case | of\n\t:\n\totherwise\nend;
+cls=| = class\nprivate\n\t\npublic\n\t\nend;
+const=constructor |();\nbegin\n\t\nend;
+dest=destructor |();\nbegin\n\t\nend;
+ext=external name '|';
+extc=cdecl; external name '|';
+extp=pascal; external name '|';
+exts=stdcall; external name '|';
+def={$define |}
+ford=for |:= downto  do\n\t;
+fort=for |:= to  do\n\t;
+fordb=for |:= downto  do begin\n\t\nend;
+fortb=for |:= to  do begin\n\t\nend;
+func=function |(): ;\nbegin\n\t\nend;
+gencls=generic |<T> = class\nprivate\n\t\npublic\n\t\nend;
+ifb=if | then begin\n\t\nend;
+ifbe=if | then begin\n\t\nend else begin\n\t\nend;
+ifd={$ifdef |}\n\t\n{$endif}
+ifde={$ifdef |}\n\t\n{$else}\n\t\n{$endif}
+if=if | then ;
+ife=if | then  else ;
+intarr=array of Integer;
+lib=library |;\n\nexports\n\t\nend.\n
+mac={$define |:=}
+mdel={$mode delphi}
+mobj={$mode objfpc}{$H+}
+mtp={$mode tp}
+obj=| = object\nprivate\n\t\npublic\n\t\nend;
+oper=operator |();\nbegin\n\t\nend;
+parr=packed array of |;
+parrc=packed array of const|
+parr1=packed array [|..] of ;
+parr2=packed array [|..,..] of ;
+prec=| = packed record\n\t\nend;
+proc=procedure |();\nbegin\n\t\nend;
+prog=program |;\n\nbegin\n\t\nend.\n
+prop=property |: read ;
+proprw=property |: read  write ;
+pubal=[public, alias: |];
+rec=| = record\n\t\nend;
+rep=repeat\n\t|\nuntil ;
+whi=while | do ;
+whib=while | do begin\n\t\nend;
+wit=with | do ;
+witb=with | do begin\n\t\nend;
+trye=try\n\t|\nexcept\n\ton  do begin\n\t\t\n\tend;\nend;
+tryef=try\n\ttry\n\t\t|\n\texcept\n\t\ton  do begin\n\t\t\t\n\t\tend;\nfinally\n\t\nend;
+tryf=try\n\t|\nfinally\n\t\nend;
+unit=unit |;\n\ninterface\n\n\nimplementation\n\n\nend.\n
+virabs=virtual; abstract;
+(*=(* | *)

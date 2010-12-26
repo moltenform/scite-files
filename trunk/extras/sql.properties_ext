@@ -1,0 +1,520 @@
+# Define SciTE settings for SQL and PL/SQL files.
+
+filter.sql=SQL (sql)|*.sql;*.vw;*.tab;*.seq;*.ugr;*.con;*.ind;*.rgr;*.tsp;*.pck;*.fnc;*.prc;*.trg;*pks;*.pkb|
+
+file.patterns.sql=*.sql;*.vw;*.tab;*.seq;*.ugr;*.con;*.ind;*.rgr;*.tsp
+file.patterns.plsql=*.spec;*.body;*.sps;*.spb;*.sf;*.sp;*.pck;*.fnc;*.prc;*.trg;*pks;*.pkb
+
+lexer.$(file.patterns.sql)=sql
+lexer.$(file.patterns.plsql)=sql
+
+word.chars.sql=$(chars.alpha)$(chars.numeric)_#$
+word.characters.$(file.patterns.sql)=$(word.chars.sql)
+word.characters.$(file.patterns.plsql)=$(word.chars.sql)
+
+# SQL styles
+# White space
+style.sql.0=fore:#808080
+# Comment
+style.sql.1=fore:#007F00,$(font.comment)
+# Line Comment
+style.sql.2=fore:#007F00,$(font.comment)
+# Doc comment
+style.sql.3=fore:#7F7F7F
+# Number
+style.sql.4=fore:#007F7F
+# Keyword
+style.sql.5=fore:#00007F,bold
+# Double quoted string
+style.sql.6=fore:#7F007F,$(font.monospace)
+# Single quoted string
+style.sql.7=fore:#7F007F,$(font.monospace)
+# SQL*Plus
+style.sql.8=$(colour.preproc)
+# SQL*Plus PROMPT
+style.sql.9=fore:#007F00,$(font.monospace),back:#E0FFE0,eolfilled
+# Operators
+style.sql.10=bold
+# Identifiers
+style.sql.11=
+# End of line where string is not closed / not used
+style.sql.12=fore:#000000,$(font.monospace),back:#E0C0E0,eolfilled
+# SQL*Plus Comment
+style.sql.13=fore:#007F00,$(font.comment)
+# not used
+# style.sql.14=
+# Hash Line Comment
+style.sql.15=fore:#007F00,$(font.comment)
+# Keywords2: Database objects
+style.sql.16=fore:#B00040
+# Comment Doc Keyword
+style.sql.17=fore:#3060A0,$(font.code.comment.doc)
+# Comment Doc Keyword Error
+style.sql.18=fore:#804020,$(font.code.comment.doc)
+# Keywords5: User Keywords 1
+style.sql.19=fore:#4B0082
+# Keywords6: User Keywords 2
+style.sql.20=fore:#B00040
+# Keywords7: User Keywords 3
+style.sql.21=fore:#8B0000
+# Keywords8: User Keywords 4
+style.sql.22=fore:#800080
+
+# Braces are only matched in operator style
+braces.sql.style=10
+# Enables backslash as an escape character
+#sql.backslash.escapes=1
+
+#Keywords for SQL
+keywordclass.sql=\
+a abort access accessed account activate add admin administer administrator \
+advise advisor after algorithm alias all all_rows allocate allow alter \
+always analyze ancillary and and_equal antijoin any append apply archive \
+archivelog array as asc associate at attribute attributes audit authenticated \
+authentication authid authorization auto autoallocate autoextend automatic \
+availability \
+backup become before begin behalf between bfile bigfile binary_double \
+binary_double_infinity binary_double_nan binary_float binary_float_infinity \
+binary_float_nan binding bitmap bits blob block block_range blocks blocksize \
+body both bound broadcast buffer buffer_cache buffer_pool build bulk by \
+bypass_recursive_check bypass_ujvc byte \
+cache cache_cb cache_instances cache_temp_table call cancel cardinality cascade \
+case cast category certificate cfile chained change char char_cs character check \
+checkpoint child choose chunk civ_gb class clear clob clone close \
+close_cached_open_cursors cluster clustering_factor coalesce coarse collect \
+collections_get_refs column column_stats column_value columns comment commit \
+committed compact compatibility compile complete composite_limit compress \
+compute conforming connect connect_by_iscycle connect_by_isleaf connect_by_root \
+connect_time consider consistent constraint constraints container content \
+contents context continue controlfile convert corruption cost cpu_costing \
+cpu_per_call cpu_per_session create create_stored_outlines cross cube cube_gb \
+current current_date current_schema current_time current_timestamp current_user \
+cursor cursor_sharing_exact cursor_specific_segment cycle \
+dangling data database datafile datafiles dataobjno date date_mode day dba \
+dba_recyclebin dbtimezone ddl deallocate debug dec decimal declare decrement \
+default deferrable deferred defined definer degree delay delete demand dense_rank \
+deref deref_no_rewrite desc detached determines dictionary dimension directory \
+disable disassociate disconnect disk diskgroup disks dismount distinct \
+distinguished distributed dml dml_update document domain_index_no_sort \
+domain_index_sort double downgrade driving_site drop dump dynamic \
+dynamic_sampling dynamic_sampling_est_cdn \
+each element else empty enable encrypted encryption end enforce enforced entry \
+error error_on_overlap_time escape estimate events except exceptions exchange \
+excluding exclusive execute exempt exists expand_gset_to_union expire explain \
+explosion export expr_corr_check extend extends extent extents external \
+externally extract \
+fact failed failed_login_attempts failgroup false fast fbtscan fic_civ \
+fic_piv file filter final fine finish first first_rows flagger flashback \
+float flob flush following for force force_xml_query_rewrite foreign \
+freelist freelists freepools fresh from full function functions \
+gather_plan_statistics gby_conc_rollup generated global global_name \
+global_topic_enabled globally grant group group_by grouping groups guarantee \
+guaranteed guard \
+hash hash_aj hash_sj hashkeys having header heap hierarchy high hintset_begin \
+hintset_end hour hwm_brokered \
+id identified identifier identity idgenerators idle_time if ignore \
+ignore_on_clause ignore_optim_embedded_hints ignore_where_clause immediate \
+import in in_memory_metadata include_version including increment incremental \
+index index_asc index_combine index_desc index_ffs index_filter index_join \
+index_rows index_rrs index_scan index_skip_scan index_ss index_ss_asc \
+index_ss_desc index_stats indexed indexes indextype indextypes indicator \
+infinite informational initial initialized initially initrans inline inner \
+insert instance instances instantiable instantly instead int integer integrity \
+intermediate internal_convert internal_use interpreted intersect interval into \
+invalidate is isolation isolation_level iterate iteration_number \
+java job join \
+keep kerberos key key_length keyfile keys keysize kill last lateral layer \
+ldap_reg_sync_interval ldap_registration ldap_registration_enabled \
+leading left length less level levels library like like2 like4 like_expand \
+likec limit link list lob local local_indexes localtime localtimestamp \
+location locator lock locked log logfile logging logical logical_reads_per_call \
+logical_reads_per_session logoff logon long \
+main manage managed management manual mapping master matched materialize \
+materialized max maxarchlogs maxdatafiles maxextents maximize maxinstances \
+maxlogfiles maxloghistory maxlogmembers maxsize maxtrans maxvalue measures \
+member memory merge merge_aj merge_const_on merge_sj method migrate min \
+minextents minimize minimum minus minute minvalue mirror mlslabel mode \
+model model_dontverify_uniqueness model_min_analysis model_no_analysis \
+model_pby model_push_ref modify monitoring month mount move movement multiset \
+mv_merge \
+name named nan national native natural nav nchar nchar_cs nclob needed nested \
+nested_table_fast_insert nested_table_get_refs nested_table_id \
+nested_table_set_refs nested_table_set_setid network never new next nl_aj nl_sj \
+nls_calendar nls_characterset nls_comp nls_currency nls_date_format \
+nls_date_language nls_iso_currency nls_lang nls_language nls_length_semantics \
+nls_nchar_conv_excp nls_numeric_characters nls_sort nls_special_chars \
+nls_territory no no_access no_basetable_multimv_rewrite no_buffer \
+no_cpu_costing no_expand no_expand_gset_to_union no_fact no_filtering \
+no_index no_index_ffs no_index_ss no_merge no_model_push_ref no_monitoring \
+no_multimv_rewrite no_order_rollups no_parallel no_parallel_index \
+no_partial_commit no_prune_gsets no_push_pred no_push_subq no_qkn_buff \
+no_query_transformation no_ref_cascade no_rewrite no_semijoin no_set_to_join \
+no_star_transformation no_stats_gsets no_swap_join_inputs no_trigger \
+no_unnest no_use_hash no_use_merge no_use_nl no_xml_query_rewrite noappend \
+noarchivelog noaudit nocache nocompress  nocpu_costing nocycle nodelay \
+noforce noguarantee nologging nomapping nomaxvalue nominimize nominvalue \
+nomonitoring none noorder nooverride noparallel noparallel_index norely \
+norepair noresetlogs noreverse norewrite normal norowdependencies nosegment \
+nosort nostrict noswitch not nothing novalidate nowait null nulls number \
+numeric nvarchar2 \
+object objno objno_reuse of off offline oid oidindex old on online only opaque \
+opaque_transform opaque_xcanonical opcode open operator opt_estimate optimal \
+optimizer_features_enable optimizer_goal option or or_expand ora_rowscn order \
+ordered ordered_predicates organization out_of_line outer outline over overflow \
+overflow_nomove overlaps own package packages parallel parallel_index parameters \
+parent parity partially partition partition_hash partition_list partition_range \
+partitions password password_grace_time password_life_time password_lock_time \
+password_reuse_max password_reuse_time password_verify_function pctfree \
+pctincrease pctthreshold pctused pctversion percent performance permanent \
+pfile physical piv_gb piv_ssf plan plsql_code_type plsql_debug plsql_optimize_level \
+plsql_warnings policy post_transaction power pq_distribute pq_map pq_nomap prebuilt \
+preceding precision prepare present preserve primary prior private private_sga \
+privilege privileges procedure profile program project protected protection \
+public purge push_pred push_subq px_granule \
+qb_name query query_block queue queue_curr queue_rowp quiesce quota \
+random range rapidly raw rba read reads real rebalance rebuild records_per_block \
+recover recoverable recovery recycle recyclebin reduced redundancy ref \
+ref_cascade_cursor reference referenced references referencing refresh \
+regexp_like register reject rekey relational rely remote_mapped rename repair \
+replace required reset resetlogs resize resolve resolver resource \
+restore_as_intervals restrict restrict_all_ref_cons restricted resumable \
+resume retention return returning reuse reverse revoke rewrite rewrite_or_error \
+right role roles rollback rollup row row_length rowdependencies rowid rownum \
+rows rule rules \
+sample save_as_intervals savepoint sb4 scale scale_rows scan scan_instances \
+scheduler schema scn scn_ascending scope sd_all sd_inhibit sd_show second security \
+seed seg_block seg_file segment select selectivity semijoin semijoin_driver \
+sequence sequenced sequential serializable servererror session session_cached_cursors \
+sessions_per_user sessiontimezone sessiontzname set set_to_join sets settings severe \
+share shared shared_pool shrink shutdown siblings sid simple single singletask size \
+skip skip_ext_optimizer skip_unq_unusable_idx skip_unusable_indexes smallfile \
+smallint snapshot some sort source space specification spfile split spreadsheet \
+sql sql_trace sqlldr standby star star_transformation start startup statement_id \
+static statistics stop storage store streams strict strip structure submultiset \
+subpartition subpartition_rel subpartitions substitutable successful summary \
+supplemental suspend swap_join_inputs switch switchover synonym sys_dl_cursor \
+sys_fbt_insdel sys_op_bitvec sys_op_cast sys_op_col_present sys_op_enforce_not_null$ \
+sys_op_mine_value sys_op_noexpand sys_op_ntcimg$ sys_parallel_txn sys_rid_order \
+sysaux sysdate sysdba sysoper system systimestamp \
+table table_stats tables tablespace tablespace_no tabno tempfile template temporary \
+test than the then thread through time time_zone timeout timestamp timezone_abbr \
+timezone_hour timezone_minute timezone_region tiv_gb tiv_ssf to toplevel trace \
+tracing tracking trailing transaction transitional treat trigger triggers true \
+truncate trusted tuning tx type types tz_offset \
+ub2 uba uid unarchived unbound unbounded under undo undrop uniform union unique \
+unlimited unlock unnest unpacked unprotected unquiesce unrecoverable until \
+unusable unused upd_indexes upd_joinindex updatable update updated upgrade upsert \
+urowid usage use use_anti use_concat use_hash use_merge use_nl use_nl_with_index \
+use_private_outlines use_semi use_stored_outlines use_ttt_for_gsets use_weak_name_resl \
+user user_defined user_recyclebin using \
+validate validation value values varchar varchar2 varray varying vector_read \
+vector_read_trace version versions view \
+wait wellformed when whenever where whitespace with within without work write \
+x_dyn_prune xid xmlattributes xmlcolattval xmlelement xmlforest xmlparse xmlschema \
+xmltype \
+year \
+zone
+
+# Keywords for SQL*Plus
+keywordclass.sqlplus=\
+acc~ept a~ppend archive log attribute \
+bre~ak bti~tle \
+c~hange cl~ear col~umn comp~ute conn~ect copy \
+def~ine del desc~ribe disc~onnect \
+e~dit exec~ute exit \
+get \
+help ho~st \
+i~nput \
+l~ist \
+passw~ord pau~se pri~nt pro~mpt \
+quit \
+recover rem~ark repf~ooter reph~eader r~un \
+sav~e set sho~w shutdown spo~ol sta~rt startup store \
+timi~ng tti~tle \
+undef~ine \
+var~iable \
+whenever oserror whenever sqlerror \
+_connect_identifier _date _editor _o_release _o_version _privilege _sqlplus_release _user \
+abort ali~as all allow app~end appi~nfo array~size as auto~commit automatic autop~rint autorecovery autot~race avg \
+backup begin binary_double binary_float blo~ckterminator body bold bre~aks bti~tle buff~er byte \
+c~enter cancel ce~nter change char class cle~ar clob cmds~ep col col~umns colsep com~patibility commit \
+comp~utes con~cat consistent continue controlfile copyc~ommit copytypecheck corruption cou~nt cre~ate \
+database datafile date def~ault default delay depth describe dimension disconnect downgrade dup~licates \
+ea~ch echo editf~ile emb~edded end entmap entry err~ors esc~ape exit exp~lain expire \
+failure feed~back file finish flagger flu~sh fold_a~fter fold_b~efore for~mat force from full function \
+hea~ding head heads~ep hide html \
+immediate indent instance intermed~iate inv~isible \
+java jus~tify \
+l~eft lab~el last le~ft like lin~esize linenum lis~t list lno lo~wer lobof~fset local logfile logsource long longc~hunksize \
+managed mark~up max~imum min~imum mix~ed mount \
+native nchar nclob new_v~alue newl~ine newp~age next no nodelay nodup~licates nol~ist none noparallel \
+nopr~ompt nopri~nt normal notimeout nowait nul~l null num~ber num~width numf~ormat nvarchar2 \
+of off old_v~alue on only open \
+package page pages~ize parallel parameters pau~se pfile pno pre~format pri~nt procedure \
+quiet \
+r~ight read recover recsep recsepchar recyc~lebin refcursor rel~ease rep~lace repf~ooter reph~eader \
+report restrict rollback row \
+s~kip scr~een sequence serverout~put session sga shift~inout show show~mode size ski~p spoo~l sql \
+sqlbl~anklines sqlc~ase sqlco~ntinue sqlcode sqln~umber sqlp~rompt sqlpluscompat~ibility sqlpre~fix \
+sqlt~erminator standby start stat~istics std stop success suf~fix sum switchover sysdba sysoper \
+tab table tablespace term~out test thread through ti~me time timeout timi~ng to trace~only transactional \
+trigger trim~out trims~pool tru~ncated tti~tle type \
+und~erline until up~per upgrade user using \
+v7 v8 var~iance varchar2 ver~ify view vis~ible \
+wait warning with wor~d_wrapped wr~apped wra~p wra~pped write
+
+# Keywords for plsql
+keywordclass.plsql=\
+all alter and any array as asc at authid avg begin between \
+binary_integer \
+body boolean bulk by char char_base check close cluster collect \
+comment commit compress connect constant create current currval \
+cursor date day declare decimal default delete desc distinct \
+do drop else elsif end exception exclusive execute exists exit \
+extends false fetch float for forall from function goto group \
+having heap hour if immediate in index indicator insert integer \
+interface intersect interval into is isolation java level like \
+limited lock long loop max min minus minute mlslabel mod mode \
+month natural naturaln new nextval nocopy not nowait null number \
+number_base ocirowid of on opaque open operator option or order \
+organization others out package partition pctfree pls_integer \
+positive positiven pragma prior private procedure public raise \
+range raw real record ref release return reverse rollback row \
+rowid rownum rowtype savepoint second select separate set share \
+smallint space sql sqlcode sqlerrm start stddev subtype successful \
+sum synonym sysdate table then time timestamp to trigger true \
+type uid union unique update use user validate values varchar \
+varchar2 variance view when whenever where while with work write \
+year zone
+
+# Keywords for database objects
+keywordclass.db_objects=\
+
+# Keywords for PlDoc comments
+keywordclass.pldoc=\
+param author since return see deprecated todo
+
+# User keywords 1
+# Keywords for Standard packages
+keywordclass.user1=\
+dbms_application_info.read_client_info \
+dbms_application_info.read_module \
+dbms_application_info.set_action \
+dbms_application_info.set_client_info \
+dbms_application_info.set_module \
+dbms_application_info.set_session_longops \
+dbms_job.background_process dbms_job.broken dbms_job.change \
+dbms_job.instance dbms_job.interval dbms_job.is_jobq \
+dbms_job.isubmit dbms_job.next_date dbms_job.remove \
+dbms_job.run dbms_job.submit dbms_job.user_export dbms_job.what \
+dbms_lob.append dbms_lob.close dbms_lob.compare \
+dbms_lob.converttoblob dbms_lob.converttoclob dbms_lob.copy \
+dbms_lob.createtemporary dbms_lob.erase dbms_lob.fileclose \
+dbms_lob.filecloseall dbms_lob.fileexists dbms_lob.filegetname \
+dbms_lob.fileisopen dbms_lob.fileopen dbms_lob.freetemporary \
+dbms_lob.get_storage_limit dbms_lob.getchunksize dbms_lob.getlength \
+dbms_lob.instr dbms_lob.isopen dbms_lob.istemporary \
+dbms_lob.loadblobfromfile dbms_lob.loadclobfromfile \
+dbms_lob.loadfromfile dbms_lob.open dbms_lob.read dbms_lob.substr \
+dbms_lob.trim dbms_lob.write dbms_lob.writeappend \
+dbms_output.disable dbms_output.enable dbms_output.get_line \
+dbms_output.get_lines dbms_output.new_line dbms_output.put \
+dbms_output.put_line \
+dbms_pipe.create_pipe dbms_pipe.next_item_type dbms_pipe.pack_message \
+dbms_pipe.pack_message_raw dbms_pipe.pack_message_rowid \
+dbms_pipe.purge dbms_pipe.receive_message dbms_pipe.remove_pipe \
+dbms_pipe.reset_buffer dbms_pipe.send_message \
+dbms_pipe.unique_session_name dbms_pipe.unpack_message \
+dbms_pipe.unpack_message_raw dbms_pipe.unpack_message_rowid \
+dbms_random.initialize dbms_random.normal dbms_random.random \
+dbms_random.seed dbms_random.string dbms_random.terminate \
+dbms_random.value \
+dbms_session.clear_all_context dbms_session.clear_context \
+dbms_session.clear_identifier dbms_session.close_database_link \
+dbms_session.free_unused_user_memory dbms_session.is_role_enabled \
+dbms_session.is_session_alive dbms_session.list_context \
+dbms_session.modify_package_state dbms_session.reset_package \
+dbms_session.set_close_cached_open_cursors dbms_session.set_context \
+dbms_session.set_identifier dbms_session.set_nls \
+dbms_session.set_role dbms_session.set_sql_trace \
+dbms_session.switch_current_consumer_group \
+dbms_session.unique_session_id \
+dbms_sql.bind_array dbms_sql.bind_variable dbms_sql.bind_variable_char \
+dbms_sql.bind_variable_raw dbms_sql.bind_variable_rowid \
+dbms_sql.close_cursor dbms_sql.column_value dbms_sql.column_value_char \
+dbms_sql.column_value_long dbms_sql.column_value_raw \
+dbms_sql.column_value_rowid dbms_sql.define_array \
+dbms_sql.define_column dbms_sql.define_column_char \
+dbms_sql.define_column_long dbms_sql.define_column_raw \
+dbms_sql.define_column_rowid dbms_sql.describe_columns \
+dbms_sql.describe_columns2 dbms_sql.execute \
+dbms_sql.execute_and_fetch dbms_sql.fetch_rows dbms_sql.is_open \
+dbms_sql.last_error_position dbms_sql.last_row_count \
+dbms_sql.last_row_id dbms_sql.last_sql_function_code dbms_sql.native \
+dbms_sql.open_cursor dbms_sql.parse dbms_sql.variable_value \
+dbms_sql.variable_value_char dbms_sql.variable_value_raw \
+dbms_sql.variable_value_rowid dbms_sql.v7 dbms_sql.v8 \
+dbms_transaction.advise_commit dbms_transaction.advise_nothing \
+dbms_transaction.advise_rollback \
+dbms_transaction.begin_discrete_transaction \
+dbms_transaction.commit dbms_transaction.commit_comment \
+dbms_transaction.commit_force dbms_transaction.local_transaction_id \
+dbms_transaction.purge_lost_db_entry dbms_transaction.purge_mixed \
+dbms_transaction.read_only dbms_transaction.read_write \
+dbms_transaction.rollback dbms_transaction.rollback_force \
+dbms_transaction.rollback_savepoint dbms_transaction.savepoint \
+dbms_transaction.step_id dbms_transaction.use_rollback_segment \
+dbms_utility.active_instances dbms_utility.analyze_database \
+dbms_utility.analyze_part_object dbms_utility.analyze_schema \
+dbms_utility.canonicalize dbms_utility.comma_to_table \
+dbms_utility.compile_schema \
+dbms_utility.create_alter_type_error_table \
+dbms_utility.current_instance \
+dbms_utility.data_block_address_block \
+dbms_utility.data_block_address_file dbms_utility.db_version \
+dbms_utility.exec_ddl_statement dbms_utility.format_call_stack \
+dbms_utility.format_error_backtrace dbms_utility.format_error_stack \
+dbms_utility.get_cpu_time dbms_utility.get_dependency \
+dbms_utility.get_endianness dbms_utility.get_hash_value \
+dbms_utility.get_parameter_value dbms_utility.get_sql_hash \
+dbms_utility.get_time dbms_utility.get_tz_transitions \
+dbms_utility.is_bit_set dbms_utility.is_cluster_database \
+dbms_utility.make_data_block_address dbms_utility.name_resolve \
+dbms_utility.name_tokenize dbms_utility.old_current_schema \
+dbms_utility.old_current_user dbms_utility.port_string \
+dbms_utility.sqlid_to_sqlhash dbms_utility.table_to_comma \
+dbms_utility.validate \
+htf.address htf.anchor htf.anchor2 htf.appletopen htf.area \
+htf.base htf.basefont htf.bgsound htf.big htf.blockquoteopen \
+htf.bodyopen htf.bold htf.br htf.center htf.cite htf.code \
+htf.comment htf.dfn htf.div htf.dlistdef htf.dlistopen \
+htf.dlistterm htf.em htf.emphasis htf.escape_sc htf.escape_url \
+htf.fontopen htf.format_cell htf.formcheckbox htf.formfile \
+htf.formhidden htf.formimage htf.formopen htf.formpassword \
+htf.formradio htf.formreset htf.formselectopen htf.formselectoption \
+htf.formsubmit htf.formtext htf.formtextarea htf.formtextarea2 \
+htf.formtextareaopen htf.formtextareaopen2 htf.frame \
+htf.framesetopen htf.header htf.hr htf.htitle htf.img htf.img2 \
+htf.isindex htf.italic htf.kbd htf.keyboard htf.line htf.linkrel \
+htf.linkrev htf.listheader htf.listitem htf.mailto htf.mapopen \
+htf.meta htf.nextid htf.nl htf.nobr htf.olistopen htf.paragraph \
+htf.param htf.plaintext htf.preopen htf.s htf.sample htf.script \
+htf.small htf.strike htf.strong htf.style htf.sub htf.sup \
+htf.tablecaption htf.tabledata htf.tableheader htf.tableopen \
+htf.tablerowopen htf.teletype htf.title htf.ulistopen \
+htf.underline htf.variable \
+htp.adddefaulthtmlhdr htp.address htp.anchor htp.anchor2 \
+htp.appletclose htp.appletopen htp.area htp.base htp.basefont \
+htp.bgsound htp.big htp.blockquoteclose htp.blockquoteopen \
+htp.bodyclose htp.bodyopen htp.bold htp.br htp.center \
+htp.centerclose htp.centeropen htp.cite htp.code htp.comment \
+htp.dfn htp.dirlistclose  htp.dirlistopen htp.div htp.dlistclose \
+htp.dlistdef htp.dlistopen htp.dlistterm htp.download_file \
+htp.em htp.emphasis htp.escape_sc  htp.flush \
+htp.flush_charset_convert htp.fontclose htp.fontopen \
+htp.formcheckbox htp.formclose htp.formfile htp.formhidden \
+htp.formimage htp.formopen htp.formpassword htp.formradio \
+htp.formreset htp.formselectclose htp.formselectopen \
+htp.formselectoption htp.formsubmit htp.formtext htp.formtextarea \
+htp.formtextarea2 htp.formtextareaclose htp.formtextareaopen \
+htp.formtextareaopen2 htp.frame htp.framesetclose htp.framesetopen \
+htp.get_download_files_list htp.get_line htp.get_page \
+htp.get_page_charset_convert htp.get_page_raw htp.headclose \
+htp.header htp.headopen htp.hr htp.htitle htp.htmlclose htp.htmlopen \
+htp.img htp.img2 htp.init htp.isindex htp.italic htp.kbd \
+htp.keyboard htp.line htp.linkrel htp.linkrev htp.listheader \
+htp.listingclose htp.listingopen htp.listitem htp.mailto \
+htp.mapclose htp.mapopen  htp.menulistclose htp.menulistopen \
+htp.meta htp.nextid htp.nl htp.nobr htp.noframesclose \
+htp.noframesopen htp.olistclose htp.olistopen htp.p htp.para \
+htp.paragraph htp.param htp.plaintext htp.preclose htp.preopen \
+htp.print htp.print_header htp.prints htp.prn htp.ps htp.putraw \
+htp.s htp.sample htp.script htp.set_transfer_mode htp.sethttpcharset \
+htp.showpage htp.small htp.strike htp.strong htp.style htp.sub \
+htp.sup htp.tablecaption htp.tableclose htp.tabledata \
+htp.tableheader htp.tableopen htp.tablerowclose htp.tablerowopen \
+htp.teletype htp.title htp.ulistclose htp.ulistopen htp.underline \
+htp.variable htp.wbr \
+utl_encode.base64_decode utl_encode.base64_encode \
+utl_encode.mimeheader_decode utl_encode.mimeheader_encode \
+utl_encode.quoted_printable_decode utl_encode.quoted_printable_encode \
+utl_encode.text_decode utl_encode.text_encode utl_encode.uudecode \
+utl_encode.uuencode \
+utl_file.fclose utl_file.fclose_all utl_file.fcopy utl_file.fflush \
+utl_file.fgetattr utl_file.fgetpos utl_file.fopen \
+utl_file.fopen_nchar utl_file.fremove utl_file.frename \
+utl_file.fseek utl_file.get_line utl_file.get_line_nchar \
+utl_file.get_raw utl_file.is_open utl_file.new_line utl_file.put \
+utl_file.put_line utl_file.put_line_nchar utl_file.put_nchar \
+utl_file.put_raw utl_file.putf utl_file.putf_nchar \
+utl_http.add_cookies utl_http.begin_request utl_http.clear_cookies \
+utl_http.close_persistent_conn utl_http.close_persistent_conns \
+utl_http.end_request utl_http.end_response \
+utl_http.get_authentication utl_http.get_body_charset \
+utl_http.get_cookie_count utl_http.get_cookie_support \
+utl_http.get_cookies utl_http.get_detailed_excp_support \
+utl_http.get_detailed_sqlcode utl_http.get_detailed_sqlerrm \
+utl_http.get_follow_redirect utl_http.get_header \
+utl_http.get_header_by_name utl_http.get_header_count \
+utl_http.get_persistent_conn_count \
+utl_http.get_persistent_conn_support utl_http.get_persistent_conns \
+utl_http.get_proxy utl_http.get_response \
+utl_http.get_response_error_check utl_http.get_transfer_timeout \
+utl_http.read_line utl_http.read_raw utl_http.read_text \
+utl_http.request utl_http.request_pieces utl_http.set_authentication \
+utl_http.set_body_charset utl_http.set_cookie_support \
+utl_http.set_detailed_excp_support utl_http.set_follow_redirect \
+utl_http.set_header utl_http.set_persistent_conn_support \
+utl_http.set_proxy utl_http.set_response_error_check \
+utl_http.set_transfer_timeout utl_http.set_wallet utl_http.write_line \
+utl_http.write_raw utl_http.write_text \
+utl_i18n.encode_sql_xml utl_i18n.escape_reference \
+utl_i18n.get_default_charset utl_i18n.map_charset \
+utl_i18n.map_language_from_iso utl_i18n.map_locale_to_iso \
+utl_i18n.map_territory_from_iso utl_i18n.raw_to_char \
+utl_i18n.raw_to_nchar utl_i18n.string_to_raw \
+utl_i18n.unescape_reference utl_i18n.validate_sqlname \
+utl_raw.bit_and utl_raw.bit_complement utl_raw.bit_or \
+utl_raw.bit_xor utl_raw.cast_from_binary_double \
+utl_raw.cast_from_binary_float utl_raw.cast_from_binary_integer \
+utl_raw.cast_from_number utl_raw.cast_to_binary_double \
+utl_raw.cast_to_binary_float utl_raw.cast_to_binary_integer \
+utl_raw.cast_to_number utl_raw.cast_to_nvarchar2 utl_raw.cast_to_raw \
+utl_raw.cast_to_varchar2 utl_raw.compare utl_raw.concat \
+utl_raw.convert utl_raw.copies utl_raw.length utl_raw.overlay \
+utl_raw.reverse utl_raw.substr utl_raw.translate utl_raw.transliterate \
+utl_raw.xrange \
+utl_smtp.close_data utl_smtp.command utl_smtp.command_replies \
+utl_smtp.data utl_smtp.ehlo utl_smtp.helo utl_smtp.help \
+utl_smtp.mail utl_smtp.noop utl_smtp.open_connection \
+utl_smtp.open_data utl_smtp.quit utl_smtp.rcpt utl_smtp.rset \
+utl_smtp.vrfy utl_smtp.write_data utl_smtp.write_raw_data
+
+# User keywords 2
+keywordclass.user2=\
+
+# User keywords 3
+keywordclass.user3=\
+
+# User keywords 4
+keywordclass.user4=\
+
+# SQL
+keywords.$(file.patterns.sql)=$(keywordclass.sql)
+keywords2.$(file.patterns.sql)=$(keywordclass.db_objects)
+#keywords3.$(file.patterns.sql)=
+keywords4.$(file.patterns.sql)=$(keywordclass.sqlplus)
+keywords5.$(file.patterns.sql)=$(keywordclass.user1)
+#keywords6.$(file.patterns.sql)=$(keywordclass.user2)
+#keywords7.$(file.patterns.sql)=$(keywordclass.user3)
+#keywords8.$(file.patterns.sql)=$(keywordclass.user4)
+
+#PL/SQL
+keywords.$(file.patterns.plsql)=$(keywordclass.plsql)
+keywords2.$(file.patterns.plsql)=$(keywordclass.db_objects)
+keywords3.$(file.patterns.plsql)=$(keywordclass.pldoc)
+keywords4.$(file.patterns.plsql)=$(keywordclass.sqlplus)
+keywords5.$(file.patterns.plsql)=$(keywordclass.user1)
+#keywords6.$(file.patterns.plsql)=$(keywordclass.user2)
+#keywords7.$(file.patterns.plsql)=$(keywordclass.user3)
+#keywords8.$(file.patterns.plsql)=$(keywordclass.user4)

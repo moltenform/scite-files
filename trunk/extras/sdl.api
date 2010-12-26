@@ -1,0 +1,196 @@
+SDL_Init(Uint32 flags)
+SDL_InitSubSystem(Uint32 flags)
+SDL_QuitSubSystem(Uint32 flags)
+SDL_Quit(void)
+SDL_WasInit(Uint32 flags)
+Uint32
+Sint32
+Uint16
+Sint16
+Uint8
+Sint8
+
+
+SDL_GetVideoSurface(void)
+SDL_GetVideoInfo(void)
+SDL_VideoDriverName(char *namebuf, int maxlen)
+SDL_ListModes(SDL_PixelFormat *format, Uint32 flags)
+SDL_VideoModeOK(int width, int height, int bpp, Uint32 flags)
+SDL_SetVideoMode(int width, int height, int bpp, Uint32 flags)
+SDL_UpdateRect(SDL_Surface *screen, Sint32 x, Sint32 y, Sint32 w, Sint32 h)
+SDL_UpdateRects(SDL_Surface *screen, int numrects, SDL_Rect *rects)
+SDL_Flip(SDL_Surface *screen)
+SDL_SetColors(SDL_Surface *surface, SDL_Color *colors, int firstcolor, int ncolors)
+SDL_SetPalette(SDL_Surface *surface, int flags, SDL_Color *colors, int firstcolor, int ncolors)
+SDL_SetGamma(float redgamma, float greengamma, float bluegamma)
+SDL_GetGammaRamp(Uint16 *redtable, Uint16 *greentable, Uint16 *bluetable)
+SDL_SetGammaRamp(Uint16 *redtable, Uint16 *greentable, Uint16 *bluetable)
+SDL_MapRGB(SDL_PixelFormat *fmt, Uint8 r, Uint8 g, Uint8 b)
+SDL_MapRGBA(SDL_PixelFormat *fmt, Uint8 r, Uint8 g, Uint8 b, Uint8 a)
+SDL_GetRGB(Uint32 pixel, SDL_PixelFormat *fmt, Uint8 *r, Uint8 *g, Uint8 *b)
+SDL_GetRGBA(Uint32 pixel, SDL_PixelFormat *fmt, Uint8 *r, Uint8 *g, Uint8 *b, Uint8 *a)
+SDL_CreateRGBSurface(Uint32 flags, int width, int height, int depth, Uint32 Rmask, Uint32 Gmask, Uint32 Bmask, Uint32 Amask)
+SDL_CreateRGBSurfaceFrom(void *pixels, int width, int height, int depth, int pitch, Uint32 Rmask, Uint32 Gmask, Uint32 Bmask, Uint32 Amask)
+SDL_FreeSurface(SDL_Surface *surface)
+SDL_LockSurface(SDL_Surface *surface)
+SDL_UnlockSurface(SDL_Surface *surface)
+SDL_LoadBMP(const char *file)
+SDL_SaveBMP(SDL_Surface *surface, const char *file)
+SDL_SetColorKey(SDL_Surface *surface, Uint32 flag, Uint32 key)
+SDL_SetAlpha(SDL_Surface *surface, Uint32 flag, Uint8 alpha)
+SDL_SetClipRect(SDL_Surface *surface, SDL_Rect *rect)
+SDL_GetClipRect(SDL_Surface *surface, SDL_Rect *rect)
+SDL_ConvertSurface(SDL_Surface *src, SDL_PixelFormat *fmt, Uint32 flags)
+SDL_BlitSurface(SDL_Surface *src, SDL_Rect *srcrect, SDL_Surface *dst, SDL_Rect *dstrect)
+SDL_FillRect(SDL_Surface *dst, SDL_Rect *dstrect, Uint32 color)
+SDL_DisplayFormat(SDL_Surface *surface)
+SDL_DisplayFormatAlpha(SDL_Surface *surface)
+SDL_WarpMouse(Uint16 x, Uint16 y)
+SDL_CreateCursor(Uint8 *data, Uint8 *mask, int w, int h, int hot_x, int hot_y)
+SDL_FreeCursor(SDL_Cursor *cursor)
+SDL_SetCursor(SDL_Cursor *cursor)
+SDL_GetCursor(void)
+SDL_ShowCursor(int toggle)
+SDL_GL_LoadLibrary(const char *path)
+SDL_GL_GetProcAddress(const char* proc)
+SDL_GL_GetAttribute(SDLGLattr attr, int *value)
+SDL_GL_SetAttribute(SDL_GLattr attr, int value)
+SDL_GL_SwapBuffers(void)
+SDL_CreateYUVOverlay(int width, int height, Uint32 format, SDL_Surface *display)
+SDL_LockYUVOverlay(SDL_Overlay *overlay)
+SDL_UnlockYUVOverlay(SDL_Overlay *overlay)
+SDL_DisplayYUVOverlay(SDL_Overlay *overlay, SDL_Rect *dstrect)
+SDL_FreeYUVOverlay(SDL_Overlay *overlay)
+SDL_GLattr
+SDL_Rect
+SDL_Color
+SDL_Palette
+SDL_PixelFormat
+SDL_Surface
+SDL_VideoInfo
+SDL_Overlay
+
+SDL_WM_SetCaption(const char *title, const char *icon)
+SDL_WM_GetCaption(char **title, char **icon)
+SDL_WM_SetIcon(SDL_Surface *icon, Uint8 *mask)
+SDL_WM_IconifyWindow(void)
+SDL_WM_ToggleFullScreen(SDL_Surface *surface)
+SDL_WM_GrabInput(SDL_GrabMode mode)
+
+SDL_PumpEvents(void)
+SDL_PeepEvents(SDL_Event *events, int numevents, SDL_eventaction action, Uint32 mask)
+SDL_PollEvent(SDL_Event *event)
+SDL_WaitEvent(SDL_Event *event)
+SDL_PushEvent(SDL_Event *event)
+SDL_SetEventFilter(SDL_EventFilter filter)
+SDL_GetEventFilter(void)
+SDL_EventState(Uint8 type, int state)
+SDL_GetKeyState(int *numkeys)
+SDL_GetModState(void)
+SDL_SetModState(SDLMod modstate)
+SDL_GetKeyName(SDLKey key)
+SDL_EnableUNICODE(int enable)
+SDL_EnableKeyRepeat(int delay, int interval)
+SDL_GetMouseState(int *x, int *y)
+SDL_GetRelativeMouseState(int *x, int *y)
+SDL_GetAppState(void)
+SDL_JoystickEventState(int state)
+SDL_Event
+SDL_ActiveEvent
+SDL_KeyboardEvent
+SDL_MouseMotionEvent
+SDL_MouseButtonEvent
+SDL_JoyAxisEvent
+SDL_JoyButtonEvent
+SDL_JoyHatEvent
+SDL_JoyBallEvent
+SDL_ResizeEvent
+SDL_SysWMEvent
+SDL_UserEvent
+SDL_QuitEvent
+SDL_keysym
+SDLKey
+SDLMOD
+SDL_EventFilter
+
+SDL_NumJoysticks(void)
+SDL_JoystickName(int index)
+SDL_JoystickOpen(int index)
+SDL_JoystickOpened(int index)
+SDL_JoystickIndex(SDL_Joystick *joystick)
+SDL_JoystickNumAxes(SDL_Joystick *joystick)
+SDL_JoystickNumBalls(SDL_Joystick *joystick)
+SDL_JoystickNumHats(SDL_Joystick *joystick)
+SDL_JoystickNumButtons(SDL_Joystick *joystick)
+SDL_JoystickUpdate(void)
+SDL_JoystickGetAxis(SDL_Joystick *joystick, int axis)
+SDL_JoystickGetHat(SDL_Joystick *joystick, int hat)
+SDL_JoystickGetButton(SDL_Joystick *joystick, int button)
+SDL_JoystickGetBall(SDL_Joystick *joystick, int ball, int *dx, int *dy)
+SDL_JoystickClose(SDL_Joystick *joystick)
+SDL_Joystick 
+
+SDL_OpenAudio(SDL_AudioSpec *desired, SDL_AudioSpec *obtained)
+SDL_PauseAudio(int pause_on)
+SDL_GetAudioStatus(void)
+SDL_LoadWAV(const char *file, SDL_AudioSpec *spec, Uint8 **audio_buf, Uint32 *audio_len)
+SDL_FreeWAV(Uint8 *audio_buf)
+SDL_AudioCVT
+SDL_BuildAudioCVT(SDL_AudioCVT *cvt, Uint16 src_format, Uint8 src_channels, int src_rate, Uint16 dst_format, Uint8 dst_channels, int dst_rate)
+SDL_ConvertAudio(SDL_AudioCVT *cvt)
+SDL_MixAudio(Uint8 *dst, Uint8 *src, Uint32 len, int volume)
+SDL_LockAudio(void)
+SDL_UnlockAudio(void)
+SDL_CloseAudio(void)
+SDL_AudioSpec
+SDL_AudioCVT
+
+SDL_CDNumDrives(void)
+SDL_CDName(int drive)
+SDL_CDOpen(int drive)
+SDL_CDStatus(SDL_CD *cdrom)
+SDL_CDPlay(SDL_CD *cdrom, int start, int length)
+SDL_CDPlayTracks(SDL_CD *cdrom, int start_track, int start_frame, int ntracks, int nframes))
+SDL_CDPause(SDL_CD *cdrom)
+SDL_CDResume(SDL_CD *cdrom)
+SDL_CDStop(SDL_CD *cdrom)
+SDL_CDEject(SDL_CD *cdrom)
+SDL_CDClose(SDL_CD *cdrom)
+SDL_CD
+SDL_CDtrack
+
+SDL_CreateThread(int (*fn)(void *), void *data)
+SDL_ThreadID(void)
+SDL_GetThreadID(SDL_Thread *thread)
+SDL_WaitThread(SDL_Thread *thread, int *status)
+SDL_KillThread(SDL_Thread *thread)
+SDL_CreateMutex(void)
+SDL_DestroyMutex(SDL_mutex *mutex)
+SDL_mutexP(SDL_mutex *mutex)
+SDL_mutexV(SDL_mutex *mutex)
+SDL_CreateSemaphore(Uint32 initial_value)
+SDL_DestroySemaphore(SDL_sem *sem)
+SDL_SemWait(SDL_sem *sem)
+SDL_SemTryWait(SDL_sem *sem)
+SDL_SemWaitTimeout(SDL_sem *sem, Uint32 timeout)
+SDL_SemPost(SDL_sem *sem)
+SDL_SemValue(SDL_sem *sem)
+SDL_CreateCond(void)
+SDL_DestroyCond(SDL_cond *cond)
+SDL_CondSignal(SDL_cond *cond)
+SDL_CondBroadcast(SDL_cond *cond)
+SDL_CondWait(SDL_cond *cond, SDL_mutex *mut)
+SDL_CondWaitTimeout(SDL_cond *cond, SDL_mutex *mutex, Uint32 ms)
+SDL_Thread
+SDL_sem
+SDL_mutex
+SDL_cond
+
+SDL_GetTicks(void)
+SDL_Delay(Uint32 ms)
+SDL_AddTimer(Uint32 interval, SDL_NewTimerCallback callback, void *param)
+SDL_RemoveTimer(SDL_TimerID id)
+SDL_SetTimer(Uint32 interval, SDL_TimerCallback callback)
+SDL_TimerCallback
+SDL_NewTimerCallback
+SDL_TimerID

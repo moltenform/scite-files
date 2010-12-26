@@ -1,0 +1,39 @@
+Editing TADS files with Scite.
+
+To enable syntax highlighting of TADS3 files you will need to edit the
+SciTEGlobal.properties file.  Select "Open Global Options File" from the Options
+menu and uncomment the following line
+
+import tads3
+
+To add TADS3 to the language menu find the section that starts with
+menu.language and uncomment the TADS3 line.
+
+menu.language=\
+...
+TADS3|t||\
+...
+
+
+To add TADS3 file to the open file dialogue uncomment the filter.tads3 line in
+the open.filter section
+
+open.filter=\
+...
+$(filter.tads3)\
+...
+
+TADS source files can be added to the all source file filter.  Append ;*.t to
+the source.files section
+
+source.files=...;*.t
+
+menu.language and source.files may also be set in the per user file
+SciTEUser.properties which is available through the Options menu.
+
+These changes take affect next time SciTE is started.
+
+The file tads3.properties controls how TADS files appear.  The colours, font,
+indentation and user defined keywords can be modified.  From the options menu
+select tads3.properties.  The file has comments to guide you.  It is necessary
+to restart SciTE for the changes to take effect.

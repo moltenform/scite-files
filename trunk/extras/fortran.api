@@ -1,0 +1,196 @@
+abs(integer_real_complex) result(integer_real_complex)
+achar(integer) result(character)  integer to character
+acos(real) result(real)  arccosine  |real| <= 1.0   0<=result<=Pi
+adjustl(character)  result(character) left adjust, blanks go to back
+adjustr(character)  result(character) right adjust, blanks to front
+aimag(complex) result(real)  imaginary part
+aimag(complex) result(real)  imaginary part
+aint(real [,kind=]) result(real)  truncate to integer toward zero
+aint(real [,kind=]) result(real)  truncate to integer toward zero
+all(mask [,dim]) result(logical)  true if all elements of mask are true
+allocated(array) result(logical)  true if array is allocated in memory
+alog(real) result(real)  natural logarithm
+alog10(real) result(real)  logarithm base 10
+amax0(integer,...) result(real)  maximum of list of values
+amax1(real,...) result(real)  maximum of list of values
+amin0(integer,...) result(real)  minimum of list of values
+amin1(real,...) result(real)  minimum of list of values
+amod(a=real,p) result(real)  a modulo p
+anint(real [,kind=]) result(real)  round to nearest integer
+anint(real [,kind=]) result(real)  round to nearest integer
+any(mask [,dim=}) result(logical)  true if any elements of mask are true
+asin(real) result(real)  arcsine  |real| <= 1.0   -Pi/2<=result<=Pi/2
+asin(real) result(real)  arcsine  |real| <= 1.0   -Pi/2<=result<=Pi/2
+associated(pointer [,target=]) result(logical)  true if pointing
+atan(real) result(real)  arctangent  -Pi/2<=result<=Pi/2 
+atan(real) result(real)  arctangent  -Pi/2<=result<=Pi/2 
+atan(real_8) result(real_8)  arctangent  -Pi/2<=result<=Pi/2 
+atan2(y=real,x=real) result(real)  arctangent  -Pi<=result<=Pi
+atan2(y=real,x=real) result(real)  arctangent  -Pi<=result<=Pi
+bit_size(integer) result(integer)  size in bits in model of argument
+btest(i=integer,pos=integer) result(logical)  true if pos has a 1, pos=0..
+cabs(complex) result(real)  absolute value
+ccos(complex) result(complex)  cosine
+ceiling(real) result(real)  truncate to integer toward infinity
+ceiling(real) result(real)  truncate to integer toward infinity
+cexp(complex) result(complex)  e raised to a power
+char(integer [,kind=]) result(character)  integer to character [of kind]
+clog(complex) result(complex)  natural logarithm
+cmplx(x=real [,y=real] [kind=]) result(complex)  x+iy
+cmplx(x=real [,y=real] [kind=]) result(complex)  x+iy
+command_argument_count() number of command arguments
+conjg(complex) result(complex)  reverse the sign of the imaginary part
+conjg(complex) result(complex)  reverse the sign of the imaginary part
+cos(real_complex) result(real_complex)  cosine
+cos(real_complex) result(real_complex)  cosine
+cosh(real) result(real)  hyperbolic cosine
+cosh(real) result(real)  hyperbolic cosine
+count(mask [,dim=]) result(integer)  count of true entries in mask
+cpu_time(time) obtain processor time 3
+cshift(array,shift [,dim=]) circular shift elements of array, + is right
+csin(complex) result(complex)  sine of angle in radians
+csqrt(complex) result(complex)  square root of argument
+dabs(real_8) result(real_8)  absolute value
+dacos(real_8) result(real_8)  arccosine  |real| <= 1.0   0<=result<=Pi
+dasin(real_8) result(real_8)  arcsine  |real| <= 1.0   -Pi/2<=result<=Pi/2
+datan(x=real_8,y=real_8) result(real_8)  arctangent  -Pi<=result<=Pi
+datan2(y=real_8,x=real_8) result(real_8)  arctangent  -Pi<=result<=Pi
+date_and_time([date=] [,time=] [,zone=] [,values=])  y,m,d,utc,h,m,s,milli
+dble(integer_real_complex) result(real_kind_double)  convert to double
+dble(integer_real_complex) result(real_kind_double)  convert to double
+dcos(real_8) result(real_8)  cosine
+dcosh(real_8) result(real_8)  hyperbolic cosine
+ddim(x=real_8,y=real_8) result(real_8) proper subtraction
+dexp(real_8) result(real_8)  e raised to a power
+digits(integer_real) result(integer)  number of bits to represent model
+digits(integer_real) result(integer)  number of bits to represent model
+dim(x=integer_real,y=integer_real) result(integer_real) proper subtraction
+dim(x=integer_real,y=integer_real) result(integer_real) proper subtraction
+dint(real_8) result(real_8)  truncate to integer toward zero
+dlog(real_8) result(real_8)  natural logarithm
+dlog10(real_8) result(real_8)  logarithm base 10
+dmax1(real_8,...) result(real_8)  maximum of list of values
+dmin1(real_8,...) result(real_8)  minimum of list of values
+dmod(a=real_8,p) result(real_8)  a modulo p
+dnint(real_8) result(real_8)  round to nearest integer
+dot_product(vector_a,vector_b) result(integer_real_complex) inner product
+dot_product(vector_a,vector_b) result(integer_real_complex) inner product
+dprod(x=real,y=real) result(x_times_y_double)  double precision product
+dprod(x=real,y=real) result(x_times_y_double)  double precision product
+dsign(real_8,real_8) result(real_8) sign of second on first
+dsin(real_8) result(real_8)  sine of angle in radians
+dsinh(real_8) result(real_8)  hyperbolic sine of argument
+dsqrt(real_8) result(real_8)  square root of argument
+dtan(real_8) result(real_8)  tangent of angle in radians
+dtanh(real_8) result(real_8)  hyperbolic tangent of angle in radians
+eoshift(array,shift [,boundary=] [,dim=])  end-off shift using boundary
+epsilon(real) result(real)  smallest positive number added to 1.0 /= 1.0
+epsilon(real) result(real)  smallest positive number added to 1.0 /= 1.0
+exp(real_complex) result(real_complex)  e raised to a power
+exp(real_complex) result(real_complex)  e raised to a power
+exponent(real) result(integer)  the model exponent of the argument
+exponent(real) result(integer)  the model exponent of the argument
+extends_type_of(a, mold) same dynamic type or an extension
+float(integer[,kind=]) result(real)  convert to real
+floor(real) result(real)  truncate to integer towards negative infinity
+floor(real) result(real)  truncate to integer towards negative infinity
+fraction(real) result(real)  the model fractional part of the argument
+fraction(real) result(real)  the model fractional part of the argument
+get_command([command,length, status]) returns entire command
+get_command_argument(number[, value, length, status]) returns a command argument
+get_environment_variable(name[, value, length, status,trim name]) obtain the value of an environment variable
+huge(integer_real) result(integer_real)  the largest model number
+huge(integer_real) result(integer_real)  the largest model number
+iabs(integer) result(integer)  absolute value
+iachar(character) result(integer)  position of character in ASCII sequence
+iand(integer,integer) result(integer)  bit by bit logical and
+ibclr(integer,pos) result(integer)  argument with pos bit cleared to zero
+ibits(integer,pos,len) result(integer)  extract len bits starting at pos
+ibset(integer,pos) result(integer)  argument with pos bit set to one
+ichar(character) result(integer)  pos in collating sequence of character
+idim(x=integer,y=integer) result(integer) proper subtraction
+idint(real_8) result(integer)  convert to integer
+idnint(real_8) result(integer)  round to nearest integer value
+ieor(integer,integer) result(integer)  bit by bit logical exclusive or
+ifint(real) result(integer)  convert to integer
+ifix(real) result(integer)  convert to integer
+index(string,substring [,back=])  result(integer)  pos of substring
+int(integer_real_complex) result(integer)  convert to integer
+int(integer_real_complex) result(integer)  convert to integer
+ior(integer,integer) result(integer)  bit by bit logical or
+iqnint(real_16) result(integer)  round to nearest integer value
+ishft(integer,shift) result(integer)  shift bits in argument by shift
+ishftc(integer, shift) result(integer)  shift circular bits in argument
+isign(integer,integer) result(integer) sign of second on first
+kind(any_intrinsic_type) result(integer)  value of the kind
+lbound(array [, dim, kind]) result(integer) Lower dimension bounds of an array
+len(character) result(integer)  number of characters that can be in argument
+len_trim(character) result(integer)  length without trailing blanks
+lge(string_a,string_b) result(logical)  string_a>=string_b
+lgt(string_a,string_b) result(logical)  string_a>string_b
+lle(string_a,string_b) result(logical)  string_a<=string_b
+llt(string_a,string_b) result(logical)  string_a<= 1.0   0<=result<=Pi
+log(real_complex) result(real_complex)  natural logarithm
+log10(real) result(real)  logarithm base 10
+matmul(matrix,matrix) result(vector_matrix)  on integer_real_complex_logical
+max(a1,a2,a3,...) result(integer_real)  maximum of list of values
+max0(integer,...) result(integer)  maximum of list of values
+max1(real,...) result(integer)  maximum of list of values
+maxexponent(real) result(integer)  maximum exponent of model type
+maxloc(array [,mask=]) result(integer_vector)  indices in array of maximum
+maxval(array [,dim=] [,mask=])  result(array_element)  maximum value
+merge(tsource, fsource, mask) merge under mask
+min(a1,a2,a3,...) result(integer-real)  minimum of list of values
+min0(integer,...) result(integer)  minimum of list of values
+min1(real,...) result(integer)  minimum of list of values
+minexponent(real) result(integer)  minimum(negative) exponent of model type
+minloc(array [,mask=]) result(integer_vector)  indices in array of minimum
+minval(array [,dim=] [,mask=])  result(array_element)  minimum value
+mod(a=integer_real,p) result(integer_real)  a modulo p
+modulo(a=integer_real,p) result(integer_real)  a modulo p
+mvbits(from, frompos, len, to,topos) copies bits from one integer to another
+nearest(real,direction) result(real)  nearest value toward direction
+nint(real [,kind=]) result(integer)  round to nearest integer value
+not(i) bitwise complement
+null([mold]) returns disassociated or unallocated result
+pack(array, mask [, vector]) pack an array into an array of rank one under a mask
+precision(real) Decimal precision
+present(a) argument presence
+product(array [,dim=] [,mask=]) result(integer_real_complex)  product
+qint(real_16) result(real_16)  truncate to integer toward zero
+qnint(real_16) result(real_16)  round to nearest integer
+qsign(real_16,real_16) result(real_16) sign of second on first
+radix(integer_real) result(integer)  radix of integer or real model, 2
+random_number(harvest=real_out)  subroutine, uniform random number 0 to 1
+random_seed([size=] [,put=] [,get=])  subroutine to set random number seed
+range(integer_real_complex) result(integer_real)  decimal exponent of model
+real(integer_real_complex [,kind=]) result(real)  convert to real
+repeat(string, ncopies) Repeated concatenation
+reshape(source, shape[, pad,order]) reshape an array
+rrspacing(real) result(real)  reciprocal of relative spacing of model
+same_type_as(a, b) same dynamic type
+scale(real,integer) result(real)  multiply by  2**integer
+scan(string, set [, back, kind]) Scan a string for a character in a set
+selected_char_kind(name) Character kind type parameter value, given character set name 
+selected_int_kind(r) Integer kind type parameter value, given range
+selected_real_kind([p, r]) Real kind type parameter value, given precision and range
+set_exponent(real,integer) result(real)  put integer as exponent of real
+shape(source [, kind]) Shape of an array or scalar
+sign(integer_real,integer_real) result(integer_real) sign of second on first
+sin(real_complex) result(real_complex)  sine of angle in radians
+sinh(real) result(real)  hyperbolic sine of argument
+sngl(real_8) result(real)  convert to real
+spacing(real) result(real)  spacing of model numbers near argument
+spread(source, dim, ncopies) replicates array by adding a dimension
+sqrt(real_complex) result(real_complex)  square root of argument
+sum(array [,dim=] [,mask=]) result(integer_real_complex)  sum of elements
+system_clock([count,count rate, count max]) obtain data from the system clock
+tan(real) result(real)  tangent of angle in radians
+tanh(real) result(real)  hyperbolic tangent of angle in radians
+tiny(real) result(real)  smallest positive model representation
+transfer(source, mold [, size]) Treat first argument as if of type of second argument 
+transpose(matrix) result(matrix)  the transpose of a matrix
+trim(string) Remove trailing blank characters
+ubound(array [, dim, kind]) result(integer) Upper dimension bounds of an array
+unpack(vector, mask, field) unpack an array of rank one into an array under a mask
+verify(string, set [, back, kind]) Verify the set of characters in a string
