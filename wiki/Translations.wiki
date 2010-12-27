@@ -44,7 +44,7 @@ To use one of these translations, download the file, rename to "locale.propertie
 </li>
 <li><a href="http://h12u.com/scixx/">Japanese</a>
 </li>
-<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.ko_KR.properties">Korean 1.57</a>
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.ko_KR.properties">Korean 2.21</a>
 </li>
 <li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.ms.properties">Malaysian 1.73</a>
 </li>
