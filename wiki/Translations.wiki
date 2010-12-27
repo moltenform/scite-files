@@ -2,7 +2,7 @@
 
 = Set language =
 
-To set the language, download a properties file, place it in the SciTE directory, and rename it locale.properties. The next time that you run SciTE, the menus will be translated. 
+To use one of these translations, download the file, rename to "locale.properties" and move into the SciTE directory. Most recent version that changed locale.properties is 2.21.
 
 = Language files =
 <ul><li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.af.properties">Afrikaans 1.73</a></li><li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/win1256/locale.ar.properties">Arabic 1.73</a> (Windows-1256)</li>
@@ -84,7 +84,7 @@ To set the language, download a properties file, place it in the SciTE directory
 = Creating a locale file =
 The menus and dialogs can be translated into another language by modifying the [http://www.scintilla.org/locale.properties locale.properties] file which should be stored in the same directory as the global properties.
 
-If you translate SciTE, please make the translation available to others. You can either put it on your own web server and include a link on this page or add it as a file in this group.
+If you translate SciTE, please make the translation available to others. E-mail the maintainer of this page, scitewiki at gmail dot com, so that it can be hosted here.
 
 The file names should use [http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes ISO 639-1 language codes].
 
