@@ -7,6 +7,9 @@ abaqus, asn1, au3, freebasic, blitzbasic, bullant, cobol, cmake, csound, flagshi
 
 == User-contributed properties ==
 
+<h5>Python</h5>
+<ul>
+<li>[Customization_PythonDebug Python debugging in SciTE]</li></ul>
 
 <h5>APDL </h5>
 <ul>
@@ -23,11 +26,9 @@ abaqus, asn1, au3, freebasic, blitzbasic, bullant, cobol, cmake, csound, flagshi
 <h5>Batch Scripting (Windows)</h5>
 <ul>
 <li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/batch_api.zip">Batch API Files</a> (API files for NT, XP/2003, GNUWin32 and SysInternals commands)</li></ul>
-<h5>C </h5>
+<h5>C, C++</h5>
 <ul>
-<li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/c.api">C standard library</a></li></ul>
-<h5>C++ </h5>
-<ul>
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/c.api">C standard library</a></li>
 <li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/cpp.api.zip">Windows API</a>
 </li><li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/opengl.zip">OpenGL API</a>
 </li><li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/glut.zip" style="text-decoration: none;">Glut API</a></li></ul>
