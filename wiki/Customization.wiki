@@ -37,8 +37,7 @@ abaqus, asn1, au3, freebasic, blitzbasic, bullant, cobol, cmake, csound, flagshi
 </li><li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/glut.zip" style="text-decoration: none;">Glut API</a></li></ul>
 <h5>C# </h5>
 <ul>
-<li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/Csharp_api.zip">C# api.</a></li>
-<li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/csgenapi.zip">C# API file and generator program.</a></li></ul>
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/Csharp_api.zip">C# api.</a></li></ul>
 <h5>CIL </h5>
 <ul>
 <li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/il.properties">Properties for CIL/MSIL</a></li></ul>
@@ -117,10 +116,10 @@ Other relevant settings are <tt>calltip.cpp.ignorecase</tt> and
 == How to make .api files for your own sources ==
 From the Scite documentation:
 
-  * For C/C++ headers, an API file can be generated using [http://ctags.sourceforge.net/ ctags] and then the [http://www.scintilla.org/tags2api.py tags2api] Python script (which assumes C/C++ source) on the tags file to grab complete multiple line function prototypes. Some common headers surround parameter lists with a __P macro and may have comments. The [http://www.scintilla.org/cleanapi.cc cleanapi] utility may be used on these files.
+  * For C/C++ headers, an API file can be generated using [http://ctags.sourceforge.net/ ctags] and then the [http://scite-files.googlecode.com/svn-history/trunk/extras/makeapi/tags2api.py tags2api] Python script (which assumes C/C++ source) on the tags file to grab complete multiple line function prototypes. Some common headers surround parameter lists with a __P macro and may have comments. The [http://scite-files.googlecode.com/svn-history/trunk/extras/makeapi/cleanapi.cc cleanapi] utility may be used on these files.
 
   * To generate an API file for Python modules, there is a [http://scite-files.googlecode.com/svn-history/trunk/extras/makeapi/gen_python_api.zip gen_python] script.
 
   * To generate an API file for Java classes, there is a [http://scite-files.googlecode.com/svn-history/trunk/extras/makeapi/java_ApiBuilder.java ApiBuilder.java] program.
-  * To generate an API file for C# classes, use genapi.cs in [here ].
+  * To generate an API file for C# classes, use <a href="http://scite-files.googlecode.com/svn-history/trunk/extras/csgenapi.zip">genapi.cs</a>.
   * To generate an API file for PHP, use [http://scintilla.sourceforge.net/phpapi.php.txt phpapi.php].
