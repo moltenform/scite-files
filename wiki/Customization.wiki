@@ -7,9 +7,19 @@ abaqus, asn1, au3, freebasic, blitzbasic, bullant, cobol, cmake, csound, flagshi
 
 == User-contributed properties ==
 
+<h5>C, C++</h5>
+<ul>
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/c.api">C standard library</a></li>
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/c_withdoc.zip">C standard library</a> with short doc strings</li>
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/cpp.api.zip">Windows API</a>
+</li><li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/opengl.zip">OpenGL API</a>
+</li><li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/glut.zip" style="text-decoration: none;">Glut API</a></li></ul>
+
 <h5>Python</h5>
 <ul>
-<li>[Customization_PythonDebug Python debugging in SciTE]</li></ul>
+<li>[Customization_PythonDebug Python debugging in SciTE]</li>
+<li>In Windows, to run a python script, you may need to edit python.properties,<br/> e.g. change the line <tt>command.go.`*`.py=pythonw</tt> to <tt>command.go.`*`.py=c:\Python26\pythonw</tt>.</li>
+</ul>
 
 <h5>APDL </h5>
 <ul>
@@ -28,13 +38,6 @@ abaqus, asn1, au3, freebasic, blitzbasic, bullant, cobol, cmake, csound, flagshi
 <h5>Batch Scripting (Windows)</h5>
 <ul>
 <li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/batch_api.zip">Batch API Files</a> (API files for NT, XP/2003, GNUWin32 and SysInternals commands)</li></ul>
-<h5>C, C++</h5>
-<ul>
-<li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/c.api">C standard library</a></li>
-<li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/c_withdoc.zip">C standard library</a> with short doc strings</li>
-<li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/cpp.api.zip">Windows API</a>
-</li><li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/opengl.zip">OpenGL API</a>
-</li><li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/glut.zip" style="text-decoration: none;">Glut API</a></li></ul>
 <h5>C# </h5>
 <ul>
 <li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/Csharp_api.zip">C# api.</a></li></ul>
@@ -104,6 +107,7 @@ Please see <a href="http://www.yuvcom.com/progress4gl">http://www.yuvcom.com/pro
 <li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/Windows_scripting.zip">Properties files.</a></li>
 <li><a href="http://dev.remotenetworktechnology.com/SciTE/index.htm">More files and scripts.</a></li></ul>
 
+To contribute a file to this list, e-mail the maintainer of this page, scitewiki at gmail dot com, so that it can be hosted here. 
 
 == How to install a .properties file ==
 A .properties file allows you to set up highlighting of keywords, and commands for the Tools menu, for a file type. To install such a file, for example "ahk.properties", place the ahk.properties file in the SciTE directory. Then, edit the Global Options file or User Options file and add the line "import ahk". 
