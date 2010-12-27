@@ -19,7 +19,7 @@ abaqus, asn1, au3, freebasic, blitzbasic, bullant, cobol, cmake, csound, flagshi
 <li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/ahk.properties">AutoHotkey properties</a></li></ul>
 <h5>Auto It3 </h5>
 <ul>
-<li><a href="http://www.autoitscript.com/autoit3/scite">SciTE4AutoIt3 Website containing AutoIt3 related properties and API files.</a></li></ul>
+<li><a href="http://www.autoitscript.com/autoit3/scite">SciTE4AutoIt3 Website containing Auto It3 related properties and API files.</a></li></ul>
 <h5>Batch Scripting (Windows)</h5>
 <ul>
 <li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/batch_api.zip">Batch API Files</a> (API files for NT, XP/2003, GNUWin32 and SysInternals commands)</li></ul>
@@ -48,7 +48,9 @@ abaqus, asn1, au3, freebasic, blitzbasic, bullant, cobol, cmake, csound, flagshi
 <li><a href="http://www.burgaud.com/scite.php">Java API and Java Help</a></li></ul>
 <h5>Lua </h5>
 <ul>
-<li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/lua5api.zip">Lua 5.0 C API and Lua functions</a></li></ul>
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/lua5api.zip">Lua 5.0 C API and Lua functions</a></li>
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/SciTELua.api">Api for SciTE Lua scripts</a></li>
+</ul>
 <h5>Microsoft SQL </h5>
 <ul>
 <li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/mssql.properties">Replaces sql.properties</a></li></ul>
@@ -61,7 +63,8 @@ abaqus, asn1, au3, freebasic, blitzbasic, bullant, cobol, cmake, csound, flagshi
 <p><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/octave.api">octave.api</a></p></li></ul>
 <h5>Oracle </h5>
 <ul>
-<li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/sql.properties_ext">Extended properties file</a> with additional keywords and standard package names.</li></ul>
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/sql.properties_ext">Extended properties file</a> with additional keywords and standard package names.</li>
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/sql_plsql-API.0.1.zip">sql plsql</a> properties file.</li></ul>
 <h5>Pascal / Delphi</h5><ul><li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/pascal.api">API</a> </li><li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/pascal.abbrev">Abbreviations</a> </li></ul><h5>Perl </h5>
 <ul>
 <li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/perl.api">Perl API</a></li></ul>
@@ -78,9 +81,9 @@ abaqus, asn1, au3, freebasic, blitzbasic, bullant, cobol, cmake, csound, flagshi
 <h5>Progress</h5>
 <ul>
 <li>
-<h5><a  href="http://scite-files.googlecode.com/svn-history/trunk/extras/progress.properties">Progress properties</a></h5>
+<a href="http://scite-files.googlecode.com/svn-history/trunk/extras/progress.properties">Progress properties</a>
 </li><li>
-<p>The author original properties files, made for Notepad++. Please see <a href="http://www.yuvcom.com/progress4gl">http://www.yuvcom.com/progress4gl</a> for more information.</p></li></ul>
+Please see <a href="http://www.yuvcom.com/progress4gl">http://www.yuvcom.com/progress4gl</a> for more information.</li></ul>
 <h5>SDL </h5>
 <ul><li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/sdl.api">SDL API</a></li></ul>
 <h5>TADS3 </h5>
