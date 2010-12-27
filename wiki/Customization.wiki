@@ -16,7 +16,9 @@ abaqus, asn1, au3, freebasic, blitzbasic, bullant, cobol, cmake, csound, flagshi
 <li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/apdl.zip">APDL properties and API</a></li></ul>
 <h5>ASP </h5>
 <ul>
-<li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/asp.api">ASP API methods</a></li></ul>
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/asp.api">ASP API methods</a></li>
+<li>Set asp.default.language in html.properties to choose between VbScript or JScript in asp block.</li>
+</ul>
 <h5>Auto Hotkey </h5>
 <ul>
 <li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/ahk.properties">AutoHotkey properties</a></li></ul>
@@ -85,6 +87,9 @@ abaqus, asn1, au3, freebasic, blitzbasic, bullant, cobol, cmake, csound, flagshi
 <a href="http://scite-files.googlecode.com/svn-history/trunk/extras/progress.properties">Progress properties</a>
 </li><li>
 Please see <a href="http://www.yuvcom.com/progress4gl">http://www.yuvcom.com/progress4gl</a> for more information.</li></ul>
+<h5>Ruby </h5>
+<ul>
+<li>Ruby comes with a build of SciTE. Scripts and information are here.</li></ul>
 <h5>SDL </h5>
 <ul><li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/sdl.api">SDL API</a></li></ul>
 <h5>TADS3 </h5>
