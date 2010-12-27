@@ -1,0 +1,157 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<!-- saved from http://oldwiki.rubyonrails.org/rails/pages/Scite, 12/27/10-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Scite in Ruby on Rails</title>
+
+  
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+  <link href="http://oldwiki.rubyonrails.org/rails/feed.rss" rel="alternate" title="RSS" type="application/rss+xml" />
+
+  <style type="text/css">
+    h1#pageName, .newWikiWord a, a.existingWikiWord, .newWikiWord a:hover, #TextileHelp h3 { 
+      color: #393; 
+    }
+
+    #Container, #Content {
+      width: 600px;
+    }
+  </style>
+
+  <link href="/stylesheets/instiki.css" media="screen" rel="Stylesheet" type="text/css" />
+  <link href="/stylesheets/captcha.css" media="screen" rel="Stylesheet" type="text/css" />
+  <style type="text/css"></style>
+</head>
+
+<body>
+  <div id="Container">
+    <div id="Header">
+      <div id="Nav">
+        <img alt="Favicon" height="16" src="/images/favicon.png" width="16" />
+        <a href="http://www.rubyonrails.org/">Ruby on Rails</a> |
+        <a href="http://www.rubyonrails.org/screencasts">Screencasts</a> |
+        <a href="http://www.rubyonrails.org/down">Download</a> |
+        <a href="http://www.rubyonrails.org/docs">Documentation</a> |
+        <a href="http://weblog.rubyonrails.org/">Weblog</a> |
+        <a href="http://www.rubyonrails.org/community" class="current">Community</a> |
+        <a href="http://dev.rubyonrails.org/">Source</a>
+      </div>
+    </div>
+    
+    <div id="Content">
+      <div id="i2Nav">
+        <h1 id="pageName"><small>Ruby on Rails</small><br />Scite</h1>
+        <form class="navigation" id="navigationForm">
+          <a href="http://oldwiki.rubyonrails.org/rails">Home Page</a> |
+          <a href="http://oldwiki.rubyonrails.org/rails/pages">All Pages</a> |
+          <a href="http://oldwiki.rubyonrails.org/rails/recent">Recently Revised</a> |
+          <a href="http://oldwiki.rubyonrails.org/rails/feed.rss">Feed</a>
+        </form>
+      </div>
+
+      
+
+<h2>About SciTE</h2>
+<p>SciTE is a Scintilla-based Text Editor written for Windows and Linux/UN*X. It is included in some versions of Ruby.</p>
+<h2>SciTE on Windows</h2>
+<p>After Ruby has been installed using the <a href="http://rubyforge.org/projects/rubyinstaller/">One-Click Installer</a> , SciTE is installed (by default) in C:\Ruby\Scite. Here are some tips for using SciTE on Windows.</p>
+<p>Create a file named <code>e.bat</code> or <code>scite.bat</code> in your <code>C:\Windows</code> directory containing the lines:<br />
+<code>@ECHO OFF
+START c:\ruby\scite\scite.exe "%1"
+</code></p>
+<p>This will allow you to type <code>e myfile</code> or <code>scite myfile</code> on the command line to open up the file <code>myfile</code> for editing.</p>
+<h2>Abbreviations in SciTE</h2>
+<p>This section contains some useful abbreviations that can be added to the <code>abbrev.properties</code> file.</p>
+<pre>
+rea=redirect_to :action =&gt; "|"
+rec=redirect_to :controller =&gt; "|"
+lic=&lt;%= link_to "|", :controller =&gt; "" %&gt;
+lia=&lt;%= link_to "|", :action =&gt; "" %&gt;
+</pre>
+<p>Hopefully in the future, SciTE will support <a href="http://oldwiki.rubyonrails.org/rails/pages/TextMate" class="existingWikiWord">TextMate</a>-style snippets that allow the user to tab between fields in a statement (see <a href="http://wiki.43folders.com/index.php/TextMate#Snippets">this page</a> for more info)</p>
+<p>category: <a href="http://oldwiki.rubyonrails.org/rails/pages/Glossary" class="existingWikiWord">Glossary</a></p>
+<hr />
+<p>Anyone who has syntax hilighting for rhtml/rjs files? Please :-)<br />
+<hr /><br />
+Here is how I&#8217;ve set up Scite for Rails development</p>
+<p>To the file .SciTEUser.properties in your home directory, add the following:</p>
+<pre>
+command.name.3.$(file.patterns.rb)=beautify
+command.3.$(file.patterns.rb)=/usr/local/bin/rbeautify.rb  $(FilePath)
+command.is.filter.3.$(file.patterns.rb)=1
+</pre>
+<p>This adds a command ctrl-3 to &#8220;pretty print&#8221; your ruby source code. This is very useful to keep your code nicely formatted. You will need <b>rbeautify.rb</b> , an executable shell script in your path. You can find rbeautify.rb<br />
+here:</p>
+<p><a href="http://vbs.arachnoid.com/ruby/rbeautify.rb.html">rbeautify.rb</a></p>
+<p>Be sure <b>rbeautfiy.rb</b> is in your path and is executable and that the first line of rbeautify.rb is pointing to ruby.</p>
+<p>Also be sure you have <b>ruby.properties</b> in your scite directory which is found at:</p>
+<p>/usr/local/share<br />
+or<br />
+/sw/share   (Mac OS X with Fink Linux)</p>
+<p>Also see this excellent article:</p>
+<p><a href="http://beans.seartipy.com/2006/08/29/develop-ruby-applications-using-scite-editor/">Develop Ruby Applications Using SciTE ditor</a></p>
+<p><b>ruby.properties</b> is installed when you install scite (I believe).</p>
+<p>Regards, John Rothfield<br />
+ <a href="mailto:john@rothfield.com">john@rothfield.com</a><br />
+&#8212;-</p>
+<p><a href="http://caladbolg.net/scite.php">TextMate-style snippets for SciTE do exist</a>.</p>
+<p style="text-align:right;">Civ2boss, 07/27/06, 12:42 AM</p>
+<p>Thanks John, very nice pretty print tool, Mancy</p>
+<p>&#8212;&#8212;&#8212;&#8212;-</p>
+<p>Tip on (almost) TextMate style file management using SciTe and Windows explorer.</p>
+<p>Associate .rb, .irb, and if you want .yml and .log files with SciTe using explorer Tools&gt;Folder Options&gt;File Types or the following commands:</p>
+<pre>
+ftype RB="&lt;your SciTe path&gt;" 
+ftype IRB="&lt;your SciTe path&gt;" 
+ftype YML="&lt;your SciTe path&gt;" 
+ftype LOG="&lt;your SciTe path&gt;" 
+
+
+assoc .rb=RB
+assoc .irb=IRB
+assoc .yml=YML
+assoc .log=LOG
+</pre>
+<p>In the SciTe options file of your preference (global, local or user) add the following line:</p>
+<pre>
+check.if.already.open=1
+</pre>
+<p>This will reuse existing SciTe session when files are opened directly in explorer or from the command line.</p>
+<p>Launch explorer from the Run box or command line using the following command:</p>
+<pre>
+explorer /root,&lt;your rails app root&gt;</pre>e.g. <pre>explorer /root,&#8220;C:\My Rails Apps\google_killer&#8221;
+<p></pre></p>
+<p>This will launch explorer with your app directory as the root folder.</p>
+<p>In explorer hide all toolbars and explorer bars via View menu and show the Folders explorer bar. This will allow you to use the Tab key to quickly switch between the Folders bar and the file list.</p>
+<p>From here on you can Alt-Tab between SciTe and explorer. When in explorer, if necessary, hit Tab twice to switch focus to Folders bar and start typing directory name like &#8220;models&#8221;, and once models directory is highlighted, hit tab and start typing the filename you need. Another trick is to expand all commonly used directories in Folders view, thus allowing direct jump to a subdirectory by typing it&#8217;s name.</p>
+<p>You can now focus more on your app and less on Mac/TextMate fantasies.</p>
+
+<div class="byline">
+  Updated
+  on September 02, 2008 21:42 
+  by <a href="http://oldwiki.rubyonrails.org/rails/pages/Anonymous+Coward">Anonymous Coward</a> (66.108.62.180)
+</div>
+
+<div class="navigation">
+  <a href="/rails/pages/Scite/versions/new">Edit</a>
+
+  
+    | 
+    <a href="http://oldwiki.rubyonrails.org/rails/pages/Scite/versions/37" class="navlink">Back in time</a>
+    <small>(37 older versions)</small>
+  
+</div>
+
+      <div id="footer">
+        <p><a href="http://instiki.org/">i2</a> on <a href="http://rubyonrails.com/">Rails</a>,
+        powered by <a href="http://www.modrails.com/">Phusion Passenger&trade;</a> and
+        <a href="http://www.rubyenterpriseedition.com/">Ruby Enterprise Edition</a>.</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
