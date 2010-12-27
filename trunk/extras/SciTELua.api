@@ -1,0 +1,442 @@
+AddRefDocument(int pDocPointer)\n Create a new document object. Starts with reference count of 1 and not selected into editor. Extend life of document
+AddSelection(int caret, int anchor) = int length\n Add a selection
+AddStyledText(int length, cells c)\n Add array of cells to document
+AddText(string text)\n Add text to the document at current position
+AddUndoAction(int token, int flags)\n Add a container action to the undo stack
+Allocate(int bytes)\n Enlarge the document to a particular size of text bytes
+AnnotationClearAll()\n Clear the annotations from all lines
+AnnotationGetStyles(int line) = string styles, int length\n Get the annotation styles for a line
+AnnotationGetText(int line) = string text, int length\n Get the annotation text for a line
+AnnotationSetStyles(int line, string styles)\n Set the annotation styles for a line
+AnnotationSetText(int line, string text)\n Set the annotation text for a line
+AppendText(string text)\n Append a string to the end of the document without changing the selection
+AssignCmdKey(int keyCode, int keyModifier, int sciCommand)\n When key+modifier combination km is pressed perform msg
+AutoCActive() = bool\n Is there an auto-completion list visible?
+AutoCCancel()\n Remove the auto-completion list from the screen
+AutoCComplete()\n User has selected an item so remove the list and insert the selection
+AutoCGetCurrent() = int itemPos\n Get currently selected item position in the auto-completion list
+AutoCGetCurrentText() = string text, int length\n Get currently selected item text in the auto-completion list. Returns the length of the item text
+AutoCPosStart() = int pos\n Retrieve the position of the caret when the auto-completion list was displayed
+AutoCSelect(string select | int select)\n Select the item in the auto-completion list that starts with a string
+AutoCShow(int lenEntered, string itemList)\n Display a auto-completion list. The lenEntered parameter indicates how many characters before the caret should be used to provide context
+AutoCStops(string charSet)\n Define a set of character that when typed cancel the auto-completion list
+BackTab()\n Dedent the selected lines
+BeginUndoAction()\n Start a sequence of actions that is undone and redone as a unit. May be nested
+BraceBadLight(int posStart)\n Highlight the character at a position indicating there is no matching brace
+BraceHighlight(int posStart, int posEnd)\n Highlight the characters at two positions
+BraceMatch(int pos) = int pos\n Find the position of a matching brace or INVALID_POSITION if no match
+CallTipActive() = bool\n Is there an active call tip?
+CallTipCancel()\n Remove the call tip from the screen
+CallTipPosStart() = int pos\n Retrieve the position where the caret was before displaying the call tip
+CallTipSetHlt(int hlStart, int hlEnd)\n Highlight a segment of the definition
+CallTipShow(int posStart, string definition)\n Show a call tip containing a definition near position pos
+Cancel()\n Cancel any modes such as call tip or auto-completion list display
+ChangeLexerState(int posStart, int posEnd) = int\n Indicate that the internal state of a lexer has changed over a range and therefore there may be a need to redraw
+CanPaste() = bool\n Will a paste succeed?
+CanRedo() = bool\n Are there any redoable actions in the undo history?
+CanUndo() = bool\n Are there any undoable actions in the undo history?
+CharLeft()\n Move caret left one character
+CharLeftExtend()\n Move caret left one character extending selection to new caret position
+CharLeftRectExtend()\n Move caret left one character, extending rectangular selection to new caret position
+CharPositionFromPoint(int x, int y) = int pos\n Find the position of a character from a point within the window
+CharPositionFromPointClose(int x, int y) = int pos\n Find the position of a character from a point within the window.Return INVALID_POSITION if not close to text
+CharRight()\n Move caret right one character
+CharRightExtend()\n Move caret right one character extending selection to new caret position
+CharRightRectExtend()\n Move caret right one character, extending rectangular selection to new caret position
+ChooseCaretX()\n Set the last x chosen value to be the caret x position
+Clear()\n Clear the selection
+ClearAll()\n Delete all text in the document
+ClearAllCmdKeys()\n Drop all key mappings
+ClearCmdKey(int keyCode, int keyModifier)\n When key+modifier combination km is pressed do nothing
+ClearDocumentStyle()\n Set all style bytes to 0, remove all folding information
+ClearRegisteredImages()\n Clear all the registered XPM images
+ClearSelections()\n Clear selections to a single empty stream selection
+Colourise(int posStart, int posEnd)\n Colourise a segment of the document using the current lexing language
+ConvertEOLs(int eolMode)\n Convert all line endings in the document to one mode
+Copy()\n Copy the selection to the clipboard
+CopyAllowLine()\n Copy the selection, if selection empty copy the line with the caret
+CopyRange(int posStart, int posEnd)\n Copy a range of text to the clipboard. Positions are clipped into the document
+CopyText(string clipText | int clipText)\n Copy argument text to the clipboard
+CreateDocument() = int\n Create a new document object. Starts with reference count of 1 and not selected into editor
+Cut()\n Cut the selection to the clipboard
+DeleteBack()\n Delete the selection or if no selection, the character before the caret
+DeleteBackNotLine()\n Delete the selection or if no selection, the character before the caret. Will not delete the character before at the start of a line
+DescribeKeyWordSets() = string descriptions, int length\n Retrieve a '\n' separated list of descriptions of the keyword sets understood by the current lexer
+DescribeProperty(string name) = string description, int length\n Describe a property
+DelLineLeft()\n Delete back from the current position to the start of the line
+DelLineRight()\n Delete forwards from the current position to the end of the line
+DelWordLeft()\n Delete the word to the left of the caret
+DelWordRight()\n Delete the word to the right of the caret
+DelWordRightEnd()\n Delete the word to the right of the caret, but not the trailing non-word characters
+DocLineFromVisible(int lineDisplay) = int\n Find the document line of a display line taking hidden lines into account
+DocumentEnd()\n Move caret to last position in document
+DocumentEndExtend()\n Move caret to last position in document extending selection to new caret position
+DocumentStart()\n Move caret to first position in document
+DocumentStartExtend()\n Move caret to first position in document extending selection to new caret position
+EditToggleOvertype()\n Switch from insert to overtype mode or the reverse
+EmptyUndoBuffer()\n Delete the undo history
+EncodedFromUTF8(string utf8, string encoded) = int length\n Translates a UTF8 string into the document encoding. Return the length of the result in bytes. On error return 0
+EndUndoAction()\n End a sequence of actions that is undone and redone as a unit
+EnsureVisible(int line)\n Ensure a particular line is visible by expanding any header line hiding it
+EnsureVisibleEnforcePolicy(int line)\n Ensure a particular line is visible by expanding any header line hiding it. Use the currently set visibility policy to determine which range to display
+FindColumn(int line, int column) = int pos\n Find the position of a column on a line taking into account tabs and multi-byte characters. If beyond end of line, return line end position
+FormatRange(bool draw, formatrange fr)\n On Windows, will draw the document into a display context such as a printer
+FormFeed()\n Insert a Form Feed character
+GetCurLine() = string text, int caretPos\n Retrieve the text of the line containing the caret. Returns the index of the caret on the line
+GetHotspotActiveBack() = int colour\n Get the back colour for active hotspots
+GetHotspotActiveFore() = int colour\n Get the fore colour for active hotspots
+GetLastChild(int line, int level) = int line\n Find the last child line of a header line
+GetLexerLanguage() = string text, int length\n Get current lexer language
+GetLine(int line) = string text, int length\n Retrieve the contents of a line. Returns the length of the line
+GetLineSelEndPosition(int line) = int pos\n Retrieve the position of the end of the selection at the given line (INVALID_POSITION if no selection on this line)
+GetLineSelStartPosition(int line) = int pos\n Retrieve the position of the start of the selection at the given line (INVALID_POSITION if no selection on this line)
+GetProperty(key) = string value, int length\n Retrieve a "property" value previously set with Property
+GetPropertyExpanded(key) = string value, int length\n Retrieve a "property" value previously set with SetProperty, with "$()" variable replacement on returned buffer
+GetSelText() = string text, int length\n Retrieve the selected text. Return the length of the text
+GetStyledText(textrange tr) = int bytes\n Retrieve a buffer of cells. Returns the number of bytes in the buffer not including terminating NULs
+GetTag(int tagNumber) = string tagValue\n Retrieve the value of a tag from a regular expression search
+GetText() = string text, int length\n Retrieve all the text in the document. Returns number of characters retrieved
+GetTextRange(textrange tr) = int length\n Retrieve a range of text. Return the length of the text
+GotoLine(int line)\n Set caret to start of a line and ensure it is visible
+GotoPos(int pos)\n Set caret to a position and ensure it is visible
+GrabFocus()\n Set the focus to this Scintilla widget. GTK+ Specific
+HideLines(int lineStart, int lineEnd)\n Make a range of lines invisible
+HideSelection(bool hide)\n Draw the selection in normal style or with selection highlighted
+Home()\n Move caret to first position on line
+HomeDisplay()\n Move caret to first position on display line
+HomeDisplayExtend()\n Move caret to first position on display line extending selection to new caret position
+HomeExtend()\n Move caret to first position on line extending selection to new caret position
+HomeRectExtend()\n Move caret to first position on line, extending rectangular selection to new caret position
+HomeWrap()\n Similarly Home when word-wrap is enabled
+HomeWrapExtend()\n Similarly HomeExtend when word-wrap is enabled
+IndicatorAllOnFor(int pos) = int indicator\n Are any indicators present at position?
+IndicatorClearRange(int pos, int clearLength)\n Turn a indicator off over a range
+IndicatorEnd(int indicator, int pos) = int indicatorStart\n Where does a particular indicator end?
+IndicatorFillRange(int pos, int fillLength)\n Turn a indicator on over a range
+IndicatorStart(int indicator, int pos) = int indicatorEnd\n Where does a particular indicator start?
+IndicatorValueAt(int indicator, int pos) = 0|1\n What value does a particular indicator have at at a position?
+InsertText(int pos, string text)\n Insert string at a position. (position=-1 -> current position)
+LineCopy()\n Copy the line containing the caret
+LineCut()\n Cut the line containing the caret
+LineDelete()\n Delete the line containing the caret
+LineDown()\n Start of key messages Move caret down one line
+LineDownExtend()\n Move caret down one line extending selection to new caret position
+LineDownRectExtend()\n RectExtended rectangular selection moves Move caret down one line, extending rectangular selection to new caret position
+LineDuplicate()\n Duplicate the current line
+LineEnd()\n Move caret to last position on line
+LineEndDisplay()\n Move caret to last position on display line
+LineEndDisplayExtend()\n Move caret to last position on display line extending selection to new caret position
+LineEndExtend()\n Move caret to last position on line extending selection to new caret position
+LineEndRectExtend()\n Move caret to last position on line, extending rectangular selection to new caret position
+LineEndWrap()\n Similarly LineEnd when word-wrap is enabled
+LineEndWrapExtend()\n Similarly LineEndExtend when word-wrap is enabled
+LineFromPosition(int pos) = int line\n Retrieve the line containing a position
+LineLength(int line) = int length\n How many characters are on a line, not including end of line characters?
+LineScroll(int columns, int lines)\n Scroll horizontally and vertically
+LineScrollDown()\n Scroll the document down, keeping the caret visible
+LineScrollUp()\n Scroll the document up, keeping the caret visible
+LinesJoin()\n Join the lines in the target
+LinesSplit(int pixelWidth)\n Split the lines in the target into lines that are less wide than pixelWidth where possible
+LineTranspose()\n Switch the current line with the previous
+LineUp()\n Move caret up one line
+LineUpExtend()\n Move caret up one line extending selection to new caret position
+LineUpRectExtend()\n Move caret up one line, extending rectangular selection to new caret position
+LoadLexerLibrary(string path)\n Load a lexer library (dll / so)
+LowerCase()\n Transform the selection to lower case
+MarginGetStyles(int line) = string styles, int length\n Get the styles in the text margin for a line
+MarginGetText(int line) = string text, int length\n Get the text in the text margin for a line
+MarginSetStyles(int line, string styles)\n Set the style in the text margin for a lin
+MarginSetText(int line, string text)\n Set the text in the text margin for a line
+MarginTextClearAll()\n Clear the margin text on all lines
+MarkerAdd(int line, int markerNumber) = int markerID\n Add a marker to a line, returning an ID which can be used to find or delete the marker
+MarkerAddSet(int line, int markerNumber)\n Add a set of markers to a line
+MarkerDefine(int markerNumber, int markerSymbols)\n Set the symbol used for a particular marker number
+MarkerDefinePixmap(int markerNumber, string xpmData)\n Define a marker from a pixmap
+MarkerDelete(int line, int markerNumber)\n Delete a marker from a line
+MarkerDeleteAll(int markerNumber)\n Delete all markers with a particular number from all lines
+MarkerDeleteHandle(int markerHandle)\n Delete a marker
+MarkerGet(int line) = int\n Get a bit mask of all the markers set on a line
+MarkerLineFromHandle(int markerHandle) = int\n Retrieve the line number at which a particular marker is located
+MarkerNext(int lineStart, int markerMask) = int\n Find the next line after lineStart that includes a marker in mask
+MarkerPrevious(int lineStart, int markerMask) = int\n Find the previous line before lineStart that includes a marker in mask
+MarkerSetAlpha(int markerNumber, int colour)\n Set the alpha used for a marker that is drawn in the text area, not the margin
+MarkerSetBack(int markerNumber, colour back)\n Set the background colour used for a particular marker number
+MarkerSetFore(int markerNumber, colour fore)\n Set the foreground colour used for a particular marker number
+MarkerSymbolDefined(int markerNumber) = int\n Which symbol was defined for markerNumber with MarkerDefine
+MoveCaretInsideView()\n Move the caret inside current view if it's not there already
+NewLine()\n Insert a new line, may use a CRLF, CR or LF depending on EOL mode
+Null()\n Null operation
+PageDown()\n Move caret one page down
+PageDownExtend()\n Move caret one page down extending selection to new caret position
+PageDownRectExtend()\n Move caret one page down, extending rectangular selection to new caret position
+PageUp()\n Move caret one page up
+PageUpExtend()\n Move caret one page up extending selection to new caret position
+PageUpRectExtend()\n Move caret one page up, extending rectangular selection to new caret position
+ParaDown()\n Move caret between paragraphs (delimited by empty lines)
+ParaDownExtend()\n Move caret between paragraphs (delimited by empty lines)
+ParaUp()\n Move caret between paragraphs (delimited by empty lines)
+ParaUpExtend()\n Move caret between paragraphs (delimited by empty lines)
+Paste()\n Paste the contents of the clipboard into the document replacing the selection
+PointXFromPosition(int pos) = int\n Retrieve the x value of the point in the window where a position is displayed
+PointYFromPosition(int pos) = int\n Retrieve the y value of the point in the window where a position is displayed
+PositionAfter(int pos) = int pos\n Given a valid document position, return the next position taking code page into account. Maximum value returned is the last position in the document
+PositionBefore(int pos) = int pos\n Given a valid document position, return the previous position taking code page into account. Returns 0 if passed 0
+PositionFromLine(int line) = int pos\n Retrieve the position at the start of a line
+PositionFromPoint(int x, int y) = int pos\n Find the position from a point within the window
+PositionFromPointClose(int x, int y) = int pos\n Find the position from a point within the window but return INVALID_POSITION if not close to text
+PrivateLexerCall(int operation, int pointer) = int\n For private communication between an application and a known lexer
+PropertyNames() = string names, int length\n Retrieve a '\n' separated list of properties understood by the current lexer
+PropertyType(string name) = int type\n Retrieve the type of a property
+Redo()\n Redoes the next action on the undo history
+RegisterImage(int type, string xpmData)\n Register an XPM image for use in autocompletion lists
+ReleaseDocument(int pDocPointer)\n Create a new document object. Starts with reference count of 1 and not selected into editor.\n Extend life of document. Release a reference to the document, deleting document if it fades to black
+ReplaceSel(string text)\n Replace the selected text with the argument text
+ReplaceTarget(string replaceText | int replaceText) = int length\n Replace the target text with the argument text. Text is counted so it can contain NULs. Returns the length of the replacement text
+ReplaceTargetRE(string replaceText | int replaceText) = int length\n Replace the target text with the argument text after \d processing. Text is counted so it can contain NULs. Looks for \d where d is between 1 and 9 and replaces these with the strings matched in the last search operation which were surrounded by \( and \). Returns the length of the replacement text including any change caused by processing the \d patterns
+RotateSelection()\n Set the main selection to the next selection
+ScrollCaret()\n Ensure the caret is visible
+SearchAnchor()\n Sets the current caret position to be the search anchor
+SearchInTarget(string searchText) = int pos\n Search for a counted string in the target and set the target to the found range. Text is counted so it can contain NULs.\n Returns length of range or -1 for failure in which case target is not moved
+SearchNext(int flags, string text) = int pos\n Find some text starting at the search anchor. Does not ensure the selection is visible
+SearchPrev(int flags, string text) = int pos\n Find some text starting at the search anchor and moving backwards. Does not ensure the selection is visible
+SelectAll()\n Select all the text in the document
+SelectionDuplicate()
+SetCharsDefault()\n Reset the set of characters for whitespace and word characters to the defaults
+SetFoldFlags(int flags)\n Set some style options for folding
+SetFoldMarginColour(bool useSetting, colour back)\n Set the colours used as a chequerboard pattern in the fold margin
+SetFoldMarginHiColour(bool useSetting, colour fore)\n Set the colours used as a chequerboard pattern in the fold margin
+SetHotspotActiveBack(bool useSetting, colour back)\n Set and get a back colour for active hotspots
+SetHotspotActiveFore(bool useSetting, colour fore)\n Set and get a fore colour for active hotspots
+SetLengthForEncode(int bytes)\n Set the length of the utf8 argument for calling EncodedFromUTF8. Set to -1 and the string will be measured to the first nul
+SetLexerLanguage(string language)\n Set the lexing language of the document based on string name
+SetSavePoint()\n Remember the current position in the undo history as the position at which the document was saved
+SetSel(int posStart, int posEnd)\n Select a range of text
+SetSelBack(bool useSelectionBackColour, colour back)\n Set the background colour of the selection and whether to use this setting
+SetSelection(int caret, int anchor)\n Set a simple selection
+SetSelFore(bool useSelectionForeColour, colour fore)\n Set the foreground colour of the selection and whether to use this setting
+SetStyling(int length, int style)\n Change style from current styling position for length characters to a style and move the current styling position to after this newly styled segment.\n (style sample: INDIC1_MASK)
+SetStylingEx(int length, string styles)\n Set the styles for a segment of the document
+SetText(string text)\n Replace the contents of the document with the argument text
+SetVisiblePolicy(int caretPolicy, int caretSlop)\n Constants for use with SetVisiblePolicy, similar to SetCaretPolicy.\n Set the way the display area is determined when a particular line is to be moved to by Find, FindNext, GotoLine, etc
+SetWhitespaceBack(bool useWhitespaceBackColour, colour back)\n Set the background colour of all whitespace and whether to use this setting
+SetWhitespaceFore(bool useWhitespaceForeColour, colour fore)\n Set the foreground colour of all whitespace and whether to use this setting
+SetXCaretPolicy(int caretPolicy, int caretSlop)\n Set the way the caret is kept visible when going sideway. The exclusion zone is given in pixels
+SetYCaretPolicy(int caretPolicy, int caretSlop)\n Set the way the line the caret is on is kept visible. The exclusion zone is given in lines
+ShowLines(int lineStart, int lineEnd)\n Make a range of lines visible
+StartRecord()\n Start notifying the container of all key presses and commands
+StartStyling(int posStart, int mask)\n Set the current styling position to pos and the styling mask to mask. The styling mask can be used to protect some bits in each styling byte from modification. (mask sample: INDICS_MASK)\n
+StopRecord()\n Stop notifying the container of all key presses and commands
+StutteredPageDown()\n Move caret to bottom of page, or one page down if already at bottom of page
+StutteredPageDownExtend()\n Move caret to bottom of page, or one page down if already at bottom of page, extending selection to new caret position
+StutteredPageUp()\n Move caret to top of page, or one page up if already at top of page
+StutteredPageUpExtend()\n Move caret to top of page, or one page up if already at top of page, extending selection to new caret position
+StyleClearAll()\n Clear all the styles and make equivalent to the global default style
+StyleGetFont(int style) = string fontName, int length\n Returns the length of the fontName
+StyleResetDefault()\n Reset the default style to its state at startup
+SwapMainAnchorCaret()\n Swap that caret and anchor of the main selection
+Tab()\n If selection is empty or all on one line replace the selection with a tab character. If more than one line selected, indent the lines
+TargetAsUTF8(string) = int length\n Returns the target converted to UTF8. Return the length in bytes
+TargetFromSelection()\n Make the target range start and end be the same as the selection range start and end
+TextHeight(int line) = int height\n Retrieve the height of a particular line of text in pixels
+TextWidth(int styleNumber, string text) = int width\n Measure the pixel width of some text in a particular style. NUL terminated text argument. Does not handle tab or control characters
+ToggleCaretSticky()\n Switch between sticky and non-sticky: meant to be bound to a key
+ToggleFold(int line)\n Switch a header line between expanded and contracted
+Undo()\n Undo one action in the undo history
+UpperCase()\n Transform the selection to upper case
+UsePopUp(bool allowPopUp)\n Set whether a pop up menu is displayed automatically when the user presses the wrong mouse button
+UserListShow(int listType, string itemList)\n Display a list of strings and send notification when user chooses one
+VCHome()\n Move caret to before first visible character on line. If already there move to first character on line
+VCHomeExtend()\n Like VCHome but extending selection to new caret position
+VCHomeRectExtend()\n Move caret to before first visible character on line. If already there move to first character on line.\n In either case, extend rectangular selection to new caret position
+VCHomeWrap()
+VCHomeWrapExtend()
+VisibleFromDocLine(int line) = int\n Find the display line of a document line taking hidden lines into account
+WordEndPosition(int pos, bool onlyWordCharacters) = int\n Get position of end of word
+WordLeft()\n Move caret left one word
+WordLeftEnd()\n Move caret left one word, position cursor at end of word
+WordLeftEndExtend()\n Move caret left one word, position cursor at end of word, extending selection to new caret position
+WordLeftExtend()\n Move caret left one word extending selection to new caret position
+WordPartLeft()\n Move to the previous change in capitalisation
+WordPartLeftExtend()\n Move to the previous change in capitalisation. Move to the previous change in capitalisation extending selection to new caret position
+WordPartRight()\n Move to the previous change in capitalisation.\n Move to the previous change in capitalisation extending selection to new caret position.\n Move to the change next in capitalisation
+WordPartRightExtend()\n Move to the previous change in capitalisation.\n Move to the previous change in capitalisation extending selection to new caret position.\n Move to the change next in capitalisation.\n Move to the next change in capitalisation extending selection to new caret position
+WordRight()\n Move caret right one word
+WordRightEnd()\n Move caret right one word, position cursor at end of word
+WordRightEndExtend()\n Move caret right one word, position cursor at end of word, extending selection to new caret position
+WordRightExtend()\n Move caret right one word extending selection to new caret position
+WordStartPosition(int pos, bool onlyWordCharacters) = int\n Get position of start of word
+WrapCount(int line) = int\n The number of display lines needed to wrap a document line
+ZoomIn()\n Magnify the displayed text by increasing the sizes by 1 point
+ZoomOut()\n Make the displayed text smaller by decreasing the sizes by 1 point
+
+props[string name] = string value\n [RW] Set and get value from properties
+AdditionalCaretFore = colour\n [WO] Set the foreground colour of additional carets
+AdditionalCaretsBlink = bool\n [WO] Set whether additional carets will blink
+AdditionalCaretsVisible = bool\n [RW] Whether additional carets will blink\nSet whether additional carets are visible
+AdditionalSelAlpha = int alpha\n [RW] Set and get the alpha of the selection
+AdditionalSelBack = colour\n [WO] Set the background colour of additional selections
+AdditionalSelectionTyping = bool\n [RW] Set whether typing can be performed into multiple selections\nWhether typing can be performed into multiple selections
+AdditionalSelFore = colour\n [WO] Set the foreground colour of additional selections
+Anchor = int pos\n [RW] Set the selection anchor to a position. The anchor is the opposite end of the selection from the caret
+AnnotationLines = int line\n [RO] Get the number of annotation lines for a line
+AnnotationStyle[int line] = int styles\n [RW] Set and get the annotation styles for a line
+AnnotationStyleOffset = int style\n [RW] Get and get the start of the range of style numbers used for annotations
+AnnotationVisible = int\n [RW] Set and get the visibility for the annotations for a view
+AutoCAutoHide = bool autoHide\n [RW] Set whether or not autocompletion is hidden automatically when nothing matches
+AutoCCancelAtStart = bool cancel\n [RW] Should the auto-completion list be cancelled if the user backspaces to a position before where the box was created
+AutoCChooseSingle = bool chooseSingle\n [RW] Should a single item auto-completion list automatically choose the item
+AutoCDropRestOfWord = bool dropRestOfWord\n [RW] Set whether or not autocompletion deletes any word characters after the inserted text upon completion
+AutoCFillUps = string charSet\n Define a set of characters that when typed will cause the autocompletion to choose the selected item
+AutoCIgnoreCase = bool ignoreCase\n [RW] Set whether case is significant when performing auto-completion searches
+AutoCMaxHeight = int rowCount\n [RW] Set the maximum height, in rows, of auto-completion and user lists. The default is 5 rows
+AutoCMaxWidth = int characterCount\n [RW] Set the maximum width, in characters, of auto-completion and user lists. Set to 0 to autosize to fit longest item, which is the default
+AutoCSeparator = int separator\n [RW] Change the separator character in the string setting up an auto-completion list. Default is space but can be changed if items contain space
+AutoCTypeSeparator = int separatorChar\n [RW] Change the type-separator character in the string setting up an auto-completion list. Default is '?' but can be changed if items contain '?'
+BackSpaceUnIndents = bool bsUnIndents\n [RW] Sets whether a backspace pressed when caret is within indentation unindents
+BufferedDraw = bool isBuffered\n [RW] If drawing is buffered then each line of text is drawn into a bitmap buffer before drawing it to the screen to avoid flicker
+CallTipBack = int colour\n [WO] Set the background colour for the call tip
+CallTipFore = int colour\n [WO] Set the foreground colour for the call tip
+CallTipForeHlt = int colour\n [WO] Set the foreground colour for the highlighted part of the call tip
+CallTipUseStyle = int tabsize\n [WO] Enable use of STYLE_CALLTIP and set call tip tab size in pixels
+CaretFore = int colour\n [RW] Set the foreground colour of the caret
+CaretLineBack = int colour\n [RW] Set the colour of the background of the line containing the caret
+CaretLineBackAlpha = int alpha\n [RW] Set background alpha of the caret line
+CaretLineVisible = bool show\n [RW] Display the background of the line containing the caret in a different colour
+CaretPeriod = int milliseconds\n [RW] Get the time in milliseconds that the caret is on and off. 0 = steady on
+CaretSticky = int useCaretStickyBehaviour\n [RW] Stop the caret preferred x position changing when the user types
+CaretStyle = int style\n [RW] Set the style of the caret to be drawn\nReturns the current style of the caret
+CaretWidth = int pixels\n [RW] Set the width of the insert mode caret
+CharacterPointer = int\n [RO] Compact the document buffer and return a read-only pointer to the characters in the document
+CharAt[int pos] = int charValue\n [RO] Returns the character byte at the position
+CodePage = int codePage\n [RW] Set the code page used to interpret the bytes of the document as characters. The SC_CP_UTF8 value can be used to enter Unicode mode
+Column[int pos] = int column\n [RO] Retrieve the column number of a position, taking tab width into account
+ControlCharSymbol = int symbol\n [RW] Change the way control characters are displayed: If symbol is < 32, keep the drawn way, else, use the given character
+CurrentPos = int pos\n [RW] Sets the position of the caret
+Cursor = int curType\n [RW] Sets the cursor to one of the SC_CURSOR* values
+DirectFunction = int\n [RO] Retrieve a pointer to a function that processes messages for this Scintilla
+DirectPointer = int\n [RO] Retrieve a pointer value to use as the first argument when calling the function returned by DirectFunction
+DocPointer = int pDocPointer?\n [RW] Change the document object used
+EdgeColour = int colour\n [RW] Change the colour used in edge indication
+EdgeColumn = int column\n [RW] Set the column number of the edge. If text goes past the edge then it is highlighted
+EdgeMode = int edgeMode\n [RW] The edge may be displayed by a line (EDGE_LINE) or by highlighting text that goes beyond it (EDGE_BACKGROUND) or not displayed at all (EDGE_NONE)
+EndAtLastLine = bool endAtLastLine\n [RW] Sets the scroll range so that maximum scroll position has the last line at the bottom of the view (default). Setting this to false allows scrolling one page below the last line
+EndStyled = int pos\n [RO] Retrieve the position of the last correctly styled character
+EOLMode = int eolMode\n [RW] Set the current end of line mode
+ExtraAscent = int\n [RW] Set and get extra ascent for each line
+ExtraDescent = int\n [RW] Set and get extra descent for each line
+FirstVisibleLine = int lineDisplay\n [RW] Retrieve the display line at the top of the display. Scroll so that a display line is at the top of the display
+Focus = bool focus\n [RW] Change internal focus flag
+FoldExpanded[int line] = bool expanded\n [RW] Show the children of a header line
+FoldLevel[int line] = int level\n [RW] Set the fold level of a line. This encodes an integer level along with flags indicating whether the line is a header and whether it is effectively white space
+FoldParent[int startLine] = int line\n [RO] Find the parent line of a child line
+FontQuality = int\n [RW] Choose the quality level for text from the FontQuality enumeration\nRetrieve the quality level for text
+HighlightGuide = int column\n [RW] Set the highlighted indentation guide column. 0 = no highlighted guide
+HotspotActiveUnderline = bool underline\n [WO] Enable / Disable underlining active hotspots
+HotspotSingleLine = bool singleLine\n [WO] Limit hotspots to single line so hotspots on two lines don't merge
+HScrollBar = bool visible\n [RW] Show or hide the horizontal scroll bar
+Indent = int widthInChars\n [RW] Set the number of spaces used for one level of indentation
+IndentationGuides = bool view\n [RW] Show or hide indentation guides
+IndicAlpha[int markNumber] = int transparency\n [RW] Indicator (marker) fill alpha (0-255)
+IndicatorCurrent = int indicator\n [RW] Set and get the indicator used for IndicatorFillRange and IndicatorClearRange
+IndicatorValue = int value\n [RW] Set and get the value used for IndicatorFillRange
+IndicFore[int markNumber] = int colour\n [RW] Indicator (marker) fore colour
+IndicStyle[int markNumber] = int style\n [RW] Indicator (marker) style constants (INDIC_)
+IndicUnder[int markNumber] = bool\n [RW] Set an indicator to draw under text or over(default)\nRetrieve whether indicator drawn under or over text
+KeysUnicode = bool \n [RW] Always interpret keyboard input as Unicode
+KeyWords[int keyWordSet] = string keyWordList\n [WO] Set up the key words used by the lexer
+LayoutCache = int cacheMode\n [RW] Sets the degree of caching of layout information
+Length = int\n [RO] Returns the number of characters in the document
+Lexer = int lexer\n [RW] Set the lexing language of the document
+LineCount = int\n [RO] Returns the number of lines in the document. There is always at least one
+LineEndPosition[int line] = int pos\n [RO] Get the position after the last visible characters on a line
+LineIndentation[int line] = int indent\n [RW] Change the indentation of a line to a number of columns
+LineIndentPosition[int line] = int pos\n [RO] Retrieve the position before the first non indentation character on a line
+LinesOnScreen = int\n [RO] Retrieves the number of lines completely visible
+LineState[int line] = int value\n [RW] Used to hold extra styling information for each line
+LineVisible[int line] = bool visible\n [RO] Is a line visible?
+MainSelection = int selection\n [RW] Set the main selection\nWhich selection is the main selection
+MarginLeft = int pixels\n [RW] Sets the size in pixels of the left margin
+MarginMaskN[int margin] = int mask\n [RW] Set a mask that determines which markers are displayed in a margin
+MarginRight = int pixels\n [RW] Sets the size in pixels of the right margin
+MarginSensitiveN[int margin] = bool sensitive\n [RW] Make a margin sensitive or insensitive to mouse clicks
+MarginStyle[int line] = int style\n [RW] Set and get the style number for the text margin for a line
+MarginStyleOffset = int style\n [RW] Set and get the start of the range of style numbers used for margin text
+MarginTypeN[int margin] = int iType\n [RW] Set a margin to be either numeric or symbolic
+MarginWidthN[int margin] = int pixelWidth\n [RW] Set the width of a margin to a width expressed in pixels
+MaxLineState = int\n [RO] Retrieve the last line number that has line state
+ModEventMask = int eventMask\n [RW] Set which document modification events are sent to the container
+Modify = bool\n [RO] Is the document different from when it was last saved?
+MouseDownCaptures = bool captures\n [RW] Set whether the mouse is captured when its button is pressed
+MouseDwellTime = int\n [RO] Sets the time the mouse must sit still to generate a mouse dwell event
+MultiPaste = int multiPaste\n [RW] Change and retrieve the effect of pasting when there are multiple selections
+MultipleSelection = bool\n [RW] Set and get whether multiple selections can be made
+Overtype = bool\n [RW] Set to overtype (true) or insert mode
+PasteConvertEndings = bool\n [RW] Enable/Disable convert-on-paste for line endings
+PositionCache = int size\n [RW] Set number of entries in position cache\nHow many entries are allocated to the position cache?
+PrintColourMode = int mode\n [RW] Modify colours when printing for clearer printed text
+PrintMagnification = int magnification\n [RW] Sets the print magnification added to the point size of each style for printing
+PrintWrapMode = int wrapMode\n [RW] Set printing to line wrapped (SC_WRAP_WORD) or not line wrapped (SC_WRAP_NONE)
+Property[string key | int key] = string value | int value [WO] Set up a value that may be used by a lexer for some optional feature
+PropertyInt[string key | int key] = int value\n [RO] Retrieve a "property" value previously set with SetProperty, interpreted as an int AFTER any "$()" variable replacement
+ReadOnly = bool readOnly\n [RW] Set to read only or read write
+RectangularSelectionAnchor = int posAnchor\n [RW]
+RectangularSelectionAnchorVirtualSpace = int space\n [RW]
+RectangularSelectionCaret = int pos\n [RO]
+RectangularSelectionCaretVirtualSpace = int space\n [RW]
+RectangularSelectionModifier = int modifier\n [RW] On GTK+, allow selecting the modifier key to use for mouse-based\nrectangular selection. Often the window manager requires Alt+Mouse Drag for moving windows.\nValid values are SCMOD_CTRL(default), SCMOD_ALT, or SCMOD_SUPER
+ScrollWidth = int pixelWidth\n [RW] Sets the document width assumed for scrolling
+ScrollWidthTracking = bool tracking\n [RW] Sets whether the maximum width line displayed is used to set scroll width\nRetrieve whether the scroll width tracks wide lines
+SearchFlags = int searchFlags\n [RW] Set the search flags used by SearchInTarget
+SelAlpha = int\n [RW] Get or set the alpha of the selection
+SelectionEnd = int pos\n [RW] Sets the position that ends the selection - this becomes the currentPosition
+SelectionIsRectangle = bool\n [RO] Is the selection rectangular? The alternative is the more common stream selection
+SelectionMode = int mode\n [RW] Set the selection mode to stream (SC_SEL_STREAM) or rectangular (SC_SEL_RECTANGLE) or by lines (SC_SEL_LINES)
+SelectionNAnchor[int selection] = int pos\n [RW]
+SelectionNAnchorVirtualSpace[int selection] = int space\n [RW]
+SelectionNCaret[int selection] = int pos\n [RW]
+SelectionNCaretVirtualSpace[int selection] = int space\n [RW]
+SelectionNEnd[int selection] = int pos\n [RW] Sets the position that ends the selection - this becomes the currentPosition
+SelectionNStart[int selection] = int pos\n [RW] Sets and get the position that starts the selection - this becomes the anchor
+Selections = int\n [RO] How many selections are there?
+SelectionStart = int pos\n [RW] Sets the position that starts the selection - this becomes the anchor
+SelEOLFilled = bool filled\n [RW] Set the selection to have its end of line filled or not\nIs the selection end of line filled?
+Status = int\n [RW] Change error status - 0 = OK
+StyleAt[int pos] = int styleValue\n [RO] Returns the style byte at the position
+StyleBack[int StyleNumber] = int colour\n [WO] Set the background colour of a style
+StyleBits = int bits\n [RW] Divide each styling byte into lexical class bits (default: 5) and indicator bits (default: 3). If a lexer requires more than 32 lexical states, then this is used to expand the possible states
+StyleBitsNeeded = int\n [RO] Retrieve the number of bits the current lexer needs for styling
+StyleBold[int style] = bool\n [WO] Set a style to be bold or not
+StyleCase[int style] = int caseMode\n [WO] Set a style to be mixed case, or to force upper or lower case
+StyleChangeable[int style] = bool changeable\n [WO] Set a style to be changeable or not (read only). Experimental feature, currently buggy
+StyleCharacterSet[int style] = int charSet\n [WO] Set the character set of the font in a style
+StyleEOLFilled[int style] = bool\n [WO] Set a style to have its end of line filled or not
+StyleFont[int style] = string fontName\n [WO] Set the font of a style
+StyleFore[int style] = int colour\n [WO] Set the foreground colour of a style
+StyleHotSpot [int style] = bool\n [WO] Set a style to be a hotspot or not
+StyleItalic[int style] = bool\n [WO] Set a style to be italic or not
+StyleSize[int style] = int sizeInPoints\n [WO] Set the size of characters of a style
+StyleUnderline[int style] = bool\n [WO] Set a style to be underlined or not
+StyleVisible[int style] = bool\n [WO] Set a style to be visible or not
+TabIndents = bool tabIndents\n [RW] Sets whether a tab pressed when caret is within indentation indents
+TabWidth = int widthInChars\n [RW] Change the visible size of a tab to be a multiple of the width of a space character
+TargetEnd = int pos\n [RW] Sets the position that ends the target which is used for updating the document without affecting the scroll position
+TargetStart = int pos\n [RW] Sets the position that starts the target which is used for updating the document without affecting the scroll position
+TextLength = int\n [RO] Retrieve the number of characters in the document
+TwoPhaseDraw = bool\n [RW] In twoPhaseDraw mode, drawing is performed in two phases, first the background and then the foreground. This avoids chopping off characters that overlap the next run
+UndoCollection = bool\n [RW] Choose between collecting actions into the undo history and discarding them
+UsePalette = bool allowPaletteUse\n [RW] In palette mode, Scintilla uses the environment's palette calls to display more colours. This may lead to ugly displays
+UseTabs = bool useTabs\n [RW] Indentation will only use space characters if useTabs is false, otherwise it will use a combination of tabs and spaces
+ViewEOL = bool visible\n [RW] Make the end of line characters visible or invisible
+ViewWS = int wsMode\n [RW] Make white space characters invisible, always visible or visible outside indentation
+VirtualSpaceOptions = int\n [RW]
+VScrollBar = bool visible\n [RW] Show or hide the vertical scroll bar
+WhitespaceChars = string chars\n [WO] Set the set of characters making up whitespace for when moving or selecting by word. Should be called after SetWordChars
+WhitespaceSize = int size\n [RW] Set and get the size of the dots used to mark space characters
+WordChars = string chars\n [WO] Set the set of characters making up words for when moving or selecting by word. First sets deaults like SetCharsDefault
+WrapIndentMode = int mode\n [RW] Sets and retrieve how wrapped sublines are placed. Default is fixed
+WrapMode = int wrapMode\n [RW] Sets whether text is word wrapped
+WrapStartIndent = int indent\n [RW] Set the start indent for wrapped lines
+WrapVisualFlags = int wrapVisualFlags\n [RW] Set the display mode of visual flags for wrapped lines
+WrapVisualFlagsLocation = int wrapVisualFlagsLocation\n [RW] Set the location of visual flags for wrapped lines
+XOffset = int xOffset\n [RW] Get and Set the xOffset (ie, horizonal scroll position)
+Zoom = int zoomInPoints\n [RW] Set the zoom level. This number of points is added to the size of all fonts. It may be positive to magnify or negative to reduce
