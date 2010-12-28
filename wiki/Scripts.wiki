@@ -1,6 +1,6 @@
 #summary Scripts for text editing, productivity.
 
-Currently, many scripts are on the [http://lua-users.org/wiki/SciteScripts Lua users wiki].
+Currently, many scripts are on the [http://lua-users.org/wiki/SciteScripts Lua users wiki]. Some will soon be copied to the wiki.
 
 == Formatting and Text manipulation ==
   * [Scripts_PerlFormat Perl scripts] for formatall, striplines, stripsppace.
