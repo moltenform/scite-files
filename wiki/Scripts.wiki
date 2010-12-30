@@ -5,3 +5,4 @@ Currently, many scripts are on the [http://lua-users.org/wiki/SciteScripts Lua u
 == Formatting and Text manipulation ==
   * [Scripts_PerlFormat Perl scripts] for formatall, striplines, stripsppace.
   * HTMLTidy, from SciteWin
+  * [http://www.gusnan.se/sciteproj/scite_hints.php Swap Header] Swap between source and header in C via a keyboard shortcut
