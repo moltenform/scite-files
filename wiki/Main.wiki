@@ -1,19 +1,19 @@
-#summary Files and information related to the code editor SciTE.
+#summary Files and information related to the code editor SciTE
 
 = Introduction =
 
-This wiki is a place to share files and information regarding the code editor [http://www.scintilla.org/SciTE.html SciTE]. You are welcome to contribute information or links to relevant projects under the appropriate pages.
+This wiki is a place to share files and information regarding the code editor [http://www.scintilla.org/SciTE.html SciTE]. You are welcome to add information or links under one of the pages:
 
 = Categories =
 <font size="4">[Translations]</font> <br/> Display SciTE interface in other languages.
 <br/><br/>
-<font size="4">[Customization Programming language add-ons]</font> <br/> properties files, api files, other material for computer languages.
+<font size="4">[Customization Programming language extras]</font> <br/> properties files, api files, other material for computer languages.
 <br/><br/>
 <font size="4">[http://code.google.com/p/scitedocs/ Documentation and tips]</font> <br/> Collection of SciTE documentation.
 <br/><br/>
 <font size="4">[Scripts Scripts and macros]</font> <br/> Scripts for text editing, productivity.
 <br/><br/>
-<font size="4">[CustomBuilds SciTE extensions, modifications, tools]</font> <br/> Patches, custom builds, projects.
+<font size="4">[CustomBuilds SciTE extensions, projects]</font> <br/> Patches, custom builds, installation packages, tools.
 <br/><br/>
 
 = Links =
