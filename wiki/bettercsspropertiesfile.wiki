@@ -1,5 +1,3 @@
-#summary One-sentence summary of this page.
-
 = A better css.properties file =
 
 The css.properties file that comes with 2.23 does not use all the styles defined in LexCSS.cxx. So this is the properties file that I use to make my web sites. It uses all of them with comments to make it hopefully easier to change without reading the lexer code.
