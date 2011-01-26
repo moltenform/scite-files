@@ -1,6 +1,22 @@
 = A better css.properties file =
 
 The css.properties file that comes with 2.23 does not use all the styles defined in LexCSS.cxx. So this is the properties file that I use to make my web sites. It uses all of them with comments to make it hopefully easier to change without reading the lexer code.
+ As compared to the css.properties file that ships with Scite 2.23 this file:
+   * Recognises all the CSS3 pseudo classes and pseudo elements
+   * Recognises the double colon '::' for the pseudo elements
+   * Understands common vendor prefixes and microsoft's filter property
+   * Recognises CSS3 properties
+ It does this by using styles and keywords coded in the css Lexer but not mentioned in the original properties files
+ All styles and keyword lists used by the Lexer are in this file
+ The keywordclass.value lists are still unused.
+
+ STYLE changes:
+   * The colour used for CSS2 in the original file is now used for CSS3 properties
+   * CSS1 and CSS2 properties now use the same colour, but you can change that back see styles 5 and 14
+   * New colours are defined for vendor classes and pseudo elements
+   * Unknown pseudoelements/pseudoclasses now use the global error colour
+   * @media is now coloured in the old @ rules style instead of unstyled
+   * The other @ rules are in the same colour but no longer in bold
 
 
 = Details =
@@ -10,23 +26,6 @@ The css.properties file that comes with 2.23 does not use all the styles defined
 # Define SciTE settings for CSS files
 # Jakub Vrána - jakub@vrana.cz
 # Updated Andy Holder - Jan 2011
-#
-# As compared to the css.properties file that ships with Scite 2.23 this file:
-#    Recognises all the CSS3 pseudo classes and pseudo elements
-#    Recognises the double colon '::' for the pseudo elements
-#    Understands common vendor prefixes and microsoft's filter property
-#    Recognises CSS3 properties
-# It does this by using styles and keywords coded in the css Lexer but not mentioned in the original properties files
-# All styles and keyword lists used by the Lexer are in this file
-# The keywordclass.value lists are still unused.
-#
-# STYLE changes:
-#    The colour used for CSS2 in the original file is now used for CSS3 properties
-#    CSS1 and CSS2 properties now use the same colour, but you can change that back see styles 5 and 14
-#    New colours are defined for vendor classes and pseudo elements
-#    Unknown pseudoelements/pseudoclasses now use the global error colour
-#    @media is now coloured in the old @ rules style instead of unstyled
-#    The other @ rules are in the same colour but no longer in bold
 
 
 filter.css=CSS (css)|*.css|
