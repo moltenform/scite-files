@@ -52,7 +52,7 @@ To use one of these translations, download the file, rename to "locale.propertie
 </li>
 <li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.pl.properties">Polish 1.76</a> (Windows-1250)
 </li>
-<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.ro.properties">Romanian 2.20</a>
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.ro.properties">Romanian 2.23</a>
 </li>
 <li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.pt_PT.properties">Portuguese 1.63</a>
 </li>
