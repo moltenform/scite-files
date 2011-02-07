@@ -7,6 +7,8 @@ To use one of these translations, download the file, rename to "locale.propertie
 = Language files =
 <ul><li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.af.properties">Afrikaans 1.73</a></li><li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/win1256/locale.ar.properties">Arabic 1.73</a> (Windows-1256)</li>
 <li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.ar.properties">Arabic 1.73</a> (UTF-8)</li>
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.eu.properties">Basque 1.71</a>
+</li>
 <li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.pt_BR.properties">Brazilian Portuguese 2.20</a>
 </li>
 <li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/win1251/locale.bg.properties">Bulgarian 1.73</a> (Windows-1251)
