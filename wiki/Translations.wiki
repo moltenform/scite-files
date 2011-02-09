@@ -72,7 +72,7 @@ To use one of these translations, download the file, rename to "locale.propertie
 </li>
 <li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.es_MX.properties">Spanish 1.72</a> (Mexican)
 </li>
-<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.sw_KE.properties">Swahili 1.73</a></li><li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.sv.properties">Swedish 1.73</a>
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.sw_KE.properties">Swahili 1.73</a></li><li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.sv.properties">Swedish 2.21</a>
 </li>
 <li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.th.properties">Thai 1.67</a>
 </li>
