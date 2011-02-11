@@ -1,0 +1,3 @@
+Page downloaded from
+http://scite-ru.googlecode.com/svn/trunk/pack/tools/Helper/SciTE.Helper.html
+on Feb 10, 2011
