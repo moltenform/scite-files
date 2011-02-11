@@ -1,0 +1,316 @@
+<?xml version="1.0"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" type="text/css" href="../../doc/style.css" />
+  <title>SciTE Helper</title>
+</head>
+
+<body>
+  <table bgcolor="#000000" width="100%" cellspacing="0" cellpadding="0" border="0" class="tmenu">
+    <tr>
+      <td><img src="../../doc/SciTEIco.png" height="64" width="64" alt="Scintilla icon"></td>
+      <td width="100%"><font size="5">SciTE Helper - ActiveX Control for SciTE</font></td>
+    </tr>
+  </table>
+
+  <table bgcolor="#CCCCCC" width="100%" cellspacing="0" cellpadding="8" border="0" class="tmenu">
+    <tr><td>
+      <a href="../../doc/SciTEDoc.html">Documentation</a>&nbsp;&nbsp;
+      <a href="../../doc/SciTEFAQ.html">FAQ</a>&nbsp;&nbsp;
+      <a href="../../doc/SciTERegEx.html">Regular Expressions</a>&nbsp;&nbsp;
+      <a href="../../doc/Scintilla/ScintillaDoc.html">Scintilla</a>&nbsp;&nbsp;
+      <a href="../../doc/SciTELua.html">LUA</a>&nbsp;&nbsp;
+      <a href="../../doc/SciTEDirector.html">SciTE Director</a>&nbsp;&nbsp;
+      <a href="../../doc/CommandValues.html">SciTE and Scintilla Commands</a>&nbsp;&nbsp;
+      <a href="../../doc/SciTE-Ru_Kernel.html">SciTE-Ru Kernel</a>&nbsp;&nbsp;
+      <a href="../../tools/LuaLib/shell.html">Shell</a>&nbsp;&nbsp;
+      <nobr>SciTE Helper</nobr>&nbsp;&nbsp;
+      <a href="../../doc/Scintilla/ScintillaHistory.html">History</a>&nbsp;&nbsp;
+    </td></tr>
+  </table>
+
+<h3>Description</h3>
+
+<p>Freeware ActiveX component for the interaction between SciTE text editor and any scripts and applications supporting COM interface.</p>
+
+<h3>Install, Initialisation and Remove</h3>
+
+<p>For registration SciTE Helper on your system please run <code>Setup.vbs</code>
+(it will execute the OS command <span class="example">regsvr32 SciTE.dll</span>)</p>
+
+<p>For job with SciTE Helper it is necessary to make initialization of object in your script:
+<div class="example">
+  On Error Resume Next<br>
+  Set SciTE = CreateObject("SciTE.Helper")<br>
+  If Err.Number &lt;&gt; 0 Then<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;WScript.Echo "Please install SciTE Helper before!"<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;WScript.Quit 1<br>
+  End If<br>
+  On Error GoTo 0
+</div></p>
+
+<p>For unregistration SciTE Helper on your system please run <code>Setup.vbs</code> once again
+(it will execute the OS command <span class="example">regsvr32 /U SciTE.dll</span>)</p>
+
+<p class="ruboardonly">In SciTE-Ru registration and unregistration SciTE Helper occurs automatically at a choice of item of the menu
+ '<cite>Tools</cite>' - '<cite>Windows Integration</cite>'</p>
+
+<h3>Properties</h3>
+
+<table cellpadding="1" cellspacing="0" border="1">
+  <tr>
+    <td><dfn>
+      Left() As Long <cite>[read only]</cite><br>
+      Top() As Long <cite>[read only]</cite><br>
+      Width() As Long <cite>[read only]</cite><br>
+      Height() As Long <cite>[read only]</cite><br>
+    </dfn></td>
+
+    <td>
+      <p>
+        Returns sizes and position of a SciTE window.<br>
+        These properties are equivalent to SciTE properties <var>position.left</var>, <var>position.top</var>, <var>position.width</var>, <var>position.height</var>
+      </p>
+      <p>Example:
+      <div class="example">
+        WScript.Echo "position.left = " &amp; SciTE.Left<br>
+        WScript.Echo "position.top = " &amp; SciTE.Top<br>
+        WScript.Echo "position.width = " &amp; SciTE.Width<br>
+        WScript.Echo "position.height = " &amp; SciTE.Height
+      </div>
+    </td>
+  </tr>
+
+  <tr>
+    <td><dfn>
+      Get GetText() As String <cite>[read only]</cite>
+    </dfn></td>
+
+    <td>
+      <p>
+        Get all text with active buffer SciTE.<br>
+        This property works similarly to method of lua <var>editor:GetText()</var>
+      </p>
+      <p>Example:
+      <div class="example">
+        WScript.Echo SciTE.GetText
+      </div>
+    </td>
+  </tr>
+
+  <tr>
+    <td><dfn>
+      GetSelText() As String <cite>[read only]</cite>
+    </dfn></td>
+
+    <td>
+      <p>
+        Get only selected text with active buffer SciTE.<br>
+        This property works similarly to SciTE variable <var>$(CurrentSelection)</var>
+      </p>
+      <p>Example:
+      <div class="example">
+        WScript.Echo SciTE.GetSelText
+      </div>
+    </td>
+  </tr>
+
+  <tr>
+    <td><dfn>
+      Props(ByVal Key As String) As String <cite>[read]</cite><br>
+      Props(ByVal Key As String, RHS As String) <cite>[write]</cite>
+    </dfn></td>
+
+    <td>
+      <p>
+        Get and set the value of a any SciTE property.<br>
+        This property works similarly to directive of lua <var>props["property.name"]</var>
+      </p>
+      <p>Example:
+      <div class="example">
+        SciTE.Props("my.key") = WScript.Name<br>
+        WScript.Echo SciTE.Props("my.key")
+      </div>
+    </td>
+  </tr>
+
+  <tr>
+    <td><dfn>
+      WindowID() As Long <cite>[read]</cite><br>
+      WindowID(RHS As Long) <cite>[write]</cite>
+    </dfn></td>
+
+    <td>
+      <p>
+        Returns WindowID SciTE from which the given script or the program has been started.<br>
+        Allows to establish (at presence of several SciTE Windows) one with which will be an exchange through <code>SciTE Director Interface</code>.
+      </p>
+      <p>Example:
+      <div class="example">
+        SciTEWindowID = SciTE.WindowID<br>
+        WScript.Echo SciTEWindowID
+      </div>
+    </td>
+  </tr>
+
+</table>
+
+<h3>Methods</h3>
+
+<table cellpadding="1" cellspacing="0" border="1">
+
+  <tr>
+    <td><dfn>
+      Send(ByVal Data As String) As String
+    </dfn></td>
+
+    <td>
+      <p>
+        Carries out sending in SciTE with the argument set sequence of commands <code>SciTE Director Interface</code>.<br>
+        Return in causing script or the program the received value.
+        The list of all accessible commands see in a file <a href="../../doc/SciTEDirector.html">SciTEDirector.html</a>
+      </p>
+      <p>Example:
+      <div class="example">
+        WScript.Echo SciTE.Send("askproperty:character.set")
+      </div>
+    </td>
+  </tr>
+
+  <tr>
+    <td><dfn>
+      LUA(ByVal Command As String) As String
+    </dfn></td>
+
+    <td>
+      <p>
+        Allows to execute in SciTE with the argument lua commands.<br>
+        Return in causing script or the program the received value.
+      </p>
+      <p>Example:
+      <div class="example">
+        WScript.Echo SciTE.LUA("editor.CurrentPos")
+      </div>
+    </td>
+  </tr>
+
+  <tr>
+    <td><dfn>
+      ReplaceSel (ByVal ReplaceText As String)
+    </dfn></td>
+
+    <td>
+      <p>
+        Replace selected text with argument text. This works similarly to method of lua <var>editor:ReplaceSel(string)</var>. Returned value is absent.
+      </p>
+      <p>Example:
+      <div class="example">
+        SciTE.ReplaceSel "&lt;http://scite.net.ru/&gt;"
+      </div>
+    </td>
+  </tr>
+
+  <tr>
+    <td><dfn>
+      MenuCommand (ByVal IDM_Command As String)
+    </dfn></td>
+
+    <td>
+      <p>
+        Run specifed SciTE menu command. Returned value is absent.<br>
+        The list of all accessible commands see in a file <a href="../../doc/CommandValuesExt_rus.html">CommandValues.html</a>
+      </p>
+      <p>Example:
+      <div class="example">
+        SciTE.MenuCommand 902
+      </div>
+    </td>
+  </tr>
+
+  <tr>
+    <td><dfn>
+      Trace (ByVal Data As String)
+    </dfn></td>
+
+    <td>
+      <p>
+        Writes s to the SciTE output pane (no prefix, no newlines). This works similarly to directive <var>trace(string)</var>. Returned value is absent.
+      </p>
+      <p>Example:
+      <div class="example">
+        SciTE.Trace "First line" &amp; "\r\n" &amp; "Second line" &amp; "\r\n"
+      </div>
+    </td>
+  </tr>
+
+  <tr>
+    <td><dfn>
+      OnTop (ByVal WindowName As String, ByVal OnTop As Boolean)
+    </dfn></td>
+
+    <td>
+      <p>
+        Establishes for a window of the application a mode "OnTop of all windows". Returned value is absent.
+      </p>
+      <p>Example:
+      <div class="example">
+        SciTE.OnTop document.title, True
+      </div>
+    </td>
+  </tr>
+
+  <tr>
+    <td><dfn>
+      Focus ()
+    </dfn></td>
+
+    <td>
+      <p>
+        Set focus of input in SciTE window. Returned value is absent.<br>
+        (It is useful, when the script or the program abducts focus from SciTE)
+      </p>
+      <p>Example:
+      <div class="example">
+        SciTE.Focus
+      </div>
+    </td>
+  </tr>
+
+  <tr>
+    <td><dfn>
+      About ()
+    </dfn></td>
+
+    <td>
+      <p>
+        Shows the message "About". Returned value is absent.
+      </p>
+      <p>Example:
+      <div class="example">
+        SciTE.About
+      </div>
+    </td>
+  </tr>
+
+</table>
+
+<h3>Download</h3>
+<p><u>Current version SciTE Helper</u>: <var>1.4</var><br></p>
+<p>
+<a href="http://code.google.com/p/scite-ru/downloads/detail?name=SciTE.Helper.zip">SciTE.dll</a> (include documentations and sample scripts)<br>
+<a href="http://scite-ru.googlecode.com/svn/trunk/helper/">Source code</a>
+</p>
+
+<h3>Remarks</h3>
+
+<p><code>SciTE Helper</code> is written on Visual Basic 5.0 and require run-time library <code>msvbvm50.dll</code>, which is present in all Windows versions, up to Windows XP SP1 inclusive. In later versions <code>msvbvm50.dll</code> library is absent therefore it is necessary to <a href="http://www.google.com/search?q=msvbvm50.dll">download</a> independently.<br>
+One of salvations of this problem is on <a href="http://code.google.com/p/scite-ru/issues/detail?id=62">Issue 62</a></p>
+
+<p><code>SciTE Helper</code> now does not catch SciTE events. Realization of such opportunity is planned.</p>
+<hr size="1">
+<small>Design this page is borrowed from the <a href="http://scintilla.sourceforge.net/SciTE.html">Scintilla project</a>. Thanks.</small>
+</body>
+</html>
