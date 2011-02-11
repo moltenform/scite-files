@@ -20,5 +20,5 @@
 
 <h5>Code for communication with a SciTE Process</h5>
   * [http://code.google.com/p/scite-files/source/browse/#svn%2Ftrunk%2Fprocess_communication%2Fscite_msg Scite_msg], command line tool to send messages to SciTE.
-  * [http://scite-ru.googlecode.com/svn/trunk/pack/tools/Helper/SciTE.Helper.html Scite Helper, ActiveX component for the interaction between SciTE and scripts and applications] 
+  * [http://scite-ru.googlecode.com/svn/trunk/pack/tools/Helper/SciTE.Helper.html Scite Helper], ActiveX component for the interaction between SciTE and scripts and applications 
   * [http://code.google.com/p/scite-files/source/browse/#svn%2Ftrunk%2Fprocess_communication%2Fscite_other scite_other], lua extension for interacting with other SciTE instance.
