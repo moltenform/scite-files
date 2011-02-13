@@ -38,7 +38,7 @@ To use one of these translations, download the file, rename to "locale.propertie
 </li>
 <li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.de.properties">German 2.20</a>
 </li>
-<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.el.properties">Greek</a>. <a href="http://web.archive.org/web/20071012092151/http://scite.hellug.gr/">archived Greek translation</a> of Scite website.
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.el.properties">Greek 1.67</a>. Also, old <a href="http://web.archive.org/web/20071012092151/http://scite.hellug.gr/">Greek translation</a> of Scite website.
 </li>
 <li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.hu.properties">Hungarian 1.63</a> with <a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.hu.explain.txt">explanation</a>
 </li>
