@@ -3,9 +3,10 @@
 == SciTE packages ==
   * [http://code.google.com/p/scintillua/ SciTE-st], Scintilla/SciTE that has dynamic lexing capabilities.
   * [http://scite.ruteam.ru/ SciteRU], Russian Scite with many modifications/improvements. (Remove the locale.properties file to display in English, I seem to recall).
-  * [http://llt.chez-alice.fr/ FilerX], project management and macro features on Windows. (Currently unmaintained?)
   * [http://gisdeveloper.tripod.com/scite.html SciTE with Extensions], Windows installer, some extensions included.
   * [http://code.google.com/p/scite-eg/ SciTE - Exempli Gratia] Packaging of SciTE for Windows, aimed to be used with R and Python
+  * [http://code.google.com/p/scite-for-lua/ SciTE for Lua] SciTE bundle for Lua programming
+  * [http://llt.chez-alice.fr/ FilerX], project management and macro features on Windows. (Currently unmaintained?)
 
 == SciTE tools ==
   * [http://caladbolg.net/scite_snippets.php Caladbolg SciTE Snippets] Textmate-like snippets for SciTE
