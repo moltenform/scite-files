@@ -12,7 +12,7 @@
   * [http://caladbolg.net/luadoc/scite/manual.html Caladbolg SciTE Tools] powerful text-editing utilities and modes
   * [http://www.burgaud.com/scite-context-menu/ SciTE Context menu] a context menu handler that gives the ability, on Windows, to quickly open selected files with SciTE.
   * [http://www.frykholm.se/scitecmd.html scitecmd], a simple utility for opening files as tabs in SciTE from the command line on Windows.
-
+  * [http://scitedebug.luaforge.net/ SciTE-Debug] Interface for using symbolic debuggers in SciTE
 
 == Extensions to SciTE ==
   * [http://code.google.com/p/scite-gui/ SciTE-Gui], GTK tool for SciTE UI modification
