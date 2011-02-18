@@ -42,7 +42,7 @@ To use one of these translations, download the file, rename to "locale.propertie
 </li>
 <li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.hu.properties">Hungarian 1.63</a> with <a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.hu.explain.txt">explanation</a>
 </li>
-<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.it.properties">Italian 1.73</a>
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.it.properties">Italian 2.21</a>
 </li>
 <li><a href="http://h12u.com/scixx/">Japanese</a>
 </li>
