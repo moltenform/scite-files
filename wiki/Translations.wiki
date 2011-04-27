@@ -15,7 +15,7 @@ To use one of these translations, download the file, rename to "locale.propertie
 </li>
 <li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.bg.properties">Bulgarian 1.73</a> (UTF-8)
 </li>
-<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.ca.properties">Catalan 1.73</a>
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.ca.properties">Catalan 2.25</a>
 </li>
 <li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.zh_cn.properties">Chinese 2.21</a> (Simplified - GB2312) Edit in SciTE with code.page=936, character.set=134 or 132
 </li>
