@@ -16,6 +16,7 @@
   * [http://scitedebug.luaforge.net/ SciTE-Debug] Interface for using symbolic debuggers in SciTE
 
 == Extensions to SciTE ==
+  * [CustomBuilds_SciTEPython Scite Python Extension], script SciTE in Python instead of Lua.
   * [http://code.google.com/p/scite-gui/ SciTE-Gui], GTK tool for SciTE UI modification
   * [http://hilfer.rubyforge.org/hilfer/ Hilfer], a keyboard-rich directory browser using ruby-gtk that talks to SciTE, and understands Rails projects.
   * [http://www.gusnan.se/sciteproj SciteProj], project manager for SciTE
