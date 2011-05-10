@@ -1,6 +1,6 @@
 #summary Build of SciTE with Python for scripting instead of Lua
 
-= Introduction =
+= SciTE Python Extension =
 
 Build of SciTE with Python for scripting instead of Lua.
 
@@ -15,10 +15,11 @@ Add your content here.  Format your content with:
 = Building from source = 
 The gcc makefile has not yet been updated, so vc compiler needed.
 Windows:
-1) Download the source for SciTE 2.25.
-2) Apply <a href="http://scite-files.googlecode.com/svn-history/trunk/custom/scite_python_extend/0.5/scite_python_extend.patch">this patch</a>.
-3) Copy <a href="http://scite-files.googlecode.com/svn-history/trunk/custom/scite_python_extend/0.5/scite_python_extend_patchwin32.zip">these files</a> into the appropriate directories.
-4) Build SciTE (nmake -f scintilla.mak, and then nmake -f scite.mak)
+
+  # Download the source for SciTE 2.25.
+  # Apply <a href="http://scite-files.googlecode.com/svn-history/trunk/custom/scite_python_extend/0.5/scite_python_extend.patch">this patch</a>.
+  # Copy <a href="http://scite-files.googlecode.com/svn-history/trunk/custom/scite_python_extend/0.5/scite_python_extend_patchwin32.zip">these files</a> into the appropriate directories.
+  # Build SciTE (nmake -f scintilla.mak, and then nmake -f scite.mak)
 
 To build without any Python support, define NO_PYTHON on the command line.
 
