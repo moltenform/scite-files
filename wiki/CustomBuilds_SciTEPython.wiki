@@ -10,7 +10,7 @@ You have access to the powerful standard library of Python.
 
 == Download ==
 Win32:
-<a href="http://scite-files.googlecode.com/svn-history/trunk/custom/scite_python_extend/0.5/scite_python_extend_0_5_win32.zip">SciTE 2.25 with Python</a> Beta, v0.5.
+<a href="http://scite-files.googlecode.com/svn-history/trunk/custom/scite_python_extend/0.5/scite_python_extend_0_5_win32.zip">SciTE 2.25 with Python</a> Beta, v0.5. (A Python installation is not needed.)
 
 Gtk: Coming by 5/13/11
 
