@@ -12,4 +12,18 @@ Add your content here.  Format your content with:
   * Headings, paragraphs, and lists
   * Automatic links to other wiki pages
 
+= Building from source = 
+The gcc makefile has not yet been updated, so vc compiler needed.
+Windows:
+1) Download the source for SciTE 2.25.
+2) Apply <a href="http://scite-files.googlecode.com/svn-history/trunk/custom/scite_python_extend/0.5/scite_python_extend.patch">this patch</a>.
+3) Copy <a href="http://scite-files.googlecode.com/svn-history/trunk/custom/scite_python_extend/0.5/scite_python_extend_patchwin32.zip">these files</a> into the appropriate directories.
+4) Build SciTE (nmake -f scintilla.mak, and then nmake -f scite.mak)
+
+To build without any Python support, define NO_PYTHON on the command line.
+
+Gtk:
+No instructions yet, expected by 5/13/11.
+
+
 Contact scitewiki at gmail dot com
