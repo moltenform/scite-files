@@ -12,7 +12,7 @@ You have access to the powerful standard library of Python.
 Win32:
 <a href="http://scite-files.googlecode.com/svn-history/trunk/custom/scite_python_extend/0.5/scite_python_extend_0_5_win32.zip">SciTE 2.25 with Python</a> Beta, v0.5. (A Python installation is not needed.)
 
-Gtk: Coming by 5/13/11
+
 
 == Documentation ==
 Refer to the readme.txt and scite_extend_doc.txt files that come with the distribution.
@@ -33,7 +33,7 @@ Windows:
 To build without any Python support, define NO_PYTHON on the command line.
 
 Gtk:
-No instructions yet, expected by 5/13/11.
+No instructions yet.
 
 == Why ==
 Python has more control over starting processes than Lua, for tasks like starting processes in a console and monitoring stdout. It also has a full standard library (components loaded on demand); I have found use for Python's html processing, xml, and ftp capabilities. Python might also be more familiar to people than Lua.
