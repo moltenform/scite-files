@@ -36,7 +36,7 @@ To use one of these translations, download the file, rename to "locale.propertie
 <li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.fr.properties">French 2.20</a></li>
 <li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.gl.properties">Galician 1.62</a>
 </li>
-<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.de.properties">German 2.20</a>
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.de.properties">German 2.23</a>
 </li>
 <li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.el.properties">Greek 1.67</a>. Also, old <a href="http://web.archive.org/web/20071012092151/http://scite.hellug.gr/">Greek translation</a> of Scite website.
 </li>
