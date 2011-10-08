@@ -68,7 +68,7 @@ To use one of these translations, download the file, rename to "locale.propertie
 </li>
 <li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.sl.properties">Slovenian 1.62</a>
 </li>
-<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.es.properties">Spanish 2.22</a>
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.es.properties">Spanish 2.29</a>
 </li>
 <li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.es_MX.properties">Spanish 1.72</a> (Mexican)
 </li>
