@@ -27,7 +27,7 @@ To use one of these translations, download the file, rename to "locale.propertie
 </li>
 <li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/scite/locale.nl.properties">Dutch 1.67</a>
 </li>
-<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.eo.utf-8.properties">Esperanto 1.73</a>
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.eo.utf-8.properties">Esperanto 2.23</a>
 </li>
 <li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.et.properties">Estonian 1.73</a> 
 </li>
@@ -52,7 +52,7 @@ To use one of these translations, download the file, rename to "locale.propertie
 </li>
 <li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.nb.properties">Norwegian 1.62</a> (Bokmål)
 </li>
-<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.pl.properties">Polish 1.76</a> (Windows-1250)
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.pl.properties">Polish 2.23</a> (UTF-8)
 </li>
 <li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.ro.properties">Romanian 2.23</a>
 </li>
