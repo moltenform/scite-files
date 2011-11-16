@@ -62,7 +62,9 @@ To use one of these translations, download the file, rename to "locale.propertie
 </li>
 <li><a href="http://scite.ruteam.ru/">Russian translation of SciTE web site including documentation.</a>
 </li>
-<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.sr.windows-1251.properties">Serbian 1.63</a> (Windows-1251)
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.sr.utf8.properties">Serbian 2.29</a> (UTF 8)
+</li>
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.sr.windows-1251.properties">Serbian 2.29</a> (Windows-1251)
 </li>
 <li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.sr.iso-8859-5.properties">Serbian 1.63</a> (Standard Cyrillic)
 </li>
