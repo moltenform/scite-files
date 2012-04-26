@@ -15,9 +15,9 @@ To use one of these translations, download the file, rename to "locale.propertie
 </li>
 <li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.bg.properties">Bulgarian 1.73</a> (UTF-8)
 </li>
-<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.ca.properties">Catalan 2.25</a>
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.ca.properties">Catalan 2.23</a>
 </li>
-<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.zh_cn.properties">Chinese 2.21</a> (Simplified - GB2312) Edit in SciTE with code.page=936, character.set=134 or 132
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.zh_cn.properties">Chinese 2.23</a> (Simplified - GB2312) Edit in SciTE with code.page=936, character.set=134 or 132
 </li>
 <li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.zh_b5.properties">Chinese 1.73</a> (Traditional - Big5) Edit in SciTE with code.page=950, character.set=136
 </li>
@@ -42,11 +42,13 @@ To use one of these translations, download the file, rename to "locale.propertie
 </li>
 <li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.hu.properties">Hungarian 1.63</a> with <a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.hu.explain.txt">explanation</a>
 </li>
-<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.it.properties">Italian 2.21</a>
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.id.properties">Indonesian 2.23</a>
+</li>
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.it.properties">Italian 2.23</a>
 </li>
 <li><a href="http://h12u.com/scixx/">Japanese</a>
 </li>
-<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.ko_KR.properties">Korean 2.21</a>
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.ko_KR.properties">Korean 2.23</a>
 </li>
 <li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.ms.properties">Malaysian 1.73</a>
 </li>
@@ -62,19 +64,19 @@ To use one of these translations, download the file, rename to "locale.propertie
 </li>
 <li><a href="http://scite.ruteam.ru/">Russian translation of SciTE web site including documentation.</a>
 </li>
-<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.sr.utf8.properties">Serbian 2.29</a> (UTF 8)
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.sr.utf8.properties">Serbian 2.23</a> (UTF 8)
 </li>
-<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.sr.windows-1251.properties">Serbian 2.29</a> (Windows-1251)
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.sr.windows-1251.properties">Serbian 2.23</a> (Windows-1251)
 </li>
 <li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.sr.iso-8859-5.properties">Serbian 1.63</a> (Standard Cyrillic)
 </li>
 <li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.sl.properties">Slovenian 1.62</a>
 </li>
-<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.es.properties">Spanish 2.29</a>
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.es.properties">Spanish 2.23</a>
 </li>
 <li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.es_MX.properties">Spanish 1.72</a> (Mexican)
 </li>
-<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.sw_KE.properties">Swahili 1.73</a></li><li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.sv.properties">Swedish 2.21</a>
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.sw_KE.properties">Swahili 1.73</a></li><li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.sv.properties">Swedish 2.23</a>
 </li>
 <li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.th.properties">Thai 1.67</a>
 </li>
