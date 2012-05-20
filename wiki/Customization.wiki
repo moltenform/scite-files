@@ -78,6 +78,10 @@ abaqus, asn1, au3, freebasic, blitzbasic, bullant, cobol, cmake, csound, flagshi
 <ul>
 <li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/sql.properties_ext">Extended properties file</a> with additional keywords and standard package names.</li>
 <li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/sql_plsql-API.0.1.zip">sql plsql</a> properties file.</li></ul>
+<h5>OScript</h5>
+<ul>
+<li>
+<p><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/oscript.api.zip">oscript.api.zip</a></p></li></ul>
 <h5>Pascal / Delphi</h5><ul><li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/pascal.api">API</a> </li><li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/pascal.abbrev">Abbreviations</a> </li></ul><h5>Perl </h5>
 <ul>
 <li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/perl.api">Perl API</a></li></ul>
