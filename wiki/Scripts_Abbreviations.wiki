@@ -85,6 +85,8 @@ et=# end try
 GetOpt parameters=import argparse\n\nparser = argparse.ArgumentParser(description='...')\n# nargs: *= [0,), + =(0,), ?=[0,1]\nparser.add_argument('positional_param', metavar='N', type=int, nargs='+',\n                   help='...')\nparser.add_argument('--named_parameter', dest='dest_var_name', action='store_const',\n                   const=value_to_store, default=default_value,\n                   help='...')\nparser.add_argument('--flag', dest='dest_var_name', action='store_true', required=True,                   \n                   help='...')\n						 \nargs = parser.parse_args()\nprint args.dest_var_name\n
 }}}
 
-Notice that the dashes which separate the various abbreviations must be exactly as in the example (alternatively, simply change the script accordingly).
+Notice that:
+  # the dashes which separate the various abbreviations must be exactly as in the example (alternatively, simply change the script accordingly);
+  # if you want to use a pipe character ("|") you have to double it ("||"), since the single pipe is used by Scite to denote the cursor position.
 
 Once the abbrev file has been saved in the Scite directory, the abbreviations can be expanded using the menu command Edit->Expand Abbreviation (CTRL+B); they can also be listed using Edit->Insert Abbreviation (CTRL+SHIFT+R).
