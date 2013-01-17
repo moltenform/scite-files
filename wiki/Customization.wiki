@@ -20,7 +20,7 @@ abaqus, asn1, au3, freebasic, blitzbasic, bullant, cobol, cmake, csound, flagshi
 <li>[Customization_PythonDebug Python debugging in SciTE]</li>
 <li>In Windows, to run a python script, you may need to edit python.properties,<br/> e.g. change the line <tt>command.go.`*`.py=pythonw</tt> to <tt>command.go.`*`.py=c:\Python26\pythonw</tt></li>
 </ul>
-<h5>JavaScript, CSS, web</h5>
+<h5>!JavaScript, CSS, web</h5>
 <ul>
 <li><a href="http://code.google.com/p/scite-files/wiki/bettercsspropertiesfile">A better CSS properties file</a></li>
 <li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/css,js,jquery.zip">CSS, JavaScript, and JQuery api</a></li>
