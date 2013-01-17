@@ -1,0 +1,47 @@
+#summary Using SciTE for Windows Scripting.
+
+= SciTE for Windows Scripters =
+
+(This is a mirror saved from remotenetworktechnology.com which is now dead.)
+
+I've recently started using SciTE, a testbed text editor built around Scintilla, as my primary tool for scripting work.  You can find out more about the editor and the core tool from the SciTE/Scintilla home page.
+
+Note that SciTE and Scintilla are separate things.  Scintilla is a component designed to aid in editing source code; SciTE means Scintilla based Text Editor; it was originally a demo for the Scintilla component, but turned out to be much more useful and popular than your average "Hello, World" demonstration.
+
+== Why Use SciTE For Windows Scripting? ==
+
+It's a matter of preference; and SciTE provides features which are commensurate with many commercial text editors and well-advanced beyond them in others.
+
+The critical factor for me was the exposure of many points of control within SciTE; scripting is a specialty category, and few text editors cater to it specifically (although Scintilla specifically seems to have evolved from Neil Hodgson's desire to improve PythonWin text editing - Scintilla is definitely "script-aware") .  SciTE does NOT cater to scripters; it DOES give you easy access to customize everything, which is even better.
+
+If you are already basically comfortable with scripting and need a high-performance tool, this is definitely worth a look.
+
+SciTE features:
+
+<ul><li>
+ fully customizable syntax highlighting (of course).
+    </li><li>! Text folding for structures, procedures, and classes.
+    </li><li>a customizable tools menu which supports document-sensitive configuration and a good set of support macros
+    </li><li>! Language-specific highlighting and folding for structured documents such as WSF and WSC files.
+     </li><li>Configurable execution subsystems for tools - you can shell execute, run a console command internally and capture output, or run it externally, for example.
+    </li><li>line numbering, with configurable properties
+    </li><li>A host of capabilities you won't value until you see them in action.  The richness of the config files can look overwhelming at first, but the flat Unixish structure makes it easy to home in on what you want to change, and the SciTEDoc.html file accompanying it explains in detail what the settings mean.
+
+
+SciTE is not a "perfect" tool, of course; its commitment to creating a cross-platform core and the limited time of developers who are providing a tool that costs nothing to start using means that there are some things you simply don't have without extra effort of your own.  For example, context menuing in vanilla SciTE is very basic, providing only standard cut-copy-paste-select (but including undo/redo); the multi-document interface depends on tabbing, since only one document is displayed at a time.
+
+
+The advanced configurability make compensating for internal limitations fairly easy; and in fact the extensible structure of SciTE makes it possible to use a superior external tool for a specific job - a much better situation than being stuck with a hard-wired internal  tool (the object browser in VB and Microsoft Office comes to mind).
+
+
+All in all, given some time to work with it, this is probably the best vehicle available for a personalized editing environment.
+
+
+== test ==
+
+
+== test ==
+
+== test ==
+
+== test ==
