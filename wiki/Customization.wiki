@@ -20,7 +20,12 @@ abaqus, asn1, au3, freebasic, blitzbasic, bullant, cobol, cmake, csound, flagshi
 <li>[Customization_PythonDebug Python debugging in SciTE]</li>
 <li>In Windows, to run a python script, you may need to edit python.properties,<br/> e.g. change the line <tt>command.go.`*`.py=pythonw</tt> to <tt>command.go.`*`.py=c:\Python26\pythonw</tt></li>
 </ul>
-
+<h5>JavaScript, CSS, web</h5>
+<ul>
+<li><a href="http://code.google.com/p/scite-files/wiki/bettercsspropertiesfile">A better CSS properties file</a></li>
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/css,js,jquery.zip">CSS, JavaScript, and JQuery api</a></li>
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/css,js,jquery,php.zip">PHP, abbreviations, CSS, JavaScript, and JQuery</a></li>
+</ul>
 <h5>APDL </h5>
 <ul>
 <li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/apdl.zip">APDL properties and API</a></li></ul>
@@ -47,10 +52,6 @@ abaqus, asn1, au3, freebasic, blitzbasic, bullant, cobol, cmake, csound, flagshi
 <h5>Clojure</h5><ul><li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/clojure.api?hl=en">Properties for Clojure</a></li></ul><h5>CMake</h5>
 <ul>
 <li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/cmake.api">CMake API</a></li></ul>
-<h5>CSS</h5>
-<ul>
-<li><a href="http://code.google.com/p/scite-files/wiki/bettercsspropertiesfile">A better CSS properties file</a></li>
-</ul>
 <h5>FORTRAN </h5>
 <ul>
 <li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/fortran.api">Standard FORTRAN API functions</a></li></ul>
@@ -82,7 +83,11 @@ abaqus, asn1, au3, freebasic, blitzbasic, bullant, cobol, cmake, csound, flagshi
 <ul>
 <li>
 <p><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/oscript.api.zip">oscript.api.zip</a></p></li></ul>
-<h5>Pascal / Delphi</h5><ul><li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/pascal.api">API</a> </li><li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/pascal.abbrev">Abbreviations</a> </li></ul><h5>Perl </h5>
+<h5>Pascal / Delphi</h5><ul><li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/pascal.api">API</a> </li>
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/pascal.abbrev">Abbreviations</a> </li>
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/delphi_extras.zip">Delphi api files and abbrevs</a> </li>
+</ul>
+<h5>Perl </h5>
 <ul>
 <li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/perl.api">Perl API</a></li></ul>
 <h5>PHP </h5>
