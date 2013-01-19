@@ -22,7 +22,7 @@ abaqus, asn1, au3, freebasic, blitzbasic, bullant, cobol, cmake, csound, flagshi
 </ul>
 <h5>!JavaScript, CSS, web</h5>
 <ul>
-<li><a href="http://code.google.com/p/scite-files/wiki/bettercsspropertiesfile">A better CSS properties file</a></li>
+<li>[Customization_BetterCssProperties A better CSS properties file]</li>
 <li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/css,js,jquery.zip">CSS, !JavaScript, and JQuery api</a></li>
 <li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/css,js,jquery,php.zip">PHP, abbreviations, CSS, !JavaScript, and JQuery</a></li>
 </ul>

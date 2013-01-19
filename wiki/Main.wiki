@@ -9,8 +9,6 @@ This wiki is a place to share files and information regarding the code editor [h
 <br/><br/>
 <font size="4">[Customization Programming language extras]</font> <br/> properties files, api files, other material for computer languages.
 <br/><br/>
-<font size="4">[http://code.google.com/p/scitedocs/ Documentation and tips]</font> <br/> Collection of SciTE documentation.
-<br/><br/>
 <font size="4">[Scripts Scripts and macros]</font> <br/> Scripts for text editing, productivity.
 <br/><br/>
 <font size="4">[CustomBuilds SciTE extensions, projects]</font> <br/> Patches, custom builds, installation packages, tools.
