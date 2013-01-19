@@ -27,7 +27,7 @@ To use one of these translations, download the file, rename to "locale.propertie
 </li>
 <li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.da.properties">Danish</a> updated 1.47
 </li>
-<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/scite/locale.nl.properties">Dutch</a> updated 1.67
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.nl.properties">Dutch</a> updated 1.67
 </li>
 <li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.eo.utf-8.properties">Esperanto</a> complete! 
 </li>

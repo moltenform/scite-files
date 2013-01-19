@@ -49,7 +49,7 @@ abaqus, asn1, au3, freebasic, blitzbasic, bullant, cobol, cmake, csound, flagshi
 <h5>CIL </h5>
 <ul>
 <li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/il.properties">Properties for CIL/MSIL</a></li></ul>
-<h5>Clojure</h5><ul><li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/clojure.api?hl=en">Properties for Clojure</a></li></ul><h5>CMake</h5>
+<h5>Clojure</h5><ul><li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/clojure.api">Properties for Clojure</a></li></ul><h5>CMake</h5>
 <ul>
 <li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/cmake.api">CMake API</a></li></ul>
 <h5>FORTRAN </h5>
@@ -70,7 +70,7 @@ abaqus, asn1, au3, freebasic, blitzbasic, bullant, cobol, cmake, csound, flagshi
 <li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/mssql.properties">Replaces sql.properties</a></li></ul>
 <h5>nncron</h5>
 <ul>
-<li><a href="http://www.nbk.orc.ru/scintilla/nncron.api">nncron.api</a> </li></ul>
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/nncron.api">nncron.api</a> </li></ul>
 <h5>Octave</h5>
 <ul>
 <li>
@@ -96,7 +96,7 @@ abaqus, asn1, au3, freebasic, blitzbasic, bullant, cobol, cmake, csound, flagshi
 </li><li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/php.api">php.api for PHP 4.3.3</a>
 </li><li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/php.properties">PHP properties</a>
 </li><li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/phpfunctions.properties">PHP functions</a>
-</li><li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/phpapi.php.txt">A script for creating api file out of your own php source code</a></li></ul>
+</li></ul>
 <h5>POV-Ray </h5>
 <ul>
 <li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/pov.api">POV-Ray API</a></li></ul>
@@ -119,6 +119,8 @@ Please see <a href="http://www.yuvcom.com/progress4gl">http://www.yuvcom.com/pro
 <ul>
 <li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/Windows_scripting.zip">Properties files.</a></li>
 <li><a href="http://dev.remotenetworktechnology.com/SciTE/index.htm">More files and scripts.</a></li></ul>
+<h5>Asymptote</h5>
+<ul><li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/asymptote.properties">Properties file.</a></li></ul>
 
 To contribute a file to this list, e-mail the maintainer of this page, scitewiki at gmail dot com, so that it can be hosted here. 
 
@@ -133,10 +135,10 @@ Other relevant settings are <tt>calltip.cpp.ignorecase</tt> and
 == How to make .api files for your own sources ==
 From the Scite documentation:
 
-  * For C/C++ headers, an API file can be generated using [http://ctags.sourceforge.net/ ctags] and then the [http://scite-files.googlecode.com/svn-history/trunk/extras/makeapi/tags2api.py tags2api] Python script (which assumes C/C++ source) on the tags file to grab complete multiple line function prototypes. Some common headers surround parameter lists with a __P macro and may have comments. The [http://scite-files.googlecode.com/svn-history/trunk/extras/makeapi/cleanapi.cc cleanapi] utility may be used on these files.
+  * For C/C++ headers, an API file can be generated using [http://ctags.sourceforge.net/ ctags] and then the <a href="http://scite-files.googlecode.com/svn-history/trunk/extras/makeapi/tags2api.py">tags2api</a> Python script (which assumes C/C++ source) on the tags file to grab complete multiple line function prototypes. Some common headers surround parameter lists with a __P macro and may have comments. The <a href="http://scite-files.googlecode.com/svn-history/trunk/extras/makeapi/cleanapi.cc">cleanapi</a> utility may be used on these files.
 
-  * To generate an API file for Python modules, there is a [http://scite-files.googlecode.com/svn-history/trunk/extras/makeapi/gen_python_api.zip gen_python] script.
+  * To generate an API file for Python modules, there is a <a href="http://scite-files.googlecode.com/svn-history/trunk/extras/makeapi/gen_python_api.zip">gen_python</a> script.
 
-  * To generate an API file for Java classes, there is a [http://scite-files.googlecode.com/svn-history/trunk/extras/makeapi/java_ApiBuilder.java ApiBuilder.java] program.
+  * To generate an API file for Java classes, there is a <a href="http://scite-files.googlecode.com/svn-history/trunk/extras/makeapi/java_ApiBuilder.java">ApiBuilder.java</a> program.
   * To generate an API file for C# classes, use <a href="http://scite-files.googlecode.com/svn-history/trunk/extras/csgenapi.zip">genapi.cs</a>.
-  * To generate an API file for PHP, use [http://scintilla.sourceforge.net/phpapi.php.txt phpapi.php].
+  * To generate an API file for PHP, use <a href="http://scite-files.googlecode.com/svn-history/trunk/extras/phpapi.php.txt">phpapi.php</a>.
