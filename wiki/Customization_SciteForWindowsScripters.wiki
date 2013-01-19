@@ -46,6 +46,8 @@ Also note that some people may find that Filerx is a useful tool for adding macr
 
 == WSH-Related SciTE Properties Files ==
 
+<font size="3"><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/Windows_scripting_scripts.zip">Download files mentioned in this article</a></font>
+
 SciTE/vbscript.properties
 
 Extended keywords for VBScript.
@@ -62,36 +64,36 @@ SciTE/demo.properties
 
 == SciTE Helper Scripts ==
 
-(not uploaded yet -ed.)
+<font size="3"><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/Windows_scripting_scripts.zip">Download files mentioned in this article</a></font>
 
 SciTE/Scitevbp.vbs.txt
 
 Works via drag-and-drop or as a tool.  Given a VBP file as a target, will parse it for all member files and load them in SciTE. In SciTE, if using an opened VBP as the target set the command target to something like
 
-cscript <path-to-Scitevbp.vbs>  "$(FilePath)"
+cscript <path-to-Scitevbp.vbs>  "$(!FilePath)"
 
-SciTE/WordCheck.vbs.txt
+SciTE/!WordCheck.vbs.txt
 
 A script which allows running spell checks on documents in SciTE using the Word Spelling and Grammar checker.
 
-Wscript <path-to-Wordcheck.vbs>  "$(FilePath)"
+Wscript <path-to-Wordcheck.vbs>  "$(!FilePath)"
 
 SciTE/mskb.vbs.txt
 
 Script to retrieve the raw text from an MSKB article; can be used by highlighting an embedded Q article number in the active document. This will "clean"  a Q-number, removing everything but the actual numbers from the string first, so if you have an old URL with embedded slashes or grab white space or characters around the number it doesn't matter.   For in-SciTE capture, use a command like this:
 
-cscript <path-to-Scitevbp.vbs>  $(CurrentSelection)
+cscript <path-to-Scitevbp.vbs>  $(!CurrentSelection)
 
 and set the subsystem to 0.
 
-SciTE/GetXml.vbs.txt
+SciTE/!GetXml.vbs.txt
 
 Similar to the above, but will retrieve the source HTML of a selected URL via the Microsoft.XMLHTTP object.  As above, for in-SciTE capture, use a command like this:
 
-cscript <path-to-Scitevbp.vbs>  $(CurrentSelection)
+cscript <path-to-Scitevbp.vbs>  $(!CurrentSelection)
 
 and set the subsystem to 0.
 
-SciTE/ChangeScriptingEditor.vbs.txt
+SciTE/!ChangeScriptingEditor.vbs.txt
 
 This is an adaptation of Jim Warrington's script for modifying the default Windows editor for scripts.  It has been customized to point to my copy of SciTE; you will need to edit the embedded path to use this, but it definitely speeds up the process of setting default editors as you choose.
