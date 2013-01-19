@@ -5,88 +5,88 @@
 To use one of these translations, download the file, rename to "locale.properties" and move into the SciTE directory. Most recent version that changed locale.properties is 2.21.
 
 = Language files =
-<ul><li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.af.properties">Afrikaans 1.73</a></li><li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/win1256/locale.ar.properties">Arabic 1.73</a> (Windows-1256)</li>
-<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.ar.properties">Arabic 1.73</a> (UTF-8)</li>
-<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.eu.properties">Basque 1.71</a>
+<ul><li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.af.properties">Afrikaans</a> updated 1.73</li><li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/win1256/locale.ar.properties">Arabic</a> updated 1.73 (Windows-1256)</li>
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.ar.properties">Arabic</a> updated 1.73 (UTF-8)</li>
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.eu.properties">Basque</a> updated 1.71
 </li>
-<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.pt_BR.properties">Brazilian Portuguese 2.20</a>
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.pt_BR.properties">Brazilian Portuguese</a> complete!
 </li>
-<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/win1251/locale.bg.properties">Bulgarian 1.73</a> (Windows-1251)
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/win1251/locale.bg.properties">Bulgarian</a> updated 1.73 (Windows-1251)
 </li>
-<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.bg.properties">Bulgarian 1.73</a> (UTF-8)
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.bg.properties">Bulgarian</a> updated 1.73 (UTF-8)
 </li>
-<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.ca.properties">Catalan 2.23</a>
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.ca.properties">Catalan</a> complete! 
 </li>
-<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.zh_cn.properties">Chinese 2.23</a> (Simplified - GB2312) Edit in SciTE with code.page=936, character.set=134 or 132
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.zh_cn.properties">Chinese</a> complete!  (Simplified - GB2312) Edit in SciTE with code.page=936, character.set=134 or 132
 </li>
-<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.zh_b5.properties">Chinese 1.73</a> (Traditional - Big5) Edit in SciTE with code.page=950, character.set=136
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.zh_b5.properties">Chinese</a> updated 1.73 (Traditional - Big5) Edit in SciTE with code.page=950, character.set=136
 </li>
-<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.cz.properties">Czech 2.21</a>
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.cs.properties">Czech</a> complete!
 </li>
 <li><a href="http://jakub.vrana.cz/utility/scite.zip">Czech including personal settings</a>, <a href="http://jakub.vrana.cz/utility/scite.exe">Windows Installer</a>
 </li>
-<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.da.properties">Danish 1.47</a>
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.da.properties">Danish</a> updated 1.47
 </li>
-<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/scite/locale.nl.properties">Dutch 1.67</a>
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/scite/locale.nl.properties">Dutch</a> updated 1.67
 </li>
-<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.eo.utf-8.properties">Esperanto 2.23</a>
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.eo.utf-8.properties">Esperanto</a> complete! 
 </li>
-<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.et.properties">Estonian 1.73</a> 
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.et.properties">Estonian</a> updated 1.73 
 </li>
-<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.fi.properties">Finnish 1.67</a>
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.fi.properties">Finnish</a> updated 1.67
 </li>
-<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.fr.properties">French 2.20</a></li>
-<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.gl.properties">Galician 1.62</a>
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.fr.properties">French</a> updated 2.20</li>
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.gl.properties">Galician</a> updated 1.62
 </li>
-<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.de.properties">German 2.23</a>
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.de.properties">German</a> complete! 
 </li>
-<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.el.properties">Greek 2.21</a> (UTF-8). Also, old <a href="http://web.archive.org/web/20071012092151/http://scite.hellug.gr/">Greek translation</a> of Scite website.
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.el.properties">Greek</a> complete! (UTF-8). Also, old <a href="http://web.archive.org/web/20071012092151/http://scite.hellug.gr/">Greek translation</a> of Scite website.
 </li>
-<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.hu.properties">Hungarian 1.63</a> with <a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.hu.explain.txt">explanation</a>
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.hu.properties">Hungarian</a> updated 1.63 with <a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.hu.explain.txt">explanation</a>
 </li>
-<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.id.properties">Indonesian 2.23</a>
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.id.properties">Indonesian</a> complete! 
 </li>
-<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.it.properties">Italian 2.23</a>
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.it.properties">Italian</a> complete! 
 </li>
-<li><a href="http://h12u.com/scixx/">Japanese</a>
+<li><a href="http://h12u.com/scixx/">Japanese</a> updated 1.62
 </li>
-<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.ko_KR.properties">Korean 2.23</a>
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.ko_KR.properties">Korean</a> complete! 
 </li>
-<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.ms.properties">Malaysian 1.73</a>
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.ms.properties">Malaysian</a> updated 1.73
 </li>
-<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.nb.properties">Norwegian 1.62</a> (Bokmål)
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.nb.properties">Norwegian</a> updated 1.62 (Bokmål)
 </li>
-<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.pl.properties">Polish 2.23</a> (UTF-8)
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.pl.properties">Polish</a> complete!  (UTF-8)
 </li>
-<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.ro.properties">Romanian 2.23</a>
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.ro.properties">Romanian</a> complete! 
 </li>
-<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.pt_PT.properties">Portuguese 1.63</a>
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.pt_PT.properties">Portuguese</a> updated 1.63
 </li>
-<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.ru.properties">Russian 1.63</a>
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.ru.properties">Russian</a> updated 1.63
 </li>
 <li><a href="http://scite.ruteam.ru/">Russian translation of SciTE web site including documentation.</a>
 </li>
-<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.sr.utf8.properties">Serbian 2.23</a> (UTF 8)
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.sr.utf8.properties">Serbian</a> complete!  (UTF 8)
 </li>
-<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.sr.windows-1251.properties">Serbian 2.23</a> (Windows-1251)
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.sr.windows-1251.properties">Serbian</a> complete!  (Windows-1251)
 </li>
-<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.sr.iso-8859-5.properties">Serbian 1.63</a> (Standard Cyrillic)
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.sr.iso-8859-5.properties">Serbian</a> updated 1.63 (Standard Cyrillic)
 </li>
-<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.sl.properties">Slovenian 1.62</a>
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.sl.properties">Slovenian</a> updated 1.62
 </li>
-<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.es.properties">Spanish 2.23</a>
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.es.properties">Spanish</a> complete! 
 </li>
-<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.es_MX.properties">Spanish 1.72</a> (Mexican)
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.es_MX.properties">Spanish</a> updated 1.72 (Mexican)
 </li>
-<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.sw_KE.properties">Swahili 1.73</a></li><li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.sv.properties">Swedish 2.23</a>
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.sw_KE.properties">Swahili</a> updated 1.73</li><li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.sv.properties">Swedish</a> complete! 
 </li>
-<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.th.properties">Thai 1.67</a>
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.th.properties">Thai</a> updated 1.67
 </li>
-<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.tr.properties">Turkish 1.73</a>
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.tr.properties">Turkish</a> updated 1.73
 </li>
-<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.uk.properties">Ukrainian 1.76</a>
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.uk.properties">Ukrainian</a> updated 1.76
 </li>
-<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.cy.properties">Welsh 1.59</a></li></ul>
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.cy.properties">Welsh</a> updated 1.59</li></ul>
 
 
 = Creating a locale file =
