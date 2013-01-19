@@ -118,7 +118,7 @@ Please see <a href="http://www.yuvcom.com/progress4gl">http://www.yuvcom.com/pro
 <h5>Windows Scripting </h5>
 <ul>
 <li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/Windows_scripting.zip">Properties files.</a></li>
-<li><a href="http://dev.remotenetworktechnology.com/SciTE/index.htm">More files and scripts.</a></li></ul>
+<li>[Customization_SciteForWindowsScripters More files and scripts].</li></ul>
 <h5>Asymptote</h5>
 <ul><li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/asymptote.properties">Properties file.</a></li></ul>
 
