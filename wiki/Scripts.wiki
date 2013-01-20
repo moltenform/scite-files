@@ -5,5 +5,8 @@ Currently, many scripts are on the [http://lua-users.org/wiki/SciteScripts Lua u
 == Formatting and Text manipulation ==
   * [Scripts_PerlFormat Perl scripts] for formatall, striplines, stripsppace.
   * HTMLTidy, from SciteWin
-  * [http://www.gusnan.se/sciteproj/scite_hints.php Swap Header] Swap between source and header in C via a keyboard shortcut
   * [Scripts_Abbreviations Scripts for Abbreviations] Ease the maintenance of the abbreviations files
+
+== General Lua Scripts ==
+  * <a href="http://www.gusnan.se/scite/scite_hints.php">Swap Header</a> Swap between source and header in C via a keyboard shortcut
+  * Marko Mahnič's <a href="http://scite-files.googlecode.com/svn-history/trunk/scripts/colorschemes.zip">colorschemes.zip</a> contains "sciteliblua" with some useful Lua utility code.
