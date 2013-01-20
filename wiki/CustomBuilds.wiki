@@ -7,6 +7,7 @@
   * [http://code.google.com/p/scite-eg/ SciTE - Exempli Gratia] Packaging of SciTE for Windows, aimed to be used with R and Python
   * [http://code.google.com/p/scite-for-lua/ SciTE for Lua] SciTE bundle for Lua programming
   * [http://llt.chez-alice.fr/ FilerX], project management and macro features on Windows. (Currently unmaintained?)
+  * [http://code.google.com/p/scitepp/ Scitepp], an enhancement of SciTE with file manager, debugging, and more.
 
 == SciTE tools ==
   * [http://caladbolg.net/scite_snippets.php Caladbolg SciTE Snippets] Textmate-like snippets for SciTE
