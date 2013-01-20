@@ -19,7 +19,7 @@
   * [CustomBuilds_SciTEPython Scite Python Extension], script SciTE in Python instead of Lua.
   * [http://code.google.com/p/scite-gui/ SciTE-Gui], GTK tool for SciTE UI modification
   * [http://hilfer.rubyforge.org/hilfer/ Hilfer], a keyboard-rich directory browser using ruby-gtk that talks to SciTE, and understands Rails projects.
-  * [http://www.gusnan.se/sciteproj SciteProj], project manager for SciTE
+  * [http://sciteproj.sourceforge.net/ SciteProj], project manager for SciTE
 
 <h5>Code for communication with a SciTE Process</h5>
   * [http://code.google.com/p/scite-files/source/browse/#svn%2Ftrunk%2Fprocess_communication%2Fscite_msg Scite_msg], command line tool to send messages to SciTE.
