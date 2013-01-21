@@ -13,7 +13,7 @@
 <h5>Python</h5>
 <ul>
 <li>[Customization_PythonDebug Python debugging in SciTE]</li>
-<li>In Windows, to run a python script, you may need to edit python.properties,<br/> e.g. change the line <tt>command.go.`*`.py=pythonw</tt> to <tt>command.go.`*`.py=c:\Python26\pythonw</tt></li>
+<li>In Windows, to run a python script, you may need to edit python.properties,<br/> e.g. change the line <tt>command.go.`*`.py=pythonw</tt> to <tt>command.go.`*`.py=c:\Python27\pythonw</tt></li>
 </ul>
 <h5>!JavaScript, CSS, web</h5>
 <ul>
