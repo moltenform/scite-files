@@ -1,10 +1,5 @@
 #summary Properties files, api files, other material for computer languages.
 
-== How to enable a language disabled by default ==
-At the end of SciTEGlobal.properties there is a list of files that can be imported. Remove the # from one of these lines (or add an entry to SciTEUser.properties) to enable support for that language.  As of SciTE 2.23, languages that can be enabled in this way are:
-
-abaqus, asn1, au3, freebasic, blitzbasic, bullant, cobol, cmake, csound, flagship, forth, gap, inno, kix, lout, nimrod, nncrontab, nsis, opal, powerpro, powershell, purebasic, r, rebol, scripol, smalltalk, spice, specman, tacl, tal, txt2tags, verilog, vhdl.
-
 == User-contributed properties ==
 
 <h5>C, C++</h5>
@@ -123,6 +118,39 @@ Please see <a href="http://www.yuvcom.com/progress4gl">http://www.yuvcom.com/pro
 <ul><li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/asymptote.properties">Properties file.</a></li></ul>
 
 To contribute a file to this list, e-mail the maintainer of this page, scitewiki at gmail dot com, so that it can be hosted here. 
+
+== Languages already supported by SciTE ==
+
+The following are supported by SciTE but disabled by default:
+<pre>
+abaqus, asn1, au3, avenue, avs, baan, blitzbasic, bullant,
+cobol, cmake, csound, ecl, escript, flagship, forth, freebasic, gap,
+haskell, inno, kix, latex, lot, lout, metapost, mmixal, modula3, 
+nimrod, nncrontab, nsis, opal, oscript, powerpro, powershell, 
+purebasic, r, rebol, scriptol, smalltalk, sorcins, spice, specman,
+tacl, tal, txt2tags, verilog, vhdl
+</pre>
+
+To enable one of these languages, say haskell for example, add the line
+{{{import haskell}}} to the SciTEUser.properties file (available from the Options menu -> Open User Options File).
+
+
+In total, SciTE comes with support for
+<pre>
+Abaqus, Ada, ANS.1 MIB definition files, APDL, Assembler (nasm, masm),
+Asymptote, AutoIt, Avenue, Batch files, Baan, Bash, BlitzBasic,
+Bullant, C, C++, C#, Clarion, cmake, conf (Apache), CSound, CSS, D,
+diff files, E-Script, Eiffel, Erlang, Flagship, Clipper, XBase, ,
+Flash (ActionScript), Fortran, Forth, GAP, Gettext, Haskell, HTML,
+embedded JavaScript, VBScript, PHP and ASP, Gui4Cli, IDL, MSIDL,
+XPIDL, INI, InnoSetup, Java, JavaScript, LISP, LOT, Lout, Lua, Make,
+Matlab, Metapost, MMIXAL, MSSQL, nnCron, NSIS, Objective Caml, Opal,
+Octave, Pascal, Delphi, Perl, PL/M, Progress, PostScript, POV-Ray,
+PowerBasic, PowerShell, PureBasic, Python, R, Rebol, Ruby, Scheme,
+scriptol, Specman E, Spice, Smalltalk, SQL, PLSQL, TADS3, TeX, LaTeX,
+Tcl/Tk, VB, VBScript, Verilog, VHDL, XML, and YAML.
+</pre>
+
 
 == How to install a .properties file ==
 A .properties file allows you to set up highlighting of keywords, and commands for the Tools menu, for a file type. To install such a file, for example "ahk.properties", place the ahk.properties file in the SciTE directory. Then, edit the Global Options file or User Options file and add the line "import ahk". 
