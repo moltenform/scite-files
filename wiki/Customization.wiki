@@ -32,6 +32,7 @@
 <h5>Auto Hotkey </h5>
 <ul>
 <li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/ahk.properties">AutoHotkey properties</a></li></ul>
+<li><a href="http://www.autohotkey.net/~fincs/SciTE4AutoHotkey_3/web/">SciTE4AutoHotkey</a> custom SciTE build for ahk.</li></ul>
 <h5>Auto It3 </h5>
 <ul>
 <li><a href="http://www.autoitscript.com/autoit3/scite">SciTE4AutoIt3 Website containing Auto It3 related properties and API files.</a></li></ul>
