@@ -1,3 +1,14 @@
+textrange(text, flags, startPos, endPos)
+findtext(text, flags, startPos, endPos)
+match(text, flags, startPos)
+append(text)
+insert(pos,text)
+remove(startPos,endPos)
+Open(filename)
+SendEditor(SCI_constant, ...)
+SendOutput(SCI_constant, ...)
+ConstantName(number)
+MenuCommand(IDM_constant)
 AddRefDocument(int pDocPointer)\n Create a new document object. Starts with reference count of 1 and not selected into editor. Extend life of document
 AddSelection(int caret, int anchor) = int length\n Add a selection
 AddStyledText(int length, cells c)\n Add array of cells to document
