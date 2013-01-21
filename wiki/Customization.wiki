@@ -86,6 +86,7 @@
 <h5>Perl </h5>
 <ul>
 <li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/perl.api">Perl API</a></li></ul>
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/parrot_properties.zip">Parrot properties file</a></li></ul>
 <h5>PHP </h5>
 <ul>
 <li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/html.properties">html.properties</a>
@@ -171,5 +172,6 @@ From the Scite documentation:
   * To generate an API file for Python modules, there is a <a href="http://scite-files.googlecode.com/svn-history/trunk/extras/makeapi/gen_python_api.zip">gen_python</a> script.
 
   * To generate an API file for Java classes, there is a <a href="http://scite-files.googlecode.com/svn-history/trunk/extras/makeapi/java_ApiBuilder.java">ApiBuilder.java</a> program.
-  * To generate an API file for C# classes, use <a href="http://scite-files.googlecode.com/svn-history/trunk/extras/csgenapi.zip">genapi.cs</a>.
-  * To generate an API file for PHP, use <a href="http://scite-files.googlecode.com/svn-history/trunk/extras/phpapi.php.txt">phpapi.php</a>.
+  * To generate an API file for C# classes, use <a href="http://scite-files.googlecode.com/svn-history/trunk/extras/makeapi/gen_csgenapi.zip">genapi.cs</a>.
+  * To generate an API file for PHP, use <a href="http://scite-files.googlecode.com/svn-history/trunk/extras/makeapi/gen_php-api-generator.zip">php-api-generator</a> or <a href="http://scite-files.googlecode.com/svn-history/trunk/extras/makeapi/phpapi.php.txt">phpapi.php</a>.
+  
