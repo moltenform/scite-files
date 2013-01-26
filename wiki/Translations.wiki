@@ -69,13 +69,15 @@ To use one of these translations, download the file, rename to "locale.propertie
 </li>
 <li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.pt_PT.properties">Portuguese</a> <font size="1">last updated 1.63</font>
 </li>
-<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.ru.properties">Russian</a> <font size="1">last updated 1.63</font>
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.ru.properties">Russian</a> <font size="1">last updated 1.74</font>
+</li>
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.ru.1251.properties">Russian</a> <font size="1">Windows-1251, last updated 1.74</font>
 </li>
 <li><a href="http://scite.ruteam.ru/">Russian translation of SciTE web site including documentation.</a>
 </li>
-<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.sr.utf8.properties">Serbian</a>  (UTF 8)
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.sr.utf8.properties">Serbian</a>  <font size="1">(UTF 8)</font>
 </li>
-<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.sr.windows-1251.properties">Serbian</a>  (Windows-1251)
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.sr.windows-1251.properties">Serbian</a>  <font size="1">(Windows-1251)</font>
 </li>
 <li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.sr.iso-8859-5.properties">Serbian</a> <font size="1">last updated 1.63 (Standard Cyrillic)</font>
 </li>
