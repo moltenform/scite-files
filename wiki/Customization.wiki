@@ -41,7 +41,7 @@
 <li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/batch_api.zip">Batch API Files</a> (API files for NT, XP/2003, GNUWin32 and SysInternals commands)</li></ul>
 <h5>C# </h5>
 <ul>
-<li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/Csharp_api.zip">C# api.</a></li></ul>
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/Csharp_api.zip">C# api</a></li></ul>
 <h5>CIL </h5>
 <ul>
 <li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/il.properties">Properties for CIL/MSIL</a></li></ul>
@@ -163,7 +163,7 @@ Tcl/Tk, VB, VBScript, Verilog, VHDL, XML, and YAML.
 A .properties file allows you to set up highlighting of keywords, and commands for the Tools menu, for a file type. To install such a file, for example "ahk.properties", place the ahk.properties file in the SciTE directory. Then, edit the Global Options file or User Options file and add the line "import ahk". 
 
 == How to install a .api file ==
-A .api file can be used to add tooltips that describe a function's signature. As an example, use cpp.api, for c++ tooltips. Make a directory in the SciTE folder called "api" and move the cpp.api file there. Then, edit cpp.properties to add the line <tt>api.$(file.patterns.cpp)=$(SciteDefaultHome)\api\cpp.api</tt>. Now, if you edit a .cpp file, and type <tt>fclose(</tt>, a tooltip should come up with the syntax.
+A .api file can be used to add tooltips that describe a function's signature. As an example, use cpp.api, for c++ tooltips. Make a directory in the SciTE folder called "api" and move the cpp.api file there. Then, edit cpp.properties to add the line <tt>api.$(file.patterns.cpp)=$(!SciteDefaultHome)\api\cpp.api</tt>. Now, if you edit a .cpp file, and type <tt>fclose(</tt>, a tooltip should come up with the syntax.
 
 Other relevant settings are <tt>calltip.cpp.ignorecase</tt> and 
 <tt>calltip.cpp.end.definition</tt>.
@@ -173,8 +173,8 @@ From the Scite documentation:
   * For C/C++ headers, an API file can be generated using [http://ctags.sourceforge.net/ ctags] and then the <a href="http://scite-files.googlecode.com/svn-history/trunk/extras/makeapi/tags2api.py">tags2api</a> Python script (which assumes C/C++ source) on the tags file to grab complete multiple line function prototypes. Some common headers surround parameter lists with a __P macro and may have comments. The <a href="http://scite-files.googlecode.com/svn-history/trunk/extras/makeapi/cleanapi.cc">cleanapi</a> utility may be used on these files.
 
   * To generate an API file for Python modules, there is a <a href="http://scite-files.googlecode.com/svn-history/trunk/extras/makeapi/gen_python_api.zip">gen_python</a> script.
-
-  * To generate an API file for Java classes, there is a <a href="http://scite-files.googlecode.com/svn-history/trunk/extras/makeapi/java_ApiBuilder.java">ApiBuilder.java</a> program.
+  * To generate an API file for Python 3, there is a <a href="http://scite-files.googlecode.com/svn-history/trunk/extras/makeapi/gen_python_3_api.py">gen_python_3</a> script, which functions mostly correctly, but seems to need some tweaking.
+  * To generate an API file for Java classes, there is a <a href="http://scite-files.googlecode.com/svn-history/trunk/extras/makeapi/java_ApiBuilder.java">!ApiBuilder.java</a> program.
   * To generate an API file for C# classes, use <a href="http://scite-files.googlecode.com/svn-history/trunk/extras/makeapi/gen_csgenapi.zip">genapi.cs</a>.
   * To generate an API file for PHP, use <a href="http://scite-files.googlecode.com/svn-history/trunk/extras/makeapi/gen_php-api-generator.zip">php-api-generator</a> or <a href="http://scite-files.googlecode.com/svn-history/trunk/extras/makeapi/phpapi.php.txt">phpapi.php</a>.
   
