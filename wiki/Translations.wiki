@@ -5,7 +5,10 @@
 To use one of these translations, download the file, rename to "locale.properties" and move into the SciTE directory. Most recent version that changed locale.properties is 2.21.
 
 = Language files =
-<ul><li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.af.properties">Afrikaans</a> <font size="1">last updated 1.73</font>
+<ul>
+<li><a href="http://www.scintilla.org/locale.properties">Latest English version</a>
+</li>
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.af.properties">Afrikaans</a> <font size="1">last updated 1.73</font>
 </li>
 <li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.ar.properties">Arabic</a> <font size="1">last updated 1.73</font>
 </li>
