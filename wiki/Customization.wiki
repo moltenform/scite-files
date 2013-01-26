@@ -48,6 +48,9 @@
 <h5>Clojure</h5><ul><li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/clojure.api">Properties for Clojure</a></li></ul><h5>CMake</h5>
 <ul>
 <li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/cmake.api">CMake API</a></li></ul>
+<h5>Go</h5>
+<ul>
+<li><a href="http://go-lang.cat-v.org/text-editors/scite/">Properties for Go Programming</a></li></ul>
 <h5>FORTRAN </h5>
 <ul>
 <li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/fortran.api">Standard FORTRAN API functions</a></li></ul>
@@ -85,7 +88,7 @@
 </ul>
 <h5>Perl </h5>
 <ul>
-<li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/perl.api">Perl API</a></li></ul>
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/perl.api">Perl API</a></li>
 <li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/parrot_properties.zip">Parrot properties file</a></li></ul>
 <h5>PHP </h5>
 <ul>
