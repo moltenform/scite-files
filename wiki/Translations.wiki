@@ -110,5 +110,3 @@ If you translate SciTE, please make the translation available to others. E-mail 
 The file names should use [http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes ISO 639-1 language codes].
 
 If you contribute a translation, then I'll assume you want it to be made freely available under the same conditions as SciTE, unless there is a comment in the file stating otherwise.
-
-(From [http://www.scintilla.org/SciTETranslation.html SciTE translation]).
