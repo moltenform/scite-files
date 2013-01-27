@@ -36,6 +36,8 @@ calltip.python.word.characters=._$(chars.alpha)$(chars.numeric)
 Restart SciTE.  Enjoy.
 
 by Markus Gritsch (gritsch@iue.tuwien.ac.at)
+Nov 16, 2011.  jgspratt reports getting a SyntaxError from file "gen_python_api.py", line 253
+Nov 28, 2011. kaidxc posts a fix to SciTE files wiki for this issue.
 '''
 
 # if one of these substrings is found in a specific sys.path directory,
@@ -250,7 +252,8 @@ if add_keywords:
 if add_builtins:
     print '\nadding __builtins__ ...',
     for builtin in dir(__builtins__):
-        processName(entryprefix = '', moduleprefix = '', name = builtin, ns = {})
+        if builtin != 'print':
+            processName(entryprefix = '', moduleprefix = '', name = builtin, ns = {})
     print 'ok'
 
 # sys.builtin_module_names
