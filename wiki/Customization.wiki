@@ -172,7 +172,7 @@ From the Scite documentation:
 
   * For C/C++ headers, an API file can be generated using [http://ctags.sourceforge.net/ ctags] and then the <a href="http://scite-files.googlecode.com/svn-history/trunk/extras/makeapi/tags2api.py">tags2api</a> Python script (which assumes C/C++ source) on the tags file to grab complete multiple line function prototypes. Some common headers surround parameter lists with a __P macro and may have comments. The <a href="http://scite-files.googlecode.com/svn-history/trunk/extras/makeapi/cleanapi.cc">cleanapi</a> utility may be used on these files.
 
-  * To generate an API file for Python modules, there is a <a href="http://scite-files.googlecode.com/svn-history/trunk/extras/makeapi/gen_python_api.zip">gen_python</a> script.
+  * To generate an API file for Python modules, there is a <a href="http://scite-files.googlecode.com/svn-history/trunk/extras/makeapi/gen_python_api.py">gen_python</a> script.
   * To generate an API file for Python 3, there is a <a href="http://scite-files.googlecode.com/svn-history/trunk/extras/makeapi/gen_python_3_api.py">gen_python_3</a> script, which functions mostly correctly, but seems to need some tweaking.
   * To generate an API file for Java classes, there is a <a href="http://scite-files.googlecode.com/svn-history/trunk/extras/makeapi/java_ApiBuilder.java">!ApiBuilder.java</a> program.
   * To generate an API file for C# classes, use <a href="http://scite-files.googlecode.com/svn-history/trunk/extras/makeapi/gen_csgenapi.zip">genapi.cs</a>.
