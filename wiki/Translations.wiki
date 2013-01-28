@@ -2,7 +2,7 @@
 
 = Set language =
 
-To use one of these translations, download the file, rename to "locale.properties" and move into the SciTE directory. Most recent version that changed locale.properties is 2.21.
+To use one of these translations, download the file, rename to "locale.properties" and move into the SciTE directory. Most recent version that changed locale.properties is 3.0.4.
 
 = Language files =
 <ul>
@@ -103,7 +103,7 @@ To use one of these translations, download the file, rename to "locale.propertie
 
 
 = Creating a locale file =
-The menus and dialogs can be translated into another language by modifying the [http://www.scintilla.org/locale.properties locale.properties] file which should be stored in the same directory as the global properties.
+The menus and dialogs can be translated into another language by modifying the [http://www.scintilla.org/locale.properties locale.properties] file which should be stored in the same directory as the global properties. locale.properties has been updated for version 3.2.3 of SciTE to add new strings for asynchronous operations and the OSX version. The asynchronous text will only be seen on large files or remote file systems where loading and saving may take some time.
 
 If you translate SciTE, please make the translation available to others. E-mail the maintainer of this page, scitewiki at gmail dot com, so that it can be hosted here.
 
