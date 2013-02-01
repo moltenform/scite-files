@@ -93,7 +93,8 @@
 <h5>PHP </h5>
 <ul>
 <li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/html.properties">html.properties</a>
-</li><li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/php.api">php.api for PHP 4.3.3</a>
+</li><li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/php.api">php.api, latest PHP 5</a>
+</li><li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/php-es.api">php.api in Spanish, PHP 5</a>
 </li><li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/php.properties">PHP properties</a>
 </li><li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/phpfunctions.properties">PHP functions</a>
 </li></ul>
