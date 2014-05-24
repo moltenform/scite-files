@@ -7,7 +7,8 @@
 <li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/c.api">C standard library</a></li>
 <li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/c_withdoc.zip">C standard library</a> with short doc strings, fixed 3/12.</li>
 <li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/cpp.api.zip">Windows API</a>
-</li><li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/opengl4.4.zip">OpenGL 4.4 API</a>
+</li><li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/opengl.zip">OpenGL 1.2 API</a>
+</li><li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/opengl4.4.zip">OpenGL 4.4 API (extensions)</a>
 </li><li><a href="http://scite-files.googlecode.com/svn-history/trunk/extras/glut.zip" style="text-decoration: none;">Glut API</a></li></ul>
 
 <h5>Python</h5>
