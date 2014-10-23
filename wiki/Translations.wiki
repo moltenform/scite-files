@@ -60,6 +60,8 @@ To use one of these translations, download the file, rename to "locale.propertie
 </li>
 <li><a href="http://h12u.com/scixx/">Japanese</a> <font size="1">custom package of SciTE, last updated 1.62</font>
 </li>
+<li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.kk.properties">Kazakh</a> 
+</li>
 <li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.ko_KR.properties">Korean</a> 
 </li>
 <li><a href="http://scite-files.googlecode.com/svn-history/trunk/translations/locale.ms.properties">Malaysian</a> <font size="1">last updated 1.73</font>
