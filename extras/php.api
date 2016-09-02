@@ -5705,4 +5705,3 @@ xpath_register_ns (XPathContext $xpath_context, string $prefix, string $uri) boo
 xpath_register_ns_auto (XPathContext $xpath_context[, object $context_node]) bool Register the given namespace in the passed XPath context	(PHP 4 >= 4.3.0)
 xptr_eval (string $eval_str[, domnode $contextnode]) int Evaluate the XPtr Location Path in the given string	(PHP 4)
 xptr_new_context (void)  Create new XPath Context	(PHP 4)
-

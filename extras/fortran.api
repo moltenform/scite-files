@@ -194,4 +194,3 @@ trim(string) Remove trailing blank characters
 ubound(array [, dim, kind]) result(integer) Upper dimension bounds of an array
 unpack(vector, mask, field) unpack an array of rank one into an array under a mask
 verify(string, set [, back, kind]) Verify the set of characters in a string
-

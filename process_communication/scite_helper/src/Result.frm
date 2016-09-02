@@ -5,4 +5,3 @@ Begin VB.Form Result
    End
 End
 Attribute VB_Name = "Result"
-

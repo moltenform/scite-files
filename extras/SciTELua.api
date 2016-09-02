@@ -451,4 +451,3 @@ WrapVisualFlags = int wrapVisualFlags\n [RW] Set the display mode of visual flag
 WrapVisualFlagsLocation = int wrapVisualFlagsLocation\n [RW] Set the location of visual flags for wrapped lines
 XOffset = int xOffset\n [RW] Get and Set the xOffset (ie, horizonal scroll position)
 Zoom = int zoomInPoints\n [RW] Set the zoom level. This number of points is added to the size of all fonts. It may be positive to magnify or negative to reduce
-

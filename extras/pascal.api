@@ -288,4 +288,3 @@ Write(Args: Arguments);
 Write(var F: Text; Args: Arguments);
 WriteLn(Args: Arguments);
 WriteLn(var F: Text; Args: Arguments);
-

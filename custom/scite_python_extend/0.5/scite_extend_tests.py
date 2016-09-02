@@ -429,4 +429,3 @@ def printclear():
 		ScOutput.ClearAll()
 	
 	
-
