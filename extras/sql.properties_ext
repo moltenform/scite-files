@@ -518,3 +518,4 @@ keywords5.$(file.patterns.plsql)=$(keywordclass.user1)
 #keywords6.$(file.patterns.plsql)=$(keywordclass.user2)
 #keywords7.$(file.patterns.plsql)=$(keywordclass.user3)
 #keywords8.$(file.patterns.plsql)=$(keywordclass.user4)
+

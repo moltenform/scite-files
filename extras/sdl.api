@@ -194,3 +194,4 @@ SDL_SetTimer(Uint32 interval, SDL_TimerCallback callback)
 SDL_TimerCallback
 SDL_NewTimerCallback
 SDL_TimerID
+

@@ -55,3 +55,4 @@ Function Window_Proc(ByVal hwnd As Long, ByVal uMsg As Long, ByVal wParam As Lon
       Result.txtResult = sString
    End Select
 End Function
+

@@ -48,3 +48,4 @@ And I need to see at times just chapter headings and descriptions.
 
 There are several problems with this format now. I don't like the odd colors intruding, I don't like having to look at nested {{ }} all the time, and I wish more than anything I could move at least paragraphs up and down without cutting and pasting. 
 
+

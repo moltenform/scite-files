@@ -4420,3 +4420,4 @@ zip_read (resource $zip) resource Leer la siguiente entrada en el fichero ZIP  (
 zlib_decode (string $data[, string $max_decoded_len]) string Descomprime datos codificados en craw/gzip/zlib  (PHP 5 >= 5.4.0)
 zlib_encode (string $data, string $encoding[, string $level = -1]) string Comprime datos con la codificación especificada  (PHP 5 >= 5.4.0)
 zlib_get_coding_type (void) string Retorna el tipo de codificación utilizada para hacer la compresión  (PHP 4 >= 4.3.2, PHP 5)
+

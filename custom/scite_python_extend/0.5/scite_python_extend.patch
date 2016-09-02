@@ -1100,3 +1100,4 @@ Index: win32/SciTEWin.cxx
  #endif
  
  #ifndef NO_FILER
+
