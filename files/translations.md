@@ -1,17 +1,18 @@
 
-Contributions are welcome; please create a pull request or send an e-mail to scitewiki@gmail.com. See the instructions 'making a translation' at the end of this page.
+[Back to scite-files home](../README.md)
 
-### How to install a translation
+[Translations](#list_translations)
 
-Right click on a link below and select "Save link as..."
+[How to install a translation - Windows](#how_to_install_translation_win)
 
-Browse to SciTE directory. On linux, /usr/bin/SciTE
+[How to install a translation - Linux](#how_to_install_translation_linux)
 
-Name the file locale.properties
+[How to make a translation](#how_to_make_translation)
 
+<a name="list_translations"></a>
 ### Translations
 
-|   |  | |
+| Translations  |  |   |
 | ------------- | ------------- | ------------- |
 | [locale.af.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.af.properties) | Afrikaans | Updated 1.73 |
 | [locale.ar.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.ar.properties) | Arabic (العربية) | Updated 1.73 |
@@ -54,21 +55,55 @@ Name the file locale.properties
 | [locale.zh_b5.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.zh_b5.properties) | Chinese Traditional Big5 (中文) | Updated 1.73 (set code.page=950, character.set=136) |
 | [locale.zh_cn.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.zh_cn.properties) | Chinese Simplified GBK (中文) | Updated 2.21 (set code.page=936, character.set=134) |
 
-
-See also,
-
 Russian (Русский) [scite-ru project](http://scite-ru.bitbucket.org)
 
 Old 2006 Greek (ελληνικά) [page](http://web.archive.org/web/20071012092151/http://scite.hellug.gr/)
 
-Old 2005 Japanese (日本語) [page](http://h12u.com/scixx/about162plusjpn.html)
+Old 2005 Japanese (日本語) [SciTEDoc](http://downpoured.github.io/scite-with-python/SciTEDocJa/SciTEDoc.html), [SciTEFaq](http://downpoured.github.io/scite-with-python/SciTEDocJa/SciTEFAQ.html), [ScintillaDoc](http://downpoured.github.io/scite-with-python/SciTEDocJa/ScintillaDoc.html) translated by Suzumizaki Kimitaka
 
+<a name="how_to_install_translation_win"></a>
+### How to install a translation (Windows)
+
+* The name of the file must be locale.properties and must be placed in the same directory as SciTEGlobal.properties, for example
+
+* Right-click one of the links and choose "Save link as..." or "Save target as..."
+
+    * ![Screenshot right-click link](https://raw.githubusercontent.com/downpoured/scite-files/master/files/translations_install_win_right.png "")
+
+* Navigate to the directory where SciTE.exe is located
+
+    * ![Screenshot navigate to SciTE directory](https://raw.githubusercontent.com/downpoured/scite-files/master/files/translations_install_win_path.png "")
+
+* Type in the filename "locale.properties" and click Save
+
+    * ![Screenshot rename file](https://raw.githubusercontent.com/downpoured/scite-files/master/files/translations_install_win_rename.png "")
+
+* Run SciTE.exe, and the menus and dialogs will show translated text
+
+<a name="how_to_install_translation_linux"></a>
+### How to install a translation (Linux)
+
+* The name of the file must be locale.properties and must be placed in the same directory as SciTEGlobal.properties, for example
+
+* Right-click one of the links below and choose "Save link as..."
+
+* Save to a writable directory. For example, if installing a Spanish translation, one could save locale.es.properties to /home/downloads/locale.es.properties
+
+* Open a terminal
+
+* sudo cp /home/downloads/locale.es.properties /usr/share/scite/locale.properties
+
+* If /usr/share/scite does not exist, properties might be stored in /usr/local/share/scite
+
+<a name="how_to_make_translation"></a>
 ### Making a translation
 
-To make a translation, first download the latest [locale.properties](http://www.scintilla.org/locale.properties) file, and then fill in the missing text after each =. 
+* Download the latest [locale.properties](http://www.scintilla.org/locale.properties) file
 
-Please contribute completed translations by either sending the .properties file to scitewiki@gmail.com or by submitting a pull request to this project.
+* Edit this file and fill in the text after each =.
 
-If you contribute a translation, then I'll assume you want it to be made freely available under the same conditions as SciTE, unless there is a comment in the file stating otherwise.
+* Please contribute translations by either sending an e-mail to scitewiki@gmail.com or by submitting a pull request to this project.
+
+* If you contribute a translation, then I'll assume you want it to be made freely available under the same conditions as SciTE, unless there is a comment in the file stating otherwise.
 
 

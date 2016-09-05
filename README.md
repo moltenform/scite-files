@@ -14,7 +14,7 @@ Scripts adding features to SciTE
 
 <br /><br /><br />
 
-Also,
+also,
 
 [read more about SciTE](http://www.scintilla.org/SciTE.html)
 
