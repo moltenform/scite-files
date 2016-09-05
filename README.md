@@ -1,7 +1,5 @@
 User-contributed files for the SciTE code editor
 
-<br /><br />
-
 ### [Translations](files/translations.md)
 
 Show the SciTE interface in another language
@@ -16,7 +14,7 @@ Scripts adding features to SciTE
 
 <br /><br /><br />
 
-See also,
+Also,
 
 [read more about SciTE](http://www.scintilla.org/SciTE.html)
 
