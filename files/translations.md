@@ -1,16 +1,9 @@
 
-[Back to scite-files home](../README.md)
+[Back](../README.md)
 
-[Translations](#list_translations)
-
-[How to install a translation - Windows](#how_to_install_translation_win)
-
-[How to install a translation - Linux](#how_to_install_translation_linux)
-
-[How to make a translation](#how_to_make_translation)
+How to install a translation [Windows](#how_to_install_translation_win), [Linux](#how_to_install_translation_linux)
 
 <a name="list_translations"></a>
-### Translations
 
 | Translations  |  |   |
 | ------------- | ------------- | ------------- |
@@ -64,26 +57,26 @@ Old 2005 Japanese (日本語) [SciTEDoc](http://downpoured.github.io/scite-with-
 <a name="how_to_install_translation_win"></a>
 ### How to install a translation (Windows)
 
-* The name of the file must be locale.properties and must be placed in the same directory as SciTEGlobal.properties, for example
+* The name of the file must be locale.properties and must be placed in the same directory as SciTEGlobal.properties, for example,
 
 * Right-click one of the links and choose "Save link as..." or "Save target as..."
 
-    * ![Screenshot right-click link](https://raw.githubusercontent.com/downpoured/scite-files/master/files/translations_install_win_right.png "")
+    * ![Screenshot right-click link](https://raw.githubusercontent.com/downpoured/scite-files/master/files/translations_install_win_right.png)
 
 * Navigate to the directory where SciTE.exe is located
 
-    * ![Screenshot navigate to SciTE directory](https://raw.githubusercontent.com/downpoured/scite-files/master/files/translations_install_win_path.png "")
+    * ![Screenshot navigate to SciTE directory](https://raw.githubusercontent.com/downpoured/scite-files/master/files/translations_install_win_path.png)
 
 * Type in the filename "locale.properties" and click Save
 
-    * ![Screenshot rename file](https://raw.githubusercontent.com/downpoured/scite-files/master/files/translations_install_win_rename.png "")
+    * ![Screenshot rename file](https://raw.githubusercontent.com/downpoured/scite-files/master/files/translations_install_win_rename.png)
 
 * Run SciTE.exe, and the menus and dialogs will show translated text
 
 <a name="how_to_install_translation_linux"></a>
 ### How to install a translation (Linux)
 
-* The name of the file must be locale.properties and must be placed in the same directory as SciTEGlobal.properties, for example
+* The name of the file must be locale.properties and must be placed in the same directory as SciTEGlobal.properties, for example,
 
 * Right-click one of the links below and choose "Save link as..."
 
@@ -93,17 +86,17 @@ Old 2005 Japanese (日本語) [SciTEDoc](http://downpoured.github.io/scite-with-
 
 * sudo cp /home/downloads/locale.es.properties /usr/share/scite/locale.properties
 
-* If /usr/share/scite does not exist, properties might be stored in /usr/local/share/scite
+* If /usr/share/scite does not exist, it is possible that properties are stored in /usr/local/share/scite 
 
 <a name="how_to_make_translation"></a>
 ### Making a translation
 
 * Download the latest [locale.properties](http://www.scintilla.org/locale.properties) file
 
-* Edit this file and fill in the text after each =.
+* Edit this file and fill in each line that ends with =
 
-* Please contribute translations by either sending an e-mail to scitewiki@gmail.com or by submitting a pull request to this project.
+* Please contribute translations by either sending an e-mail to scitewiki@gmail.com or by submitting a pull request to this project
 
-* If you contribute a translation, then I'll assume you want it to be made freely available under the same conditions as SciTE, unless there is a comment in the file stating otherwise.
+* If you contribute a translation, then I'll assume you want it to be made freely available under the same conditions as SciTE, unless there is a comment in the file stating otherwise
 
 

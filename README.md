@@ -1,16 +1,15 @@
-User-contributed files for the SciTE code editor
 
 ### [Translations](files/translations.md)
 
-Show the SciTE interface in another language
+Show SciTE in another language
 
 ### [API files](files/api_files.md)
 
-API files and properties files for syntax highlighting, calltips, and auto-completion
+API files and properties files for syntax highlighting, calltips, and symbol completion
 
 ### [Scripts and macros](files/scripts_and_macros.md)
 
-Scripts adding features to SciTE
+Scripts that add features to SciTE
 
 <br /><br /><br />
 

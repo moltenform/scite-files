@@ -1,15 +1,7 @@
 
-[Back to scite-files home](../README.md)
+[Back](../README.md)
 
-[Built-in languages](#built_in_languages)
-
-[API Files and properties](#api_files_and_properties)
-
-[How to install a properties file](#how_to_install_properties)
-
-[How to install an api file and enable calltips](#how_to_install_api)
-
-[How to make an api file](#how_to_make_api)
+[How to install a properties file](#how_to_install_properties), [How to install an api file and enable calltips](#how_to_install_api)
 
 <a name="built_in_languages"></a>
 ### Built-in languages
@@ -22,7 +14,7 @@ Ada, Assembler (NASM, MASM), AutoIt, Batch files (MS-DOS), Bash, C/C++/C#, conf 
 
 These languages are recognized by SciTE but are not enabled by default:
 
-Abaqus, Baan, BlitzBasic, Bullant, Avenue (Ave), Asl (ACPI Source), ASN.1 MIB, AutoIt, AviSynth, cmake, COBOL, Coffeescript, CSound, Ecl, Eiffel, Erlang, E-Script, Flagship (Clipper / XBase), Forth, Freebasic, GAP, Haskell, Intel HEX, InnoSetup, JSON and JSON-LD, KiXtart, TeX and LaTeX, LOT, Lout, Metapost, MMIXAL,, Modula 3, Nimrod, nnCron, NSIS, Opal, OScript, POV-Ray, PowerBasic, PowerShell, PowerPro, , PostScript, PureBasic, R, Rebol, Rust, scriptol, Smalltalk, SORCUS Installation, Spice, Specman E, TACL, TAL, txt2tags, Verilog, VHDL
+Abaqus, Baan, BlitzBasic, Bullant, Avenue (Ave), Asl (ACPI Source), ASN.1 MIB, AutoIt, AviSynth, cmake, COBOL, Coffeescript, CSound, Ecl, Eiffel, Erlang, E-Script, Flagship (Clipper / XBase), Forth, Freebasic, GAP, Haskell, Intel HEX, InnoSetup, JSON and JSON-LD, KiXtart, TeX and LaTeX, LOT, Lout, Metapost, MMIXAL, Modula 3, Nimrod, nnCron, NSIS, Opal, OScript, POV-Ray, PowerBasic, PowerShell, PowerPro, PostScript, PureBasic, R, Rebol, Rust, scriptol, Smalltalk, SORCUS Installation, Spice, Specman E, TACL, TAL, txt2tags, Verilog, VHDL
 
 To enable one of these languages,
 
@@ -156,7 +148,7 @@ To enable one of these languages,
 
 * Python
 
-    * [Python script to print variables on exception or breakpoint](api_files_py_debug.md)
+    * [Automatically print the contents of local variables on unhandled exceptions](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/python_print_vars.zip)
 
 * TADS3 
 
@@ -165,7 +157,7 @@ To enable one of these languages,
 * Windows Scripting 
 
     * [Properties files](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/windows_scripting.zip)
-    * [More files and scripts](api_files_win_scripting.md)
+    * [More files and scripts](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/windows_scripting_scripts.zip), refer to readme.txt
 
 * AMPL
 
@@ -184,7 +176,9 @@ To contribute a file to this list, send an e-mail to scitewiki at gmail dot com 
 
 * In Windows, move the .properties file into the directory that contains SciTE.exe
 
-* In Linux, move the .properties file into the directory that contains SciTEGlobal.properties. This is typically either /usr/bin/scite or /usr/local/bin/scite.
+* In Linux, move the .properties file into the directory that contains SciTEGlobal.properties. This is typically either /usr/bin/scite or /usr/local/bin/scite
+
+* By default, SciTEGlobal.properties includes the line `import *`, and so the new .properties file will be included
 
 <a name="how_to_install_api"></a>
 ### How to install an api file and enable calltips
@@ -195,7 +189,7 @@ To contribute a file to this list, send an e-mail to scitewiki at gmail dot com 
 
 * In Windows, move c_withdoc.api into the directory that contains SciTE.exe
 
-* In Linux, move c_withdoc.api into the directory that contains SciTEGlobal.properties. This is typically either /usr/bin/scite or /usr/local/bin/scite.
+* In Linux, move c_withdoc.api into the directory that contains SciTEGlobal.properties. This is typically either /usr/bin/scite or /usr/local/bin/scite
 
 * Open SciTE
 
@@ -226,7 +220,7 @@ To contribute a file to this list, send an e-mail to scitewiki at gmail dot com 
 
 An api file is a plain text file with one entry per line.
 
-You can generate api files for your own source code, one of these tools may be helpful:
+To generate api files for your own source code, one of these tools may be helpful:
 
 * For C/C++ headers, an API file can be generated using [ctags](http://ctags.sourceforge.net/) and then the [tags2api](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files_gen/tags2api.py) Python script (which assumes C/C++ source) on the tags file to grab complete multiple line function prototypes. Some common headers surround parameter lists with a __P macro and may have comments. The [cleanapi](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files_gen/cleanapi.cc) utility may be used on these files
 * For Python modules, there is a [gen_python](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files_gen/gen_python_api.py) script
