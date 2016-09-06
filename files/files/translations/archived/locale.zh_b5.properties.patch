@@ -1,0 +1,546 @@
+--- trunk/translations/locale.zh_b5.properties
++++ trunk/translations/locale.zh_b5.properties
+@@ -23,326 +23,326 @@
+ # reencoded as UTF-8 as that is the GTK+ 2 user interface encoding.
+ # A common choice for European users is LATIN1. For other locales look at
+ # the set of encodings supported by iconv.
+-# 2002/02/03 before 1.43 Translated by Chii Liao ��Ҩ�
+-# 2003/11/07 1.44-1.56   Translated by Daniel Lin �L��� daniel@twpda.com
++# 2002/02/03 before 1.43 Translated by Chii Liao ¹ù±Ò¨¶
++# 2003/11/07 1.44-1.56   Translated by Daniel Lin ªL­ì§Ó daniel@twpda.com
+ # 2005/03/12 1.57-1.62   Translated by Edward Hsieh(edwardsayer at pchome dot com dot tw)
+-# 2005/09/03 1.63-1.66   Translated and corrected by �Ǻ� in Taipei County, Taiwan.
+-# 2006/06/21 1.67-1.70   updated and refined by �Ǻ�
+-#2007/05/04  1.73            updated by �Ǻ�
++# 2005/09/03 1.63-1.66   Translated and corrected by ÅÇºû¥¿ in Taipei County, Taiwan.
++# 2006/06/21 1.67-1.70   updated and refined by ÅÇºû¥¿
++#2007/05/04  1.73            updated by ÅÇºû¥¿
+ translation.encoding=Big5
+ 
+ # Menus
+ 
+ # File menu
+-File=�ɮ�(&F)
+-New=�s�W(&N)
+-Open=�}��(&O)
+-Open Selected Filename=�}�ҩҿ�|�W(&F)
+-Revert=�^�_����x�s��(&R)
+-Close=��(&C)
+-Save=�x�s(&S)
+-Save As=�t�s�s��(&A)
+-Export=�ץX(&E)
+-As HTML=�� HTML ��(&H)
+-As RTF=�� RTF ��(&R)
+-Page Setup=�����]�w(&U)
+-Print=�C�L(&P)
+-Load Session=��J�Y���s�赡��(&L)
+-Save Session=�x�s�����s�赡��(&V)
+-Exit=����(&X)
++File=ÀÉ®×(&F)
++New=·s¼W(&N)
++Open=¶}±Ò(&O)
++Open Selected Filename=¶}±Ò©Ò¿ï®|¦W(&F)
++Revert=¦^´_¨ì­èÀx¦s«á(&R)
++Close=Ãö³¬(&C)
++Save=Àx¦s(&S)
++Save As=¥t¦s·sÀÉ(&A)
++Export=¶×¥X(&E)
++As HTML=¦¨ HTML ÀÉ(&H)
++As RTF=¦¨ RTF ÀÉ(&R)
++Page Setup=­¶­±³]©w(&U)
++Print=¦C¦L(&P)
++Load Session=¸ü¤J¬Y¦¸½s¿èµ¡­±(&L)
++Save Session=Àx¦s¥»¦¸½s¿èµ¡­±(&V)
++Exit=µ²§ô(&X)
+ 
+ # Edit menu
+-Edit=�s��(&E)
+-Undo=���W���ʧ@(&U)
+-Redo=���ƤW���ʧ@(&R)
+-Cut=�ŤU(&T)
+-Copy=�ƻs(&C)
+-Paste=�K�W(&P)
+-Delete=�R��(&D)
+-Select All=����(&A)
+-Copy as RTF=�ƻs��RTF(&F)
+-Match Brace=��ܹ�����A����m(&B)
+-Select to Brace=��������ҬA���e(&O)
+-Show Calltip=��ܨ�ƴ���(&H)
+-Complete Symbol=�ɻ�Ÿ�(&Y)
+-Complete Word=�ɻ��r(&W)
+-Expand Abbreviation=�Y�g�i�}(&E)
+-Block Comment or Uncomment=�[��Ѹ�(�϶�U�歺)�Ψ��(&M)
+-Box Comment=�[��Ѹ�(�϶��Ψ䤤�U�歺)(&X)
+-Stream Comment=�[��Ѹ�(�϶��)(&N)
+-Make Selection Uppercase=�ҿ��r��j�g(&S)
+-Make Selection Lowercase=�ҿ��r��p�g(&L)
++Edit=½s¿è(&E)
++Undo=¨ú®ø¤W¦¸°Ê§@(&U)
++Redo=­«½Æ¤W¦¸°Ê§@(&R)
++Cut=°Å¤U(&T)
++Copy=½Æ»s(&C)
++Paste=¶K¤W(&P)
++Delete=§R°£(&D)
++Select All=¥þ¿ï(&A)
++Copy as RTF=½Æ»s¬°RTF(&F)
++Match Brace=¸õ¦Ü¹ïÀ³ªº¬A¸¹¦ì¸m(&B)
++Select to Brace=¿ï¨ú¹ïÀ³ªº©Ò¬A¤º®e(&O)
++Show Calltip=Åã¥Ü¨ç¼Æ´£¥Ü(&H)
++Complete Symbol=¸É»ô²Å¸¹(&Y)
++Complete Word=¸É»ô¤å¦r(&W)
++Expand Abbreviation=ÁY¼g®i¶}(&E)
++Block Comment or Uncomment=¥[µù¸Ñ¸¹(°Ï¶ô¤¤¦U¦æ­º)©Î¨ú®ø¤§(&M)
++Box Comment=¥[µù¸Ñ¸¹(°Ï¶ô­º§À¤Î¨ä¤¤¦U¦æ­º)(&X)
++Stream Comment=¥[µù¸Ñ¸¹(°Ï¶ô­º§À)(&N)
++Make Selection Uppercase=©Ò¿ï¤å¦rÂà¤j¼g(&S)
++Make Selection Lowercase=©Ò¿ï¤å¦rÂà¤p¼g(&L)
+ 
+ # Search menu
+-Search=�M��(&S)
+-Find=�j�M(&F)
+-Find Next=��U�@��(&N)
+-Find Previous=��W�@��(&S)
+-Find in Files=�b�ؿ��(&I)
+-Replace=��N(&E)
+-Next Bookmark=�U�@����(&M)
+-Previous Bookmark=�W�@����(&V)
+-Toggle Bookmark=�]�m/�M������(&K)
+-Clear All Bookmarks=�M���Ҧ�����(&C)
++Search=´M§ä(&S)
++Find=·j´M(&F)
++Find Next=§ä¤U¤@­Ó(&N)
++Find Previous=§ä¤W¤@­Ó(&S)
++Find in Files=¦b¥Ø¿ý¤¤§ä(&I)
++Replace=¨ú¥N(&E)
++Next Bookmark=¤U¤@®ÑÅÒ(&M)
++Previous Bookmark=¤W¤@®ÑÅÒ(&V)
++Toggle Bookmark=³]¸m/²M°£®ÑÅÒ(&K)
++Clear All Bookmarks=²M°£©Ò¦³®ÑÅÒ(&C)
+ 
+ # View menu
+-View=�˵�(&V)
+-Toggle current fold=�}/�X���h�q(&C)
+-Toggle all folds=�}/�X�Ҧ��h�q(&A)
+-Full Screen=���ù�(&N)
+-Tool Bar=�u��C(&T)
+-Tab Bar=���ҦC(&B)
+-Status Bar=���A�C(&S)
+-Whitespace=�ťո�(&W)
+-End of Line=���渹(&E)
+-Indentation Guides=�Y�ƺA(&I)
+-Line Numbers=�渹��(&L)
+-Margin=������(&M)
+-Fold Margin=�h�q��(&F)
+-Output=��X��(&O)
+-Parameters=�Ѽ�(&P)
++View=ÀËµø(&V)
++Toggle current fold=¶}/¦X¦¹¼h¬q(&C)
++Toggle all folds=¶}/¦X©Ò¦³¼h¬q(&A)
++Full Screen=¥þ¿Ã¹õ(&N)
++Tool Bar=¤u¨ã¦C(&T)
++Tab Bar=­¶ÅÒ¦C(&B)
++Status Bar=ª¬ºA¦C(&S)
++Whitespace=ªÅ¥Õ¸¹(&W)
++End of Line=´«¦æ¸¹(&E)
++Indentation Guides=ÁY±ÆºA(&I)
++Line Numbers=¦æ¸¹Ãä(&L)
++Margin=®ÑÅÒÃä(&M)
++Fold Margin=¼h¬qÃä(&F)
++Output=¿é¥Xµ¡(&O)
++Parameters=°Ñ¼Æ(&P)
+ 
+ # Tools menu
+-Tools=�u��(&T)
+-Compile=�sĶ(&C)
+-Build=�إ�(&B)
+-Go=���(&G)
+-Stop Executing=������(&S)
+-Next Message=�U�@�T��(&N)
+-Previous Message=�W�@�T��(&P)
+-Clear Output=�M����X(&O)
+-Switch Pane=�����(&S)
++Tools=¤u¨ã(&T)
++Compile=½sÄ¶(&C)
++Build=«Ø¥ß(&B)
++Go=°õ¦æ(&G)
++Stop Executing=°±¤î°õ¦æ(&S)
++Next Message=¤U¤@°T®§(&N)
++Previous Message=¤W¤@°T®§(&P)
++Clear Output=²M°£¿é¥X(&O)
++Switch Pane=¤Á´«µøµ¡(&S)
+ 
+ # Options menu
+-Options=�ﶵ(&O)
+-Always On Top=SciTE��ܦb�W�h(&A)
+-Vertical Split=�s�赡��X������(&S)
+-Line End Characters=�]�w���渹(&L)
++Options=¿ï¶µ(&O)
++Always On Top=SciTEÅã¥Ü¦b¤W¼h(&A)
++Vertical Split=½s¿èµ¡¿é¥Xµ¡ª½±Æ(&S)
++Line End Characters=³]©w´«¦æ¸¹(&L)
+ CR + LF=CR + LF(&+)
+ CR=CR(&C)
+ LF=LF(&L)
+-Convert Line End Characters=�̳]�w�ഫ�{�����渹(&C)
+-Change Indentation Settings=�վ��Y�Ƴ]�w(&T)
+-Use Monospaced Font=�ϥε��e�r��(&M)
+-Open Local Options File=�}�� Local Options ��(&O)
+-Open User Options File=�}�� User Options ��(&U)
+-Open Global Options File=�}�� Global Options ��(&G)
+-Open Abbreviations File=�}�� Abbreviations ��(&B)
++Convert Line End Characters=¨Ì³]©wÂà´«²{¦³´«¦æ¸¹(&C)
++Change Indentation Settings=½Õ¾ãÁY±Æ³]©w(&T)
++Use Monospaced Font=¨Ï¥Îµ¥¼e¦r«¬(&M)
++Open Local Options File=¶}±Ò Local Options ÀÉ(&O)
++Open User Options File=¶}±Ò User Options ÀÉ(&U)
++Open Global Options File=¶}±Ò Global Options ÀÉ(&G)
++Open Abbreviations File=¶}±Ò Abbreviations ÀÉ(&B)
+ 
+ # Language menu
+-Language=�y��(&L)
++Language=»y¨¥(&L)
+ 
+ # Buffers menu
+-Buffers=�w����(&B)
+-Previous=�W�@��(&P)
+-Next=�U�@��(&N)
+-Close all=������ɮ�(&C)
++Buffers=½w½ÄÅé(&B)
++Previous=¤W¤@ÀÉ(&P)
++Next=¤U¤@ÀÉ(&N)
++Close all=Ãö³¬¥þ³¡ÀÉ®×(&C)
+ 
+ # Help menu
+-Help=����(&H)
+-About Sc1=��� Sc1(&S)
+-About SciTE=��� SciTE(&A)
++Help=»¡©ú(&H)
++About Sc1=Ãö©ó Sc1(&S)
++About SciTE=Ãö©ó SciTE(&A)
+ 
+ # Dialogs
+ 
+ # Generic dialog
+-OK=�T�w
+-Cancel=���
+-Yes=�O
+-No=�_
++OK=½T©w
++Cancel=¨ú®ø
++Yes=¬O
++No=§_
+ 
+ # About dialog
+ #About SciTE=
+ # This is to add something like: Swahili translation 1.41.1 by Neil Hodgson
+-TranslationCredit=��Ķ�G��Ҩ��B�L��ӡBEdward Hsieh�B�Ǻ�\n v1.43 by Chii Liao ��Ҩ� 2002/02/03\n v1.44-1.56 by Daniel Lin �L��� daniel@twpda.com 2003/11/07\n v1.57-1.62 by Edward Hsieh(edwardsayer at pchome dot com dot tw) 2005/03/12\n v1.63-1.66 by �Ǻ� in Taipei County, Taiwan. 2005/09/03\n v1.67-1.73 by �Ǻ� 2006/06/21, 2007/05/04
+-
+-Contributors:=�^�m�̡G
++TranslationCredit=¤¤Ä¶¡G¹ù±Ò¨¶¡BªL­ì§Ó¡BEdward Hsieh¡BÅÇºû¥¿\n v1.43 by Chii Liao ¹ù±Ò¨¶ 2002/02/03\n v1.44-1.56 by Daniel Lin ªL­ì§Ó daniel@twpda.com 2003/11/07\n v1.57-1.62 by Edward Hsieh(edwardsayer at pchome dot com dot tw) 2005/03/12\n v1.63-1.66 by ÅÇºû¥¿ in Taipei County, Taiwan. 2005/09/03\n v1.67-1.73 by ÅÇºû¥¿ 2006/06/21, 2007/05/04
++
++Contributors:=°^ÄmªÌ¡G
+ 
+ # Open, Save dialogs
+-Open File=�}���ɮ�
+-Save File=�x�s�ɮ�
+-Save File As=�t�s�s��
+-Export File As HTML=�ץX�� HTML ��
+-Export File As RTF=�ץX�� RTF ��
+-Save Current Session=�x�s�ثe�Ҷ}�ɤ��ɦW�C��
+-Custom Filter=�ۭq�ɮ׫��O
++Open File=¶}±ÒÀÉ®×
++Save File=Àx¦sÀÉ®×
++Save File As=¥t¦s·sÀÉ
++Export File As HTML=¶×¥X¦¨ HTML ÀÉ
++Export File As RTF=¶×¥X¦¨ RTF ÀÉ
++Save Current Session=Àx¦s¥Ø«e©Ò¶}ÀÉ¤§ÀÉ¦W¦Cªí
++Custom Filter=¦Û­qÀÉ®×«¬§O
+ 
+ # Find in Files dialog
+-#Find in Files=�b�h�ɤ��M��
+-Find what:=�ݷj�r(&N)
+-Files:=�ɮ�(&I)
++#Find in Files=¦b¦hÀÉ¤¤´M§ä
++Find what:=«Ý·j¦r(&N)
++Files:=ÀÉ®×(&I)
+ #Find=
+ 
+ # Go To dialog
+-Go To=���(&G)
+-Destination Line Number:=�ؼЦ渹(&D)
+-Current line:=�ثe  �渹
+-Last line:=�W��  �渹
++Go To=¸õ¦Ü(&G)
++Destination Line Number:=¥Ø¼Ð¦æ¸¹(&D)
++Current line:=¥Ø«e  ¦æ¸¹
++Last line:=¤W¦¸  ¦æ¸¹
+ 
+ # Indentation Settings dialog
+-Indentation Settings=�Y�Ƴ]�w
+-Tab Size:=Tab ���e��(&T)
+-Indent Size:=�Y�Ƽe��(&I)
+-Use tabs:=�ϥ� Tab(&U)
++Indentation Settings=ÁY±Æ³]©w
++Tab Size:=Tab ªº¼e«×(&T)
++Indent Size:=ÁY±Æ¼e«×(&I)
++Use tabs:=¨Ï¥Î Tab(&U)
+ 
+ # Replace and Find dialogs
+-#Replace=��N(&R)
++#Replace=¨ú¥N(&R)
+ #Find=
+-#Find what:=�ݷj�r(&N)
+-Replace with:=��N��(&P)
+-Match whole word only=�W�ߧ���r(&W)
+-Match case=�Ϥ�j�p�g(&C)
+-Regular expression=��������(&E)
+-Wrap around=�`���@�M(&O)
+-Transform backslash expressions=�ϥΤϱ׽u(&B)
+-#Find Next=��U�@��(&F)
+-Replace All=������N(&A)
+-Replace in Selection=�b����r����N(&S)
++#Find what:=«Ý·j¦r(&N)
++Replace with:=¨ú¥N¬°(&P)
++Match whole word only=¿W¥ß§¹¾ã¦r(&W)
++Match case=°Ï¤À¤j¤p¼g(&C)
++Regular expression=¥ÎÃþ«¬ªí¦¡(&E)
++Wrap around=´`Àô§ä¤@¹M(&O)
++Transform backslash expressions=¨Ï¥Î¤Ï±×½u(&B)
++#Find Next=§ä¤U¤@­Ó(&F)
++Replace All=¥þ³¡¨ú¥N(&A)
++Replace in Selection=¦b¿ï¨ú¤å¦r¤¤¨ú¥N(&S)
+ #Close=
+-Direction=�M���V
+-Reverse direction=�ϦV�M��
+-Up=���W
+-Down=���U
++Direction=´M§ä¤è¦V
++Reverse direction=¤Ï¦V´M§ä
++Up=©¹¤W
++Down=©¹¤U
+ 
+ # Parameters dialog
+-Execute=���
+-Set=�]�w(&S)
++Execute=°õ¦æ
++Set=³]©w(&S)
+ 
+ # Other UI strings
+-Untitled=���R�W
++Untitled=¥¼©R¦W
+ 
+ # Properties used in global options
+-Text=�¤�r
+-All Source=���X��
+-All Files (*.*)=�Ҧ��ɮ� (*.*)
++Text=¯Â¤å¦r
++All Source=·½½XÀÉ
++All Files (*.*)=©Ò¦³ÀÉ®× (*.*)
+ 
+ # Messages
+ # Messages may contain variables such as file names or search strings indicated
+ # by ^0 which are replaced by values before display. ^1, ^2, ... may be used in the future.
+-Can not find the string '^0'.=�䤣�� '^0'�C
+-Find string must not be empty for 'Replace All' command.='������N'�ɴM�䤺�e����ťաC
+-Selection must not be empty for 'Replace in Selection' command.='�b����r����N'�ɤ@�w�n�����r�C
+-No replacements because string '^0' was not present.=�S����� '^0'�A�N���S��N�C
+-Could not open file '^0'.=�L�k�}�� '^0'�C
+-Could not save file '^0'.=�L�k�x�s '^0'�C
+-Save changes to '^0'?=�w�ܧ�A�ɮ��x�s�� '^0'�H
+-Save changes to (Untitled)?=�w�ܧ�A�ɮ��x�s�� '���R�W'�H
+-The file '^0' has been modified. Should it be reloaded?=�ɮ� '^0'�w�ק�L�A�O�_���s��J�H
+-Bad file.=�a�ɡC
+-Failed to create dialog box: ^0.=�L�k�}�� ^0 ��ܤ��C
+-Can not start printer document.=�L�k�C�L�C
+-URI '^0' not understood.=����ѪR '^0' URI�C
+-Invalid directory '^0'.=�L�Ī��ؿ�/��Ƨ� '^0'�C
++Can not find the string '^0'.=§ä¤£¨ì '^0'¡C
++Find string must not be empty for 'Replace All' command.='¥þ³¡¨ú¥N'®É´M§ä¤º®e¤£¯àªÅ¥Õ¡C
++Selection must not be empty for 'Replace in Selection' command.='¦b¿ï¨ú¤å¦r¤¤¨ú¥N'®É¤@©w­n¥ý¿ï¨ú¤å¦r¡C
++No replacements because string '^0' was not present.=¨S¦³§ä¨ì '^0'¡A´N³£¨S¨ú¥N¡C
++Could not open file '^0'.=µLªk¶}±Ò '^0'¡C
++Could not save file '^0'.=µLªkÀx¦s '^0'¡C
++Save changes to '^0'?=¤wÅÜ§ó¡AÀÉ®×Àx¦s¬° '^0'¡H
++Save changes to (Untitled)?=¤wÅÜ§ó¡AÀÉ®×Àx¦s¬° '¥¼©R¦W'¡H
++The file '^0' has been modified. Should it be reloaded?=ÀÉ®× '^0'¤w­×§ï¹L¡A¬O§_­«·s¸ü¤J¡H
++Bad file.=ÃaÀÉ¡C
++Failed to create dialog box: ^0.=µLªk¶}±Ò ^0 ¹ï¸Ü¤è¶ô¡C
++Can not start printer document.=µLªk¦C¦L¡C
++URI '^0' not understood.=¤£¯à¸ÑªR '^0' URI¡C
++Invalid directory '^0'.=µL®Äªº¥Ø¿ý/¸ê®Æ§¨ '^0'¡C
+ 
+ # 1.42
+-Directory:=�ؿ�(&D)
+-Wrap=�۰ʴ���(&W)
+-Hide=����(&H)
+-Check if already open=�ˬd�ɮ׬O�_�w�}��(&H)
++Directory:=¥Ø¿ý(&D)
++Wrap=¦Û°Ê´«¦æ(&W)
++Hide=ÁôÂÃ(&H)
++Check if already open=ÀË¬dÀÉ®×¬O§_¤w¶}±Ò(&H)
+ 
+ # 1.43
+-Find string must not be empty for 'Replace in Selection' command.='�b����r����N'�ɴM�䤺�e����ťաC
+-List Macros=�C�X������
+-Run Current Macro=���ثe������
+-Record Macro=�}�l��s
+-Stop Recording Macro=�����s
+-SciTE Help=SciTE ����(&S)
+-Sc1 Help=Sc1 ����
+-Edit Properties=�s��ۭq��
+-Wrap Output=��X�ɦ۰ʴ���(&P)
++Find string must not be empty for 'Replace in Selection' command.='¦b¿ï¨ú¤å¦r¤¤¨ú¥N'®É´M§ä¤º®e¤£¯àªÅ¥Õ¡C
++List Macros=¦C¥X²³¥¨¶°
++Run Current Macro=°õ¦æ¥Ø«eªº¥¨¶°
++Record Macro=¶}©l¿ý»s
++Stop Recording Macro=°±¤î¿ý»s
++SciTE Help=SciTE »¡©ú(&S)
++Sc1 Help=Sc1 »¡©ú
++Edit Properties=½s¿è¦Û­q¶µ
++Wrap Output=¿é¥X®É¦Û°Ê´«¦æ(&P)
+ 
+ # 1.44
+-Read-Only=��Ū(&R)
+-READ=Ū�J
++Read-Only=°ßÅª(&R)
++READ=Åª¤J
+ 
+ # 1.46
+-As TeX=�� TeX ��
+-Export File As TeX=�ץX�� Tex ��
+-Save a Copy=�x�s�ƥ�(&P)
++As TeX=¦¨ TeX ÀÉ
++Export File As TeX=¶×¥X¦¨ Tex ÀÉ
++Save a Copy=Àx¦s³Æ¥÷(&P)
+ 
+ # 1.47
+-As LaTeX=�� LaTeX ��(&L)
+-Export File As LaTeX=�ץX�� TeX ��
+-Encoding=�s�X
+-8 Bit=8�줸
++As LaTeX=¦¨ LaTeX ÀÉ(&L)
++Export File As LaTeX=¶×¥X¦¨ TeX ÀÉ
++Encoding=½s½X
++8 Bit=8¦ì¤¸
+ UCS-2 Big Endian=
+ UCS-2 Little Endian=
+ UTF-8=
+ 
+ # 1.49
+-Save All=�����s��(&S)
+-Browse=�s��(&B)
+-Select a folder to search from=��ܭn�j�M���ؿ�/��Ƨ�
++Save All=¥þ³¡¦sÀÉ(&S)
++Browse=ÂsÄý(&B)
++Select a folder to search from=¿ï¾Ü­n·j´Mªº¥Ø¿ý/¸ê®Æ§¨
+ UTF-8 Cookie=
+ 
+ # 1.50
+-Insert Abbreviation=�Y�g���J(&I)
+-Abbreviation:=�Y�g�G
+-Insert=���J
+-Mark All=����ҿ�(&M)
++Insert Abbreviation=ÁY¼g´¡¤J(&I)
++Abbreviation:=ÁY¼g¡G
++Insert=´¡¤J
++Mark All=§ä»ô«á¬Ò¿ï(&M)
+ 
+ # 1.51
+-In Selection=�b���ϰ�
+-Paragraph=�q��(&G)
+-Join=�X��(&J)
+-Split=���(&S)
++In Selection=¦b¿ï¨ú°Ï°ì
++Paragraph=¬q¸¨(&G)
++Join=¦X¨Ö(&J)
++Split=¤À³Î(&S)
+ 
+ # 1.52
+-Block comment variable '^0' is not defined in SciTE *.properties!=��϶�U�歺����Ѹ� '^0' �å��b SciTE *.properties �w�q�I
+-Box comment variables '^0', '^1' and '^2' are not defined in SciTE *.properties!=��϶��B�䤤�U�歺����Ѹ�  '^0' �B '^1' �B '^2' �å��b SciTE *.properties �w�q�I
+-Stream comment variables '^0' and '^1' are not defined in SciTE *.properties!=��϶�����Ѹ� '^0' �� '^1' �å��b SciTE *.properties �w�q�I
+-The file '^0' has been modified outside SciTE. Should it be reloaded?=�ɮ� '^0' �w�g�b SciTE ���~�ק�L�A�O�_�n���s��J�H
+-As PDF=�� PDF ��(&P)
+-Export File As PDF=�ץX�� PDF ��
++Block comment variable '^0' is not defined in SciTE *.properties!=©ó°Ï¶ô¤¤¦U¦æ­º¤§µù¸Ñ¸¹ '^0' ¨Ã¥¼¦b SciTE *.properties ©w¸q¡I
++Box comment variables '^0', '^1' and '^2' are not defined in SciTE *.properties!=©ó°Ï¶ô­º§À¥B¨ä¤¤¦U¦æ­º¤§µù¸Ñ¸¹  '^0' ¡B '^1' ¡B '^2' ¨Ã¥¼¦b SciTE *.properties ©w¸q¡I
++Stream comment variables '^0' and '^1' are not defined in SciTE *.properties!=©ó°Ï¶ô­º§À¤§µù¸Ñ¸¹ '^0' ¤Î '^1' ¨Ã¥¼¦b SciTE *.properties ©w¸q¡I
++The file '^0' has been modified outside SciTE. Should it be reloaded?=ÀÉ®× '^0' ¤w¸g¦b SciTE ¤§¥~­×§ï¹L¡A¬O§_­n­«·s¸ü¤J¡H
++As PDF=¦¨ PDF ÀÉ(&P)
++Export File As PDF=¶×¥X¦¨ PDF ÀÉ
+ 
+ # 1.53
+-Version=����
+-by=��
++Version=ª©¥»
++by=¥Ñ
+ 
+ #1.54
+-Incremental Search=�H���Y��(&L)
+-Search for:=�H���Y��
++Incremental Search=ÀH¥´§Y§ä(&L)
++Search for:=ÀH¥´§Y§ä
+ 
+ #1.55
+-Could not save file '^0'. Save under a different name?=�L�k�s '^0' �ɮסA�O�_��W�A�s�H
++Could not save file '^0'. Save under a different name?=µLªk¦s '^0' ÀÉ®×¡A¬O§_§ó¦W¦A¦s¡H
+ 
+ #1.56
+-As XML=�� XML ��(&X)
+-Export File As XML=�ץX�� XML ��
++As XML=¦¨ XML ÀÉ(&X)
++Export File As XML=¶×¥X¦¨ XML ÀÉ
+ 
+ #1.57
+-Destination Line:=�ؼ�  �渹(&D)
+-Column:=�渹(&C)
++Destination Line:=¥Ø¼Ð  ¦æ¸¹(&D)
++Column:=Äæ¸¹(&C)
+ 
+ #1.58
+-Replacements:=�m���G
+-Open Files Here=�b���}���ɮ�(&H)
++Replacements:=¸m´«¡G
++Open Files Here=¦b¦¹¶}±ÒÀÉ®×(&H)
+ 
+ #1.59
+ 
+ #1.60
+ 
+ #1.61
+-File '^0' is ^1 bytes long,\nlarger than the ^2 bytes limit set in the properties.\nDo you still want to open it?=�ɮ� '^0' ����׬� ^1 bytes�A\n��]�w�b properties �ɤ���\n ^2 bytes �٪�A�A���M�n�}��\n���ܡH
+-Open Lua Startup Script=�}�� Lua Startup Script
+-All Files (*)=�Ҧ��ɮ�(*)
+-Hidden Files (.*)=������(.*)
++File '^0' is ^1 bytes long,\nlarger than the ^2 bytes limit set in the properties.\nDo you still want to open it?=ÀÉ®× '^0' ªºªø«×¬° ^1 bytes¡A\n¤ñ³]©w¦b properties ÀÉ¤¤ªº\n ^2 bytes ÁÙªø¡A§A¤´µM­n¶}±Ò\n¥¦¶Ü¡H
++Open Lua Startup Script=¶}±Ò Lua Startup Script
++All Files (*)=©Ò¦³ÀÉ®×(*)
++Hidden Files (.*)=ÁôÂÃÀÉ(.*)
+ 
+ #1.62
+-Show hidden files=���������
++Show hidden files=Åã¥ÜÁôÂÃÀÉ
+ 
+ #1.63
+-Replace in Buffers=�b�w�İO���餤��N(&U)
+-Find string must not be empty for 'Replace in Buffers' command.='�b�w�İO���餤��N'�ɴM�䤺�e����ťաC
+-Search only in this style:=�ȥH���˦��M��G
++Replace in Buffers=¦b½w½Ä°O¾ÐÅé¤¤¨ú¥N(&U)
++Find string must not be empty for 'Replace in Buffers' command.='¦b½w½Ä°O¾ÐÅé¤¤¨ú¥N'®É´M§ä¤º®e¤£¯àªÅ¥Õ¡C
++Search only in this style:=¶È¥H¦¹¼Ë¦¡´M§ä¡G
+ 
+ #1.67
+-Duplicate=�ƶK����
++Duplicate=½Æ¶K¦¹¦æ
+ 
+ #1.72
+-Convert=�ഫ
++Convert=Âà´«
+ 
+ #1.73
+-Code Page Property=�t�ιw�]�s�X
+-UTF-8 with BOM=UTF-8 (�t�ɭ� BOM)
+-Open Directory Options File=�}�ҥؿ�ﶵ��
++Code Page Property=¨t²Î¹w³]½s½X
++UTF-8 with BOM=UTF-8 (§tÀÉ­º BOM)
++Open Directory Options File=¶}±Ò¥Ø¿ý¿ï¶µÀÉ
