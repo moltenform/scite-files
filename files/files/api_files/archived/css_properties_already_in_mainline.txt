@@ -1,0 +1,228 @@
+= A better css.properties file =
+
+The css.properties file that comes with 2.23 does not use all the styles defined in LexCSS.cxx. So this is the properties file that I use to make my web sites. It uses all of them with comments to make it hopefully easier to change without reading the lexer code.
+ As compared to the css.properties file that ships with Scite 2.23 this file:
+   * Recognises all the CSS3 pseudo classes and pseudo elements
+   * Recognises the double colon '::' for the pseudo elements
+   * Understands common vendor prefixes and microsoft's filter property
+   * Recognises CSS3 properties
+ It does this by using styles and keywords coded in the css Lexer but not mentioned in the original properties files
+ All styles and keyword lists used by the Lexer are in this file
+ The keywordclass.value lists are still unused.
+
+ STYLE changes:
+   * The colour used for CSS2 in the original file is now used for CSS3 properties
+   * CSS1 and CSS2 properties now use the same colour, but you can change that back see styles 5 and 14
+   * New colours are defined for vendor classes and pseudo elements
+   * Unknown pseudoelements/pseudoclasses now use the global error colour
+   * @media is now coloured in the old @ rules style instead of unstyled
+   * The other @ rules are in the same colour but no longer in bold
+
+
+= Details =
+
+{{{
+
+# Define SciTE settings for CSS files
+# Jakub Vrána - jakub@vrana.cz
+# Updated Andy Holder - Jan 2011
+
+
+filter.css=CSS (css)|*.css|
+lexer.*.css=css
+
+indent.size.*.css=4
+tab.size.*.css=4
+use.tabs.*.css=1
+
+keywordclass.css1=\
+color background-color background-image background-repeat background-attachment background-position background \
+font-family font-style font-variant font-weight font-size font \
+word-spacing letter-spacing text-decoration vertical-align text-transform text-align text-indent line-height \
+margin-top margin-right margin-bottom margin-left margin \
+padding-top padding-right padding-bottom padding-left padding \
+border-top-width border-right-width border-bottom-width border-left-width border-width \
+border-top border-right border-bottom border-left border \
+border-color border-style width height float clear \
+display white-space list-style-type list-style-image list-style-position list-style
+
+keywordclass.values=\
+auto none normal italic oblique small-caps bold bolder lighter \
+xx-small x-small small medium large x-large xx-large larger smaller \
+transparent repeat repeat-x repeat-y no-repeat scroll fixed \
+top bottom left center right justify both \
+underline overline line-through blink \
+baseline sub super text-top middle text-bottom \
+capitalize uppercase lowercase thin medium thick \
+dotted dashed solid double groove ridge inset outset \
+block inline list-item pre no-wrap inside outside \
+disc circle square decimal lower-roman upper-roman lower-alpha upper-alpha \
+aqua black blue fuchsia gray green lime maroon navy olive purple red silver teal white yellow
+
+# rgb(i1, i2, i3) rgb(p1, p2, p3) #xxx #xxxxxx url(path)
+# path: in optional single or double quotes. If quotes, inside quotes must be backslashed.
+# length: [+-][0-9]+<unit>
+# unit: % pt mm cm pc in px em ex
+
+# at-rule: import
+
+# CSS2
+
+keywordclass.css2=\
+border-top-color border-right-color border-bottom-color border-left-color border-color \
+border-top-style border-right-style border-bottom-style border-left-style border-style \
+top right bottom left position z-index direction unicode-bidi \
+min-width max-width min-height max-height overflow clip visibility content quotes \
+counter-reset counter-increment marker-offset \
+size marks page-break-before page-break-after page-break-inside page orphans widows \
+font-stretch font-size-adjust unicode-range units-per-em src \
+panose-1 stemv stemh slope cap-height x-height ascent descent widths bbox definition-src \
+baseline centerline mathline topline text-shadow \
+caption-side table-layout border-collapse border-spacing empty-cells speak-header \
+cursor outline outline-width outline-style outline-color \
+volume speak pause-before pause-after pause cue-before cue-after cue \
+play-during azimuth elevation speech-rate voice-family pitch pitch-range stress richness \
+speak-punctuation speak-numeral
+
+keywordclass.values2=\
+inherit \
+run-in compact marker table inline-table table-row-group table-header-group table-footer-group \
+table-row table-column-group table-column table-cell table-caption \
+static relative absolute fixed ltr rtl embed bidi-override \
+visible hidden scroll collapse open-quote close-quote no-open-quote no-close-quote \
+decimal-leading-zero lower-greek lower-latin upper-latin hebrew armenian georgian \
+cjk-ideographic hiragana katakana hiragana-iroha katakana-iroha \
+landscape portrait crop cross always avoid \
+wider narrower ultra-condensed extra-condensed condensed semi-condensed \
+semi-expanded expanded extra-expanded ultra-expanded \
+caption icon menu message-box small-caption status-bar \
+separate show hide once crosshair default pointer move text wait help \
+e-resize ne-resize nw-resize n-resize se-resize sw-resize s-resize w-resize \
+ActiveBorder ActiveCaption AppWorkspace Background ButtonFace ButtonHighlight ButtonShadow \
+InactiveCaptionText ButtonText CaptionText GrayText Highlight HighlightText InactiveBorder \
+InactiveCaption InfoBackground InfoText Menu MenuText Scrollbar ThreeDDarkShadow \
+ThreeDFace ThreeDHighlight ThreeDLightShadow ThreeDShadow Window WindowFrame WindowText \
+silent x-soft soft medium loud x-loud spell-out mix \
+left-side far-left center-left center-right far-right right-side behind leftwards rightwards \
+below level above higher lower x-slow slow medium fast x-fast faster slower \
+male female child x-low low high x-high code digits continous
+
+# properties and pseudos starting with -moz- etc.
+keywordclass.vendor.prefixes=^-moz- ^-webkit- ^-o- ^-ms-
+
+# CSS3 is a set of standards that are currently still begin worked on,
+# so this list is certainly incomplete.
+# This list is CSS3 as recognised by firefox 4 as of start of 2011
+keywordclass.css3=background-size \
+border-radius border-top-right-radius border-bottom-right-radius border-bottom-left-radius border-top-left-radius \
+box-shadow \
+columns column-width column-count column-rule column-gap column-rule-color column-rule-style column-rule-width \
+resize opacity word-wrap
+
+# Pseudo Classes
+keywordclass.pseudoclass.css1=link active visited
+keywordclass.pseudoclass.css2=first-child focus hover lang left right first
+keywordclass.pseudoclass.css3=empty enabled disabled checked not root target \
+only-child last-child nth-child nth-last-child \
+first-of-type last-of-type nth-of-type nth-last-of-type only-of-type \
+valid invalid required optional
+keywordclass.pseudoclass.other=indeterminate default
+
+# Pseudo Elements
+keywordclass.pseudoelement.css=first-letter first-line before after
+# ::selection WAS in the css3 standard and is supported in many browsers.
+# your choice:
+keywordclass.pseudoelement.css3=selection
+#keywordclass.pseudoelement.other=selection
+
+
+# counter(id) counter(id, style) attr(X) local("name)" format("string")
+# angle: [+-][0-9]+<unit>
+# angle unit: deg grad rad
+# time: [0-9]+<unit>
+# time unit: ms s
+# frequency: [0-9]+<unit>
+# frequency unit: Hz kHz
+# Unicode range: U+x??-yyy
+
+# at-rule: media, values: all aural braille embossed handheld print projection screen tty tv
+# at-rule: page font-face charset
+
+#####
+# CSS1 properties
+keywords.*.css=$(keywordclass.css1)
+# Pseudo classes or more precisely single colon ':' selectors
+keywords2.*.css=$(keywordclass.pseudoclass.css1) $(keywordclass.pseudoclass.css2) \
+    $(keywordclass.pseudoclass.css3) $(keywordclass.pseudoelement.css)
+# CSS2 properties
+keywords3.*.css=$(keywordclass.css2)
+# CSS3 properties
+keywords4.*.css=$(keywordclass.css3)
+# Pseudo elements or more precisely double colon '::' selectors
+keywords5.*.css=$(keywordclass.pseudoelement.css) $(keywordclass.pseudoelement.css3)
+# Extra CSS Properties
+# Any CSS starting with the common vendor prefixes and microsoft's filter.
+keywords6.*.css=$(keywordclass.vendor.prefixes) filter
+# Extra pseudo classes
+keywords7.*.css=$(keywordclass.pseudoclass.other) $(keywordclass.vendor.prefixes)
+# Extra pseudo elements
+keywords8.*.css=$(keywordclass.pseudoelement.other) $(keywordclass.vendor.prefixes)
+
+word.characters.*.css=$(chars.alpha)$(chars.numeric)-
+comment.stream.start.css=/*
+comment.stream.end.css=*/
+
+# Default
+style.css.32=$(font.code.base)
+# White space: Visible only in View Whitespace mode (or if it has a back colour)
+style.css.0=fore:#FF0080
+# Selector (HTML tag)
+style.css.1=$(colour.keyword),bold
+# Class selector ([HtmlTag].classSelector)
+style.css.2=
+# Pseudo class (HtmlTag:pseudoClass) see "keywords2" above
+style.css.3=fore:#800000
+# Unknown Pseudo class
+style.css.4=$(colour.error)
+# Operator
+style.css.5=$(colour.operator)
+# CSS1 Property, see keywords
+style.css.6=fore:#0040E0
+# Unknown Property
+style.css.7=fore:#FF0000
+# Value
+style.css.8=$(colour.string)
+# Comment
+style.css.9=$(colour.code.comment.box),$(font.code.comment.box)
+# ID selector (#IdSel)
+style.css.10=$(colour.number),italics
+# "!important"
+style.css.11=fore:#FF8000,bold
+# At-rule (@) except @media
+style.css.12=$(colour.preproc)
+# Double quoted strings
+style.css.13=$(colour.string)
+# Single quoted strings
+style.css.14=$(colour.string)
+# CSS2 Property, see keywords3
+style.css.15=fore:#0040E0
+# Attribute selection ([att='val'])
+style.css.16=fore:#800000
+# CSS3 Property, see keywords4
+style.css.17=fore:#00A0E0
+# Pseudo elements, see keywords5
+style.css.18=fore:#C80000
+# Other CSS Property, see keywords6
+style.css.19=fore:#7F7F00
+# Other Pseudoclass, see keywords7
+style.css.20=fore:#7F7F00
+# Other Pseudoelement, see keywords8
+style.css.21=fore:#7F7F00
+# "@media"
+style.css.22=$(colour.preproc),bold
+
+block.start.*.css=5 {
+block.end.*.css=5 }
+
+
+}}}

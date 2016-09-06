@@ -158,6 +158,10 @@ To enable one of these languages,
     * [Progress properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/progress.properties)
     * Please see [http://www.yuvcom.com/progress4gl](http://www.yuvcom.com/progress4gl) for more information.
 
+* Python
+
+    * [Python script to print variables on exception or breakpoint](api_files_py_debug.md)
+
 * TADS3 
 
     * [TADS3 property file] and explanation(https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/tads3.zip)
@@ -189,8 +193,50 @@ To contribute a file to this list, send an e-mail to scitewiki at gmail dot com 
 <a name="how_to_install_api"></a>
 ### How to install an api file and enable calltips
 
+* As an example, let's set up the api file for C.
 
+* Download and uncompress [c_withdoc.zip](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/c_withdoc.zip)
+
+* In Windows, move c_withdoc.api into the directory that contains SciTE.exe
+
+* In Linux, move c_withdoc.api into the directory that contains SciTEGlobal.properties. This is typically either /usr/bin/scite or /usr/local/bin/scite.
+
+* Open SciTE
+
+* From the Options menu, select Open User Options File
+
+* Add the line `api.$(file.patterns.cpp)=$(SciteDefaultHome)/c_withdoc.api`
+
+* Save this file and restart SciTE
+
+* In SciTE, create and open a new file "test.c"
+
+* Calltips
+
+    * Type the text "fclose("
+    
+    * As soon as you press (, a calltip appears, showing a description of fclose
+    
+* Completion
+
+    * On an empty line, type the text "fp" and press Ctrl+Space
+    
+    * A listbox appears allowing you to choose between fprintf, fputc, and fputs
+    
+    * You can use the arrow keys can navigate this box and Enter to choose an item from this box
 
 <a name="how_to_make_api"></a>
 ### How to make an api file
+
+An api file is a plain text file with one entry per line.
+
+  * For C/C++ headers, an API file can be generated using [http://ctags.sourceforge.net/ ctags] and then the [tags2api](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/makeapi/tags2api.py) Python script (which assumes C/C++ source) on the tags file to grab complete multiple line function prototypes. Some common headers surround parameter lists with a __P macro and may have comments. The [cleanapi](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/makeapi/cleanapi.cc) utility may be used on these files.
+  * To generate an API file for Python modules, there is a [gen_python](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/makeapi/gen_python_api.py) script.
+  * To generate an API file for Python 3, there is a [gen_python_3](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/makeapi/gen_python_3_api.py) script.
+  * To generate an API file for Java classes, there is a [!ApiBuilder.java](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/makeapi/java_ApiBuilder.java) program.
+  * To generate an API file for C# classes, use [genapi.cs](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/makeapi/gen_csgenapi.zip).
+  * To generate an API file for PHP, use [php-api-generator](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/makeapi/gen_php-api-generator.zip) or [phpapi.php](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/makeapi/phpapi.php.txt).
+
+Search for "calltip" [SciTE Documentation](http://www.scintilla.org/SciTEDoc.html) for more information.
+
 
