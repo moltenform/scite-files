@@ -1,8 +1,6 @@
 
 [Back](../README.md)
 
-[How to install a properties file](#how_to_install_properties), [How to install an api file and enable calltips](#how_to_install_api)
-
 <a name="built_in_languages"></a>
 ### Built-in languages
 
@@ -181,7 +179,7 @@ To contribute a file to this list, send an e-mail to scitewiki at gmail dot com 
 * By default, SciTEGlobal.properties includes the line `import *`, and so the new .properties file will be included
 
 <a name="how_to_install_api"></a>
-### How to install an api file and enable calltips
+### How to install an api file and enable calltips + completion
 
 * As an example, let's set up the api file for C
 
@@ -222,13 +220,13 @@ An api file is a plain text file with one entry per line.
 
 To generate api files for your own source code, one of these tools may be helpful:
 
-* For C/C++ headers, an API file can be generated using [ctags](http://ctags.sourceforge.net/) and then the [tags2api](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files_gen/tags2api.py) Python script (which assumes C/C++ source) on the tags file to grab complete multiple line function prototypes. Some common headers surround parameter lists with a __P macro and may have comments. The [cleanapi](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files_gen/cleanapi.cc) utility may be used on these files
+* For C/C++ headers, an api file can be generated using [ctags](http://ctags.sourceforge.net/) and then the [tags2api](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files_gen/tags2api.py) Python script (which assumes C/C++ source) on the tags file to grab complete multiple line function prototypes. Some common headers surround parameter lists with a __P macro and may have comments. The [cleanapi](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files_gen/cleanapi.cc) utility may be used on these files
 * For Python modules, there is a [gen_python](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files_gen/gen_python_api.py) script
 * For Python 3, there is a [gen_python_3](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files_gen/gen_python_3_api.py) script
 * For Java classes, there is a [ApiBuilder.java](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files_gen/java_ApiBuilder.java) program
 * For C# classes, use [genapi.cs](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files_gen/gen_csgenapi.zip)
 * For PHP, use [php-api-generator](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files_gen/gen_php-api-generator.zip) or [phpapi.php](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files_gen/phpapi.php.txt)
 
-Search for "calltip" in the [SciTE Documentation](http://www.scintilla.org/SciTEDoc.html) for more information.
+Search for "calltip" in the [SciTE Documentation](http://www.scintilla.org/SciTEDoc.html) for more information about calltips.
 
 

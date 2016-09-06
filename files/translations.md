@@ -1,8 +1,6 @@
 
 [Back](../README.md)
 
-How to install a translation [Windows](#how_to_install_translation_win), [Linux](#how_to_install_translation_linux)
-
 <a name="list_translations"></a>
 
 | Translations  |  |   |
@@ -45,8 +43,8 @@ How to install a translation [Windows](#how_to_install_translation_win), [Linux]
 | [locale.th.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.th.properties) | Thai (ไทย) | Updated 1.67 |
 | [locale.tr.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.tr.properties) | Turkish (Türkçe) | Updated 1.73 |
 | [locale.uk.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.uk.properties) | Ukrainian (Українська) | Updated 1.73 |
-| [locale.zh_b5.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.zh_b5.properties) | Chinese Traditional Big5 (中文) | Updated 1.73 (set code.page=950, character.set=136) |
-| [locale.zh_cn.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.zh_cn.properties) | Chinese Simplified GBK (中文) | Updated 2.21 (set code.page=936, character.set=134) |
+| [locale.zh_t.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.zh_t.properties) | Chinese Traditional (中文) | Updated 2.21 |
+| [locale.zh_s.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.zh_s.properties) | Chinese Simplified (中文) GBK encoding | Updated 2.21 (set code.page=936, character.set=134) |
 
 Russian (Русский) [scite-ru project](http://scite-ru.bitbucket.org)
 
