@@ -1,5 +1,4 @@
 
-
 [Back to scite-files home](../README.md)
 
 [Built-in languages](#built_in_languages)
@@ -19,7 +18,7 @@ These languages are recognized by SciTE and enabled by default:
 
 Ada, Assembler (NASM, MASM), AutoIt, Batch files (MS-DOS), Bash, C/C++/C#, conf (Apache), CSS, D, diff files, Flash (ActionScript), Fortran, Gettext, Go, HTML, HTML with embedded JavaScript, VBScript, PHP and ASP, IDL, MSIDL, XPIDL, INI, Java, JavaScript, LISP, Lua, Make, Matlab, MSSQL, Objective C, Objective Caml, Octave, Pascal/Delphi, Perl, PostScript, Python, Registry, Ruby, Scheme, SQL and PLSQL, S-Record, Swift, Tcl/Tk, Vala, VB and VBScript, XML, and YAML
 
-<!-- I don't see this in properties files: Clarion, Progress,Asymptote, TADS3, Gui4Cli, PL/M -->
+<!-- I don't see this in properties files: Clarion, Progress, Asymptote, TADS3, Gui4Cli, PL/M -->
 
 These languages are recognized by SciTE but are not enabled by default:
 
@@ -31,7 +30,7 @@ To enable one of these languages,
 
 * Scroll to the end of this file and look for the line that begins with `imports.exclude=`
 
-* Delete a word in this list. For example, to enable Haskell, delete the word "haskell".
+* Delete a word in this list. For example, to enable Haskell, delete the word "haskell"
 
 * Save this file and restart SciTE (may require sudo privileges on Unix systems)
 
@@ -44,12 +43,12 @@ To enable one of these languages,
     * [C standard library](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/c_withdoc.zip) with short doc strings
     * [Windows API](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/cpp.api.zip)
     * [OpenGL API](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/opengl.zip)
+    * [OpenGL 4.4 API](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/opengl4.4.zip)
     * [Glut API](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/glut.zip)
     * [SDL API](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/sdl.api)
 
 * JavaScript, CSS, web
 
-    * [Customization_BetterCssProperties A better CSS properties file]
     * [CSS, JavaScript, and JQuery api](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/css,js,jquery.zip)
     * [PHP, abbreviations, CSS, JavaScript, and JQuery](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/css,js,jquery,php.zip)
 
@@ -60,16 +59,19 @@ To enable one of these languages,
 * ASP
 
     * [ASP API methods](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/asp.api)
-    * Set asp.default.language in html.properties to choose between VbScript or JScript in asp block.
+    * Edit html.properties to set the language of scripts in ASP code
+        * If asp.default.language=1, script in an ASP code block is JavaScript
+        * If asp.default.language=2, script in an ASP code block is VBScript
+        * If asp.default.language=3, script in an ASP code block is Python
 
 * Auto Hotkey 
 
     * [AutoHotkey properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/ahk.properties)
-    * [SciTE4AutoHotkey](http://www.autohotkey.net/~fincs/SciTE4AutoHotkey_3/web/) custom SciTE build for ahk.
+    * [SciTE4AutoHotkey](https://github.com/fincs/SciTE4AutoHotkey) custom SciTE build for ahk
 
 * Auto It3 
 
-    * [SciTE4AutoIt3 Website containing Auto It3 related properties and API files.](http://www.autoitscript.com/autoit3/scite)
+    * [SciTE4AutoIt3 Website containing Auto It3 related properties and API files.](https://www.autoitscript.com/site/autoit-script-editor/)
 
 * Batch Scripting (Windows)
 
@@ -90,10 +92,6 @@ To enable one of these languages,
 * CMake
 
     * [CMake API](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/cmake.api)
-
-* Go
-
-    * [Properties for Go Programming](http://go-lang.cat-v.org/text-editors/scite/)
 
 * FORTRAN 
 
@@ -124,7 +122,7 @@ To enable one of these languages,
 
 * Oracle 
 
-    * [Extended properties file](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/sql.properties_ext) with additional keywords and standard package names
+    * [Extended properties file](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/sql_more.properties) with additional keywords and standard package names
     * [sql plsql](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/sql_plsql.api.zip) properties file
     
 * OScript
@@ -143,7 +141,6 @@ To enable one of these languages,
 
 * PHP 
 
-    * [html.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/html.properties)
     * [php.api, latest PHP 5](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/php.api)
     * [php.api in Spanish, PHP 5](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/php-es.api)
     * [PHP properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/php.properties)
@@ -156,7 +153,6 @@ To enable one of these languages,
 * Progress
 
     * [Progress properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/progress.properties)
-    * Please see [http://www.yuvcom.com/progress4gl](http://www.yuvcom.com/progress4gl) for more information.
 
 * Python
 
@@ -164,12 +160,12 @@ To enable one of these languages,
 
 * TADS3 
 
-    * [TADS3 property file] and explanation(https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/tads3.zip)
+    * [TADS3 property file and explanation](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/tads3.zip)
     
 * Windows Scripting 
 
     * [Properties files](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/windows_scripting.zip)
-    * [More files and scripts](Customization_SciteForWindowsScripters.md)
+    * [More files and scripts](api_files_win_scripting.md)
 
 * AMPL
 
@@ -193,7 +189,7 @@ To contribute a file to this list, send an e-mail to scitewiki at gmail dot com 
 <a name="how_to_install_api"></a>
 ### How to install an api file and enable calltips
 
-* As an example, let's set up the api file for C.
+* As an example, let's set up the api file for C
 
 * Download and uncompress [c_withdoc.zip](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/c_withdoc.zip)
 
@@ -213,9 +209,9 @@ To contribute a file to this list, send an e-mail to scitewiki at gmail dot com 
 
 * Calltips
 
-    * Type the text "fclose("
+    * Type the text "fputs("
     
-    * As soon as you press (, a calltip appears, showing a description of fclose
+    * As soon as you press (, a calltip appears, showing a description of fputs
     
 * Completion
 
@@ -230,13 +226,15 @@ To contribute a file to this list, send an e-mail to scitewiki at gmail dot com 
 
 An api file is a plain text file with one entry per line.
 
-  * For C/C++ headers, an API file can be generated using [http://ctags.sourceforge.net/ ctags] and then the [tags2api](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/makeapi/tags2api.py) Python script (which assumes C/C++ source) on the tags file to grab complete multiple line function prototypes. Some common headers surround parameter lists with a __P macro and may have comments. The [cleanapi](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/makeapi/cleanapi.cc) utility may be used on these files.
-  * To generate an API file for Python modules, there is a [gen_python](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/makeapi/gen_python_api.py) script.
-  * To generate an API file for Python 3, there is a [gen_python_3](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/makeapi/gen_python_3_api.py) script.
-  * To generate an API file for Java classes, there is a [!ApiBuilder.java](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/makeapi/java_ApiBuilder.java) program.
-  * To generate an API file for C# classes, use [genapi.cs](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/makeapi/gen_csgenapi.zip).
-  * To generate an API file for PHP, use [php-api-generator](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/makeapi/gen_php-api-generator.zip) or [phpapi.php](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/makeapi/phpapi.php.txt).
+You can generate api files for your own source code, one of these tools may be helpful:
 
-Search for "calltip" [SciTE Documentation](http://www.scintilla.org/SciTEDoc.html) for more information.
+* For C/C++ headers, an API file can be generated using [ctags](http://ctags.sourceforge.net/) and then the [tags2api](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files_gen/tags2api.py) Python script (which assumes C/C++ source) on the tags file to grab complete multiple line function prototypes. Some common headers surround parameter lists with a __P macro and may have comments. The [cleanapi](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files_gen/cleanapi.cc) utility may be used on these files
+* For Python modules, there is a [gen_python](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files_gen/gen_python_api.py) script
+* For Python 3, there is a [gen_python_3](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files_gen/gen_python_3_api.py) script
+* For Java classes, there is a [ApiBuilder.java](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files_gen/java_ApiBuilder.java) program
+* For C# classes, use [genapi.cs](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files_gen/gen_csgenapi.zip)
+* For PHP, use [php-api-generator](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files_gen/gen_php-api-generator.zip) or [phpapi.php](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files_gen/phpapi.php.txt)
+
+Search for "calltip" in the [SciTE Documentation](http://www.scintilla.org/SciTEDoc.html) for more information.
 
 
