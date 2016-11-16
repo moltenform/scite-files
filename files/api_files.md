@@ -8,7 +8,7 @@ These languages are recognized by SciTE and enabled by default:
 
 Ada, Assembler (NASM, MASM), AutoIt, Batch files (MS-DOS), Bash, C/C++/C#, conf (Apache), CSS, D, diff files, Flash (ActionScript), Fortran, Gettext, Go, HTML, HTML with embedded JavaScript, VBScript, PHP and ASP, IDL, MSIDL, XPIDL, INI, Java, JavaScript, LISP, Lua, Make, Matlab, MSSQL, Objective C, Objective Caml, Octave, Pascal/Delphi, Perl, PostScript, Python, Registry, Ruby, Scheme, SQL and PLSQL, S-Record, Swift, Tcl/Tk, Vala, VB and VBScript, XML, and YAML
 
-<!-- I don't see this in properties files: Clarion, Progress, Asymptote, TADS3, Gui4Cli, PL/M -->
+<!-- I don't see this in properties files: Clarion, Progress, Asymptote, TADS3, Gui4Cli, PL/M, PowerBasic -->
 
 <a name="api_files_and_properties"></a>
 ### API Files and properties
@@ -155,11 +155,64 @@ Ada, Assembler (NASM, MASM), AutoIt, Batch files (MS-DOS), Bash, C/C++/C#, conf 
     
 * Others
 
+    * The following languages have built-in support that is disabled by default, and can be enabled in an options file.
+    
+    * For example, the line `imports.include=verilog latex` in an options file enables these two languages.
+
+    ASN.1 MIB: From the Options menu choose "Open User Options File". Type `imports.include=asn1` and save.  
     Abaqus: From the Options menu choose "Open User Options File". Type `imports.include=abaqus` and save.  
     Asl (ACPI Source): From the Options menu choose "Open User Options File". Type `imports.include=asl` and save.  
-    Baan: From the Options menu choose "Open User Options File". Type `imports.include=baan` and save.
-
-
+    Avenue (Ave): From the Options menu choose "Open User Options File". Type `imports.include=ave` and save.  
+    AviSynth: From the Options menu choose "Open User Options File". Type `imports.include=avs` and save.  
+    Baan: From the Options menu choose "Open User Options File". Type `imports.include=baan` and save.  
+    BlitzBasic: From the Options menu choose "Open User Options File". Type `imports.include=blitzbasic` and save.  
+    Bullant: From the Options menu choose "Open User Options File". Type `imports.include=bullant` and save.  
+    COBOL: From the Options menu choose "Open User Options File". Type `imports.include=cobol` and save.  
+    CSound: From the Options menu choose "Open User Options File". Type `imports.include=csound` and save.  
+    Coffeescript: From the Options menu choose "Open User Options File". Type `imports.include=coffeescript` and save.  
+    E-Script: From the Options menu choose "Open User Options File". Type `imports.include=escript` and save.  
+    Ecl: From the Options menu choose "Open User Options File". Type `imports.include=ecl` and save.  
+    Eiffel: From the Options menu choose "Open User Options File". Type `imports.include=eiffel` and save.  
+    Erlang: From the Options menu choose "Open User Options File". Type `imports.include=erlang` and save.  
+    Flagship (Clipper / XBase): From the Options menu choose "Open User options File". Type `imports.include=flagship` and save.  
+    Forth: From the Options menu choose "Open User Options File". Type `imports.include=forth` and save.  
+    Freebasic: From the Options menu choose "Open User Options File". Type `imports.include=freebasic` and save.  
+    GAP: From the Options menu choose "Open User Options File". Type `imports.include=gap` and save.  
+    Haskell: From the Options menu choose "Open User Options File". Type `imports.include=haskell` and save.  
+    InnoSetup: From the Options menu choose "Open User Options File". Type `imports.include=inno` and save.  
+    Intel HEX: From the Options menu choose "Open User Options File". Type `imports.include=hex` and save.  
+    JSON, JSON-LD: From the Options menu choose "Open User Options File". Type `imports.include=json` and save.  
+    KiXtart: From the Options menu choose "Open User Options File". Type `imports.include=kix` and save.  
+    LOT: From the Options menu choose "Open User Options File". Type `imports.include=lot` and save.  
+    Lout: From the Options menu choose "Open User Options File". Type `imports.include=lout` and save.  
+    MMIXAL: From the Options menu choose "Open User Options File". Type `imports.include=mmixal` and save.  
+    Metapost: From the Options menu choose "Open User Options File". Type `imports.include=metapost` and save.  
+    Modula 3: From the Options menu choose "Open User Options File". Type `imports.include=modula3` and save.  
+    NSIS: From the Options menu choose "Open User Options File". Type `imports.include=nsis` and save.  
+    Nimrod: From the Options menu choose "Open User Options File". Type `imports.include=nimrod` and save.  
+    OScript: From the Options menu choose "Open User Options File". Type `imports.include=oscript` and save.  
+    Opal: From the Options menu choose "Open User Options File". Type `imports.include=opal` and save.  
+    POV-Ray: From the Options menu choose "Open User Options File". Type `imports.include=pov` and save.  
+    PostScript: From the Options menu choose "Open User Options File". Type `imports.include=ps` and save.  
+    PowerPro: From the Options menu choose "Open User Options File". Type `imports.include=powerpro` and save.  
+    PowerShell: From the Options menu choose "Open User Options File". Type `imports.include=powershell` and save.  
+    PureBasic: From the Options menu choose "Open User Options File". Type `imports.include=purebasic` and save.  
+    R: From the Options menu choose "Open User Options File". Type `imports.include=r` and save.  
+    Rebol: From the Options menu choose "Open User Options File". Type `imports.include=rebol` and save.  
+    Rust: From the Options menu choose "Open User Options File". Type `imports.include=rust` and save.  
+    SORCUS Installation: From the Options menu choose "Open User Options File". Type `imports.include=sorcins` and save.  
+    Smalltalk: From the Options menu choose "Open User Options File". Type `imports.include=smalltalk` and save.  
+    Specman E: From the Options menu choose "Open User Options File". Type `imports.include=specman` and save.  
+    Spice: From the Options menu choose "Open User Options File". Type `imports.include=spice` and save.  
+    TACL: From the Options menu choose "Open User Options File". Type `imports.include=tacl` and save.  
+    TAL: From the Options menu choose "Open User Options File". Type `imports.include=tal` and save.  
+    TeX, LaTeX: From the Options menu choose "Open User Options File". Type `imports.include=latex` and save.  
+    VHDL: From the Options menu choose "Open User Options File". Type `imports.include=vhdl` and save.
+    Verilog: From the Options menu choose "Open User Options File". Type `imports.include=verilog` and save.  
+    cmake: From the Options menu choose "Open User Options File". Type `imports.include=cmake` and save.  
+    nnCron: From the Options menu choose "Open User Options File". Type `imports.include=nncrontab` and save.  
+    scriptol: From the Options menu choose "Open User Options File". Type `imports.include=scriptol` and save.  
+    txt2tags: From the Options menu choose "Open User Options File". Type `imports.include=txt2tags` and save.  
 
 To contribute a file to this list, send an e-mail to scitewiki at gmail dot com or submit a pull request. 
 
