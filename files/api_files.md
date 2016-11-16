@@ -29,14 +29,6 @@ Ada, Assembler (NASM, MASM), AutoIt, Batch files (MS-DOS), Bash, C/C++/C#, conf 
     * [JavaScript, JQuery, and CSS api](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/css,js,jquery.zip)
     * [PHP, abbreviations, CSS, JavaScript, and JQuery](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/css,js,jquery,php.zip)
 
-* Abaqus
-
-    * From the Options menu choose "Open User Options File". Type the text `imports.include=abaqus` and save.
-
-* Asl (ACPI Source)
-
-    * From the Options menu choose "Open User Options File". Type the text `imports.include=asl` and save.
-
 * APDL
 
     * [APDL properties and API](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/apdl.zip)
@@ -160,6 +152,14 @@ Ada, Assembler (NASM, MASM), AutoIt, Batch files (MS-DOS), Bash, C/C++/C#, conf 
 * Asymptote
 
     * [Properties file](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/asymptote.properties)
+    
+* Others
+
+    Abaqus: From the Options menu choose "Open User Options File". Type `imports.include=abaqus` and save.  
+    Asl (ACPI Source): From the Options menu choose "Open User Options File". Type `imports.include=asl` and save.  
+    Baan: From the Options menu choose "Open User Options File". Type `imports.include=baan` and save.
+
+
 
 To contribute a file to this list, send an e-mail to scitewiki at gmail dot com or submit a pull request. 
 
