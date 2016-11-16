@@ -10,27 +10,13 @@ Ada, Assembler (NASM, MASM), AutoIt, Batch files (MS-DOS), Bash, C/C++/C#, conf 
 
 <!-- I don't see this in properties files: Clarion, Progress, Asymptote, TADS3, Gui4Cli, PL/M -->
 
-These languages are recognized by SciTE but are not enabled by default:
-
-Abaqus, Baan, BlitzBasic, Bullant, Avenue (Ave), Asl (ACPI Source), ASN.1 MIB, AutoIt, AviSynth, cmake, COBOL, Coffeescript, CSound, Ecl, Eiffel, Erlang, E-Script, Flagship (Clipper / XBase), Forth, Freebasic, GAP, Haskell, Intel HEX, InnoSetup, JSON and JSON-LD, KiXtart, TeX and LaTeX, LOT, Lout, Metapost, MMIXAL, Modula 3, Nimrod, nnCron, NSIS, Opal, OScript, POV-Ray, PowerBasic, PowerShell, PowerPro, PostScript, PureBasic, R, Rebol, Rust, scriptol, Smalltalk, SORCUS Installation, Spice, Specman E, TACL, TAL, txt2tags, Verilog, VHDL
-
-To enable one of these languages,
-
-* Select "Open Global Options File" from the Options menu
-
-* Scroll to the end of this file and look for the line that begins with `imports.exclude=`
-
-* Delete a word in this list. For example, to enable Haskell, delete the word "haskell"
-
-* Save this file and restart SciTE (may require sudo privileges on Unix systems)
-
 <a name="api_files_and_properties"></a>
 ### API Files and properties
 
 * C, C++
 
+    * [C standard library](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/c_withdoc_07_2016.zip) with short doc strings, 2016 update
     * [C standard library](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/c.api)
-    * [C standard library](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/c_withdoc.zip) with short doc strings
     * [Windows API](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/cpp.api.zip)
     * [OpenGL API](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/opengl.zip)
     * [OpenGL 4.4 API](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/opengl4.4.zip)
@@ -39,8 +25,17 @@ To enable one of these languages,
 
 * JavaScript, CSS, web
 
-    * [CSS, JavaScript, and JQuery api](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/css,js,jquery.zip)
+    * [JavaScript, JQuery, and DOM api](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/javascript,jquery2016.zip), updated 2016
+    * [JavaScript, JQuery, and CSS api](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/css,js,jquery.zip)
     * [PHP, abbreviations, CSS, JavaScript, and JQuery](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/css,js,jquery,php.zip)
+
+* Abaqus
+
+    * From the Options menu choose "Open User Options File". Type the text `imports.include=abaqus` and save.
+
+* Asl (ACPI Source)
+
+    * From the Options menu choose "Open User Options File". Type the text `imports.include=asl` and save.
 
 * APDL
 
@@ -89,9 +84,10 @@ To enable one of these languages,
 
 * Java 
 
+    * [Java properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/java_2016.zip), including Java 1.8 keywords
     * [Java API](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/java.api.zip)
     * [Java API, complete 1.5 and 1.6 api](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/javaversions.api.zip)
-    * [Java API and Java Help](http://www.burgaud.com/scite.php)
+    * [Java API, Java Properties, and how to configure](https://www.burgaud.com/scite-java-api/)
 
 * Lua 
 
