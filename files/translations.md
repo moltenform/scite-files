@@ -69,22 +69,28 @@ Old 2005 Japanese (日本語) [SciTEDoc](http://downpoured.github.io/scite-with-
 
     * ![Screenshot rename file](https://raw.githubusercontent.com/downpoured/scite-files/master/files/translations_install_win_rename.png)
 
-* Run SciTE.exe, and the menus and dialogs will show translated text
+* Re-open SciTE.exe, and the menus and dialogs will show translated text
 
 <a name="how_to_install_translation_linux"></a>
 ### How to install a translation (Linux)
 
 * The name of the file must be locale.properties and must be placed in the same directory as SciTEGlobal.properties, for example,
 
-* Right-click one of the links below and choose "Save link as..."
+* Right-click one of the links and choose "Save link as..." or "Save target as..."
 
-* Save to a writable directory. For example, if installing a Spanish translation, one could save locale.es.properties to /home/downloads/locale.es.properties
+    * ![Screenshot right-click link](https://raw.githubusercontent.com/downpoured/scite-files/master/files/translations_install_linux_right.png)
 
-* Open a terminal
+* Save to a writable directory, like ~/Downloads.
 
-* sudo cp /home/downloads/locale.es.properties /usr/share/scite/locale.properties
+    * ![Screenshot save to downloads](https://raw.githubusercontent.com/downpoured/scite-files/master/files/translations_install_linux_path.png)
 
-* If /usr/share/scite does not exist, it is possible that properties are stored in /usr/local/share/scite 
+* Open a terminal, and copy the file to /usr/share/scite/locale.properties
+
+    * ![Screenshot save to downloads](https://raw.githubusercontent.com/downpoured/scite-files/master/files/translations_install_linux_terminal.png)
+
+* (Note the change of filename from locale.es.properties to locale.properties). /usr/local/share/scite can be tried if /usr/share/scite does not exist.
+
+* Re-open SciTE, and the menus and dialogs will show translated text
 
 <a name="how_to_make_translation"></a>
 ### Making a translation

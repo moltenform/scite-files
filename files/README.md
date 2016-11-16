@@ -1,9 +1,9 @@
 
-### [Translations](translations.md)
+## [Translations](translations.md)
 
 Show SciTE in another language
 
-### [API files](api_files.md)
+## [API files](api_files.md)
 
 API files and properties files for syntax highlighting, calltips, and symbol completion
 
