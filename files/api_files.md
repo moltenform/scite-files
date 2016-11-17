@@ -6,7 +6,7 @@
 
 These languages are recognized by SciTE and enabled by default:
 
-Ada, Assembler (NASM, MASM), AutoIt, Batch files (MS-DOS), Bash, C/C++/C#, conf (Apache), CSS, D, diff files, Flash (ActionScript), Fortran, Gettext, Go, HTML, HTML with embedded JavaScript, VBScript, PHP and ASP, IDL, MSIDL, XPIDL, INI, Java, JavaScript, LISP, Lua, Make, Matlab, MSSQL, Objective C, Objective Caml, Octave, Pascal/Delphi, Perl, PostScript, Python, Registry, Ruby, Scheme, SQL and PLSQL, S-Record, Swift, Tcl/Tk, Vala, VB and VBScript, XML, and YAML
+Ada, Assembler (NASM, MASM), AutoIt, Batch files (MS-DOS), Bash, C/C++/C#, conf (Apache), CSS, D, diff files, Flash (ActionScript), Fortran, Gettext, Go, HTML, HTML with embedded JavaScript, VBScript, PHP and ASP, IDL, MSIDL, XPIDL, INI, Java, JavaScript, LISP, Lua, Make, Matlab, MSSQL, Objective C, Objective Caml, Octave, Pascal/Delphi, Perl, PostScript, Python, Registry, Ruby, Scheme, SQL and PLSQL, S-Record, Swift, Tcl/Tk, Vala, Visual Basic, XML, and YAML
 
 <!-- I don't see this in properties files: Clarion, Progress, Asymptote, TADS3, Gui4Cli, PL/M, PowerBasic -->
 
@@ -29,6 +29,10 @@ Ada, Assembler (NASM, MASM), AutoIt, Batch files (MS-DOS), Bash, C/C++/C#, conf 
     * [JavaScript, JQuery, and CSS api](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/css,js,jquery.zip)
     * [PHP, abbreviations, CSS, JavaScript, and JQuery](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/css,js,jquery,php.zip)
 
+* AMPL
+
+    * [Properties file, api file, tools and setup instructions.](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/ampl.zip)
+
 * APDL
 
     * [APDL properties and API](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/apdl.zip)
@@ -40,6 +44,10 @@ Ada, Assembler (NASM, MASM), AutoIt, Batch files (MS-DOS), Bash, C/C++/C#, conf 
         * If asp.default.language=1, script in an ASP code block is JavaScript
         * If asp.default.language=2, script in an ASP code block is VBScript
         * If asp.default.language=3, script in an ASP code block is Python
+
+* Asymptote
+
+    * [Properties file](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/asymptote.properties)
 
 * Auto Hotkey 
 
@@ -83,6 +91,7 @@ Ada, Assembler (NASM, MASM), AutoIt, Batch files (MS-DOS), Bash, C/C++/C#, conf 
 
 * Lua 
 
+    * [Lua API](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/lua.api)
     * [Lua 5.0 C API and Lua functions](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/lua5.api.zip)
     * [Api for SciTE extension scripts](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/lua_scite_extension.api)
 
@@ -134,25 +143,26 @@ Ada, Assembler (NASM, MASM), AutoIt, Batch files (MS-DOS), Bash, C/C++/C#, conf 
 
 * Python
 
+    * [Python API](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/python.api.zip)
     * [Automatically print the contents of local variables on unhandled exceptions](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/python_print_vars.zip)
+
+* Ruby
+
+    * [Ruby API](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/ruby.api.zip)
 
 * TADS3 
 
     * [TADS3 property file and explanation](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/tads3.zip)
     
+* Visual Basic 
+
+    * [VBScript API, VBA API](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/vba,vbs2016.api.zip)
+
 * Windows Scripting 
 
     * [Properties files](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/windows_scripting.zip)
     * [More files and scripts](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/windows_scripting_scripts.zip), refer to readme.txt
 
-* AMPL
-
-    * [Properties file, api file, tools and setup instructions.](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/ampl.zip)
-
-* Asymptote
-
-    * [Properties file](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/asymptote.properties)
-    
 * Others
 
     * The following languages have built-in support that is disabled by default, and can be enabled in an options file.
@@ -174,7 +184,7 @@ Ada, Assembler (NASM, MASM), AutoIt, Batch files (MS-DOS), Bash, C/C++/C#, conf 
     Ecl: From the Options menu choose "Open User Options File". Type `imports.include=ecl` and save.  
     Eiffel: From the Options menu choose "Open User Options File". Type `imports.include=eiffel` and save.  
     Erlang: From the Options menu choose "Open User Options File". Type `imports.include=erlang` and save.  
-    Flagship (Clipper / XBase): From the Options menu choose "Open User options File". Type `imports.include=flagship` and save.  
+    Flagship: From the Options menu choose "Open User options File". Type `imports.include=flagship` and save.  
     Forth: From the Options menu choose "Open User Options File". Type `imports.include=forth` and save.  
     Freebasic: From the Options menu choose "Open User Options File". Type `imports.include=freebasic` and save.  
     GAP: From the Options menu choose "Open User Options File". Type `imports.include=gap` and save.  
@@ -207,7 +217,7 @@ Ada, Assembler (NASM, MASM), AutoIt, Batch files (MS-DOS), Bash, C/C++/C#, conf 
     TACL: From the Options menu choose "Open User Options File". Type `imports.include=tacl` and save.  
     TAL: From the Options menu choose "Open User Options File". Type `imports.include=tal` and save.  
     TeX, LaTeX: From the Options menu choose "Open User Options File". Type `imports.include=latex` and save.  
-    VHDL: From the Options menu choose "Open User Options File". Type `imports.include=vhdl` and save.
+    VHDL: From the Options menu choose "Open User Options File". Type `imports.include=vhdl` and save.  
     Verilog: From the Options menu choose "Open User Options File". Type `imports.include=verilog` and save.  
     cmake: From the Options menu choose "Open User Options File". Type `imports.include=cmake` and save.  
     nnCron: From the Options menu choose "Open User Options File". Type `imports.include=nncrontab` and save.  
