@@ -3317,6 +3317,7 @@ spl_autoload_register ([ callable $autoload_function[, bool $throw = true[, bool
 spl_autoload_unregister (mixed $autoload_function) bool Unregister given function as __autoload() implementation  (PHP 5 >= 5.1.2)
 spl_classes (void) array Return available SPL classes  (PHP 5)
 spl_object_hash (object $obj) string Return hash id for given object  (PHP 5 >= 5.2.0)
+spl_object_id (object $obj) int Return the integer object handle for given object  (PHP 7 >= 7.2.0)
 split (string $pattern, string $string[, int $limit = -1]) array Split string into array by regular expression  (PHP 4, PHP 5)
 spliti (string $pattern, string $string[, int $limit = -1]) array Split string into array by regular expression case insensitive  (PHP 4 >= 4.0.1, PHP 5)
 sprintf (string $format[, mixed $args[, mixed $...]]) string Return a formatted string  (PHP 4, PHP 5)
