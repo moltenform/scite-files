@@ -26,7 +26,7 @@
 | [locale.gl.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.gl.properties) | Galician (galego) | Updated 1.62 |
 | [locale.hu.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.hu.properties) | Hungarian (magyar) | Updated 1.63 |
 | [locale.id.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.id.properties) | Indonesian (Bahasa Indonesia) | Updated 2.21 |
-| [locale.it.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.it.properties) | Italian (italiano) | Updated 2.21 |
+| [locale.it.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.it.properties) | Italian (italiano) | Updated 3.7.5 (4 strings remain) |
 | [locale.ja.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.ja.properties) | Japanese (日本語) | Updated 2.21 |
 | [locale.kk.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.kk.properties) | Kazakh (қазақ тілі) | Updated 3.3.5 (6 strings remain) |
 | [locale.ko_KR.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.ko_KR.properties) | Korean (한국어) | Updated 3.3.5 (6 strings remain) |
