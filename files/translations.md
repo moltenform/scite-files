@@ -1,4 +1,4 @@
-
+﻿
 [Back](../README.md)
 
 [Information for making or updating a translation](#making-a-translation)
@@ -34,7 +34,7 @@
 | [locale.nb.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.nb.properties) | Norwegian Bokmål (Norsk bokmål) | Updated 1.62 |
 | [locale.nl.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.nl.properties) | Dutch (Nederlands) | Updated 1.73 |
 | [locale.pl.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.pl.properties) | Polish (język polski) | Updated 2.21 |
-| [locale.pt_BR.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.pt_BR.properties) | Brazilian Portuguese (português) | Updated 2.21 |
+| [locale.pt_BR.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.pt_BR.properties) | Brazilian Portuguese (português) | Complete |
 | [locale.pt_PT.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.pt_PT.properties) | Portuguese (português) | Updated 1.67 |
 | [locale.ro.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.ro.properties) | Romanian (Română) | Updated 2.21 |
 | [locale.ru.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.ru.properties) | Russian (Русский) | Updated 1.73 |
