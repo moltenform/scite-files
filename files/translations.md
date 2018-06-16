@@ -1,6 +1,8 @@
 
 [Back](../README.md)
 
+[Information for making or updating a translation](#making-a-translation)
+
 <a name="list_translations"></a>
 
 | Translations  |  |   |
@@ -95,7 +97,7 @@ Old 2005 Japanese (日本語) [SciTEDoc](http://downpoured.github.io/scite-with-
 <a name="how_to_make_translation"></a>
 ### Making a translation
 
-* Download the latest [locale.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.en.properties) file
+* Download the latest [locale.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.en.properties) file. Version 3.7.5 is the most recent version that added text to translate
 
 * Edit this file and fill in each line that ends with =
 
