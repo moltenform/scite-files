@@ -29,7 +29,7 @@
 | [locale.it.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.it.properties) | Italian (italiano) | Updated 2.21 |
 | [locale.ja.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.ja.properties) | Japanese (日本語) | Updated 2.21 |
 | [locale.kk.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.kk.properties) | Kazakh (қазақ тілі) | Updated 3.3.5 (6 strings remain) |
-| [locale.ko_KR.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.ko_KR.properties) | Korean (한국어) | Updated 2.21 |
+| [locale.ko_KR.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.ko_KR.properties) | Korean (한국어) | Updated 3.3.5 (6 strings remain) |
 | [locale.ms.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.ms.properties) | Malay (Bahasa Melayu) | Updated 1.73 |
 | [locale.nb.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.nb.properties) | Norwegian Bokmål (Norsk bokmål) | Updated 1.62 |
 | [locale.nl.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.nl.properties) | Dutch (Nederlands) | Updated 1.73 |
