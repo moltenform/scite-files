@@ -1,7 +1,7 @@
 ﻿
-[Back](../README.md)
+Instructions:
 
-[Information for making or updating a translation](#making-a-translation)
+[How to change SciTE's language (Windows)](#how-to-install-a-translation-windows) | [How to change SciTE's language (Linux)](#how-to-install-a-translation-linux) | [Make or update a translation](#making-a-translation) | [Back](../README.md)
 
 <a name="list_translations"></a>
 
@@ -57,8 +57,6 @@ Old 2005 Japanese (日本語) [SciTEDoc](http://downpoured.github.io/scite-with-
 <a name="how_to_install_translation_win"></a>
 ### How to install a translation (Windows)
 
-* The name of the file must be locale.properties and must be placed in the same directory as SciTEGlobal.properties, for example,
-
 * Right-click one of the links and choose "Save link as..." or "Save target as..."
 
     * ![Screenshot right-click link](https://raw.githubusercontent.com/downpoured/scite-files/master/files/translations_install_win_right.png)
@@ -76,8 +74,6 @@ Old 2005 Japanese (日本語) [SciTEDoc](http://downpoured.github.io/scite-with-
 <a name="how_to_install_translation_linux"></a>
 ### How to install a translation (Linux)
 
-* The name of the file must be locale.properties and must be placed in the same directory as SciTEGlobal.properties, for example,
-
 * Right-click one of the links and choose "Save link as..." or "Save target as..."
 
     * ![Screenshot right-click link](https://raw.githubusercontent.com/downpoured/scite-files/master/files/translations_install_linux_right.png)
@@ -90,9 +86,11 @@ Old 2005 Japanese (日本語) [SciTEDoc](http://downpoured.github.io/scite-with-
 
     * ![Screenshot save to downloads](https://raw.githubusercontent.com/downpoured/scite-files/master/files/translations_install_linux_terminal.png)
 
-* (Note the change of filename from locale.es.properties to locale.properties). /usr/local/share/scite can be tried if /usr/share/scite does not exist.
+* (Note that the destination filename is locale.properties). If /usr/share/scite does not exist, try /usr/local/share/scite
 
 * Re-open SciTE, and the menus and dialogs will show translated text
+
+* (In summary, the name of the file must be locale.properties and should be placed in the same directory as SciTEGlobal.properties)
 
 <a name="how_to_make_translation"></a>
 ### Making a translation
