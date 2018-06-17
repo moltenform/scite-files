@@ -3,9 +3,25 @@
 
 Show SciTE in another language
 
+Example: show SciTE in German 
+
 ## [API files](api_files.md)
 
 API files and properties files for syntax highlighting, calltips, and symbol completion
+
+Example: autocomplete calls to the C/C++ standard library
+
+## [Download releases/packages](releases.md)
+
+Official and unofficial builds of SciTE
+
+Example: a SciTE fork that lets you write plugins in Python 
+
+## [Download helper scripts/addons](helpers.md)
+
+Helper scripts / addons for SciTE, e.g. lua scripts and resources
+
+Example: adding a little color-picker tool to SciTE
 
 <br /><br /><br />
 
