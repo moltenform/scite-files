@@ -48,7 +48,7 @@ Instructions:
 | [locale.zh_t.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.zh_t.properties) | Chinese Traditional (中文) | Updated 2.21 |
 | [locale.zh_s.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.zh_s.properties) | Chinese Simplified (中文) GBK encoding | Updated 2.21 (set code.page=936, character.set=134) |
 
-Russian (Русский) [scite-ru project](http://scite-ru.bitbucket.org)
+Russian (Русский) [scite-ru project](https://bitbucket.org/scite-ru/scite-ru.bitbucket.org/wiki/Home)
 
 Old 2006 Greek (ελληνικά) [page](http://web.archive.org/web/20071012092151/http://scite.hellug.gr/)
 

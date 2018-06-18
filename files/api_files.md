@@ -288,4 +288,5 @@ To generate api files for your own source code, one of these tools may be helpfu
 
 Search for "calltip" in the [SciTE Documentation](http://www.scintilla.org/SciTEDoc.html) for more information about calltips.
 
+Add to this page by submitting a pull request, or sending an e-mail to [scite-wiki@gmail.com](scite-wiki@gmail.com)
 
