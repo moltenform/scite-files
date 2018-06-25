@@ -288,5 +288,13 @@ To generate api files for your own source code, one of these tools may be helpfu
 
 Search for "calltip" in the [SciTE Documentation](http://www.scintilla.org/SciTEDoc.html) for more information about calltips.
 
-Add to this page by submitting a pull request, or sending an e-mail to [scite-wiki@gmail.com](scite-wiki@gmail.com)
+### Tips for creating a lexer
 
+To add syntax highlighting and/or folding to a language in SciTE, create a lexer.
+
+* [Writing a lexer in the Lua language](https://www.scintilla.org/ScriptLexer.html) (simpler and doesn't require a C++ compiler)
+* Andreas Tscharner's tutorial for adding [Syntax Highlighting & Code Folding](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files_new_lexer/newlexertutorial.pdf), and [example code](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files_new_lexer/newlexertutorialcode.tar.bz2)
+
+### Add to this page
+
+Add to this page by submitting a pull request, or sending an e-mail to [scite-wiki@gmail.com](scite-wiki@gmail.com)
