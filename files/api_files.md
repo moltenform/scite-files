@@ -1,19 +1,19 @@
 
 [Back](../README.md)
 
-<a name="built_in_languages"></a>
-### Built-in languages
+### Languages
 
-These languages are recognized by SciTE and enabled by default:
+<!-- website refers to these, but I don't see them in properties: Clarion, Progress, Asymptote, TADS3, Gui4Cli, PL/M, PowerBasic -->
 
-Ada, Assembler (NASM, MASM), AutoIt, Batch files (MS-DOS), Bash, C/C++/C#, conf (Apache), CSS, D, diff files, Flash (ActionScript), Fortran, Gettext, Go, HTML, HTML with embedded JavaScript, VBScript, PHP and ASP, IDL, MSIDL, XPIDL, INI, Java, JavaScript, LISP, Lua, Make, Matlab, MSSQL, Objective C, Objective Caml, Octave, Pascal/Delphi, Perl, PostScript, Python, Registry, Ruby, Scheme, SQL and PLSQL, S-Record, Swift, Tcl/Tk, Vala, Visual Basic, XML, and YAML
+* JavaScript, CSS, web
 
-<!-- I don't see this in properties files: Clarion, Progress, Asymptote, TADS3, Gui4Cli, PL/M, PowerBasic -->
 
-<a name="api_files_and_properties"></a>
-### API Files and properties
+    * for html and inline JavaScript, highlighting and folding is already enabled by default
+    * [JavaScript, JQuery, and DOM api](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/javascript,jquery2016.zip), updated 2016
+    * [JavaScript, JQuery, and CSS api](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/css,js,jquery.zip)
+    * [PHP, abbreviations, CSS, JavaScript, and JQuery](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/css,js,jquery,php.zip)
 
-* C, C++
+* C, C++ (cpp)
 
     * [C standard library](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/c_withdoc.zip) with short doc strings, 2016 update
     * [C standard library](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/c.api)
@@ -23,11 +23,13 @@ Ada, Assembler (NASM, MASM), AutoIt, Batch files (MS-DOS), Bash, C/C++/C#, conf 
     * [Glut API](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/glut.zip)
     * [SDL API](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/sdl.api)
 
-* JavaScript, CSS, web
+* Abaqus
 
-    * [JavaScript, JQuery, and DOM api](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/javascript,jquery2016.zip), updated 2016
-    * [JavaScript, JQuery, and CSS api](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/css,js,jquery.zip)
-    * [PHP, abbreviations, CSS, JavaScript, and JQuery](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/css,js,jquery,php.zip)
+    * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `abaqus`, then save and restart SciTE
+    
+* Ada
+
+    * highlighting and folding is already enabled by default
 
 * AMPL
 
@@ -37,8 +39,21 @@ Ada, Assembler (NASM, MASM), AutoIt, Batch files (MS-DOS), Bash, C/C++/C#, conf 
 
     * [APDL properties and API](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/apdl.zip)
 
+* Assembler (NASM/MASM)
+
+    * highlighting and folding is already enabled by default
+    
+* Asl (ACPI Source)
+
+    * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `asl`, then save and restart SciTE
+
+* ASN.1 MIB
+
+    * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `asn1`, then save and restart SciTE
+    
 * ASP
 
+    * highlighting and folding is already enabled by default
     * [ASP API methods](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/asp.api)
     * Edit html.properties to set the language of scripts in ASP code
         * If asp.default.language=1, script in an ASP code block is JavaScript
@@ -49,21 +64,52 @@ Ada, Assembler (NASM, MASM), AutoIt, Batch files (MS-DOS), Bash, C/C++/C#, conf 
 
     * [Properties file](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/asymptote.properties)
 
-* Auto Hotkey 
+* AutoHotkey (AHK)
 
     * [AutoHotkey properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/ahk.properties)
     * [SciTE4AutoHotkey](https://github.com/fincs/SciTE4AutoHotkey) custom SciTE build for ahk
 
+* Avenue (Ave)
+
+    * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `ave`, then save and restart SciTE
+
+* AviSynth (avs)
+
+    * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `avs`, then save and restart SciTE
+
 * Auto It3 
 
+    * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `au3`, then save and restart SciTE
     * [SciTE4AutoIt3 Website containing Auto It3 related properties and API files.](https://www.autoitscript.com/site/autoit-script-editor/)
 
-* Batch Scripting (Windows)
+* baan
 
-    * [Batch API Files](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/batch.api.zip) (API files for NT, XP/2003, GNUWin32 and SysInternals commands)
+    * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `baan`, then save and restart SciTE
 
-* C# 
+* Batch files (MS-DOS)
 
+    * highlighting and folding is already enabled by default
+    * [API Files for Batch](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/batch.api.zip) (API files for NT, XP/2003, GNUWin32 and SysInternals commands)
+
+* Bash
+
+    * highlighting and folding is already enabled by default
+
+* BlitzBasic
+
+    * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `blitzbasic`, then save and restart SciTE
+
+* Bullant
+
+    * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `bullant`, then save and restart SciTE
+    
+* C/C++
+
+    * highlighting and folding is already enabled by default
+
+* C#
+
+    * highlighting and folding is already enabled by default
     * [C# api](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/c_sharp.api.zip)
 
 * CIL 
@@ -76,165 +122,409 @@ Ada, Assembler (NASM, MASM), AutoIt, Batch files (MS-DOS), Bash, C/C++/C#, conf 
 
 * CMake
 
+    * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `cmake`, then save and restart SciTE
     * [CMake API](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/cmake.api)
+
+* COBOL
+
+    * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `cobol`, then save and restart SciTE
 
 * Cobra
 
     * [Properties for Cobra and Cobraproj](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/cobra.zip)
 
-* FORTRAN 
+* coffeescript
 
+    * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `coffeescript`, then save and restart SciTE
+
+* conf (Apache)
+
+    * highlighting and folding is already enabled by default
+
+* csound
+
+    * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `csound`, then save and restart SciTE
+
+* CSS
+
+    * highlighting and folding is already enabled by default
+
+* D
+
+    * highlighting and folding is already enabled by default
+
+* Delphi
+
+    * highlighting and folding is already enabled by default
+    * [Delphi api files and abbrevs](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/delphi_extras.zip) 
+
+* diff files
+
+    * highlighting and folding is already enabled by default
+
+* ecl
+
+    * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `ecl`, then save and restart SciTE
+
+* Eiffel
+
+    * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `eiffel`, then save and restart SciTE
+
+* Erlang
+
+    * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `erlang`, then save and restart SciTE
+
+* E-Script (escript)
+
+    * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `escript`, then save and restart SciTE
+
+* Flagship
+
+    * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `flagship`, then save and restart SciTE
+
+* Flash (ActionScript)
+
+    * highlighting and folding is already enabled by default
+    
+* Forth
+
+    * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `forth`, then save and restart SciTE
+    
+* Fortran
+
+    * highlighting and folding is already enabled by default
     * [Standard FORTRAN API functions](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/fortran.api)
 
+* Freebasic
+
+    * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `freebasic`, then save and restart SciTE
+    
+* GAP
+
+    * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `gap`, then save and restart SciTE
+
+* Gettext
+
+    * highlighting and folding is already enabled by default
+    
 * GLPK/GMPL (MathProg)
 
     * a LP/MILP IDE based on SciTE can be found [here](https://sourceforge.net/projects/gusek/?source=directory)
 
-* Java 
+* Go
 
+    * highlighting and folding is already enabled by default
+
+* Haskell
+
+    * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `haskell`, then save and restart SciTE
+
+* Intel HEX (hex)
+
+    * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `hex`, then save and restart SciTE
+
+* InnoSetup (inno)
+
+    * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `inno`, then save and restart SciTE
+
+* IDL/MSIDL/XPIDL
+
+    * highlighting and folding is already enabled by default
+
+* indent
+
+    * a lexer for plain text docs that supports folding on indentation levels
+    * highlighting and folding is already enabled by default
+
+* INI
+
+    * highlighting and folding is already enabled by default
+
+* Java
+
+    * highlighting and folding is already enabled by default
     * [Java properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/java_2016.zip), including Java 1.8 keywords
     * [Java API](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/java.api.zip)
     * [Java API, complete 1.5 and 1.6 api](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/javaversions.api.zip)
     * [Java API, Java Properties, and how to configure](https://www.burgaud.com/scite-java-api/)
 
-* Lua 
+* JavaScript
 
+    * highlighting and folding is already enabled by default
+    
+* json and json-ld
+
+    * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `json`, then save and restart SciTE
+
+* KiXtart (kix)
+
+    * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `kix`, then save and restart SciTE
+
+* LaTeX / TeX
+
+    * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `latex`, then save and restart SciTE
+    
+* LISP, Scheme (scm smd)
+
+    * highlighting and folding is already enabled by default
+    
+* LOT
+
+    * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `lot`, then save and restart SciTE
+
+* Lout
+
+    * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `lout`, then save and restart SciTE
+    
+* Lua
+
+    * highlighting and folding is already enabled by default
     * [Lua API](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/lua.api)
     * [Lua 5.0 C API and Lua functions](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/lua5.api.zip)
     * [Api for SciTE extension scripts](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/lua_scite_extension.api)
 
-* Microsoft SQL 
+* Make / makefile
 
-    * [Replaces sql.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/mssql.properties)
+    * highlighting and folding is already enabled by default
+
+* markdown
+
+    * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `markdown`, then save and restart SciTE
+
+* Matlab
+
+    * highlighting and folding is already enabled by default
+
+* maxima
+
+    * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `maxima`, then save and restart SciTE
+
+* Metapost
+
+    * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `metapost`, then save and restart SciTE
+
+* Microsoft SQL / MSSQL
+
+    * highlighting and folding is already enabled by default
+    * [Replace sql.properties with this, for better MSSQL support](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/mssql.properties)
+
+* MMIXAL
+
+    * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `mmixal`, then save and restart SciTE
+
+* Modula 3 (modula3)
+
+    * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `modula3`, then save and restart SciTE
 
 * MQL4 (MetaQuotes Language / MT4)
 
     * The [scite-mql](https://github.com/ylw633/scite-mql) project adds syntax highlighting, autocomplete, parameter hints, and more for MT4 based code
 
-* nncron
+* Nimrod
 
+    * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `nimrod`, then save and restart SciTE
+
+* nncron / nncrontab
+
+    * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `nncrontab`, then save and restart SciTE
     * [nncron.api](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/nncron.api) 
+
+* NSIS (nullsoft install)
+
+    * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `nsis`, then save and restart SciTE
+
+* Objective C
+
+    * highlighting and folding is already enabled by default
+
+* OCaml and mli/sml
+
+    * highlighting and folding is already enabled by default
 
 * Octave
 
+    * highlighting and folding is already enabled by default
     * [octave.api](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/octave.api)
+
+* Opal
+
+    * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `opal`, then save and restart SciTE
 
 * Oracle 
 
     * [Extended properties file](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/sql_more.properties) with additional keywords and standard package names
     * [sql plsql](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/sql_plsql.api.zip) properties file
-    
+
 * OScript
 
+    * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `oscript`, then save and restart SciTE
     * [oscript.api.zip](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/oscript.api.zip)
 
-* Pascal / Delphi[API](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/pascal.api) 
+* Pascal
 
-    * [Abbreviations](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/pascal.abbrev) 
-    * [Delphi api files and abbrevs](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/delphi_extras.zip) 
+    * highlighting and folding is already enabled by default
+    * Pascal [API](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/pascal.api) 
+    * Pascal [Abbreviations](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/pascal.abbrev) 
 
-* Perl 
+* Perl
 
+    * highlighting and folding is already enabled by default
     * [Perl API](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/perl.api)
     * [Parrot properties file](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/parrot_properties.zip)
 
 * PHP 
 
+    * highlighting and folding is already enabled by default
     * [php.api, latest PHP 5](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/php.api)
     * [php.api in Spanish, PHP 5](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/php-es.api)
     * [PHP properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/php.properties)
     * [PHP functions](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/phpfunctions.properties)
 
+* PostScript
+
+    * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `ps`, then save and restart SciTE
+
 * POV-Ray 
 
+    * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `pov`, then save and restart SciTE
     * [POV-Ray API](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/pov.api)
+
+* PowerPro
+
+    * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `powerpro`, then save and restart SciTE
+
+* PowerShell (ps1/ps2)
+
+    * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `powershell`, then save and restart SciTE
 
 * Progress
 
     * [Progress properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/progress.properties)
 
+* PureBasic
+
+    * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `purebasic`, then save and restart SciTE
+
 * Python
 
+    * highlighting and folding is already enabled by default
     * [Python API](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/python.api.zip)
     * [Automatically print the contents of local variables on unhandled exceptions](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/python_print_vars.zip)
 
+* R
+
+    * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `r`, then save and restart SciTE
+
+* Rebol
+
+    * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `rebol`, then save and restart SciTE
+
+* Registry
+
+    * highlighting and folding is already enabled by default
+
 * Ruby
 
+    * highlighting and folding is already enabled by default
     * [Ruby API](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/ruby.api.zip)
+
+* Rust
+
+    * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `rust`, then save and restart SciTE
+    
+* Scheme
+
+    * highlighting and folding is already enabled by default
+
+* scriptol
+
+    * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `scriptol`, then save and restart SciTE
+    
+* Smalltalk
+
+    * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `smalltalk`, then save and restart SciTE
+
+* SORCUS Installation (sorcins)
+
+    * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `sorcins`, then save and restart SciTE
+
+* Specman E (specman)
+
+    * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `specman`, then save and restart SciTE
+
+* Spice
+
+    * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `spice`, then save and restart SciTE
+
+* SQL and PLSQL
+
+    * highlighting and folding is already enabled by default
+
+* S-Record
+
+    * highlighting and folding is already enabled by default
+
+* Swift
+
+    * highlighting and folding is already enabled by default
+
+* TACL
+
+    * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `tacl`, then save and restart SciTE
 
 * TADS3 
 
     * [TADS3 property file and explanation](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/tads3.zip)
-    
-* Visual Basic 
 
+* TAL
+
+    * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `tal`, then save and restart SciTE
+    
+* Tcl/Tk
+
+    * highlighting and folding is already enabled by default
+
+* txt2tags
+
+    * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `txt2tags`, then save and restart SciTE
+
+* Vala
+
+    * highlighting and folding is already enabled by default
+
+* Verilog
+
+    * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `verilog`, then save and restart SciTE
+
+* VHDL
+
+    * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `vhdl`, then save and restart SciTE
+
+* Visual Basic
+
+    * highlighting and folding is already enabled by default
+
+* VBScript
+
+    * highlighting and folding is already enabled by default
     * [VBScript API, VBA API](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/vba,vbs2016.api.zip)
+
+* visualprolog
+
+    * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `visualprolog`, then save and restart SciTE
 
 * Windows Scripting 
 
     * [Properties files](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/windows_scripting.zip)
     * [More files and scripts](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/windows_scripting_scripts.zip), refer to readme.txt
 
-* Others
+* XML
 
-    * The following languages have built-in support that is disabled by default, and can be enabled in an options file.
-    
-    * For example, the line `imports.include=verilog latex` in an options file enables these two languages.
+    * highlighting and folding is already enabled by default
 
-    ASN.1 MIB: From the Options menu choose "Open User Options File". Type `imports.include=asn1` and save.  
-    Abaqus: From the Options menu choose "Open User Options File". Type `imports.include=abaqus` and save.  
-    Asl (ACPI Source): From the Options menu choose "Open User Options File". Type `imports.include=asl` and save.  
-    Avenue (Ave): From the Options menu choose "Open User Options File". Type `imports.include=ave` and save.  
-    AviSynth: From the Options menu choose "Open User Options File". Type `imports.include=avs` and save.  
-    Baan: From the Options menu choose "Open User Options File". Type `imports.include=baan` and save.  
-    BlitzBasic: From the Options menu choose "Open User Options File". Type `imports.include=blitzbasic` and save.  
-    Bullant: From the Options menu choose "Open User Options File". Type `imports.include=bullant` and save.  
-    COBOL: From the Options menu choose "Open User Options File". Type `imports.include=cobol` and save.  
-    CSound: From the Options menu choose "Open User Options File". Type `imports.include=csound` and save.  
-    Coffeescript: From the Options menu choose "Open User Options File". Type `imports.include=coffeescript` and save.  
-    E-Script: From the Options menu choose "Open User Options File". Type `imports.include=escript` and save.  
-    Ecl: From the Options menu choose "Open User Options File". Type `imports.include=ecl` and save.  
-    Eiffel: From the Options menu choose "Open User Options File". Type `imports.include=eiffel` and save.  
-    Erlang: From the Options menu choose "Open User Options File". Type `imports.include=erlang` and save.  
-    Flagship: From the Options menu choose "Open User options File". Type `imports.include=flagship` and save.  
-    Forth: From the Options menu choose "Open User Options File". Type `imports.include=forth` and save.  
-    Freebasic: From the Options menu choose "Open User Options File". Type `imports.include=freebasic` and save.  
-    GAP: From the Options menu choose "Open User Options File". Type `imports.include=gap` and save.  
-    Haskell: From the Options menu choose "Open User Options File". Type `imports.include=haskell` and save.  
-    InnoSetup: From the Options menu choose "Open User Options File". Type `imports.include=inno` and save.  
-    Intel HEX: From the Options menu choose "Open User Options File". Type `imports.include=hex` and save.  
-    JSON, JSON-LD: From the Options menu choose "Open User Options File". Type `imports.include=json` and save.  
-    KiXtart: From the Options menu choose "Open User Options File". Type `imports.include=kix` and save.  
-    LOT: From the Options menu choose "Open User Options File". Type `imports.include=lot` and save.  
-    Lout: From the Options menu choose "Open User Options File". Type `imports.include=lout` and save.  
-    MMIXAL: From the Options menu choose "Open User Options File". Type `imports.include=mmixal` and save.  
-    Metapost: From the Options menu choose "Open User Options File". Type `imports.include=metapost` and save.  
-    Modula 3: From the Options menu choose "Open User Options File". Type `imports.include=modula3` and save.  
-    NSIS: From the Options menu choose "Open User Options File". Type `imports.include=nsis` and save.  
-    Nimrod: From the Options menu choose "Open User Options File". Type `imports.include=nimrod` and save.  
-    OScript: From the Options menu choose "Open User Options File". Type `imports.include=oscript` and save.  
-    Opal: From the Options menu choose "Open User Options File". Type `imports.include=opal` and save.  
-    POV-Ray: From the Options menu choose "Open User Options File". Type `imports.include=pov` and save.  
-    PostScript: From the Options menu choose "Open User Options File". Type `imports.include=ps` and save.  
-    PowerPro: From the Options menu choose "Open User Options File". Type `imports.include=powerpro` and save.  
-    PowerShell: From the Options menu choose "Open User Options File". Type `imports.include=powershell` and save.  
-    PureBasic: From the Options menu choose "Open User Options File". Type `imports.include=purebasic` and save.  
-    R: From the Options menu choose "Open User Options File". Type `imports.include=r` and save.  
-    Rebol: From the Options menu choose "Open User Options File". Type `imports.include=rebol` and save.  
-    Rust: From the Options menu choose "Open User Options File". Type `imports.include=rust` and save.  
-    SORCUS Installation: From the Options menu choose "Open User Options File". Type `imports.include=sorcins` and save.  
-    Smalltalk: From the Options menu choose "Open User Options File". Type `imports.include=smalltalk` and save.  
-    Specman E: From the Options menu choose "Open User Options File". Type `imports.include=specman` and save.  
-    Spice: From the Options menu choose "Open User Options File". Type `imports.include=spice` and save.  
-    TACL: From the Options menu choose "Open User Options File". Type `imports.include=tacl` and save.  
-    TAL: From the Options menu choose "Open User Options File". Type `imports.include=tal` and save.  
-    TeX, LaTeX: From the Options menu choose "Open User Options File". Type `imports.include=latex` and save.  
-    VHDL: From the Options menu choose "Open User Options File". Type `imports.include=vhdl` and save.  
-    Verilog: From the Options menu choose "Open User Options File". Type `imports.include=verilog` and save.  
-    cmake: From the Options menu choose "Open User Options File". Type `imports.include=cmake` and save.  
-    nnCron: From the Options menu choose "Open User Options File". Type `imports.include=nncrontab` and save.  
-    scriptol: From the Options menu choose "Open User Options File". Type `imports.include=scriptol` and save.  
-    txt2tags: From the Options menu choose "Open User Options File". Type `imports.include=txt2tags` and save.  
+* YAML
+
+    * highlighting and folding is already enabled by default
 
 To contribute a file to this list, send an e-mail to scitewiki at gmail dot com or submit a pull request. 
 
