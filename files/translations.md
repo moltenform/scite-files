@@ -99,7 +99,7 @@ Old 2005 Japanese (日本語) [SciTEDoc](http://downpoured.github.io/scite-with-
 
 * Edit this file and fill in each line that ends with =
 
-* Please contribute translations by either sending an e-mail to scitewiki@gmail.com or by submitting a pull request to this project
+* Please contribute translations by either sending an e-mail to scitewiki at gmail dot com or by submitting a pull request to this project
 
 * If you contribute a translation, then I'll assume you want it to be made freely available under the same conditions as SciTE, unless there is a comment in the file stating otherwise
 

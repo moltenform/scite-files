@@ -15,7 +15,7 @@ Ada, Assembler (NASM, MASM), AutoIt, Batch files (MS-DOS), Bash, C/C++/C#, conf 
 
 * C, C++
 
-    * [C standard library](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/c_withdoc_07_2016.zip) with short doc strings, 2016 update
+    * [C standard library](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/c_withdoc.zip) with short doc strings, 2016 update
     * [C standard library](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/c.api)
     * [Windows API](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/cpp.api.zip)
     * [OpenGL API](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/opengl.zip)
@@ -78,9 +78,17 @@ Ada, Assembler (NASM, MASM), AutoIt, Batch files (MS-DOS), Bash, C/C++/C#, conf 
 
     * [CMake API](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/cmake.api)
 
+* Cobra
+
+    * [Properties for Cobra and Cobraproj](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/cobra.zip)
+
 * FORTRAN 
 
     * [Standard FORTRAN API functions](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/fortran.api)
+
+* GLPK/GMPL (MathProg)
+
+    * a LP/MILP IDE based on SciTE can be found [here](https://sourceforge.net/projects/gusek/?source=directory)
 
 * Java 
 
@@ -98,6 +106,10 @@ Ada, Assembler (NASM, MASM), AutoIt, Batch files (MS-DOS), Bash, C/C++/C#, conf 
 * Microsoft SQL 
 
     * [Replaces sql.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/mssql.properties)
+
+* MQL4 (MetaQuotes Language / MT4)
+
+    * The [scite-mql](https://github.com/ylw633/scite-mql) project adds syntax highlighting, autocomplete, parameter hints, and more for MT4 based code
 
 * nncron
 
@@ -297,4 +309,4 @@ To add syntax highlighting and/or folding to a language in SciTE, create a lexer
 
 ### Add to this page
 
-Add to this page by submitting a pull request, or sending an e-mail to [scite-wiki@gmail.com](scite-wiki@gmail.com)
+Add to this page by submitting a pull request, or sending an e-mail to scitewiki at gmail dot com

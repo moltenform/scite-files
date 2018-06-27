@@ -26,7 +26,7 @@ Helper scripts and addons for SciTE, including lua scripts and lua tips
 
     * dispatches scite events so that many lua scripts can be installed at the same time without conflict. For example, you might have a few different scripts that each want to respond to the OnOpen event.
 
-    * I've gathered what appears to be the latest version(s) of extman, send an e-mail scitewiki@gmail.com if you have a more recent version
+    * I've gathered what appears to be the latest version(s) of extman, send an e-mail scitewiki at gmail dot com if you have a more recent version
 
 * [Orthospell](http://tools.diorama.ch/orthospell.html), spellcheck for SciTE, based on [luahunspell](https://code.google.com/p/luahunspell/)
 
@@ -72,7 +72,7 @@ These might be useful for building your own tools
 
 ### Add to this page
 
-You can add to this page by submitting a pull request, or sending an e-mail to [scitewiki@gmail.com](scitewiki@gmail.com)
+You can add to this page by submitting a pull request, or sending an e-mail to scitewiki at gmail dot com
 
 
 

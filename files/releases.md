@@ -26,5 +26,5 @@
 
 ### Add to this page
 
-You can add to this page by submitting a pull request, or sending an e-mail to [scitewiki@gmail.com](scitewiki@gmail.com)
+You can add to this page by submitting a pull request, or sending an e-mail to scitewiki at gmail dot com
 
