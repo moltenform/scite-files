@@ -26,3 +26,5 @@
 * You can update author information near the top of the file
 
 * Submit the updated file by either sending an e-mail to scitewiki at gmail dot com or by submitting a pull request to this project
+
+[back](translations.md)

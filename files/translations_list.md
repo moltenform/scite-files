@@ -2,6 +2,7 @@
  [Back to instructions](translations.md)
 
 <a name="list_translations"></a>
+
 | Translations  |  |   |
 | ------------- | ------------- | ------------- |
 | [locale.af.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.af.properties) | Afrikaans | Updated 1.73 |

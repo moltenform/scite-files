@@ -17,3 +17,5 @@
     * ![Screenshot rename file](https://raw.githubusercontent.com/downpoured/scite-files/master/files/translations_install_win_rename.png)
 
 * Re-open SciTE.exe, and the menus and dialogs will show translated text
+
+[back](translations.md)

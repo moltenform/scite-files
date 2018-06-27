@@ -21,3 +21,5 @@
 * Re-open SciTE, and the menus and dialogs will show translated text
 
 * (In summary, the name of the file must be locale.properties and should be placed in the same directory as SciTEGlobal.properties)
+
+[back](translations.md)
