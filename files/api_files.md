@@ -1,12 +1,19 @@
 
-[Back](../README.md)
+
+* [back](../README.md)
+* [how to install a .properties file from the list below](api_files_howto_properties.md)
+* [how to install a .api file from the list below](api_files_howto_install_api.md) (to enable autocomplete+calltips)
+* [how to create a .api file for your own code](api_files_howto_create_api.md)
+* [how to add highlighting/folding for a new language](api_files_howto_create_lexer.md)
+* add to this page by submitting a pull request, or sending an e-mail to scitewiki at gmail dot com
 
 ### Languages
 
 <!-- website refers to these, but I don't see them in properties: Clarion, Progress, Asymptote, TADS3, Gui4Cli, PL/M, PowerBasic -->
+<!-- these lexers are available, but not referred to, set(['', 'SML', 'mysql', 'powerbasic','', 'kvirc', '', 'cppnocase', '', 'a68k', 'po', 'DMIS', '', 'bib', '', 'clarionnocase', 'tcmd', 'DMAP', 'PL/M', 'mssql', 'phpscript', 'clarion', 'fcST', 'magiksf', 'gui4cli', '']) -->
+<!-- these lexers are available and just need to be turned on manually, as described below: markdown, visualprolog, tads3, progress , asy, literatehaskell, apdl -->
 
 * JavaScript, CSS, web
-
 
     * for html and inline JavaScript, highlighting and folding is already enabled by default
     * [JavaScript, JQuery, and DOM api](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/javascript,jquery2016.zip), updated 2016
@@ -37,6 +44,7 @@
 
 * APDL
 
+    * highlighting and folding is enabled after the properties file below is installed
     * [APDL properties and API](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/apdl.zip)
 
 * Assembler (NASM/MASM)
@@ -62,6 +70,7 @@
 
 * Asymptote
 
+    * highlighting and folding is enabled after the properties file below is installed
     * [Properties file](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/asymptote.properties)
 
 * AutoHotkey (AHK)
@@ -218,6 +227,7 @@
 * Haskell
 
     * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `haskell`, then save and restart SciTE
+    * literatehaskell support can be enabled by copying `haskell.properties` to `lhaskell.properties`, changing all references to .hs to .lhs, and changing the line `lexer.*.lhs=haskell` to `lexer.*.lhs=literatehaskell`
 
 * Intel HEX (hex)
 
@@ -399,6 +409,7 @@
 
 * Progress
 
+    * highlighting and folding is enabled after the properties file below is installed
     * [Progress properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/progress.properties)
 
 * PureBasic
@@ -474,6 +485,7 @@
 
 * TADS3 
 
+    * highlighting and folding is enabled after the properties file below is installed
     * [TADS3 property file and explanation](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/tads3.zip)
 
 * TAL
@@ -528,75 +540,4 @@
 
 To contribute a file to this list, send an e-mail to scitewiki at gmail dot com or submit a pull request. 
 
-<a name="how_to_install_properties"></a>
-### How to install a properties file
-
-* Properties files can change colors and fonts, specify lists of keywords, define what action to take on "Compile" and "Go", map file extensions to a programming language, and more
-
-* In Windows, move the .properties file into the directory that contains SciTE.exe
-
-* In Linux, move the .properties file into the directory that contains SciTEGlobal.properties. This is typically either /usr/bin/scite or /usr/local/bin/scite
-
-* By default, SciTEGlobal.properties includes the line `import *`, and so the new .properties file will be included
-
-<a name="how_to_install_api"></a>
-### How to install an api file and enable calltips + completion
-
-* As an example, let's set up the api file for C
-
-* Download and uncompress [c_withdoc.zip](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/c_withdoc.zip)
-
-* In Windows, move c_withdoc.api into the directory that contains SciTE.exe
-
-* In Linux, move c_withdoc.api into the directory that contains SciTEGlobal.properties. This is typically either /usr/bin/scite or /usr/local/bin/scite
-
-* Open SciTE
-
-* From the Options menu, select Open User Options File
-
-* Add the line `api.$(file.patterns.cpp)=$(SciteDefaultHome)/c_withdoc.api`
-
-* Save this file and restart SciTE
-
-* In SciTE, create and open a new file "test.c"
-
-* Calltips
-
-    * Type the text "fputs("
-    
-    * As soon as you press (, a calltip appears, showing a description of fputs
-    
-* Completion
-
-    * On an empty line, type the text "fp" and press Ctrl+Space
-    
-    * A listbox appears allowing you to choose between fprintf, fputc, and fputs
-    
-    * You can use the arrow keys can navigate this box and Enter to choose an item from this box
-
-<a name="how_to_make_api"></a>
-### How to make an api file
-
-An api file is a plain text file with one entry per line.
-
-To generate api files for your own source code, one of these tools may be helpful:
-
-* For C/C++ headers, an api file can be generated using [ctags](http://ctags.sourceforge.net/) and then the [tags2api](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files_gen/tags2api.py) Python script (which assumes C/C++ source) on the tags file to grab complete multiple line function prototypes. Some common headers surround parameter lists with a __P macro and may have comments. The [cleanapi](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files_gen/cleanapi.cc) utility may be used on these files
-* For Python modules, there is a [gen_python](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files_gen/gen_python_api.py) script
-* For Python 3, there is a [gen_python_3](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files_gen/gen_python_3_api.py) script
-* For Java classes, there is a [ApiBuilder.java](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files_gen/java_ApiBuilder.java) program
-* For C# classes, use [genapi.cs](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files_gen/gen_csgenapi.zip)
-* For PHP, use [php-api-generator](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files_gen/gen_php-api-generator.zip) or [phpapi.php](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files_gen/phpapi.php.txt)
-
-Search for "calltip" in the [SciTE Documentation](http://www.scintilla.org/SciTEDoc.html) for more information about calltips.
-
-### Tips for creating a lexer
-
-To add syntax highlighting and/or folding to a language in SciTE, create a lexer.
-
-* [Writing a lexer in the Lua language](https://www.scintilla.org/ScriptLexer.html) (simpler and doesn't require a C++ compiler)
-* Andreas Tscharner's tutorial for adding [Syntax Highlighting & Code Folding](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files_new_lexer/newlexertutorial.pdf), and [example code](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files_new_lexer/newlexertutorialcode.tar.bz2)
-
-### Add to this page
-
-Add to this page by submitting a pull request, or sending an e-mail to scitewiki at gmail dot com
+How to install a file downloaded above? Refer to the links at the top of this page for instructions.
