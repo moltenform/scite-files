@@ -12,7 +12,7 @@
 | [locale.cs.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.cs.properties) | Czech (čeština) | Updated 3.0.4 |
 | [locale.cy.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.cy.properties) | Welsh (Cymraeg) | Updated 1.58 |
 | [locale.da.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.da.properties) | Danish (dansk) | Complete |
-| [locale.de.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.de.properties) | German (Deutsch) | Updated 3.7.1 (1 string remains) |
+| [locale.de.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.de.properties) | German (Deutsch) | Complete |
 | [locale.el.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.el.properties) | Greek (ελληνικά) | Updated 2.21 |
 | [locale.eo.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.eo.properties) | Esperanto | Updated 2.21 |
 | [locale.es.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.es.properties) | Spanish (español) | Updated 2.21 |
