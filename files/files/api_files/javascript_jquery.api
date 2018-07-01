@@ -1,0 +1,482 @@
+##
+# jQuery API, as fetched from jQuery.org.  imJuli2016, Marcedo@HabmalneFrage.de | https://sourceforge.net/projects/scite-webdev
+##
+add(jQuery object)Add elements to the set of matched elements. jQ>Traversing
+add(selector , context)Add elements to the set of matched elements. jQ>Traversing
+addBack([selector])Add the previous set of elements on the stack to the current set, optionally filtered by a(). jQ>Traversing
+addClass(className)Adds the specified class(es)to each of the set of matched elements. jQ>Attributes
+addClass(function(index, currentClass)Adds the specified class(es)to each of the set of matched elements. jQ>Attributes
+after(content [, content])Insert content, specified by the parameter,\t\nafter each element in the set of matched elements. jQ>Manipulation
+after(function(index)Insert content, specified by the parameter,\t\nafter each element in the set of matched elements. jQ>Manipulation
+ajax([settings])Perform an asynchronous HTTP (Ajax)request. jQ>Ajax
+ajax(url [, settings])Perform an asynchronous HTTP (Ajax)request. jQ>Ajax
+ajaxComplete(handler(event, XMLHttpRequest, ajaxOptions)Register a handler to be called when Ajax requests complete.\t\nThis is an AjaxEvent. jQ>Ajax
+ajaxError(handler(event, jqXHR, ajaxSettings, thrownError)Register a handler to be called when Ajax requests complete with\t\nan error. This is an Ajax Event. jQ>Ajax
+ajaxPrefilter([dataTypes] , handler(options, originalOptions, jqXHR)Handle custom Ajax options or modify existing options before each\t\nrequest is sent and before they are processed by ajax(). jQ>Ajax
+ajaxSend(handler(event, jqXHR, ajaxOptions)Attach a function to be executed before an Ajax request is sent.\t\nThis is an Ajax Event. jQ>Ajax
+ajaxSetup(options)Set default values for future Ajax requests. Its use is not recommended. jQ>Ajax
+ajaxStart(handler()Register a handler to be called when the first Ajax request begins.\t\nThis is an Ajax Event. jQ>Ajax
+ajaxStop(handler()Register a handler to be called when all Ajax requests have completed.\t\nThis is an Ajax Event. jQ>Ajax
+ajaxSuccess(handler(event, XMLHttpRequest, ajaxOptions)Attach a function to be executed whenever an Ajax request completes\t\nsuccessfully. This is an Ajax Event. jQ>Ajax
+ajaxTransport(dataType , handler(options, originalOptions, jqXHR)Creates an object that handles the actual transmission of Ajax data. jQ>Ajax
+andSelf()Add the previous set of elements on the stack to the current set. jQ>Deprecated
+animate(properties [, duration] [, easing] [, complete])Perform a custom animation of a set of CSS properties. jQ>Effects
+append(content [, content])Insert content, specified by the parameter,\t\nto the end of each element in the set of matched elements. jQ>Manipulation
+append(function(index, html)Insert content, specified by the parameter,\t\nto the end of each element in the set of matched elements. jQ>Manipulation
+appendTo(target)Insert every element in the set of matched elements to the end of the target. jQ>Manipulation
+attr(attributeName , function(index, attr)Get the value of an attribute for the first element in the set of\t\nmatched elements or set one or more attributes for every matched element. jQ>Attributes
+attr(attributeName , value)Get the value of an attribute for the first element in the set of\t\nmatched elements or set one or more attributes for every matched element. jQ>Attributes
+attr(attributes)Get the value of an attribute for the first element in the set of\t\nmatched elements or set one or more attributes for every matched element. jQ>Attributes
+before(content [, content])Insert content, specified by the parameter,\t\nbefore each element in the set of matched elements. jQ>Manipulation
+before(function)Insert content, specified by the parameter,\t\nbefore each element in the set of matched elements. jQ>Manipulation
+bind(events)Attach a handler to an event for the elements. jQ>Events
+bind(eventType [, eventData] , handler(eventObject)Attach a handler to an event for the elements. jQ>Events
+bind(eventType [, eventData] [, preventBubble])Attach a handler to an event for the elements. jQ>Events
+blur()Bind an event handler to the "blur" JavaScript event, or trigger that event on an element. jQ>Events
+blur([eventData] , handler(eventObject)Bind an event handler to the "blur" JavaScript event, or trigger that event on an element. jQ>Events
+blur(handler(eventObject)Bind an event handler to the "blur" JavaScript event, or trigger that event on an element. jQ>Events
+boxModel()Deprecated in jQuery 1.3 (see support).\t\nStates if the current page, in the user's browser, is being rendered using the W3C CSS Box Model. jQ>Deprecated
+browser()Contains flags for the useragent, read from navigator.userAgent. \t\nThis property was removed in jQuery 1.9 ->Deprecated
+callbacks.add(callbacks)Add a callback or a collection of callbacks to a callback list. jQ>Callbacks Object
+callbacks.disable()Disable a callback list from doing anything more. jQ>Callbacks Object
+callbacks.disabled()Determine if the callbacks list has been disabled. jQ>Callbacks Object
+callbacks.empty()Remove all of the callbacks from a list. jQ>Callbacks Object
+callbacks.fire(arguments)Call all of the callbacks with the given arguments->Callbacks Object
+callbacks.fired()Determine if the callbacks have already been called at least once. jQ>Callbacks Object
+callbacks.fireWith([context] [, args])Call all callbacks in a list with the given context and arguments. jQ>Callbacks Object
+callbacks.has(callback)Determine whether a supplied callback is in a list->Callbacks Object
+callbacks.lock()Lock a callback list in its current state. jQ>Callbacks Object
+callbacks.locked()Determine if the callbacks list has been locked. jQ>Callbacks Object
+callbacks.remove(callbacks)Remove a callback or a collection of callbacks from a callback list. jQ>Callbacks Object
+callbacks(flags)A multi-purpose callbacks list object that provides\t\n a powerful way to manage callback lists. jQ>Callbacks Object
+change()Bind an event handler to the "change" JavaScript event, or trigger that event on an element. jQ>Events
+change([eventData] , handler(eventObject)Bind an event handler to the "change" JavaScript event, or trigger that event on an element. jQ>Events
+change(handler(eventObject)Bind an event handler to the "change" JavaScript event, or trigger that event on an element. jQ>Events
+children([selector])Get the children of each element in the set\t\nof matched elements, optionally filtered by a(). jQ>Traversing
+clearQueue([queueName])Remove from the queue all items that have not yet been run. jQ>Data
+click()Bind an event handler to the "click" JavaScript event,or trigger that event on an element. jQ>Events
+click([eventData] , handler(eventObject)Bind an event handler to the "click" JavaScript event, or trigger that event on an element. jQ>Events
+click(handler(eventObject)Bind an event handler to the "click" JavaScript event, or trigger that event on an element. jQ>Events
+clone([withDataAndEvents] [, deepWithDataAndEvents])Create a deep copy of the set of matched elements. jQ>Manipulation
+clone([withDataAndEvents])Create a deep copy of the set of matched elements. jQ>Manipulation
+closest(element)For each element in the set, get the first element that matches the ()\t\nby testing the element itself and traversing up through its ancestors in the DOM tree. jQ>Traversing
+closest(jQuery object)For each element in the set, get the first element that matches the ()\t\nby testing the element itself and traversing up through its ancestors in the DOM tree. jQ>Traversing
+closest(selector [, context])For each element in the set, get the first element that matches the ()\t\nby testing the element itself and traversing up through its ancestors in the DOM tree. jQ>Traversing
+closest(selector)For each element in the set, get the first element that matches the ()\t\nby testing the element itself and traversing up through its ancestors in the DOM tree. jQ>Traversing
+closest(selectors [, context])For each element in the set, get the first element that matches the ()\t\nby testing the element itself and traversing up through its ancestors in the DOM tree. jQ>Traversing
+contains(container , contained)Check to see if a DOM element is a descendant of another DOM element. jQ>Utilities
+contents()Get the children of each element in the set of matched elements,\t\nincluding text and comment nodes. jQ>Traversing
+context()The DOM node context originally passed to jQuery(); if none was passed\t\nthen context will likely be the document. jQ>Deprecated
+css(properties)Get the value of a style property for the first element in the set\t\nof matched elements or set one or more CSS properties for every matched element. jQ>CSS
+css(propertyName , function(index, value)Get the value of a style property for the first element in the set\t\nof matched elements or set one or more CSS properties for every matched element. jQ>CSS
+css(propertyName , value)Get the value of a style property for the first element in the set\t\nof matched elements or set one or more CSS properties for every matched element. jQ>CSS
+css(propertyName)Get the value of a style property for the first element in the set\t\nof matched elements or set one or more CSS properties for every matched element. jQ>CSS
+css(propertyNames)Get the value of a style property for the first element in the set\t\nof matched elements or set one or more CSS properties for every matched element. jQ>CSS
+cssHooks()Hook directly into jQuery to override how particular CSS properties\t\nare retrieved or set, normalize CSS property naming, or create custom properties. jQ>CSS
+data(element , key , value)Store arbitrary data associated with the specified element and/or\t\nreturn the value that was set. jQ>Data
+dblclick()Bind an event handler to the "dblclick" JavaScript event, or trigger that event on an element. jQ>Events
+dblclick([eventData] , handler(eventObject)Bind an event handler to the "dblclick" JavaScript event, or trigger that event on an element. jQ>Events
+dblclick(handler(eventObject)Bind an event handler to the "dblclick" JavaScript event, or trigger that event on an element. jQ>Events
+deferred.always(alwaysCallbacks [, alwaysCallbacks])Add handlers to be called when the Deferred object is either resolved or rejected. ->Deferred Object
+deferred.done(doneCallbacks [, doneCallbacks])Add handlers to be called when the Deferred object is resolved. ->Deferred Object
+deferred.fail(failCallbacks [, failCallbacks])Add handlers to be called when the Deferred object is rejected. ->Deferred Object
+deferred.isRejected()Determine whether a Deferred object has been rejected. ->Deferred Object
+deferred.isResolved()Determine whether a Deferred object has been resolved. ->Deferred Object
+deferred.notify(args)Call the progressCallbacks on a Deferred object with the given args. ->Deferred Object
+deferred.notifyWith(context [, args])Call the progressCallbacks on a Deferred object with the given context\t\nand args. ->Deferred Object
+deferred.pipe([doneFilter] [, failFilter] [, progressFilter])Utility method to filter and/or chain Deferreds. ->Deferred Object
+deferred.pipe([doneFilter] [, failFilter])Utility method to filter and/or chain Deferreds. ->Deferred Object
+deferred.progress(progressCallbacks)Add handlers to be called when the Deferred object generates progress\t\nnotifications. jQ>Deferred Object
+deferred.promise([target])Return a Deferred's Promise object. ->Deferred Object
+deferred.reject([args])Reject a Deferred object and call any failCallbacks with the given args. ->Deferred Object
+deferred.rejectWith(context [, args])Reject a Deferred object and call any failCallbacks with the given\t\ncontext and args. ->Deferred Object
+deferred.resolve([args])Resolve a Deferred object and call any doneCallbacks with the given args. ->Deferred Object
+deferred.resolveWith(context [, args])Resolve a Deferred object and call any doneCallbacks with the given\t\ncontext and args. ->Deferred Object
+deferred.state()Determine the current state of a Deferred object. ->Deferred Object
+deferred.then(doneCallbacks , failCallbacks [, progressCallbacks])Add handlers to be called when the Deferred object is resolved,\t\nrejected, or still in progress. ->Deferred Object
+deferred.then(doneCallbacks , failCallbacks)Add handlers to be called when the Deferred object is resolved,\t\nrejected, or still in progress. ->Deferred Object
+deferred.then(doneFilter [, failFilter] [, progressFilter])Add handlers to be called when the Deferred object is resolved,\t\nrejected, or still in progress. ->Deferred Object
+deferred([beforeStart])A constructor function that returns a chainable utility object with methods\t\nto register multiple callbacks into callback queues. jQ>Deferred Object
+delay(duration [, queueName])Set a timer to delay execution of subsequent items in the queue. jQ>Effects
+delegate(selector , events)Attach a handler to one or more events for all elements that match\t\nthe () , now or in the future, based on a specific set of root elements. jQ>Events
+delegate(selector , eventType , eventData , handler(eventObject)Attach a handler to one or more events for all elements that match the () , now or in the future. jQ>Events
+delegate(selector , eventType , handler(eventObject)Attach a handler to one or more events for all elements that match\t\nthe () , now or in the future, based on a specific set of root elements. jQ>Events
+dequeue([queueName])Execute the next function on the queue for the matched elements. jQ>Data
+dequeue(element [, queueName])Execute the next function on the queue for the matched element. jQ>Data
+detach([selector])Remove the set of matched elements from the DOM. jQ>Manipulation
+die()Remove event handlers previously attached using.live()from the elements. jQ>Deprecated
+die(events)Remove event handlers previously attached using.live()from the elements. jQ>Deprecated
+die(eventType [, handler])Remove event handlers previously attached using.live()from the elements. jQ>Deprecated
+each(collection , callback(indexInArray, valueOfElement)A generic iterator function, which can be used to seamlessly iterate over both objects and arrays. jQ>Utilities
+each(function(index, Element)Iterate over a jQuery object, executing a function for each matched element. ->Miscellaneous
+end()End the most recent filtering operation in the current chain and\t\nreturn the set of matched elements to its previous state. jQ>Traversing
+eq(index)Reduce the set of matched elements to the one at the specified index. jQ>Traversing
+error([eventData] , handler(eventObject)Bind an event handler to the "error" JavaScript event. jQ>Deprecated
+error(handler(eventObject)Bind an event handler to the "error" JavaScript event. jQ>Deprecated
+error(message)Takes a string and throws an exception containing it. jQ>Internals
+event.currentTarget() The current DOM element within the event bubbling phase. ->Events
+event.data() An optional object of data passed to an event method\t\nwhen the current executing handler is bound. ->Events
+event.delegateTarget() The element where the currently-called jQuery event handler was attached. jQ>Events
+event.isDefaultPrevented()Returns whether event.preventDefault()was ever called on this event object. ->Events
+event.isImmediatePropagationStopped()Returns whether event.stopImmediatePropagation()was ever called\t\non this event object. ->Events
+event.isPropagationStopped()Returns whether event.stopPropagation()was ever called on this event object. ->Events
+event.metaKey() Indicates whether the META key was pressed when the event fired. jQ>Events
+event.namespace() The namespace specified when the event was triggered. jQ>Events
+event.pageX() The mouse position relative to the left edge of the document. jQ>Events
+event.pageY() The mouse position relative to the top edge of the document. jQ>Events
+event.preventDefault()If this method is called, the default action of the event will not be triggered. jQ>Events
+event.relatedTarget() The other DOM element involved in the event, if any. jQ>Events
+event.result() The last value returned by an event handler that was triggered by\t\nthis event, unless the value was undefined. jQ>Events
+event.stopImmediatePropagation()Keeps the rest of the handlers from being executed and prevents the\t\nevent from bubbling up the DOM tree. jQ>Events
+event.stopPropagation()Prevents the event from bubbling up the DOM tree,\t\npreventing any parent handlers from being notified of the event. jQ>Events
+event.target() The DOM element that initiated the event. jQ>Events
+event.timeStamp() The difference in milliseconds between the time\t\n the browser created the event and January 1, 1970. jQ>Events
+event.type() Describes the nature of the event. jQ>Events
+event.which() For key or mouse events, this property indicates the specific key\t\nor button that was pressed. jQ>Events
+extend([deep] , target , object1 [, objectN])Merge the contents of two or more objects together into the first object. jQ>Utilities
+extend(target [, object1] [, objectN])Merge the contents of two or more objects together into the first object. jQ>Utilities
+fadeIn([duration] [, complete])Display the matched elements by fading them to opaque. jQ>Effects
+fadeIn([duration] [, easing] [, complete])Display the matched elements by fading them to opaque. jQ>Effects
+fadeIn(options)Display the matched elements by fading them to opaque. jQ>Effects
+fadeOut([duration] [, complete])Hide the matched elements by fading them to transparent. jQ>Effects
+fadeOut([duration] [, easing] [, complete])Hide the matched elements by fading them to transparent. jQ>Effects
+fadeOut(options)Hide the matched elements by fading them to transparent. jQ>Effects
+fadeTo(duration , opacity [, complete])Adjust the opacity of the matched elements. jQ>Effects
+fadeTo(duration , opacity [, easing] [, complete])Adjust the opacity of the matched elements. jQ>Effects
+fadeToggle([duration] [, easing] [, complete])Display or hide the matched elements by animating their opacity. jQ>Effects
+fadeToggle(options)Display or hide the matched elements by animating their opacity. jQ>Effects
+filter(element)Reduce the set of matched elements to those that match the () \t\nor pass the function's test. ->Traversing
+filter(function(index)Reduce the set of matched elements to those that match the () \t\nor pass the function's test. ->Traversing
+filter(jQuery object)Reduce the set of matched elements to those that match the () \t\nor pass the function's test. ->Traversing
+filter(selector)Reduce the set of matched elements to those that match the () \t\nor pass the function's test. ->Traversing
+find(element)Get the descendants of each element in the current set of matched\t\nelements, filtered by a() , jQuery object, or element. jQ>Traversing
+find(jQuery object)Get the descendants of each element in the current set of matched\t\nelements, filtered by a() , jQuery object, or element. jQ>Traversing
+find(selector)Get the descendants of each element in the current set of matched\t\nelements, filtered by a() , jQuery object, or element. jQ>Traversing
+finish([queue])Stop the currently-running animation, remove all queued animations,\t\nand complete all animations for the matched elements. jQ>Effects
+first()Reduce the set of matched elements to the first in the set. jQ>Traversing
+fn.extend(object)Merge the contents of an object onto\t\nthe jQuery prototype to provide new jQuery instance methods. jQ>Utilities
+focus()Bind an event handler to the "focus" JavaScript event, or trigger that event on an element. jQ>Events
+focus([eventData] , handler(eventObject)Bind an event handler to the "focus" JavaScript event, or trigger that event on an element. jQ>Events
+focus(handler(eventObject)Bind an event handler to the "focus" JavaScript event, or trigger that event on an element. jQ>Events
+focusin([eventData] , handler(eventObject)Bind an event handler to the "focusin" event. jQ>Events
+focusin(handler(eventObject)Bind an event handler to the "focusin" event. jQ>Events
+focusout([eventData] , handler(eventObject)Bind an event handler to the "focusout" JavaScript event. jQ>Events
+focusout(handler(eventObject)Bind an event handler to the "focusout" JavaScript event. jQ>Events
+fx.interval()The rate (in milliseconds)at which animations fire. jQ>Effects
+fx.off ()Globally disable all animations. jQ>Effects
+get()Retrieve the DOM elements matched by the jQuery object. jQ>Miscellaneous
+get(index)Retrieve the DOM elements matched by the jQuery object. jQ>Miscellaneous
+get(url [, data] [, success(data, textStatus, jqXHR)] [, dataType])Load data from the server using a HTTP GET request. jQ>Ajax
+getJSON(url [, data] [, success( data, textStatus, jqXHR )])Load JSON-encoded data from the server using a GET HTTP request. jQ>Ajax
+getScript(url [, success(script, textStatus, jqXHR)])Load a JavaScript file from the server using a GET HTTP request, then execute it. jQ>Ajax
+globalEval(code)Execute some JavaScript code globally. jQ>Utilities
+grep(array , function(elementOfArray, indexInArray)[, invert])Finds the elements of an array which satisfy a filter function.\t\nThe original array is not affected. jQ>Utilities
+has(contained)Reduce the set of matched elements to those that have a descendant\t\nthat matches the ()or DOM element. jQ>Traversing
+has(selector)Reduce the set of matched elements to those\t\nthat have a descendant that matches the ()or DOM element. jQ>Traversing
+hasClass(className)Determine whether any of the matched elements are assigned the given class. jQ>Attributes
+hasData(element)Determine whether an element has any jQuery data associated with it. jQ>Data
+height()Get the current computed height for the first element in the set\t\nof matched elements or set the height of every matched element. jQ>CSS
+height(function(index, height)Get the current computed height for the first element in the set\t\nof matched elements or set the height of every matched element. jQ>CSS
+height(value)Get the current computed height for the first element in the set\t\nof matched elements or set the height of every matched element. jQ>CSS
+hide()Hide the matched elements. jQ>Effects
+hide([duration] [, complete])Hide the matched elements. jQ>Effects
+hide(duration [, easing] [, complete])Hide the matched elements. jQ>Effects
+hide(options)Hide the matched elements. jQ>Effects
+holdReady(hold)Holds or releases the execution of jQuery's ready event. jQ>Core
+hover(handlerIn(eventObject), handlerOut(eventObject)Bind one or two handlers to the matched elements,\t\nto be executed when the mouse pointer enters and leaves the elements. jQ>Events
+hover(handlerInOut(eventObject)Bind one or two handlers to the matched elements,\t\nto be executed when the mouse pointer enters and leaves the elements. jQ>Events
+html()Get the HTML contents of the first element in the set of matched elements\t\n or set the HTML contents of every matched element. jQ>Attributes
+html(function(index, oldhtml)Get the HTML contents of the first element in the set of matched\t\nelements or set the HTML contents of every matched element. jQ>Attributes
+html(htmlString)Get the HTML contents of the first element in the set of matched elements\t\n or set the HTML contents of every matched element. jQ>Attributes
+inArray(value , array [, fromIndex])Search for a specified value within an array and return its index\t\n(or -1 if not found). jQ>Utilities
+index()Search for a given element from among the matched elements. jQ>Miscellaneous
+index(element)Search for a given element from among the matched elements. jQ>Miscellaneous
+index(selector)Search for a given element from among the matched elements. jQ>Miscellaneous
+innerHeight()Get the current computed height for the first element in the set\t\nof matched elements, including padding but not border. jQ>CSS
+innerWidth()Get the current computed width for the first element in the set of\t\nmatched elements, including padding but not border. jQ>CSS
+insertAfter(target)Insert every element in the set of matched elements after the target. jQ>Manipulation
+insertBefore(target)Insert every element in the set of matched elements before the target. jQ>Manipulation
+is(elements)Check the current matched set of elements against a() ,\t\nelement, or jQuery object and return true if at least one of these elements matches the given arguments. jQ>Traversing
+is(function(index)Check the current matched set of elements against a() ,\t\nelement, or jQuery object and return true if at least one of these elements matches the given arguments. jQ>Traversing
+is(jQuery object)Check the current matched set of elements against a() ,\t\nelement, or jQuery object and return true if at least one of these elements matches the given arguments. jQ>Traversing
+is(selector)Check the current matched set of elements against a() ,\t\nelement, or jQuery object and return true if at least one of these elements matches the given arguments. jQ>Traversing
+isArray(obj)Determine whether the argument is an array. jQ>Utilities
+isEmptyObject(object)Check to see if an object is empty (contains no enumerable properties). jQ>Utilities
+isFunction(obj)Determine if the argument passed is a Javascript function object. ->Utilities
+isNumeric(value)Determines whether its argument is a number. jQ>Utilities
+isPlainObject(object)Check to see if an object is a plain object (created using "{}" or "new Object"). jQ>Utilities
+isWindow(obj)Determine whether the argument is a window. jQ>Utilities
+isXMLDoc(node)Check to see if a DOM node is within an XML document (or is an XML document). jQ>Utilities
+jquery()A string containing the jQuery version number. jQ>Internals
+keydown()Bind an event handler to the "keydown" JavaScript event, or trigger that event on an element. jQ>Events
+keydown([eventData] , handler(eventObject)Bind an event handler to the "keydown" JavaScript event, or trigger that event on an element. jQ>Events
+keydown(handler(eventObject)Bind an event handler to the "keydown" JavaScript event, or trigger that event on an element. jQ>Events
+keypress()Bind an event handler to the "keypress" JavaScript event, or trigger that event on an element. jQ>Events
+keypress([eventData] , handler(eventObject)Bind an event handler to the "keypress" JavaScript event, or trigger that event on an element. jQ>Events
+keypress(handler(eventObject)Bind an event handler to the "keypress" JavaScript event, or trigger that event on an element. jQ>Events
+keyup()Bind an event handler to the "keyup" JavaScript event,or trigger that event on an element. jQ>Events
+keyup([eventData] , handler(eventObject)Bind an event handler to the "keyup" JavaScript event, or trigger that event on an element. jQ>Events
+keyup(handler(eventObject)Bind an event handler to the "keyup" JavaScript event, or trigger that event on an element. jQ>Events
+last()Reduce the set of matched elements to the final one in the set. jQ>Traversing
+length()The number of elements in the jQuery object. jQ>Properties
+live(events , data , handler(eventObject)Attach an event handler for all elements which match the current\t\n() , now and in the future. jQ>Deprecated
+live(events , handler(eventObject)Attach an event handler for all elements which match the current\t\n() , now and in the future. jQ>Deprecated
+live(events)Attach an event handler for all elements which match the current()\t\n , now and in the future. jQ>Deprecated
+load([eventData] , handler(eventObject)Bind an event handler to the "load" JavaScript event. jQ>Deprecated
+load(handler(eventObject)Bind an event handler to the "load" JavaScript event. jQ>Deprecated
+load(url [, data] [, complete(responseText, textStatus, XMLHttpRequest)])Load data from the server and place the returned HTML into the matched element. jQ>Ajax
+makeArray(obj)Convert an array-like object into a true JavaScript array. jQ>Utilities
+map(array , callback( elementOfArray, indexInArray )Translate all items in an array or object to new array of items. jQ>Utilities
+map(arrayOrObject , callback( value, indexOrKey )Translate all items in an array or object to new array of items. jQ>Utilities
+map(callback(index, domElement)Pass each element in the current matched set through a function,\t\nproducing a new jQuery object containing the return values. jQ>Traversing
+merge(first , second)Merge the contents of two arrays together into the first array. ->Utilities
+mousedown()Bind an event handler to the "mousedown" JavaScript event, or trigger that event on an element. jQ>Events
+mousedown([eventData] , handler(eventObject)Bind an event handler to the "mousedown" JavaScript event, or trigger that event on an element. jQ>Events
+mousedown(handler(eventObject)Bind an event handler to the "mousedown" JavaScript event, or trigger that event on an element. jQ>Events
+mouseenter()Bind an event handler to be fired when the mouse enters an element, or trigger that handler on an element. jQ>Events
+mouseenter([eventData] , handler(eventObject)Bind an event handler to be fired when the mouse enters an element, or trigger that handler on an element. jQ>Events
+mouseenter(handler(eventObject)Bind an event handler to be fired when the mouse enters an element, or trigger that handler on an element. jQ>Events
+mouseleave()Bind an event handler to be fired when the mouse leaves an element, or trigger that handler on an element. jQ>Events
+mouseleave([eventData] , handler(eventObject)Bind an event handler to be fired when the mouse leaves an element, or trigger that handler on an element. jQ>Events
+mouseleave(handler(eventObject)Bind an event handler to be fired when the mouse leaves an element, or trigger that handler on an element. jQ>Events
+mousemove()Bind an event handler to the "mousemove" JavaScript event, or trigger that event on an element. jQ>Events
+mousemove([eventData] , handler(eventObject)Bind an event handler to the "mousemove" JavaScript event, or trigger that event on an element. jQ>Events
+mousemove(handler(eventObject)Bind an event handler to the "mousemove" JavaScript event, or trigger that event on an element. jQ>Events
+mouseout()Bind an event handler to the "mouseout" JavaScript event, or trigger that event on an element. jQ>Events
+mouseout([eventData] , handler(eventObject)Bind an event handler to the "mouseout" JavaScript event, or trigger that event on an element. jQ>Events
+mouseout(handler(eventObject)Bind an event handler to the "mouseout" JavaScript event, or trigger that event on an element. jQ>Events
+mouseover()Bind an event handler to the "mouseover" JavaScript event, or trigger that event on an element. jQ>Events
+mouseover([eventData] , handler(eventObject)Bind an event handler to the "mouseover" JavaScript event, or trigger that event on an element. jQ>Events
+mouseover(handler(eventObject)Bind an event handler to the "mouseover" JavaScript event, or trigger that event on an element. jQ>Events
+mouseup()Bind an event handler to the "mouseup" JavaScript event, or trigger that event on an element. jQ>Events
+mouseup([eventData] , handler(eventObject)Bind an event handler to the "mouseup" JavaScript event, or trigger that event on an element. jQ>Events
+mouseup(handler(eventObject)Bind an event handler to the "mouseup" JavaScript event, or trigger that event on an element. jQ>Events
+next([selector])Get the immediately following sibling of each element in the set\t\nof matched elements. If a()is provided, it retrieves the next sibling only if it matches that(). jQ>Traversing
+nextAll([selector])Get all following siblings of each element in the set of matched\t\nelements, optionally filtered by a(). jQ>Traversing
+nextUntil([element] [, filter])Get all following siblings of each element up to but not including\t\nthe element matched by the () , DOM node, or jQuery object passed. jQ>Traversing
+nextUntil([selector] [, filter])Get all following siblings of each element up to but not including\t\nthe element matched by the () , DOM node, or jQuery object passed. jQ>Traversing
+noConflict([removeAll])Relinquish jQuery's control of the $ variable. jQ>Core
+noop()An empty function. jQ>Utilities
+not(elements)Remove elements from the set of matched elements. jQ>Traversing
+not(function(index)Remove elements from the set of matched elements. jQ>Traversing
+not(jQuery object)Remove elements from the set of matched elements. jQ>Traversing
+not(selector)Remove elements from the set of matched elements. jQ>Traversing
+now()Return a number representing the current time. jQ>Utilities
+off()Remove an event handler. jQ>Events
+off(events [,() ] [, handler(eventObject)])Remove an event handler. jQ>Events
+off(events [,() ])Remove an event handler. jQ>Events
+offset()Get the current coordinates of the first element,or set the coordinates of every element, in the set of matched elements, relative to the document. jQ>CSS
+offset(coordinates)Get the current coordinates of the first element, or set the coordinates of every element, in the set of matched elements, relative to the document. jQ>CSS
+offset(function(index, coords)Get the current coordinates of the first element, or set the coordinates of every element, in the set of matched elements, relative to the document. jQ>CSS
+offsetParent()Get the closest ancestor element that is positioned. jQ>Offset
+on(events [,() ] [, data] , handler(eventObject)Attach an event handler function for one or more events to the selected\t\nelements. jQ>Events
+on(events [,() ] [, data])Attach an event handler function for one or more events to the selected elements. jQ>Events
+one(events [, data] , handler(eventObject)Attach a handler to an event for the elements.\t\nThe handler is executed at most once per element per event type. jQ>Events
+one(events [,() ] [, data] , handler(eventObject)Attach a handler to an event for the elements.\t\nThe handler is executed at most once per element per event type. jQ>Events
+one(events [,() ] [, data])Attach a handler to an event for the elements.\t\nThe handler is executed at most once per element per event type. jQ>Events
+outerHeight([includeMargin])Get the current computed height for the first element in the set\t\nof matched elements, including padding, border, and optionally margin. jQ>CSS
+outerWidth([includeMargin])Get the current computed width for the first element in the set of\t\nmatched elements, including padding and border. jQ>CSS
+param(obj , traditional)Create a serialized representation of an array or object, suitable for use in a URL query string or Ajax request. ->Ajax
+param(obj)Create a serialized representation of an array or object, suitable for use in a URL query string or Ajax request. ->Ajax
+parent([selector])Get the parent of each element in the current set of matched elements,\t\noptionally filtered by a(). jQ>Traversing
+parents([selector])Get the ancestors of each element in the current set of matched elements,\t\noptionally filtered by a(). jQ>Traversing
+parentsUntil([element] [, filter])Get the ancestors of each element in the current set of matched elements,\t\nup to but not including the element matched by the () , DOM node, or jQuery object. jQ>Traversing
+parentsUntil([selector] [, filter])Get the ancestors of each element in the current set of matched elements,\t\nup to but not including the element matched by the () , DOM node, or jQuery object. jQ>Traversing
+parseHTML(data [, context] [, keepScripts])Parses a string into an array of DOM nodes. jQ>Utilities
+parseJSON(json)Takes a well-formed JSON string and returns the resulting JavaScript object. jQ>Utilities
+parseXML(data)Parses a string into an XML document. jQ>Utilities
+position()Get the current coordinates of the first element in the set of matched\t\nelements, relative to the offset parent. jQ>CSS
+post(url [, data] [, success(data, textStatus, jqXHR)] [, dataType])Load data from the server using a HTTP POST request. jQ>Ajax
+prepend(content [, content])Insert content, specified by the parameter,\t\nto the beginning of each element in the set of matched elements. jQ>Manipulation
+prepend(function(index, html)Insert content, specified by the parameter,\t\nto the beginning of each element in the set of matched elements. jQ>Manipulation
+prependTo(target)Insert every element in the set of matched elements to the beginning of the target. jQ>Manipulation
+prev([selector])Get the immediately preceding sibling of each element in the set\t\nof matched elements, optionally filtered by a(). jQ>Traversing
+prevAll([selector])Get all preceding siblings of each element in the set of matched\t\nelements, optionally filtered by a(). jQ>Traversing
+prevUntil([element] [, filter])Get all preceding siblings of each element up to but not including\t\nthe element matched by the () , DOM node, or jQuery object. jQ>Traversing
+prevUntil([selector] [, filter])Get all preceding siblings of each element up to but not including\t\nthe element matched by the () , DOM node, or jQuery object. jQ>Traversing
+promise([type] [, target])Return a Promise object to observe when all actions of a certain\t\ntype bound to the collection, queued or not, have finished. ->Deferred Object
+prop(properties)Get the value of a property for the first element in the set of matched\t\nelements or set one or more properties for every matched element. jQ>Attributes
+prop(propertyName , function(index, oldPropertyValue)Get the value of a property for the first element in the set of matched\t\nelements or set one or more properties for every matched element. jQ>Attributes
+prop(propertyName , value)Get the value of a property for the first element in the set of matched\t\nelements or set one or more properties for every matched element. jQ>Attributes
+prop(propertyName)Get the value of a property for the first element in the set of matched\t\nelements or set one or more properties for every matched element. jQ>Attributes
+proxy(context , name [, additionalArguments])Takes a function and returns a new one that will always have a particular\t\ncontext. jQ>Events
+proxy(context , name)Takes a function and returns a new one that will always have a particular context. jQ>Events
+proxy(function , context [, additionalArguments])Takes a function and returns a new one that will always have a particular\t\ncontext. jQ>Events
+proxy(function , context)Takes a function and returns a new one that will always have a particular context. jQ>Events
+pushStack(elements , name , arguments)Add a collection of DOM elements onto the jQuery stack. jQ>Internals
+pushStack(elements)Add a collection of DOM elements onto the jQuery stack. jQ>Internals
+queue([queueName] , callback( next )Show or manipulate the queue of functions to be executed on the matched elements. jQ>Data
+queue([queueName] , newQueue)Show or manipulate the queue of functions to be executed on the matched elements. jQ>Data
+queue([queueName])Show or manipulate the queue of functions to be executed on the matched elements. jQ>Data
+queue(element , queueName , callback()Show or manipulate the queue of functions to be executed on the matched element. jQ>Data
+queue(element , queueName , newQueue)Show or manipulate the queue of functions to be executed on the matched element. jQ>Data
+queue(element [, queueName])Show or manipulate the queue of functions to be executed on the matched element. jQ>Data
+ready(handler)Specify a function to execute when the DOM is fully loaded. jQ>Events
+remove([selector])Remove the set of matched elements from the DOM. jQ>Manipulation
+removeAttr(attributeName)Remove an attribute from each element in the set of matched elements. jQ>Attributes
+removeClass([className])Remove a single class, multiple classes,\t\nor all classes from each element in the set of matched elements. jQ>Attributes
+removeClass(function(index, class)Remove a single class, multiple classes,\t\nor all classes from each element in the set of matched elements. jQ>Attributes
+removeData([list])Remove a previously-stored piece of data. jQ>Data
+removeData([name])Remove a previously-stored piece of data. jQ>Data
+removeData(element [, name])Remove a previously-stored piece of data. jQ>Data
+removeProp(propertyName)Remove a property for the set of matched elements. jQ>Attributes
+replaceAll(target)Replace each target element with the set of matched elements. jQ>Manipulation
+replaceWith(function)Replace each element in the set of matched elements with the provided\t\nnew content and return the set of elements that was removed. jQ>Manipulation
+replaceWith(newContent)Replace each element in the set of matched elements with the provided\t\nnew content and return the set of elements that was removed. jQ>Manipulation
+resize()Bind an event handler to the "resize" JavaScript event, or trigger that event on an element. jQ>Events
+resize([eventData] , handler(eventObject)Bind an event handler to the "resize" JavaScript event, or trigger that event on an element. jQ>Events
+resize(handler(eventObject)Bind an event handler to the "resize" JavaScript event, or trigger that event on an element. jQ>Events
+scroll()Bind an event handler to the "scroll" JavaScript event, or trigger that event on an element. jQ>Events
+scroll([eventData] , handler(eventObject)Bind an event handler to the "scroll" JavaScript event, or trigger that event on an element. jQ>Events
+scroll(handler(eventObject)Bind an event handler to the "scroll" JavaScript event, or trigger that event on an element. jQ>Events
+scrollLeft()Get the current horizontal position of the scroll bar for the first\t\nelement in the set of matched elements or set the horizontal position of the scroll bar for every matched element. jQ>CSS
+scrollLeft(value)Get the current horizontal position of the scroll bar for the first element in the set of matched elements\t\n or set the horizontal position of the scroll bar for every matched element. jQ>CSS
+scrollTop()Get the current vertical position of the scroll bar for the first\t\nelement in the set of matched elements or set the vertical position of the scroll bar for every matched element. jQ>CSS
+scrollTop(value)Get the current vertical position of the scroll bar for the first\t\nelement in the set of matched elements or set the vertical position of the scroll bar for every matched element. jQ>CSS
+select()Bind an event handler to the "select" JavaScript event, or trigger that event on an element. jQ>Events
+select([eventData] , handler(eventObject)Bind an event handler to the "select" JavaScript event, or trigger that event on an element. jQ>Events
+select(handler(eventObject)Bind an event handler to the "select" JavaScript event, or trigger that event on an element. jQ>Events
+selector()A representing passed to jQuery(),\t\nif any, when creating the original set. jQ>Deprecated
+serialize()Encode a set of form elements as a string for submission. jQ>Ajax
+serializeArray()Encode a set of form elements as an array of names and values. jQ>Ajax
+show()Display the matched elements. jQ>Effects
+show([duration] [, complete])Display the matched elements. jQ>Effects
+show(duration [, easing] [, complete])Display the matched elements. jQ>Effects
+show(options)Display the matched elements. jQ>Effects
+siblings([selector])Get the siblings of each element in the set\t\nof matched elements, optionally filtered by a(). jQ>Traversing
+size()Return the number of elements in the jQuery object. jQ>Deprecated
+slice(start [, end])Reduce the set of matched elements to a subset specified by a range of indices. jQ>Traversing
+slideDown([duration] [, complete])Display the matched elements with a sliding motion. jQ>Effects
+slideDown([duration] [, easing] [, complete])Display the matched elements with a sliding motion. jQ>Effects
+slideDown(options)Display the matched elements with a sliding motion. jQ>Effects
+slideToggle([duration] [, complete])Display or hide the matched elements with a sliding motion. jQ>Effects
+slideToggle([duration] [, easing] [, complete])Display or hide the matched elements with a sliding motion. jQ>Effects
+slideToggle(options)Display or hide the matched elements with a sliding motion. jQ>Effects
+slideUp([duration] [, complete])Hide the matched elements with a sliding motion. jQ>Effects
+slideUp([duration] [, easing] [, complete])Hide the matched elements with a sliding motion. jQ>Effects
+slideUp(options)Hide the matched elements with a sliding motion. jQ>Effects
+stop([clearQueue] [, jumpToEnd])Stop the currently-running animation on the matched elements. jQ>Effects
+stop([queue] [, clearQueue] [, jumpToEnd])Stop the currently-running animation on the matched elements. jQ>Effects
+sub()Creates a new copy of jQuery whose properties and methods can be\t\nmodified without affecting the original jQuery object. jQ>Core
+submit()Bind an event handler to the "submit" JavaScript event, or trigger that event on an element. jQ>Events
+submit([eventData] , handler(eventObject)Bind an event handler to the "submit" JavaScript event, or trigger that event on an element. jQ>Events
+submit(handler(eventObject)Bind an event handler to the "submit" JavaScript event, or trigger that event on an element. jQ>Events
+support()A collection of properties that represent the presence of different\t\nbrowser features or bugs. Intended for jQuery's internal use;( use a lib like Modernize). jQ>Properties
+text()Get the combined text contents of each element in the set of matched\t\nelements, including their descendants, or set the text contents of the matched elements. jQ>Manipulation
+text(function(index, text)Get the combined text contents of each element in the set of matched\t\nelements, including their descendants, or set the text contents of the matched elements. jQ>Manipulation
+text(textString)Get the combined text contents of each element in the set of matched\t\nelements, including their descendants, or set the text contents of the matched elements. jQ>Manipulation
+toArray()Retrieve all the elements contained in the jQuery set, as an array. jQ>Miscellaneous
+toggle([duration] [, complete])Display or hide the matched elements. jQ>Effects
+toggle(duration [, easing] [, complete])Display or hide the matched elements. jQ>Effects
+toggle(handler(eventObject), handler(eventObject)[, handler(eventObject)])Bind two or more handlers to the matched elements,\t\nto be executed on alternate clicks. jQ>Deprecated
+toggle(options)Display or hide the matched elements. jQ>Effects
+toggle(showOrHide)Display or hide the matched elements. jQ>Effects
+toggleClass([switch])Add or remove one or more classes from each element in the set of\t\nmatched elements, depending on either the class's presence or the value of the switch argument. jQ>Attributes
+toggleClass(className , switch)Add or remove one or more classes from each element in the set of matched elements,\t\ndepending on either the class's presence or the value of the switch argument. jQ>Attributes
+toggleClass(className)Add or remove one or more classes from each element in the set of\t\nmatched elements, depending on either the class's presence or the value of the switch argument. jQ>Attributes
+toggleClass(function(index, class, switch)[, switch])Add or remove one or more classes from each element in the set of\t\nmatched elements ?Attributes
+trigger(event [, extraParameters])Execute all handlers and behaviors attached to the matched elements\t\nfor the given event type. jQ>Events
+trigger(eventType [, extraParameters])Execute all handlers and behaviors attached to the matched elements\t\nfor the given event type. jQ>Events
+triggerHandler(eventType [, extraParameters])Execute all handlers attached to an element for an event. jQ>Events
+trim(str)Remove the whitespace from the beginning and end of a string. jQ>Utilities
+type(obj)Determine the internal JavaScript [[Class]] of an object. jQ>Utilities
+unbind()Remove a previously-attached event handler from the elements. jQ>Events
+unbind(event)Remove a previously-attached event handler from the elements. jQ>Events
+unbind(eventType , false)Remove a previously-attached event handler from the elements. jQ>Events
+unbind(eventType [, handler(eventObject)])Remove a previously-attached event handler from the elements. jQ>Events
+undelegate()Remove a handler from the event for all elements which match the\t\ncurrent() , based upon a specific set of root elements. jQ>Events
+undelegate(namespace)Remove a handler from the event for all elements which match the\t\ncurrent() , based upon a specific set of root elements. jQ>Events
+undelegate(selector , events)Remove a handler from the event for all elements which match the\t\ncurrent() , based upon a specific set of root elements. jQ>Events
+undelegate(selector , eventType , handler(eventObject)Remove a handler from the event for all elements which match the\t\ncurrent() , based upon a specific set of root elements. jQ>Events
+undelegate(selector , eventType)Remove a handler from the event for all elements which match the\t\ncurrent() , based upon a specific set of root elements. jQ>Events
+unique(array)Sorts an array of DOM elements, in place,\t\nwith the duplicates removed. Note that this only works on arrays of DOM elements, not strings or numbers. jQ>Utilities
+unload([eventData] , handler(eventObject)Bind an event handler to the "unload" JavaScript event. jQ>Deprecated
+unload(handler(eventObject)Bind an event handler to the "unload" JavaScript event. jQ>Deprecated
+unwrap()Remove the parents of the set of matched elements from the DOM,\t\nleaving the matched elements in their place. jQ>Manipulation
+val()Get the current value of the first element in the set of matched\t\nelements or set the value of every matched element. jQ>Attributes
+val(function(index, value)Get the current value of the first element in the set of matched\t\nelements or set the value of every matched element. jQ>Attributes
+val(value)Get the current value of the first element in the set of matched\t\nelements or set the value of every matched element. jQ>Attributes
+when(deferreds)Provides a way to execute callback functions based on one or more\t\nobjects, usually Deferred objects that represent asynchronous events. jQ>Core
+width()Get the current computed width for the first element in the set of\t\nmatched elements or set the width of every matched element. jQ>CSS
+width(function(index, width)Get the current computed width for the first element in the set of\t\nmatched elements or set the width of every matched element. jQ>CSS
+width(value)Get the current computed width for the first element in the set of\t\nmatched elements or set the width of every matched element. jQ>CSS
+wrap(function(index)Wrap an HTML structure around each element in the set of matched elements. jQ>Manipulation
+wrap(wrappingElement)Wrap an HTML structure around each element in the set of matched elements. jQ>Manipulation
+wrapAll(wrappingElement)Wrap an HTML structure around all elements in the set of matched elements. jQ>Manipulation
+wrapInner(function(index)Wrap an HTML structure around the content of each element in the\t\nset of matched elements. jQ>Manipulation
+wrapInner(wrappingElement)Wrap an HTML structure around the content of each element in the\t\nset of matched elements. jQ>Manipulation
+
+# Collections
+$()Return a collection of matched elements either found in the DOM based\t\non passed argument(s)or created by passing an HTML string. jQ>Core
+$(callback)Return a collection of matched elements either found in the DOM based\t\non passed argument(s)or created by passing an HTML string. jQ>Core
+$(element)Return a collection of matched elements either found in the DOM based\t\non passed argument(s)or created by passing an HTML string. jQ>Core
+$(elementArray)Return a collection of matched elements either found in the DOM based\t\non passed argument(s)or created by passing an HTML string. jQ>Core
+$(html , attributes)Return a collection of matched elements either found in the DOM based\t\non passed argument(s)or created by passing an HTML string. jQ>Core
+$(html [, ownerDocument])Return a collection of matched elements either found in the DOM based\t\non passed argument(s)or created by passing an HTML string. jQ>Core
+$(jQuery object)Return a collection of matched elements either found in the DOM based\t\non passed argument(s)or created by passing an HTML string. jQ>Core
+$(object)Return a collection of matched elements either found in the DOM based\t\non passed argument(s)or created by passing an HTML string. jQ>Core
+$(selector [, context])Return a collection of matched elements either found in the DOM based\t\non passed argument(s)or created by passing an HTML string. jQ>Core
+
+# Selectors
+attributeContains() [name*="value"] Selects elements that have the specified attribute with a value containing\t\nthe a given substring. jQ>Selectors
+attributeContainsPrefix() [name|="value"] Selects elements that have the specified attribute with a value either\t\nequal to a given string or starting with that string followed by a hyphen (-). jQ>Selectors
+attributeContainsWord() [name~="value"] Selects elements that have the specified attribute with a value containing\t\na given word, delimited by spaces. jQ>Selectors
+attributeEndsWith() [name$="value"] Selects elements that have the specified attribute with a value ending\t\nexactly with a given string. The comparison is case sensitive. jQ>Selectors
+attributeEquals() [name="value"] Selects elements that have the specified attribute with a value exactly\t\nequal to a certain value. jQ>Selectors
+attributeNotEqual() [name!="value"] Select elements that either don't have the specified attribute,\t\nor do have the specified attribute but not with a certain value. jQ>Selectors
+attributeStartsWith() [name^="value"] Selects elements that have the specified attribute with a value beginning\t\nexactly with a given string. jQ>Selectors
+child() ("parent > child") Selects all direct child elements specified by "child" of elements\t\nspecified by "parent". jQ>Selectors
+class() (".class")Selects all elements with the given class.  -> jQuery1.9() Selectors
+descendant() ("ancestor descendant") Selects all elements that are descendants of a given ancestor. jQ>Selectors
+element() ("element")Selects all elements with the given tag name. jQ>Selectors
+hasAttribute() [name] Selects elements that have the specified attribute, with any value.  -> jQuery1.9() Selectors
+id() ("#id")Selects a single element with the given id attribute.  -> jQuery1.9() Selectors
+multiple() ("selector1,() 2,() N")Selects the combined results of all the specified() s. jQ>Selectors
+multipleAttribute() [name="value"][name2="value2"] Matches elements that match all of the specified attribute filters. jQ>Selectors
+nextAdjacent() ("prev + next") Selects all next elements matching "next"\t\nthat are immediately preceded  by a sibling "prev". jQ>Selectors
+nextSiblings() ("prev ~ siblings") Selects all sibling elements that follow after the "prev" element,\t\nhave the same parent, and match the filtering "siblings"(). jQ>Selectors
+
+:animated()Select all elements that are in the progress\t\nof an animation at the time the ()is run. jQ>Selectors
+:button()Selects all button elements and elements of type button. jQ>Selectors
+:checkbox()Selects all elements of type checkbox. jQ>Selectors
+:checked()Matches all elements that are checked or selected. jQ>Selectors
+:contains()Select all elements that contain the specified text. jQ>Selectors
+:disabled()Selects all elements that are disabled. jQ>Selectors
+:empty()Select all elements that have no children (including text nodes). jQ>Selectors
+:enabled()Selects all elements that are enabled. jQ>Selectors
+:eq()Select the element at index n within the matched set. jQ>Selectors
+:even()Selects even elements, zero-indexed. See also odd. jQ>Selectors
+:file()Selects all elements of type file. jQ>Selectors
+:first-child()Selects all elements that are the first child of their parent. jQ>Selectors
+:first-of-type()Selects all elements that are the first among\t\nsiblings of the same element name. jQ>Selectors
+:first()Selects the first matched element. jQ>Selectors
+:focus()Selects element if it is currently focused. jQ>Selectors
+:gt()Select all elements at an index greater than index within the matched set. jQ>Selectors
+:has()Selects elements which contain at least one element\t\nthat matches  the specified(). jQ>Selectors
+:header()Selects all elements that are headers, like h1, h2, h3 and so on. jQ>Selectors
+:hidden()Selects all elements that are hidden. jQ>Selectors
+:image()Selects all elements of type image. jQ>Selectors
+:input()Selects all input, textarea, select and button elements. jQ>Selectors
+:lang()Selects all elements of the specified language. jQ>Selectors
+:last-child()Selects all elements that are the last child of their parent. jQ>Selectors
+:last-of-type()Selects all elements that are the last among siblings of the same element name. jQ>Selectors
+:last()Selects the last matched element. jQ>Selectors
+:lt()Select all elements at an index less than index within the matched set. jQ>Selectors
+:not()Selects all elements that do not match the given(). jQ>Selectors
+:nth-child()Selects all elements that are the nth-child of their parent. jQ>Selectors
+:nth-last-child()Selects all elements that are the nth-child of their parent,\t\ncounting from the last element to the first. jQ>Selectors
+:nth-last-of-type()Selects all elements that are the nth-child of their parent,\t\ncounting from the last element to the first. jQ>Selectors
+:nth-of-type()Selects all elements that are the nth child of their parent in relation\t\nto siblings with the same element name. jQ>Selectors
+:odd() Selects odd elements, zero-indexed. See also even. jQ>Selectors
+:only-child()Selects all elements that are the only child of their parent. jQ>Selectors
+:only-of-type()Selects all elements that have no siblings\t\nwith the same element name. jQ>Selectors
+:parent()Select all elements that have at least one child node (either an\t\nelement or text). jQ>Selectors
+:password()Selects all elements of type password. jQ>Selectors
+:radio()Selects all elements of type radio. jQ>Selectors
+:reset()Selects all elements of type reset. jQ>Selectors
+:root()Selects the element that is the root of the document. jQ>Selectors
+:selected()Selects all elements that are selected. jQ>Selectors
+:submit()Selects all elements of type submit. jQ>Selectors
+:target()Selects the target element indicated by the fragment\t\nidentifier of  the document's URI. jQ>Selectors
+:text()Selects all elements of type text. jQ>Selectors
+:visible()Selects all elements that are visible. jQ>Selectors

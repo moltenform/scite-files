@@ -1,0 +1,1599 @@
+ActionButtonDown(id) Description: Press the specified action button.
+ActionButtonUp(id) Description: Release the specified action button.
+BonusActionButtonDown Description: Trigger the specified bonus(pet or minion) action button.
+BonusActionButtonUp Description: Release the specified bonus(pet or minion) action button.
+CameraOrSelectOrMoveStart() Description: Begin "Left click" in the 3D world. (1.10 - Protected)
+CameraOrSelectOrMoveStop(&#91;stickyFlag&#93;) Description: End "Left click" in the 3D world. (1.10 - Protected)
+ChangeActionBarPage() Description: Changes the current action button set to CURRENT_ACTIONBAR_PAGE.
+GetActionBarToggles() Description: Return the toggles for each action bar (NEW IN 1300).
+GetActionCooldown(slot) Description: This returns the cooldown values of the specified action..
+GetActionCount(slot) Description: Get the count (bandage/potion/etc) for an action, returns 0 if none or not applicable.
+GetActionText(slot) Description: Get the text label (macros, etc) for an action, returns nil if none.
+GetActionTexture(slot) Description: Gets the texture path for the specified action.
+GetBonusBarOffset() Description: Determine which page of bonus actions to show.
+HasAction(slot) Description: Returns 1 if the player has an action in the specified slot, nil otherwise.
+IsActionInRange(slot) Description: Test if an action is in range (1=yes, 0=no, nil=not applicable).
+IsAttackAction(slot) Description: Return 1 if an action is an 'attack' action (flashes during combat), nil otherwise.
+IsAutoRepeatAction(slot) Description: Return 1 if an action is auto-repeating, nil otherwise.
+IsCurrentAction(slot) Description: Return 1 if an action is the one currently underway, nil otherwise.
+IsUsableAction(slot) Description: Return 1 if an action can be used at present, nil otherwise.
+IsConsumableAction(slot) Description: Return 1 if an action is consumable (i.e. has a count), nil otherwise.
+IsEquippedAction(slot) Description: Return 1 if an action is equipped (i.e. connected to an item that must be equipped), nil otherwise.
+PetHasActionBar() Description: Determine if player has a pet with an action bar.
+PickupAction(slot) Description: Drags an action out of the specified quickbar slot and holds it on the cursor.
+PickupPetAction(slot) Description: Drags an action from the specified pet action bar spot.
+PlaceAction(slot) Description: Drops an action from the cursor into the specified quickbar slot.
+SetActionBarToggles(show1,show2,show3,show4) Description: Set show toggle for each action bar (NEW IN 1300)
+TurnOrActionStart() Description: Begin "Right Click" in the 3D world. (1.10 - Protected)
+TurnOrActionStop() Description: End "Right Click" in the 3D world. (1.10 - Protected)
+UseAction(slot, {checkCursor {,onSelf} } Description: This instructs the interface to use the action associated with the specified ID, optionally on the player (regardless of target).
+AcceptDuel() Description: The player accepts the challenge to duel.
+AttackTarget() Description: Attacks the targetted unit.
+CancelDuel() Description: Refuse the invitation to fight a duel.
+CancelLogout()
+CancelMeetingStoneRequest() Description: Remove character from an instance's Meeting Stone queue
+ClearTutorials()
+ConfirmSummon()
+FlagTutorial("tutotial")
+ForceLogout()
+ForceQuit()
+GetSummonConfirmAreaName()
+GetSummonConfirmSummoner()
+GetSummonConfirmTimeLeft()
+Logout Description: Logs the user out of the game.
+Quit Description: Quits the application, NOT the LUA script.
+RandomRoll(low, high) Description: Does a random roll between the two values.
+SitOrStand() Description: The player sits or stands.
+StartDuel("name") Description: Challenge someone to a duel (by name)
+StartDuelUnit("unit") Description: Challenge a unit to a duel.
+TogglePVP() Description: Toggles PVP Status
+ToggleSheath() Description: Toggles sheathed or unsheathed weapons.
+UseSoulstone() Description: Use an active soulstone to ressurect yourself after death.
+DisableAddOn(index or "AddonName") Description: Disable the specified AddOn for subsequent sessions.
+DisableAllAddOns() Description: Disable all AddOns for subsequent sessions.
+EnableAddOn(index or "AddonName") Description: Enable the specified AddOn for subsequent sessions.
+EnableAllAddOns() Description: Enable all AddOns for subsequent sessions.
+GetAddOnDependencies(index or "AddonName") Description: Get dependency list for an AddOn.
+GetAddOnInfo(index or "AddonName") Description: Get information about an AddOn.
+GetNumAddOns() Description: Get the number of user supplied AddOns.
+IsAddOnLoaded(index or "AddonName") Description: Test whether an AddOn was loaded.
+IsAddOnLoadOnDemand(index or "AddonName") Description: Test whether an AddOn is load-on-demand.
+LoadAddOn(index or "AddonName") Description: Request loading of an On-Demand AddOn.
+ResetDisabledAddOns()
+CalculateAuctionDeposit(runTime) Description: Returns the required deposit for the current selling item given the specified duration (minutes).
+CanSendAuctionQuery() Description: Return 1 if auction search button would be active, nil otherwise.
+CancelAuction(index) Description: Cancel the specified auction (on the "owner" list).
+ClickAuctionSellItemButton() Description: Puts the currently 'picked up' item into the 'create auction' slot.
+CloseAuctionHouse() Description: Will close the AuctionFrame if opened.
+GetAuctionHouseDepositRate() Description: Returns the deposit rate (percentage) for the currently open auction house (Possibly out-dated by CalculateAuctionDeposit).
+GetAuctionInvTypes(classIndex, subclassIndex) Description: Returns types of subcategories items.
+GetAuctionItemClasses() Description: Returns major auction item categories.
+GetAuctionItemInfo("type", index) Description: Returns details about the specified auction item.
+GetAuctionItemLink("type", index) Description: Returns a link string for the specified auction item.
+GetAuctionItemSubClasses(classIndex) Description: Returns subcategories in the nth auction category.
+GetAuctionItemTimeLeft("type", index) Description: Returns the time left status of the specified auction item.
+GetAuctionSellItemInfo() Description: Returns information about the current selling item (or nil if none selected).
+GetBidderAuctionItems({page})
+GetNumAuctionItems("type") Description: Returns the size of the specified auction item list.
+GetOwnerAuctionItems({page})
+GetSelectedAuctionItem("type") Description: Returns the index (1-50) of the selected auction item or 0 if none is selected.
+IsAuctionSortReversed("type", "sort") Description: Returns 1 if the specified auction list and sort is reversed, nil otherwise.
+PlaceAuctionBid("type", index, bid) Description: Place a bid on the selected auction item.
+QueryAuctionItems("name", minLevel, maxLevel, invTypeIndex, classIndex, subclassIndex, page, isUsable, qualityIndex)
+SetSelectedAuctionItem("type", index)
+SortAuctionItems("type", "sort") Description: Request that the specified auction list be sorted by a specific column.
+StartAuction(minBid, buyoutPrice, runTime) Description: Starts the auction you have created in the Create Auction panel.
+AuctionFrameAuctions.duration Description: Set the amount of time the auction will run for in minutes. 
+BankButtonIDToInvSlotID Description: Returns the ID number of a bank button in terms of inventory slot ID.
+CloseBankFrame() Description: Close the bank frame if it's open.
+GetBankSlotCost(numSlots) Description: Returns the cost of the next bank slot.
+GetNumBankSlots() Description: Returns total purchased bank bag slots, and a flag indicating if it's full. 
+PurchaseSlot()
+AcceptAreaSpiritHeal() Description: Accept a spirit heal.
+CancelAreaSpiritHeal() Description: Cancel a spirit heal.
+CanJoinBattlefieldAsGroup() Description: returns nil if the player can not do a group join for a battlefield.
+AcceptBattlefieldPort({acceptFlag}) Description: Accept or reject an offered battlefield port.
+CheckSpiritHealerDist()
+CloseBattlefield()
+GetAreaSpiritHealerTime() Description: Returns the time left until the next resurrection by the Sprit Guide.
+GetBattlefieldEstimatedWaitTime() Description: Get the estimated wait for entry into the battlefield.
+GetBattlefieldFlagPosition(index)
+GetBattlefieldInfo(index) Description: Get detailed information about a battlefield.
+GetBattlefieldInstanceExpiration() Description: Get shutdown timer for the battlefield instance.
+GetBattlefieldInstanceInfo(index) Description: Get the instance ID for a battlefield.
+GetBattlefieldInstanceRunTime
+GetBattlefieldPortExpiration() Description: Get the remaining milliseconds before the battlefield port expires.
+GetBattlefieldPosition(index) Description: Get the map position and name of a player in the battleground not in your raid.
+GetBattlefieldScore(index) Description: Get information about a player
+GetBattlefieldStatData()
+GetBattlefieldStatInfo()
+GetBattlefieldStatus() Description: Get the battlefield's current status.
+GetBattlefieldTimeWaited() Description: Get time waited in queue in milliseconds.
+GetBattlefieldWinner()
+GetBattlefieldWorldStateUIInfo(i) Description: Get score and flag status within a battlefield.
+GetNumBattlefieldFlagPositions
+GetNumBattlefieldPositions() Description: Get the number of positions available from GetBattlefieldPosition().
+GetNumBattlefieldScores() Description: Returns the number of scores(players) listed in the battlefield scoreboard.
+GetNumBattlefieldStats()
+GetNumBattlefieldStateUI()
+GetNumBattlefields()
+GetNumWorldStateUI()
+GetSelectedBattlefield()
+GetWorldStateUIInfo(i) Description: Get score and flag status within a battlefield.
+JoinBattlefield(index)
+LeaveBattlefield()
+RequestBattlefieldPositions()
+RequestBattlefieldScoreData()
+SetBattlefieldScoreFaction()
+SetSelectedBattlefield(index)
+ShowBattlefieldList() Description: Request list of available battlefields.
+ToggleBattlefieldMinimap() Description: Toggles the Battlefield Minimap.
+CancelPlayerBuff(buffIndex) Description: Removes a specific buff from the player.
+CancelTrackingBuff() Description: Cancels your current tracking buff (Find Minerals etc.)
+GetPlayerBuff(buffId, buffFilter) Description: Retrieves info about a certain effect (beneficial, harmful or passive)
+GetPlayerBuffApplications(buffIndex) Description: Retrieves the number of applications of a debuff.
+GetPlayerBuffTexture(buffIndex) Description: Retrieves the texture identifier for a certain buff
+GetPlayerBuffTimeLeft(buffIndex) Description: Retrieves how long a buff will last before expiring
+GetWeaponEnchantInfo() Description: Return information about main and offhand weapon enchantments.
+UnitBuff("unit", index [, showCastable]) Description: Retrieves info about a buff of a certain unit.
+UnitDebuff("unit", index [, showDispellable]) Description: Retrieves info about a debuff of a certain unit.
+CameraOrSelectOrMoveStart() Description: Begin "Left click" in the 3D world. (1.10 - Protected)
+CameraOrSelectOrMoveStop(&#91;stickyFlag&#93;) Description: End "Left click" in the 3D world. (1.10 - Protected)
+CameraZoomIn(increment) Description: Zooms the camera into the viewplane by increment.
+CameraZoomOut(increment) Description: Zooms the camera out of the viewplane by increment.
+FlipCameraYaw(degrees) Description: Rotates the camera about the Z-axis by the angle amount specified in degrees.
+IsMouselooking() Description: Returns [something] if mouselook is currently active.
+MouselookStart()
+MouselookStop()
+MoveViewDownStart() Description: Begins rotating the camera downward.
+MoveViewDownStop() Description: Stops rotating the camera after MoveViewDownStart() is called.
+MoveViewInStart() Description: Begins zooming the camera in.
+MoveViewInStop() Description: Stops zooming the camera in after MoveViewInStart() is called.
+MoveViewLeftStart() Description: Begins rotating the camera to the Left.
+MoveViewLeftStop() Description: Stops rotating the camera after MoveViewLeftStart() is called.
+MoveViewOutStart() Description: Begins zooming the camera out.
+MoveViewOutStop() Description: Stops zooming the camera out after MoveViewOutStart() is called.
+MoveViewRightStart() Description: Begins rotating the camera to the Right.
+MoveViewRightStop() Description: Stops rotating the camera after MoveViewRightStart() is called.
+MoveViewUpStart() Description: Begins rotating the camera upward.
+MoveViewUpStop() Description: Stops rotating the camera after MoveViewUpStart() is called.
+PitchDownStart() Description: Begins pitching the camera Downward.
+PitchDownStop() Description: Stops pitching the camera after PitchDownStart() is called.
+PitchUpStart() Description: Begins pitching the camera Upward.
+PitchUpStop() Description: Stops pitching the camera after PitchUpStart() is called.
+NextView() Description: Cycles forward through the five predefined camera positions.
+PrevView() Description: Cycles backward through the five predefined camera positions.
+ResetView(index) Description: Resets the specified (1-5) predefined camera position to it's default if it was changed using SaveView(index).
+SaveView(index) Description: Replaces the specified (1-5) predefined camera positions with the current camera position.
+SetView(index) Description: Sets camera position to a specified (1-5) predefined camera position.
+AddChatWindowChannel(chatFrameIndex, "channel") Description: Make a chat channel visible in a specific ChatFrame.
+ChannelBan("channel", "name") Description: Bans a player from the specified channel.
+ChannelInvite("channel", "name") Description: Invites the specified user to the channel.
+ChannelKick("channel", "name") Description: Kicks the specified user from the channel.
+ChannelModerate("channel") Description: Enables channel Moderation commands such as ChannelKick/Ban.
+ChannelModerator("channel", "name") Description: Sets the specified player as the channel moderator.
+ChannelMute("channel", "name") Description: Turns off the specified player's ability to speak in a channel.
+ChannelToggleAnnouncements("channel") Description: Toggles the channel to display announcements either on or off.
+ChannelUnban("channel", "name") Description: Unbans a player from a channel.
+ChannelUnmoderator("channel", "name") Description: Takes the specified user away from the moderator status.
+ChannelUnmute("channel", "name") Description: Unmutes the specified user from the channel.
+DisplayChannelOwner("channel") Description: Displays the owner of the specified channel in the default chat.
+EnumerateServerChannels() Description: Retrieves all available server channels (zone dependant).
+GetChannelList() Description: Retrieves joined channels.
+GetChannelName("channel" or index) Description: Retrieves the name from a specific channel.
+GetChatWindowChannels(index) Description: Get the chat channels received by a chat window.
+JoinChannelByName("channel"{,"password"{,frameId}}) Description: Join the specified chat channel (with optional password, and register for specified frame) (updated in 1.9)
+LeaveChannelByName("channel") Description: Leaves the channel with the specified name.
+ListChannelByName(channelMatch) Description: Lists all of the channels that match the specified regular expression.
+ListChannels() Description: Lists all of the channels into the chat window.
+RemoveChatWindowChannel(chatFrameIndex, "channel") Description: Make a chat channel invisible (hidden) in a specific ChatFrame.
+SendChatMessage(text,{,type} {,language} {,targetPlayer})  Description: Sends a chat message.
+SetChannelOwner("channel", "name") Description: Sets the channel owner.
+SetChannelPassword("channel", "password") Description: Changes the password of the current channel.
+AbandonSkill Description: The player abandons a skill.
+AcceptResurrect Description: The player accepts the request from another player to resurrect him/herself.
+AcceptSkillUps()
+AcceptXPLoss Description: Accept the XP loss to be reborn where you stand (The name is somewhat of a misnomer, since it's now durability rather than XP that is lost).
+AddSkillUp(index)
+BuySkillTier(index)
+CancelSkillUps()
+CheckBinderDist() Description: Check wether the player is close enough to interact with the Hearthstone binder.
+ConfirmBinder() Description: Confirm the request to set the binding of the player's Hearthstone.
+DeclineResurrect() Description: Decline the request from another player to resurect him/herself.
+GetBindLocation() Description: Get the name of the location for your Hearthstone.
+GetBlockChance() Description: Returns the player's percentage block chance.
+GetComboPoints() Description: Get the current number of combo points.
+GetCorpseRecoveryDelay()
+GetDamageBonusStat() Description: returns index of which stat a player receives a damage bonus from increasing
+GetDodgeChance() Description: Returns the player's percentage dodge chance.
+GetMoney() Description: Returns an integer value of your held money in copper. 
+GetParryChance() Description: Returns the player's percentage parry chance.
+GetReleaseTimeRemaining() Description: Returns the amount of time left before your ghost is pulled from your body.
+GetResSicknessDuration()
+GetRestState()
+GetTimeToWellRested()
+GetXPExhaustion()
+HasFullControl()
+HasSoulstone()
+IsResting()
+NotWhileDeadError Description: Generates an error message saying you cannot do that while dead.
+RemoveSkillUp(index)
+ResurrectHasSickness()
+RessurectHasTimes() Description: ? (NEW IN 1300)
+RetrieveCorpse() Description: Resurrects when near corpse. e.g., The "Accept" button one sees after running back to your body.
+SetSelectedSkill(index)
+AddChatWindowChannel(chatFrameIndex, "channel") Description: Make a chat channel visible in a specific ChatFrame.
+AddChatWindowMessages Description: Adds a messaging group to the specified chat window.
+ChangeChatColor(chatType,r,g,b) Description: Update the color for a type of chat message.
+ChatFrameLog() Description: Obsolete (1.7) -Alco
+ChatFrame_OnHyperlinkShow(reference, link, button) Description: called when the user clicks on a chatlink.
+GetChatTypeIndex(type) Description: Get the numeric ID of a type of chat message.
+GetChatWindowChannels(index) Description: Get the chat channels received by a chat window.
+GetChatWindowInfo(index) Description: Get setup information about a chat window.
+GetChatWindowMessages(index) Description: Get the chat message types received by a chat window.
+JoinChannelByName("channel"{,"password"{,frameId}}) Description: Join the specified chat channel (with optional password, and register for specified frame)
+LoggingChat(newState) Description: Gets or sets whether logging chat to Logs\WoWChatLog.txt is enabled.
+LoggingCombat(newState) Description: Gets or sets whether logging combat to Logs\WoWCombatLog.txt is enabled.
+RemoveChatWindowChannel(chatFrameIndex, "channel") Description: Make a chat channel invisible (hidden) in a specific ChatFrame.
+RemoveChatWindowMessages(chatFrameIndex,"messageGroup") Description: Remove a set of chat messages from this window.
+SetChatWindowAlpha(index,alpha) Description: Sets the Alpha value(transparency) of ChatFrame<index>
+SetChatWindowColor(index,r,g,b) Description: Sets the background color of a a chat window.
+SetChatWindowDocked(index,docked) Description: Set whether a chat window is docked.
+SetChatWindowLocked(index,locked) Description: Sets ChatFrame<index> so that it is or is not movable.
+SetChatWindowName(index,"name") Description: Sets the name of ChatFrame<index> to <"name">.
+SetChatWindowShown(index,shown) Description: Shows or Hides ChatFrame<index> depending on value of <shown>
+SetChatWindowSize(index,size) Description: Sets the font size of a chat window.
+DoEmote("emote"{,"target"}) Description: Perform a voice emote, optionally at a specific target.
+GetDefaultLanguage("unit") Description: Returns the default language that the unit is speaking after logon.
+GetLanguageByIndex(index) Description: Returns the language specified by the index.
+GetNumLaguages() Description: Returns the number of languages your character can speak (I guess Blizzard's programmers mistyped that function name).
+RandomRoll(low, high) Description: Does a random roll between the two values.
+SendChatMessage(text,{,type} {,language} {,targetPlayer})  Description: Sends a chat message.
+ContainerIDToInventoryID(bagID) Description: 
+GetBagName(bagID) Description: Get the name of one of the player's bags.
+GetContainerItemCooldown(bagID,slot) Description: 
+GetContainerItemInfo(bagID,slot) Description: Get the info for an item in one of the player's bags.
+GetContainerItemLink(bagID,slot) Description: 
+GetContainerNumSlots(bagID) Description: Gives you the number of slots available in the bag specified by the index.
+PickupBagFromSlot(slot)
+PickupContainerItem(bagID,slot) Description: 
+PutItemInBackpack()
+PutItemInBag(inventoryId)
+SetBagPortaitTexture(texture,slot)
+SplitContainerItem(bagID,slot,amount) Description: 
+ToggleBackpack() Description: Toggles your backpack open/closed.
+ToggleBag(bagID) Description: Opens or closes the specified bag.
+UseContainerItem(bagID,slot) Description: Uses an item located in bag# and slot#.  (Warning: If a vendor window is open, using items in your pack may sell them!)
+GetCraftSkillLine()
+CloseCraft()
+CollapseCraftSkillLine(index)
+DoCraft(index)
+ExpandCraftSkillLine(index)
+GetCraftButtonToken()
+GetCraftDescription(index)
+GetCraftDisplaySkillLine()
+GetCraftIcon(index)
+GetCraftInfo(index)
+GetCraftItemLink(index)
+GetCraftName()
+GetCraftNumReagents(index)
+GetCraftReagentInfo(index,reagentIndex)
+GetCraftReagentItemLink(index,reagentIndex)
+GetCraftSelectionIndex()
+GetCraftSkillLine()
+GetCraftSpellFocus
+GetNumCrafts()
+SelectCraft(index)
+AutoEquipCursorItem() Description: Causes the equipment on the cursor to be equipped.
+CursorCanGoInSlot(slot) Description: Return true if cursor item can go into inventory slot
+CursorHasItem() Description: Returns true if the cursor currently holds an item
+CursorHasMoney()
+CursorHasSpell()
+DeleteCursorItem()
+DropCursorMoney Description: Drops the amount of money held by the cursor.
+DropItemOnUnit("unit") Description: Drops an item from the cursor onto a unit.
+EquipCursorItem(x)
+GetCursorMoney Description: Returns the amount of money held by the cursor.
+GetCursorPosition() Description: Get the cursor location on the screen
+HideRepairCursor()
+InRepairMode() Description: Returns true if your cursor is in repair mode
+PickupAction(slot) Description: Drags an action out of the specified quickbar slot and holds it on the cursor.
+PickupBagFromSlot(slot)
+PickupContainerItem(bagID,slot) Description: 
+PickupInventoryItem(slot) Description: 
+PickupMacro(index) Description: Pickup a macro button icon.
+PickupMerchantItem(index) Description: Places the item on the cursor.
+PickupPetAction(index)
+PickupPlayerMoney Description: Picks up an amount of money from the player.
+PickupSpell(spellID, spellbookTabNum) Description: Loads an action button onto the cursor to be dropped into a quickbar slot.
+PickupStablePet(index)
+PickupTradeMoney(amount)
+PlaceAction(slot) Description: Drops an action from the cursor into the specified quickbar slot.
+PutItemInBackpack()
+PutItemInBag(inventoryId)
+ResetCursor()
+SetCursor("cursor")
+ShowContainerSellCursor(index,slot)
+ShowInspectCursor() Description: Change the cursor to the magnifying glass inventory inspection cursor
+ShowInventorySellCursor()
+ShowMerchantSellCursor(index) Description: Changes the cursor to the merchant sell cursor.
+ShowRepairCursor()
+debugprofilestart() Description: starts a timer for profiling during debugging.
+debugprofilestop() Description: return the time in milliseconds since the last call to debugprofilestart()
+FrameXML_Debug(flag) Description: Sets FrameXML logging state which is output to /WoW Folder/Logs/FrameXML.log
+GetDebugStats()
+debugstack(start, count1, count2) Description: Returns a string representation of the current calling stack (as of 1.9)
+AppendToFile
+DeleteFile()
+ReadFile()
+DressUpItem("item") Description: - Given an Item will show the DressingRoom UI with the item equiped.
+DressUpItemLink("itemlink") Description: Given an ItemLink will show the DressingRoom UI with the item equiped.
+SetDressUpBackground(isAuctionFrame) Description: Given an Item shown in the Auction House will show the DressingRoom UI with the item equiped.
+GetWeaponEnchantInfo() Description: Return information about main and offhand weapon enchantments.
+ReplaceEnchant()
+ReplaceTradeEnchant() Description: Confirm the replacement of an enchantment via trade.
+BindEnchant() Description: Confirm the binding of the item when enchanting.
+CollapseFactionHeader(index) Description: Collapse a faction header row.
+ExpandFactionHeader(index) Description: Expand a faction header row.
+FactionToggleAtWar(index) Description: Toggle the At War flag for a faction.
+GetFactionInfo(index) Description: Gets details for a specific faction/faction header.
+GetNumFactions() Description: Returns the number of lines in the faction display.
+GetSelectedFaction() Description: Returns the row index of the currently selected faction in reputation window. (New in 1.10)
+GetWatchedFactionInfo() Description: Returns information about the currently watched faction. (New in 1.10)
+IsFactionInactive(index) Description: Returns true if the faction is marked inactive. (New in 1.10)
+SetFactionActive(index) Description: Remove a faction from inactive group. (New in 1.10)
+SetFactionInactive(index) Description: Move a faction to inactive group. (New in 1.10)
+SetSelectedFaction(index) Description: Sets the currently selected faction in reputation window. (New in 1.10)
+SetWatchedFactionIndex(index) Description: Sets which faction should be watched in Blizzard reputation bar. (New in 1.10)
+UnitFactionGroup("unit") Description: Returns the faction group id and name of the specified unit. (eg. "Alliance") - string returned is localization-independent (used in filepath) -
+CreateFrame("frameType" [,"name"] [, parent]) Description: Create a new frame of the specified type 
+CreateFont("name") Description: Dynamically create a font object
+GetNumFrames() Description: Get the current number of Frame (and derivative) objects
+EnumerateFrames(currentFrame) Description: Get the Frame which follows currentFrame 
+AddFriend("playerName") Description: Add a friend to your friend list.
+GetFriendInfo(index) Description: Returns name, level, class, location and status of a friend.
+GetNumFriends() Description: Returns how many friends are on your friend list.
+GetSelectedFriend() Description: Returns the index of the current selected friend.
+RemoveFriend("name" or index) Description: Removes a friend from your friend list
+SetSelectedFriend(index) Description: Update the current selected friend.
+ShowFriends() Description: Request updated friends information from server.
+ToggleFriendsFrame({tabNumber} Description: Opens/closes the friends pane (possibly on a specific tab).
+DeleteGMTicket()
+GMRequestPlayerInfo() Description: access denied (darn)
+GetGMStatus()
+GetGMTicket()
+GetGMTicketCategories() Description: Return all available ticket categories (not as a table)
+NewGMTicket(type,"text")
+Stuck Description: Informs the game engine that the player is Stuck.
+UpdateGMTicket(type,"text")
+CloseGossip() Description: Dismiss the gossip window.
+GetGossipActiveQuests() Description: Retrieves a list of the active (?) quests on the NPC you are talking to.
+GetGossipAvailableQuests() Description: Retrieves a list of the available (!) quests on the NPC you are talking to.
+GetGossipOptions() Description: Retrieves a list of the available gossip items on the NPC you are talking to.
+GetGossipText() Description: Retrieves the gossip text.
+SelectGossipActiveQuest(index) Description: Selects an active quest.
+SelectGossipAvailableQuest(index) Description: Selects on an available quest.
+SelectGossipOption(index) Description: Selects on a gossip item.
+AcceptGroup() Description: Accept the invitation to party.
+ConvertToRaid() Description: Converts party to raid.
+DeclineGroup() Description: Decline the invitation to a party.
+GetLookingForGroup()
+GetLootMethod() Description: Return the currently active loot method
+GetLootThreshold() Description: Return the current loot threshold (for group/master loot)
+GetMasterLootCandidate(index) Description: Return the name of a player who is eligible to receive loot in master mode
+GetNumPartyMembers() Description: Returns the number of party members
+GetPartyLeaderIndex() Description: Returns the index of the party leader (1-4) if not yourself.
+GetPartyMember(index) Description: Returns the UnitId of the party member at the given index if that party slot is filled, otherwise <tt>nil</tt>.
+InviteByName("name") Description: Invites the specified player to the group you are currently in.
+InviteToParty("unit") Description: Invite a unit to a party by its unit id (likely "target")
+IsPartyLeader() Description: Returns true if the player is the party leader.
+LeaveParty() Description: Quit the party
+PromoteByName("name") Description: Promotes by name the target.
+PromoteToPartyLeader("unit") Description: Promote a unit to party leader.
+SetLookingForGroup(flag)
+SetLootMethod("method"{,"masterPlayer" or ,threshold}) Description: Set the current loot method
+SetLootThreshold(threshold) Description: Set the threshold for group/master loot
+UninviteByName("name") Description: Uninvites (kicks) the named player from the current group if player is group leader.
+UninviteFromParty("unit") Description: Kick a unit from the party if player is group leader.
+UnitInParty("unit") Description: Returns true if the unit is a member of your party.
+UnitIsPartyLeader("unit") Description: Returns true if the unit is the leader of its party.
+AcceptGuild() Description: The player accepts the invitation to join a guild.
+BuyGuildCharter("guildName") Description: Purchases a guild charter for ''guildName''.
+CanEditMOTD() Description: Returns true if you are allowed to edit the guild motd.
+CanEditOfficerNote() Description: Returns true if you are allowed to edit a guild member's officer note.
+CanEditPublicNote() Description: Returns true if you are allowed to edit a guild member's public note.
+CanGuildDemote() Description: Returns true if you are allowed to demote a guild member.
+CanGuildInvite() Description: Returns true if you are allowed to invite a new member to the guild.
+CanGuildPromote()
+CanGuildRemove()
+CanViewOfficerNote()
+CloseGuildRegistrar()
+CloseGuildRoster()
+CloseTabardCreation()
+DeclineGuild()
+GetGuildCharterCost() Description: Returns the cost of purchasing a guild charter.
+GetGuildInfo("unit") Description: This function returns the name of the guild ''unit'' belongs to.
+GetGuildInfoText() Description: Returns the persistant Guild Information data. (new in 1.9)
+GetGuildRosterInfo(index) Description: This function is used to get info on members in the guild.
+GetGuildRosterLastOnline(index) Description: Returns time since last online for indexth member in current sort order.
+GetGuildRosterMOTD() Description: Returns guild's MOTD.
+GetGuildRosterSelection() Description: Returns the index of the current selected guild member.
+GetGuildRosterShowOffline() Description: Returns true if showing offline members of the guild.
+GetNumGuildMembers(offline) Description: Returns the number of guild members total.
+GetTabardCreationCost() Description: Returns cost in coppers.
+GetTabardInfo()
+GuildControlAddRank("name") Description: Add another rank called "name". Only Guildmaster?
+GuildControlDelRank Description: Delete rank? Only Guildmaster?
+GuildControlGetNumRanks() Description: Returns number of ranks after guild frame open. Any guild member can use this.
+GuildControlGetRankFlags() Description: Returns list of values for each permission for your rank.
+GuildControlGetRankName(index) Description: Returns name of the rank. Any guild member can use this.
+GuildControlSaveRank("name")
+GuildControlSetRank(rank)
+GuildControlSetRankFlag(index, enabled) Description: Enable/disable permission for some action.
+GuildDemoteByName("name")
+GuildDisband()
+GuildInfo() Description: Displays information about the guild you are a member of.
+GuildInviteByName("name")
+GuildLeave() Description: Removes you from your current guild.
+GuildPromoteByName("name")
+GuildRoster() Description: Fetches the guild list and fires a GUILD_ROSTER_UPDATE event.
+GuildRosterSetOfficerNote(index, "note")
+GuildRosterSetPublicNote(index, "note")
+GuildSetLeaderByName("name")
+GuildSetMOTD("note")
+GuildUninviteByName("name")
+IsGuildLeader()
+IsInGuild() Description: Lets you know whether you are in a guild.
+SetGuildInfoText() Description: Sets the persistant Guild Information data. (new in 1.9)
+SetGuildRosterSelection(index) Description: Selects/deselects a guild member according current sorting order.
+SetGuildRosterShowOffline(enabled) Description: Sets/Resets the show offline members flag.
+SortGuildRoster("sort") Description: Sorts guildroster according "sort". Any unknown values sort on "name".
+TurnInGuildCharter()
+GetInspectHonorData() Description: Return honor info for the inspected unit (if available).
+GetInspectPVPRankProgress Description: Return rank progress for the inspected unit (if available). Ranges from 0 to 1. 
+GetPVPLastWeekStats() Description: Get your PvP/Honor statistics for last week.
+GetPVPLifetimeStats() Description: Get your PvP/Honor statistics for your lifetime.
+GetPVPRankInfo Description: (rank{,"unit"}) - Get information about a specific PvP rank.
+GetPVPRankProgress() Description: Get information about the PvP rank progress.
+GetPVPSessionStats() Description: Get your PvP/Honor statistics for this session.
+GetPVPThisWeekStats() Description: Get your PvP/Honor statistics for this week.
+GetPVPYesterdayStats() Description: Get your PvP/Honor statistics for yesterday.
+HasInspectHonorData() Description: Determine if the inspected unit's honor data is available.
+RequestInspectHonorData() Description: Request honor data for inspected unit.
+UnitIsCivilian Description: Returns 1 if the unit is a civilian (low level enemy faction NPC that counts as a dishonorable kill).
+UnitPVPName("unit") Description: Unit's name prefixed with the PvP rank ("Grand Marshal Qwerty").
+UnitPVPRank("unit") Description: Get PvP rank information for requested unit.
+AddIgnore("name") Description: Add a player to your ignore list.
+AddOrDelIgnore("name") Description: Toggles the ignore state of the specified name.
+DelIgnore("name") Description: Delete a player from your ignore list.
+GetIgnoreName(index) Description: Get the name of the player on your ignore list at index.
+GetNumIgnores() Description: Get the number of players on your ignore list.
+GetSelectedIgnore()
+SetSelectedIgnore(index)
+CheckInteractDistance("unit",distIndex) Description: 
+ClearInspectPlayer() Description: Reset inspect data once finished with it (Called on inspect window hide)
+GetInspectHonorData() Description: Return honor info for the inspected unit (if available).
+GetInspectPVPRankProgress Description: Get the PvP rank progress information from the inspected unit.
+HasInspectHonorData() Description: Determine if the inspected unit's honor data is available.
+InspectUnit("unit") Description: Inspects the specified / selected "unit".
+NotifyInspect("unit")
+RequestInspectHonorData() Description: Request honor data for inspected unit.
+GetBattlefieldInstanceExpiration() Description: Get shutdown timer for the battlefield instance.
+GetBattlefieldInstanceInfo(index) Description: Get the instance ID for a battlefield
+GetBattlefieldInstanceRunTime
+GetInstanceBootTimeRemaining()
+AutoEquipCursorItem() Description: Causes the equipment on the cursor to be equipped.
+BankButtonIDToInvSlotID Description: Returns the ID number of a bank button in terms of inventory slot ID.
+CancelPendingEquip(index) Description: This function is used to cancel a pending equip.
+ConfirmBindOnUse()
+ContainerIDToInventoryID(bagID) Description: 
+CursorCanGoInSlot(slot) Description: 
+EquipCursorItem(x)
+EquipPendingItem(slot) Description: 
+GetInventoryAlertStatus(index) Description: Returns one of several codes describing the "status" of an equipped item.
+GetInventoryItemBroken("unit",slot) Description: Determine if an inventory item is broken (no durability).
+GetInventoryItemCooldown("unit",slot) Description: Get cooldown information for an inventory item.
+GetInventoryItemCount("unit",slot) Description: Determine the quantity of an item in an inventory slot.
+GetInventoryItemLink("unit",slot) Description: Get a link string for an inventory item.
+GetInventoryItemQuality("unit",slot) Description: Return the quality of an inventory item.
+GetInventoryItemTexture("unit",slot) Description: Return the texture for an inventory item.
+GetInventorySlotInfo(slot) Description: Get the info for a named inventory slot (slot ID and texture)
+GetWeaponEnchantInfo() Description: Return information about main and offhand weapon enchantments.
+HasWandEquipped() Description: Returns 1 if a wand is equipped, false otherwise.
+IsInventoryItemLocked(id) Description: Returns whether an inventory item is locked, usually as it awaits pending action.
+PickupBagFromSlot(slot) Description: Picks up the bag from the specified slot, placing it in the cursor.
+PickupInventoryItem(index) Description: "Picks up" an item from the player's worn inventory.
+SetInventoryPortaitTexture
+UpdateInventoryAlertStatus()
+UseInventoryItem(slot) Description: Use an item in a specific inventory slot.
+GetAuctionItemLink("type", index) Description: Returns a link string for the specified auction item.
+GetContainerItemLink(bagID,slot) Description: Returns the item link of the item located in bag# and slot#.
+GetCraftItemLink(index)
+GetCraftReagentItemLink(index,reagentIndex)
+GetInventoryItemLink("unit",slot) Description: Get a link string for an inventory item.
+GetItemInfo Description: (itemID | "ItemString") - Returns information about an item.
+GetItemQualityColor(quality) Description: Returns the RGB color codes for a quality.
+GetMerchantItemLink(index) Description: Returns a link to an item.
+GetQuestItemLink Description: Returns a link to a quest reward item.
+GetQuestLogItemLink
+GetTradePlayerItemLink(id) Description: Returns link to a trade item.
+GetTradeSkillItemLink(index) Description: Gets the link string for a trade skill item.
+GetTradeSkillReagentItemLink(index, reagentId) Description: Gets the link string for a trade skill reagent.
+GetTradeTargetItemLink(id) Description: Returns link to a trade item.
+OffhandHasWeapon() Description: Determine if your offhand carries a weapon.
+SetItemRef(link, text, button) Description: Handles item link tooltips in chat.
+CloseItemText() Description: Close an open item text (book, plaque, etc).
+ItemTextGetCreator() Description: Get the creator of the current text (if player-created).
+ItemTextGetItem() Description: Get the name of the text.
+ItemTextGetMaterial() Description: Get the material on which the text is printed.
+ItemTextGetPage() Description: Get the page number of the currently viewed page.
+ItemTextGetText() Description: Get the page contents of the currently viewed page.
+ItemTextHasNextPage() Description: Determine if there is another page after the current one.
+ItemTextNextPage() Description: Request the next page of the text.
+ItemTextPrevPage() Description: Request the previous page of the text.
+GetBinding(index) Description: Get action and key bindings for that index.
+GetBindingAction("key") Description: Get the action bound to that key.
+GetBindingKey("command") Description: Get the key(s) bound to that action.
+GetBindingText("key", "prefix") Description: Gets the string value for the key.
+GetCurrentBindingSet() Description: Queries if current set of key bindings is character or account specific
+GetNumBindings() Description: Get total number key bindings and headers.
+LoadBindings(which) Description: Loads default, account or character specific key binding set into memory from disk.
+RunBinding("command"{,"up"}) Description: Executes the key binding named "command"
+SaveBindings(which) Description: Saves account or character specific key bindings from memory to disk.
+SetBinding("key"{,"command"}) Description: Sets or unsets key bindings.
+SetConsoleKey("key") Description: Sets the console key (normally "`").
+assert(value) Description: asserts a value is non-nil, otherwise shows dialog and outputs debug diagnostic information if you have a debugger attached to wow.exe
+collectgarbage() Description: Forces garbage collection. (Added in 1.10.1)
+date(format, time) Description: Returns the current date according to the user's machine.
+error("error message",level) Description: Throws an error with the given error message. Use pcall() (see below) to catch errors.
+gcinfo() Description: Returns the number of kB of add-on memory in use and the current garbage collection threshold (in kB).
+getfenv(function or integer) Description: Returns the table representing the stack frame of the given function or stack level.
+getmetatable(obj, mtable) Description: Returns the metatable of the given table or userdata object.
+next(table, index) Description: Returns the next key, value pair of the table, allowing you to walk over the table.
+pcall(func, arg1, arg2, ...) Description: Returns a boolean value indicating successful execution of func and the error message or func's results as additional values.
+setfenv(function or integer, table) Description: Sets the table representing the stack frame of the given function or stack level.
+setmetatable(obj, mtable) Description: Sets the metatable of the given table or userdata object.
+time(table) Description: Returns time in seconds since epoch (00:00:00 Jan 1 1970)
+type(var) Description: Returns the type of variable as a string, "number", "string", "table", "function" or "userdata".
+unpack(table) Description: Returns the contents of its argument as separate values.
+xpcall(func, err) Description: Returns a boolean indicating successful execution of func and calls err on failure, additionally returning func's or err's results.
+GetMinimapZoneText() Description: Returns the zone text, that is displayed over the minimap.
+GetRealZoneText() Description: Returns either instance name or zone name
+GetSubZoneText() Description: Returns the subzone text (e.g. "The Canals").
+GetZonePVPInfo() Description: Returns PVP info for the current zone.
+GetZoneText() Description: Returns the zone text (e.g. "Stormwind City").
+CloseLoot({uiFailedFlag})
+ConfirmBindOnUse()
+ConfirmLootRoll(slot) Description: Confirm a loot roll (NEW IN 1300)
+GetLootMethod() Description: Return the currently active loot method
+GetLootRollItemInfo(rollId)
+GetLootRollItemLink(rollId)
+GetLootRollTimeLeft(rollid)
+GetLootSlotInfo(slot) Description: Returns icon path, item name, and item quantity.
+GetLootSlotLink(slot)
+GetLootThreshold() Description: Return the current loot threshold (for group loot)
+GetMasterLootCandidate(index) Description: Return a player who can receive loot in Master Loot mode.
+GetNumLootItems() Description: Returns amount of objects to loot (number)
+GiveMasterLoot(slot,index)
+IsFishingLoot()
+LootSlot(slot) Description: Used to confirm the looting of a BOP item
+LootSlotIsCoin(slot)
+LootSlotIsItem(slot)
+RollOnLoot(rollId{,roll}) Description: Roll or pass on a loot started by the game itself.
+SetLootMethod("method"{,"masterPlayer" or ,threshold}) Description: Set the current loot method
+SetLootPortrait()
+SetLootThreshold(threshold) Description: Set the threshold for group loot
+CreateMacro("name", icon, "body", local) Description: Create a new macro.
+DeleteMacro(index) Description: Deletes a macro.
+EditMacro(index, "name", iconIndex, "body", local) Description: Saves a macro.
+GetMacroIconInfo(index) Description: Returns texture of the icons provided by Blizzard.
+GetMacroIndexByName("name") Description: Returns macro index.
+GetMacroInfo(index) Description: Returns "name", iconTextureID, "body", local.
+GetNumMacroIcons() Description: Returns the number of usable icons provided by Blizzard.
+GetNumMacros() Description: Returns the number of macros the user has.
+PickupMacro(index) Description: Pickup a macro button icon.
+CheckInbox() Description: Populate client's inbox with mail from server.
+ClearSendMail() Description: This clears the text in the send mail tab and places the COD item in the inventory. 
+ClickSendMailItemButton() Description: This seems to just simulate a click on the send item mail slot (will pickup the item there). 
+CloseMail() Description: Closes the mail window.
+DeleteInboxItem(index) Description: Deletes the inbox item at index. It returns immediately, it does not seem to wait for the deletion to go through, giving the normal problems with rapid mail removal attempts.
+DropCursorMoney Description: Drops the amount of money held by the cursor.
+GetCoinIcon(amount)
+GetInboxHeaderInfo(index) Description: Returns information about a message in the inbox.
+GetInboxItem(index) Description: Returns description of the attachment attached to message at (index).
+GetInboxNumItems() Description: Returns the number of messages in your inbox.
+GetInboxText(index) Description: Returns the message text of message at (index). It also reads the inbox item, thus reducing its timeout to <= 3 days.
+GetInboxInvoiceInfo(index) Description: Returns informations about an auction house invoice. It also reads the inbox item, thus reducing its timeout to <= 3 days.
+GetNumPackages() Description: Not yet fully implemented. Currently it always returns 1.
+GetNumStationeries() Description: Not yet fully implemented. Currently it always returns 1.
+GetPackageInfo(index) Description: Not yet fully implemented. Currently an index of 1 returns "Test Package".
+GetSelectedStationeryTexture() Description: Not yet fully implemented. Currently it returns "STATIONERYTEST" when the mailbox is open.
+GetSendMailCOD()
+GetSendMailItem()
+GetSendMailMoney()
+GetSendMailPrice()
+GetStationeryInfo(index) Description: Not yet fully implemented. Currently an index of 1 returns "Default Stationery".
+HasNewMail() Description: Returns nil if there is no new mail.
+InboxItemCanDelete(index)
+ReturnInboxItem(index)
+SelectPackage(index) Description: Not yet fully implemented. It does nothing visible.
+SelectStationery(index) Description: Not yet fully implemented. It does nothing visible.
+SendMail("target", "subject", "body") Description: If the mailbox is open, this sends mail.
+SetSendMailCOD(amount) Description: Make next mail sent using SendMail() COD target for amount.
+SetSendMailMoney(amount) Description: Add money to next mail sent using SendMail().
+TakeInboxItem(index) Description: Take the attached item from the mailbox message at index.
+TakeInboxMoney(index) Description: Take the attached money from the mailbox message at index.
+TakeInboxTextItem(index) Description: Creates a permanent copy of letter (readable "Plain Letter")
+GetCorpseMapPosition() Description: Returns the postion off the corpse on the current world map.
+GetCurrentMapContinent() Description: Returns the number of the continent the world map is currently showing.
+GetCurrentMapZone() Description: Returns the number of the zone the world map is currently showing.
+GetMapContinents() Description: Returns the continent names.
+GetMapInfo() Description: Returns the name and size of the current world map.
+GetMapLandmarkInfo(landmarkIndex) Description: Returns information about a landmark on the current world map.
+GetMapOverlayInfo(overlayIndex) Description: Returns information about an overlay on the current world map.
+GetMapZones(continentIndex) Description: Returns the zone names of a continent.
+GetNumMapLandmarks() Description: Returns the number of landmarks on the current world map.
+GetNumMapOverlays() Description: Returns the number of overlays on the current world map.
+GetPlayerMapPosition("unit") Description: Returns the position of a unit on the current world map.
+GetWorldLocMapPosition()
+ProcessMapClick(x,y) Description: Passes a click to the client, which then calculates if the zone has to be changed.
+RequestBattlefieldPositions()
+SetMapToCurrentZone() Description: Sets the current world map to the zone the player is presently in.
+SetMapZoom(continentIndex{,zoneIndex}) Description: Sets the current world map to a specific continent and optionally zone.
+SetupWorldMapScale() Description: Configures scale of world map to best fill screen.
+ToggleMinimap Description: Turns the minimap display on/off.
+ToggleWorldMap Description: Turns the world map on/off.
+UpdateMapHighlight(x,y) Description: Provides map rollover information for highlighting.
+CreateWorldMapArrowFrame("frame") Description: create a arrow cursor for the player position and orientation.
+UpdateWorldMapArrowFrames() Description: update the orientation of the arrow cursor based on the current player orientation.
+ShowWorldMapArrowFrame(bool) Description: show or hide the arrow representing the player.
+PositionWorldMapArrowFrame(x,y) Description: set the position of the arrow representing the player
+__pow(x, y) Description: returns x to the power of y
+abs(value) Description: Returns the absolute value of the number.
+acos(value) Description: Returns the arc cosine of the value in degrees.
+asin(value) Description: Returns the arc sine of the value in degrees.
+atan(value) Description: Returns the arc tangent of the value in degrees.
+atan2(x,y) Description: Returns the arc tangent of X/Y in degrees.
+ceil(value) Description: Returns the ceiling of value.
+cos(degrees) Description: Returns the cosine of the degree value.
+deg(radians) Description: Returns the degree equivalent of the radian value.
+exp(value) Description: Returns the exponent of value.
+floor(value) Description: Returns the floor of value.
+frexp(num) Description: Extract mantissa and exponent from a floating point number.
+ldexp(value, exponent) Description: Load exponent of a floating point number.
+log(value) Description: Returns the logarithm of value.
+log10(value) Description: Returns the base-10 logarithm of value.
+max(value{,values...}) Description: Returns the numeric maximum of the input values.
+min(value{,values...}) Description: Returns the numeric minimum of the input values.
+mod(value,modulus) Description: Returns floating point modulus of value.
+rad(degrees) Description: Returns the radian equivalent of the degree value.
+random({{lower,}upper}) Description: Returns a random number (optionally bounded integer value)
+randomseed(seed) Description: Seed the pseudo random number generator
+sin(degrees) Description: Returns the sine of the degree value.
+sqrt(value) Description: Return the square root of value.
+tan(degrees) Description: Returns the tangent of the degree value.
+CancelMeetingStoneRequest()
+GetMeetingStoneStatusText()
+IsInMeetingStoneQueue()
+BuyMerchantItem(index {,qty}) Description: Buys an item from a merchant.
+BuybackItem(index) Description: Buys back a sold item.
+CanMerchantRepair() Description: Returns true if the merchant can repair items.
+CloseMerchant() Description: Closes the merchant window.
+GetBuybackItemInfo()
+GetMerchantItemInfo(index) Description: Returns information about an item.
+GetMerchantItemLink(index) Description: Returns a link to an item.
+GetMerchantItemMaxStack(index) Description: Returns the maximum number of items in a stack.
+GetMerchantNumItems() Description: Returns the number of items the merchant sells.
+GetRepairAllCost()
+HideRepairCursor()
+InRepairMode()
+PickupMerchantItem(index) Description: Places the item on the cursor.
+RepairAllItems()
+ShowMerchantSellCursor(index) Description: Changes the cursor to the merchant sell cursor.
+ShowRepairCursor()
+CameraOrSelectOrMoveStart Description: Begin "Left click" in the 3D world.
+CameraOrSelectOrMoveStop Description: End "Left click" in the 3D world.
+FollowByName("name") Description: Follow a player with the specified player name
+FollowUnit("unit") Description: Follow an ally with the specified UnitID
+Jump() Description: The player jumps.
+MoveBackwardStart Description: The player begins moving backward at the specified time.
+MoveBackwardStop Description: The player stops moving backward at the specified time.
+MoveForwardStart Description: The player begins moving forward at the specified time.
+MoveForwardStop Description: The player stops moving forward at the specified time.
+StrafeLeftStart Description: The player begins strafing left at the specified time.
+StrafeLeftStop Description: The player stops strafing left at the specified time.
+StrafeRightStart Description: The player begins strafing right at the specified time.
+StrafeRightStop Description: The player stops strafing right at the specified time.
+ToggleAutoRun Description: Turns auto-run on or off
+ToggleMouseMove()
+ToggleRun Description: Toggle between running and walking.
+TurnLeftStart Description: The player starts turning left at the specified time.
+TurnLeftStop Description: The player stops turning left at the specified time.
+TurnOrActionStart Description: Begin "Right Click" in the 3D world.
+TurnOrActionStop Description: End "Right Click" in the 3D world.
+TurnRightStart Description: The player starts turning right at the specified time.
+TurnRightStop Description: The player stops turning right at the specified time.
+BuyStableSlot()
+CastPetAction(index) Description: Cast the corresponding pet skill.
+CheckPetUntrainerDist() Description: Check wether the player is close enough to the pet untrainer.
+ClickStablePet(index)
+ClosePetStables() Description: Close the pet stables user interface.
+ConfirmPetUnlearn() Description: Confirm the request for unlearning pet abilities
+DropItemOnUnit("unit") Description: Drops an item from the cursor onto a unit.
+GetNextStableSlotCost()
+GetNumStablePets() Description: Returns the number of pets in the stable.
+GetNumStableSlots() Description: Returns the number of stable slots you own.
+GetPetActionCooldown(index) Description: Returns cooldown information for the pet action at the specificed pet action bar slot.
+GetPetActionInfo(index) Description: Returns information on the pet action at the specified pet action bar slot.
+GetPetActionsUsable() Description: Returns a value indicating if the player's pet's actions can be used at this time.
+GetPetExperience() Description: Returns the pet's current xp, and total xp required for next level.
+GetPetFoodTypes() Description: Returns a list of the food types the player's pet can eat.
+GetPetHappiness() Description: Returns the pet's happiness, damage percentage, and loyalty gain rate.
+GetPetIcon() Description: Returns the path to the texture to use as the icon for the player's pet.
+GetPetLoyalty() Description: Returns the name of the pet's current loyalty level.
+GetPetTimeRemaining() Description: Returns in milliseconds about some timeout for the player's pet.
+GetPetTrainingPoints() Description: Returns the pet's current total and used training points.
+GetSelectedStablePet()
+GetStablePetFoodTypes(index) Description: Returns a list of the food types a specific stabled pet can eat.
+GetStablePetInfo(index) Description: Returns information about a specific stabled pet.
+HasPetSpells() Description: Returns true if the player has pet spells.
+HasPetUI() Description: Returns true if the player has a pet User Interface.
+PetAbandon() Description: Permanently abandons your pet.
+PetAggressiveMode() Description: Set your pet in aggressive mode.
+PetAttack() Description: Instruct your pet to attack your target.
+IsPetAttackActive() Description: Returns true if the pet is currently attacking.
+PetStopAttack() Description: Stop the attack of the pet.
+PetCanBeAbandoned() Description: Returns true if the pet is abandonable.
+PetCanBeRenamed() Description: Returns true if the pet can be renamed.
+PetDefensiveMode() Description: Set your pet in defensive mode.
+PetDismiss() Description: Dismiss your pet.
+PetFollow() Description: Instruct your pet to follow you.
+PetHasActionBar()
+PetPassiveMode() Description: Set your pet into passive mode.
+PetRename("name") Description: Renames the pet.
+PetWait() Description: Instruct your pet to remain still.
+PickupPetAction(index)
+PickupStablePet(index)
+SetPetStablePaperdoll("modelFrame")
+StablePet(index)
+TogglePetAutocast(index) Description: Toggles whether the specified pet ability should autocast or not.
+ToggleSpellAutocast(index, bookIndex) Description: Toggles whether the specified pet ability should autocast or not. (in the spellbook).
+GetSpellAutocast(index, bookIndex) Description: Check wether the specified pet ability  autocasts or not. 
+UnstablePet(index)
+CanSignPetition()
+ClosePetition()
+GetNumPetitionNames()
+GetPetitionInfo()
+GetPetitionNameInfo(index)
+OfferPetition()
+RenamePetition("name") Description: ? - (NEW IN 1300)
+SignPetition()
+AbandonQuest Description: Abandon the specified quest.
+AcceptQuest Description: Accept the specified quest.
+AddQuestWatch(x) Description: Add a quest to the watch list.
+CloseQuest
+CollapseQuestHeader Description: Collapses a quest header.
+CompleteQuest Description: Complete the specified quest.
+ConfirmAcceptQuest Description: Accept the quest. Yes. Really accept it.
+DeclineQuest Description: Declines the currently offered quest.
+ExpandQuestHeader Description: Expands a quest header.
+GetAbandonQuestName Description: Gets the name of a quest while it is being abandoned.
+GetGossipActiveQuests Description: Retrieves a list of the active (?) quests on the NPC you are talking to.
+GetGossipAvailableQuests Description: Retrieves a list of the available (!) quests on the NPC you are talking to.
+GetGreetingText()
+GetNumQuestChoices Description: Returns the number of rewards for a completed quest.
+GetNumQuestItems Description: Returns the number of items nessecary to complete a particular quest.
+GetNumQuestLeaderBoards({questIndex}) Description: Returns the number of available quest objectives.
+GetNumQuestLogChoices Description: Returns the number of options someone has when getting a quest item.
+GetNumQuestLogEntries Description: Returns the number of entries in the quest log.
+GetNumQuestLogRewards Description: Returns the count of the rewards for a particular quest.
+GetNumQuestRewards
+GetNumQuestWatches() Description: Returns the number of quest watches active.
+GetObjectiveText() Description: Gets the objective of the current quest.
+GetProgressText()
+GetQuestBackgroundMaterial Description: Returns the material string associated with the particular quest.
+GetQuestGreenRange
+GetQuestIndexForTimer
+GetQuestIndexForWatch(watchIndx) Description: Return the quest index for the specified watch
+GetQuestItemInfo Description: Returns basic information about the quest items.
+GetQuestItemLink
+GetQuestLogChoiceInfo Description: Returns a bunch of data about a quest reward choice from the quest log.
+GetQuestLogItemLink
+GetQuestLogLeaderBoard(ldrIndex{,questIndex}) Description: Gets information about the objectives for a quest.
+GetQuestLogPushable Description: Returns true if the currently loaded quest in the quest window can be shared.
+GetQuestLogQuestText Description: Returns the description and objectives required for the specified quest.
+GetQuestLogRequiredMoney
+GetQuestLogRewardInfo Description: Returns a pile of reward item info.
+GetQuestLogRewardMoney Description: Returns a number representing the amount of copper returned by a particular quest.
+GetQuestLogRewardSpell
+GetQuestLogSelection Description: Returns a number associated with the QuestLogSelection index.
+GetQuestLogTimeLeft
+GetQuestLogTitle Description: Returns the string which is associated with the specific QuestLog Title in the game.
+GetQuestMoneyToGet
+GetQuestReward Description: Gets the quest reward specified.
+GetQuestText Description: Gets the description of the current quest.
+GetQuestTimers Description: Returns all of the quest timers currently in progress.
+GetRewardMoney
+GetRewardSpell
+GetRewardText
+GetTitleText Description: Retrieves the title of the quest while talking to the NPC about it.
+IsCurrentQuestFailed
+IsQuestCompletable Description: Returns true if a quest is possible to complete.
+IsQuestWatched(questIndex) Description: Determine if the specified quest is watched.
+IsUnitOnQuest Description: (questIndex, "unit") - Determine if the a specific unit is on a given quest.
+QuestChooseRewardError Description: Throws an error when the quest choose reward method doesn't work.
+QuestLogPushQuest Description: Initiates the sharing of the currently viewed quest in the quest log.
+RemoveQuestWatch(index) Description: Remove a quest watch {Is the index a quest or watch index?).
+SelectGossipActiveQuest Description: Selects an active quest.
+SelectGossipAvailableQuest Description: Selects an available quest.
+SelectQuestLogEntry
+SetAbandonQuest Description: Called before AbandonQuest.
+ToggleQuestLog Description: Opens/closes the quest log.
+ConvertToRaid() Description: Converts party to raid.
+DemoteAssistant("name") Description: Demotes player from assistant status. Requires raid leadership.
+GetNumRaidMembers() Description: Returns the number of raid members.
+GetRaidRosterInfo(index) Description: Returns information about the members of your raid .
+GetRaidRosterSelection
+IsRaidLeader() Description: Returns a value based on whether the player is a raid leader
+IsRaidOfficer() Description: Returns a value based on whether the player is a raid officer (assistant (?)).
+PromoteToAssistant("name") Description: Promotes player to assistant status. Requires raid leadership. 
+RequestRaidInfo() Description: Returns information about which instances you are saved to
+SetRaidRosterSelection(index)
+SetRaidSubgroup(index, subgroup)
+SwapRaidSubgroup(index1, index2) Description: Swaps raid members into different groups
+UninviteFromRaid(index) Description: Boots someone from a raid
+UnitInRaid("unit") Description: Returns 1 if unit is in your raid group.
+GetBaseMip() Description: Get the world appearance Texture Detail.
+GetCVar("varname") Description: Get the current (active) setting for a variable in config.wtf
+GetCVarDefault("varname")
+GetCurrentMultisampleFormat() Description: Get the current in-use multi-sample (antialias) format.
+GetCurrentResolution() Description: Get the index of the current screen resolution.
+GetDoodadAnim()
+GetFarclip() Description: Get the world appearance Terrain Distance.
+GetGamma()
+GetMultisampleFormats() Description: Get the available multi-sample (antialias) formats..
+GetRefreshRates(x)
+GetScreenResolutions()
+GetTerrainMip() Description: Get the world appearance Terrain Texture.
+GetTexLodBias()
+GetVideoCaps()
+GetWaterDetail()
+GetWorldDetail() Description: Get the world appearance Environment Detail.
+HideNameplates() Description: Turn off display of nameplates.
+RegisterCVar
+ResetPerformanceValues()
+ResetTutorials()
+SetBaseMip(value) Description: Set the world appearance Texture Detail (0,1).
+SetCVar("cvar",value{,"scriptCVar"}) Description: Set the value of a variable in config.wtf
+SetDoodadAnim()
+SetEuropeanNumbers(flag) Description: Sets the decimal separator to a comma instead of a dot
+SetFarclip(value) Description: Set the world appearance Terrain Distance (177-777).
+SetGamma(value)
+SetLayoutMode()
+SetMultisampleFormat(index) Description: Set the multi-sample (antialias) format to use.
+SetScreenResolution(x)
+SetTerrainMip(value) Description: Set the world appearance Terrain Texture (0,1).
+SetTexLodBias()
+SetWaterDetail()
+SetWorldDetail(value) Description: Set the world appearance Environment Detail (0,1,2).
+ShowCloak(flag) Description: Set whether player's cloak is displayed.
+ShowHelm(flag) Description: Set whether player's helm is displayed.
+ShowNameplates() Description: Turn on display of nameplates.
+ShowingCloak() Description: Return 1 if player's cloak is displayed, nil otherwise.
+ShowingHelm() Description: Return 1 if player's helm is displayed, nil otherwise.
+ToggleCollision()
+ToggleCollisionDisplay()
+ToggleCombatLogFileWrite() Description: Toggles combat text logging to file.
+TogglePerformanceDisplay()
+TogglePerformanceValues()
+TogglePlayerBounds()
+TogglePortals()
+ToggleTris()
+TutorialsEnabled()
+CollapseSkillHeader(index)
+ExpandSkillHeader(index)
+GetAdjustedSkillPoints()
+GetNumSkillLines() Description: get the number of lines in the skill window, including headers
+GetSelectedSkill()
+GetSkillLineInfo(index) Description: get the information for a selected skill
+CastShapeshiftForm(index)
+CastSpell(spellID, "bookType") Description: Cast the specified spell by ID. spellbookTab is "spell" or "pet".
+CastSpellByName("name"{,onSelf}) Description: Cast the specified spell by display name. *UPDATE* - Works! - (6/14/05 by nubious)
+GetCraftSpellFocus(index)
+GetNumShapeshiftForms()
+GetNumSpellTabs() Description: Returns the total number of tabs in the user's spellbook.
+GetQuestLogRewardSpell
+GetRewardSpell
+GetShapeshiftFormCooldown(index)
+GetShapeshiftFormInfo(index) Description: Retrieves information about an available ShapeshiftForm or Stance.
+GetSpellCooldown(spellID, "bookType") Description: Retrieves data on the cooldown of a specific spell within your spellbook..
+GetSpellName(spellID, "bookType") Description: Returns the spell name and spell rank for a spell in the player's spellbook.
+GetSpellTabInfo(spellbookTabNum) Description: Returns information about the specified spellbook tab.
+GetSpellTexture(spellID, "bookType")
+GetTrackingTexture() Description: Return the texture of the current tracking buff, if one is active.
+IsCurrentCast(id, "bookType")
+IsSpellPassive(spellID, "bookType") Description: Returns whether the icon in your spellbook is a Passive ability.
+IsTrainerServiceLearnSpell(index)
+PickupSpell(spellID, "bookType") Description: Loads an action button onto the cursor to be dropped into a quickbar slot.
+PlayerHasSpells()
+SpellCanTargetUnit("unit") Description: Returns true if the spell awaiting target selection can be cast on the specified unit.
+SpellIsTargeting() Description: Returns true if a spell has been cast and is awaiting target selection.
+SpellStopCasting() Description: Stops the current spellcast. (As of 1.10 PTR, this function must be used in direct response to a hardware input event, such as a mouse click or key press.)
+SpellStopTargeting() Description: Cancels the spell awaiting target selection.
+SpellTargetUnit("unit") Description: Casts the spell awaiting target selection on the specified unit.
+ToggleSpellBook("bookType") Description: Shows the spellbook. Can show your spells or your pet's.
+UpdateSpells()
+format(formatstring{,value,...}) Description: Return a formatted string using values passed in.
+gsub(string,pattern,replacement{,limitCount}) Description: Globally substitute pattern for replacement in string.
+strbyte(string{,index}) Description: Returns the internal numeric code of the i-th character of string
+strchar({intval,...}) Description: Returns a string with length equal to number of arguments, with each character assigned the internal code for that argument.
+strfind(string,pattern{,init{,plain}}) Description: Look for match of pattern in string, optionally from specific location or using plain substring.
+strlen(string) Description: Return length of the string.
+strlower(string) Description: Return string with all upper case changed to lower case.
+strrep(seed,count) Description: Return a string which is count copies of seed.
+strsub(string,index{,endIndex}) Description: Return a substring of string starting at index
+strupper(string) Description: Return string with all lower case changed to upper case.
+tonumber(arg {,base}) Description: Return a number if arg can be converted to number. Optional argument specifies the base to interpret the numeral. Bases other than 10 accept only unsigned integers.
+tostring(arg) Description: Convert arg to a string.
+ConsoleExec("command") Description: Execute a console command.
+GetBuildInfo() Description: Returns information about current client build.
+GetFramerate() Description: Returns the current framerate (full precision)
+GetGameTime Description: Returns the time in-game.
+GetLocale()
+GetMouseFocus() Description: Returns the frame that currently has the mouse focus.
+GetCursorPosition() Description: Returns the cursor's position on the screen.
+GetNetStats() Description: Get bandwidth and latency network information.
+GetRealmName() Description: returns the name of the server a user is logged in to
+GetScreenHeight() Description: Returns the height of the window in pixels.
+GetScreenWidth() Description: Returns the width of the window in pixels.
+GetText() Description: Used to localize some client text.
+GetTime() Description: Returns the system uptime in seconds (millisecond precision).
+InCinematic()
+IsAddOnLoaded("addonname") Description: NEW!! - Returns true if specified AddOn is loaded.
+IsAltKeyDown() Description: Returns true if the alt key is currently depressed.
+IsControlKeyDown() Description: Returns true if the control key is currently depressed.
+IsLinuxClient() Description: Boolean - Returns true if WoW is being run on Linux
+IsMacClient() Description: Checks client system
+IsShiftKeyDown() Description: Returns true if the shift key is currently depressed.
+IsWindowsClient
+LoadAddOn("addonname") Description: NEW! - Loads or Reloads the specified AddOn.
+LaunchURL("URL") Description: Launches an external web browser and navigates to the URL provided.
+MouseIsOver Description: Determines whether or not the mouse is over the specified frame.
+OpeningCinematic() Description: shows the opening movie for a player's race
+PlayMusic() Description: Plays the specified mp3.
+PlaySound() Description: Plays the specified built-in sound effect.
+PlaySoundFile() Description: Plays the specified sound file.
+RegisterForSave("variable") Description: Register a variable for saving between sessions. - Deprecated in 1.10, use .toc-file.
+ReloadUI() Description: Reloads the UI from source files
+RepopMe() Description: The "Release Spirit" button. Sends you to the graveyard when dead.
+RequestTimePlayed() Description: Request a summary of time played from the server.
+RestartGx() Description: Restarts the graphical engine. Needed for things such as resolution changes to take effect.
+RunScript("script") Description: Execute "script" as a block of LUA code.
+Screenshot() Description: Takes a screenshot.
+SecondsToTime Description: Converts a number of seconds into a readable days / hours / etc. formatted string.
+StopCinematic()
+StopMusic() Description: Stops the currently playing mp3.
+UIParentLoadAddOn("addonname") Description: Loads or Reloads the specified AddOn, and pops up an error message if it fails to load for any reason.
+TakeScreenshot() Description: Takes a screenshot.
+_ERRORMESSAGE(value) Description: Displays the script error dialog with optional text
+debuginfo() Description: Output win32 debug text. Freeware debug message viewer: [http://www.sysinternals.com/Utilities/DebugView.html DebugView] (Has no effect on live server)
+getglobal("object") Description: Given an object name will return the object itself.
+message("text") Description: Displays a message box with your text message and an "Okay" button.
+setglobal("object", value) Description: set the global "object" to the given value.
+foreach(table,function) Description: Execute function for each element in table.
+foreachi(table,function) Description: Execute function for each element in table, indices are visited in sequential order.
+getn(table) Description: Return the size of the table when seen as a list.
+ipairs(table) Description: Returns an iterator of type integer to traverse a table.
+pairs(table) Description: Returns an iterator to traverse a table.
+setn(table, n) Description: Sets the size of the table to t.
+sort(table{,comp}) Description: Sort the elements in the table in-place, optionally using a custom comparator.
+tinsert(table,{pos,},value) Description: Insert value into the table at position pos (defaults to end of table)
+tremove(table{,pos}) Description: Remove and return the table element at position pos (defaults to last entry in table)
+BuyTrainerService
+CheckTalentMasterDist()
+ConfirmTalentWipe()
+GetNumTalentTabs() Description: return number of talent trees (usually 3)
+GetNumTalents(tabIndex) Description: return number of talents in tree
+GetTalentInfo(tabIndex,talentIndex) Description: return name, iconTexture, tier, column, rank, maxRank, isExceptional, meetsPrereq
+GetTalentPrereqs(tabIndex,talentIndex) Description: return tier, column, isLearnable
+GetTalentTabInfo(tabIndex) Description: return name, iconTexture, pointsSpent, background
+IsTalentTrainer
+LearnTalent(tabIndex,talentIndex)
+AssistByName("playername") Description: Assists the player whose name is entered.
+AssistUnit("unit") Description: Instructs your character to assist the specified unit.
+AttackTarget() Description: Attacks the targetted unit.
+ClearTarget() Description: Clears the selected target.
+ClickTargetTradeButton(index)
+TargetByName("name") Description: Selects the specified player as the current target.
+TargetLastEnemy() Description: Selects the last targetted enemy as the current target.
+TargetLastTarget() Description: Selects the last target as the current target.
+TargetNearestEnemy({reverse}) Description: Selects the nearest enemy as the current target.
+TargetNearestFriend() Description: Selects the nearest friendly unit as the current target.
+TargetNearestPartyMember() Description: Selects the nearest Party member as the current target.
+TargetNearestRaidMember Description: Selects the nearest Raid member as the current target.
+TargetUnit("unit") Description: Selects the specified id as the current target.
+CloseTaxiMap() Description: Closes the Flightpath Map.
+NumTaxiNodes() Description: Returns the number of nodes (flight paths) on an open taxi map.
+SetTaxiMap(frame)
+TakeTaxiNode(slot) Description: Takes the named taxi node.
+TaxiNodeCost(slot) Description: Returns the cost in copper of a node.
+TaxiNodeGetType(slot) Description: Returns the status of a node.
+TaxiGetSrcX(slot, hop)
+TaxiGetSrcY(slot, hop)
+TaxiGetDestX(slot, hop)
+TaxiGetDestY(slot, hop)
+TaxiNodeSetCurrent(slot) Description: Renumbers slots based on new current slot.
+TaxiNodeName(slot) Description: Returns the name of a node.
+TaxiNodePosition(slot) Description: Returns position (x,y) of node on the map.
+UnitOnTaxi("unit") Description: Returns 1 if unit is on a taxi.
+ToggleBackpack Description: Toggles your backpack open/closed.
+ToggleBag(index) Description: Opens or closes the specified bag.
+ToggleCharacter(index) Description: Toggles the character pane to the specified frame.
+ToggleCombatLog Description: Opens/closes the combat log.
+ToggleFramerate Description: Show/Hide the FPS.
+ToggleFriendsFrame(index) Description: Opens/closes the friends pane.
+ToggleGameMenu Description: Opens/closes the game menu.
+ToggleHelpFrame Description: Opens the Help Request frame.
+ToggleMinimap Description: Turns the minimap display on/off.
+ToggleQuestLog Description: Opens/closes the quest log.
+ToggleSpellBook("bookType") Description: Shows the spellbook. Can show your spells or your pet's.
+ToggleTalentFrame Description: Opens the Talent frame.
+ToggleWorldMap Description: Turns the world map on/off.
+CloseTradeSkill() Description: Closes an open trade skill window.
+CollapseTradeSkillSubClass(index) Description: Collapses the specified subclass header row.
+DoTradeSkill(index{,repeat}) Description: Performs the tradeskill a specified # of times.
+ExpandTradeSkillSubClass(index) Description: Expands the specified subclass header row.
+GetFirstTradeSkill() Description: Returns the index of the first non-header trade skill entry.
+GetNumTradeSkills() Description: Get the number of trade skill entries (including headers).
+GetTradeSkillCooldown(index) Description: Returns the number of seconds left for a skill to cooldown.
+GetTradeSkillIcon(index) Description: Returns the texture name of a tradeskill's icon.
+GetTradeSkillInfo(index) Description: Retrieves information about a specific trade skill.
+GetTradeSkillInvSlotFilter(slotIndex) Description: Returns 1 if items corresponding to slotIndex are currently visible, otherwise nil.
+GetTradeSkillInvSlots() Description: Returns a list of the available inventory slot types.
+GetTradeSkillItemLink(index) Description: Gets the link string for a trade skill item.
+GetTradeSkillItemStats()
+GetTradeSkillLine() Description: Returns information about the selected skill line.
+GetTradeSkillNumMade(index) Description: Gets the number of items made in a single use of a skill.
+GetTradeSkillNumReagents(tradeSkillRecipeId) Description: Returns the number of different reagents required.
+GetTradeSkillReagentInfo(tradeSkillRecipeId, reagentId) Description: Returns data on the reagent, including a count of the player's inventory.
+GetTradeSkillReagentItemLink(index, reagentId) Description: Gets the link string for a trade skill reagent.
+GetTradeSkillSelectionIndex() Description: Returns the Id of the currently selected trade skill, 0 if none selected.
+GetTradeSkillSubClassFilter(filterIndex) Description: Returns 1 if items corresponding to filterIndex are currently visible, otherwise nil.
+GetTradeSkillSubClasses() Description: Returns a list of the valid subclasses.
+GetTradeSkillTools(index) Description: Returns information about the tools needed for a tradeskill.
+GetTradeskillRepeatCount()
+IsTradeskillTrainer() Description: Returns 1 if trainer is for a tradeskill.
+IsTrainerServiceTradeSkill()
+SelectTradeSkill(index) Description: Select a specific trade skill in the list.
+SetTradeSkillInvSlotFilter(slotIndex,onOff{,exclusive} ) Description: Set the inventory slot type filter.
+SetTradeSkillSubClassFilter(slotIndex,onOff{,exclusive} ) Description: Set the subclass filter.
+AcceptTrade() Description: A pending trade will be accepted.
+AddTradeMoney() Description: Adds the money dropped into the player's trade frame.
+BeginTrade() Description: Begins the trade with the target.
+CancelTrade() Description: Declines the offer to trade with the other player.
+CancelTradeAccept Description: Cancels the trade attempt which required an accept.
+ClickTargetTradeButton(index)
+ClickTradeButton(index) Description: Equivalent of a mouseclick on the trade window buttons [1-7]
+CloseTrade() Description: Closes the trade.
+GetPlayerTradeMoney Description: Returns the amount of money the player has in the trade window.
+GetTargetTradeMoney Description: Returns the amount of money in the trade frame of the target player.
+GetTradePlayerItemInfo(id) Description: Returns information about a trade item.
+GetTradePlayerItemLink(id) Description: Returns link to a trade item.
+GetTradeTargetItemInfo(id) Description: Returns information about a trade item.
+GetTradeTargetItemLink(id) Description: Returns link to a trade item.
+InitiateTrade(UnitId) Description: Asks the specified unit to trade.
+PickupPlayerMoney Description: Picks up an amount of money from the player.
+PickupTradeMoney(amount)
+ReplaceTradeEnchant Description: Confirm the replacement of an enchantment via trade.
+SetTradeMoney(amount)
+BuyTrainerService()
+CloseTrainer
+CollapseTrainerSkillLine(index) Description: Collapses a header, hiding all spells below it.
+ExpandTrainerSkillLine(index) Description: Expands a header, showing all spells below it.
+GetNumTrainerServices() Description: Get the number of the trainer services.
+GetTrainerGreetingText() Description: Get the trainer's greeting text.
+GetTrainerSelectionIndex() Description: Get the index of the selected trainer service.
+GetTrainerServiceAbilityReq
+GetTrainerServiceCost(index) Description: Returns the cost of a specific trainer service.
+GetTrainerServiceDescription(index) Description: Returns the description of a specific trainer service.
+GetTrainerServiceIcon(index) Description: Returns icon texture for a trainer service.
+GetTrainerServiceInfo(index) Description: Returns information about a trainer service.
+GetTrainerServiceLevelReq
+GetTrainerServiceNumAbilityReq
+GetTrainerServiceSkillLine
+GetTrainerServiceSkillReq(index) Description: Returns a String and Variable for the requirements of a specific trainer service.
+GetTrainerServiceStepIncrease()
+GetTrainerServiceStepReq
+GetTrainerServiceTypeFilter("filter") Description: Returns the status of a skill filter in the trainer window.
+GetTrainerSkillLineFilter()
+GetTrainerSkillLines()
+IsTalentTrainer
+IsTradeskillTrainer() Description: Returns 1 if trainer is for a tradeskill.
+IsTrainerServiceLearnSpell(index)
+IsTrainerServiceSkillStep()
+IsTrainerServiceTradeSkill()
+OpenTrainer()
+SelectTrainerService
+SetTrainerServiceTypeFilter("filter",state) Description: Sets the status of a skill filter in the trainer window.
+SetTrainerSkillLineFilter()
+UnitIds
+AssistUnit("unit") Description: Instructs your character to assist the specified unit.
+CheckInteractDistance("unit",distIndex) Description: 
+DropItemOnUnit("unit") Description: Drops an item from the cursor onto a unit.
+FollowUnit("unit") Description: Follow an ally with the specified UnitID
+InviteToParty("unit") Description: Invite a unit to a party.
+IsUnitOnQuest Description: (questIndex, "unit") - Determine if the a unit is on a given quest.
+SpellCanTargetUnit("unit") Description: Determine if the spell awaiting target selection can be cast on the unit.
+SpellTargetUnit("unit") Description: Casts the spell awaiting target selection on the specified unit.
+StartDuelUnit("unit") Description: Challenge a unit to a duel.
+TargetUnit("unit") Description: Target the unit.
+UnitAffectingCombat("unit") Description: Determine if the unit is in combat or has aggro.  (returns nil if "false" and 1 if "true")
+UnitArmor("unit") Description: Returns the armor statistics relevant to the specified unit.
+UnitAttackBothHands("unit") Description: Returns information about the unit's melee attacks.
+UnitAttackPower("unit") Description: Returns the unit's melee attack power and modifiers.
+UnitAttackSpeed("unit") Description: Returns the unit's melee attack speed for each hand.
+UnitBuff("unit", index) Description: Retrieves info about a buff of a certain unit.
+UnitCanAssist("unit", "otherUnit") Description: Returns true if the first unit can assist the second, false otherwise.
+UnitCanAttack("unit", "otherUnit") Description: Returns true if the first unit can attack the second, false otherwise.
+UnitCanCooperate("unit", "otherUnit") Description: Returns true if the first unit can cooperate with the second, false otherwise.
+UnitCharacterPoints("unit") Description: Returns the number of unspent talent points for the specified unit -- usually 0.
+UnitClass("unit") Description: Returns the class name of the specified unit (e.g., "Warrior" or "Shaman").
+UnitClassification("unit") Description: Returns the classification of the specified unit (e.g., "elite" or "worldboss").
+UnitCreatureFamily("unit") Description: Returns the type of creature of the specified unit (e.g., "Crab").
+UnitCreatureType("unit") Description: Returns the classification type of creature of the specified unit (e.g., "Beast").
+UnitDamage("unit") Description: Returns the damage statistics relevant to the specified unit.
+UnitDebuff("unit", index) Description: Retrieves info about a debuff of a certain unit.
+UnitDefense("unit")
+UnitExists("unit") Description: Returns true if the specified unit exists, false otherwise.
+UnitFactionGroup("unit") Description: Returns the faction group id and name of the specified unit. (eg. "Alliance") - string returned is localization-independent (used in filepath) -~~
+UnitHealth("unit") Description: Returns the current health, in points, of the specified unit.
+UnitHealthMax("unit") Description: Returns the maximum health, in points, of the specified unit.
+UnitInParty("unit") Description: Returns true if the unit is a member of your party.
+UnitInRaid("unit") Description: Returns true if the specified unit is in your raid, false otherwise.
+UnitIsCharmed("unit") Description: Returns true if the specified unit is charmed, false otherwise.
+UnitIsCivilian("unit") Description: Returns true if the "unit" is a civilian.
+UnitIsConnected("unit") Description: Returns 1 if the specified unit is connected or npc, nil if offline or not a valid unit.
+UnitIsCorpse("unit") Description: Returns true if the specified unit is a corpse, false otherwise.
+UnitIsDead("unit") Description: Returns true if the specified unit is dead, nil otherwise.
+UnitIsDeadOrGhost("unit") Description: Returns true if the specified unit is dead or a ghost, nil otherwise.
+UnitIsEnemy("unit", "otherUnit") Description: Returns true if the specified units are enemies, false otherwise.
+UnitIsFriend("unit", "otherUnit") Description: Returns true if the specified units are friends (PC of same faction or friendly NPC), false otherwise.
+UnitIsGhost("unit") Description: Returns true if the specified unit is a ghost, false otherwise.
+UnitIsPVP("unit") Description: Returns true if the specified unit is flagged for PVP, false otherwise.
+UnitIsPVPFreeForAll("unit") Description: Returns true if the specified unit is flagged for free-for-all PVP, false otherwise.
+UnitIsPartyLeader("unit") Description: Returns true if the unit is the leader of its party.
+UnitIsPlayer("unit") Description: Returns true if the specified unit is a player character, false otherwise.
+UnitIsPlusMob("unit") Description: Returns true if the specified unit is a mob, more powerful than its nominal level, false otherwise (e.g., "elite" mobs)
+UnitIsTapped("unit") Description: Returns true if the specified unit is tapped, false otherwise.
+UnitIsTappedByPlayer("unit") Description: Returns true if the specified unit is tapped by a player, false otherwise.
+UnitIsTrivial("unit") Description: Returns true if the specified unit is trivial (Trivial means the unit is "grey" to the player. false otherwise.
+UnitIsUnit("unit", "otherUnit") Description: Determine if two units are the same unit.
+UnitIsVisible("unit")
+UnitLevel("unit") Description: Returns the level of a unit.
+UnitMana("unit") Description: Returns the current mana (or energy,rage,etc), in points, of the specified unit.
+UnitManaMax("unit") Description: Returns the maximum mana (or energy,rage,etc), in points, of the specified unit.
+UnitName("unit") Description: Returns the name of a unit.
+UnitOnTaxi("unit") Description: Returns 1 if unit is on a taxi.
+UnitPVPName("unit") Description: Returns unit's name with PvP rank prefix (e.g., "Corporal Allianceguy").
+UnitPVPRank("unit") Description: Get PvP rank information for requested unit.
+UnitPlayerControlled("unit") Description: Returns true if the specified unit is controlled by a player, false otherwise.
+UnitPowerType("unit") Description: Returns a number corresponding to the power type (e.g., mana, rage or energy) of the specified unit.
+UnitRace("unit") Description: Returns the race name of the specified unit (e.g., "Human" or "Troll").
+UnitRangedAttack("unit") Description: Returns the ranged attack number of the unit.
+UnitRangedAttackPower("unit") Description: Returns the ranged attack power of the unit.
+UnitRangedDamage("unit") Description: Returns the ranged attack speed and damage of the unit.
+UnitReaction("unit", "otherUnit") Description: Returns a number corresponding to the reaction (aggressive, neutral or friendly) of the first unit towards the second unit.
+UnitResistance("unit", "resistanceIndex") Description: Returns the resistance statistics relevant to the specified unit and resistance type.
+UnitSex("unit") Description: Returns a code indicating the gender of the specified unit, if known. (0 is male, 1 female, and 2 undefined)
+UnitStat("unit", statIndex) Description: Returns the statistics relevant to the specified unit and basic attribute (e.g., strength or intellect).
+UnitXP("unit") Description: Returns the number of experience points the specified unit has in their current level. (only works on your player)
+UnitXPMax("unit") Description: Returns the number of experience points the specified unit needs to reach their next level. (only works on your player)
+SetPortraitTexture(texture,"unit") Description: Paint a Texture object with the specified unit's portrait.
+SetPortraitToTexture("texture", icon) Description: Paint a Texture object with the given Texture ?
+GetNumWhoResults() Description: Return the number of entries resulting from your most recent /who query.
+GetWhoInfo(index)
+SendWho("filter") Description: Send a who request to the server.
+SetWhoToUI(toUIFlag) Description: Indicate that who request results should be delivered as WHO_LIST_UPDATE instead of to chat.
+SortWho(sortType)
+GetActiveLevel(index)
+GetActiveTitle(index)
+GetAvailableLevel(index)
+GetAvailableTitle(index)
+PartialPlayTime()
+NoPlayTime()
+GetBillingTimeRested()
+Frame:GetName()
+Frame:GetID()
+Frame:Show()
+Frame:Hide()
+
+UIObject:GetObjectType() Description: Get the type of this object Description: New in 1.10 
+UIObject:IsObjectType("type") Description: Determine if this object is of the specified type, or a subclass of that type Description: New in 1.10.
+Font:CopyFontObject(otherFont) Description: Set this Font's attributes to be a copy of the otherFont font object's. 
+Font:GetAlpha() Description: Return this font's alpha setting. 
+Font:GetFont() Description: Return the font file, height, and flags for this Font. 
+Font:GetFontObject() Description: Return the 'parent' Font object, or nil if none. 
+Font:GetJustifyH() Description: Return Font's horizontal justification. 
+Font:GetJustifyV() Description: Return Font's vertical justification. 
+Font:GetName() Description: Return the name of the Font object. 
+Font:GetShadowColor() Description: Returns the color of this Font's shadow (r,g,b,a). 
+Font:GetShadowOffset() Description: Returns the Font's shadow offset (x,y). 
+Font:GetSpacing() Description: Returns the Font's spacing(). 
+Font:GetTextColor() Description: Returns the Font's color (r,g,b,a) 
+Font:SetAlpha(alpha) Description: Set the Font's alpha value. 
+Font:SetFont("path",height[,"flags"]) Description: Sets the font to use, returns 1 if the path was valid, nil otherwise (no change occurs). 
+Font:SetFontObject(fontObject) Description: Sets the 'parent' Font object. 
+Font:SetJustifyH("justifyH") Description: Sets horizontal justification ("LEFT","RIGHT", or "CENTER") 
+Font:SetJustifyV("justifyV") Description: Sets vertical justification ("TOP","BOTTOM", or "MIDDLE") 
+Font:SetShadowColor(r,g,b,a) Description: Sets the shadow color. 
+Font:SetShadowOffset(x,y) Description: Sets the shadow offset. 
+Font:SetSpacing(spacing) Description: Sets the font spacing. 
+Font:SetTextColor(r,g,b,a) Description: Sets the font's color.
+LayoutFrame:ClearAllPoints() Description: Clear all attachment points for this object. 
+LayoutFrame:GetAlpha() Description: Get the alpha level of this frame Description: Moved in 1.10. 
+LayoutFrame:GetBottom() Description: Get the y location of the bottom edge of this frame Description: Moved in 1.10. 
+LayoutFrame:GetCenter() Description: Get the coordinates of the center of this frame Description: Moved in 1.10. 
+LayoutFrame:GetHeight() Description: Get the height of this object. 
+LayoutFrame:GetLeft() Description: Get the x location of the left edge of this frame Description: Moved in 1.10. 
+LayoutFrame:GetName() Description: Get the name of this object. 
+LayoutFrame:GetNumPoints() Description: Get the number of anchor points for this frame Description: New in 1.10. 
+LayoutFrame:GetParent() Description: Get the parent of this frame (The object, not just the name) Description: Moved in 1.10. 
+LayoutFrame:GetPoint(point) Description: Get details for an anchor points for this frame (point,relativeTo,relativePoint,xofs,yofs) Description: New in 1.10. 
+LayoutFrame:GetRight() Description: Get the x location of the right edge of this frame Description: Moved in 1.10. 
+LayoutFrame:GetTop() Description: Get the y location of the top edge of this frame Description: Moved in 1.10. 
+LayoutFrame:GetWidth() Description: Get the width of this object. 
+LayoutFrame:Hide() Description: Set this object to hidden (it and all of its children will disappear). 
+LayoutFrame:IsShown() Description: Determine if this object is shown (would be visible if its parent was visible). 
+LayoutFrame:IsVisible() Description: Get whether the object is visible on screen (logically (IsShown() and GetParent():IsVisible())); 
+LayoutFrame:SetAllPoints(frame or "frameName") Description: Set all anchors to match edges of specified frame Description: Moved in 1.10. 
+LayoutFrame:SetAlpha(alpha) Description: Set the alpha level of this object (affects children also). 
+LayoutFrame:SetHeight(height) Description: Set the height of the object. 
+LayoutFrame:SetParent(parent or "parentName") Description: Set the parent for this frame Description: Moevd in 1.10. 
+LayoutFrame:SetPoint("point","relativeFrame" or relativeObject,"relativePoint"[,xOfs,yOfs]) Description: Set an attachment point of this object Description: Updated in 1.10. 
+LayoutFrame:SetWidth(width) Description: Set the width of the object. 
+LayoutFrame:Show() Description: Set this object to shown (it will appear if its parent is visible).
+Frame:CreateFontString(["name"[,"layer"]]) Description: Create and return a new FontString as a child of this Frame. 
+Frame:CreateTexture(["name"[,"layer"]]) Description: Create and return a new Texture as a child of this Frame. 
+Frame:DisableDrawLayer("layer") Description: Disable rendering of regions in the specified draw layer. 
+Frame:EnableDrawLayer("layer") Description: Enable rendering of regions in the specified draw layer. 
+Frame:EnableKeyboard(enableFlag) Description: Set whether this frame will get keyboard input. 
+Frame:EnableMouse(enableFlag) Description: Set whether this frame will get mouse input. 
+Frame:EnableMouseWheel(enableFlag) Description: Set whether this frame will get mouse wheel events. 
+Frame:GetChildren() Description: Get the children of this frame. 
+Frame:GetEffectiveScale() Description: Get the scale factor of this object relative to the root window. 
+Frame:GetFrameLevel() Description: Get the level of this frame. 
+Frame:GetFrameStrata() Description: Get the strata of this frame. 
+Frame:GetFrameType() Description: Get the type of this frame. 
+Frame:GetID() Description: Get the ID of this frame. 
+Frame:GetNumChildren() Description: Get the number of children this frame has. 
+Frame:GetNumRegions() Description: Return the number of Regions that are children of this frame. 
+Frame:GetRegions() Description: Return the regions of the frame (multiple return values). 
+Frame:GetScale() Description: Get the scale factor of this object relative to its parent. 
+Frame:GetScript("handler") Description: Get the function for one of this frame's handlers. 
+Frame:HasScript("handler") Description: Return true if the frame can be given a handler of the specified type (NOT whether it actually HAS one, use GetScript for that) Description: Since 1.8. 
+Frame:IsFrameType("type") Description: Determine if this frame is of the specified type, or a subclass of that type. 
+Frame:IsMovable() Description: Determine if the frame can be moved. 
+Frame:IsResizable() Description: Determine if the frame can be resized. 
+Frame:IsToplevel() Description: Determine if the frame is Toplevel. 
+Frame:IsUserPlaced() Description: Determine if this frame has been relocated by the user. 
+Frame:Lower() Description: Lower this frame behind other frames. 
+Frame:Raise() Description: Raise this frame above other frames. 
+Frame:RegisterEvent("event") Description: Indicate that this frame should be notified when event occurs. 
+Frame:RegisterForDrag("buttonType"[,"buttonType"...]) Description: Inidicate that this frame should be notified of drag events for the specified buttons. 
+Frame:SetBackdrop([backdropTable]) Description: Set the backdrop of the frame according to the specification provided. 
+Frame:SetBackdropBorderColor(r,g,b[,a]) Description: Set the frame's backdrop's border's color. 
+Frame:SetBackdropColor(r,g,b[,a]) Description: Set the frame's backdrop color. 
+Frame:SetFrameLevel(level) Description: Set the level of this frame (determines which of overlapping frames shows on top). 
+Frame:SetFrameStrata("strata") Description: Set the strata of this frame. 
+Frame:SetID(id) Description: Set the ID of this frame. 
+Frame:SetMaxResize(maxWidth,maxHeight) Description: Set the maximum dimensions this frame can be resized to. 
+Frame:SetMinResize(minWidth,minHeight) Description: Set the minimum dimensions this frame can be resized to. 
+Frame:SetMovable(isMovable) Description: Set whether the frame can be moved. 
+Frame:SetResizable(isResizable) Description: Set whether the frame can be resized. 
+Frame:SetScale(scale) Description: Set the scale factor of this frame relative to its parent. 
+Frame:SetScript("handler",function) Description: Set the function to use for a handler on this frame. 
+Frame:SetToplevel(isToplevel) Description: Set whether the frame is Toplevel. 
+Frame:SetUserPlaced(isUserPlaced) Description: Set whether the frame has been relocated by the user (and will thus be saved in the layout cache). 
+Frame:StartMoving() Description: Start moving this frame. 
+Frame:StartSizing("point") Description: Start sizing this frame using the specified anchor point. 
+Frame:StopMovingOrSizing() Description: Stop moving and/or sizing this frame. 
+Frame:UnregisterAllEvents() Description: Indicate that this frame should no longer be notified when any events occur. 
+Frame:UnregisterEvent("event") Description: Indicate that this frame should no longer be notified when event occurs.
+Region:GetDrawLayer() Description: Returns the draw layer for the Region Description: New in 1.10. 
+Region:SetDrawLayer("layer") Description: Sets the draw layer for the Region Description: New in 1.10.
+Button:Click() Description: Execute the click action of the button. 
+Button:Disable() Description: Disable the Button so that it cannot be clicked. 
+Button:Enable() Description: Enable to the Button so that it may be clicked. 
+Button:GetButtonState() Description: Return the current state ("PUSHED","NORMAL") of the Button. 
+Button:GetDisabledFontObject() Description: Return the font object for the Button when disabled Description: New in 1.10. 
+Button:GetFont() Description: Returns the font, size, and flags currently used for display on the Button. 
+Button:GetHighlightFontObject() Description: Return the font object for the Button when highlighted Description: New in 1.10. 
+Button:GetText() Description: Get the text label for the Button. 
+Button:GetTextFontObject() Description: Return the font object for the Button's normal text Description: New in 1.10. 
+Button:GetTextHeight() Description: Get the height of the Button's text. 
+Button:GetTextWidth() Description: Get the width of the Button's text. 
+Button:IsEnabled() Description: Determine whether the Button is enabled. 
+Button:LockHighlight() Description: Set the Button to always be drawn highlighted. 
+Button:RegisterForClicks("clickType"[,"clickType"...]) Description: Control which mouse button up/down events get passed to the <OnClick> event handler. 
+Button:SetButtonState("state"[,lock]) Description: Set the state of the Button ("PUSHED", "NORMAL") and whether it is locked. 
+Button:SetDisabledFontObject([font]) Description: Set the font object for settings when disabled Description: New in 1.10. 
+Button:SetDisabledTextColor(r,g,b[,a]) Description: Set the disabled text color for the Button. 
+Button:SetDisabledTexture(texture or "texturePath") Description: Set the disabled texture for the Button Description: Updated in 1.10. 
+Button:SetFont("font",size[,"flags"]) Description: Set the font to use for display. 
+Button:SetHighlightFontObject([font]) Description: Set the font object for settings when highlighted Description: New in 1.10. 
+Button:SetHighlightTextColor(r,g,b[,a]) Description: Set the highlight text color for the Button. 
+Button:SetHighlightTexture(texture or "texturePath") Description: Set the highlight texture for the Button Description: Updated in 1.10. 
+Button:SetNormalTexture(texture or "texturePath") Description: Set the normal texture for the Button Description: Updated in 1.10. 
+Button:SetPushedTexture(texture or "texturePath") Description: Set the pushed texture for the Button Description: Updated in 1.10. 
+Button:SetText("text") Description: Set the text label for the Button. 
+Button:SetTextColor(r,g,b) Description: Set the text color for the Button. 
+Button:SetTextFontObject([font]) Description: Set the font object from which to get settings for this Button's normal state Description: New in 1.10. 
+Button:UnlockHighlight() Description: Set the Button to not always be drawn highlighted.
+ColorSelect:GetColorHSV() Description: Get the HSV values of the selected color. 
+ColorSelect:GetColorRGB() Description: Get the RGB values of the selected color. 
+ColorSelect:SetColorHSV(h,s,v) Description: Set to a specific HSV color. 
+ColorSelect:SetColorRGB(r,g,b) Description: Set to a specific RGB color.
+EditBox:AddHistoryLine("text") Description: Add text to the edit history. 
+EditBox:ClearFocus() 
+EditBox:GetAltArrowKeyMode 
+EditBox:GetFont() Description: Returns the font, size, and flags currently used for display. 
+EditBox:GetFontObject 
+EditBox:GetHistoryLines() Description: Get the number of history lines for this edit box 
+EditBox:GetInputLanguage() Description: Get the input language (locale based not in-game) 
+EditBox:GetJustifyH 
+EditBox:GetJustifyV 
+EditBox:GetNumLetters() Description: Gets the number of letters in the box. 
+EditBox:GetNumber() 
+EditBox:GetShadowColor 
+EditBox:GetShadowOffset 
+EditBox:GetSpacing 
+EditBox:GetText() Description: Get the current text contained in the edit box. 
+EditBox:GetTextColor 
+EditBox:HighlightText([startPos,endPos]) Description: Set the highlight to all or some of the edit box text. 
+EditBox:Insert("text") Description: Insert text into the edit box. 
+EditBox:SetAltArrowKeyMode 
+EditBox:SetFocus() 
+EditBox:SetFont("font",size[,"flags"]) Description: Set the font to use for display. 
+EditBox:SetFontObject 
+EditBox:SetHistoryLines() Description: Set the number of history lines to remember. 
+EditBox:SetJustifyH 
+EditBox:SetJustifyV 
+EditBox:SetMaxBytes(maxBytes) Description: Set the maximum byte size for entered text. 
+EditBox:SetMaxLetters(maxLetters) Description: Set the maximum number of letters for entered text. 
+EditBox:SetNumber(number) 
+EditBox:SetShadowColor 
+EditBox:SetShadowOffset 
+EditBox:SetSpacing 
+EditBox:SetText("text") Description: Set the text contained in the edit box. 
+EditBox:SetTextColor(r,g,b) Description: Set the color of the text in the edit box. 
+EditBox:SetTextInsets(l,r,t,b) 
+EditBox:ToggleInputLanguage() 
+GameTooltip:AddDoubleLine(textL,textR,rL,gL,bL,rR,gR,bR) 
+GameTooltip:AddLine 
+GameTooltip:AppendText("text") Description: Append text to the end of the first line of the tooltip. 
+GameTooltip:ClearLines 
+GameTooltip:FadeOut 
+GameTooltip:GetAnchorType() Description: Returns the current anchoring type. 
+GameTooltip:IsOwned(frame) Description: Returns true if the tooltip is currently owned by the specified frame Description: Since 1.8. 
+GameTooltip:NumLines() Description: Get the number of lines in the tooltip. 
+GameTooltip:SetAction(slot) Description: Shows the tooltip for the specified action button. 
+GameTooltip:SetAuctionCompareItem("type",index[,offset]) 
+GameTooltip:SetAuctionItem("type",index) Description: Shows the tooltip for the specified auction item. 
+GameTooltip:SetAuctionSellItem 
+GameTooltip:SetBagItem 
+GameTooltip:SetBuybackItem 
+GameTooltip:SetCraftItem 
+GameTooltip:SetCraftSpell 
+GameTooltip:SetHyperlink(link) Description: Shows the tooltip for the specified hyperlink (usually item link). 
+GameTooltip:SetInboxItem(index) Description: Shows the tooltip for the specified mail inbox item. 
+GameTooltip:SetInventoryItem(unit,slot[,nameOnly]) 
+GameTooltip:SetLootItem 
+GameTooltip:SetLootRollItem(id) Description: Shows the tooltip for the specified loot roll item. 
+GameTooltip:SetMerchantCompareItem("slot"[,offset]) 
+GameTooltip:SetMerchantItem 
+GameTooltip:SetMinimumWidth(width) Description: (Formerly SetMoneyWidth) 
+GameTooltip:SetOwner 
+GameTooltip:SetPadding 
+GameTooltip:SetPetAction(slot) Description: Shows the tooltip for the specified pet action. 
+GameTooltip:SetPlayerBuff(buffIndex) Description: Direct the tooltip to show information about a player's buff. 
+GameTooltip:SetQuestItem 
+GameTooltip:SetQuestLogItem 
+GameTooltip:SetQuestLogRewardSpell 
+GameTooltip:SetQuestRewardSpell 
+GameTooltip:SetSendMailItem 
+GameTooltip:SetShapeshift(slot) Description: Shows the tooltip for the specified shapeshift form. 
+GameTooltip:SetSpell(spellId,spellbookTabNum) Description: Shows the tooltip for the specified spell. 
+GameTooltip:SetTalent(tabIndex,talentIndex) Description: Shows the tooltip for the specified talent. 
+GameTooltip:SetText("text",r,g,b[,alphaValue[,textWrap]]) Description: Set the text of the tooltip. 
+GameTooltip:SetTrackingSpell 
+GameTooltip:SetTradePlayerItem 
+GameTooltip:SetTradeSkillItem 
+GameTooltip:SetTradeTargetItem 
+GameTooltip:SetTrainerService 
+GameTooltip:SetUnit 
+GameTooltip:SetUnitBuff("unit",buffIndex[,raidFilter]) Description: Shows the tooltip for a unit's buff. 
+GameTooltip:SetUnitDebuff("unit"buffIndex[,raidFilter]) Description: Shows the tooltip for a unit's debuff.
+MessageFrame:AddMessage("text",r,g,b,a,holdTime) Description: Add a message to the frame which will fade eventually. 
+MessageFrame:GetFont 
+MessageFrame:GetFontObject 
+MessageFrame:GetJustifyH 
+MessageFrame:GetJustifyV 
+MessageFrame:GetShadowColor 
+MessageFrame:GetShadowOffset 
+MessageFrame:GetSpacing 
+MessageFrame:GetTextColor 
+MessageFrame:SetFont 
+MessageFrame:SetFontObject 
+MessageFrame:SetJustifyH 
+MessageFrame:SetJustifyV 
+MessageFrame:SetShadowColor 
+MessageFrame:SetShadowOffset 
+MessageFrame:SetSpacing 
+MessageFrame:SetTextColor 
+Minimap:GetPingPosition() Description: Get the last ping location. 
+Minimap:GetZoom() Description: Get the current zoom level. 
+Minimap:GetZoomLevels() Description: Get the maximum zoom level. 
+Minimap:PingLocation(x,y) Description: Perform a ping at the specified location. 
+Minimap:SetBlipTexture 
+Minimap:SetIconTexture 
+Minimap:SetMaskTexture 
+Minimap:SetZoom(level) Description: Set the current zoom level.
+Model:AdvanceTime() 
+Model:ClearFog() Description: Removes all fogging effects currently active in rendering. 
+Model:ClearModel() Description: Removes all geometry from the Model (i.e. makes it empty) 
+Model:GetFacing() Description: Returns the direction the model is facing. 
+Model:GetModelScale() Description: Returns the current mesh scaling factor. 
+Model:GetPosition() Description: Returns the current position of the mesh as x,y,z 
+Model:ReplaceIconTexture("texture") 
+Model:SetCamera(index) Description: Select a predefined camera. 
+Model:SetFacing(facing) Description: Set the direction that the model is facing. 
+Model:SetFogColor(r,g,b[,a]) Description: Set the fog color and enable fogging. 
+Model:SetFogFar(value) Description: Set the far-clipping plane distance for fogging. 
+Model:SetFogNear(value) Description: Set the near-clipping plane distance for fogging. 
+Model:SetLight(enabled[,omni,dirX,dirY,dirZ,ambIntensity[,ambR,ambG,ambB[,dirIntensity[,dirR,dirG,dirB]]]]) Description: Place the light source used for rendering 
+Model:SetModel("file") Description: Set the mesh that is displayed in the frame. 
+Model:SetModelScale(scale) Description: Sets the scale factor for the mesh before rendering. 
+Model:SetPosition(x,y,z) Description: Set the position of the mesh inside the frame's coordinate system. 
+Model:SetSequence(sequence) Description: Set the animation to be played. 
+Model:SetSequenceTime(sequence,time) 
+MovieFrame:EnableSubtitles 
+MovieFrame:StartMovie("filename") 
+MovieFrame:StopMovie 
+ScrollFrame:GetHorizontalScroll() 
+ScrollFrame:GetHorizontalScrollRange() 
+ScrollFrame:GetScrollChild 
+ScrollFrame:GetVerticalScroll() 
+ScrollFrame:GetVerticalScrollRange() 
+ScrollFrame:SetHorizontalScroll(offset) 
+ScrollFrame:SetScrollChild 
+ScrollFrame:SetVerticalScroll(offset) 
+ScrollFrame:UpdateScrollChildRect() 
+ScrollingMessageFrame:AddMessage("text"[,r,g,b[,id]]) Description: Add a message to the frame, with an optional color ID. 
+ScrollingMessageFrame:AtBottom() Description: Return true if frame is at the bottom. 
+ScrollingMessageFrame:Clear() Description: Clear all lines from the frame. 
+ScrollingMessageFrame:GetCurrentLine() 
+ScrollingMessageFrame:GetCurrentScroll() 
+ScrollingMessageFrame:GetFadeDuration 
+ScrollingMessageFrame:GetFading 
+ScrollingMessageFrame:GetFont() Description: Returns the font, size, and flags currently used for display. Description: New in 1.9. 
+ScrollingMessageFrame:GetFontObject 
+ScrollingMessageFrame:GetJustifyH 
+ScrollingMessageFrame:GetJustifyV 
+ScrollingMessageFrame:GetMaxLines() Description: Get the maximum number of lines the frame can display. 
+ScrollingMessageFrame:GetNumLinesDisplayed() 
+ScrollingMessageFrame:GetNumMessages() 
+ScrollingMessageFrame:GetShadowColor 
+ScrollingMessageFrame:GetShadowOffset 
+ScrollingMessageFrame:GetSpacing 
+ScrollingMessageFrame:GetTextColor 
+ScrollingMessageFrame:GetTimeVisible 
+ScrollingMessageFrame:PageDown() 
+ScrollingMessageFrame:PageUp() 
+ScrollingMessageFrame:ScrollDown() 
+ScrollingMessageFrame:ScrollToBottom() 
+ScrollingMessageFrame:ScrollToTop() 
+ScrollingMessageFrame:ScrollUp() 
+ScrollingMessageFrame:SetFadeDuration(seconds) Description: Set the fade duration. 
+ScrollingMessageFrame:SetFading 
+ScrollingMessageFrame:SetFont("font",size[,"flags"]) Description: Set the font to use for display Description: New in 1.9. 
+ScrollingMessageFrame:SetFontObject 
+ScrollingMessageFrame:SetJustifyH 
+ScrollingMessageFrame:SetJustifyV 
+ScrollingMessageFrame:SetMaxLines(lines) Description: Set the maximum number of displayed lines. 
+ScrollingMessageFrame:SetScrollFromBottom 
+ScrollingMessageFrame:SetShadowColor 
+ScrollingMessageFrame:SetShadowOffset 
+ScrollingMessageFrame:SetSpacing 
+ScrollingMessageFrame:SetTextColor 
+ScrollingMessageFrame:SetTimeVisible(seconds) Description: Sets how long lines remain visible. 
+ScrollingMessageFrame:UpdateColorByID(id,r,g,b) 
+SimpleHTML:GetFont 
+SimpleHTML:GetFontObject 
+SimpleHTML:GetJustifyH 
+SimpleHTML:GetJustifyV 
+SimpleHTML:GetShadowColor 
+SimpleHTML:GetShadowOffset 
+SimpleHTML:GetSpacing 
+SimpleHTML:GetTextColor 
+SimpleHTML:SetFont 
+SimpleHTML:SetFontObject 
+SimpleHTML:SetHyperlinkFormat("format") Description: Set the string.format format to use to display hyperlinks. 
+SimpleHTML:SetJustifyH 
+SimpleHTML:SetJustifyV 
+SimpleHTML:SetShadowColor 
+SimpleHTML:SetShadowOffset 
+SimpleHTML:SetSpacing 
+SimpleHTML:SetText("text") Description: Set the text to be displayed. 
+SimpleHTML:SetTextColor(r,g,b) Description: Set the color of displayed text.
+Slider:GetMinMaxValues() Description: Get the current bounds of the slider. 
+Slider:GetOrientation 
+Slider:GetValue() Description: Get the current value of the slider. 
+Slider:GetValueStep() Description: Get the current step size of the slider. 
+Slider:SetMinMaxValues(min,max) Description: Set the bounds of the slider. 
+Slider:SetOrientation 
+Slider:SetValue(value) Description: Set the value of the slider. 
+Slider:SetValueStep(value) Description: Set the step size of the slider.
+StatusBar:GetMinMaxValues() Description: Get the current bounds of the bar. 
+StatusBar:GetOrientation 
+StatusBar:GetStatusBarColor 
+StatusBar:GetStatusBarTexture 
+StatusBar:GetValue() Description: Get the current value of the bar. 
+StatusBar:SetMinMaxValues(min,max) Description: Set the bounds of the bar. 
+StatusBar:SetOrientation 
+StatusBar:SetStatusBarColor(r,g,b[,alpha]) Description: Set the color of the bar. 
+StatusBar:SetStatusBarTexture("file"[,"layer"]) Description: Sets the texture of the bar. 
+StatusBar:SetValue(value) Description: Set the value of the bar.
+CheckButton:GetChecked() Description: Get the status of the checkbox. 
+CheckButton:SetChecked([state]) Description: Set the status of the checkbox. 
+CheckButton:SetCheckedTexture("texture") Description: Set the texture to use for a checked box. 
+CheckButton:SetDisabledCheckedTexture("texture") Description: Set the texture to use for an unchecked box.
+LootButton:SetSlot(index) Description: Set which the item to loot if the button is clicked.
+PlayerModel:RefreshUnit() 
+PlayerModel:SetRotation(rotationRadians) 
+PlayerModel:SetUnit("unit") 
+DressUpModel:Dress() Description: Set the model to reflect the character's current inventory. 
+DressUpModel:TryOn("item") Description: Add the specified item to the model. 
+DressUpModel:Undress() Description: Set the model to reflect the character without inventory.
+TabardModel:CanSaveTabardNow() Description: Indicate if the tabard can be saved. 
+TabardModel:CycleVariation(variationIndex,delta) 
+TabardModel:GetLowerBackgroundFileName 
+TabardModel:GetLowerEmblemFileName 
+TabardModel:GetLowerEmblemTexture("textureName") 
+TabardModel:GetUpperBackgroundFileName 
+TabardModel:GetUpperEmblemFileName 
+TabardModel:GetUpperEmblemTexture("textureName") 
+TabardModel:InitializeTabardColors() 
+TabardModel:Save() Description: Save the tabard.
+FontString:GetFont() Description: Returns the font, size, and flags currently used for display. 
+FontString:GetFontObject 
+FontString:GetJustifyH 
+FontString:GetJustifyV 
+FontString:GetShadowColor 
+FontString:GetShadowOffset 
+FontString:GetSpacing 
+FontString:GetStringWidth() Description: Returns the width in pixels of the current string in the current font (without line wrapping). 
+FontString:GetText() Description: Get the displayed text. 
+FontString:GetTextColor() Description: Get the color of the displayed text. 
+FontString:SetAlphaGradient(start,length) Description: Create or remove an alpha gradient over the text. 
+FontString:SetFont("font",size[,"flags"]) Description: Set the font to use for display. 
+FontString:SetFontObject 
+FontString:SetJustifyH("direction") Description: Set the horizontal justification of this string. 
+FontString:SetJustifyV("direction") Description: Set the vertical justification of this string. 
+FontString:SetNonSpaceWrap(wrapFlag) Description: Set whether long strings without spaces are wrapped or truncated. 
+FontString:SetShadowColor 
+FontString:SetShadowOffset 
+FontString:SetSpacing 
+FontString:SetText("text") Description: Set the displayed text. 
+FontString:SetTextColor(r,g,b[,alpha]) Description: Set the color of the text. 
+FontString:SetTextHeight(pixelHeight) Description: Set the height of the text by scaling graphics (Note: Can distort text). 
+FontString:SetVertexColor(r,g,b[,alpha]) 
+Texture:GetBlendMode 
+Texture:GetTexture() Description: Gets this texture's current texture path. 
+Texture:GetVertexColor 
+Texture:SetBlendMode 
+Texture:SetDesaturated(flag) Description: Set whether this texture should be displayed with no saturation (IMPORTANT: This has a return value) 
+Texture:SetGradient("orientation",minR,minG,minB,maxR,maxG,maxB) 
+Texture:SetGradientAlpha("orientation",minR,minG,minB,minA,maxR,maxG,maxB,maxA) 
+Texture:SetTexCoord(minX,maxX,minY,maxY or ULx,ULy,LLx,LLy,URx,URy,LRx,LRy) Description: Set the corner coordinates for texture display. 
+Texture:SetTexture("texturePath" or r,g,b [,a]) Description: Sets the texture to be displayed 
+Texture:SetVertexColor(r,g,b[,alpha]) 

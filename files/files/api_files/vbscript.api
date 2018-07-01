@@ -1,0 +1,354 @@
+##
+# WindowsScriptingHost API, as fetched from MSDN. imJuli2016, Marcedo@HabmalneFrage.de {VBS}
+##
+#~--- Objects {VBS}
+Scripting.Signer()The Scripting.Signer object enables an author to sign a script \t\nwith a digital signature and a recipient to verify the signature's authenticity and trustworthiness Signer.SignFile(File, Cert, Store) {VBS}
+Arguments()Returns the WshArguments object - a collection of arguments.\t\nobject.Arguments (VBS)
+WScript()Provides access to root object for the Windows Script Host object model {VBS}
+WshArguments()Provides access to the entire collection of command-line parameters \t\n in the order in which they were originally entered {VBS}
+WshEnvironment()Provides access to the collection of Windows environment variables {VBS}
+WshController()Provides access to the CreateScript method (for creating a remote script process) {VBS}
+WshNamed()Provides access to the named arguments from the command line {VBS}
+WshNetwork()Provides access to the shared resources on the network to which your computer is connected WScript.Echo "User Name = " & WshNetwork.UserName {VBS}
+WshRemote()Provides access to the remote script process. **  {VBS}
+WshRemoteError()Provides access to the error information available when a \t\nremote script (a WshRemote object) terminates as a result of a script error {VBS}
+WshScriptExec()Provides status information about a script run with Exec along \t\nwith access to the StdIn, StdOut, and StdErr streams {VBS}
+WshShell()Provides access to the native Windows shell oShellLink = WshShell.CreateShortcut(strDesktop & "\Shortcut Script.lnk") {VBS}
+WshShortcut()Allows you to create a shortcut programmatically {VBS}
+WshSpecialFolders()Provides access to the collection of Windows special folders {VBS}
+WshUnnamed()Provides access to the unnamed arguments from the command line {VBS}
+WshUrlShortcut()Allows you to create a shortcut to an Internet resource programmatically {VBS}
+
+#~---- Functions {VBS}
+Abs(number)Returns the absolute value of a number.\t\nAbs {VBS}
+Array(arglist)Returns a Variant containing an array.  **\t\nArray {VBS}
+Asc(string)Returns the ANSI character code corresponding to the first letter in a string. **\t\nAsc {VBS}
+Atn(number)Returns the arctangent of a number. **\t\nAtn {VBS}
+CBool(expression)Returns an expression that has been converted to a Variant of subtype Boolean.\t\nCBool {VBS}
+CByte(expression)Returns an expression that has been converted to a Variant nof subtype Byte.\t\nCByte {VBS}
+CCur(expression)Returns an expression that has been converted to a Variant of subtype Currency.\t\nCCur {VBS}
+CDate(date)Returns an expression that has been converted to a Variant of subtype Date.\t\nCDate {VBS}
+CDbl(expression)Returns an expression that has been converted to a Variant nof subtype Double.\t\nCDbl {VBS}
+Chr(charcode)Returns the character associated with the specified ANSI character code. **\t\nChr {VBS}
+CInt(expression)Returns an expression that has been converted to a Variant of subtype Integer. **\t\nCInt {VBS}
+CLng(expression)Returns an expression that has been converted to a Variant of subtype Long. **\t\nCLng {VBS}
+Conversion()The following table lists the conversion functions in VBScript. {VBS}
+Cos(number)Returns the cosine of an angle.\t\nCos {VBS}
+CSng(expression)Returns an expression that has been converted to a Variant of subtype Single.\t\nCSng {VBS}
+CStr(expression)Returns an expression that has been converted to a Variant of subtype String.\t\nCStr {VBS}
+Date(date)Returns the current system date.\t\nDate {VBS}
+DateAdd(interval,number,date)Returns a date to which a specified time interval has been added.\t\nDateAdd {VBS}
+DateDiff(interval, date1, date2 [,firstdayofweek[, firstweekofyear]])Returns the number of intervals between two dates.\t\nDateDiff {VBS}
+DatePart(interval, date[, firstdayofweek[, firstweekofyear]])Returns the specified part of a given date.\t\nDatePart {VBS}
+DateSerial(year,month,day)Returns a Variant of subtype Date for a specified year, month, and day.\t\nDateSerial {VBS}
+DateValue(date)Returns a Variant of subtype Date.\t\nDateValue {VBS}
+Day(date)Returns a whole number between 1 and 31, inclusive, representing the day of the month.\t\nDay {VBS}
+Escape(charString)Encodes a string so it contains only ASCII characters. **\t\nEscape {VBS}
+Eval(expression)Evaluates an expression and returns the result. **\t\nEval {VBS}
+Exp(number)Returns e the base of natural logarithms raised to a power. **\t\nExp {VBS}
+Filter(InputStrings,Value,Include,Compare)Returns a zero-based array containing a subset of a string array based on a specified filter criteria.\t\nFilter {VBS}
+FormatCurrency(Expression,NumDigitsAfterDecimal,IncludeLeadingDigit,UseParensForNegativeNumbers,GroupDigits)Returns an expression formatted as a currency value using \t\nthe currency symbol defined in the system control panel.  **\t\n[,UseParensForNegativeNumbers [,GroupDigits]]]]
+FormatDateTime(Date,NamedFormat)Returns an expression formatted as a date or time.\t\nFormatDateTime {VBS}
+FormatNumber(Expression,NumDigitsAfterDecimal,IncludeLeadingDigit,UseParensForNegativeNumbers,GroupDigits)Returns an expression formatted as a number.  **\t\n[,UseParensForNegativeNumbers [,GroupDigits]]]]
+FormatPercent(Expression,NumDigitsAfterDecimal,IncludeLeadingDigit,UseParensForNegativeNumbers,GroupDigits)Returns an expression formatted as a percentage  with a trailing % character.  **\t\n[,UseParensForNegativeNumbers [,GroupDigits]]]]
+GetLocale()Returns the current locale ID value.\t\nGetLocale {VBS}
+GetRef(object,event,procname)Returns a reference to a procedure that can be bound to an event.\t\nSet object.eventname = GetRef {VBS}
+Hex(number)Returns a string representing the hexadecimal value of a number.\t\nHex {VBS}
+Hour(time)Returns a whole number between 0 and 23, inclusive, representing \t\nthe hour of the day.\t\nHour {VBS}
+InputBox(prompt[, title][, default][, xpos][, ypos][, helpfile, context])Displays a prompt in a dialog box, waits for the user to input text or click a button, and returns the contents of the text box.\t\nInputBox {VBS}
+InStr([start, ]string1, string2[, compare])Returns the position of the first occurrence of one string within another. **\t\nInStr {VBS}
+InStrRev(string1, string2[, start[, compare]])Returns the position of an occurrence of one string within another, from the end of string.  **\t\nInStrRev {VBS}
+Int()Returns the integer portion of a number.\t\n {VBS}
+IsArray(varname)Returns a Boolean value indicating whether a variable is an array.\t\nIsArray {VBS}
+IsDate(expression)Returns a Boolean value indicating whether an expression can be converted to a date.\t\nIsDate {VBS}
+IsEmpty(expression)Returns a Boolean value indicating whether a variable has been initialized.\t\nIsEmpty {VBS}
+IsNull(expression)Returns a Boolean value that indicates whether an expression contains no valid data\t\nIsNull {VBS}
+IsNumeric(expression)Returns a Boolean value indicating whether an expression can be evaluated as a number.\t\nIsNumeric {VBS}
+IsObject(expression)Returns a Boolean value indicating whether an expression references a valid Automation object.\t\nIsObject {VBS}
+Join(list[, delimiter])Returns a string created by joining a number of substrings contained in an array.\t\nJoin {VBS}
+LBound(arrayname[, dimension])Returns the smallest available subscript for the indicated dimension of an array.\t\nLBound {VBS}
+LCase(string)Returns a string that has been converted to lowercase.\t\nLCase {VBS}
+Left(string,length)Returns a specified number of characters from the left side of a string. **\t\nLeft {VBS}
+Len(string,varname)Returns the number of characters in a string or the number of bytes required to store a variable.  **\t\nLen {VBS}
+LoadPicture(picturename)Returns a picture object. Available only on 32-bit platforms.\t\nLoadPicture {VBS}
+Log(number)Returns the natural logarithm of a number.\t\nLog {VBS}
+Trim(string)Trim Whitespace\t\nTrim{VBS}
+Mid(string,start,length)Returns a specified number of characters from a string. **\t\nMid {VBS}
+Minute(time)Returns a whole number between 0 and 59, inclusive, representing the minute of the hour.\t\nMinute {VBS}
+Month(date)Returns a whole number between 1 and 12, inclusive, representing the month of the year.\t\nMonth {VBS}
+MonthName(month[, abbreviate])Returns a string indicating the specified month.\t\nMonthName {VBS}
+MsgBox(prompt[, buttons][, title][, helpfile, context])Displays a message in a dialog box, waits for the user to click a button,\t\n and returns a value indicating which button the user clicked.\t\nMsgBox {VBS}
+Now()Returns the current date and time according to the setting of your computer's system date and time.\t\nNow {VBS}
+Oct(number)Returns a string representing the octal value of a number.\t\nOct {VBS}
+Replace(expression, find, replacewith[, start[, count[, compare]]])Returns a string in which a specified substring has been replaced with another substring a specified number of times.\t\nReplace {VBS}
+RGB(red,green,blue)Returns a whole number representing an RGB color value.\t\nRGB {VBS}
+Right(string,length)Returns a specified number of characters from the right side \t\nof a string. **\t\nRight {VBS}
+Rnd(number)Returns a random number. **\t\nRnd{VBS}
+Round(expression,numdecimalplaces)Returns a number rounded to a specified number of decimal places. **\t\nRound {VBS}
+ScriptEngine()Returns a string representing the scripting language in use.\t\nScriptEngine {VBS}
+ScriptEngineBuildVersion()Returns the build version number of the scripting engine in use.\t\nScriptEngineBuildVersion {VBS}
+ScriptEngineMajorVersion()Returns the major version number of the scripting engine in use.\t\nScriptEngineMajorVersion {VBS}
+ScriptEngineMinorVersion()Returns the minor version number of the scripting engine in use.\t\nScriptEngineMinorVersion {VBS}
+Second(time)Returns a whole number between 0 and 59, inclusive, representing \t\nthe second of the minute.\t\nSecond {VBS}
+SetLocale(lcid)Sets the global locale and returns the previous locale.\t\nSetLocale {VBS}
+Sgn(number)Returns an integer indicating the sign of a number.\t\nSgn {VBS}
+Sin(number)Returns the sine of an angle.\t\nSin {VBS}
+Space(number)Returns a string consisting of the specified number of spaces.\t\nSpace {VBS}
+Split(expression[, delimiter[, count[, compare]]])Returns a zero-based, one-dimensional array containing a specified \t\nnumber of substrings.\t\nSplit {VBS}
+Sqr(number)Returns the square root of a number.\t\nSqr {VBS}
+StrComp(string1, string2[, compare])Returns a value indicating the result of a string comparison.\t\nStrComp {VBS}
+String(number, character)Returns a repeating character string of the length specified.\t\nString {VBS}
+StrReverse(string1)Returns a string in which the character order of a specified \t\nstring is reversed.\t\nStrReverse {VBS}
+Tan(number)Returns the tangent of an angle.\t\nTan {VBS}
+Time()Returns a Variant of subtype Date indicating the current system time.\t\nTime {VBS}
+Timer(midnight)Returns the number of seconds that have elapsed since 12:00 AM.\t\nTimer {VBS}
+TimeSerial(hour,minute,second)Returns a Variant of subtype Date containing the time for \t\na specific hour, minute, and second.\t\nTimeSerial {VBS}
+TimeValue(time)Returns a Variant of subtype Date containing the time.\t\nTimeValue {VBS}
+TypeName(varname)Returns a string that provides Variant subtype information about a variable.\t\nTypeName {VBS}
+UBound(arrayname[, dimension])Returns the largest available subscript for the indicated dimension of an array.\t\nUBound {VBS}
+UCase(string)Returns a string that has been converted to uppercase.\t\nUCase {VBS}
+Unescape(charString)Decodes a string encoded with the Escape function.\t\nUnescape {VBS}
+VarType(varname)Returns a value indicating the subtype of a variable. **\t\nVarType {VBS}
+Weekday(date,firstdayofweek)Returns a whole number representing the day of the week.\t\nWeekday {VBS}
+WeekdayName(weekday,abbreviate,firstdayofweek)Returns a string indicating the specified day of the week.\t\nWeekdayName {VBS}
+Year(date)Returns a whole number representing the year.\t\nYear {VBS}
+FormatCurrency(Expression,NumDigitsAfterDecimal,IncludeLeadingDigit,UseParensForNegativeNumbers,GroupDigits)Returns an expression formatted as a currency value using \t\nthe currency symbol defined in the system control panel.  **\t\nFormatCurrency  {VBS}
+Math()The following table lists the VBScript math functions.\t\n {VBS}
+Conversion()The following table lists the conversion functions in VBScript. {VBS}
+
+#~---- properties {vbs}
+arguments@@sets the arguments for a shortcut, or identifies a shortcut's arguments.\t\nobject.arguments {vbs}
+atendofline@@returns a boolean value indicating whether the end of a line in an input stream has been reached.\t\nobject.atendofline  {vbs}
+atendofstream@@returns a boolean value indicating whether the end of an input stream has been reached.\t\nobject.atendofstream  {vbs}
+buildversion@@returns the windows script host build version number.\t\nobject.buildversion {vbs}
+character@@reports the specific character in a line of code that contains an error.\t\nobject.character {vbs}
+column@@returns the column number of the current character position \t\nin an input stream.\t\nobject.column  {vbs}
+computername@@returns the name of the computer system.\t\nobject.computername  {vbs}
+currentdirectory@@retrieves or changes the current active directory.\t\nobject.currentdirectory {vbs}
+description@@returns a shortcut's description.\t\nobject.description  {vbs}
+description@@contains a brief description of the error that caused the remote script to terminate.\t\nobject.description {vbs}
+error@@exposes the wshremoteerror object, which holds information \t\nabout the error that caused the remote script to terminate prematurely.\t\nobject.error {vbs}
+interactive@@sets the script mode, or identifies the script mode.\t\nobject.interactive  {vbs}
+length@@returns the number of command-line parameters belonging to a script \t\n(the number of items in an argument's collection).\t\nobject.length  {vbs}
+length@@returns the number of windows environment variables on the local computer system\t\n(the number of items in an environment collection).\t\nobject.length  {vbs}
+length@@returns the number of windows special folders on the local computer system\t\n(the number of items in a specialfolders collection).\t\nobject.length  {vbs}
+exitcode@@returns the exit code set by a script or program run using the exec@@ method.\t\nobject.exitcode {vbs}
+fullname@@returns the fully qualified path of the host executable (cscript.exe or wscript.exe).\t\nobject.fullname  {vbs}
+fullname@@returns the fully qualified path of the shortcut object's target.\t\nobject.fullname  {vbs}
+line@@identifies the line in a script that contains an error.\t\nobject.line {vbs}
+name@@returns the name of the wscript object (the host executable file).\t\nobject.name  {vbs}
+named@@returns the wshnamed object (a collection of named arguments).\t\nobject.named {vbs}
+number@@reports the error number representing a script error.\t\nobject.number {vbs}
+path@@returns the name of the directory containing the host executable (cscript.\t\nexe or wscript.exe).\t\nobject.path  {vbs}
+processid@@the process id (pid) for a process started with the wshscriptexec object.\t\nobject.processid {vbs}
+relativepath@@assigns a relative path to a shortcut, or identifies the relative path of a shortcut.\t\nobject.relativepath {vbs}
+scriptfullname@@returns the full path of the currently running script.\t\nobject.scriptfullname {vbs}
+scriptname@@returns the file name of the currently running script.\t\nobject.scriptname {vbs}
+source@@identifies the com object responsible for causing the script error.\t\nobject.source {vbs}
+sourcetext@@contains the line of source code that caused an error.\t\nobject.sourcetext {vbs}
+status@@reports the current status of the remote script.\t\nobject.status {vbs}
+targetpath@@the path to the shortcut's executable.\t\nobject.targetpath {vbs}
+unnamed@@returns the wshunnamed object (a collection of unnamed arguments).\t\nobject.unnamed {vbs}
+userdomain@@returns a user's domain name.\t\nobject.userdomain {vbs}
+username@@returns the name of a user.\t\nobject.username  {vbs}
+version@@returns the version of windows script host.\t\nobject.version  {vbs}
+
+#~--- Methods {VBS}
+AddPrinterConnection(strLocalName,strRemoteName,bUpdateProfile,strUser,strPassword)Adds a remote MS-DOS-based printer connection to your computer system.\t\nobject.AddPrinterConnection(strLocalName, strRemoteName[,bUpdateProfile][,strUser][,strPassword]) {VBS}
+AddWindowsPrinterConnection(strPrinterPath,strDriverName,strPort)Adds a Windows-based printer connection to your computer system. Windows NT/2000:\t\nobject.AddWindowsPrinterConnection(strPrinterPath) {VBS}
+AppActivate(title)Activates an application window. **\t\nobject.AppActivate title  {VBS}
+Close()Closes a text stream.\t\nobject.Close  {VBS}
+ConnectObject(objEventSource,strPrefix)Connects the object's event sources to functions with a given prefix.\t\nobject.ConnectObject(objEventSource, strPrefix) {VBS}
+Count()Returns the number of members in an object.\t\nobject.Count {VBS}
+CreateObject(strProgID,strPrefix)Creates a COM object. **\t\nobject.CreateObject(strProgID[,strPrefix])  {VBS}
+CreateScript(Commandline,MachineName)Creates a WshRemote object.\t\nobject.CreateScript(CommandLine,[MachineName]) {VBS}
+CreateShortcut(strPathname)Creates a new shortcut, or opens an existing shortcut. **\t\nobject.CreateShortcut(strPathname)  {VBS}
+DisconnectObject(obj)Disconnects a connected object's event sources.\t\nobject.DisconnectObject(obj) {VBS}
+Echo(Arg1,,Arg2,,Arg3,...)Outputs text to either a message box or the command console window.\t\nobject.Echo [Arg1] [,Arg2] [,Arg3] ...  {VBS}
+EnumNetworkDrives(objDrives)Returns the current network drive mapping information.\t\nobjDrives = object.EnumNetworkDrives {VBS}
+EnumPrinterConnections(objPrinters)Returns the current network printer mapping information.\t\nobjPrinters = object.EnumPrinterConnections  {VBS}
+Exec(strCommand)Runs an application in a child command-shell, providing access to the StdIn/Out/Err streams.\t\nobject.Exec(strCommand) {VBS}
+Execute()Starts execution of a remote script object.\t\nobject.Execute {VBS}
+Exists(Key)Indicates whether a specific key value exists in the WshNamed object.\t\nobject.Exists(key) {VBS}
+ExpandEnvironmentStrings(strString)Returns an environment variable's expanded value.\t\nobject.ExpandEnvironmentStrings(strString)  {VBS}
+GetObject(strPathname,strProgID,strPrefix)Retrieves an existing object with the specified ProgID, or creates a new one from a file.\t\nobject.GetObject(strPathname [,strProgID], [strPrefix])  {VBS}
+getResource(resourceID)Returns the value of a resource defined with the <resource> element.\t\ngetResource(resourceID)  {VBS}
+LogEvent(intType,strMessage,strTarget)Adds an event entry to a log file.\t\nobject.LogEvent(intType, strMessage [,strTarget])  {VBS}
+MapNetworkDrive(strLocalName,strRemoteName,bUpdateProfile,strUser,strPassword)Adds a shared network drive to your computer system.\t\nobject.MapNetworkDrive(strLocalName, strRemoteName, [bUpdateProfile], [strUser], [strPassword]) {VBS}
+Popup(strText,nSecondsToWait,strTitle,nType,intButton)Displays text in a pop-up message box.\t\nintButton = object.Popup(strText,[nSecondsToWait],[strTitle],[nType])  {VBS}
+Quit(intErrorCode)Forces script execution to stop at any time.\t\nobject.Quit([intErrorCode]) {VBS}
+Read(characters)Returns a specified number of characters from an input stream.\t\nobject.Read(characters)  {VBS}
+ReadAll()Returns all characters from an input stream.\t\nobject.ReadAll  {VBS}
+ReadLine()Returns an entire line from an input stream. **\t\nobject.ReadLine  {VBS}
+RegDelete(strName)Deletes a key or one of its values from the registry.\t\nobject.RegDelete(strName) {VBS}
+RegRead(strName)Returns the value of a key or value-name from the registry.\t\nobject.RegRead(strName)  {VBS}
+RegWrite(strName,anyValue,strType)Creates a new key, adds another value-name to an existing key (and assigns it a value),\t\nor changes the value of an existing value-name. **\t\nobject.RegWrite(strName, anyValue [,strType]) {VBS}
+Remove(strName)Removes an existing environment variable.\t\nobject.Remove(strName)  {VBS}
+RemoveNetworkDrive(strName,bForce,bUpdateProfile)Removes a shared network drive from your computer system.\t\nobject.RemoveNetworkDrive(strName, [bForce], [bUpdateProfile]) {VBS}
+RemovePrinterConnection(strName,bForce,bUpdateProfile)Removes a shared network printer connection from your computer system.\t\nobject.RemovePrinterConnection(strName, [bForce], [bUpdateProfile]) {VBS}
+Run(strCommand,intWindowStyle,bWaitOnReturn)Runs a program in a new process.\t\nobject.Run(strCommand, [intWindowStyle], [bWaitOnReturn])  {VBS}
+Save()Saves a shortcut object to disk.\t\nobject.Save  {VBS}
+SendKeys(string)Sends one or more keystrokes to the active window (as if typed on the keyboard).**\t\nobject.SendKeys(string) {VBS}
+SetDefaultPrinter(strPrinterName)Assigns a remote printer the role Default Printer.\t\nobject.SetDefaultPrinter(strPrinterName) {VBS}
+ShowUsage()Makes a script self-documenting by displaying information about how it should be used.\t\n**\t\nobject.ShowUsage {VBS}
+Sign(FileExtension,Text,Certificate,Store)Signs a script stored in a string.\t\nObject.Sign (FileExtension, Text, Certificate, Store) {VBS}
+SignFile(FileName,Certificate,Store)Signs a script using a digital signature.\t\nObject.SignFile (FileName, Certificate, Store) {VBS}
+Skip(characters)Skips a specified number of characters when reading from an \t\ninput text stream.\t\nobject.Skip(characters)  {VBS}
+SkipLine()Skips the next line when reading from an input text stream.\t\nobject.SkipLine  {VBS}
+Sleep(intTime)Suspends script execution for a specified length of time, then continues execution. **\t\nobject.Sleep(intTime)  {VBS}
+Terminate()Instructs the script engine to end the process started by the Exec method.\t\nobject.Terminate {VBS}
+Verify(FileExtension,Text,ShowUI)Verifies a digital signature retrieved as a string. **\t\nobject.Verify (FileExtension, Text, ShowUI) {VBS}
+VerifyFile(FileName,ShowUI)Verifies the digital signature encapsulated in a script. **\t\nObject.VerifyFile (FileName, ShowUI) {VBS}
+Write(strText)Sends a string to an output stream.\t\nobject.Write(strText)  {VBS}
+WriteBlankLines(intLines)Sends a specified number of newline characters to an output stream.\t\nobject.WriteBlankLines(intLines)  {VBS}
+WriteLine(strText)Sends a string with a newline character to an output stream.\t\nobject.WriteLine([strText])  {VBS}
+Status(WshRunning,,,,WshFinished,,,)Provides status information about a script run with the Exec method.\t\nObject.Status {VBS}
+Item(natIndex)Exposes a specified item from a collection.\t\nObject.Item(natIndex)  {VBS}
+Item(key)Provides access to the items in the WshNamed object.\t\nObject.Item(key) {VBS}
+Item(key)Returns an item using a zero-based index.\t\nObject.Item(key) {VBS}
+Line(strStream)Returns the current line number in an input stream.\t\nobject.strStream.Line  {VBS}
+Hotkey(strHotkey,KeyModifier,KeyName)Assigns a key-combination to a shortcut, or identifies the \t\nkey-combination assigned to a shortcut. **\t\nobject.Hotkey = strHotkey {VBS}
+IconLocation(strIconLocation)Assigns an icon to a shortcut, or identifies the icon assigned to a shortcut.\t\nobject.IconLocation = strIconLocation  {VBS}
+Environment(strType)Returns the WshEnvironment object (a collection of environment variables). **\t\nobject.Environment ([strType])  {VBS}
+WindowStyle(intWindowStyle)Assigns a window style to a shortcut, or identifies the type \t\nof window style used by a shortcut.\t\nobject.WindowStyle = intWindowStyle {VBS}
+WorkingDirectory(strWorkingDirectory)Assign a working directory to a shortcut, or identifies the \t\nworking directory used by a shortcut.\t\nobject.WorkingDirectory = strWorkingDirectory {VBS}
+SpecialFolders(objWshSpecialFolders)Returns a SpecialFolders object (a collection of special folders).\t\nobject.SpecialFolders(objWshSpecialFolders)  {VBS}
+stderr@@exposes the write-only error output stream for the current script.\t\nobject.stderr  {vbs}
+stderr@@provides access to the stderr output stream of the exec object.\t\nobject.stderr {vbs}
+stdin@@exposes the read-only input stream for the current script.\t\nobject.stdin  {vbs}
+stdout@@exposes the write-only output stream for the current script.\t\nobject.stdout  {vbs}
+
+#~--- Events {VBS}
+_End()Event that is fired when the remote script completes.\t\nvar WshController = new ActiveXObject("WSHController"),\t\nvar RemoteProc = WshController.CreateScript("app.wsf", "remotemachine"),\t\nWScript.ConnectObject(RemoteProc, "RemoteProc_"),\t\nvar Done = false,\t\nRemoteProc.Execute(),\t\nwhile (!Done)\t\nWScript.Sleep(100),\t\nfunction RemoteProc_End()\t\n{\t\nWScript.Echo("The process has ended"),\t\nDone = true,\t\n}\t\nfunction RemoteProc_Error()\t\n{\t\nWScript.Echo("An error has occurred: " + RemoteProc.Error.Description),\t\nDone = true,\t\n}\t\nfunction RemoteProc_Start()\t\n{\t\nWScript.Echo("The process has started"),\t\n} {VBS}
+_Error()Event that is fired when an error occurs in the remote script.\t\nObject_Error {VBS}
+_Start()Event that is fired when the remote script begins executing.\t\nObject_Start {VBS}
+
+#~--xml
+<description>
+<example>
+<job
+id=
+<named
+name=
+helpstring=
+type=
+required=
+<object>
+guid=
+progID=
+hookevents=
+<package>
+<reference>
+version=
+<resource>
+<runtime>
+<script>
+language=
+src=
+<unnamed>
+many=
+<usage>
+
+#https://msdn.microsoft.com/de-de/library/microsoft.visualbasic.constants_fields(v=vs.110).aspx
+vbAbort@@Indicates that the Abort button was clicked in a message box. Returned by the MsgBox function.
+vbAbortRetryIgnore@@Indicates that the Abort, Retry, and Ignore buttons will be displayed when the MsgBox function is called.
+vbApplicationModal@@Indicates that the message box will be displayed as a modal dialog box when the MsgBox function is called.
+vbArchive@@Indicates that the file has changed since the last backup operation for file-access functions.
+vbArray@@Indicates that the type of a variant object is an array. Returned by the VarType function.
+vbBack@@Represents a backspace character for print and display functions.
+vbBinaryCompare@@Specifies that a binary comparison should be performed when comparison functions are called.
+vbBoolean@@Indicates that the type of a variant object is Boolean. Returned by the VarType function.
+vbByte@@Indicates that the type of a variant object is Byte. Returned by the VarType function.
+vbCancel@@Indicates that the Cancel button was clicked in a message box. Returned by the MsgBox function.
+vbCr@@Represents a carriage-return character for print and display functions.
+vbCritical@@Indicates that the critical message icon will be displayed when the MsgBox function is called.
+vbCrLf@@Represents a carriage-return character combined with a linefeed character for print and display functions.
+vbCurrency@@Indicates that the type of a variant object is Currency. Returned by the VarType function.
+vbDate@@Indicates that the type of a variant object is Date. Returned by the VarType function.
+vbDecimal@@Indicates that the type of a variant object is Decimal. Returned by the VarType function.
+vbDefaultButton1@@Indicates that the leftmost button is selected as the default button when the message box appears.
+vbDefaultButton2@@Indicates that the second button from the left is selected as the default button when the message box appears.
+vbDefaultButton3@@Indicates that the third button from the left is selected as the default button when the message box appears.
+vbDirectory@@Indicates that the file is a directory or folder for file-access functions.
+vbDouble@@Indicates that the type of a variant object is Double. Returned by the VarType function.
+vbEmpty@@Indicates that the type of a variant object is Empty. Returned by the VarType function.
+vbExclamation@@Indicates that the exclamation icon will be displayed when the MsgBox function is called.
+vbFalse@@Indicates that a Boolean value of False should be used when number-formatting functions are called.
+vbFirstFourDays@@Indicates that the first week of the year that has at least four days should be used when date-related functions are called.
+vbFirstFullWeek@@Indicates that the first full week of the year should be used when date-related functions are called.
+vbFirstJan1@@Indicates that the week of the year in which January 1 occurs should be used when date-related functions are called.
+vbFormFeed@@Represents a form-feed character for print functions.
+vbFriday@@Specifies that Friday should be used as the first day of the week when date-related functions are called.
+vbGeneralDate@@Indicates that the general date format for the current culture should be used when the FormatDateTime function is called.
+vbGet@@Specifies that a property value should be retrieved when the CallByName function is called.
+vbHidden@@Indicates that the file is a hidden file for file-access functions.
+vbHide@@Indicates that the window style is hidden for the invoked program when the Shell function is called.
+vbHiragana@@Indicates Hiragana characters should be converted to Katakana characters when the StrConv function is called.
+vbIgnore@@Indicates that the Ignore button was clicked in a message box. Returned by the MsgBox function.
+vbInformation@@Indicates that the information icon will display when the MsgBox function is called.
+vbInteger@@Indicates that the type of a variant object is Integer. Returned by the VarType function.
+vbKatakana@@Indicates that Katakana characters should be converted to Hiragana characters when the StrConv function is called.
+vbLet@@Indicates that a property value should be set to an object instance when the CallByName function is called.
+vbLf@@Represents a linefeed character for print and display functions.
+vbLinguisticCasing@@Indicates that characters should be converted to use linguistic rules for casing instead of file system rules for casing to when the StrConv function is called.
+vbLong@@Indicates the type of a variant object is Long. Returned by the VarType function.
+vbLongDate@@Indicates that the long date format for the current culture should be used when the FormatDateTime function is called.
+vbLongTime@@Indicates that the long time format for the current culture should be used when the FormatDateTime function is called.
+vbLowerCase@@Indicates that characters should be converted to lowercase when the StrConv function is called.
+vbMaximizedFocus@@Indicates that the window style is maximized with focus for the invoked program when the Shell function is called.
+vbMethod@@Specifies that a method should be called when the CallByName function is called.
+vbMinimizedFocus@@Indicates that the window style is minimized with focus for the invoked program when the Shell function is called.
+vbMinimizedNoFocus@@Indicates that the window style is minimized without focus for the invoked program when the Shell function is called.
+vbMonday@@Specifies that Monday should be used as the first day of the week when date-related functions are called.
+vbMsgBoxHelp@@Indicates that the Help button will be displayed when the MsgBox function is called.
+vbMsgBoxRight@@Indicates that text will be right-aligned when the MsgBox function is called.
+vbMsgBoxRtlReading@@Indicates that right-to-left reading text (Hebrew and Arabic systems) will be displayed when the MsgBox function is called.
+vbMsgBoxSetForeground@@Indicates that the message box will display in the foreground when the MsgBox function is called.
+vbNarrow@@Indicates that wide (double-byte) characters should be converted to narrow (single-byte) characters when the StrConv function is called.
+vbNewLine@@Represents a newline character for print and display functions.
+vbNo@@Indicates that the No button was clicked in a message box. Returned by the MsgBox function.
+vbNormal@@Indicates that the file is a normal file for file-access functions.
+vbNormalFocus@@Indicates that the window style is normal with focus for the invoked program when the Shell function is called.
+vbNormalNoFocus@@Indicates that the window style is normal without focus for the invoked program when the Shell function is called.
+vbNull@@Indicates that the type of a variant object is Nothing. Returned by the VarType function.
+vbNullChar@@Represents a null character for print and display functions.
+vbNullString@@Represents a zero-length string for print and display functions, and for calling external procedures.
+vbObject@@Indicates that the type of a variant object is Object. Returned by the VarType function.
+vbObjectError@@Represents the object error number. User-defined error numbers should be greater than this value.
+vbOK@@Indicates that the OK button was clicked in a message box. Returned by the MsgBox function.
+vbOKCancel@@Indicates that the OK and Cancel buttons will be displayed when the MsgBox function is called.
+vbOKOnly@@Indicates that only the OK button will be displayed when the MsgBox function is called.
+vbProperCase@@Indicates that the first letter of every word in a string should be converted to uppercase and the remaining characters to lowercase when the StrConv function is called.
+vbQuestion@@Indicates that the question icon will be displayed when the MsgBox function is called.
+vbReadOnly@@Indicates that the file is a read-only file for file-access functions.
+vbRetry@@Indicates that the Retry button was clicked in a message box. Returned by the MsgBox function.
+vbRetryCancel@@Indicates that the Retry and Cancel buttons will be displayed when the MsgBox function is called.
+vbSaturday@@Specifies that Saturday should be used as the first day of the week when date-related functions are called.
+vbSet@@Indicates that a property value should be set when the CallByName function is called.
+vbShortDate@@Indicates that the short-date format for the current culture should be used when the FormatDateTime function is called.
+vbShortTime@@Indicates that the short-time format for the current culture should be used when the FormatDateTime function is called.
+vbSimplifiedChinese@@Indicates that characters should be converted to Simplified Chinese when the StrConv function is called.
+vbSingle@@Indicates that the type of a variant object is Single. Returned by the VarType function.
+vbString@@Indicates that the type of a variant object is String. Returned by the VarType function.
+vbSunday@@Specifies that Sunday should be used as the first day of the week when date-related functions are called.
+vbSystem@@Indicates that the file is a system file for file-access functions.
+vbSystemModal@@Indicates that the message box will be displayed as a modal dialog box when the MsgBox function is called.
+vbTab@@Represents a tab character for print and display functions.
+vbTextCompare@@Indicates that a text comparison should be performed when comparison functions are called.
+vbThursday@@Specifies that Thursday should be used as the first day of the week when date-related functions are called.
+vbTraditionalChinese@@Indicates that characters should be converted to Traditional Chinese when the StrConv function is called.
+vbTrue@@Indicates that a Boolean value of True should be used when number-formatting functions are called.
+vbTuesday@@Specifies that Tuesday should be used as the first day of the week when date-related functions are called.
+vbUpperCase@@Indicates that characters should be converted to uppercase when the StrConv function is called.
+vbUseDefault@@Indicates that the default Boolean value should be used when number-formatting functions are called.
+vbUserDefinedType@@Indicates that the type of a variant object is a user-defined type. Returned by the VarType function.
+vbUseSystem@@Indicates that the week specified by your system as the first week of the year should be used when date-related functions are called.
+vbUseSystemDayOfWeek@@Indicates that the day specified by your system as the first day of the week should be used when date-related functions are called.
+vbVariant@@Indicates that the type of a variant object is Variant. Returned by the VarType function.
+vbVerticalTab@@Represents a carriage-return character for print functions.
+vbVolume@@Indicates the volume label file attribute for file-access functions.
+vbWednesday@@Specifies that Wednesday should be used as the first day of the week when date-related functions are called.
+vbWide@@Indicates that narrow (single-byte) characters should be converted to wide (double-byte) characters when the StrConv function is called.
+vbYes@@Indicates that the Yes button was clicked in a message box. Returned by the MsgBox function.
+vbYesNo@@Indicates that the Yes and No buttons will be displayed when the MsgBox function is called.
+vbYesNoCancel@@Indicates that the Yes, No, and Cancel buttons will be displayed when the MsgBox function is called.

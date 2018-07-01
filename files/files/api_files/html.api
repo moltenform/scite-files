@@ -1,0 +1,272 @@
+# Tugarinov Sergey
+a href="" name="" target="" title=""
+abbr title=""
+acronym title=""
+address
+area
+b
+base href="" target=""
+bdo dir="ltr|rtl"
+bgsound balance="" loop="" src="" volume=""
+big
+blockquote
+body alink="" background="" bgcolor="" bgproperties="" bottommargin="" leftmargin="" link="" scroll="" text="" topmargin="" vlink=""
+br clear="all|left|right|none"
+button disabled type="button|reset|submit" value=""
+caption align="left|center|right|top|bottom" valign="bottom|top"
+cite
+code
+col span="" width="" align="left|center|right" valign="baseline|bottom|middle|top"
+colgroup span="" width="" valign="baseline|bottom|middle|top" align="left|center|right"
+dd
+del
+dfn
+div align="center|left|right|justify" title=""
+dl
+dt
+em
+embed align="absmiddle|baseline|bottom|left|middle|right|texttop|top" height="" width="" hidden hspace="" vspace="" pluginspage="" src="" type=""
+fieldset align="left|center|right" title=""
+form action="" enctype="" method="get|post" name="" target="_blank|_self|_parent|_top"
+frame bordercolor="" frameborder="yes|no" name="" noresize scrolling="auto|no|yes" src=""
+frameset border="" bordercolor="" cols="" frameborder="yes|no" framespacing="" rows=""
+h1 align="left|center|right|justify"
+h2 align="left|center|right|justify"
+h3 align="left|center|right|justify"
+h4 align="left|center|right|justify"
+h5 align="left|center|right|justify"
+h6 align="left|center|right|justify"
+head
+hr align="center|left|right" color="" noshade size="" width=""
+html title=""
+i
+iframe align="absmiddle|baseline|bottom|left|middle|right|texttop|top" frameborder="yes|no" height="" width="" hspace="" vspace="" name="" scrolling="auto|no|yes" src=""
+img src="" align="absmiddle|baseline|bottom|left|middle|right|texttop|top" alt="" border="" height="" width="" hspace="" vspace="" ismap lowsrc=""
+input type="button|checkbox|file|hidden|image|password|radio|reset|submit|text" align="absmiddle|baseline|bottom|left|middle|right|texttop|top" alt="" border="" checked disabled maxlength="" name="" readonly size="" src="" value=""
+ins
+kbd
+label accesskey="" for=""
+legend align="left|center|right" title=""
+li type="disc|circle|square" type="A|a|I|i|1" value=""
+link href="" rel="" type="MIME-type"
+map name=""
+marquee behavior="alternate|scroll|slide" bgcolor="" direction="down|left|right|up" height="" width="" hspace="" vspace="" loop="" scrollamount="" scrolldelay="" truespeed
+meta name="" content="" http-equiv="Content-Type|expires|pragma|refresh" name="author|description|keywords"
+object align="absmiddle|baseline|bottom|left|middle|right|texttop|top" classid="" code="" codebase="" codetype="MIME-type" data="" height="" width="" hspace="" vspace="" type="MIME-type"
+ol type="A|a|I|i|1" start=""
+optgroup label=""
+option selected value=""
+p align="left|center|right|justify"
+param name="" value=""
+pre
+q
+samp
+script defer language="JavaScript|JScript|VBS|VBScript" src="" type="text/javascript|text/vbscript"
+select disabled multiple name="" size=""
+small
+span
+strong
+style media="all|print|screen" type="text/css"
+sub
+sup
+table align="left|center|right" background="" bgcolor="" border="" bordercolor="" cellpadding="" cellspacing="" cols="" height="" rules="all|groups|cols|none|rows" width=""
+tbody align="left|center|right|justify" bgcolor="" valign="top|middle|bottom|baseline"
+td align="left|center|right|justify" background="" bgcolor="" bordercolor="" colspan="" height="" nowrap rowspan="" valign="top|middle|bottom|baseline" width=""
+textarea cols="" disabled name="" readonly rows="" wrap wrap="hard|off"
+tfoot align="left|center|right|justify" bgcolor="" valign="top|middle|bottom|baseline"
+th align="left|center|right|justify" background="" bgcolor="" bordercolor="" colspan="" height="" nowrap rowspan="" valign="top|middle|bottom|baseline" width=""
+thead align="left|center|right|justify" bgcolor="" valign="top|middle|bottom|baseline"
+title
+tr align="left|center|right|justify" bgcolor="" bordercolor="" valign="top|middle|bottom|baseline"
+tt
+ul type="disc|circle|square"
+var
+
+# added by VladVRO
+applet
+area
+base
+basefont
+blockquote
+body
+button
+caption
+center
+cite
+code
+col
+colgroup
+del
+dfn
+dir
+div
+fieldset
+font
+form
+frame
+frameset
+head
+html
+iframe
+img
+input
+ins
+isindex
+label
+legend
+link
+map
+menu
+meta
+noframes
+noscript
+object
+optgroup
+option
+param
+pre
+samp
+script
+select
+small
+span
+strike
+strong
+style
+sub
+sup
+table
+tbody
+textarea
+tfoot
+thead
+title
+accept
+accesskey
+action
+align
+alink
+alt
+archive
+axis
+background
+bgcolor
+border
+cellpadding
+cellspacing
+char
+charoff
+charset
+checked
+cite
+class
+classid
+clear
+codebase
+codetype
+color
+cols
+colspan
+compact
+content
+coords
+data
+datafld
+dataformatas
+datapagesize
+datasrc
+datetime
+declare
+defer
+dir
+disabled
+enctype
+event
+face
+frame
+frameborder
+headers
+height
+href
+hreflang
+hspace
+http-equiv
+ismap
+label
+lang
+language
+leftmargin
+link
+longdesc
+marginwidth
+marginheight
+maxlength
+media
+method
+multiple
+name
+nohref
+noresize
+noshade
+nowrap
+object
+onblur
+onchange
+onclick
+ondblclick
+onfocus
+onkeydown
+onkeypress
+onkeyup
+onload
+onmousedown
+onmousemove
+onmouseover
+onmouseout
+onmouseup
+onreset
+onselect
+onsubmit
+onunload
+profile
+prompt
+readonly
+rel
+rev
+rows
+rowspan
+rules
+scheme
+scope
+selected
+shape
+size
+span
+src
+standby
+start
+style
+summary
+tabindex
+target
+text
+title
+topmargin
+type
+usemap
+valign
+value
+valuetype
+version
+vlink
+vspace
+width
+text
+password
+checkbox
+radio
+submit
+reset
+file
+hidden
+image

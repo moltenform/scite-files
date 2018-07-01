@@ -1,8 +1,20 @@
-_G () holds global environment, setfenv changes environments
-_VERSION () current interpreter version "Lua 5.0"
+_G holds global environment, setfenv changes environments
+_VERSION current interpreter version "Lua 5.0"
 assert (v [, message]) error if v nil or false, otherwise returns v
 collectgarbage ([limit]) [Lua 5.0] set threshold to limit KBytes, default 0, may run GC
 collectgarbage (opt [, arg]) [Lua 5.1] opts: stop, restart, collect, count, step, setpause, setstepmul
+bit.arshift(x, n) arithmetic right-shift
+bit.band(x1 [,x2...]) bitwise 'and' of arguments
+bit.bnot(x) bitwise 'not' of argument
+bit.bor(x1 [,x2...]) bitwise 'or' of arguments
+bit.bswap(x) swaps the bytes of the argument (32-bit little-endian/big-endian)
+bit.bxor(x1 [,x2...]) bitwise 'xor' of arguments
+bit.lshift(x, n) logical left-shift
+bit.rol(x, n) bitwise left rotation
+bit.ror(x, n) bitwise right rotation
+bit.rshift(x, n) logical right-shift
+bit.tohex(x [,n]) Converts its first argument to a hex string
+collectgarbage ([limit]) set threshold to limit KBytes, default 0, may run GC
 coroutine.create (f) creates coroutine from function f, returns coroutine
 coroutine.resume (co, val1, ...) continues execution of co, returns bool status plus any values
 coroutine.status (co) returns co status: "running", "suspended" or "dead"
@@ -36,13 +48,22 @@ io.lines ([filename]) open file in read mode, returns iterator function to retur
 io.open (filename [, mode]) opens file in specified mode "[rawb+]", returns handle or nil
 io.output ([file]) opens file in text mode, sets as default output file, or returns current default output file
 io.read (format1, ...) reads file according to given formats, returns read values or nil
-io.stderr
-io.stdin
-io.stdout
+io.stderr file descriptor for STDERR
+io.stdin file descriptor for STDIN
+io.stdout file descriptor for STDOUT
 io.tmpfile () returns a handle for a temporary file, opened in update mode
 io.type (obj) returns "file" if obj is an open file handle, "close file" if closed, or nil if not a file handle
 io.write (value1, ...) writes strings or numbers to file
 ipairs (t) returns an iterator function, table t and 0
+lfs.attributes (filepath [, aname]) returns a table with the file attributes corresponding to filepath
+lfs.chdir (path) changes the current working directory to path
+lfs.currentdir () returns a string with the current working directory or nil plus an error string.
+lfs.dir (path) Lua iterator over the entries of a given directory
+lfs.lock (filehandle, mode[, start[, length]]) Locks a file or a part of it
+lfs.mkdir (dirname) creates a new directory
+lfs.rmdir (dirname) removes an existing directory
+lfs.touch (filepath [, atime [, mtime]]) set access and modification times of a file
+lfs.unlock (filehandle[, start[, length]]) unlocks a file or a part of it. This function works on open files
 loadfile (filename) loads chunk without execution, returns chunk as function, else nil plus error
 loadlib (libname, funcname) [Lua 5.0] links to dynamic library libname, returns funcname as a C function
 loadstring (string [, chunkname]) loads string as chunk, returns chunk as function, else nil plus error
@@ -86,9 +107,12 @@ os.exit ([code]) terminates host program with optional code, default is success 
 os.getenv (varname) returns value of environment variable varname. nil if not defined
 os.remove (filename) deletes file with given name, nil if fails
 os.rename (oldname, newname) renames file oldname to newname, nil if fails
+os.setenv(name,value) set an environment variable (ex)
 os.setlocale (locale [, category]) set current locale of program, returns name of new locate or nil
+os.sleep(seconds) pause for the given amount of seconds (can be fraction) (ex)
+os.spawn(filename) create a child process (ex)
 os.time ([table]) returns current time (usually seconds) or time as represented by table
-os.tmpname () returns a string with a filename for a temporary file (dangerous! tmpfile is better)
+os.tmpname () returns a string with a filename for a temporary file (dangerous! io.tmpfile is better)
 pairs (t) returns the next function and table t plus a nil, iterates over all key-value pairs
 pcall (f, arg1, arg2, ...) protected mode call, catches errors, returns status code first (true=success)
 print (e1, e2, ...) prints values to stdout using tostring
@@ -108,8 +132,10 @@ string.gmatch (s, pat) [Lua 5.1] returns iterator function that returns next cap
 string.gsub (s, pat, repl [, n]) returns copy of s with pat replaced by repl, and substitutions made
 string.len (s) returns string length
 string.lower (s) returns string with letters in lower case
+string.pack (fmt,...) pack arguments as a binary string using 'fmt' (pack)
 string.rep (s, n) returns string with n copies of string s
 string.sub (s, i [, j]) returns substring from index i to j of s, default j=-1 (string length)
+string.unpack (s,fmt) unpack arguments from binary string according to 'fmt' (pack)
 string.upper (s) returns string with letters in upper case
 table.concat (table [, sep [, i [, j]]]) returns concatenated table elements i to j separated by sep
 table.foreach (table, f) [Lua 5.0] executes f(index,value) over all elements of table, returns first non-nil of f

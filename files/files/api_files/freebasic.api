@@ -1,0 +1,362 @@
+#freebasic_08_2017.api from https://github.com/arjunae/myScite
+And(ByRef lhs:Any,ByRef rhs:Any)|Any
+Eqv(ByRef lhs:Any,ByRef rhs:Any)|Any
+Imp(ByRef lhs:Any,ByRef rhs:Any)|Any
+Or(ByRef lhs:Any,ByRef rhs:Any)|Any
+Xor(ByRef lhs:Any,ByRef rhs:Any)|Any
+Not(ByRef rhs:Any)|Any
+MutexCreate()|Any Ptr
+DylibLoad(ByRef filename:String)|Any Ptr
+ProcPtr(ByRef lhs:Any)|Any Ptr
+VarPtr(ByRef lhs:Any)|Any Ptr
+SAdd(ByRef Str:String)|Any Ptr
+SAdd(ByRef Str:WString)|Any Ptr
+SAdd(ByRef Str:ZString)|Any Ptr
+CondCreate(CondCreate)|Any Ptr
+Allocate(count:Integer)|Any Ptr
+DyLibSymbol(library:Any Ptr,ByRef symbol:String)|Any Ptr
+DyLibSymbol(library:Any Ptr,symbol:Short)|Any Ptr
+Callocate(num_elements:Integer,size:Integer=1)|Any Ptr
+ReAllocate(Pointer:Any Ptr,count:Integer)|Any Ptr
+ThreadCreate(proc:Sub(Any Ptr),param:Any Ptr=0)|Any Ptr
+ScreenGLProc(procname:String)|Any Ptr
+ScreenPtr|Any Ptr(ScreenPtr)|Any Ptr
+New(size:UInteger)|Any Ptr
+Inkey(Inkey)|As String
+CByte(expression:datatype)|Byte
+DateAdd(interval:String,number:Double,date_serial:Double)|D
+Peek(datatype,address:Any Ptr)|datatype
+DateValue(ByRef date_string:String)|Double
+Cvd(ByRef Str:String)|Double
+Val(ByRef Str:String)|Double
+Val(ByRef Str:WString)|Double
+TimeValue(ByRef timestring:String)|Double
+CDbl(expression:datatype)|Double
+FileDateTime(filename:ZString Ptr)|Double
+TimeSerial(Hour:Integer,Minute:Integer,Second:Integer)|Double
+Now(Now)|Double
+Abs(number:Double)|Double
+Acos(number:Double)|Double
+Asin(number:Double)|Double
+Atn(number:Double)|Double
+Cos(number:Double)|Double
+Exp(number:Double)|Double
+Fix(number:Double)|Double
+Frac(number:Double)|Double
+Int(number:Double)|Double
+Log(number:Double)|Double
+Sgn(number:Double)|Double
+Sin(number:Double)|Double
+Sqr(number:Double)|Double
+Tan(number:Double)|Double
+Rnd(number:Integer=1)|Double
+Timer|Double(Timer)|Double
+Atan2(y:Double,x:Double)|Double
+Weekday(serial:Double,firstdayofweek:Integer=fbusesystem)|I
+InStr(ByRef Str:WString,[Any] ByRef Substring:WString)|In
+Wait(port:UShort,and_mask:Integer,xor_mask:Integer=0)|In
+Put(#filenum:Integer,[position:LongInt],data():Any)|Int
+Run(ByRef program:String,ByRef arguments:String="")|Int
+Screen(row:Integer,column:Integer,colorflag:Integer=0)|Int
+InStr(ByRef Str:String,[Any] ByRef Substring:String)|Inte
+Exec(ByRef program:String,ByRef arguments:String)|Intege
+CsrLin()|Integer
+Width([columns],[rows])|Integer
+LBound(array:Any,dimension:Integer=1)|Integer
+UBound(array:Any,dimension:Integer=1)|Integer
+Kill(ByRef filename:String)|Integer
+MkDir(ByRef folder:String)|Integer
+RmDir(ByRef folder:String)|Integer
+Mod(ByRef lhs:Integer,ByRef rhs:Integer)|Integer
+Shl(ByRef lhs:Integer,ByRef rhs:Integer)|Integer
+Shr(ByRef lhs:Integer,ByRef rhs:Integer)|Integer
+SetDate(ByRef newdate:String)|Integer
+SetTime(ByRef newtime:String)|Integer
+Name(ByRef oldname:String,ByRef newname:String)|Integer
+ChDir(ByRef path:String)|Integer
+Chain(ByRef program:String)|Integer
+Not(ByRef rhs:Byte)|Integer
+Not(ByRef rhs:Double)|Integer
+Not(ByRef rhs:Single)|Integer
+Not(ByRef rhs:UByte)|Integer
+CVI(ByRef Str:String)|Integer
+Cvl(ByRef Str:String)|Integer
+ValInt(ByRef strnum:String)|Integer
+Len(ByRef variable:Any)|Integer
+SetEnviron(ByRef varname:String)|Integer
+Point(coord_x,coord_y[,buffer])|Integer
+Len(datatype)|Integer
+Day(date_serial:Double)|Integer
+Hour(date_serial:Double)|Integer
+Minute(date_serial:Double)|Integer
+Month(date_serial:Double)|Integer
+Second(date_serial:Double)|Integer
+Year(date_serial:Double)|Integer
+ScreenList(depth:Integer=0)|Integer
+Pos(dummy:Integer)|Integer
+Erl(Erl)|Integer
+Err(Err)|Integer
+ScreenEvent(Event:Any Ptr=0)|Integer
+CInt(expression:datatype)|Integer
+FileExists(filename:ZString Ptr)|Integer
+EOF(filenum:Integer)|Integer
+FileAttr(filenum:Integer,returntype:Integer=1)|Integer
+Color(foreground:Integer,background:Integer)|Integer
+FreeFile(FreeFile)|Integer
+GetKey(GetKey)|Integer
+Sleep(msecs:Integer,kind:Integer)|Integer
+Sleep(msecs:Integer=-1)|Integer
+Abs(number:Integer)|Integer
+Inp(port:UShort)|Integer
+Out(port:UShort,Data:UByte)|Integer
+Pos(Pos)|Integer
+LPos(printer:Integer)|Integer
+MultiKey(scancode:Integer)|Integer
+ScreenSync|Integer(ScreenSync)|Integer
+FileCopy(source:String,destination:String)|Integer
+IsDate(stringdate:String)|Integer
+ValInt(strnum:WString Ptr)|Integer
+DateSerial(Year:Integer,Month:Integer,Day:Integer)|Integer
+CLng(expression:datatype)|Long
+Shl(ByRef lhs:LongInt,ByRef rhs:LongInt)|LongInt
+Shr(ByRef lhs:LongInt,ByRef rhs:LongInt)|LongInt
+CVLongInt(ByRef Str:String)|LongInt
+ValLng(ByRef strnum:String)|LongInt
+ValLng(ByRef strnum:WString)|LongInt
+CLngInt(expression:datatype)|LongInt
+FileLen(filename:String)|LongInt
+Loc(filenum:Integer)|LongInt
+Seek(filenum:Integer)|LongInt
+Abs(number:LongInt)|LongInt
+CVShort(ByRef Str:String)|Short
+CShort(expression:datatype)|Short
+CVS(ByRef Str:String)|Single
+PMap(coord:Single,func:Integer)|Single
+CSng(expression:datatype)|Single
+OpenSocket(af:Integer,type:Integer,protocol:Integer)|SOCKET
+LTrim(ByRef Str:String,[Any] ByRef trimset:String=" ")|St
+RTrim(ByRef Str:String,[Any] ByRef trimset:String=" ")|St
+Trim(ByRef Str:String,[Any] ByRef trimset:String=" ")|St
+LCase(ByRef Str:String)|String
+Str(ByRef Str:String)|String
+UCase(ByRef Str:String)|String
+Left(ByRef Str:String,n:Integer)|String
+Right(ByRef Str:String,n:Integer)|String
+Mid(ByRef Str:String,Start:Integer)|String
+Mid(ByRef Str:String,Start:Integer,n:Integer)|String
+Environ(ByRef varname:String)|String
+Chr(ch:Integer,[...])|String
+Space(count:Integer)|String
+String(count:Integer,ch_code:Integer)|String
+String(count:Integer,ch:String)|String
+CurDir(CurDir)|String
+Date(Date)|String
+ExePath(ExePath)|String
+Command(index:Integer=-1)|String
+MonthName(Month:Integer,abbreviate:Integer=0)|String
+Str(n:Byte)|String
+Str(n:Double)|String
+Input(n:Integer)|String
+Str(n:Integer)|String
+Input(n:Integer,filenum:Integer)|String
+Str(n:LongInt)|String
+Str(n:Short)|String
+Str(n:Single)|String
+Str(n:UByte)|String
+Str(n:UInteger)|String
+Str(n:ULongInt)|String
+Str(n:UShort)|String
+Bin(number:Byte)|String
+Hex(number:Byte)|String
+Oct(number:Byte)|String
+Oct(number:Byte,digits:Integer)|String
+Mkd(number:Double)|String
+Bin(number:Integer)|String
+Hex(number:Integer)|String
+Mki(number:Integer)|String
+MKL(number:Integer)|String
+Oct(number:Integer)|String
+Bin(number:Integer,digits:Integer)|String
+Hex(number:Integer,digits:Integer)|String
+Oct(number:Integer,digits:Integer)|String
+Bin(number:LongInt)|String
+Hex(number:LongInt)|String
+MKLongInt(number:LongInt)|String
+Oct(number:LongInt)|String
+Bin(number:LongInt,digits:Integer)|String
+Hex(number:LongInt,digits:Integer)|String
+Oct(number:LongInt,digits:Integer)|String
+Bin(number:Short)|String
+Hex(number:Short)|String
+MkShort(number:Short)|String
+Oct(number:Short)|String
+Oct(number:Short,digits:Integer)|String
+MKS(number:Single)|String
+Dir(out_attrib:Integer Ptr=0)|String
+Str(Str:WString Ptr)|String
+Time|String(Time)|String
+Peek(address:Any Ptr)|UByte
+CUByte(expression:datatype)|UByte
+Shl(ByRef lhs:UInteger,ByRef rhs:UInteger)|UInteger
+Shr(ByRef lhs:UInteger,ByRef rhs:UInteger)|UInteger
+Asc(ByRef Str:String,position:Integer=1)|UInteger
+ValUInt(ByRef strnum:String)|UInteger
+ValUInt(ByRef strnum:WString)|UInteger
+CUInt(expression:datatype)|UInteger
+Lof(filenum:Integer)|UInteger
+Asc(Str:WString Ptr,position:Integer=1)|UInteger
+Asc(Str:ZString Ptr,position:Integer=1)|UInteger
+Fre(value:Integer=0)|UInteger
+CULng(expression:datatype)|ULong
+Shl(ByRef lhs:ULongInt,ByRef rhs:ULongInt)|ULongInt
+Shr(ByRef lhs:ULongInt,ByRef rhs:ULongInt)|ULongInt
+ValULng(ByRef strnum:String)|ULongInt
+ValULng(ByRef strnum:WString)|ULongInt
+CULngInt(expression:datatype)|ULongInt
+CUShort(expression:datatype)|UShort
+WStr(ByRef Str:String)|WString
+LCase(ByRef Str:WString)|WString
+UCase(ByRef Str:WString)|WString
+Left(ByRef Str:WString,n:Integer)|WString
+Right(ByRef Str:WString,n:Integer)|WString
+Wchr(ch:Integer,[...])|WString
+WSpace(count:Integer)|WString
+WString(count:Integer,ch_code:Integer)|WString
+WString(count:Integer,ch:WString)|WString
+WStr(n:Byte)|WString
+WStr(n:Double)|WString
+WStr(n:Integer)|WString
+WStr(n:Short)|WString
+WStr(n:Single)|WString
+WStr(n:UByte)|WString
+WStr(n:UInteger)|WString
+WStr(n:ULongInt)|WString
+WStr(n:UShort)|WString
+WInput(num:Integer)|WString
+WInput(num:Integer,filenum:Integer=0)|WString
+WBin(number:Byte)|WString
+WHex(number:Byte)|WString
+WOct(number:Byte)|WString
+WBin(number:Byte,digits:Integer)|WString
+WHex(number:Byte,digits:Integer)|WString
+WOct(number:Byte,digits:Integer)|WString
+WBin(number:Integer)|WString
+WHex(number:Integer)|WString
+WOct(number:Integer)|WString
+WBin(number:Integer,digits:Integer)|WString
+WHex(number:Integer,digits:Integer)|WString
+WOct(number:Integer,digits:Integer)|WString
+WBin(number:LongInt)|WString
+WHex(number:LongInt)|WString
+WOct(number:LongInt)|WString
+WBin(number:LongInt,digits:Integer)|WString
+WHex(number:LongInt,digits:Integer)|WString
+WOct(number:LongInt,digits:Integer)|WString
+WBin(number:Short)|WString
+WHex(number:Short)|WString
+WOct(number:Short)|WString
+WBin(number:Short,digits:Integer)|WString
+WHex(number:Short,digits:Integer)|WString
+WOct(number:Short,digits:Integer)|WString
+WS(r,n:LongInt)|WString
+Mid(Str As WString Ptr,Start:Integer)|WString
+Mid(Str As WString Ptr,Start:Integer,n:Integer)|WString
+WStr(Str:WString Ptr)|WString
+StrPtr(ByRef lhs:String)|ZString Ptr
+StrPtr(ByRef lhs:WString)|ZString Ptr
+Erfn(Erfn)|ZString Ptr
+Ermn(Ermn)|ZString Ptr
+Assert(expression)
+AssertWarn(expression)
+Bit(value:Any,bit_number:Any)
+BitReset(value:Any,bit_number:Any)
+BitSet(value:Any,bit_number:Any)
+BLoad(ByRef filename:String,addr:Any Ptr=0,pal:Any Ptr=0)
+BSave(ByRef filename:String,addr:Any Ptr,size:Integer=0,)
+Cast(datatype,expression)
+Circle([target,][STEP](x,y),radius[,[color][,[start][,[en)
+Clear(ByRef dst:Any,value:Integer=0,bytes:Integer)
+Cls(mode:Integer=-65536)
+Condbroadcast(handle As Any Ptr)
+CondDestroy(handle:Any Ptr)
+CondSignal(handle:Any Ptr)
+CondWait(handle:Any Ptr)
+CPtr(DataType Ptr,expression)
+CSign(expression)
+CUnsg(expression)
+DateDiff(interval:String,serial1:Double,serial2:Double,firs)
+DatePart(interval:String,date_serial:Double,firstdayofweek:)
+DeAllocate(Pointer:Any Ptr)
+Delete(buf:Any Ptr)
+Dir(ByRef file_spec:String="",attrib_mask:Integer=&h21)
+Draw String([buffer,][STEP](x,y),text[,color[,font[,method[,(a)
+DyLibFree(library:Any Ptr)
+End(retval:Integer=0)
+Erase(array:Any,[...])
+Error(errno:Integer)
+Flip(frompage:Integer=-1,topage:Integer=-1)
+Format(numerical_expression:Double,formatting_expression:)
+Get(#filenum:Integer,position:LongInt=?,data:Any,amoun)
+GetJoystick(id:Integer,ByRef buttons:Integer=0,ByRef a1:Single)
+GetMouse(ByRef x:Integer,ByRef y:Integer,ByRef wheel:Intege)
+HiByte(x:UInteger)
+HiWord(x:UInteger)
+ImageConvertRow(src:Any Ptr,src_bpp:Integer,dst:Any Ptr,dst_bpp:In)
+ImageCreate(Width:Integer,height:Integer,[Color:UInteger],[dep)
+ImageDestroy(Pointer:Any Ptr)
+InStr(Start:Integer,ByRef Str:String,[Any] ByRef Substri)
+InStr(Start:Integer,ByRef Str:WString,[Any] ByRef Substr)
+InStrRev(ByRef Str:String,[Any] ByRef Substring:String,Star)
+InStrRev(ByRef Str:WString,[Any] ByRef Substring:WString,St)
+Line(-(x1,y1)[,[color][,[B\BF][,style]]])
+Line([target,][[STEP](x1,y1)]-[STEP](x2,y2)[,[color][,[)
+LoByte(x:UInteger)
+LoWord(x:UInteger)
+LSet(ByRef dst:String,ByRef src:String)
+LSet(dst:WString Ptr,src:WString Ptr)
+LTrim(ByRef Str:WString,[Any] ByRef trimset:WString=WStr)
+Mid(ByRef text:String,Start:Integer,length:Integer,ByR)
+Mid(text:WString Ptr,Start:Integer,length:Integer,:Int)
+MutexDestroy(id:Any Ptr)
+MutexLock(id:Any Ptr)
+MutexUnlock(id:Any Ptr)
+OffsetOf(typename,fieldname)
+PCopy(source:Integer,destination:Integer)
+Poke(address:Any Ptr,ByRef value:UByte)
+Poke(datatype,address:Any Ptr,ByRef value:datatype)
+PSet([target,][STEP](x, y)[,color])
+Put(#filenum:Integer,[position:LongInt],data:Any[,amou)
+Put([target,][STEP](x,y),source[,(x1,y1)-[STEP](x2,y2))
+Randomize(seed:Double=-1,algorithm:Integer=0)
+RGB(r:UInteger,g:UInteger,b:UInteger)
+RGBA(r:UInteger,g:UInteger,b:UInteger,a:UInteger)
+RSet(ByRef dst:String,ByRef src:String)
+RSet(dst:WString Ptr,src:WString Ptr)
+RTrim(ByRef Str:WString,[Any] ByRef trimset:WString=WStr)
+Screen(mode,depth=8,num_pages=1,flags=?,refresh_rate=?)
+ScreenControl(what:Integer,[ByRef param1:Integer],[ByRef param2:)
+ScreenControl(what:Integer,[ByRef param:String])
+ScreenCopy(frompage:Integer=-1,topage:Integer=-1)
+ScreenInfo(ByRef w:Integer=0,ByRef h:Integer=0,ByRef depth:In)
+ScreenRes(Width:Integer,height:Integer,depth:Integer=8,num_p)
+ScreenSet(work_page:Integer=-1,visible_page:Integer=-1)
+ScreenUnlock(startline:Integer=-1,endline:Integer=-1)
+SetMouse(x:Integer=-1,y:Integer=-1,visibility:Integer=-1,cl)
+Shell(Command:String)
+Spc(columns)
+Stop(retval:Integer=0)
+Swap(ByRef a:Any,ByRef b:Any)
+System(retval:Integer=0)
+Tab(column)
+ThreadWait(id:Any Ptr)
+Trim(ByRef Str:WString,[Any] ByRef trimset:WString=WStr)
+TypeOf(variable / datatype)
+va_arg(argument_list:va_first / va_next,datatype)
+va_first()
+va_next(Argument_List:(va_first),datatype)
+WeekdayName(Weekday:Integer,abbreviate:Integer=0,firstdayofwee)
+Window([[SCREEN](x1,y1)-(x2,y2)])
+WindowTitle(ByRef Title:String)
+Beep()
+Reset()
+ScreenLock()

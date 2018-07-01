@@ -13,27 +13,25 @@
 <!-- these lexers are available, but not referred to, set(['', 'SML', 'mysql', 'powerbasic','', 'kvirc', '', 'cppnocase', '', 'a68k', 'po', 'DMIS', '', 'bib', '', 'clarionnocase', 'tcmd', 'DMAP', 'PL/M', 'mssql', 'phpscript', 'clarion', 'fcST', 'magiksf', 'gui4cli', '']) -->
 <!-- these lexers are available and just need to be turned on manually, as described below: markdown, visualprolog, tads3, progress , asy, literatehaskell, apdl -->
 
-* JavaScript, CSS, web
+* HTML, CSS, and JavaScript
 
-    * for html and inline JavaScript, highlighting and folding is already enabled by default
-    * [JavaScript, JQuery, and DOM api](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/javascript,jquery2016.zip), updated 2016
+    * HTML, CSS, and JavaScript have highlighting and folding already enabled by default
+    * [JavaScript API file](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/javascript.properties)
+    * [JavaScript JQuery API file](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/javascript.properties)
     * [JavaScript, JQuery, and CSS api](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/css,js,jquery.zip)
     * [PHP, abbreviations, CSS, JavaScript, and JQuery](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/css,js,jquery,php.zip)
-
-* C, C++ (cpp)
-
-    * [C standard library](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/c_withdoc.zip) with short doc strings, 2016 update
-    * [C standard library](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/c.api)
-    * [Windows API](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/cpp.api)
-    * [OpenGL 1.2 API](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/opengl.zip)
-    * [OpenGL 4.4 API](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/opengl4.4.zip)
-    * [Glut API](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/glut.zip)
-    * [SDL API](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/sdl.api)
+    * [css api](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/css.api)
+    * [html api](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/html.api)
 
 * Abaqus
 
     * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `abaqus`, then save and restart SciTE
-    
+
+* ActionScript (Flash)
+
+    * highlighting and folding is already enabled by default
+    * [actionscript api](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/actionscript.api)
+
 * Ada
 
     * highlighting and folding is already enabled by default
@@ -119,11 +117,21 @@
 * C/C++
 
     * highlighting and folding is already enabled by default
+    * [C standard library](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/c_withdoc.zip) with short doc strings, 2016 update
+    * [C standard library](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/c.api)
+    * [C++ standard library, incl C++11](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/cpp.api)
+    * [cpp_more.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/cpp_more.properties) adds highlighting for c99, c11, cpp98, cpp11, Objective C, idl, Doxygen, Arduino, go, Actionscript, vala, pike, swift
+    * [Windows API, cpp](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/cpp_win32.api)
+    * [OpenGL 1.2 API](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/opengl.zip)
+    * [OpenGL 4.4 API](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/opengl4.4.zip)
+    * [Glut API](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/glut.zip)
+    * [SDL API](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/sdl.api)
+    * [Lua C API](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/c_lua_c.api)
 
 * C#
 
     * highlighting and folding is already enabled by default
-    * [C# api](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/c_sharp.api.zip)
+    * [C# csharp api](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/c_sharp.api)
 
 * CIL 
 
@@ -131,7 +139,8 @@
 
 * Clojure
 
-    * [Properties for Clojure](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/clojure.api)
+    * [a lisp.properties including support for Scheme and Clojure](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/lisp_and_closure.api)
+    * [api for Clojure](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/clojure.api)
 
 * CMake
 
@@ -194,10 +203,6 @@
 * Flagship
 
     * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `flagship`, then save and restart SciTE
-
-* Flash (ActionScript)
-
-    * highlighting and folding is already enabled by default
     
 * Forth
 
@@ -211,6 +216,8 @@
 * Freebasic
 
     * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `freebasic`, then save and restart SciTE
+    * [properties file](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/freebasic.properties) that highlights more keywords
+    * [api file](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/freebasic.api)
     
 * GAP
 
@@ -258,13 +265,12 @@
 
     * highlighting and folding is already enabled by default
 
-* Java
-
+* Java <!-- used to link to https://www.burgaud.com/scite-java-api/ , but put this info in instructions instead -->
+    
     * highlighting and folding is already enabled by default
-    * [Java properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/java_2016.zip), including Java 1.8 keywords
-    * [Java API](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/java.api.zip)
-    * [Java API, complete 1.5 and 1.6 api](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/javaversions.api.zip)
-    * [Java API, Java Properties, and how to configure](https://www.burgaud.com/scite-java-api/)
+    * [Java properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/java.properties), including Java 1.8 keywords
+    * [Java API](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/java.api)
+    * [Java API, other versions incl 1.5 and 1.6](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/javaversions.api.zip)
     
 * json and json-ld
 
@@ -290,7 +296,7 @@
 
     * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `lout`, then save and restart SciTE
     
-* Lua
+* Lua  <!--  https://github.com/arjunae/myScite has a lua.properties with a few more keywords to highlight  -->
 
     * highlighting and folding is already enabled by default
     * [Lua API](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/lua.api)
@@ -298,7 +304,8 @@
     * [Api for SciTE extension scripts](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/lua_scite_extension.api)
     * [scite-for-lua](https://code.google.com/archive/p/scite-for-lua/), extensive support for Lua programming, including debugging and a lint-based highlighter
     * [lua-inspect](https://github.com/davidm/lua-inspect), plugin for SciTE that does Lua code analysis and adds features like rename-occurrences and autocomplete
-    * [Api for wxlua](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/wxlua.api)
+    * [Api for wxLua](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/wxlua.api)
+    * [Api for WoW lua](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/lua_wow.api)
 
 * Make / makefile
 
@@ -395,7 +402,7 @@
     * [Perl API](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/perl.api)
     * [Parrot properties file](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/parrot_properties.zip)
 
-* PHP 
+* PHP <!--  https://github.com/arjunae/myScite has php.properties and php.api that look good but aren't clearly better -->
 
     * highlighting and folding is already enabled by default
     * [php.api, PHP 5](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/php.api)
@@ -440,6 +447,7 @@
 * R
 
     * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `r`, then save and restart SciTE
+    * a [properties file](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/r.properties) with additional keyword highlighting
 
 * Rebol
 
@@ -482,7 +490,7 @@
 
     * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `spice`, then save and restart SciTE
 
-* SQL and PLSQL
+* SQL and PLSQL <!--  https://github.com/arjunae/myScite has a sql.properties with a few more keywords to highlight  -->
 
     * highlighting and folding is already enabled by default
 
@@ -530,10 +538,13 @@
 * Visual Basic
 
     * highlighting and folding is already enabled by default
+    * vb [properties file](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/vb.properties) with more keywords
 
 * VBScript
 
     * highlighting and folding is already enabled by default
+    * [vbscript api](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/vbscript.api)
+    * vbscript [properties file](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/vbscript.properties)
     * [VBScript API, VBA API](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/vba,vbs2016.api.zip)
 
 * visualprolog

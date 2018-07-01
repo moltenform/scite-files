@@ -1,0 +1,1174 @@
+##
+# Javascript API, as fetched from MSDN. imAugust2016, Marcedo@HabmalneFrage.de | https://sourceforge.net/projects/scite-webdev
+# javascript.html_dom.api copied to end of this file
+# javascript.webapi_10_2016.api copied to end of this file
+##
+# Javascripts Object Names
+ActiveXObject(newObj,servername,typename,location)Enables and returns a reference to an Automation object.\t\nnewObj = new ActiveXObject(servername.typename[, location])
+GetObject(pathname,class,appname,objectype)Returns a reference to an Automation object from a file.\t\nGetObject([pathname] [, class])
+Array(arrayObj,size,element0,...,elementN)Provides support for creation of arrays of any data type.\t\narrayObj = new Array([element0[, element1[, ...[, elementN]]]])
+ArrayBuffer(arrayBuffer,length)Represents a raw buffer of binary data, which is used to store data for the different typed arrays.\t\nArrayBuffers cannot be read from or written to directly, but can be passed to a typed array\t\nor DataView Object to interpret the raw buffer as needed.\t\narrayBuffer = new ArrayBuffer(length);
+Boolean(boolObj,boolValue)Creates a new Boolean value.\t\nboolObj = new Boolean([boolValue])
+DataView(dataView,buffer,byteOffset,byteLength)You can use a DataView object to read and write\t\nthe different kinds of binary data to any location in the ArrayBuffer.\t\ndataView = new DataView(buffer, byteOffset, byteLength);
+Date(dateObj,dateVal,year,month,date,hours,minutes,seconds,ms)Enables basic storage and retrieval of dates and times.\t\ndateObj = new Date(year, month, date[, hours[, minutes[, seconds[,ms]]]]) 
+Debug()An intrinsic global object that sends output to a debugger.\t\nDebug.function
+Enumerator(enumObj,collection)Enables enumeration of items in a collection.\t\nenumObj = new Enumerator([collection]) 
+Error(errorObj,number,description)Contains information about errors.\t\nerrorObj = new Error([number[, description]])
+Float32Array(float32Array,length,array,buffer,byteOffset,length)A typed array of 32-bit float values. The contents are initialized to 0.\t\nfloat32Array = new Float32Array( length );\t\nfloat32Array = new Float32Array( array );\t\nfloat32Array = new Float32Array( buffer, byteOffset, length);
+Float64Array(float64Array,length,array,buffer,byteOffset,length)A typed array of 64-bit float values. The contents are initialized to 0.\t\nfloat64Array = new Float64Array( length );\t\nfloat64Array = new Float64Array( array );\t\nfloat64Array = new Float64Array( buffer, byteOffset, length);
+Function(functionName,argname1...argnameN,body)Creates a new function.\t\nfunctionName = new Function( [argname1,  [... argnameN,]] body );
+GetObject(pathname,class,appname,objectype)Returns a reference to an Automation object from a file.\t\nGetObject([pathname] [, class])
+Global()An intrinsic object whose purpose is to collect global functions and constants into one object.
+HTML()You can use HTML tag methods to place HTML elements around text in a String object.
+Infinity()A number that is larger than the largest floating point number. Negative Infinity (-Infinity) is smaller than the smallest floating point number.\t\nInfinity 
+Int16Array(int16Array,length,array,buffer,byteOffset,length)A typed array of 16-bit integer values. The contents are initialized to 0.\t\nint16Array = new Int16Array( length );\t\nint16Array = new Int16Array( array );\t\nint16Array = new Int16Array( buffer, byteOffset, length);
+Int32Array(int32Array,length,array,buffer,byteOffset,length)A typed array of 32-bit integer values. The contents are initialized to 0.\t\nint32Array = new Int32Array( length );\t\nint32Array = new Int32Array( array );\t\nint32Array = new Int32Array( buffer, byteOffset, length);
+Int8Array(int8Array,length,array,buffer,byteOffset,length)A typed array of 8-bit integer values. The contents are initialized to 0.\t\nint8Array = new Int8Array( length );\t\nintArray = new Int8Array( array );\t\nintArray = new Int8Array( buffer, byteOffset, length);
+Json(Method)An intrinsic object that provides functions to convert JavaScript values to and from the JavaScript Object Notation (JSON) format.\t\nThe JSON.stringify function serializes a JavaScript value to JSON text. The JSON.parse function deserializes JSON text to produce a JavaScript value.\t\nJSON.[method]
+Map()A collection of key/value pairs.\t\nmapObj = new Map()
+Math(property,method)An intrinsic object that provides basic mathematics functionality\t\nand constants.\t\nMath.[{property | method}]
+Number(numObj,value)An object that represents a number of any kind.\t\nAll JavaScript numbers are 64-bit floating-point numbers.\t\nnumObj = new Number(value)
+Object(obj,value)Provides functionality common to all JavaScript objects.\t\nobj = new Object([value]) 
+Promise(promise,resolve,reject)Provides a mechanism to schedule work to be done on a value that has not yet been computed.\t\nIt is an abstraction for managing interactions with asynchronous APIs.\t\nvar promise = new Promise(function(resolve, reject) { ... });
+Proxy(target,handler)Enables custom behavior for an object.\t\nproxyObj = new Proxy(target, handler)
+Reflect(method)Provides methods for use in operations that are intercepted.\t\nReflect.[method]
+RegExp()An intrinsic global object that stores information about the\t\nresults of regular expression pattern matches.\t\nRegExp.property 
+Regular(re,pattern,flags)An object that contains a regular expression pattern along\t\nwith flags that identify how to apply the pattern.
+ScriptEngine()Gets the name of the scripting language in use.\t\nScriptEngine()
+ScriptEngineBuildVersion()Gets the build version number of the scripting engine in use.\t\nScriptEngineBuildVersion()
+ScriptEngineMajorVersion()Gets the major version number of the scripting engine in use.\t\nScriptEngineMajorVersion()
+ScriptEngineMinorVersion()Gets the minor version number of the scripting engine in use.\t\nScriptEngineMinorVersion()
+Set()A collection of unique values that may be of any type.\t\nsetObj = new Set() 
+String(newString,stringLiteral)Allows manipulation and formatting of text strings and determination\t\nand location of substrings within strings.\t\nnewString = new String(["stringLiteral"])
+Symbol(desc)Allows you to create a unique identifier.\t\nobj = Symbol(desc)
+Uint16Array(uint16Array,length,array,buffer,byteOffset,length)A typed array of 16-bit unsigned integer values. The contents are initialized to 0. \t\nuint16Array = new Uint16Array( length );\t\nuint16Array = new Uint16Array( array );\t\nuint16Array = new Uint16Array( buffer, byteOffset, length );
+Uint32Array(uint32Array,length,array,buffer,byteOffset,length)A typed array of 32-bit unsigned integer values. The contents are initialized to 0. \t\nuint32Array = new Uint32Array( length );\t\nuint32Array = new Uint32Array( array );\t\nuint32Array = new Uint32Array( buffer, byteOffset, length);
+Uint8Array(uint8Array,length,array,buffer,byteOffset,length)A typed array of 8-bit unsigned integer values. The contents are initialized to 0. \t\nuint8Array = new Uint8Array( length );\t\nuint8Array = new Uint8Array( array );\t\nuint8Array = new Uint8Array( buffer, byteOffset, length);
+Uint8ClampedArray(uint8ClampedArray,length,array,buffer,byteOffset,length)A typed array of 8-bit unsigned integers with values clamped to the range 0-255.\t\nThe contents are initialized to 0.\t\nuint8ClampedArray = new Uint8ClampedArray( length );\t\nuint8ClampedArray = new Uint8ClampedArray( array );\t\nuint8ClampedArray = new Uint8ClampedArray( buffer, byteOffset, length);
+VBArray(varName,safeArray)Provides access to Visual Basic safe arrays.\t\nvarName = new VBArray(safeArray) 
+WeakMap()A collection of key/value pairs in which each key is an object reference.\t\nweakmapObj = new WeakMap()
+WeakSet()A collection of unique objects that may be of any type.\t\nsetObj = new WeakSet()
+WinRTError()When a Windows Runtime call returns an HRESULT that indicates a failure,\t\nJavaScript converts it to a special Windows Runtime error.\t\navailable only in Windows 8.x Store apps, when the Windows Runtime is available.\t\nerrorObj = new WinRTError();
+
+# Javascripts Object Names with Methods
+Array.concat(array1,item1,.,.,.,,itemN,)
+Array.constructor()
+Array.entries(arrayObj)
+Array.every()
+Array.fill(arrayObj,value,start,end)
+Array.filter()
+Array.findIndex(arrayObj,callbackfn,thisArg)
+Array.forEach()
+Array.from(arrayLike,mapfn,thisArg)
+Array.indexOf()
+Array.isArray(object)
+Array.join(arrayObj,separator)
+Array.keys(arrayObj)
+Array.lastIndexOf()
+Array.length(numVar,arrayObj)
+Array.map()
+Array.of(element0,...,elementN)
+Array.pop()
+Array.prototype()
+Array.push(arrayObj,item,,item2,.,.,.,,itemN)
+Array.reduce()
+Array.reduceRight()
+Array.reverse(arrayObj)
+Array.shift()
+Array.slice(arrayObj,start,,end,)
+Array.some()
+Array.sort(arrayObj,sortFunction)
+Array.splice(arrayObj,start,deleteCount,item1,,item2,.,.,.,,itemN)
+Array.toString(array)
+Array.unshift(arrayObj,item1,,item2,.,.,.,,itemN)
+Array.valueOf()
+Array.values(arrayObj)
+ArrayBuffer.byteLength()
+ArrayBuffer.isView(object)
+ArrayBuffer.slice(arrayBufferObj,start,,end,)
+Boolean.constructor(boolean,value)
+Boolean.prototype()
+Boolean.toString(boolean)
+Boolean.valueOf()
+DataView.buffer()
+DataView.byteLength()
+DataView.byteOffset()
+DataView.getFloat32(testFloat,byteOffset,littleEndian)
+DataView.getFloat64(testFloat,byteOffset,littleEndian)
+DataView.getInt16(testInt,byteOffset,littleEndian)
+DataView.getInt32(testInt,byteOffset,littleEndian)
+DataView.getInt8(testInt,byteOffset)
+DataView.getUint16(testInt,byteOffset,littleEndian)
+DataView.getUint32(testInt,byteOffset,littleEndian)
+DataView.getUint8(testInt,byteOffset)
+DataView.setFloat32(byteOffset,value,littleEndian)
+DataView.setFloat64(byteOffset,value,littleEndian)
+DataView.setInt16(byteOffset,value,littleEndian)
+DataView.setInt32(byteOffset,value,littleEndian)
+DataView.setInt8(byteOffset,value)
+DataView.setUint16(testInt,value,byteOffset,littleEndian)
+DataView.setUint32(byteOffset,value,littleEndian)
+DataView.setUint8(byteOffset,value)
+Date.constructor()
+Date.getDate()
+Date.getDay()
+Date.getFullYear()
+Date.getHours()
+Date.getMilliseconds()
+Date.getMinutes()
+Date.getMonth()
+Date.getSeconds()
+Date.getTime()
+Date.getTimezoneOffset()
+Date.getUTCDate()
+Date.getUTCDay()
+Date.getUTCFullYear()
+Date.getUTCHours()
+Date.getUTCMilliseconds()
+Date.getUTCMinutes()
+Date.getUTCMonth()
+Date.getUTCSeconds()
+Date.getVarDate()
+Date.getYear()
+Date.now()
+Date.parse()
+Date.prototype()
+Date.setDate(dateObj,numDate)
+Date.setFullYear(dateObj,,numYear,numMonth,numDate)
+Date.setHours(dateObj,numHours,numMin,numSec,numMilli)
+Date.setMilliseconds(dateObj,numMilli)
+Date.setMinutes(dateObj,numMinutes,numSeconds,numMilli)
+Date.setMonth(dateObj,numMonth,dateVal)
+Date.setSeconds(dateObj,numSeconds,numMilli)
+Date.setTime(dateObj,milliseconds)
+Date.setUTCDate(dateObj,numDate)
+Date.setUTCFullYear(dateObj,numYear,numMonth,numDate)
+Date.setUTCHours(dateObj,numHours,numMin,numSec,numMilli)
+Date.setUTCMilliseconds(dateObj,numMilli)
+Date.setUTCMinutes(dateObj,numMinutes,numSeconds,numMilli)
+Date.setUTCMonth(dateObj,numMonth,dateVal)
+Date.setUTCSeconds(dateObj,numSeconds,numMilli)
+Date.setYear(dateObj,numYear)
+Date.toDateString()
+Date.toGMTString()
+Date.toISOString()
+Date.toJSON(objectname)
+Date.toLocaleDateString(dateObj,locales,options)
+Date.toLocaleString(dateObj,locales,options)
+Date.toLocaleTimeString(dateObj,locales,options)
+Date.toString(date)
+Date.toTimeString()
+Date.toUTCString()
+Date.UTC(year,month,day,hours,minutes,seconds,ms)
+Date.valueOf()
+Debug.debuggerEnabled()
+Debug.msTraceAsyncCallbackCompleted()
+Debug.msTraceAsyncCallbackStarting(asyncOperationId)
+Debug.msTraceAsyncOperationCompleted(asyncOperationId,status)
+Debug.msTraceAsyncOperationStarting(operationName)
+Debug.msUpdateAsyncCallbackRelation(relatedAsyncOperationId,relationType)
+Debug.setNonUserCodeExceptions()
+Debug.write(str1, str2, ... , strN)
+Debug.writeln(str1, str2, ... , strN)
+Enumerator.atEnd()
+Enumerator.item()
+Enumerator.moveFirst()
+Enumerator.moveNext()
+Error.constructor()
+Error.description(object,stringExpression)
+Error.message(errorObj)
+Error.name(errorObj)
+Error.number(Object,errorNumber)
+Error.prototype()
+Error.stack()
+Error.stackTraceLimit()
+Error.toString(date)
+Error.valueOf()
+Float32Array.buffer()
+Float32Array.byteLength()
+Float32Array.byteOffset()
+Float32Array.BYTES_PER_ELEMENT()
+Float32Array.get(value,index)
+Float32Array.length()
+Float32Array.set(index,value,array,offset)
+Float32Array.subarray(newFloat32Array,begin,end)
+Float64Array.buffer()
+Float64Array.bufferOffset()
+Float64Array.byteLength()
+Float64Array.BYTES_PER_ELEMENT()
+Float64Array.get(value,index)
+Float64Array.length()
+Float64Array.set(index,value,array,offset)
+Float64Array.subarray(newFloat64Array,begin,end)
+Function.apply(thisObj,argArray)
+Function.arguments()
+Function.bind(function,thisArg,arg1[,arg2[,argN]]])
+Function.call(thisObj,arg1,,arg2,,,,argN)
+Function.caller()
+Function.length()
+Global.decodeURI()
+Global.decodeURIComponent()
+Global.encodeURI()
+Global.encodeURIComponent()
+Global.escape()
+Global.eval(codeString )
+Global.GetObject(pathname,class,appname,objectype)
+Global.Infinity()
+Global.isFinite()
+Global.isNaN()
+Global.NaN()
+Global.null()
+Global.parseFloat()
+Global.parseInt(numString,radix)
+Global.ScriptEngine()
+Global.ScriptEngineBuildVersion()
+Global.ScriptEngineMajorVersion()
+Global.ScriptEngineMinorVersion()
+Global.undefined()
+Global.unescape()
+Int16Array.buffer()
+Int16Array.byteLength()
+Int16Array.byteOffset()
+Int16Array.BYTES_PER_ELEMENT()
+Int16Array.length()
+Int16Array.set(index,value,array,offset)
+Int16Array.subarray(newInt16Array,begin,end)
+Int32Array.buffer()
+Int32Array.byteLength()
+Int32Array.byteOffset()
+Int32Array.BYTES_PER_ELEMENT()
+Int32Array.length()
+Int32Array.set(index,value,array,offset)
+Int32Array.subarray(newInt32Array,begin,end)
+Int8Array.buffer()
+Int8Array.byteLength()
+Int8Array.byteOffset()
+Int8Array.BYTES_PER_ELEMENT()
+Int8Array.length()
+Int8Array.set(index,value,array,offset)
+Int8Array.subarray(newInt8Array,begin,end)
+Intl.Collator.compare(collatorObj)
+Intl.Collator.constructor()
+Intl.Collator.prototype()
+Intl.Collator.resolvedOptions(collatorObj)
+Intl.Collator(collatorObj,locales,options)
+Intl.DateTimeFormat.constructor()
+Intl.DateTimeFormat.format(dateTimeFormatObj)
+Intl.DateTimeFormat.prototype()
+Intl.DateTimeFormat.resolvedOptions(dateTimeFormatObj)
+Intl.DateTimeFormat(dateTimeFormatObj,locales,options)
+Intl.NumberFormat.constructor()
+Intl.NumberFormat.format(numberFormatObj)
+Intl.NumberFormat.prototype()
+Intl.NumberFormat.resolvedOptions(numberFormatObj)
+Intl.NumberFormat(numberFormatObj,locales,options)
+JSON.parse(text,reviver)
+JSON.stringify(value,replacer,space)
+Map.clear(mapObj)
+Map.constructor()
+Map.delete(mapObj,key)
+Map.forEach(mapObj,callbackfn,thisArg)
+Map.get(mapObj,key)
+Map.has(mapObj,key)
+Map.prototype()
+Map.set(mapObj,key,value)
+Map.size(sizeVar,mapObj)
+Map.toString(mapObj)
+Map.valueOf(mapObj)
+Math.abs()
+Math.acos()
+Math.acosh()
+Math.asin()
+Math.asinh()
+Math.atan()
+Math.atan2(x,y)
+Math.atanh()
+Math.cbrt()
+Math.ceil()
+Math.clz32()
+Math.cos()
+Math.cosh()
+Math.exp()
+Math.expm1()
+Math.floor()
+Math.fround())
+Math.hypot(value1,value2,values))
+Math.imul(x,y)
+Math.log(number)
+Math.log10()
+Math.log1p()
+Math.log2()
+Math.max()
+Math.min()
+Math.pow(base,exponent)
+Math.random()
+Math.round()
+Math.sign()
+Math.sin()
+Math.sinh()
+Math.sqrt()
+Math.tan()
+Math.tanh()
+Math.trunc()
+Number.constructor()
+Number.isFinite()
+Number.isInteger()
+Number.isNaN(numValue)
+Number.isSafeInteger()
+Number.prototype()
+Number.toExponential(numObj,fractionDigits)
+Number.toFixed(numObj,fractionDigits)
+Number.toLocaleString(numberObj,locales,options)
+Number.toPrecision(numObj,precision)
+Number.toString(number)
+Number.valueOf()
+Object.__proto__(object)
+Object.assign(target,...sources)
+Object.constructor()
+Object.create(prototype,descriptors)
+Object.defineProperties(object,descriptors)
+Object.defineProperty(object,propertyname,descriptor)
+Object.freeze(object)
+Object.getOwnPropertyDescriptor(object,propertyname)
+Object.getOwnPropertyNames()
+Object.getOwnPropertySymbols(object)
+Object.getPrototypeOf(object)
+Object.hasOwnProperty(object,proName)
+Object.is(value1,value2)
+Object.isExtensible(object)
+Object.isFrozen(object)
+Object.isPrototypeOf(prototype,object)
+Object.isSealed(object)
+Object.keys()
+Object.preventExtensions(object)
+Object.propertyIsEnumerable(object,proName)
+Object.prototype()
+Object.seal(object)
+Object.setPrototypeOf(obj,proto)
+Object.toLocaleString()
+Object.toString(objectname,radix)
+Object.valueOf()
+Promise.all (func1,func2,funcN)
+Promise.catch(promise,onRejected)
+Promise.race(iterable)
+Promise.reject(r)
+Promise.resolve(x)
+Promise.then(promise,onCompleted,onRejected)
+RegExp.{text}()
+RegExp.index()
+RegExp.input()
+RegExp.lastIndex()
+RegExp.lastMatch()
+RegExp.lastParen()
+RegExp.leftContext()
+Regular.compile(rgExp,pattern,flags)
+Regular.exec(rgExp,str)
+Regular.global()
+Regular.ignoreCase()
+Regular.multiline()
+Regular.source()
+Regular.test(rgExp,str)
+Set.add(setObj,value)
+Set.clear(setObj)
+Set.constructor()
+Set.delete(setObj,value)
+Set.forEach(setObj,callbackfn,thisArg)
+Set.has(setObj,value)
+Set.prototype()
+Set.size(sizeVar,setObj)
+Set.toString(setObj)
+Set.valueOf(setObj)
+String.charAt(strObj,index)
+String.charCodeAt(strObj,index)
+String.codePointAt(stringObj,pos)
+String.concat(string1,,string2,.,.,.,,stringN)
+String.constructor()
+String.endsWith(stringObj,str,position)
+String.fromCharCode(String,code1,,.,.,.,,,codeN)
+String.fromCodePoint(…codePoints)
+String.HTML()
+String.includes(stringObj,substring,position)
+String.indexOf(strObj,subString,startIndex)
+String.lastIndexOf(strObj,substring,startindex)
+String.length()
+String.localeCompare(stringVar,stringExp,locales,options)
+String.match(stringObj,rgExp)
+String.normalize(stringObj,form)
+String.prototype()
+String.raw(templateStr,obj,...substitutions)
+String.repeat(stringObj,count)
+String.replace(stringObj,,rgExp,,replaceText,)
+String.search(stringObj,rgExp)
+String.slice(stringObj,start,,end,)
+String.split(stringObj,,separator,,limit)
+String.startsWith(stringObj,str,position)
+String.substr(stringvar,start,length)
+String.substring(start,end)
+String.toLocaleLowerCase()
+String.toLocaleUpperCase()
+String.toLowerCase()
+String.toString(string)
+String.toUpperCase()
+String.trim(stringObj )
+String.valueOf()
+Symbol.for(key)
+Symbol.keyFor(sym)
+Uint16Array.buffer()
+Uint16Array.byteLength()
+Uint16Array.byteOffset()
+Uint16Array.BYTES_PER_ELEMENT()
+Uint16Array.length()
+Uint16Array.set(index,value,array,offset)
+Uint16Array.subarray(newUint16Array,begin,end)
+Uint8ClampedArray.buffer()
+Uint8ClampedArray.byteLength()
+Uint8ClampedArray.byteOffset()
+Uint8ClampedArray.BYTES_PER_ELEMENT()
+Uint8ClampedArray.length()
+Uint8ClampedArray.set(index,value,array,offset)
+Uint8ClampedArray.subarray(newUint8ClampedArray,begin,end)
+WeakMap.clear(weakmapObj)
+WeakMap.constructor()
+WeakMap.delete(weakmapObj,key)
+WeakMap.get(weakmapObj,key)
+WeakMap.has(weakmapObj,key)
+WeakMap.prototype()
+WeakMap.set(weakmapObj,key,value)
+WeakMap.toString(weakmapObj)
+WeakMap.valueOf(weakmapObj)
+WinRTError.add(weaksetObj,obj)
+WinRTError.buffer()
+WinRTError.byteLength()
+WinRTError.byteOffset()
+WinRTError.BYTES_PER_ELEMENT()
+WinRTError.constructor()
+WinRTError.delete(weaksetObj,obj)
+WinRTError.dimensions()
+WinRTError.getItem(safeArray,dimension1,,...,,dimensionN)
+WinRTError.has(setObj,obj)
+WinRTError.lbound(safeArray,dimension)
+WinRTError.length()
+WinRTError.prototype()
+WinRTError.set(index,value,array,offset)
+WinRTError.set(index,value,array,offset)
+WinRTError.subarray(newUint32Array,begin,end)
+WinRTError.subarray(newUint8Array,begin,end)
+WinRTError.toArray()
+WinRTError.ubound(safeArray,dimension)
+Collator.compare(collatorObj)Returns a function that compares two strings by using the collatorÓ³ sort order.\t\ncollatorObj.compare >JS1.6
+Collator.constructor()Specifies the function that creates a collator.\t\ncollator.constructor >JS1.6
+Collator.prototype()Returns a reference to the prototype for a collator.\t\ncollator.prototype >JS1.6
+Collator.resolvedOptions(collatorObj)Returns an object containing the properties and values of the collator object.\t\ncollatorObj.resolvedOptions() >JS1.6
+Collator(collatorObj,locales,options)Provides locale-specific string comparisons.\t\ncollatorObj = new Intl.Collator([locales][, options]) >JS1.6
+DateTimeFormat.constructor()Specifies the function that creates a formatter.\t\ndateTimeFormatter.constructor >JS1.6
+DateTimeFormat.format(dateTimeFormatObj)Returns a function that formats a locale-specific date by\t\nusing the specified date/time formatter settings.\t\ndateTimeFormatObj.format >JS1.6
+DateTimeFormat.prototype()Returns a reference to the prototype for a formatter.\t\ndateTimeFormat.prototype >JS1.6
+DateTimeFormat.resolvedOptions(dateTimeFormatObj)Returns an object that contains the properties and values\t\nof the date/time formatter object.\t\ndateTimeFormatObj.resolvedOptions() >JS1.6
+DateTimeFormat(dateTimeFormatObj,locales,options)Provides locale-specific date and time formatting.\t\ndateTimeFormatObj = new Intl.DateTimeFormat([locales][, options]) >JS1.6
+
+# Javascript functions and Methods JS1.6
+__proto__(object)Contains a reference to the internal prototype of the specified object.\t\nobject.__proto__ >JS1.6
+{()Returns the characters from the position following the last match to the end of the searched string.\t\nRead-only. >JS1.6
+abs()Returns the absolute value of a number (the value without regard to whether it is positive or negative).\t\nFor example, the absolute value of -5 is the same as the absolute value of 5.\t\nMath.abs(number) >JS1.6
+acos()Returns the arc cosine (or inverse cosine) of a number.\t\nMath.acos(number) >JS1.6
+acosh()Returns the hyperbolic arccosine (or inverse hyperbolic cosine)of a number.\t\nMath.acosh(number) >JS1.6
+add(setObj,value)Adds a new element to a set.\t\nsetObj.add(value) >JS1.6
+add(weaksetObj,obj)Adds a new element to a WeakSet.\t\nweaksetObj.add(obj) >JS1.6
+all (func1,func2,funcN)Joins two or more promises and returns only when all the specified\t\npromises have completed or been rejected.\t\nPromise.all(func1, func2 [,funcN]) >JS1.6
+apply(thisObj,argArray)Calls the function, substituting the specified object for\t\nthe this value of the function, and the specified array for the arguments of the function.\t\napply([thisObj[,argArray]]) >JS1.6
+arguments()Gets the arguments for the currently executing Function object.\t\nfunction.arguments >JS1.6
+asin()Returns the arcsine of a number.\t\nMath.asin(number)  >JS1.6
+asinh()Returns the inverse hyperbolic sine of a number.\t\nMath.asinh(x)  >JS1.6
+assign(target,...sources)Copies the values from one or more source objects to a target object.\t\nObject.assign(target, ...sources ); >JS1.6
+atan()Returns the arctangent of a number.\t\nMath.atan(number)  >JS1.6
+atan2(x,y)Returns the angle (in radians) from the X axis to a point (y,x).\t\nMath.atan2(y, x) >JS1.6
+atanh()Returns the inverse hyperbolic tangent of a number.\t\nMath.atanh(x)  >JS1.6
+atEnd()Returns a Boolean value indicating if the enumerator is at\t\nthe end of the collection.\t\nmyEnum.atEnd() >JS1.6
+bind(function,thisArg,arg1[,arg2[,argN]]])For a given function, creates a bound function that has the same body as the original function.\t\nIn the bound function, the this object resolves to the passed in object.\t\nThe bound function has the specified initial parameters.\t\nfunction.bind(thisArg[,arg1[,arg2[,argN]]]) >JS1.6
+buffer()Read-only. Gets the ArrayBuffer that is referenced by this array.\t\nvar arrayBuffer = floatXXArray.buffer >JS1.6
+buffer()Read-only. Gets the ArrayBuffer that is referenced by this array.\t\nvar arrayBuffer = uint8ClampedArray.buffer >JS1.6
+buffer()Read-only. Gets the ArrayBuffer that is referenced by this view.\t\nvar arrayBuffer = dataView.buffer >JS1.6
+bufferOffset()Read-only. The offset of this array from the start of its ArrayBuffer, in bytes, as fixed at construction time. >JS1.6
+byteLength()Read-only. The length of the ArrayBuffer (in bytes).\t\nvar arrayLength = arrayBuffer.byteLength >JS1.6
+byteLength()Read-only. The length of this array from the start of its ArrayBuffer, in bytes, as fixed at construction time.\t\nvar arrayByteLength = float32Array.byteLength >JS1.6
+byteOffset()Read-only. The offset of this view from the start of its ArrayBuffer, in bytes, as fixed at construction time.\t\nvar arrayOffset = dataView.byteOffset >JS1.6
+BYTES_PER_ELEMENT()The size in bytes of each element in the array.\t\nvar arraySize = intXXArray.BYTES_PER_ELEMENT >JS1.6
+BYTES_PER_ELEMENT()The size, in bytes, of each element in the array.\t\nvar arraySize = uintXXClampedArray.BYTES_PER_ELEMENT >JS1.6
+call(thisObj,arg1,,arg2,,,,argN)Calls a method of an object, substituting another object for the current object.\t\ncall([thisObj[, arg1[, arg2[,  [, argN]]]]]) >JS1.6
+caller()Gets the function that invoked the current function.\t\nfunctionName.caller >JS1.6
+catch(promise,onRejected)Allows you to specify work to be done on the rejection of a promise.\t\npromise.catch(onRejected) >JS1.6
+cbrt()Returns the cube root of a number.\t\nMath.cbrt(number)  >JS1.6
+ceil()Returns the smallest integer greater than or equal to its numeric argument.\t\nMath.ceil(number)  >JS1.6
+charAt(strObj,index)Returns the character at the specified index.\t\nstrObj. charAt(index) >JS1.6
+charCodeAt(strObj,index)Returns the Unicode value of the character at the specified location.\t\nstrObj. charCodeAt(index) >JS1.6
+clear(mapObj)Removes all elements from a map.\t\nmapObj.clear() >JS1.6
+clear(setObj)Removes all elements from the set.\t\nsetObj.clear() >JS1.6
+clear(weakmapObj)Removes all elements from a WeakMap object.\t\nweakmapObj.clear() >JS1.6
+clz32()Returns the number of leading zero bits in the 32-bit binary\t\nrepresentation of a number.\t\nMath.clz32(number)  >JS1.6
+codePointAt(stringObj,pos)Returns the code point for a Unicode UTF-16 character.\t\nstringObj.codePointAt(pos); >JS1.6
+compile(rgExp,pattern,flags)Compiles a regular expression into an internal format for faster execution.\t\nrgExp.compile(pattern, [flags])  >JS1.6
+concat(array1,item1,.,.,.,,itemN,)Combines two or more arrays.\t\narray1.concat([item1[, item2[, . . . [, itemN]]]])  >JS1.6
+concat(string1,,string2,.,.,.,,stringN)Returns a string that contains the concatenation of two or\t\nmore strings.\t\nstring1. concat([string2[, string3[, . . . [, stringN]]]]) >JS1.6
+constructor(boolean,value)Specifies the function that creates an Object.\t\nboolean.constructor([[value]) >JS1.6
+cos()Returns the cosine of a number.\t\nMath.cos(radians)  >JS1.6
+cosh()Returns the hyperbolic cosine of a number.\t\nMath.cosh(x)  >JS1.6
+create(prototype,descriptors)Creates an object that has the specified prototype, and that optionally contains specified properties.\t\nObject.create(prototype, descriptors) >JS1.6
+debuggerEnabled()Determines whether debugging is enabled for the script context.\t\nDebugging may be enabled or disabled whether or not a debugger is attached.\t\nvar dbgEnabled = Debug.debuggerEnabled >JS1.6
+decodeURI()Gets the unencoded version of an encoded Uniform Resource\t\nIdentifier (URI).\t\ndecodeURI(URIstring) >JS1.6
+decodeURIComponent()Gets the unencoded version of an encoded component of a Uniform Resource Identifier (URI).\t\ndecodeURIComponent(encodedURIString) >JS1.6
+defineProperties(object,descriptors)Adds one or more properties to an object, and/or modifies attributes of existing properties.\t\nvar newLine = "<br />",\t\nvar obj = {},\t\nObject.defineProperties(obj, {\t\n newDataProperty: {\t\n     value: 101,\t\n     writable: true,\t\n     enumerable: true,\t\n     configurable: true\t\n },\t\n newAccessorProperty: {\t\n     set: function (x) {\t\n         document.write("in property set accessor" + newLine);\t\n         this.newaccpropvalue = x,\t\n     },\t\n     get: function () {\t\n         document.write("in property get accessor" + newLine);\t\n         return this.newaccpropvalue,\t\n     },\t\n     enumerable: true,\t\n     configurable: true\t\n }});\t\n// Set the accessor property value.\t\nobj.newAccessorProperty = 10,\t\ndocument.write ("newAccessorProperty value: " + obj.newAccessorProperty + newLine);\t\n// Output:\t\n// in property set accessor\t\n// in property get accessor\t\n// newAcc >JS1.6
+defineProperty(object,propertyname,descriptor)Adds a property to an object, or modifies attributes of an existing property.\t\nObject.defineProperty(object, propertyname, descriptor) >JS1.6
+delete(mapObj,key)Removes the specified element from a map.\t\nmapObj.delete(key) >JS1.6
+delete(setObj,value)Removes the specified element from a set.\t\nsetObj.delete(value) >JS1.6
+delete(weakmapObj,key)Removes the specified element from a WeakMap object.\t\nweakmapObj.delete(key) >JS1.6
+delete(weaksetObj,obj)Removes the specified element from a WeakSet.\t\nweaksetObj.delete(obj) >JS1.6
+description(object,stringExpression)Returns or sets the descriptive string associated with a specific error.\t\nobject.description [= stringExpression] >JS1.6
+dimensions()Returns the number of dimensions in a VBArray.\t\narray.dimensions( )  >JS1.6
+endsWith(stringObj,str,position)Returns a value that indicates whether a string or substring ends with another specified string.\t\nstringObj.endsWith(str, [, position]); >JS1.6
+entries(arrayObj)Returns an iterator that returns the key/value pairs of the array.\t\narrayObj.entries(); >JS1.6
+escape()Encodes strings so they can be read on all computers.\t\nDeprecated. escape(charString)  >JS1.6
+eval(codeString )Evaluates JavaScript code and executes it.\t\neval(codeString)  >JS1.6
+every()Determines whether all the members of an array satisfy the specified test.\t\narray1.every(callbackfn[, thisArg]) >JS1.6
+exec(rgExp,str)Executes a search on a string using a regular expression pattern,\t\nand returns an array containing the results of that search.\t\nrgExp.exec(str)  >JS1.6
+exp()Returns e (the base of natural logarithms) raised to a power.\t\nMath.exp(number)  >JS1.6
+expm1()Returns the result of subtracting 1 from e (the base of the\t\nnatural logarithms) raised to a power).\t\nMath.expm1(number)  >JS1.6
+fill(arrayObj,value,start,end)Populates an array with a specified value.\t\narrayObj.fill(value [ , start [ , end ] ]); >JS1.6
+filter()Returns the elements of an array that meet the condition specified in a callback function.\t\narray1.filter(callbackfn[, thisArg]) >JS1.6
+findIndex(arrayObj,callbackfn,thisArg)Returns an index value for the first array\t\nelement that meets ntest criteria specified in a callback function.\t\narrayObj.findIndex(callbackfn [, thisArg]); >JS1.6
+floor()Returns the greatest integer less than or equal to its numeric argument.\t\nMath.floor(number)  >JS1.6
+for(key)Returns the symbol for a specified key or, if the key is not present, creates a new symbol object with the new key.\t\nSymbol.for(key); >JS1.6
+forEach()Performs the specified action for each element in an array.\t\narray1.forEach(callbackfn[, thisArg]) >JS1.6
+forEach(mapObj,callbackfn,thisArg)Performs the specified action for each element in a map.\t\nmapObj.forEach(callbackfn[, thisArg]) >JS1.6
+forEach(setObj,callbackfn,thisArg)Performs the specified action for each element in a set.\t\nsetObj.forEach(callbackfn[, thisArg]) >JS1.6
+freeze(object)Prevents the modification of existing property attributes\t\nand values, and prevents the addition of new properties.\t\nObject.freeze(object) >JS1.6
+from(arrayLike,mapfn,thisArg)Returns an array from an array-like or iterable object.\t\nArray.from (arrayLike [ , mapfn [ , thisArg ] ] ); >JS1.6
+fromCharCode(String,code1,,.,.,.,,,codeN)Returns a string from a number of Unicode character values.\t\nString.fromCharCode([code1[, code2[, ...[, codeN]]]])  >JS1.6
+fromCodePoint(…codePoints)Returns the string associated with a Unicode UTF-16 code point.\t\nString.fromCodePoint(...codePoints); >JS1.6
+fround()Returns the nearest single-precision floating-point format of a number.\t\nMath.fround(number)  >JS1.6
+get(mapObj,key)Returns a specified element from a map.\t\nmapObj.get(key) >JS1.6
+get(value,index)Omittable. Gets the element at the specified index.\t\nvar value = float32Array.get(index); >JS1.6
+get(value,index)Omittable. Gets the element at the specified index.\t\nvar value = float64Array.get(index); >JS1.6
+get(weakmapObj,key)Returns a specified element from a WeakMap object.\t\nweakmapObj.get(key) >JS1.6
+getDate()Gets the day-of-the-month, using local time.\t\ndateObj.getDate()  >JS1.6
+getDay()Gets the day of the week, using local time.\t\ndateObj. getDay()  >JS1.6
+getFloat32(testFloat,byteOffset,littleEndian)Gets the Float32 value at the specified byte offset from the start of the view.\t\nvar testFloat = dataView.getFloat32(byteOffset, littleEndian);  >JS1.6
+getFloat64(testFloat,byteOffset,littleEndian)Gets the Float64 value at the specified byte offset from the start of the view.\t\nvar testFloat = dataView.getFloat64(byteOffset, littleEndian);  >JS1.6
+getFullYear()Gets the year, using local time.\t\ndateObj.getFullYear()  >JS1.6
+getHours()Gets the hours in a date, using local time.\t\ndateObj.getHours()  >JS1.6
+getInt16(testInt,byteOffset,littleEndian)Gets the Int16 value at the specified byte offset from the start of the view.\t\nvar testInt = dataView.getInt16(byteOffset, littleEndian);  >JS1.6
+getInt32(testInt,byteOffset,littleEndian)Gets the Int32 value at the specified byte offset from the start of the view.\t\nvar testInt = dataView.getInt32(byteOffset, littleEndian);  >JS1.6
+getInt8(testInt,byteOffset)Gets the Int8 value at the specified byte offset from the start of the view.\t\nvar testInt = dataView.getInt8(byteOffset);  >JS1.6
+getItem(safeArray,dimension1,,...,,dimensionN)Returns the item at the specified location.\t\nsafeArray.getItem(dimension1[, dimension2, ...], dimensionN)  >JS1.6
+getMilliseconds()Gets the milliseconds of a Date, using local time.\t\ndateObj.getMilliseconds()  >JS1.6
+getMinutes()Gets the minutes of a Date object, using local time.\t\ndateObj.getMinutes()  >JS1.6
+getMonth()Gets the month, using local time.\t\ndateObj.getMonth()  >JS1.6
+getOwnPropertyDescriptor(object,propertyname)Gets the own property descriptor of the specified object.\t\nAn own property descriptor is one that is defined directly on the object and is not inherited from the object's prototype.\t\nObject.getOwnPropertyDescriptor(object, propertyname) >JS1.6
+getOwnPropertyNames()Returns the names of the own properties of an object.\t\nThe own properties of an object are those that are defined directly on that object, and are not inherited from the object's prototype. The properties of an object include both fields (objects) and functions.\t\nObject.getOwnPropertyNames(object) >JS1.6
+getOwnPropertySymbols(object)Returns the own symbol properties of an object.\t\nThe own symbol properties of an object are those that are defined directly on that object, and are not inherited from the object's prototype.\t\nObject.getOwnPropertySymbols(object); >JS1.6
+getPrototypeOf(object)Returns the prototype of an object.\t\nObject.getPrototypeOf(object) >JS1.6
+getSeconds()Gets the seconds of a Date object, using local time.\t\ndateObj.getSeconds()  >JS1.6
+getTime()Gets the time value in milliseconds.\t\ndateObj.getTime()  >JS1.6
+getTimezoneOffset()Gets the difference in minutes between the time on the local\t\ncomputer and Universal Coordinated Time (UTC).\t\ndateObj.getTimezoneOffset()  >JS1.6
+getUint16(testInt,byteOffset,littleEndian)Gets the Uint16 value at the specified byte offset from the start of the view.\t\nvar testInt = dataView.getUint16(byteOffset, littleEndian);  >JS1.6
+getUint32(testInt,byteOffset,littleEndian)Gets the Uint32 value at the specified byte offset from the start of the view.\t\nvar req = new XMLHttpRequest();\t\n req.open('GET', "http://www.example.com");\t\n req.responseType = "arraybuffer",\t\n req.send();\t\n req.onreadystatechange = function () {\t\n     if (req.readyState === 4) {\t\n         var buffer = req.response,\t\n         var dataView = new DataView(buffer);\t\n         alert(dataView.getUint32(0));\t\n     }\t\n} >JS1.6
+getUint8(testInt,byteOffset)Gets the Uint8 value at the specified byte offset from the start of the view.\t\nvar testInt = dataView.getUint8(byteOffset);  >JS1.6
+getUTCDate()Gets the day-of-the-month, using Universal Coordinated Time (UTC).\t\ndateObj.getUTCDate()  >JS1.6
+getUTCDay()Gets the day of the week using Universal Coordinated Time (UTC).\t\ndateObj.getUTCDay()  >JS1.6
+getUTCFullYear()Gets the year using Universal Coordinated Time (UTC).\t\ndateObj.getUTCFullYear()  >JS1.6
+getUTCHours()Gets the hours value in a Date object using Universal Coordinated Time (UTC).\t\ndateObj.getUTCHours()  >JS1.6
+getUTCMilliseconds()Gets the milliseconds of a Date object using Universal Coordinated Time (UTC).\t\ndateObj.getUTCMilliseconds()  >JS1.6
+getUTCMinutes()Gets the minutes of a Date object using Universal Coordinated Time (UTC).\t\ndateObj.getUTCMinutes()  >JS1.6
+getUTCMonth()Gets the month of a Date object using Universal Coordinated Time (UTC).\t\ndateObj.getUTCMonth()  >JS1.6
+getUTCSeconds()Gets the seconds of a Date object using Universal Coordinated Time (UTC).\t\ndateObj.getUTCSeconds()  >JS1.6
+getVarDate()Returns a VT_DATE value from a Date object.\t\ndateObj.getVarDate()  >JS1.6
+getYear()Gets the year of a Date object.  Discouraged. Use getFullYear instead.\t\ndateObj.getYear()  >JS1.6
+global()Returns a Boolean value indicating the state of the global flag (g) used with a regular expression.\t\nDefault is false. Read-only. rgExp.global >JS1.6
+has(mapObj,key)Returns true if the map contains the specified element.\t\nmapObj.has(key) >JS1.6
+has(setObj,obj)Returns true if the WeakSet contains the specified element.\t\nsetObj.has(obj) >JS1.6
+has(setObj,value)Returns true if the set contains the specified element.\t\nsetObj.has(value) >JS1.6
+has(weakmapObj,key)Returns true if the WeakMap object contains the specified element.\t\nweakmapObj.has(key) >JS1.6
+hasOwnProperty(object,proName)Determines whether an object has a property with the specified name.\t\nobject.hasOwnProperty(proName) >JS1.6
+HTML()You can use HTML tag methods to place HTML elements around text in a String object. >JS1.6
+hypot(value1,value2,values)Returns the square root of the sum of the squares of the arguments.\t\nMath.hypot ( value1[, value2[, ...values] ); >JS1.6
+ignoreCase()Returns a Boolean value indicating the state of the ignoreCase flag (i) used with a regular expression.\t\nDefault is false. Read-only. rgExp.ignoreCase >JS1.6
+imul(x,y)Returns the product of two numbers that are treated as 32-bit signed integers.\t\nMath.imul(x, y); >JS1.6
+includes(stringObj,substring,position)Returns a Boolean value that indicates whether the passed in string is contained in the string object.\t\nstringObj.includes(substring [, position]); >JS1.6
+index()Returns the character position where the first successful match begins in a searched string.-Read-only.\t\nRegExp.index  >JS1.6
+indexOf()Returns the index of the first occurrence of a value in an array.\t\narray1.indexOf(searchElement[, fromIndex]) >JS1.6
+indexOf(strObj,subString,startIndex)Returns the position of the first occurrence of a substring.\t\nstrObj. indexOf(subString[, startIndex]) >JS1.6
+input()Returns the string against which a regular expression search was performed.-Read-only.\t\nRegExp.input >JS1.6
+is(value1,value2)Returns a value that indicates whether two values are the same value.\t\nObject.is(value1, value2) >JS1.6
+isArray(object)Determines whether an object is an array.\t\nArray.isArray(object)  >JS1.6
+isExtensible(object)Returns a value that indicates whether new properties can be added to an object.\t\nObject.isExtensible(object) >JS1.6
+isFinite()Returns a Boolean value that indicates whether a value is a finite number.\t\nNumber.isFinite(numValue) >JS1.6
+isFrozen(object)Returns true if existing property attributes and values cannot be modified in an object,\t\nand new properties cannot be added to the object.\t\nObject.isFrozen(object) >JS1.6
+isInteger()Returns a Boolean value that indicates whether a value is an integer.\t\nNumber.isInteger(numValue) >JS1.6
+isNaN(numValue) Returns a Boolean value that indicates whether a value is the reserved value NaN (not a number).\t\nNumber.isNaN(numValue) >JS1.6
+isPrototypeOf(prototype,object)Determines whether an object exists in another object's prototype\t\nchain.\t\nprototype.isPrototypeOf(object) >JS1.6
+isSafeInteger()Returns a Boolean value that indicates whether a number can be safely represented in JavaScript.\t\nNumber.isSafeInteger(numValue)  >JS1.6
+isSealed(object)Returns true if existing property attributes cannot be modified in an object and new properties cannot be added to the object.\t\nObject.isSealed(object) >JS1.6
+isView(object)Determines whether an object provides a view of the buffer.\t\nArrayBuffer.isView(object) >JS1.6
+item()Returns the current item in the collection.\t\nenumObj.item()  >JS1.6
+join(arrayObj,separator)Adds all the elements of an array separated by the specified separator string.\t\narrayObj.join([separator])  >JS1.6
+keyFor(sym)Returns the key for a specified symbol.\t\nSymbol.keyFor(sym); >JS1.6
+keys()Returns the names of the enumerable properties and methods of an object.\t\nObject.keys(object) >JS1.6
+keys(arrayObj)Returns an iterator that returns the index values of the array.\t\narrayObj.keys(); >JS1.6
+lastIndex()Returns the character position where the next match begins in a searched string.\t\nRegExp.lastIndex >JS1.6
+lastIndexOf()Returns the index of the last occurrence of a specified value in an array.\t\narray1.lastIndexOf(searchElement[, fromIndex]) >JS1.6
+lastIndexOf(strObj,substring,startindex)Returns the last occurrence of a substring in the string.\t\nstrObj.lastIndexOf(substring[, startindex]) >JS1.6
+lastMatch()Returns the last matched characters from any regular expression search.-Read-only.\t\nRegExp.lastMatch >JS1.6
+lastParen()Returns the last parenthesized submatch from any regular expression search, if any.-Read-only.\t\nRegExp.lastParen >JS1.6
+lbound(safeArray,dimension)Returns the lowest index value used in the specified dimension of a VBArray.\t\nsafeArray.lbound(dimension)  >JS1.6
+leftContext()Returns the characters from the beginning of a searched string up to the position before the beginning of the last match.-Read-only.\t\nRegExp.leftContext >JS1.6
+length()Gets the number of arguments defined for a function.\t\nfunctionName.length >JS1.6
+length()Returns the length of a String object.\t\nstrVariable.length\t\n"String Literal".length  >JS1.6
+length()The length of the array.\t\nvar arrayLength = uintXXArray.length >JS1.6
+length()The length of the array.\t\nvar arrayLength = uint8ClampedArray.length >JS1.6
+length(numVar,arrayObj)Gets or sets the length of the array. This is a number one higher than the highest element defined in an array.\t\nnumVar = arrayObj.length  >JS1.6
+localeCompare(stringVar,stringExp,locales,options)Determines whether two strings are equivalent in the current\t\nlocale. stringVar.localeCompare(stringExp[, locales][, options])  >JS1.6
+log(number)Returns the natural logarithm (base e) of a number.\t\nMath.log(number)  >JS1.6
+log10()Returns the base 10 logarithm of a number.\t\nMath.log10(x)  >JS1.6
+log1p()Returns the natural logarithm of 1 + a number.\t\nMath.log1p(x)  >JS1.6
+log2()Returns the base 2 logarithm of a number.\t\nMath.log2(x)  >JS1.6
+map()Calls a defined callback function on each element of an array,\t\nand returns an array that contains the results.\t\narray1.map(callbackfn[, thisArg]) >JS1.6
+match(stringObj,rgExp)Matches a string with a regular expression, and returns an\t\narray containing the results of that search.\t\nstringObj.match(rgExp)  >JS1.6
+max()Returns the larger of a set of supplied numeric expressions.\t\nMath.max([number1[, number2[... [, numberN]]]])  >JS1.6
+message(errorObj)Returns an error message string.\t\nerrorObj.message >JS1.6
+min()Returns the smaller of a set of numeric expressions.\t\nMath.min([number1[, number2[... [,numberN]]]]) >JS1.6
+moveFirst()Resets the current item in the collection to the first item.\t\nenumObj.moveFirst( )  >JS1.6
+moveNext()Moves the current item to the next item in the collection.\t\nenumObj.moveNext( )  >JS1.6
+msTraceAsyncCallbackCompleted()Indicates that the callback stack associated with a previously\t\nspecified asynchronous operation has completed.\t\nDebug.msTraceAsyncCallbackCompleted() >JS1.6
+msTraceAsyncCallbackStarting(asyncOperationId)Associates the callback stack with a previously specified asynchronous operation.\t\nDebug.msTraceAsyncCallbackStarting(asyncOperationId) >JS1.6
+msTraceAsyncOperationCompleted(asyncOperationId,status)Indicates that an asynchronous operation has completed.\t\nDebug.msTraceAsyncOperationCompleted(asyncOperationId, status) >JS1.6
+msTraceAsyncOperationStarting(operationName)Initiates a trace for an asynchronous operation.\t\nDebug.msTraceAsyncOperationStarting(operationName) >JS1.6
+msUpdateAsyncCallbackRelation(relatedAsyncOperationId,relationType)Updates the relationship status between a synchronous work item and the associated asynchronous operation.\t\nDebug.msUpdateAsyncCallbackRelation(relatedAsyncOperationId, relationType) >JS1.6
+multiline()Returns a Boolean value indicating the state of the multiline flag (m) used with a regular expression.\t\nDefault is false. Read-only.\t\nrgExp.multiline >JS1.6
+name(errorObj)Returns the name of an error.\t\nerrorObj.name >JS1.6
+normalize(stringObj,form)Returns the Unicode Normalization Form of a specified string.\t\nstringObj.normalize([form]); >JS1.6
+now()Gets the current date and time.\t\nDate.now() >JS1.6
+number(Object,errorNumber)Returns or sets the numeric value associated with a specific error.\t\nThe Error object's default property is number.\t\nobject.number [= errorNumber] >JS1.6
+NumberFormat.constructor()Specifies the function that creates a formatter.\t\nnumberFormatter.constructor >JS1.6
+NumberFormat.format(numberFormatObj)Returns a function that formats a locale-specific number by using the specified number formatter settings.\t\nnumberFormatObj.format >JS1.6
+NumberFormat.prototype()Returns a reference to the prototype for a formatter.\t\nnumberFormat.prototype >JS1.6
+NumberFormat.resolvedOptions(numberFormatObj)Returns an object that contains the properties and values\t\nof the NumberFormat formatter object.\t\nnumberFormatObj.resolvedOptions() >JS1.6
+NumberFormat(numberFormatObj,locales,options)Provides locale-specific number formatting.\t\nnumberFormatObj = new Intl.NumberFormat([locales][, options]) >JS1.6
+of(element0,...,elementN)Returns an array from the passed in arguments.\t\nArray.of(element0[, element1][, ...][,elementN]); >JS1.6
+parse()Parses a string containing a date, and returns the number\t\nof milliseconds between that date and midnight, January 1, 1970.\t\nDate.parse(dateVal)  >JS1.6
+parse(text,reviver)Converts a JavaScript Object Notation (JSON) string into an object.\t\nJSON.parse(text [, reviver]) >JS1.6
+parseFloat()Converts a string to a floating-point number.\t\nparseFloat(numString)  >JS1.6
+parseInt(numString,radix)Converts a string to an integer.\t\nparseInt(numString, [radix])  >JS1.6
+pop()Removes the last element from an array and returns it.\t\narrayObj.pop() >JS1.6
+pow(base,exponent)Returns the value of a base expression taken to a specified power.\t\nMath.pow(base, exponent)  >JS1.6
+preventExtensions(object)Prevents the addition of new properties to an object.\t\nObject.preventExtensions(object) >JS1.6
+propertyIsEnumerable(object,proName)Determines whether a specified property is enumerable.\t\nobject.propertyIsEnumerable(proName) >JS1.6
+prototype()Returns a reference to the prototype for a class.\t\narray.prototype >JS1.6
+push(arrayObj,item,,item2,.,.,.,,itemN)Appends new elements to an array, and returns the new length of the array.\t\narrayObj.push([item1 [item2 [. . . [itemN ]]]]) >JS1.6
+race(iterable)Creates a new promise that will resolve or reject with the\t\nsame result value as the first promise to resolve or reject among the passed in arguments.\t\nPromise.race(iterable) >JS1.6
+random()Returns a pseudorandom number between 0 and 1.\t\nMath.random( )  >JS1.6
+raw(templateStr,obj,...substitutions)Returns the raw string form of a template string.\t\nString.raw`templateStr`,\t\nString.raw(obj, ...substitutions); >JS1.6
+reduce()Calls the specified callback function for all the elements in an array.\t\nThe return value of the callback function is the accumulated result,\t\nand is provided as an argument in the next call to the callback function.\t\narray1.reduce(callbackfn[, initialValue]) >JS1.6
+reduceRight()Calls the specified callback function for all the elements in an array, in descending order.\t\nThe return value of the callback functionis the accumulated result,\t\nand is provided as an argument in the next call to the callback function.\t\narray1.reduceRight(callbackfn[, initialValue]) >JS1.6
+reject(r)Creates a new rejected promise with a result equal to the passed in argument.\t\nPromise.reject(r); >JS1.6
+repeat(stringObj,count)Returns a new string object with a value equal to the original\t\nstring repeated the specified number of times.\t\nstringObj.repeat(count); >JS1.6
+replace(stringObj,,rgExp,,replaceText,)Replaces text in a string, using a regular expression or search string.\t\nstringObj. replace(rgExp, replaceText) >JS1.6
+resolve(x)Creates a new resolved promise with a result equal to its argument.\t\nPromise.resolve(x) >JS1.6
+reverse(arrayObj)Reverses the elements in an Array.\t\narrayObj.reverse()  >JS1.6
+round()Returns a supplied numeric expression rounded to the nearest\t\ninteger.\t\nMath.round(number)  >JS1.6
+ScriptEngine()Gets the name of the scripting language in use.\t\nScriptEngine() >JS1.6
+ScriptEngineBuildVersion()Gets the build version number of the scripting engine in use.\t\nScriptEngineBuildVersion() >JS1.6
+ScriptEngineMajorVersion()Gets the major version number of the scripting engine in use.\t\nScriptEngineMajorVersion() >JS1.6
+ScriptEngineMinorVersion()Gets the minor version number of the scripting engine in use.\t\nScriptEngineMinorVersion() >JS1.6
+seal(object)Prevents the modification of attributes of existing properties,\t\nand prevents the addition of new properties.\t\nObject.seal(object) >JS1.6
+search(stringObj,rgExp)Finds the first substring match in a regular expression search.\t\nstringObj.search(rgExp)  >JS1.6
+set(index,value,array,offset)Sets a value or an array of values.\t\nfloatXXArray.set(index, value);\t\nfloat32Array.set(array, offset); >JS1.6
+set(index,value,array,offset)Sets a value or an array of values.\t\nuint8ClampedArray.set(index, value);\t\nuint8ClampedArray.set(array, offset); >JS1.6
+set(mapObj,key,value)Adds a new element to a map.\t\nmapObj.set(key, value) >JS1.6
+set(weakmapObj,key,value)Adds a new element to a WeakMap object.\t\nweakmapObj.set(key, value) >JS1.6
+setDate(dateObj,numDate)Sets the numeric day-of-the-month value of the Date object using local time.\t\ndateObj.setDate(numDate)  >JS1.6
+setFloat32(byteOffset,value,littleEndian)Sets the Float32 value at the specified byte offset from the start of the view.\t\nThere is no alignment constraint, multi-byte values may be set at any offset.\t\ndataView.setFloat32 (byteOffset, value, littleEndian);  >JS1.6
+setFloat64(byteOffset,value,littleEndian)Sets the Float64 value at the specified byte offset from the start of the view.\t\nThere is no alignment constraint, multi-byte values may be set at any offset.\t\ndataView.setFloat64 (byteOffset, value, littleEndian);  >JS1.6
+setFullYear(dateObj,,numYear,numMonth,numDate)Sets the year of the Date object using local time.\t\ndateObj.setFullYear(numYear[, numMonth[, numDate]])  >JS1.6
+setHours(dateObj,numHours,numMin,numSec,numMilli)Sets the hour value in the Date object using local time.\t\ndateObj.setHours(numHours[, numMin[, numSec[, numMilli]]])  >JS1.6
+setInt16(byteOffset,value,littleEndian)Sets the Int16 value at the specified byte offset from the start of the view.\t\nThere is no alignment constraint, multi-byte values may be set at any offset.\t\ndataView.setInt16(byteOffset, value, littleEndian);  >JS1.6
+setInt32(byteOffset,value,littleEndian)Sets the Int32 value at the specified byte offset from the start of the view.\t\nThere is no alignment constraint, multi-byte values may be set at any offset.\t\ndataView.setInt32 (byteOffset, value, littleEndian);  >JS1.6
+setInt8(byteOffset,value)Stores an Int8 value at the specified byte offset from the start of the view.\t\ndataView.setInt8(byteOffset, value);  >JS1.6
+setMilliseconds(dateObj,numMilli)Sets the milliseconds value in the Date object using local time.\t\ndateObj.setMilliseconds(numMilli)  >JS1.6
+setMinutes(dateObj,numMinutes,numSeconds,numMilli)Sets the minutes value in the Date object using local time.\t\ndateObj.setMinutes(numMinutes[, numSeconds[, numMilli]])  >JS1.6
+setMonth(dateObj,numMonth,dateVal)Sets the month value in the Date object using local time.\t\ndateObj. setMonth(numMonth[, dateVal])  >JS1.6
+setNonUserCodeExceptions()Determines whether any try-catch blocks in this scope are to be treated by the debugger as user-unhandled.\t\nExceptions can be classified as thrown, user-unhandled or unhandled.\t\nDebug.setNonUserCodeExceptions [= bool] >JS1.6
+setPrototypeOf(obj,proto)Sets the prototype of an object.\t\nObject.setPrototypeOf(obj, proto); >JS1.6
+setSeconds(dateObj,numSeconds,numMilli)Sets the seconds value in the Date object using local time.\t\ndateObj.setSeconds(numSeconds[, numMilli])  >JS1.6
+setTime(dateObj,milliseconds)Sets the date and time value in the Date object.\t\ndateObj.setTime(milliseconds)  >JS1.6
+setUint16(testInt,value,byteOffset,littleEndian)Sets the Uint16 value at the specified byte offset from the start of the view.\t\nThere is no alignment constraint, multi-byte values may be set at any offset.\t\ndataView.setUint16(byteOffset, value, littleEndian);  >JS1.6
+setUint32(byteOffset,value,littleEndian)Sets the Uint32 value at the specified byte offset from the start of the view.\t\nThere is no alignment constraint, multi-byte values may be set at any offset.\t\ndataView.setUint32 (byteOffset, value, littleEndian);  >JS1.6
+setUint8(byteOffset,value)Stores a Uint8 value at the specified byte offset from the start of the view.\t\ndataView.setUint8(byteOffset, value);  >JS1.6
+setUTCDate(dateObj,numDate)Sets the numeric day of the month in the Date object using Universal Coordinated Time (UTC).\t\ndateObj.setUTCDate(numDate)  >JS1.6
+setUTCFullYear(dateObj,numYear,numMonth,numDate)Sets the year value in the Date object using Universal Coordinated\t\nTime (UTC).\t\ndateObj.setUTCFullYear(numYear[, numMonth[, numDate]])  >JS1.6
+setUTCHours(dateObj,numHours,numMin,numSec,numMilli)Sets the hours value in the Date object using Universal Coordinated\t\nTime (UTC).\t\ndateObj.setUTCHours(numHours[, numMin[, numSec[, numMilli]]])  >JS1.6
+setUTCMilliseconds(dateObj,numMilli)Sets the milliseconds value in the Date object using Universal Coordinated Time (UTC).\t\ndateObj.setUTCMilliseconds(numMilli)  >JS1.6
+setUTCMinutes(dateObj,numMinutes,numSeconds,numMilli)Sets the minutes value in the Date object using Universal Coordinated Time (UTC).\t\ndateObj.setUTCMinutes(numMinutes[, numSeconds[, numMilli]])  >JS1.6
+setUTCMonth(dateObj,numMonth,dateVal)Sets the month value in the Date object using Universal Coordinated Time (UTC).\t\ndateObj.setUTCMonth(numMonth[, dateVal])  >JS1.6
+setUTCSeconds(dateObj,numSeconds,numMilli)Sets the seconds value in the Date object using Universal Coordinated Time (UTC).\t\ndateObj.setUTCSeconds(numSeconds[, numMilli])  >JS1.6
+setYear(dateObj,numYear)Sets the year value in the Date object.\t\ndateObj.setYear(numYear)  >JS1.6
+shift()Removes the first element from an array and returns it.\t\narrayObj.shift() >JS1.6
+sign()Returns the sign of a number, indicating whether the number is positive, negative, or 0.\t\nMath.sign(number) >JS1.6
+sin()Returns the sine of a number.\t\nMath.sin(radians)  >JS1.6
+sinh()Returns the inverse hyperbolic sine of a number.\t\nMath.sinh(x)  >JS1.6
+size(sizeVar,mapObj)Returns the number of elements in a map.\t\nsizeVar = mapObj.size >JS1.6
+size(sizeVar,setObj)Returns the number of elements in a set.\t\nsizeVar = setObj.size >JS1.6
+slice(arrayBufferObj,start,,end,)Returns a section of an ArrayBuffer.\t\narrayBufferObj.slice(start, [end])  >JS1.6
+slice(arrayObj,start,,end,)Returns a section of an array.\t\narrayObj.slice(start, [end])  >JS1.6
+slice(stringObj,start,,end,)Returns a section of a string.\t\nstringObj.slice(start, [end])  >JS1.6
+some()Determines whether the specified callback function returns true for any element of an array.\t\narray1.some(callbackfn[, thisArg]) >JS1.6
+sort(arrayObj,sortFunction)Sorts an Array.\t\narrayobj.sort(sortFunction)  >JS1.6
+source()Returns a copy of the text of the regular expression pattern.\t\nRead-only. Argument is a Regular expression object.\t\nrgExp.source >JS1.6
+splice(arrayObj,start,deleteCount,item1,,item2,.,.,.,,itemN)Removes elements from an array and, if necessary, inserts new elements in their place, returning the deleted elements.\t\narrayObj.splice(start, deleteCount, [item1[, item2[, . . . [,itemN]]]]) >JS1.6
+split(stringObj,,separator,,limit)Split a string into substrings using the specified separator and return them as an array.\t\nstringObj.split([separator[, limit]]) >JS1.6
+sqrt()Returns the square root of a number.\t\nMath.sqrt(number)  >JS1.6
+stack()Gets or sets the error stack as a string that contains the stack trace frames.\t\nobject.stack  >JS1.6
+stackTraceLimit()Gets or sets the stack trace limit, the default limit is 10.\t\nError.stackTraceLimit  >JS1.6
+startsWith(stringObj,str,position)Returns a value that indicates whether a string or substring starts with another specified string.\t\nstringObj.startsWith(str, [, position]); >JS1.6
+stringify(value,replacer,space)Converts a JavaScript value to a JavaScript Object Notation (JSON) string.\t\nJSON.stringify(value [, replacer] [, space]) >JS1.6
+subarray(Array,begin,end)Gets a new Array of the ArrayBuffer Object store for this array, specifying the first and last members of the subarray.\t\nvar newUint8Array = uint8Array.subarray(begin, end); >JS1.6
+substr(stringvar,start,length)Gets a substring beginning at the specified location and having the specified length.\t\nstringvar.substr(start [, length ])  >JS1.6
+substring(start,end)Returns the substring at the specified location within a String object.\t\n"String Literal".substring(start [, end])  >JS1.6
+tan()Returns the tangent of a number.\t\nMath.tan(radians)  >JS1.6
+tanh()Returns the hyperbolic tangent of a number.\t\nMath.tanh(x) >JS1.6
+test(rgExp,str)Returns a Boolean value that indicates whether or not a pattern exists in a searched string.\t\nrgExp.test(str)  >JS1.6
+then(promise,onCompleted,onRejected)Allows you to specify work to be done on the fulfillment of a promise.\t\npromise.then(onCompleted, onRejected); >JS1.6
+toArray()Returns a standard JavaScript array converted from a VBArray.\t\nsafeArray.toArray( )  >JS1.6
+toDateString()Returns a date as a string value.\t\nobjDate.toDateString() >JS1.6
+toExponential(numObj,fractionDigits)Represents a number in exponential notation.\t\nnumObj. toExponential([fractionDigits]) >JS1.6
+toFixed(numObj,fractionDigits)Represents a number in fixed-point notation.\t\nnumObj.toFixed([fractionDigits]) >JS1.6
+toGMTString()Returns a date converted to a string using Greenwich Mean Time(GMT). Discouraged, use toUTCString instead.\t\ndateObj.toGMTString()  >JS1.6
+toISOString()Returns a date as a string value in ISO format.\t\nobjDate.toISOString() >JS1.6
+toJSON(objectname)Used by the JSON.stringify method to enable the transformation of an object's data to (JSON) serialization.\t\nobjectname.toJSON() >JS1.6
+toLocaleDateString(dateObj,locales,options)Returns a date as a string value that is appropriate to the host environment's current locale or the specified locale.\t\ndateObj.toLocaleDateString( [locales][, options])  >JS1.6
+toLocaleLowerCase()Converts all alphabetic characters to lowercase\t\nstringVar.toLocaleLowerCase() >JS1.6
+toLocaleString()Returns a date converted to a string using the current locale.\t\ndateObj.toLocaleString()  >JS1.6
+toLocaleString(dateObj,locales,options)Converts a date to a string by using the current or specified locale.\t\ndateObj.toLocaleString([locales][, options])  >JS1.6
+toLocaleString(numberObj,locales,options)Converts a number to a string by using the current or specified locale.\t\nnumberObj.toLocaleString([locales][, options])  >JS1.6
+toLocaleTimeString(dateObj,locales,options)Returns a time as a string value that is appropriate to the host environment's current locale.\t\ndateObj.toLocaleTimeString([locales][, options]) >JS1.6
+toLocaleUpperCase()Returns a string where all alphabetic characters have been converted to uppercase\t\nstringVar.toLocaleUpperCase() >JS1.6
+toLowerCase()Converts all the alphabetic characters in a string to lowercase.\t\n"String Literal".toLowerCase()  >JS1.6
+toPrecision(numObj,precision)Represents a number either in exponential or fixed-point notation with a specified number of digits.\t\nnumObj.toPrecision([precision]) >JS1.6
+toString(array)Returns a string representation of an array.\t\narray.toString() >JS1.6
+toString(number)Returns a string representation of a number.\t\nnumber.toString() >JS1.6
+toString(objectname,radix)Returns a string representation of an object.\t\nobjectname.toString([radix]) >JS1.6
+toTimeString()Returns a time as a string value.\t\nobjDate. toTimeString() >JS1.6
+toUpperCase()Converts all the alphabetic characters in a string to uppercase.\t\n"String Literal".toUpperCase()  >JS1.6
+toUTCString()Returns a date converted to a string using Universal Coordinated Time (UTC).\t\ndateObj.toUTCString()  >JS1.6
+trim(stringObj )Removes the leading and trailing white space and line terminator characters from a string.\t\nstringObj.trim() >JS1.6
+trunc()Returns the integer portion of a number, removing any fractional digits.\t\nMath.trunc(number) >JS1.6
+ubound(safeArray,dimension)Returns the highest index value used in the specified dimension of the VBArray.\t\nsafeArray.ubound(dimension)  >JS1.6
+undefined()A value that has never been defined, such as a variable that has not been initialized.\t\nundefined >JS1.6
+unescape()Decodes String objects encoded with the escape function.\t\nDeprecated. unescape(charString)  >JS1.6
+unshift(arrayObj,item1,,item2,.,.,.,,itemN)Inserts new elements at the start of an array.\t\narrayObj.unshift([item1[, item2 [, . . . [, itemN]]]]) >JS1.6
+UTC(year,month,day,hours,minutes,seconds,ms)Returns the number of milliseconds between midnight, January1, 1970\t\nTime in (UTC or GMT) and the specified date.\t\nDate.UTC(year, month, day[, hours[, minutes[, seconds[,ms]]]])  >JS1.6
+valueOf()Returns the primitive value of the specified number.\t\nnumber.valueOf() >JS1.6
+valueOf()Returns the stored time value in milliseconds since midnight, January 1, 1970 UTC.\t\ndate.valueOf() >JS1.6
+valueOf()Returns the string.\t\nstring.valueOf() >JS1.6
+valueOf(mapObj)Returns the primitive value of the specified object.\t\nmapObj.valueOf() >JS1.6
+valueOf(setObj)Returns the primitive value of the specified object.\t\nsetObj.valueOf() >JS1.6
+valueOf(weakmapObj)Returns the primitive value of the specified object.\t\nweakmapObj.valueOf() >JS1.6
+values(arrayObj)Returns an iterator that returns the values of the array.\t\narrayObj.values(); >JS1.6
+write(str1, str2, ... , strN)Sends strings to the script debugger.\t\nDebug.write([str1 [, str2 [, ... [, strN]]]]) >JS1.6
+writeln(str1, str2, ... , strN)Sends strings to the script debugger, followed by a newline character.\t\nDebug.writeln([str1 [, str2 [, ... [, strN]]]]) >JS1.6
+watch(prop, handler)Runs a function when a property has been assigned a value.\t\nDiscouraged. use getters/seters instead. >JS1.6
+unwatch(prop, handler) removes a watchpoint set with the watch() method.\t\nDiscouraged. use getters/seters instead. >JS1.6
+
+# Javascript Constants >JS1.6
+Math.E()The mathematical constant e. This is Euler's number, the base of natural logarithms. (e~2718) >JS1.6
+Math.LN10()The natural logarithm of 10. (ln10~2302) >JS1.6
+Math.LN2()The natural logarithm of 2. (ln2~693) >JS1.6
+Math.LOG10E()The base-10 logarithm of e. (lg10e~434) >JS1.6
+Math.LOG2E()The base-2 logarithm of e. (lg2e~1443) >JS1.6
+Math.PI()Pi. This is the ratio of the circumference of a circle to its diameter. (pi~3.14159) >JS1.6
+Math.SQRT1_2()The square root of 0.5, or, equivalently, one divided by the square root of 2. (sqrt1/2~707) >JS1.6
+Math.SQRT2()The square root of 2. (sqrt2~1414) >JS1.6
+Number.EPSILON()The smallest number that can be represented in JavaScript. Equal to approximately 2.2204460492503130808472633361816E-16. (~) >JS1.6
+Number.MAX_SAFE_INTEGER()The largest number that can be safely represented in JavaScript. Equal to 9007199254740991. (~) >JS1.6
+Number.MAX_VALUE()The largest number that can be represented in JavaScript. Equal to approximately 1.79E+308. (~) >JS1.6
+Number.MIN_SAFE_INTEGER()The smallest number that can be safely represented in JavaScript. Equal to ?9007199254740991. (~) >JS1.6
+Number.MIN_VALUE()The closest number to zero that can be represented in JavaScript. Equal to approximately 5.00E-324. (~) >JS1.6
+Number.NEGATIVE_INFINITY()A value that is less than the largest negative number that can be represented in JavaScript. >JS1.6
+Number.POSITIVE_INFINITY()A value greater than the largest number that can be represented in JavaScript. \t\nJavaScript displays POSITIVE_INFINITY values as infinity.  (~) >JS1.6
+
+E()The mathematical constant e. This is Euler's number, the base of natural logarithms. (e~2718) >JS1.6
+EPSILON()The smallest number that can be represented in JavaScript.\t\nEqual to approximately 2.2204460492503130808472633361816E-16. (~) >JS1.6
+Infinity()A number that is larger than the largest floating point number.\t\nReturns an initial value of Number. >JS1.6
+LN10()The natural logarithm of 10. (ln10~2302) >JS1.6
+LN2()The natural logarithm of 2. (ln2~693) >JS1.6
+LOG10E()The base-10 logarithm of e. (lg10e~434) >JS1.6
+LOG2E()The base-2 logarithm of e. (lg2e~1443) >JS1.6
+MAX_SAFE_INTEGER()The largest number that can be safely represented in JavaScript.\t\nEqual to 9007199254740991. (~) >JS1.6
+MAX_VALUE()The largest number that can be represented in JavaScript.\t\nEqual to approximately 1.79E+308. (~) >JS1.6
+MIN_SAFE_INTEGER()The smallest number that can be safely represented in JavaScript.\t\nEqual to ?9007199254740991. (~) >JS1.6
+MIN_VALUE()The closest number to zero that can be represented in JavaScript.\t\nEqual to approximately 5.00E-324. (~) >JS1.6
+NaN()A value that is not a number. In equality comparisons, NaN does not equal any value, including itself.\t\nSee use of the isNaN function. >JS1.6
+NEGATIVE_INFINITY()A value that is less than the largest negative number that can be represented in JavaScript.\t\nJavaScript displays NEGATIVE_INFINITY values as -infinity.  (~) >JS1.6
+null()Null:) >JS1.6
+PI()Pi. This is the ratio of the circumference of a circle to its diameter. (pi~3.14159) >JS1.6
+POSITIVE_INFINITY()A value greater than the largest number that can be represented in JavaScript. \t\nJavaScript displays POSITIVE_INFINITY values as infinity.  (~) >JS1.6
+SQRT1_2()The square root of 0.5, or, equivalently, one divided by the square root of 2. (sqrt1/2~707) >JS1.6
+SQRT2()The square root of 2. (sqrt2~1414) >JS1.6
+
+# Javascript reserved Keywords
+abstract
+break
+byte
+case
+catch
+char
+class
+const
+continue
+debugger
+default
+do
+double
+else
+enum
+export
+extends
+false
+final
+finally
+float
+for
+goto
+if
+implements
+import
+in
+instanceof
+int
+interface
+let
+long
+native
+new
+null
+package
+private
+protected
+public
+return
+short
+static
+super
+switch
+synchronized
+this
+throw
+throws
+transient
+true
+try
+typeof
+var
+void
+volatile
+while
+with
+yield
+	
+# javascript.html_dom.api
+document.close() \t\nCloses an output stream opened with the document.open() \t\nmethod, and displays the collected data
+document.createAttribute(name) \t\nCreates an attribute node with the specified name, and returns the new Attr object
+document.createCDATASection(data) \t\nCreates a CDATA section node
+document.createComment(data) \t\nCreates a comment node
+document.createDocumentFragment() \t\nCreates an empty DocumentFragment object, and returns it
+document.createElement(name) \t\nCreates an element node
+document.createTextNode(text) \t\nCreates a text node
+document.getElementById(id) \t\nReturns the element that has an ID attribute with the given value. If no such element exists, it returns null
+document.getElementsByTagName(tagname) \t\nReturns a NodeList of all elements with a specified name
+document.open([mimetype, [replace]]) \t\nOpens a stream to collect the output from any document.write() \t\nor document.writeln() \t\nmethods
+document.write(s, ...) \t\nWrites HTML expressions or JavaScript code to a document
+document.writeln(s, ...) \t\nIdentical to the write() \t\nmethod, with the addition of writing a new line character after each expression
+location.assign(url) \t\nLoads a new document
+location.reload() \t\nReloads the current document
+location.replace(url) \t\nReplaces the current document with a new one
+window.alert(message) \t\nDisplays an alert box with a message and an OK button
+window.blur() \t\nRemoves focus from the current window
+window.clearInterval(id) \t\nCancels a timeout set with setInterval()
+window.clearTimeout(id) \t\nCancels a timeout set with setTimeout()
+window.close() \t\nCloses the current window
+window.confirm(message) \t\nDisplays a dialog box with a message and an OK and a Cancel button
+window.focus() \t\nSets focus to the current window
+window.moveBy(x, y) \t\nMoves a window relative to its current position
+window.moveTo(x, y) \t\nMoves a window to the specified position
+window.open([url, [name, [specs, [replace]]]]) \t\nOpens a new browser window
+window.print() \t\nPrints the contents of the current window
+window.prompt(message, default) \t\nDisplays a dialog box that prompts the user for input
+window.resizeBy(width, height) \t\nResizes a window by the specified pixels
+window.resizeTo(width, height) \t\nResizes a window to the specified width and height
+window.scrollBy(x, y) \t\nScrolls the content by the specified number of pixels
+window.scrollTo(x, y) \t\nScrolls the content to the specified coordinates
+window.setInterval(fn, milisec) \t\nEvaluates an expression at specified intervals
+window.setTimeout(fn, milisec) \t\nEvaluates an expression after a specified number of milliseconds
+
+##
+# HTML WebApi https://developer.mozilla.org/en/docs/Web/API | subset - volunteers wanted.
+##
+
+#~Location Properties
+href@@\t\nDOMString The entire URL. If changed, the associated document navigates to the new page. DOM>location 
+protocol@@\t\n:DOMString:  protocol scheme of the URL, including the final ':'. DOM>location
+host@@\t\n:DOMString  host, that is the hostname, a ':', and the port of the URL. DOM>location
+hostname@@\t\n:DOMString domain of the URL. DOM>location
+port@@\t\n:DOMString  port number of the URL. DOM>location
+pathname@@\t\n:DOMString containing an initial '/' followed by the path of the URL. DOM>location
+search@@\t\n:DOMString containing a '?' followed by the parameters of the URL. Also known as "querystring". DOM>location
+hash@@\t\n:DOMString containing a '#' followed by the fragment identifier of the URL. DOM>location
+username@@\t\n:DOMString username specified before the domain name. DOM>location
+password@@\t\n:DOMString password specified before the domain name. DOM>location
+origin@@\t\n-ro  :DOMString canonical form of the origin. DOM>location
+
+#~location Methods
+reload(boolean) Reloads the resource from the current URL. if the param is true then the Page\t\nmay be reloaded from the server / otherwise also from cache. DOM>location
+replace() Replaces the current resource with the one at the provided URL.\t\nDoesnt add URL to session History. DOM>location
+toString() -ro Returns a DOMString  whole URL. DOM>location
+assign() Loads the resource at the URL provided in parameter. DOM>location
+
+#
+# The c lexers handles multiple calltip.parameter.start characters correctly.
+# so using @@ to identify properties and distuinguish them from methods/functions using()
+#
+#~Window Properties
+#
+closed@@\t\n-ro This property indicates whether the current window is closed or not. DOM>WindowProp
+Components@@\t\nThe entry point to many XPCOM features. Some properties, e.g. classes, are only available to sufficiently privileged code.\t\nWeb code should not use this property. DOM>WindowProp
+console@@\t\n-ro Returns a reference to the console object which provides access to the browser's debugging console. DOM>WindowProp
+content@@\t\n-ro Returns a reference to the content element in the current  The obsolete variant with underscore is no longer available from Web content. DOM>WindowProp
+controllers@@\t\n-ro Returns the XUL controller objects for the current chrome Window. DOM>WindowProp
+crypto@@\t\n-ro Returns the browser crypto object. DOM>WindowProp
+devicePixelRatio@@\t\n-ro Returns the ratio between physical pixels and device independent pixels in the current display. DOM>WindowProp
+dialogArguments@@\t\n-ro Gets the arguments passed to the window (if it's a dialog box) at the time showModalDialog() was called. This is an nsIArray. DOM>WindowProp
+directories@@\t\nSynonym of personalbar DOM>WindowProp
+document@@\t\n-ro Returns a reference to the document that the window contains. DOM>WindowProp
+frameElement@@\t\n-ro Returns the element in which the window is embedded, or null if the window is not embedded. DOM>WindowProp
+frames@@\t\n-ro Returns an array of the subframes in the current Window. DOM>WindowProp
+fullScreen@@\t\nThis property indicates whether the window is displayed in full screen or not. DOM>WindowProp
+history@@\t\n-ro Returns a reference to the history object. DOM>WindowProp
+innerHeight@@\t\nGets the height of the content area of the browser window including, if rendered, the horizontal scrollbar. DOM>WindowProp
+innerWidth@@\t\nGets the width of the content area of the browser window including, if rendered, the vertical scrollbar. DOM>WindowProp
+isSecureContext@@\t\n-ro Indicates whether a context is capable of using features that require secure contexts. DOM>WindowProp
+length@@\t\n-ro Returns the number of frames in the  See also frames. DOM>WindowProp
+location@@\t\n-ro Gets/sets the location, or current URL, of the window object. DOM>WindowProp
+locationbar@@\t\n-ro Returns the locationbar object, whose visibility can be toggled in the Window. DOM>WindowProp
+localStorage@@\t\n-ro Returns a reference to the local storage object used to store data that may only be accessed by the origin that created it. DOM>WindowProp
+menubar@@\t\n-ro Returns the menubar object, whose visibility can be toggled in the Window. DOM>WindowProp
+messageManager@@\t\nReturns the message manager object for this Window. DOM>WindowProp
+mozAnimationStartTime@@\t\n-ro The time in milliseconds since epoch at which the current animation cycle began. DOM>WindowProp
+mozInnerScreenX@@\t\n-ro Returns the horizontal (X) coordinate of the top-left corner of the window's viewport, in screen coordinates. This value is reported in CSS pixels. DOM>WindowProp
+mozInnerScreenY@@\t\n-ro Returns the vertical (Y) coordinate of the top-left corner of the window's viewport, in screen coordinates. This value is reported in CSS pixels. DOM>WindowProp
+mozPaintCount@@\t\n-ro Returns the number of times the current document has been rendered to the screen in this  This can be used to compute rendering performance. DOM>WindowProp
+name@@\t\nGets/sets the name of the Window. DOM>WindowProp
+navigator@@\t\n-ro Returns a reference to the navigator object. DOM>WindowProp
+opener@@\t\nReturns a reference to the window that opened this current Window. DOM>WindowProp
+orientation@@\t\n-ro Returns the orientation in degrees (in 90 degree increments) of the viewport relative to the device's natural orientation. DOM>WindowProp
+outerHeight@@\t\n-ro Gets the height of the outside of the browser Window. DOM>WindowProp
+outerWidth@@\t\n-ro Gets the width of the outside of the browser Window. DOM>WindowProp
+pageXOffset@@\t\n-ro An alias for scrollX. DOM>WindowProp
+pageYOffset@@\t\n-ro An alias for scrollY DOM>WindowProp
+sessionStorage@@\t\n-ro Returns a reference to the session storage object used to store data that may only be accessed by the origin that created it. DOM>WindowProp
+parent@@\t\n-ro Returns a reference to the parent of the current window or subframe. DOM>WindowProp
+performance@@\t\n-ro Provides a hosting area for performance related attributes. DOM>WindowProp
+personalbar@@\t\n-ro Returns the personalbar object, whose visibility can be toggled in the Window. DOM>WindowProp
+returnValue@@\t\nThe return value to be returned to the function that called showModalDialog() to display the window as a modal dialog. DOM>WindowProp
+screen@@\t\n-ro Returns a reference to the screen object associated with the Window. DOM>WindowProp
+screenX@@\t\n-ro Returns the horizontal distance of the left border of the user's browser from the left side of the screen. DOM>WindowProp
+screenY@@\t\n-ro Returns the vertical distance of the top border of the user's browser from the top side of the screen. DOM>WindowProp
+scrollbars@@\t\n-ro Returns the scrollbars object, whose visibility can be toggled in the Window. DOM>WindowProp
+scrollMaxX@@\t\n-ro The maximum offset that the window can be scrolled to horizontally, that is the document width minus the viewport width. DOM>WindowProp
+scrollMaxY@@\t\n-ro The maximum offset that the window can be scrolled to vertically (i.e., the document height minus the viewport height). DOM>WindowProp
+scrollX@@\t\n-ro Returns the number of pixels that the document has already been scrolled horizontally. DOM>WindowProp
+scrollY@@\t\n-ro Returns the number of pixels that the document has already been scrolled vertically. DOM>WindowProp
+self@@\t\n-ro Returns an object reference to the window object itself. DOM>WindowProp
+sessionStorage@@\t\nReturns a storage object for storing data within a single page session. DOM>WindowProp
+sidebar@@\t\n-ro Returns a reference to the window object of the sidebar. DOM>WindowProp
+speechSynthesis@@\t\n-ro Returns a SpeechSynthesis object, which is the entry point into using Web Speech API speech synthesis functionality. DOM>WindowProp
+status@@\t\nGets/sets the text in the statusbar at the bottom of the browser. DOM>WindowProp
+statusbar@@\t\n-ro Returns the statusbar object, whose visibility can be toggled in the Window. DOM>WindowProp
+toolbar@@\t\n-ro Returns the toolbar object, whose visibility can be toggled in the Window. DOM>WindowProp
+top@@\t\n-ro Returns a reference to the topmost window in the window hierarchy. This property is read only. DOM>WindowProp
+window@@\t\n-ro Returns a reference to the current Window. DOM>WindowProp
+window@@\t\n[0..n] Returns a reference to the window object in the frames. See frames for more details. DOM>WindowProp
+
+#
+#~Window Methods (can be used unprefixed) 
+#
+alert() Displays an alert dialog. DOM>Window
+back() Moves back one in the window history. DOM>Window
+blur() Sets focus away from the Window. DOM>Window
+cancelIdleCallback()  Enables you to cancel a callback previously scheduled with requestIdleCallback. DOM>Window
+captureEvents() Registers the window to capture all events of the specified type. DOM>Window
+clearImmediate() Cancels the repeated execution set using setImmediate. DOM>Window
+close() Closes the current Window. DOM>Window
+confirm() Displays a dialog with a message that the user needs to respond to. DOM>Window
+dispatchEvent() Used to trigger an event. DOM>Window
+dump() Writes a message to the console. DOM>Window
+find() Searches for a given string in a Window. DOM>Window
+focus() Sets focus on the current Window. DOM>Window
+forward() Moves the window one document forward in the history. DOM>Window
+getAttention() Flashes the application icon. DOM>Window
+getAttentionWithCycleCount() FIXME: NeedsContents DOM>Window
+getComputedStyle() Gets computed style for the specified element. Computed style indicates the computed values of all CSS properties of the element. DOM>Window
+getDefaultComputedStyle()  Gets default computed style for the specified element, ignoring author stylesheets. DOM>Window
+getSelection() Returns the selection object representing the selected item(s) . DOM>Window
+home() Returns the browser to the home page. DOM>Window
+matchMedia() Returns a MediaQueryList object representing the specified media query string. DOM>Window
+maximize() FIXME: NeedsContents DOM>Window
+minimize() (top-level XUL windows only) Minimizes the Window. DOM>Window
+moveBy() Moves the current window by a specified amount. DOM>Window
+moveTo() Moves the window to the specified coordinates. DOM>Window
+mozRequestAnimationFrame() Tells the browser that an animation is in progress, requesting that the browser schedule a repaint of the window for the next animation frame.\tnThis will cause a MozBeforePaint event to fire before that repaint occurs. DOM>Window
+open() Opens a new Window. DOM>Window
+openDialog() Opens a new dialog Window. DOM>Window
+postMessage() Provides a secure means for one window to send a string of data to another window, which need not be within the same domain as the first. DOM>Window
+print() Opens the Print Dialog to print the current document. DOM>Window
+prompt() Returns the text entered by the user in a prompt dialog. DOM>Window
+releaseEvents() Releases the window from trapping events of a specific type. DOM>Window
+removeEventListener() Removes an event listener from the Window. DOM>Window
+requestIdleCallback()   Enables the scheduling of tasks during a browser's idle periods. DOM>Window
+resizeBy() Resizes the current window by a certain amount. DOM>Window
+resizeTo() Dynamically resizes Window. DOM>Window
+restore() FIXME: NeedsContents DOM>Window
+routeEvent() Obsolete since Gecko 24  FIXME: NeedsContents DOM>Window
+scroll() Scrolls the window to a particular place in the document. DOM>Window
+scrollBy() Scrolls the document in the window by the given amount. DOM>Window
+scrollByLines() Scrolls the document by the given number of lines. DOM>Window
+scrollByPages() Scrolls the current document by the specified number of pages. DOM>Window
+scrollTo() Scrolls to a particular set of coordinates in the document. DOM>Window
+setCursor() Changes the cursor for the current Window. DOM>Window
+setImmediate() Executes a function after the browser has finished other heavy tasks. DOM>Window
+setResizable() Toggles a user's ability to resize a Window. DOM>Window
+showModalDialog() Displays a modal dialog. DOM>Window
+sizeToContent() Sizes the window according to its content. DOM>Window
+stop() This method stops window loading. DOM>Window
+updateCommands() Updates the state of commands of the current chrome window (UI) . DOM>Window
+
+#~WindowBase64
+atob() Decodes a string of data which has been encoded using base-64 encoding. DOM>WindowBase64
+btoa() Creates a base-64 encoded ASCII string from a string of binary data. DOM>WindowBase64
+
+#~WindowTimers
+clearInterval() Cancels the repeated execution set using WindowTimers.setInterval() . DOM>WinowTimers
+clearTimeout() Cancels the repeated execution set using WindowTimers.setTimeout() . DOM>WindowTimers
+setInterval() Schedules the execution of a function each X milliseconds.DOM>WinTimers
+setTimeout() Sets a delay for executing a function.DOM>WindowTimers
+
+#~Document Methods
+adoptNode() Adopt node from an external Document DOM>document
+captureEvents() See Window.captureEvents. DOM>document
+caretPositionFromPoint() Gets the CaretPosition at or near the specified coordinates. DOM>document
+caretRangeFromPoint() Gets a Range object for the document fragment under the specified coordinates. DOM>document
+createAttribute() Creates a new Attr object and returns it. DOM>document
+createAttributeNS() Creates a new attribute node in a given namespace and returns it. DOM>document
+createCDATASection() Creates a new CDATA node and returns it. DOM>document
+createComment() Creates a new comment node and returns it. DOM>document
+createDocumentFragment() Creates a new document fragment. DOM>document
+createElement() Creates a new element with the given tag name. DOM>document
+createElementNS() Creates a new element with the given tag name and namespace URI. DOM>document
+createEntityReference() Creates a new entity reference object and returns it. DOM>document
+createEvent() Creates an event object. DOM>document
+createNodeIterator() Creates a NodeIterator object. DOM>document
+createProcessingInstruction() Creates a new ProcessingInstruction object. DOM>document
+createRange() Creates a Range object. DOM>document
+createTextNode() Creates a text node. DOM>document
+createTouch() Creates a Touch object. DOM>document
+createTouchList() Creates a TouchList object. DOM>document
+createTreeWalker() Creates a TreeWalker object. DOM>document
+elementFromPoint() Returns the topmost element at the specified coordinates.  DOM>document
+elementsFromPoint() Returns an array of all elements at the specified coordinates. DOM>document
+enableStyleSheetsForSet() Enables the style sheets for the specified style sheet set. DOM>document
+exitPointerLock() Release the pointer lock. DOM>document
+getAnimations() Returns an array of all Animation objects currently in effect whose target elements are descendants of the Document DOM>document
+getElementsByClassName() Returns a list of elements with the given class name. DOM>document
+getElementsByTagName() Returns a list of elements with the given tag name. DOM>document
+getElementsByTagNameNS() Returns a list of elements with the given tag name and namespace. DOM>document
+importNode() Returns a clone of a node from an external Document DOM>document
+normalizeDocument() Replaces entities, normalizes text nodes, etc. DOM>document
+registerElement() Registers a web component. DOM>document
+releaseCapture() Releases the current mouse capture if it's on an element in this Document DOM>document
+releaseEvents() See Window.releaseEvents() . DOM>document
+mozSetImageElement() Allows you to change the element being used as the background image for a specified element ID. DOM>document
+getElementById(String id) Returns an object reference to the identified element. DOM>document
+querySelector(String selector) Returns the first Element node within the document, in document order, that matches the specified selectors. DOM>document
+querySelectorAll(String selector) Returns a list of all the Element nodes within the document that match the specified selectors. DOM>document
+createExpression(String expression, XPathNSResolver resolver) Compiles an XPathExpression which can then be used for (repeated)  evaluations. DOM>document
+createNSResolver(Node resolver) Creates an XPathNSResolver object. DOM>document
+evaluate(String expression, Node contextNode, XPathNSResolver resolver, Number type, Object result) Evaluates an XPath expression. DOM>document
+clear() In majority of modern browsers, including recent versions of Firefox and Internet Explorer, this method does nothing. DOM>document
+close() Closes a document stream for writing. DOM>document
+execCommand(String command[, Boolean showUI[, String value]]) On an editable document, executes a formating command. DOM>document
+getElementsByName(String name) Returns a list of elements with the given name. DOM>document
+getSelection() Returns a Selection object related to text selected in the Document DOM>document
+hasFocus() Returns true if the focus is currently located anywhere inside the specified Document DOM>document
+open() Opens a document stream for writing. DOM>document
+queryCommandEnabled(String command) Returns true if the formating command can be executed on the current range. DOM>document
+queryCommandIndeterm(String command) Returns true if the formating command is in an indeterminate state on the current range. DOM>document
+queryCommandState(String command) Returns true if the formating command has been executed on the current range. DOM>document
+queryCommandSupported(String command) Returns true if the formating command is supported on the current range. DOM>document
+queryCommandValue(String command) Returns the current value of the current range for a formating command. DOM>document
+write(String text) Writes text in a Document DOM>document
+writeln(String text) Writes a line of text in a Document DOM>document
+
+
+#~DOMExceptions
+DOMException.name@@Read only Returns a DOMString that contains one of the strings associated with an error name.		
+IndexSizeError@@The index is not in the allowed range. For example, this can be thrown by Range object. (Legacy code value: 1 and legacy constant name: INDEX_SIZE_ERR)
+HierarchyRequestError@@ The node tree hierarchy is not correct. (Legacy code value: 3 and legacy constant name: HIERARCHY_REQUEST_ERR)
+WrongDocumentError@@ The object is in the wrong Document. (Legacy code value: 4 and legacy constant name: WRONG_DOCUMENT_ERR)
+InvalidCharacterError@@ The string contains invalid characters. (Legacy code value: 5 and legacy constant name: INVALID_CHARACTER_ERR)
+NoModificationAllowedError@@ The object can not be modified. (Legacy code value: 7 and legacy constant name: NO_MODIFICATION_ALLOWED_ERR)
+NotFoundError@@ The object can not be found here. (Legacy code value: 8 and legacy constant name: NOT_FOUND_ERR)
+NotSupportedError@@ The operation is not supported. (Legacy code value: 9 and legacy constant name: NOT_SUPPORTED_ERR)
+InvalidStateError@@ The object is in an invalid state. (Legacy code value: 11 and legacy constant name: INVALID_STATE_ERR)
+SyntaxError@@ The string did not match the expected pattern. (Legacy code value: 12 and legacy constant name: SYNTAX_ERR)
+InvalidModificationError@@ The object can not be modified in this way. (Legacy code value: 13 and legacy constant name: INVALID_MODIFICATION_ERR)
+NamespaceError@@ The operation is not allowed by Namespaces in XML. (Legacy code value: 14 and legacy constant name: NAMESPACE_ERR)
+InvalidAccessError@@ The object does not support the operation or argument. (Legacy code value: 15 and legacy constant name: INVALID_ACCESS_ERR)
+TypeMismatchError@@ The type of the object does not match the expected type. (Legacy code value: 17 and legacy constant name: TYPE_MISMATCH_ERR)\t\nThis value is deprecated, the JavaScript TypeError exception is now raised instead of a DOMException with this value.
+SecurityError@@ The operation is insecure. (Legacy code value: 18 and legacy constant name: SECURITY_ERR)
+NetworkError@@ A network error occurred. (Legacy code value: 19 and legacy constant name: NETWORK_ERR)
+AbortError@@ The operation was aborted. (Legacy code value: 20 and legacy constant name: ABORT_ERR)
+URLMismatchError@@ The given URL does not match another URL. (Legacy code value: 21 and legacy constant name: URL_MISMATCH_ERR)
+QuotaExceededError@@ The quota has been exceeded. (Legacy code value: 22 and legacy constant name: QUOTA_EXCEEDED_ERR)
+TimeoutError@@ The operation timed out. (Legacy code value: 23 and legacy constant name: TIMEOUT_ERR)
+InvalidNodeTypeError@@ The node is incorrect or has an incorrect ancestor for this operation. (Legacy code value: 24 and legacy constant name: INVALID_NODE_TYPE_ERR)
+DataCloneError@@ The object can not be cloned. (Legacy code value: 25 and legacy constant name: DATA_CLONE_ERR)
+EncodingError@@ The encoding operation, being an encoding or a decoding one, failed (No legacy code value and constant name).
+NotReadableError@@ The input/output read operation failed (No legacy code value and constant name).
+
+
+#~ DOM Exeptions (Depreceated)
+INDEX_SIZE_ERR@@DOM>Exception
+DOMSTRING_SIZE_ERR@@DOM>Exception
+HIERARCHY_REQUEST_ERR@@DOM>Exception
+WRONG_DOCUMENT_ERR@@DOM>Exception
+INVALID_CHARACTER_ERR@@DOM>Exception
+NO_DATA_ALLOWED_ERR@@DOM>Exception
+NO_MODIFICATION_ALLOWED_ERR@@DOM>Exception
+NOT_FOUND_ERR@@DOM>Exception
+NOT_SUPPORTED_ERR@@DOM>Exception
+INUSE_ATTRIBUTE_ERR@@DOM>Exception
+INVALID_STATE_ERR@@DOM>Exception
+SYNTAX_ERR@@DOM>Exception
+INVALID_MODIFICATION_ERR@@DOM>Exception
+NAMESPACE_ERR@@DOM>Exception
+INVALID_ACCESS_ERR@@DOM>Exception
+ELEMENT_NODE@@DOM>Exception
+ATTRIBUTE_NODE@@DOM>Exception
+TEXT_NODE@@DOM>Exception
+CDATA_SECTION_NODE@@DOM>Exception
+ENTITY_REFERENCE_NODE@@DOM>Exception
+ENTITY_NODE@@DOM>Exception
+PROCESSING_INSTRUCTION_NODE@@DOM>Exception
+COMMENT_NODE@@DOM>Exception
+DOCUMENT_NODE@@DOM>Exception
+DOCUMENT_TYPE_NODE@@DOM>Exception
+DOCUMENT_FRAGMENT_NODE@@DOM>Exception
+NOTATION_NODE@@DOM>Exception
+
