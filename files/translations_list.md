@@ -25,7 +25,7 @@
 | [locale.hu.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.hu.properties) | Hungarian (magyar) | Updated 1.63 |
 | [locale.id.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.id.properties) | Indonesian (Bahasa Indonesia) | Updated 2.21 |
 | [locale.it.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.it.properties) | Italian (italiano) | Complete |
-| [locale.ja.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.ja.properties)<br>[See also, docs from 2005 at end of this page](#japanese2005) | Japanese (日本語) | Updated 2.21 |
+| [locale.ja.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.ja.properties)<br>Suzumizaki Kimitaka's 2005 translation of<br>[SciTEDoc](http://downpoured.github.io/scite-with-python/SciTEDocJa/SciTEDoc.html), [SciTEFaq](http://downpoured.github.io/scite-with-python/SciTEDocJa/SciTEFAQ.html), [ScintillaDoc](http://downpoured.github.io/scite-with-python/SciTEDocJa/ScintillaDoc.html) | Japanese (日本語) | Updated 2.21 |
 | [locale.kk.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.kk.properties) | Kazakh (қазақ тілі) | Nearly complete, updated 3.3.5 |
 | [locale.ko_KR.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.ko_KR.properties) | Korean (한국어) | Nearly complete, updated 3.3.5 |
 | [locale.ms.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.ms.properties) | Malay (Bahasa Melayu) | Updated 1.73 |
@@ -45,7 +45,4 @@
 | [locale.uk.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.uk.properties) | Ukrainian (Українська) | Updated 1.73 |
 | [locale.zh_t.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.zh_t.properties) | Chinese Traditional (中文) | Updated 2.21 |
 | [locale.zh_s.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.zh_s.properties) | Chinese Simplified (中文) GBK encoding | Updated 2.21 (set code.page=936, character.set=134) |
-
-<a name="japanese2005"></>
-Old 2005 Japanese (日本語) [SciTEDoc](http://downpoured.github.io/scite-with-python/SciTEDocJa/SciTEDoc.html), [SciTEFaq](http://downpoured.github.io/scite-with-python/SciTEDocJa/SciTEFAQ.html), [ScintillaDoc](http://downpoured.github.io/scite-with-python/SciTEDocJa/ScintillaDoc.html) translated by Suzumizaki Kimitaka
 

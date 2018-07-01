@@ -1,5 +1,9 @@
 [Back](../README.md)
 
+### Information
+
+* An [introduction to adding features to SciTE with Lua scripts](./files/helpers/using_lua_with_scite.md), read this to learn how to install a .lua script in the list below
+
 ### Scripts/addons
 
 Helper scripts and addons for SciTE, including lua scripts and lua tips
@@ -26,8 +30,6 @@ Helper scripts and addons for SciTE, including lua scripts and lua tips
 
     * dispatches scite events so that many lua scripts can be installed at the same time without conflict. For example, you might have a few different scripts that each want to respond to the OnOpen event.
 
-    * I've gathered what appears to be the latest version(s) of extman, send an e-mail scitewiki at gmail dot com if you have a more recent version
-
 * [Orthospell](http://tools.diorama.ch/orthospell.html), spellcheck for SciTE, based on [luahunspell](https://code.google.com/p/luahunspell/)
 
 * [Serge Baranov's scripts](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/helpers/perlformatters.txt) using Perl to reformat/clean up whitespace in a document
@@ -40,9 +42,9 @@ Helper scripts and addons for SciTE, including lua scripts and lua tips
 
 * [scite-gui](https://github.com/frank-w/scite-gui) GTK tool for changing SciTE settings, last updated 2010
 
-### SciTE process communication
+### Lua utilities
 
-These might be useful for building your own tools
+Useful building blocks for SciTE lua scripts
 
 * [scite_msg](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/helpers/scite_msg.zip) 
 

@@ -2,7 +2,7 @@
 
 * [back](../README.md)
 * [how to install a .properties file from the list below](api_files_howto_properties.md)
-* [how to install a .api file from the list below](api_files_howto_install_api.md) (to enable autocomplete+calltips)
+* [how to install a .api file from the list below](api_files_howto_install_api.md) (to enable calltips + completion)
 * [how to create a .api file for your own code](api_files_howto_create_api.md)
 * [how to add highlighting/folding for a new language](api_files_howto_create_lexer.md)
 * add to this page by submitting a pull request, or sending an e-mail to scitewiki at gmail dot com
@@ -25,7 +25,7 @@
     * [C standard library](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/c_withdoc.zip) with short doc strings, 2016 update
     * [C standard library](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/c.api)
     * [Windows API](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/cpp.api.zip)
-    * [OpenGL API](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/opengl.zip)
+    * [OpenGL 1.2 API](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/opengl.zip)
     * [OpenGL 4.4 API](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/opengl4.4.zip)
     * [Glut API](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/glut.zip)
     * [SDL API](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/sdl.api)
@@ -72,6 +72,11 @@
 
     * highlighting and folding is enabled after the properties file below is installed
     * [Properties file](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/asymptote.properties)
+    
+* Auto It3 
+
+    * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `au3`, then save and restart SciTE
+    * [SciTE4AutoIt3 Website containing Auto It3 related properties and API files.](https://www.autoitscript.com/site/autoit-script-editor/)
 
 * AutoHotkey (AHK)
 
@@ -85,11 +90,6 @@
 * AviSynth (avs)
 
     * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `avs`, then save and restart SciTE
-
-* Auto It3 
-
-    * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `au3`, then save and restart SciTE
-    * [SciTE4AutoIt3 Website containing Auto It3 related properties and API files.](https://www.autoitscript.com/site/autoit-script-editor/)
 
 * baan
 
@@ -292,6 +292,8 @@
     * [Lua API](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/lua.api)
     * [Lua 5.0 C API and Lua functions](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/lua5.api.zip)
     * [Api for SciTE extension scripts](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/lua_scite_extension.api)
+    * [scite-for-lua](https://code.google.com/archive/p/scite-for-lua/), extensive support for Lua programming, including debugging and a lint-based highlighter
+    * [lua-inspect](https://github.com/davidm/lua-inspect), plugin for SciTE that does Lua code analysis and adds features like rename-occurrences and autocomplete
 
 * Make / makefile
 
@@ -421,6 +423,8 @@
     * highlighting and folding is already enabled by default
     * [Python API](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/python.api.zip)
     * [Automatically print the contents of local variables on unhandled exceptions](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/python_print_vars.zip)
+    * api file for [numpy](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/py_numpy.zip)
+    * api file for [scipy](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/py_scipy.zip)
 
 * R
 

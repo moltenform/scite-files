@@ -8,7 +8,7 @@
 
 * If a language doesn't have built-in support from SciTE, you might be able to find a `.properties` file for the language in the list [here](api_files.md)
 
-* In recent versions of SciTE, all you need to do to install a properties file is to move it into the same directory as SciTE
+* In recent versions of SciTE, to install a properties file,
 
     * In Windows, move the .properties file into the directory that contains SciTE.exe
     * In Linux, move the .properties file into the directory that contains SciTEGlobal.properties. This is typically either `/usr/bin/scite` or `/usr/local/bin/scite`
@@ -20,11 +20,11 @@ If you would like to know more details about telling SciTE to load a properties 
 There are two main ways you can tell SciTE which properties files to load.
 
 1) 
-# (by default, builds of SciTE use this)
 # in SciTEGlobal.properties,
 imports.exclude=(a list of properties files to skip)
 # Import all the language specific properties files in this directory
 import *
+# (SciTE uses this by default)
 
 2) 
 # an explicit list.
@@ -35,6 +35,9 @@ import myprop2
 # the line import myprop1
 # looks for a file named myprop1.properties and loads it
 # with this approach, relative directories can be used
+# if this approach is used, to install a properties file you'll have to add a line
+# import mypropfile
+# to begin using the file mypropfile.properties
 
 ```
 

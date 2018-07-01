@@ -9,7 +9,7 @@ If this does not work, you can write a piece of code that SciTE calls a "lexer".
 
 * a lexer defines how to add syntax highlighting and/or folding
 
-* it's less complex than actually parsing the file that the user is editing
+* it's less complex than truly parsing the file that the user is editing
 
 * in recent versions of SciTE, a lexer can be written in the Lua language (simpler and doesn't require a C++ compiler)
 

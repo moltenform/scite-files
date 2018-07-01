@@ -6,7 +6,7 @@
 
 An api file is a plain text file with one entry per line.
 
-For example, here is an excerpt from the api file for the C standard library,
+For example, an api file for the C standard library could look like this,
 
 ```
 abort();
