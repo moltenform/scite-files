@@ -83,6 +83,10 @@
     * [AutoHotkey properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/ahk.properties)
     * [SciTE4AutoHotkey](https://github.com/fincs/SciTE4AutoHotkey) custom SciTE build for ahk
 
+* AutoCAD Dialog Box components
+
+    * [DCL properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/adcl.properties)
+
 * Avenue (Ave)
 
     * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `ave`, then save and restart SciTE
@@ -315,6 +319,11 @@
 
     * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `metapost`, then save and restart SciTE
 
+* MetaQuotes language (MQL4, MQL5, MT4)
+
+    * [properties for MQL4, MQL5](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/mql.properties)
+    * The [scite-mql](https://github.com/ylw633/scite-mql) project adds syntax highlighting, autocomplete, parameter hints, and more for MT4 based code
+
 * Microsoft SQL / MSSQL
 
     * highlighting and folding is already enabled by default
@@ -327,10 +336,6 @@
 * Modula 3 (modula3)
 
     * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `modula3`, then save and restart SciTE
-
-* MQL4 (MetaQuotes Language / MT4)
-
-    * The [scite-mql](https://github.com/ylw633/scite-mql) project adds syntax highlighting, autocomplete, parameter hints, and more for MT4 based code
 
 * Nimrod
 
