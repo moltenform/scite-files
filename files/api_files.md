@@ -24,7 +24,7 @@
 
     * [C standard library](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/c_withdoc.zip) with short doc strings, 2016 update
     * [C standard library](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/c.api)
-    * [Windows API](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/cpp.api.zip)
+    * [Windows API](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/cpp.api)
     * [OpenGL 1.2 API](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/opengl.zip)
     * [OpenGL 4.4 API](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/opengl4.4.zip)
     * [Glut API](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/glut.zip)
@@ -228,6 +228,10 @@
 
     * highlighting and folding is already enabled by default
 
+* Haml
+
+    * [properties file](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/haml.properties)
+
 * Haskell
 
     * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `haskell`, then save and restart SciTE
@@ -261,10 +265,6 @@
     * [Java API](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/java.api.zip)
     * [Java API, complete 1.5 and 1.6 api](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/javaversions.api.zip)
     * [Java API, Java Properties, and how to configure](https://www.burgaud.com/scite-java-api/)
-
-* JavaScript
-
-    * highlighting and folding is already enabled by default
     
 * json and json-ld
 
@@ -298,6 +298,7 @@
     * [Api for SciTE extension scripts](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/lua_scite_extension.api)
     * [scite-for-lua](https://code.google.com/archive/p/scite-for-lua/), extensive support for Lua programming, including debugging and a lint-based highlighter
     * [lua-inspect](https://github.com/davidm/lua-inspect), plugin for SciTE that does Lua code analysis and adds features like rename-occurrences and autocomplete
+    * [Api for wxlua](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/wxlua.api)
 
 * Make / makefile
 
@@ -306,6 +307,7 @@
 * markdown
 
     * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `markdown`, then save and restart SciTE
+    * an alternate [properties file](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/markdown_alt.properties) for markdown
 
 * Matlab
 
@@ -336,6 +338,10 @@
 * Modula 3 (modula3)
 
     * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `modula3`, then save and restart SciTE
+
+* moonscript
+
+    * [properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/moonscript.properties)
 
 * Nimrod
 
@@ -392,10 +398,10 @@
 * PHP 
 
     * highlighting and folding is already enabled by default
-    * [php.api, latest PHP 5](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/php.api)
+    * [php.api, PHP 5](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/php.api)
+    * [php.api, possibly newer](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/php_z.api)
     * [php.api in Spanish, PHP 5](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/php-es.api)
     * [PHP properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/php.properties)
-    * [PHP functions](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/phpfunctions.properties)
 
 * PostScript
 
@@ -446,7 +452,7 @@
 * Ruby
 
     * highlighting and folding is already enabled by default
-    * [Ruby API](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/ruby.api.zip)
+    * [Ruby API](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/ruby.api)
 
 * Rust
 

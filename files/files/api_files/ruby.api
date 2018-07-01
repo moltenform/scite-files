@@ -1,0 +1,554 @@
+# Scite Settings for ruby
+# from: https://github.com/btakita/scite-tools/blob/master/scripts/ruby/ruby.api
+#
+Array.new(size=0, obj=nil)Method Type: class
+Array.new(array)Method Type: class
+Array.new(size){ |index| block }\nMethod Type: class
+Dir.chdir([ string]){ |path| block }\nMethod Type: class
+Dir.chdir([ string])Method Type: class
+Dir.chroot(string)Method Type: class
+Dir.delete(string)Method Type: class
+Dir.foreach(dirname){ |filename| block }\nMethod Type: class
+Dir.getwd()Method Type: class
+Dir.glob(string, [flags])Method Type: class
+Dir.glob(string, [flags]){ |filename| block }\nMethod Type: class
+Dir.mkdir(string [, integer])Method Type: class
+Dir.new(string)Method Type: class
+Dir.open(string){ |aDir| block }\nMethod Type: class
+Dir.open(string)Method Type: class
+Dir.pwd()Method Type: class
+Dir.rmdir(string)Method Type: class
+Dir.unlink(string)Method Type: class
+File.basename(file_name [, suffix])Method Type: class
+File.blockdev?(file_name)Method Type: class
+File.chardev?(file_name)Method Type: class
+File.delete(file_name, ...)Method Type: class
+File.directory?(file_name)Method Type: class
+File.dirname(file_name)Method Type: class
+File.executable?(file_name)Method Type: class
+File.executable_real?(file_name)Method Type: class
+File.exist?(file_name)Method Type: class
+File.exists?(file_name)Method Type: class
+File.expand_path(file_name [, dir_string])Method Type: class
+File.extname(path)Method Type: class
+File.file?(file_name)Method Type: class
+File.fnmatch(pattern, path, [flags])Method Type: class
+File.fnmatch?(pattern, path, [flags])Method Type: class
+File.ftype(file_name)Method Type: class
+File.grpowned?(file_name)Method Type: class
+File.identical?(file_1, file_2)Method Type: class
+File.join(string, ...)Method Type: class
+File.lchmod(mode_int, file_name, ...)Method Type: class
+File.lchown(owner_int, group_int, file_name, ..)Method Type: class
+File.link(old_name, new_name)Method Type: class
+File.new(filename, mode="r")Method Type: class
+File.new(filename [, mode [, perm]])Method Type: class
+File.owned?(file_name)Method Type: class
+File.pipe?(file_name)Method Type: class
+File.readable?(file_name)Method Type: class
+File.readable_real?(file_name)Method Type: class
+File.readlink(link_name)Method Type: class
+File.rename(old_name, new_name)Method Type: class
+File.setgid?(file_name)Method Type: class
+File.setuid?(file_name)Method Type: class
+File.size(file_name)Method Type: class
+File.socket?(file_name)Method Type: class
+File.split(file_name)Method Type: class
+File.sticky?(file_name)Method Type: class
+File.symlink(old_name, new_name)Method Type: class
+File.symlink?(file_name)Method Type: class
+File.umask(integer)Method Type: class
+File.umask()Method Type: class
+File.unlink(file_name, ...)Method Type: class
+File.utime(atime, mtime, file_name, ...)Method Type: class
+File.writable?(file_name)Method Type: class
+File.writable_real?(file_name)Method Type: class
+File.zero?(file_name)Method Type: class
+Hash.new(obj)Method Type: class
+Hash.new()Method Type: class
+Hash.new(){ |hash, key| block }\nMethod Type: class
+IO.for_fd(fd, mode)Method Type: class
+IO.foreach(name, sep_string=$/){ |line| block }\nMethod Type: class
+IO.new(fd, mode)Method Type: class
+IO.new(fd, mode_string)Method Type: class
+IO.open(fd, mode_string="r")Method Type: class
+IO.open(fd, mode_string="r"){ |io| block }\nMethod Type: class
+IO.pipe()Method Type: class
+IO.popen(cmd_string, mode="r"){ |io| block }\nMethod Type: class
+IO.popen(cmd_string, mode="r")Method Type: class
+IO.sysopen(path, [mode, [perm]])Method Type: class
+Object.new()Method Type: class
+Pathname.getwd()Method Type: class
+Pathname.glob(*args) { |p| ... }\nMethod Type: class
+Pathname.new(path)Method Type: class
+Regexp.compile(regexp)Method Type: class
+Regexp.compile(string [, options [, lang]])Method Type: class
+Regexp.escape(str)Method Type: class
+Regexp.last_match(fixnum)Method Type: class
+Regexp.last_match()Method Type: class
+Regexp.new(string [, options [, lang]])Method Type: class
+Regexp.new(regexp)Method Type: class
+Regexp.quote(str)Method Type: class
+Regexp.union([pattern]*)Method Type: class
+String.new(str="")Method Type: class
+array.abbrev(pattern = nil)Method Type: unknown
+array.assoc(obj)Method Type: instance
+array.at(index)Method Type: instance
+array.clear()Method Type: instance
+array.collect(){ |item| block }\nMethod Type: instance
+array.collect!(){ |item| block }\nMethod Type: instance
+array.compact()Method Type: instance
+array.compact!()Method Type: instance
+array.concat(other_array)Method Type: instance
+array.delete(obj)Method Type: instance
+array.delete(obj){ block }Method Type: instance
+array.delete_at(index)Method Type: instance
+array.delete_if(){ |item| block }\nMethod Type: instance
+array.each(){ |item| block }\nMethod Type: instance
+array.each_index(){ |index| block }\nMethod Type: instance
+array.empty?()Method Type: instance
+array.eql?(other)Method Type: instance
+array.fetch(index)Method Type: instance
+array.fetch(index){ |index| block }\nMethod Type: instance
+array.fetch(index, default)Method Type: instance
+array.fill(){ |index| block }\nMethod Type: instance
+array.fill(obj, range)Method Type: instance
+array.fill(range){ |index| block }\nMethod Type: instance
+array.fill(start [, length]){ |index| block }\nMethod Type: instance
+array.fill(obj)Method Type: instance
+array.fill(obj, start [, length])Method Type: instance
+array.first()Method Type: instance
+array.first(n)Method Type: instance
+array.flatten()Method Type: instance
+array.flatten!()Method Type: instance
+array.frozen?()Method Type: instance
+array.hash()Method Type: instance
+array.include?(obj)Method Type: instance
+array.index(obj)Method Type: instance
+array.indexes(i1, i2, ... iN)Method Type: instance
+array.indices(i1, i2, ... iN)Method Type: instance
+array.insert(index, obj...)Method Type: instance
+array.inspect()Method Type: instance
+array.join(sep=$)Method Type: instance
+array.last()Method Type: instance
+array.last(n)Method Type: instance
+array.length()Method Type: instance
+array.map(){ |item| block }\nMethod Type: instance
+array.map!(){ |item| block }\nMethod Type: instance
+array.nitems()Method Type: instance
+array.pack (aTemplateString)Method Type: unknown
+array.pop()Method Type: instance
+array.push(obj, ...)Method Type: instance
+array.rassoc(key)Method Type: instance
+array.reject(){ |item| block }\nMethod Type: instance
+array.reject!(){ |item| block }\nMethod Type: instance
+array.replace(other_array)Method Type: instance
+array.reverse()Method Type: instance
+array.reverse!()Method Type: instance
+array.reverse_each(){ |item| block }\nMethod Type: instance
+array.rindex(obj)Method Type: instance
+array.select(){ |item| block }\nMethod Type: instance
+array.shift()Method Type: instance
+array.slice(start, length)Method Type: instance
+array.slice(index)Method Type: instance
+array.slice(range)Method Type: instance
+array.slice!(range)Method Type: instance
+array.slice!(index)Method Type: instance
+array.slice!(start, length)Method Type: instance
+array.sort()Method Type: instance
+array.sort(){ |a, b| block }\nMethod Type: instance
+array.sort!()Method Type: instance
+array.sort!(){ |a, b| block }\nMethod Type: instance
+array.to_a()Method Type: instance
+array.to_ary()Method Type: instance
+array.to_s()Method Type: instance
+array.transpose()Method Type: instance
+array.uniq()Method Type: instance
+array.uniq!()Method Type: instance
+array.unshift(obj, ...)Method Type: instance
+array.values_at(selector, ...)Method Type: instance
+array.zip(arg, ...)Method Type: instance
+array.zip(arg, ...){ |arr| block }\nMethod Type: instance
+dir.close()Method Type: instance
+dir.each(){ |filename| block }\nMethod Type: instance
+dir.entries(dirname)Method Type: instance
+dir.path()Method Type: instance
+dir.pos()Method Type: instance
+dir.pos(integer)Method Type: instance
+dir.read()Method Type: instance
+dir.rewind()Method Type: instance
+dir.seek(integer)Method Type: instance
+dir.tell()Method Type: instance
+dir.tmpdir()Method Type: unknown
+enumerable.collect(){ |obj| block }\nMethod Type: instance
+enumerable.detect(ifnone = nil){ |obj| block }\nMethod Type: instance
+enumerable.each_cons(n){...}Method Type: instance
+enumerable.each_slice(n){...}Method Type: instance
+enumerable.each_with_index(){ |obj, i| block }\nMethod Type: instance
+enumerable.entries()Method Type: instance
+enumerable.enum_cons(n)Method Type: instance
+enumerable.enum_slice(n)Method Type: instance
+enumerable.enum_with_index()Method Type: instance
+enumerable.find(ifnone = nil){ |obj| block }\nMethod Type: instance
+enumerable.find_all(){ |obj| block }\nMethod Type: instance
+enumerable.grep(pattern)Method Type: instance
+enumerable.grep(pattern){ |obj| block }\nMethod Type: instance
+enumerable.include?(obj)Method Type: instance
+enumerable.inject(){ |memo, obj| block }\nMethod Type: instance
+enumerable.inject(initial){ |memo, obj| block }\nMethod Type: instance
+enumerable.map(){ |obj| block }\nMethod Type: instance
+enumerable.max()Method Type: instance
+enumerable.max(){ |a, b| block }\nMethod Type: instance
+enumerable.member?(obj)Method Type: instance
+enumerable.min()Method Type: instance
+enumerable.min(){ |a, b| block }\nMethod Type: instance
+enumerable.partition(){ |obj| block }\nMethod Type: instance
+enumerable.reject(){ |obj| block }\nMethod Type: instance
+enumerable.select(){ |obj| block }\nMethod Type: instance
+enumerable.sort(){ |a, b| block }\nMethod Type: instance
+enumerable.sort()Method Type: instance
+enumerable.sort_by(){ |obj| block }\nMethod Type: instance
+enumerable.to_a()Method Type: instance
+enumerable.to_set(klass = Set, *args, &block)Method Type: unknown
+enumerable.zip(arg, ...){ |arr| block }\nMethod Type: instance
+enumerable.zip(arg, ...)Method Type: instance
+file.atime()Method Type: instance
+file.atime(file_name)Method Type: instance
+file.chmod(mode_int, file_name, ...)Method Type: instance
+file.chmod(mode_int)Method Type: instance
+file.chown(owner_int, group_int)Method Type: instance
+file.chown(owner_int, group_int, file_name, ...)Method Type: instance
+file.ctime(file_name)Method Type: instance
+file.ctime()Method Type: instance
+file.flock (locking_constant)Method Type: unknown
+file.lstat(file_name)Method Type: instance
+file.lstat()Method Type: instance
+file.mtime()Method Type: instance
+file.mtime(file_name)Method Type: instance
+file.path()Method Type: instance
+file.stat(file_name)Method Type: instance
+file.truncate(integer)Method Type: instance
+file.truncate(file_name, integer)Method Type: instance
+hash.clear()Method Type: instance
+hash.default(key=nil)Method Type: instance
+hash.default_proc()Method Type: instance
+hash.delete(key)Method Type: instance
+hash.delete(key){ |key| block }\nMethod Type: instance
+hash.delete_if(){ |key, value| block }\nMethod Type: instance
+hash.each(){ |key, value| block }\nMethod Type: instance
+hash.each_key(){ |key| block }\nMethod Type: instance
+hash.each_pair(){ |key_value_array| block }\nMethod Type: instance
+hash.each_value(){ |value| block }\nMethod Type: instance
+hash.empty?()Method Type: instance
+hash.fetch(key){ |key| block }\nMethod Type: instance
+hash.fetch(key [, default])Method Type: instance
+hash.has_key?(key)Method Type: instance
+hash.has_value?(value)Method Type: instance
+hash.include?(key)Method Type: instance
+hash.index(value)Method Type: instance
+hash.indexes(key, ...)Method Type: instance
+hash.indices(key, ...)Method Type: instance
+hash.inspect()Method Type: instance
+hash.invert()Method Type: instance
+hash.key?(key)Method Type: instance
+hash.keys()Method Type: instance
+hash.length()Method Type: instance
+hash.member?(key)Method Type: instance
+hash.merge(other_hash){ |key, oldval, newval| block }\nMethod Type: instance
+hash.merge(other_hash)Method Type: instance
+hash.merge!(other_hash)Method Type: instance
+hash.merge!(other_hash){ |key, oldval, newval| block }\nMethod Type: instance
+hash.rehash()Method Type: instance
+hash.reject(){ |key, value| block }\nMethod Type: instance
+hash.reject!(){ |key, value| block }\nMethod Type: instance
+hash.replace(other_hash)Method Type: instance
+hash.select(){ |key, value| block }\nMethod Type: instance
+hash.shift()Method Type: instance
+hash.size()Method Type: instance
+hash.sort(){ |a, b| block }\nMethod Type: instance
+hash.sort()Method Type: instance
+hash.store(key, value)Method Type: instance
+hash.to_a()Method Type: instance
+hash.to_hash()Method Type: instance
+hash.to_s()Method Type: instance
+hash.update(other_hash){ |key, oldval, newval| block }\nMethod Type: instance
+hash.update(other_hash)Method Type: instance
+hash.value?(value)Method Type: instance
+hash.values()Method Type: instance
+hash.values_at(key, ...)Method Type: instance
+io.binmode()Method Type: instance
+io.close()Method Type: instance
+io.close_read()Method Type: instance
+io.close_write()Method Type: instance
+io.closed?()Method Type: instance
+io.each(sep_string=$/){ |line| block }\nMethod Type: instance
+io.each_byte(){ |byte| block }\nMethod Type: instance
+io.each_line(sep_string=$/){ |line| block }\nMethod Type: instance
+io.eof()Method Type: instance
+io.eof?()Method Type: instance
+io.fcntl(integer_cmd, arg)Method Type: instance
+io.fileno()Method Type: instance
+io.flush()Method Type: instance
+io.fsync()Method Type: instance
+io.getc()Method Type: instance
+io.gets(sep_string=$/)Method Type: instance
+io.inspect()Method Type: instance
+io.ioctl(integer_cmd, arg)Method Type: instance
+io.isatty()Method Type: instance
+io.lineno()Method Type: instance
+io.pid()Method Type: instance
+io.pos()Method Type: instance
+io.print(obj, ...)Method Type: instance
+io.print()Method Type: instance
+io.printf(format_string [, obj, ...])Method Type: instance
+io.putc(obj)Method Type: instance
+io.puts(obj, ...)Method Type: instance
+io.read(name, [length [, offset]])Method Type: instance
+io.read([length [, buffer]])Method Type: instance
+io.readchar()Method Type: instance
+io.readline(sep_string=$/)Method Type: instance
+io.readlines(sep_string=$/)Method Type: instance
+io.readlines(name, sep_string=$/)Method Type: instance
+io.readpartial(maxlen[, outbuf])Method Type: instance
+io.reopen(other_IO)Method Type: instance
+io.reopen(path, mode_str)Method Type: instance
+io.rewind()Method Type: instance
+io.seek(amount, whence=SEEK_SET)Method Type: instance
+io.stat()Method Type: instance
+io.sync()Method Type: instance
+io.sysread(integer)Method Type: instance
+io.sysseek(offset, whence=SEEK_SET)Method Type: instance
+io.syswrite(string)Method Type: instance
+io.tell()Method Type: instance
+io.to_i()Method Type: instance
+io.to_io()Method Type: instance
+io.tty?()Method Type: instance
+io.ungetc(integer)Method Type: instance
+io.write(string)Method Type: instance
+object.__id__()Method Type: instance
+object.__send__(symbol [, args...])Method Type: instance
+object.class()Method Type: instance
+object.clone()Method Type: instance
+object.display(port=$>)Method Type: instance
+object.dup()Method Type: instance
+object.enum_for(method = :each, *args)Method Type: instance
+object.eql?(other)Method Type: instance
+object.equal?(other)Method Type: instance
+object.extend(module, ...)Method Type: instance
+object.freeze()Method Type: instance
+object.frozen?()Method Type: instance
+object.hash()Method Type: instance
+object.id()Method Type: instance
+object.inspect()Method Type: instance
+object.instance_eval(string [, filename [, lineno]])Method Type: instance
+object.instance_eval(){ || block }\nMethod Type: instance
+object.instance_of?(class)Method Type: instance
+object.instance_variable_get(symbol)Method Type: instance
+object.instance_variable_set(symbol, obj)Method Type: instance
+object.instance_variables()Method Type: instance
+object.is_a?(class)Method Type: instance
+object.kind_of?(class)Method Type: instance
+object.method(sym)Method Type: instance
+object.methods()Method Type: instance
+object.nil?()Method Type: instance
+object.object_id()Method Type: instance
+object.private_methods(all=true)Method Type: instance
+object.protected_methods(all=true)Method Type: instance
+object.public_methods(all=true)Method Type: instance
+object.remove_instance_variable(symbol)Method Type: unknown
+object.respond_to?(symbol, include_private=false)Method Type: instance
+object.send(symbol [, args...])Method Type: instance
+object.singleton_method_added(symbol)Method Type: unknown
+object.singleton_method_removed(symbol)Method Type: unknown
+object.singleton_method_undefined(symbol)Method Type: unknown
+object.singleton_methods(all=true)Method Type: instance
+object.taint()Method Type: instance
+object.tainted?()Method Type: instance
+object.to_a()Method Type: instance
+object.to_enum(method = :each, *args)Method Type: instance
+object.to_s()Method Type: instance
+object.type()Method Type: instance
+object.untaint()Method Type: instance
+pathname.absolute?()Method Type: instance
+pathname.atime()Method Type: instance
+pathname.basename(*args)Method Type: instance
+pathname.blockdev?()Method Type: instance
+pathname.chardev?()Method Type: instance
+pathname.chdir(&block)Method Type: instance
+pathname.children(with_directory=true)Method Type: instance
+pathname.chmod(mode)Method Type: instance
+pathname.chown(owner, group)Method Type: instance
+pathname.chroot()Method Type: instance
+pathname.cleanpath(consider_symlink=false)Method Type: instance
+pathname.ctime()Method Type: instance
+pathname.dir_foreach(*args, &block)Method Type: instance
+pathname.directory?()Method Type: instance
+pathname.dirname()Method Type: instance
+pathname.each_entry() { |p| ... }\nMethod Type: instance
+pathname.each_filename() { |s| ... }\nMethod Type: instance
+pathname.each_line(*args) { |line| ... }\nMethod Type: instance
+pathname.entries()Method Type: instance
+pathname.executable?()Method Type: instance
+pathname.executable_real?()Method Type: instance
+pathname.exist?()Method Type: instance
+pathname.expand_path(*args)Method Type: instance
+pathname.extname()Method Type: instance
+pathname.file?()Method Type: instance
+pathname.find() { |p| ... }\nMethod Type: instance
+pathname.fnmatch(pattern, *args)Method Type: instance
+pathname.fnmatch?(pattern, *args)Method Type: instance
+pathname.foreach(*args, &block)Method Type: instance
+pathname.foreachline(*args, &block)Method Type: instance
+pathname.freeze()Method Type: instance
+pathname.ftype()Method Type: instance
+pathname.grpowned?()Method Type: instance
+pathname.join(*args)Method Type: instance
+pathname.lchmod(mode)Method Type: instance
+pathname.lchown(owner, group)Method Type: instance
+pathname.link(old)Method Type: instance
+pathname.lstat()Method Type: instance
+pathname.make_link(old)Method Type: instance
+pathname.make_symlink(old)Method Type: instance
+pathname.mkdir(*args)Method Type: instance
+pathname.mkpath()Method Type: instance
+pathname.mountpoint?()Method Type: instance
+pathname.mtime()Method Type: instance
+pathname.open(*args) { |file| ... }\nMethod Type: instance
+pathname.opendir() { |dir| ... }\nMethod Type: instance
+pathname.owned?()Method Type: instance
+pathname.parent()Method Type: instance
+pathname.pipe?()Method Type: instance
+pathname.read(*args)Method Type: instance
+pathname.readable?()Method Type: instance
+pathname.readable_real?()Method Type: instance
+pathname.readlines(*args)Method Type: instance
+pathname.readlink()Method Type: instance
+pathname.realpath(*args)Method Type: instance
+pathname.relative?()Method Type: instance
+pathname.relative_path_from(base_directory)Method Type: instance
+pathname.rename(to)Method Type: instance
+pathname.rmdir()Method Type: instance
+pathname.rmtree()Method Type: instance
+pathname.root?()Method Type: instance
+pathname.setgid?()Method Type: instance
+pathname.setuid?()Method Type: instance
+pathname.size()Method Type: instance
+pathname.size?()Method Type: instance
+pathname.socket?()Method Type: instance
+pathname.split()Method Type: instance
+pathname.stat()Method Type: instance
+pathname.sticky?()Method Type: instance
+pathname.symlink(old)Method Type: instance
+pathname.symlink?()Method Type: instance
+pathname.sysopen(*args)Method Type: instance
+pathname.taint()Method Type: instance
+pathname.to_s()Method Type: instance
+pathname.truncate(length)Method Type: instance
+pathname.unlink()Method Type: instance
+pathname.untaint()Method Type: instance
+pathname.utime(atime, mtime)Method Type: instance
+pathname.writable?()Method Type: instance
+pathname.writable_real?()Method Type: instance
+pathname.zero?()Method Type: instance
+regexp.casefold?()Method Type: instance
+regexp.eql?(other_rxp)Method Type: instance
+regexp.hash()Method Type: instance
+regexp.inspect()Method Type: instance
+regexp.kcode()Method Type: instance
+regexp.match(str)Method Type: instance
+regexp.options()Method Type: instance
+regexp.source()Method Type: instance
+regexp.to_s()Method Type: instance
+string.capitalize()Method Type: instance
+string.capitalize!()Method Type: instance
+string.casecmp(other_str)Method Type: instance
+string.center(integer, padstr)Method Type: instance
+string.chomp(separator=$/)Method Type: instance
+string.chomp!(separator=$/)Method Type: instance
+string.chop()Method Type: instance
+string.chop!()Method Type: instance
+string.concat(obj)Method Type: instance
+string.concat(fixnum)Method Type: instance
+string.count([other_str]+)Method Type: instance
+string.crypt(other_str)Method Type: instance
+string.delete([other_str]+)Method Type: instance
+string.delete!([other_str]+>)Method Type: instance
+string.downcase()Method Type: instance
+string.downcase!()Method Type: instance
+string.dump()Method Type: instance
+string.each(separator=$/){ |substr| block }\nMethod Type: instance
+string.each_byte(){ |fixnum| block }\nMethod Type: instance
+string.each_line(separator=$/){ |substr| block }\nMethod Type: instance
+string.empty?()Method Type: instance
+string.eql?(other)Method Type: instance
+string.gsub(pattern){ |match| block }\nMethod Type: instance
+string.gsub(pattern, replacement)Method Type: instance
+string.gsub!(pattern){ |match| block }\nMethod Type: instance
+string.gsub!(pattern, replacement)Method Type: instance
+string.hash()Method Type: instance
+string.hex()Method Type: instance
+string.include? fixnum()Method Type: unknown
+string.include? other_str()Method Type: unknown
+string.index(substring [, offset])Method Type: instance
+string.index(fixnum [, offset])Method Type: instance
+string.index(regexp [, offset])Method Type: instance
+string.insert(index, other_str)Method Type: instance
+string.inspect()Method Type: instance
+string.intern()Method Type: instance
+string.length()Method Type: instance
+string.ljust(integer, padstr=' ')Method Type: instance
+string.lstrip()Method Type: instance
+string.lstrip!()Method Type: instance
+string.match(pattern)Method Type: instance
+string.next()Method Type: instance
+string.next!()Method Type: instance
+string.oct()Method Type: instance
+string.replace(other_str)Method Type: instance
+string.reverse()Method Type: instance
+string.reverse!()Method Type: instance
+string.rindex(regexp [, fixnum])Method Type: instance
+string.rindex(substring [, fixnum])Method Type: instance
+string.rindex(fixnum [, fixnum])Method Type: instance
+string.rjust(integer, padstr=' ')Method Type: instance
+string.rstrip()Method Type: instance
+string.rstrip!()Method Type: instance
+string.scan(pattern)Method Type: instance
+string.scan(pattern){ |match, ...| block }\nMethod Type: instance
+string.slice(other_str)Method Type: instance
+string.slice(regexp)Method Type: instance
+string.slice(regexp, fixnum)Method Type: instance
+string.slice(fixnum)Method Type: instance
+string.slice(fixnum, fixnum)Method Type: instance
+string.slice(range)Method Type: instance
+string.slice!(fixnum, fixnum)Method Type: instance
+string.slice!(range)Method Type: instance
+string.slice!(regexp)Method Type: instance
+string.slice!(other_str)Method Type: instance
+string.slice!(fixnum)Method Type: instance
+string.split(pattern=$;, [limit])Method Type: instance
+string.squeeze([other_str]*)Method Type: instance
+string.squeeze!([other_str]*)Method Type: instance
+string.strip()Method Type: instance
+string.strip!()Method Type: instance
+string.sub(pattern, replacement)Method Type: instance
+string.sub(pattern){ |match| block }\nMethod Type: instance
+string.sub!(pattern){ |match| block }\nMethod Type: instance
+string.sub!(pattern, replacement)Method Type: instance
+string.succ()Method Type: instance
+string.succ!()Method Type: instance
+string.sum(n=16)Method Type: instance
+string.swapcase()Method Type: instance
+string.swapcase!()Method Type: instance
+string.to_f()Method Type: instance
+string.to_i(base=10)Method Type: instance
+string.to_s()Method Type: instance
+string.to_str()Method Type: instance
+string.to_sym()Method Type: instance
+string.tr(from_str, to_str)Method Type: instance
+string.tr!(from_str, to_str)Method Type: instance
+string.tr_s(from_str, to_str)Method Type: instance
+string.tr_s!(from_str, to_str)Method Type: instance
+string.unpack(format)Method Type: instance
+string.upcase()Method Type: instance
+string.upcase!()Method Type: instance
+string.upto(other_str){ |s| block }\nMethod Type: instance
