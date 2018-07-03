@@ -283,6 +283,7 @@
 * LaTeX / TeX
 
     * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `latex`, then save and restart SciTE
+    * a [description](http://www.pragma-ade.com/general/manuals/scite-context-readme.pdf) and [Windows package](http://wiki.contextgarden.net/Windows_Installation:_ConTeXt_Suite_with_SciTe) of how to add highlighting, spellcheck, and extensions for using ConTeXt and SciTe
     
 * LISP, Scheme (scm smd)
 
@@ -349,6 +350,7 @@
 * moonscript
 
     * [properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/moonscript.properties)
+    * a package containing SciTE, scintillua, and moonscript highlighting can be found [here](http://leafo.net/posts/getting_started_with_moonscript.html)
 
 * Nimrod
 
