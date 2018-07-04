@@ -1,0 +1,149 @@
+# from Scite-ru
+
+->VARIABLE
+->VECT
+-TRAILING
+*/
+*/MOD
+/MOD
+?DUP
+<>
+>R
+0<
+0=
+0<>
+1+
+1+!
+1-
+2+
+2-
+2/
+2*
+2>R ( x1 x2 -- ) ( R:  -- x1 x2 )
+2@
+2!
+2R@
+2DROP
+2DUP
+2OVER ( x1 x2 x3 x4 -- x1 x2 x3 x4 x1 x2 )
+2R> ( -- x1 x2 )  ( R:  x1 x2 -- )
+2ROT
+2SWAP
+?DUP ( x -- 0 | x x )
+ABS
+ABORT
+AGAIN
+ALLOT
+ASCIIZ> ( az -- a u )
+ASLO
+AND
+ASCIIZ>
+BEGIN
+BL
+C@ ( c-addr -- char )
+C! ( char c-addr -- )
+C.
+C,
+CATCH
+CELL+
+CELLS
+CHAR+
+CMOVE ( c-addr1 c-addr2 u -- )
+CMOVE> ( c-addr1 c-addr2 u -- )
+COMPARE ( a1 u1 a2 u2 -- flag )
+CONCAT
+CONSTANT ( x "<spaces>name" -- )
+COUNT ( a -- a u )
+CREATE
+CURRENT
+D+
+D<
+D>S
+D0=
+DABS
+DECIMAL
+DEFINITIONS
+DNEGATE
+DOES>
+DROP
+DUP
+ELSE
+ERASE
+EXECUTE
+EXIT
+FALSE
+FILL
+FIND
+FM/MOD
+FORTH
+GET-CURRENT
+GET-ORDER
+ICONS
+IF
+INVERT
+KEY
+KEY?
+LEAVE
+LSHIFT
+HERE
+HEX
+M*
+MAX ( n1 n2 -- n3 ) n3
+MIN ( n1 n2 -- n3 ) n3
+MOD
+MOVE ( addr1 addr2 u -- )
+NEGATE
+NIP ( x1 x2 -- x2 )
+ONLY
+OR
+ORDER
+OVER
+PAD ( -- c-addr ) c-addr
+PAUSE
+POSTPONE
+PREVIOUS
+R>
+R@
+RDROP
+RECURSE
+REPEAT
+ROT ( x1 x2 x3 -- x2 x3 x1 )
+RP@
+RP!
+RSHIFT
+S>D
+S>ZALLOC ( a u -- az )
+SEARCH
+SEARCH-WORDLIST
+SET-CURRENT
+SET-ORDER
+SFIND
+SM/REM
+SP@
+SP!
+SPACE
+SPACES
+SWAP
+THEN
+THROW
+TRUE
+TYPE
+U/
+U<
+U>D
+UM*
+UM/MOD
+UMOD
+UNTIL
+VALUE
+VARIABLE
+VECT
+VOCABULARY
+VOC-NAME
+W@
+W!
+W.
+WHILE
+WORDS
+XOR
+

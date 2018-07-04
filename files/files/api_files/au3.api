@@ -1,0 +1,585 @@
+ContinueLoop
+And
+ByRef
+Case
+Const
+Dim
+Do
+Else
+ElseIf
+EndFunc
+EndIf
+EndSelect
+Exit
+ExitLoop
+For
+Func
+Global
+If
+Local
+Next
+Not
+Or
+ReDim
+Return
+Select
+Step
+Then
+To
+Until
+WEnd
+While
+#include
+#ce
+#comments-end
+#comments-start
+#cs
+#include-once
+#NoTrayIcon
+#region
+#compiler_allow_decompile
+#compiler_au3check_dat
+#compiler_aut2exe
+#compiler_autoit3
+#compiler_compression
+#compiler_icon
+#compiler_outfile
+#compiler_passphrase
+#compiler_prompt
+#compiler_res_comment
+#compiler_res_description
+#compiler_res_field
+#compiler_res_field1name
+#compiler_res_field1value
+#compiler_res_field2name
+#compiler_res_field2value
+#compiler_res_fileversion
+#compiler_res_legalcopyright
+#compiler_run_after
+#compiler_run_au3check
+#compiler_run_before
+#endregion
+@AppDataCommonDir
+@AppDataDir
+@AutoItExe
+@AutoItVersion
+@CommonFilesDir
+@Compiled
+@ComputerName
+@ComSpec
+@CR
+@CRLF
+@DesktopCommonDir
+@DesktopDepth
+@DesktopDir
+@DesktopHeight
+@DesktopRefresh
+@DesktopWidth
+@DocumentsCommonDir
+@error
+@extended
+@FavoritesCommonDir
+@FavoritesDir
+@GUI_CtrlHandle
+@GUI_CtrlId
+@GUI_WinHandle
+@HomeDrive
+@HomePath
+@HomeShare
+@HOUR
+@InetGetActive
+@InetGetBytesRead
+@IPAddress1
+@IPAddress2
+@IPAddress3
+@IPAddress4
+@LF
+@LogonDNSDomain
+@LogonDomain
+@LogonServer
+@MDAY
+@MIN
+@MON
+@MyDocumentsDir
+@NumParams
+@OSBuild
+@OSLang
+@OSServicePack
+@OSTYPE
+@OSVersion
+@ProgramFilesDir
+@ProgramsCommonDir
+@ProgramsDir
+@ScriptDir
+@ScriptFullPath
+@ScriptName
+@SEC
+@StartMenuCommonDir
+@StartMenuDir
+@StartupCommonDir
+@StartupDir
+@SW_DISABLE
+@SW_ENABLE
+@SW_HIDE
+@SW_MAXIMIZE
+@SW_MINIMIZE
+@SW_RESTORE
+@SW_SHOW
+@SW_SHOWDEFAULT
+@SW_SHOWMAXIMIZED
+@SW_SHOWMINIMIZED
+@SW_SHOWMINNOACTIVE
+@SW_SHOWNA
+@SW_SHOWNOACTIVATE
+@SW_SHOWNORMAL
+@SystemDir
+@TAB
+@TempDir
+@UserName
+@UserProfileDir
+@WDAY
+@WindowsDir
+@WorkingDir
+@YDAY
+@YEAR
+Abs ( expression ) Calculates the absolute value of a number.
+ACos ( expression ) Calculates the arcCosine of a number.
+AdlibDisable ( ) Disables the adlib functionality.
+AdlibEnable ( "function" [, time] ) Enables Adlib functionality.
+Asc ( "char" ) Returns the ASCII code of a character.
+ASin ( expression ) Calculates the arcsine of a number.
+Assign ( "varname", "data" [, flag] ) Assigns a variable by name with the data.
+ATan ( expression ) Calculates the arctangent of a number.
+AutoItSetOption ( "CaretCoordMode", param ) Sets the way coords are used in the caret functions, either absolute coords or coords relative to the current active window: 0 = relative coords to the active window 1 = absolute screen coordinates (default) 2 = relative coords to the client area of the active window 
+AutoItSetOption ( "ColorMode", param ) Sets the way colors are defined, either RGB or BGR.  RGB is the default but in previous versions of AutoIt (pre 3.0.102) BGR was the default: 0 = Colors are defined as RGB (0xRRGGBB) (default) 1 = Colors are defined as BGR (0xBBGGRR) (the mode used in older versions of AutoIt) 
+AutoItSetOption ( "ExpandEnvStrings", param ) Changes how literal strings and % symbols are interpreted.  By default strings are treated literally, this option allows you to use %environment% variables inside strings, e.g., "The temp directory is: %temp%". 1 = expand environment variables (similar to AutoIt v2) 0 = do not expand environment variables (default) Without this option the usual way would be: 	"The temp directory is: " & EnvGet("temp") 
+AutoItSetOption ( "ExpandVarStrings", param ) Changes how literal strings and variable/macro ($ and @) symbols are interpreted.  By default strings are treated literally, this option allows you to use variables and macros inside strings, e.g., "The value of var1 is $var1$". 1 = expand variables (when in this mode and you want to use a literal $ or @ then double it up: "This is a single dollar $$ sign". 0 = do not expand variables (default) 
+AutoItSetOption ( "FtpBinaryMode", param ) Changes how FTP files are transferred. 1 = Binary (default) 0 = ASCII 
+AutoItSetOption ( "GUICloseOnESC", param ) When ESC is pressed on a GUI the $GUI_EVENT_CLOSE message is sent.  This option toggles this behavior on and off. 1 = Send the $GUI_EVENT_CLOSE message when ESC is pressed (default). 0 = Don't send the $GUI_EVENT_CLOSE message when ESC is pressed. 
+AutoItSetOption ( "GUICoordMode", param ) Alters the position of a control defined by <a href="GUICtrlSetPos.htm">GUICtrlSetPos</a>. 1 = absolute coordinates (default) still relative to the dialog box. 0 = relative position to the start of the last control (upper left corner) 2 = cell positionining relative to current cell. A -1 for left or top parameter don't increment the start. So next line is -1,0; next cell is 0,-1; current cell is -1,-1 
+AutoItSetOption ( "GUIOnEventMode", param ) Enable/disable OnEvent functions notifications. 0 = (default) disable. 1 = enable. 
+AutoItSetOption ( "GUIResizeMode", param ) Change default resizing for a control. 0 = (default) no resizing. &lt;1024 = anytype of resizing see <a href="GUICtrlSetResizing.htm">GUICtrlSetResizing</a>. 
+AutoItSetOption ( "MouseClickDelay", param ) Alters the length of the brief pause in between mouse clicks. Time in milliseconds to pause (default=10). 
+AutoItSetOption ( "MouseClickDownDelay", param ) Alters the length a click is held down before release. Time in milliseconds to pause (default=10). 
+AutoItSetOption ( "MouseClickDragDelay", param ) Alters the length of the brief pause at the start and end of a mouse drag operation. Time in milliseconds to pause (default=250). 
+AutoItSetOption ( "MouseCoordMode", param ) Sets the way coords are used in the mouse functions, either absolute coords or coords relative to the current active window: 0 = relative coords to the active window 1 = absolute screen coordinates (default) 2 = relative coords to the client area of the active window 
+AutoItSetOption ( "MustDeclareVars", param ) If this option is used then all variables must be pre-declared with Dim, Local or Global before they can be used - removes the chance for misspelled variables causing bugs. 1 = Variables must be pre-declared 0 = Variables don't need to be pre-declared (default) 
+AutoItSetOption ( "OnExitFunc", param ) Sets the name of the function called when AutoIt exits (default is OnAutoItExit). 
+AutoItSetOption ( "PixelCoordMode", param ) Sets the way coords are used in the pixel functions, either absolute coords or coords relative to the current active window: 0 = relative coords to the active window 1 = absolute screen coordinates (default) 2 = relative coords to the client area of the active window 
+AutoItSetOption ( "RunErrorsFatal", param ) Sets if the script should terminate with a fatal error if a Run/RunWait function fails due to bad paths/file not found/Bad login IDs: 1 = fatal error (default) 0 = silent error (@error set to 1) 
+AutoItSetOption ( "SendAttachMode", param ) Specifies if AutoIt attaches input threads when using then Send() function.  When not attaching (default mode=0) detecting the state of capslock/scrolllock and numlock can be unreliable under NT4.  However, when you specify attach mode=1 the Send("{... down/up}") syntax will not work and there may be problems with sending keys to "hung" windows.  ControlSend() ALWAYS attaches and is not affected by this mode. 0 = don't attach (default) 1 = attach 
+AutoItSetOption ( "SendCapslockMode", param ) Specifies if AutoIt should store the state of capslock before a Send function and restore it afterwards. 0 = don't store/restore 1 = store and restore (default) 
+AutoItSetOption ( "SendKeyDelay", param ) Alters the the length of the brief pause in between sent keystrokes. Time in milliseconds to pause (default=5).  Sometimes a value of 0 does not work; use 1 instead. 
+AutoItSetOption ( "SendKeyDownDelay", param ) Alters the length of time a key is held down before released during a keystroke.  For applications that take a while to register keypresses (and many games) you may need to raise this value from the default. Time in milliseconds to pause (default=1). 
+AutoItSetOption ( "TrayIconDebug", param ) If enabled shows the current script line in the tray icon tip to help debugging. 0 = no debug information (default) 1 = show debug 
+AutoItSetOption ( "TrayIconHide", param ) Hides the AutoIt tray icon.  Note:  The icon will still initially appear ~750 milliseconds. 0 = show icon (default) 1 = hide icon 
+AutoItSetOption ( "WinDetectHiddenText", param ) Specifies if hidden window text can be "seen" by the window matching functions. 0 = Do not detect hidden text (default) 1 = Detect hidden text 
+AutoItSetOption ( "WinSearchChildren", param ) Allows the window search routines to search child windows as well as top-level windows. 0 = Only search top-level windows (default) 1 = Search top-level and child windows 
+AutoItSetOption ( "WinTextMatchMode", param ) Alters the method that is used to match window text during search operations. 1 = Complete / Slow mode (default) 2 = Quick mode In quick mode AutoIt can usually only "see" dialog text, button text and the captions of some controls.  In the default mode much more text can be seen (for instance the contents of the Notepad window). If you are having performance problems when performing many window searches then changing to the "quick" mode may help. 
+AutoItSetOption ( "WinTitleMatchMode", param ) Alters the method that is used to match window titles during search operations. 1 = Match the title from the start (default) 2 = Match any substring in the title 3 = Exact title match 4 = Advanced mode, see <a href="../intro/windowsadvanced.htm">Window Titles & Text (Advanced)</a> 
+AutoItSetOption ( "WinWaitDelay", param ) Alters how long a script should briefly pause after a successful window-related operation. Time in milliseconds to pause (default=250). 
+AutoItWinGetTitle ( ) Retrieves the title of the AutoIt window.
+AutoItWinSetTitle ( "newtitle" ) Changes the title of the AutoIt window.
+BitAND ( value1, value2 [, value n] ) Performs a bitwise AND operation.
+BitNOT ( value ) Performs a bitwise NOT operation.
+BitOR ( value1, value2 [, value n] ) Performs a bitwise OR operation.
+BitShift ( value, shift ) Performs a bit shifting operation.
+BitXOR ( value1, value2 [, value n] ) Performs a bitwise exclusive OR (XOR) operation.
+BlockInput ( flag ) Disable/enable the mouse and keyboard.
+Break ( mode ) Enables or disables the users' ability to exit a script from the tray icon menu.
+Call ( "function" ) Calls a user-defined function contained in a string parameter.
+CDTray ( "drive", "status" ) Opens or closes the CD tray.
+Chr ( ASCIIcode ) Returns a character corresponding to an ASCII code.
+ClipGet ( ) Retrieves text from the clipboard.
+ClipPut ( "value" ) Writes text to the clipboard.
+ConsoleWrite ( "data" ) Writes data to a stream that text editors can sometimes read.
+ControlClick ( "title", "text", controlID [, button] [, clicks]] ) Sends a mouse click command to a given control.
+ControlCommand ( "title", "text", "classnameNN", "IsVisible", "" ) Returns 1 if Control is visible, 0 otherwise
+ControlCommand ( "title", "text", "classnameNN", "IsEnabled", "" ) Returns 1 if Control is enabled, 0 otherwise
+ControlCommand ( "title", "text", "classnameNN", "ShowDropDown", "" ) Drops a ComboBox
+ControlCommand ( "title", "text", "classnameNN", "HideDropDown", "" ) UNdrops a ComboBox
+ControlCommand ( "title", "text", "classnameNN", "AddString", 'string' ) Adds a string to the end in a ListBox or ComboBox
+ControlCommand ( "title", "text", "classnameNN", "DelString", occurrence ) Deletes a string according to occurrence in a ListBox or ComboBox
+ControlCommand ( "title", "text", "classnameNN", "FindString", 'string' ) Returns occurrence ref of the exact string in a ListBox or ComboBox
+ControlCommand ( "title", "text", "classnameNN", "SetCurrentSelection", occurrence ) Sets selection to occurrence ref in a ListBox or ComboBox
+ControlCommand ( "title", "text", "classnameNN", "SelectString", 'string' ) Sets selection according to string in a ListBox or ComboBox
+ControlCommand ( "title", "text", "classnameNN", "IsChecked", "" ) Returns 1 if Button is checked, 0 otherwise
+ControlCommand ( "title", "text", "classnameNN", "Check", "" ) Checks radio or check Button
+ControlCommand ( "title", "text", "classnameNN", "UnCheck", "" ) Unchecks radio or check Button
+ControlCommand ( "title", "text", "classnameNN", "GetCurrentLine", "" ) Returns the line # where the caret is in an Edit
+ControlCommand ( "title", "text", "classnameNN", "GetCurrentCol", "" ) Returns the column # where the caret is in an Edit
+ControlCommand ( "title", "text", "classnameNN", "GetCurrentSelection", "" ) Returns name of the currently selected item in a ListBox or ComboBox
+ControlCommand ( "title", "text", "classnameNN", "GetLineCount", "" ) Returns # of lines in an Edit
+ControlCommand ( "title", "text", "classnameNN", "GetLine", line# ) Returns text at line # passed of an Edit
+ControlCommand ( "title", "text", "classnameNN", "GetSelected", "" ) Returns selected text of an Edit
+ControlCommand ( "title", "text", "classnameNN", "EditPaste", 'string' ) Pastes the 'string' at the Edit's caret position
+ControlCommand ( "title", "text", "classnameNN", "CurrentTab", "" ) Returns the current Tab shown of a SysTabControl32
+ControlCommand ( "title", "text", "classnameNN", "TabRight", "" ) Moves to the next tab to the right of a SysTabControl32
+ControlCommand ( "title", "text", "classnameNN", "TabLeft", "" ) Moves to the next tab to the left of a SysTabControl32
+ControlDisable ( "title", "text", controlID) Disables or "grays-out" a control.
+ControlEnable ( "title", "text", controlID ) Enables a "grayed-out" control.
+ControlFocus ( "title", "text", controlID ) Sets input focus to a given control on a window.
+ControlGetFocus ( "title" [, "text"] ) Returns the ControlRef# of the control that has keyboard focus within a specified window.
+ControlGetHandle ( "title", "text", controlID ) Retrieves the internal handle of a control.
+ControlGetPos ( "title", "text", controlID ) Retrieves the position and size of a control relative to it's window.
+ControlGetText ( "title", "text", controlID ) Retrieves text from a control.
+ControlHide ( "title", "text", controlID ) Hides a control.
+ControlListView ( "title", "text", "classnameNN", "DeSelect", From [, To] ) Deselects one or more items.
+ControlListView ( "title", "text", "classnameNN", "FindItem", "string to find" [, SubItem] ) Returns the item index of the string.  Returns -1 if the string is not found.
+ControlListView ( "title", "text", "classnameNN", "GetItemCount" ) Returns the number of list items.
+ControlListView ( "title", "text", "classnameNN", "GetSelected" [, option] ) Returns a string containing the item index of selected items.  If option=0 (default) only the first selected item is returned.  If option=1 then all the selected items are returned delimited by |, e.g: &quot;0|3|4|10&quot;.  If no items are selected a blank "" string is returned.
+ControlListView ( "title", "text", "classnameNN", "GetSelectedCount" ) Returns the number of items that are selected.
+ControlListView ( "title", "text", "classnameNN", "GetSubItemCount" ) Returns the number of subitems.
+ControlListView ( "title", "text", "classnameNN", "GetText", Item, SubItem ) Returns the text of a given item/subitem.
+ControlListView ( "title", "text", "classnameNN", "IsSelected", Item ) Returns 1 if the item is selected, otherwise returns 0.
+ControlListView ( "title", "text", "classnameNN", "Select", From [, To] ) Selects one or more items.
+ControlListView ( "title", "text", "classnameNN", "SelectAll" ) Selects all items.
+ControlListView ( "title", "text", "classnameNN", "SelectClear" ) Clears the selection of all items.
+ControlListView ( "title", "text", "classnameNN", "SelectInvert" ) Inverts the current selection.
+ControlListView ( "title", "text", "classnameNN", "ViewChange", "view" ) Changes the current view.  Valid views are "list", "details", "smallicons", "largeicons".
+ControlMove ( "title", "text", controlID, x, y [, width [, height]] ) Moves a control within a window.
+ControlSend ( "title", "text", controlID, "string" [, flag] ) Sends a string of characters to a control.
+ControlSetText ( "title", "text", controlID, "new text" ) Sets text of a control.
+ControlShow ( "title", "text", controlID ) Shows a control that was hidden.
+Cos ( expression ) Calculates the cosine of a number.
+Dec ( "hex" ) Returns a numeric representation of a hexadecimal string.
+DirCopy ( "source dir", "dest dir" [, flag] ) Copies a directory and all sub-directories and files (Similar to xcopy).
+DirCreate ( "path" ) Creates a directory/folder.
+DirGetSize ( "path" [, flag] ) Returns the size in bytes of a given directory.
+DirMove ( "source dir", "dest dir" [, flag] ) Moves a directory and all sub-directories and files.
+DirRemove ( "path" [, recurse] ) Deletes a directory/folder.
+DllCall ( "dll", "return type", "function" [, "type1", param1 [, "type n", param n]] ) Dynamically calls a function in a DLL.
+DllClose ( dllhandle ) Closes a previously opened DLL.
+DllOpen ( "filename" ) Opens a dll file for use in DllCall.
+DriveGetDrive ( "type" ) Returns an array containing the enumerated drives.
+DriveGetFileSystem ( "path" ) Returns File System Type of a drive.
+DriveGetLabel ( "path" ) Returns Volume Label of a drive, if it has one.
+DriveGetSerial ( "path" ) Returns Serial Number of a drive.
+DriveGetType ( "path" ) Returns drive type.
+DriveMapAdd ( "device", "remote share" [, flags [, "user" [, "password"]]] ) Maps a network drive.
+DriveMapDel ( "device" ) Disconnects a network drive.
+DriveMapGet ( "device" ) Retreives the details of a mapped drive.
+DriveSetLabel ( "path", "label" ) Sets the Volume Label of a drive.
+DriveSpaceFree ( "path" ) Returns the free disk space of a path in Megabytes.
+DriveSpaceTotal ( "path" ) Returns the total diskspace of a path in Megabytes.
+DriveStatus ( "path" ) Returns the status of the drive as a string.
+EnvGet ( "envvariable" ) Retrieves an environment variable.
+EnvSet ( "envvariable" [, "value"] ) Writes an environment variable.
+EnvUpdate ( ) Refreshes the OS environment.
+Eval ( expression ) Return the value of the variable whose name is given by the expression.
+Exp ( expression ) Calculates <i><b>e</b></i> to the power of a number.
+FileChangeDir ( "path" ) Changes the current working directory.
+FileClose ( filehandle ) Closes a previously opened text file.
+FileCopy ( "source", "dest" [, flag] ) Copies one or more files.
+FileCreateShortcut ( "file", "lnk" [, "workdir" [, "args" [, "desc" [, "icon" [, "hotkey" [, icon number [, state]]]]]]] ) Creates a shortcut (.lnk) to a file.
+FileDelete ( "path" ) Delete one or more files.
+FileExists ( "path" ) Checks if a file or directory exists.
+FileFindFirstFile ( "filename" ) Returns a filename according to search string.
+FileFindNextFile ( search ) Returns a filename according to a previous call to FileFindFirstFile.
+FileGetAttrib ( "filename" ) Returns a code string representing a file's attributes.
+FileGetLongName ( "file" ) Returns the long path+name of the path+name passed.
+FileGetShortcut ( "lnk" ) Retrieves details about a shortcut.
+FileGetShortName ( "file" ) Returns the 8.3 short path+name of the path+name passed.
+FileGetSize ( "filename" ) Returns the size of a file in bytes.
+FileGetTime ( "filename" [, option [, format]] ) Returns the time and date information for a file.
+FileGetVersion ( "filename" ) Returns the "File" version information.
+FileInstall ( "source", "dest" [, flag] ) Include and install a file with the compiled script.
+FileMove ( "source", "dest" [, flag] ) Moves one or more files
+FileOpen ( "filename", mode ) Opens a text file for reading or writing.
+FileOpenDialog ( "title", "init dir", "filter" [, options [, "default name"]] ) Initiates a Open File Dialog.
+FileRead ( filehandle or "filename", count ) Read in a number of characters from a previously opened text file.
+FileReadLine ( filehandle or "filename" [, line] ) Read in a line of text from a previously opened text file.
+FileRecycle ( "source" ) Sends a file or directory to the recycle bin.
+FileRecycleEmpty ( ["drive"] ) Empties the recycle bin.
+FileSaveDialog ( "title", "init dir", "filter" [, options [, "default name"]] ) Initiates a Save File Dialog.
+FileSelectFolder ( "dialog text", "root dir" [, flag [, "initial dir"]] ) Initiates a Browse For Folder GUI.
+FileSetAttrib ( "file pattern", "+-RASHNOT" [, recurse] ) Sets the attributes of one or more files.
+FileSetTime ( "file pattern", "time", type [, recurse] ) Sets the timestamp of one of more files.
+FileWrite ( filehandle or "filename", "line" ) Append a line of text to the end of a previously opened text file.
+FileWriteLine ( filehandle or "filename", "line" ) Append a line of text to the end of a previously opened text file.
+FtpSetProxy ( mode [, "proxy:port" [, "username", "password"]] ) Sets the internet proxy to use for ftp access.
+GUICreate ( "title" [, width [, height [, left [, top [, style [, exStyle [, parent]]]]]]] ) Create a GUI window.
+GUICtrlCreateAvi ( filename, subfileid, left, top [, width [, height [, style [,  exStyle]]]] ) Creates an AVI video control for the GUI.
+GUICtrlCreateButton ( "text", left, top [, width [, height [, style [, exStyle]]]] ) Creates a Button control for the GUI.
+GUICtrlCreateCheckbox ( "text", left, top [, width [, height [, style [, exStyle]]]] ) Creates a Checkbox control for the GUI.
+GUICtrlCreateCombo ( "text", left, top [, width [, height [, style [, exStyle]]]] ) Creates a ComboBox control for the GUI.
+GUICtrlCreateContextMenu ( [controlID] ) Creates a context menu for a control or entire GUI window.
+GUICtrlCreateDate ( "text", left, top [, width [, height [, style [, exStyle]]]] ) Creates a date control for the GUI.
+GUICtrlCreateDummy ( ) Creates a Dummy control for the GUI.
+GUICtrlCreateEdit ( "text", left, top [, width [, height [, style [, exStyle]]]] ) Creates an Edit control for the GUI.
+GUICtrlCreateGroup ( "text", left, top [, width [, height [, style [, exStyle]]]] ) Creates a Group control for the GUI.
+GUICtrlCreateIcon ( filename, iconID, left, top [, width [, height [, style [, exStyle]]]] ) Creates an Icon control for the GUI.
+GUICtrlCreateInput ( "text", left, top [, width [, height [, style [, exStyle]]]] ) Creates an Input control for the GUI.
+GUICtrlCreateLabel ( "text", left, top [, width [, height [, style [, exStyle]]]] ) Creates a static Label control for the GUI.
+GUICtrlCreateList ( "text", left, top [, width [, height [, style [, exStyle]]]] ) Creates a List control for the GUI.
+GUICtrlCreateListView ( "text", left, top [, width [, height [, style [, exStyle]]]] ) Creates a ListView control for the GUI.
+GUICtrlCreateListViewItem ( "text", listviewID ) Creates a ListView item.
+GUICtrlCreateMenu ( "submenutext" [, menuID [, menuentry]] ) Creates a Menu control for the GUI.
+GUICtrlCreateMenuitem ( "text", menuID [, menuentry [, menuradioitem]] ) Creates a MenuItem control for the GUI.
+GUICtrlCreatePic ( filename, left, top [, width [, height [, style [, exStyle]]]] ) Creates a Picture control for the GUI.
+GUICtrlCreateProgress ( left, top [, width [, height [, style [, exStyle]]]] ) Creates a Progress control for the GUI.
+GUICtrlCreateRadio ( "text", left, top [, width [, height [, style [, exStyle]]]] ) Creates a Radio button control for the GUI.
+GUICtrlCreateSlider ( left, top [, width [, height [, style [, exStyle]]]] ) Creates a Slider control for the GUI.
+GUICtrlCreateTab ( left, top [, width [, height [, style [, exStyle]]]] ) Creates a Tab control for the GUI.
+GUICtrlCreateTabItem ( "text" ) Creates a TabItem control for the GUI.
+GUICtrlCreateTreeView ( left, top [, width [, height [, style [, exStyle]]]] ) Creates a TreeView control for the GUI.
+GUICtrlCreateTreeViewItem ( "text", treeviewID ) Creates a TreeViewItem control for the GUI.
+GUICtrlCreateUpdown ( inputcontrolID [,style] ) Creates an UpDown control for the GUI.
+GUICtrlDelete ( controlID ) Deletes a control.
+GUICtrlGetState ( [controlID] ) Gets the current state of a control
+GUICtrlRead ( controlID ) Read state or data of a control.
+GUICtrlRecvMsg ( controlID , msg [, wParam [, lParamType]] ) Send a message to a control and retrieve information in lParam.
+GUICtrlSendMsg ( controlID, msg , wParam, lParam ) Send a message to a control.
+GUICtrlSendToDummy ( controlID [, state] ) Sends a message to a Dummy control.
+GUICtrlSetBkColor ( controlID, backgroundcolor ) Sets the background color of a control.
+GUICtrlSetColor ( controlID, textcolor) Sets the text color of a control.
+GUICtrlSetCursor ( controlID, cursorID ) Sets mouse cursor icon for a particular control.
+GUICtrlSetData ( controlID, data [, default] ) Modifies the data for a control.
+GUICtrlSetFont (controlID, size [, weight [, attribute [, fontname]]] ) Sets the font for a control.
+GUICtrlSetImage ( controlID, filename [, iconID [, icontype]] ) Sets the bitmap or icon image to use for a control.
+GUICtrlSetLimit ( controlID, max [, min] ) Limits the number of characters/pixels for a control.
+GuiCtrlSetOnEvent ( ctrlID, "function" ) Registers a callback function with a control
+GUICtrlSetPos ( controlID, left, top [, width [, height]] ) Changes the position of a control within the GUI window.
+GUICtrlSetResizing ( controlID, resizing ) Defines the resizing method used by a control.
+GUICtrlSetState ( controlID, state ) Changes the state of a control.
+GUICtrlSetStyle ( controlID, style [, exStyle] ) Changes the style of a control.
+GUICtrlSetTip ( controlID, tiptext ) Sets the tip text associated with a control.
+GUIDelete ( [winhandle] ) Deletes a GUI window and all controls that it contains.
+GUIGetCursorInfo ( [winhandle] ) Gets the mouse cursor position relative to GUI window.
+GUIGetMsg ( [advanced] ) Polls the GUI to see if any events have ocurred.
+GUISetBkColor ( background [, winhandle] ) Sets the background color of the GUI window.
+GUISetCoord ( left, top [, width [, height [, winhandle]]] ) Sets absolute coordinates for next control.
+GUISetCursor ( [cursorID [, override [, winhandle]]] ) Sets the mouse cursor icon for a GUI window.
+GUISetFont (size [, weight [, attribute [, fontname [, winhandle]]]] ) Sets the default font for a GUI window.
+GUISetHelp ( helpfile [, winhandle] ) Sets an executable file that will be run when F1 is pressed.
+GUISetIcon ( iconfile [, iconID [, winhandle]] ) Sets the icon used in a GUI window.
+GUISetOnEvent ( specialID, "function" [, winhandle] ) Defines a user function to be called when a control is clicked.
+GUISetState ( [flag [, winhandle]] ) Changes the state of a GUI window.
+GUIStartGroup ( [winhandle] ) Defines that any subsequent controls that are created will be "grouped" together.
+GUISwitch ( winhandle ) Switches the current window used for GUI functions.
+Hex ( number, length ) Returns a string representation of an integer converted to hexadecimal.
+HotKeySet ( "key" [, "function"] ) Sets a hotkey that calls a user function.
+HttpSetProxy ( mode [, "proxy:port" [, "username", "password"]] ) Sets the internet proxy to use for http access.
+InetGet ( "URL", "filename" [, reload [, background]] ) Downloads a file from the internet using the http or ftp protocol.
+InetGetSize ( "URL" ) Returns the size (in bytes) of a file located on the internet.
+IniDelete ( "filename", "section" [, "key"] ) Deletes a value from a standard format .ini file.
+IniRead ( "filename", "section", "key", "default" ) Reads a value from a standard format .ini file.
+IniReadSection ( "filename", "section" ) Reads all key/value pairs from a section in a standard format .ini file.
+IniReadSectionNames ( "filename" ) Reads all sections in a standard format .ini file.
+IniWrite ( "filename", "section", "key", "value" ) Writes a value to a standard format .ini file.
+InputBox ( "title", "Prompt" [, "Default" [, "password char" [, Width, Height [, Left, Top [, TimeOut]]]]] ) Displays an input box to ask the user to enter a string.
+Int ( expression ) Returns the integer (whole number) representation of an expression.
+IsAdmin ( ) Checks if the current user has administrator privileges.
+IsArray ( variable ) Checks if a variable is an array type.
+IsDeclared ( expression ) Check if a variable has been declared.
+IsFloat ( variable ) Checks if a variable or expression is a float-type.
+IsInt ( variable ) Checks if a variable or expression is an integer type.
+IsNumber ( variable ) Checks if a variable's base type is numeric.
+IsString ( variable ) Checks if a variable is a string type.
+Log ( expression )  Calculates the natural logarithm of a number.
+MemGetStats ( ) Retrieves memory related information.
+Mod ( value1, value2 ) Performs the modulus operation.
+MouseClick ( "button" [, x, y [, clicks [, speed ]]] ) Perform a mouse click operation.
+MouseClickDrag ( "button", x1, y1, x2, y2 [, speed] )  Perform a mouse click and drag operation.
+MouseDown ( "button" ) Perform a mouse down event at the current mouse position.
+MouseGetCursor ( ) Returns a cursor ID Number of the current Mouse Cursor.
+MouseGetPos ( ) Retrieves the current position of the mouse cursor.
+MouseMove ( x, y [, speed] ) Moves the mouse pointer.
+MouseUp ( "button" ) Perform a mouse up event at the current mouse position.
+MouseWheel ( "direction" [, clicks] ) Moves the mouse wheel up or down.  NT/2000/XP ONLY.
+MsgBox ( flag, "title", "text" [, timeout] ) Displays a simple message box with optional timeout.
+Number ( expression )  Returns the numeric representation of an expression. 
+Opt ( "CaretCoordMode", param ) Sets the way coords are used in the caret functions, either absolute coords or coords relative to the current active window: 0 = relative coords to the active window 1 = absolute screen coordinates (default) 2 = relative coords to the client area of the active window 
+Opt ( "ColorMode", param ) Sets the way colors are defined, either RGB or BGR.  RGB is the default but in previous versions of AutoIt (pre 3.0.102) BGR was the default: 0 = Colors are defined as RGB (0xRRGGBB) (default) 1 = Colors are defined as BGR (0xBBGGRR) (the mode used in older versions of AutoIt) 
+Opt ( "ExpandEnvStrings", param ) Changes how literal strings and % symbols are interpreted.  By default strings are treated literally, this option allows you to use %environment% variables inside strings, e.g., "The temp directory is: %temp%". 1 = expand environment variables (similar to AutoIt v2) 0 = do not expand environment variables (default) Without this option the usual way would be: 	"The temp directory is: " & EnvGet("temp") 
+Opt ( "ExpandVarStrings", param ) Changes how literal strings and variable/macro ($ and @) symbols are interpreted.  By default strings are treated literally, this option allows you to use variables and macros inside strings, e.g., "The value of var1 is $var1$". 1 = expand variables (when in this mode and you want to use a literal $ or @ then double it up: "This is a single dollar $$ sign". 0 = do not expand variables (default) 
+Opt ( "FtpBinaryMode", param ) Changes how FTP files are transferred. 1 = Binary (default) 0 = ASCII 
+Opt ( "GUICloseOnESC", param ) When ESC is pressed on a GUI the $GUI_EVENT_CLOSE message is sent.  This option toggles this behavior on and off. 1 = Send the $GUI_EVENT_CLOSE message when ESC is pressed (default). 0 = Don't send the $GUI_EVENT_CLOSE message when ESC is pressed. 
+Opt ( "GUICoordMode", param ) Alters the position of a control defined by <a href="GUICtrlSetPos.htm">GUICtrlSetPos</a>. 1 = absolute coordinates (default) still relative to the dialog box. 0 = relative position to the start of the last control (upper left corner) 2 = cell positionining relative to current cell. A -1 for left or top parameter don't increment the start. So next line is -1,0; next cell is 0,-1; current cell is -1,-1 
+Opt ( "GUIOnEventMode", param ) Enable/disable OnEvent functions notifications. 0 = (default) disable. 1 = enable. 
+Opt ( "GUIResizeMode", param ) Change default resizing for a control. 0 = (default) no resizing. &lt;1024 = anytype of resizing see <a href="GUICtrlSetResizing.htm">GUICtrlSetResizing</a>. 
+Opt ( "MouseClickDelay", param ) Alters the length of the brief pause in between mouse clicks. Time in milliseconds to pause (default=10). 
+Opt ( "MouseClickDownDelay", param ) Alters the length a click is held down before release. Time in milliseconds to pause (default=10). 
+Opt ( "MouseClickDragDelay", param ) Alters the length of the brief pause at the start and end of a mouse drag operation. Time in milliseconds to pause (default=250). 
+Opt ( "MouseCoordMode", param ) Sets the way coords are used in the mouse functions, either absolute coords or coords relative to the current active window: 0 = relative coords to the active window 1 = absolute screen coordinates (default) 2 = relative coords to the client area of the active window 
+Opt ( "MustDeclareVars", param ) If this option is used then all variables must be pre-declared with Dim, Local or Global before they can be used - removes the chance for misspelled variables causing bugs. 1 = Variables must be pre-declared 0 = Variables don't need to be pre-declared (default) 
+Opt ( "OnExitFunc", param ) Sets the name of the function called when AutoIt exits (default is OnAutoItExit). 
+Opt ( "PixelCoordMode", param ) Sets the way coords are used in the pixel functions, either absolute coords or coords relative to the current active window: 0 = relative coords to the active window 1 = absolute screen coordinates (default) 2 = relative coords to the client area of the active window 
+Opt ( "RunErrorsFatal", param ) Sets if the script should terminate with a fatal error if a Run/RunWait function fails due to bad paths/file not found/Bad login IDs: 1 = fatal error (default) 0 = silent error (@error set to 1) 
+Opt ( "SendAttachMode", param ) Specifies if AutoIt attaches input threads when using then Send() function.  When not attaching (default mode=0) detecting the state of capslock/scrolllock and numlock can be unreliable under NT4.  However, when you specify attach mode=1 the Send("{... down/up}") syntax will not work and there may be problems with sending keys to "hung" windows.  ControlSend() ALWAYS attaches and is not affected by this mode. 0 = don't attach (default) 1 = attach 
+Opt ( "SendCapslockMode", param ) Specifies if AutoIt should store the state of capslock before a Send function and restore it afterwards. 0 = don't store/restore 1 = store and restore (default) 
+Opt ( "SendKeyDelay", param ) Alters the the length of the brief pause in between sent keystrokes. Time in milliseconds to pause (default=5).  Sometimes a value of 0 does not work; use 1 instead. 
+Opt ( "SendKeyDownDelay", param ) Alters the length of time a key is held down before released during a keystroke.  For applications that take a while to register keypresses (and many games) you may need to raise this value from the default. Time in milliseconds to pause (default=1). 
+Opt ( "TrayIconDebug", param ) If enabled shows the current script line in the tray icon tip to help debugging. 0 = no debug information (default) 1 = show debug 
+Opt ( "TrayIconHide", param ) Hides the AutoIt tray icon.  Note:  The icon will still initially appear ~750 milliseconds. 0 = show icon (default) 1 = hide icon 
+Opt ( "WinDetectHiddenText", param ) Specifies if hidden window text can be "seen" by the window matching functions. 0 = Do not detect hidden text (default) 1 = Detect hidden text 
+Opt ( "WinSearchChildren", param ) Allows the window search routines to search child windows as well as top-level windows. 0 = Only search top-level windows (default) 1 = Search top-level and child windows 
+Opt ( "WinTextMatchMode", param ) Alters the method that is used to match window text during search operations. 1 = Complete / Slow mode (default) 2 = Quick mode In quick mode AutoIt can usually only "see" dialog text, button text and the captions of some controls.  In the default mode much more text can be seen (for instance the contents of the Notepad window). If you are having performance problems when performing many window searches then changing to the "quick" mode may help. 
+Opt ( "WinTitleMatchMode", param ) Alters the method that is used to match window titles during search operations. 1 = Match the title from the start (default) 2 = Match any substring in the title 3 = Exact title match 4 = Advanced mode, see <a href="../intro/windowsadvanced.htm">Window Titles & Text (Advanced)</a> 
+Opt ( "WinWaitDelay", param ) Alters how long a script should briefly pause after a successful window-related operation. Time in milliseconds to pause (default=250). 
+Ping ( address or hostname [, timeout] ) Pings a host and returns the roundtrip-time.
+PixelChecksum ( left, top, right, bottom [, step] ) Generates a checksum for a region of pixels.
+PixelGetColor ( x , y ) Returns a pixel color according to x,y pixel coordinates.
+PixelSearch ( left, top, right, bottom, color [, shade-variation] [, step]]  ) Searches a rectangle of pixels for the pixel color provided.
+ProcessClose ( "process" ) Terminates a named process.
+ProcessExists ( "process" )  Checks to see if a specified process exists. 
+ProcessList ( ["name"] ) Returns an array listing the currently running processes (names and PIDs).
+ProcessSetPriority ( "process", priority) Changes the priority of a process
+ProcessWait ( "process" [, timeout] ) Pauses script execution until a given process exists.
+ProcessWaitClose ( "process" [, timeout] ) Pauses script execution until a given process does not exist.
+ProgressOff ( ) Turns Progress window off.
+ProgressOn ( "title", "maintext" [, "subtext" [, x pos [, y pos [, opt]]]] ) Creates a customizable progress bar window.
+ProgressSet ( percent [, "subtext" [, "maintext"]] ) Sets the position and/or text of a previously created Progress bar window.
+Random ( [Min [, Max [, Flag]]] ) Generates a pseudo-random float-type number.
+RegDelete ( "keyname" [, "valuename"] ) Deletes a key or value from the registry.
+RegEnumKey ( "keyname", instance ) Reads the name of a subkey according to it's instance.
+RegEnumVal ( "keyname", instance ) Reads the name of a value according to it's instance.
+RegRead ( "keyname", "valuename" ) Reads a value from the registry.
+RegWrite ( "keyname" [,"valuename", "type", value] ) Creates a key or value in the registry.
+Round ( expression [, decimalplaces]  ) Returns a number rounded to a specified number of decimal places.
+Run ( "filename" [, "workingdir" [, flag]] ) Runs an external program.
+RunAsSet ( ["user", "domain", "password" [, options]] ) Initialise a set of user credentials to use during Run and RunWait operations.  2000/XP or later ONLY.
+RunWait ( "filename" [, "workingdir" [, flag]] ) Runs an external program and pauses script execution until the program finishes.
+Send ( "keys" [, flag] ) Sends simulated keystrokes to the active window.
+SetError ( code )  Manually set the value of the @error macro. 
+SetExtended ( code )  Manually set the value of the @extended macro. 
+Shutdown ( code ) Shuts down the system.
+Sin ( expression ) Calculates the sine of a number.
+Sleep ( delay ) Pause script execution.
+SoundPlay ( "filename" [, wait] ) Play a sound file.
+SoundSetWaveVolume ( percent )  Sets the system wave volume by percent. 
+SplashImageOn ( "title", "file" [, width [, height [, x pos [, y pos [, opt]]]]] ) Creates a customizable image popup window.
+SplashOff ( ) Turns SplashText or SplashImage off.
+SplashTextOn ( "title", "text" [, w [, h [, x pos [, y pos [, opt [, "fontname" [, "fontsz" [, "fontwt"]]]]]]]] ) Creates a customizable text popup window.
+Sqrt ( expression ) Calculates the square-root of a number.
+StatusbarGetText ( "title" [, "text" [, part]] ) Retrieves the text from a standard status bar control.
+String ( expression ) Returns the string representation of an expression.
+StringAddCR ( "string" ) Takes a string and prefixes all linefeed characters ( Chr(10) ) with a carriage return character ( Chr(13) ).
+StringFormat ( "format control", var1 [, ... var32] ) Returns a formatted string (similar to the C sprintf() function).
+StringInStr ( "string", "substring" [, casesense [, occurance]] ) Checks if a string contains a given substring.
+StringIsAlNum ( "string" ) Checks if a string contains only alphanumeric characters.
+StringIsAlpha ( "string" ) Checks if a string contains only alphabetic characters.
+StringIsASCII ( "string" ) Checks if a string contains only ASCII characters in the range 0x00 - 0x7f (0 - 127).
+StringIsDigit ( "string" ) Checks if a string contains only digit (0-9) characters.
+StringIsFloat ( "string" ) Checks if a string is a floating point number.
+StringIsInt ( "string" ) Checks if a string is an integer.
+StringIsLower ( "string" ) Checks if a string contains only lowercase characters.
+StringIsSpace ( "string" ) Checks if a string contains only whitespace characters.
+StringIsUpper ( "string" ) Checks if a string contains only uppercase characters.
+StringIsXDigit ( "string" ) Checks if a string contains only hexadecimal digit (0-9, A-F) characters.
+StringLeft ( "string", count ) Returns a number of characters from the left-hand side of a string.
+StringLen ( "string" )  Returns the number of characters in a string. 
+StringLower ( "string" ) Converts a string to lowercase.
+StringMid ( "string", start [, count] ) Extracts a number of characters from a string.
+StringRegExp ( "test", "pattern", [ flag ] ) Check if a string fits a given regular expression pattern.
+StringRegExpReplace ( "test", "pattern", "replace", [ count ] ) Replace text in a string based on regular expressions.
+StringReplace ( "string", "searchstring" or start, "replacestring" [, count [, casesense]] ) Replaces substrings in a string.
+StringRight ( "string", count ) Returns a number of characters from the right-hand side of a string.
+StringSplit ( "string", "delimiters" [, flag ] ) Splits up a string into substrings depending on the given delimiters.
+StringStripCR ( "string" ) Removes all carriage return values ( Chr(13) ) from a string.
+StringStripWS ( "string", flag ) Strips the white space in a string.
+StringTrimLeft ( "string", count ) Trims a number of characters from the left hand side of a string.
+StringTrimRight ( "string", count ) Trims a number of characters from the right hand side of a string.
+StringUpper ( "string" ) Converts a string to uppercase.
+Tan ( expression ) Calculates the tangent of a number.
+TimerDiff ( timestamp ) Returns a difference in time from a previous call to TimerInit().
+TimerInit ( ) Returns a timestamp (in milliseconds).
+TimerStart ( ) Returns a timestamp (in milliseconds).
+TimerStop ( timestamp ) Returns a difference in time from a previous call to TimerInit().
+ToolTip ( "text" [, x [, y]] ) Creates a tooltip anywhere on the screen.
+TrayTip ( "title", "text", timeout [, option] ) Displays a balloon tip from the AuotIt Icon. (2000/XP only)
+UBound ( Array [, Dimension] ) Returns the size of array dimensions.
+WinActivate ( "title" [, "text"] ) Activates (gives focus to) a window.
+WinActive ( "title" [, "text"] ) Checks to see if a specified window exists and is currently active.
+WinClose ( "title" [, "text"] ) Closes a window.
+WinExists ( "title" [, "text"] ) Checks to see if a specified window exists.
+WinGetCaretPos ( ) Returns the coordinates of the caret in the foreground window
+WinGetClassList ( "title" [, "text"] ) Retrieves the classes from a window.
+WinGetClientSize ( "title" [, "text"] ) Retrieves the size of a given window's client area.
+WinGetHandle ( "title" [, "text"] ) Retrieves the internal handle of a window.
+WinGetPos ( "title" [, "text"] ) Retrieves the position and size of a given window.
+WinGetProcess ( "title" [, "text"] ) Retrieves the Process ID (PID) associated with a window.
+WinGetState ( "title" [, "text"] ) Retrieves the state of a given window.
+WinGetText ( "title" [, "text"] ) Retrieves the text from a window.
+WinGetTitle ( "title" [, "text"] ) Retrieves the full title from a window.
+WinKill ( "title" [, "text"] ) Forces a window to close.
+WinList ( ["title" [, "text"]] ) Retrieves a list of windows.
+WinMenuSelectItem ( "title", "text", "item" [, "item" [, "item" [, "item" [, "item" [, "item" [, "item"]]]]]] ) Invokes a menu item of a window.
+WinMinimizeAll ( ) Minimizes all windows.
+WinMinimizeAllUndo ( ) Undoes a previous WinMinimizeAll function.
+WinMove ( "title", "text", x, y [, width [, height]] ) Moves and/or resizes a window.
+WinSetOnTop ( "title", "text", flag ) Change a window's  "Always On Top" attribute.
+WinSetState ( "title", "text", flag ) Shows, hides, minimizes, maximizes, or restores a window.
+WinSetTitle ( "title", "text", "newtitle" ) Changes the title of a window.
+WinSetTrans ( "title", "text", transparency ) Sets the transparency of a window. (Windows 2000/XP or later)
+WinShow ( "title", "text", flag ) Shows, hides, minimizes, maximizes, or restores a window.
+WinWait ( "title" [, "text" [, timeout]] ) Pauses execution of the script until the requested window exists.
+WinWaitActive ( "title", ["text"], [timeout] ) Pauses execution of the script until the requested window is active.
+WinWaitClose ( "title" [, "text" [, timeout]] ) Pauses execution of the script until the requested window does not exist.
+WinWaitNotActive ( "title" [, "text" [, timeout]] ) Pauses execution of the script until the requested window is not active.
+_ArrayAdd ( $avArray, $sValue ) Adds a specified value at the end of an array, returning the adjusted array. (Requires: #include <Array.au3>)
+_ArrayBinarySearch ( $avArray, $iKey [, $i_Base=0] ) Uses the binary search algorithm to search through a 1-dimensional array. (Requires: #include <Array.au3>)
+_ArrayCreate ( $v_Val1, [$v_Val2, [..., $v_Val21]] ) Create a small array and quickly assign values. (Requires: #include <Array.au3>)
+_ArrayDelete ( $avArray, $iElement ) Deletes the specified element from the given array, returning the adjusted array. (Requires: #include <Array.au3>)
+_ArrayDisplay ( $avArray, $sTitle  ) Displays a 1-dimensional array in a message box. (Requires: #include <Array.au3>)
+_ArrayInsert ( $avArray, $iElement[, $sValue] ) Inserts the a new string at the specified element into an array, returning the adjusted array. (Requires: #include <Array.au3>)
+_ArrayMax ( $avArray[[, $iCompNumeric], $i_Base] ) Returns the highest value held in an array. (Requires: #include <Array.au3>)
+_ArrayMaxIndex ( $avArray[[, $iCompNumeric], $i_Base] ) Returns the index where the highest value occurs in the array. (Requires: #include <Array.au3>)
+_ArrayMin ( $avArray[[, $iCompNumeric], $i_Base] ) Returns the lowest value held in an array. (Requires: #include <Array.au3>)
+_ArrayMinIndex ( $avArray[[, $iCompNumeric], $i_Base] ) Returns the index where the lowest value occurs in the array. (Requires: #include <Array.au3>)
+_ArrayPop ( $avArray ) Returns the last element of an array, deleting that element from the array at the same time. (Requires: #include <Array.au3>)
+_ArrayReverse ( $avArray ) Takes the given array and reverses the order in which the elements appear in the array. (Requires: #include <Array.au3>)
+_ArraySort ( ByRef $a_Array, [[[[[$i_Descending], $i_Base=0], $i_Ubound=0], $i_Dim=1], $i_SortIndex=0] ) Sort a mutiple dimensional Array. (Requires: #include <Array.au3>)
+_ArraySwap ( $sVector1, $sVector2 ) Swaps two elements of an array. (Requires: #include <Array.au3>)
+_ArrayToClip ( $avArray, $i_Base = 0) Sends the contents of an array to the clipboard. (Requires: #include <Array.au3>)
+_ArrayToString ( $avArray, $sDelim [[, $iStart], $iEnd] ) Places the elements of an array into a single string, separated by the specified delimiter. (Requires: #include <Array.au3>)
+_ArrayTrim ( $aArray, $iTrimNum [[[, $iTrimDirection], $iBase], $iUbound] ) Trims all elements in an array a certain number of characters. (Requires: #include <Array.au3>)
+_ColorGetBlue ( $nColor ) Returns the blue component of a given color. (Requires: #include <Color.au3>)
+_ColorGetGreen ( $nColor ) Returns the green component of a given color. (Requires: #include <Color.au3>)
+_ColorGetRed ( $nColor ) Returns the red component of a given color. (Requires: #include <Color.au3>)
+_DateAdd ( $sType, $iValToAdd, $sDate ) Calculates a new date based on a given date and add an interval. (Requires: #include <Date.au3>)
+_DateDayOfWeek ( $iDayNum [, $iFormat] ) Returns the name of the weekday, based on the specified day. (Requires: #include <Date.au3>)
+_DateDaysInMonth ( $iYear, $iMonthNum ) Returns the number of days in a month, based on the specified month and year. (Requires: #include <Date.au3>)
+_DateDiff ($sType, $sStartDate, $sEndDate) Returns the difference between 2 dates, expressed in the type requested. (Requires: #include <Date.au3>)
+_DateIsLeapYear ( $iYear ) Checks a given year to see if it is a leap year. (Requires: #include <Date.au3>)
+_DateIsValid ( $sDate ) Checks the given date to determine if it is a valid date. (Requires: #include <Date.au3>)
+_DateTimeFormat ( $sDate, $sType) Returns the date in the PC's regional settings format. (Requires: #Include <date.au3>)
+_DateTimeSplit ($sDate, ByRef $asDatePart, ByRef $iTimePart) Split a string containing Date and Time into two separate Arrays. (Requires: #include <date.au3>)
+_DateToDayOfWeek ( $iYear, $iMonth, $iDay ) Returns the weekdaynumber for a given date.   (Requires: #include <date.au3>)
+_DateToDayValue ($iJulianDate, ByRef $iYear, ByRef $iMonth, ByRef $iDay) Add the given days since noon 4713 BC January 1 and returns the Gregorian date. (Requires: #include <Date.au3>)
+_Now () Returns the current Date and Time in PC's format. (Requires: #Include <date.au3>)
+_NowCalc () Returns the current Date and Time in format YYYY/MM/DD HH:MM:SS for use in date calculations. (Requires: #Include <date.au3>)
+_NowCalcDate () Returns the current Date in format YYYY/MM/DD. (Requires: #Include <date.au3>)
+_NowDate () Returns the current Date in the Pc's format. (Requires: #Include <date.au3>)
+_NowTime () Returns the current Time in format HH:MM:SS. (Requires: #Include <date.au3>)
+_TicksToTime ( $iTicks, $iHours, $iMins, $iSecs ) Converts the specified tick amount to hours, minutes, and seconds. (Requires: #Include <date.au3>)
+_TimeToTicks ( $iHours, $iMins, $iSecs ) Converts the specified hours, minutes, and seconds to ticks. (Requires: #include <Date.au3>)
+_FileCountLines ( $sFilePath ) Returns the number of lines in the specified file. (Requires: #include <file.au3>)
+_FileCreate ( $sFilePath ) Creates or zero's out the length of the file specified. (Requires: #include <file.au3>)
+_FileReadToArray ($sFilePath, ByRef $aArray) Reads the specified file into an array. (Requires: #include <file.au3>)
+_FileWriteLog ( $sLogPath, $sLogMsg ) Writes current date,time and the specified text to a log file. (Requires: #include <file.au3>)
+_TempFile () Generate a name for a temporary file. The file is guaranteed not to already exist in the user's %TEMP% directory. (Requires: #include <File.au3>)
+_GetIP () Get public IP address of a network/computer. (Requires: #include <inet.au3>)
+_INetExplorerCapable ( $s_IEString ) Converts a string to IE(Internet Explorer) capable line (Requires: #include <INet.au3>)
+_INetMail ( $s_MailTo, $s_MailSubject, $s_MailBody ) Opens default user's mail client with given address, subject, and body. (Requires: #include <INet.au3>)
+_Ceil ( $nValue ) Returns the smallest integer greater than or equal to the specified value. (Requires: #include <math.au3>)
+_Floor ( $nValue ) Returns the greatest integer less than or equal to the specified value. (Requires: #include <math.au3>)
+_MathCheckDiv ( $i_NumA, $i_NumB ) Checks if NumA is divisable by NumB (Requires: #include <math.au3>)
+_Max ( $nNum1, $nNum2 ) Evaluates which of the two numbers is higher. (Requires: #include <math.au3>)
+_Min ( $nNum1, $nNum2 ) Evaluates which of the two numbers is lower. (Requires: #include <math.au3>)
+_Iif ( $f_Test, $v_TrueVal, $v_FalseVal ) Perform a boolean test within an expression. (Requires: #include <Misc.au3>)
+_RunDOS ( $sCommand ) Executes a DOS command in a hidden command window. (Requires: #Include <process.au3>)
+_HexToString ("hex") Convert a hex string to a string. (Requires: #include <string.au3>)
+_StringEncrypt ( $i_Encrypt, $s_EncryptText, $s_EncryptPassword [, $i_EncryptLevel ] ) An RC4 based string encryption function.  (Requires: #include <string.au3>)
+_StringProper ( $sString ) Changes a string to proper case, same a =Proper function in Excel (Requires: #Include <string.au3>)
+_StringRepeat ( $sString, $iRepeatCount ) Repeats a string a specified number of times. (Requires: #Include <string.au3>)
+_StringReverse ( $sString ) Reverses the contents of the specified string. (Requires: #Include <string.au3>)
+_StringToHex ("string") Convert a string to a hex string. (Requires: #include <string.au3>)
+_viClose ($h_session) Closes a VISA connection to an Instrument/Device (Requires: #include <Visa.au3>)
+_viExecCommand ($h_session, $s_command, $i_timeout_ms = -1) Send a Command/Query to an Instrument/Device through the VISA interface (GPIB / TCP) (Requires: #include <Visa.au3>)
+_viFindGpib (ByRef $a_descriptor_list, ByRef $a_idn_list, $f_show_search_results = 0) Send a Command/Query to an Instrument/Device through the VISA interface (GPIB / TCP) (Requires: #include <Visa.au3>)
+_viGpibBusReset () GPIB BUS "reset": Use this function when the GPIB BUS gets stuck for some reason. You might be lucky and resolve the problem by calling this function (Requires: #include <Visa.au3>)
+_viGTL ($h_session) Go To Local mode: Instruments that accept this command will exit the "Remote Control mode" and go to "Local mode". If the instrument is already in "Local mode" this is simply ignored. Normally, if an instrument does not support this command it will simply stay in the "Remote Control mode" (Requires: #include <Visa.au3>)
+_viOpen ($s_visa_address, $s_visa_secondary_address = 0) Opens a VISA connection to an Instrument/Device (Requires: #include <Visa.au3>)
+_viSetAttribute ($h_session, $i_attribute, $i_value) Set any VISA attribute This function, which is called by _viSetTimeout, can ALSO be used to set the other VISA specific attributes. Read the VISA documentation for more information and a list of VISA attributes and their corresponding values. (Requires: #include <Visa.au3>)
+_viSetTimeout ($h_session, $i_timeout_ms) Sets the VISA timeout in MILISECONDS (Requires: #include <Visa.au3>)

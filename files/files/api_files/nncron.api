@@ -1,8 +1,12 @@
+# from the Scite-ru project
 %ACTIVE-WINDOW%
+%CHAR C FREE-SPACE%
 %CLIPBOARD%
 %CONNECTION%
+%crlf%
 %DD%
-%ExitCodeProc%
+%DRIVE-LETTER%
+%ExitCodeProc% ( -- n )
 %FILE: filename%
 %FOLDER-APP-DATA%
 %FOLDER-COMMON-DESKTOP%
@@ -21,20 +25,33 @@
 %FOLDER-TEMPLATES%
 %FOLDER-WINDOWS%
 %FOUND-CHILD-WINDOW%
+%FOUND-EVENT%
 %FOUND-FILENAME%
 %FOUND-FULLPATH%
 %FOUND-RELPATH%
 %FOUND-WINDOW%
+%FOUND-PID%
+%FOUND-PROC%
+%FOUND-RELPATH%
 %GetIdleTime%
 %LAST-CONNECTION%
+%LOGGEDUSERCOUNT%
 %MM%
 %MMM%
+%ModuleDirName%
+%n esPICK%
+%n esPICKS%
 %PERCENT%
 %PrevTempFile%
+%SESSIONSCOUNT%
+%SESSIONSERVERS%
+%SESSIONSUSERS%
 %QUOTE%
 %TempFile%
 %ThreadId%
 %USERNAME%
+%WATCH-PROC-ID%
+%WATCH-SESSIONID%
 %WD%
 %WIN-TITLE%
 %WW%
@@ -44,43 +61,64 @@
 %hh%
 %mm%
 %ss%
+;FOR-CHILD-WINDOWS
+;FOR-FILES
+;FOR-NEW-EVENTS
+;FOR-WINDOWS
+(CPU-USAGE)
+(PROC-CPU-USAGE)
 </JScript>
 </SCRIPT>
 </VBScript>
 <JScript>
 <VBScript>
+2VARIABLE
+ABORT
+ABORT"
+ABOVE_NORMAL_PRIORITY_CLASS
+AboveNormalPriority
 ACCESS-DATE
+Action:
+ADD-HOST
+ADD-TI
 AGAIN
 ALL
 ALLOT
+Also
 AND
-AboveNormalPriority
-Action
+AsLoggedUser
 AsService
-BEEP
+BEEP ( sec Hz -- ) sec
 BEGIN
 BelowNormalPriority
 CALL_DIAL
 CALL_HANGUP
 CASE
 CHAR
-CLIPBOARD
+CLIPBOARD:
+CLIPBOARD! ( a u -- ) au
 COMPARE
 CONSOLE
 CONSTANT
 CREATE
 CREATION-DATE
+CRON-LOG
+CRONTAB-ERROR
 CUR-DATE
+CUR-TASK-NAME
 DATE-
 DATE-INTERVAL
 DELAY
+DEPTH
 DIAL
+DIAL-DLG:
 DIR-CREATE
 DIR-DELETE
 DIR-EMPTY
 DIR-SIZE
 DO
 Day@
+DAYS
 Days
 DialOnce
 Domain
@@ -90,8 +128,13 @@ ENDOF
 ERR-MSG
 EVAL-SUBST
 EVALUATE
-EXIST
+EXIST? ( a u -- ? )
+ExitCodeProc ( -- n )
 FALSE
+FAPPEND ( a1 u1 a2 u2 -- )
+FCOPY ( a1 u1 a2 u2 -- ) a1u1 - from_filename, a2u2 - to_filename
+FCREATE ( a u -- )
+FDELETE ( a u -- )
 FILE-ACCESS-DATE
 FILE-APPEND
 FILE-COPY
@@ -101,48 +144,66 @@ FILE-CROP
 FILE-DATE
 FILE-DELETE
 FILE-EMPTY
-FILE-EXIST
+FILE-EXIST:
 FILE-MOVE
-FILE-RENAME
+FILE-RENAME:
 FILE-SIZE
 FILE-WRITE
 FILE-WRITE-DATE
 FILESONLY
+FMOVE ( a1 u1 a2 u2 -- )
 FOR-CHILD-WINDOWS
-FOR-FILES
-FOR-WINDOWS
+FOR-FILES:
+FOR-NEW-EVENTS
+FOR-PROCS:
+FOR-WINDOWS:
+FOUND-CHILD-WINDOW (  -- a u )
+FOUND-WINDOW ( -- a u )
 FREAD
 FREE-SPACE
+FRENAME ( a1 u1 a2 u2 -- ) au1 - old_filename, au2 - new_filename
+FSIZE ( au -- d ) 
+FWRITE ( a1 u1 a2 u2 -- )  
+GET-CRC32 ( a u -- a u ) Usage: S" filename" GET-CRC32
 GET-CUR-TIME
 GET-REG
 GET-VER
-GetTickCount
+GetForegroundWindow ( -- win-hdn  ) 
+GetDesktopSize ( -- x y ) 
+GetTickCount ( -- ms ) 
 HANGUP
 HIDE-ICON
 HINT
+HINT-COLOR ( bgcolor fgcolor -- )
+HINT-FONT ( a u font-size -- )
 HINT-OFF
-HINT-POS
-HINT-SIZE
+HINT-POS ( x y -- )
+HINT-POS: () "x" "y"
+HINT-SIZE ( w h -- )
+HINT-SIZE:  () "w" "h"
 HINTW
 HOST-EXIST
 HighPriority
 Hour@
 Hours
 I
-IDLE
+IDLE ( sec -- ? )
+IDLE:
 IF
-INTERVAL
+INTERVAL:
 IS-ARCHIVE
 IS-DIR
 IS-HIDDEN
 IS-READONLY
 IS-SYSTEM
 IdlePriority
-KILL
+IsWorkstationLocked? ( -- ? )
+KILL ( a u -- )
 LAUNCH
 LEAVE
-LOG
-LOGGEDON
+LOG ( a1 u1 a2 u2 -- ) a1u1-message a2u2-filename
+LOG: () "filename" "message"
+LOGGEDON? ( -- hwdn/0 ) : ExplorerExist ( -- hwdn/0 ) 0 TNW DROP FindWindowA ;
 LOGOFF
 LOOP
 LoadProfile
@@ -156,16 +217,21 @@ MOUSE-LBUP
 MOUSE-MOVE
 MOUSE-MOVER
 MOUSE-MOVEW
+MOUSE-POS ( -- x y )
 MOUSE-RBCLK
 MOUSE-RBDCLK
 MOUSE-RBDN
 MOUSE-RBUP
 MSG
+MsgBox
 Min@
 Minutes
 Mon@
 MonitorResponseTime
+MonLength
 Months
+N>S ( u -- addr u)
+NET-FILE-LIST (au1 au2 -- az ) au1
 NHOST-EXIST
 NOT
 No
@@ -177,18 +243,30 @@ NormalPriority
 OF
 OFF
 ON
-ONLINE
-OR
 OnceADay
 OnceAHour
 OnceAMonth
 OnceAWeek
+ONLINE
+ONLYDIR ( a1 u1 -- a2 u2 )
+ONLYNAME ( a1 u1 -- a2 u2 )
+OR
+OVER ( x2 x1 --> x2 x1 x22 )
 PAUSE
+PAUSE:
+PLACE
 PLAY-SOUND
 PLAY-SOUNDW
 POP3-CHECK
 POWEROFF
-PROC-EXIST
+POWER-HIBERNATE
+PROC-CLOSE ( a u -- )
+PROC-CLOSE:
+PROC-EXIST? ( a u -- PID|0 )
+PROC-EXIST:
+PROC-FULLNAME ( pid - a u)
+PROC-NAME ( pid - a u)
+PROC-WAIT-CPU-USAGE ( aproc uproc ms % times )
 PROC-TIME
 PURGE-OLD
 PURGE-OLDA
@@ -198,6 +276,7 @@ QSTART-APP
 QSTART-APPW
 QUERY
 QUIT
+RANDOM ( range -- random )
 RASDomain
 RASError
 RASPassword
@@ -205,26 +284,34 @@ RASPhone
 RASSecPassword
 RASUser
 RE-ALL
-RE-MATCH
-REBOOT
+RE-MATCH ( a1 u1 a2 u2 -- ? ) a1u1 - текст a2u2
+RE-MATCH:
+REBOOT перезагружаем комп
 RECURSIVE
 REG-DELETE-KEY
 REG-DELETE-VALUE
 REG-DWORD
 REG-SZ
+RELEASE
 REMINDER
 REPEAT
+ROT ( x3 x2 x1 --> x2 x1 x3 )
 RUN
+RunMissed:
 RealtimePriority
-Rule
+Rule:
 RunOnce
-SEND-KEYS
-SEND-KEYS-DELAY
+SEND-KEYS  ( a u -- )
+SEND-KEYS-DELAY ( delay1 delay2 -- )
+SEND-KEYS-DELAY: ( -->\ delay1 delay2 -- )
 SET
 SHOW-ICON
 SHUTDOWN
+SingleInstance
 START-APP
+START-APP:
 START-APPW
+START-APPW:
 START-QUIT
 START-TIME
 SWHide
@@ -234,19 +321,22 @@ ShowMaximized
 ShowMinimized
 ShowNoActivate
 ShowNormal
-StartIn
+StartIn: ( -- )
 StartPos
 StartSize
 THEN
 THINT
 THINTW
-TMSG
+TimeMsgBox ( a u sec -- )
+TMSG:
 TODEPTH
-TQUERY
+TQUERY ( a u timeout default -- ? )
+TQUERY: ( -- ) "qwestion" time Yes/No
+TRAY-REFRESH
 TRUE
-Time
+Time:
 TimeSec@
-UNTIL
+UNTIL ( flag -- )
 User
 VALUE
 VARIABLE
@@ -260,20 +350,29 @@ WDay@
 WHILE
 WIN-ACTIVATE
 WIN-ACTIVE
-WIN-CLICK
-WIN-CLOSE
-WIN-EXIST
+WIN-CLICK ( au a1u1 -- )
+WIN-CLICK:
+WIN-CLOSE  ( S" win-pattern" -- )
+WIN-EXIST? ( a u -- ? )
+WIN-EXIST:
 WIN-HIDE
-WIN-HWND
+WIN-HWND ( -- n )
+WIN-INPUT-TEXT: ( --> "caption_text" "prompt_text" "default_input_text" <time_in_sec> -- а u )
 WIN-MAXIMIZE
 WIN-MINIMIZE
-WIN-MOVE
+WIN-MOVE ( x y  -- )
 WIN-MOVER
+WIN-NOTOPMOST ( hwnd -- )
+WIN-RESIZE ( w h -- )
 WIN-RESTORE
-WIN-SEND-KEYS
+WIN-SEND-KEYS ( a-win u-win a-keys u-keys -- )
+WIN-SEND-KEYS:
+WIN-SET-TITLE ( a1u1 a2u2 -- )
+WIN-SET-TITLE:
 WIN-SHOW
+WIN-TEXT ( hwnd -- a u )
 WIN-TERMINATE
-WIN-TOPMOST
+WIN-TOPMOST ( hwnd -- )
 WIN-VER
 WIN-WAIT
 WINAPI
@@ -285,17 +384,19 @@ WatchDir
 WatchDisconnect
 WatchDriveInsert
 WatchDriveRemove
-WatchFile
-WatchProc
-WatchProcStop
+WatchFile:
+WatchFileDelete:
+WatchProc:
+WatchProcStop:
 WatchSubtree
 WatchWinActivate
 WatchWinCreate
 WatchWinDestroy
-WatchWindow
+WatchWindow:
 WeekDays
 WinNT
 WithoutProfile
 Year@
 Years
 Yes
+

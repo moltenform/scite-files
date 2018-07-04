@@ -1,0 +1,298 @@
+Abs (number)
+Array (arglist)
+Asc (string)
+Atn (number)
+CBool (expression)
+CByte (expression)
+CCur (expression)
+CDate (date)
+CDbl (expression)
+Chr (charcode)
+CInt (expression)
+CLng (expression)
+Cos (number)
+CSng (expression)
+CStr (expression)
+DateAdd (interval,number,date)
+DateDiff (interval,date1,date2,firstdayofweek[],firstweekofyear[])
+DatePart (interval,date,firstdayofweek[],firstweekofyear[]) 
+DateSerial (year,month,day)
+DateValue (date)
+Day (date)
+Eval (expression)
+Exp (number)
+Filter (InputStrings,Value,Include[],Compare[])
+Fix (number)
+FormatCurrency (Expression,NumDigitsAfterDecimal[],IncludeLeadDigit[],UseParens[],GroupDigits[])
+FormatDateTime (Date,NamedFormat[])
+FormatNumber (Expression,NumDigitsAfterDecimal[],IncludeLeadDigit[],UseParens[],GroupDigits[])
+FormatPercent (Expression,NumDigitsAfterDecimal[],IncludeLeadDigit[],UseParens[],GroupDigits[])
+GetObject (pathname[],class[])
+GetRef (procname)
+Hex (number)
+Hour (time)
+InputBox (prompt,title[],default[],xpos[],helpfile[],context[])
+InStr (start[],string1,string2,compare[])
+InStrRev (string1,string2,start[],compare[])
+Int (number)
+IsArray (varname)
+IsDate (expression)
+IsEmpty (expression)
+IsNull (expression)
+IsNumeric (expression)
+IsObject (expression)
+Join (list,delimiter[])
+LBound (arrayname,dimension[])
+LCase (string)
+Left (string,length)
+Len (string|varname)
+LoadPicture (picturename)
+Log (number)
+LTrim (string)
+Mid (string,start,length[])
+Minute (time)
+Month (date)
+MonthName (month,abbreviate[])
+Oct (number)
+Replace (expression,find,replacewith,start[],count[],compare[])
+RGB (red,green,blue)
+Right (string,length)
+Rnd (number[])
+Round (expression,numdecimalplaces[])
+RTrim (string)
+Second (time)
+Sgn (number)
+Sin (number)
+Space (number)
+Split (expression,delimiter[],count,compare[])
+Sqr (number)
+StrComp (string1,string2,compare[])
+String (number,character)
+StrReverse (string1)
+Tan (number)
+TimeSerial (hour,minute,second)
+TimeValue (time)
+Trim (string)
+TypeName (varname)
+UBound (arrayname,dimension[])
+UCase (string)
+VarType (varname)
+Weekday (date,firstdayofweek[])
+WeekdayName (weekday,abbreviate,firstdayofweek)
+Year (date)
+
+MsgBox
+MsgBox (prompt,buttons[],title[],helpfile[],context[])
+MsgBox ("Message",vbCritical,"Title")
+
+Err.Description
+Err.HelpContext
+Err.HelpFile
+Err.Number
+Err.Source
+Err.Clear
+Err.Raise
+Raise (number,source,description,helpfile,helpcontext)
+
+xlLine Line 
+xlLineMarkersStacked Stacked Line with Markers 
+xlLineStacked Stacked Line 
+xlPie Pie 
+xlPieOfPie Pie of Pie 
+xlPyramidBarStacked Stacked Pyramid Bar 
+xlPyramidCol 3D Pyramid Column 
+xlPyramidColClustered  Clustered Pyramid Column 
+xlPyramidColStacked Stacked Pyramid Column 
+xlPyramidColStacked100 100% Stacked Pyramid Column 
+xlRadar Radar 
+xlRadarFilled Filled Radar 
+xlRadarMarkers Radar with Data Markers 
+xlStockHLC High-Low-Close 
+xlStockOHLC  Open-High-Low-Close 
+xlStockVHLC  Volume-High-Low-Close 
+xlStockVOHLC  Volume-Open-High-Low-Close 
+xlSurface 3D Surface 
+xlSurfaceTopView Surface (Top View) 
+xlSurfaceTopViewWireframe  Surface (Top View wireframe) 
+xlSurfaceWireframe 3D Surface (wireframe) 
+xlXYScatter Scatter 
+xlXYScatterLines Scatter with Lines. 
+xlXYScatterLinesNoMarkers  Scatter with Lines and No Data Markers 
+xlXYScatterSmooth Scatter with Smoothed Lines 
+xlXYScatterSmoothNoMarkers  Scatter with Smoothed Lines and No Data Markers 
+xl3DArea 3D Area 
+xl3DAreaStacked 3D Stacked Area 
+xl3DAreaStacked100 100% Stacked Area 
+xl3DBarClustered 3D Clustered Bar 
+xl3DBarStacked 3D Stacked Bar 
+xl3DBarStacked100 3D 100% Stacked Bar 
+xl3DColumn 3D Column 
+xl3DColumnClustered 3D Clustered Column 
+xl3DColumnStacked 3D Stacked Column  
+xl3DColumnStacked100 3D 100% Stacked Column 
+xl3DLine 3D Line 
+xl3DPie 3D Pie 
+xl3DPieExploded Exploded 3D Pie 
+xlArea Area 
+xlAreaStacked Stacked Area 
+xlAreaStacked100 100% Stacked Area 
+xlBarClustered Clustered Bar 
+xlBarOfPie Bar of Pie 
+xlBarStacked Stacked Bar 
+xlBarStacked100 100% Stacked Bar 
+xlBubble Bubble 
+xlBubble3DEffect Bubble with 3D effects 
+xlColumnClustered Clustered Column 
+xlColumnStacked Stacked Column 
+xlColumnStacked100 100% Stacked Column 
+xlConeBarClustered Clustered Cone Bar 
+xlConeBarStacked Stacked Cone Bar 
+xlConeBarStacked100 100% Stacked Cone Bar 
+xlConeCol 3D Cone Column 
+xlConeColClustered Clustered Cone Column 
+xlConeColStacked Stacked Cone Column 
+xlConeColStacked100 100% Stacked Cone Column 
+xlCylinderBarClustered  Clustered Cylinder Bar 
+xlCylinderBarStacked Stacked Cylinder Bar 
+xlCylinderBarStacked100 100% Stacked Cylinder Bar 
+xlCylinderCol 3D Cylinder Column 
+xlCylinderColClustered  Clustered Cone Column 
+xlCylinderColStacked Stacked Cone Column 
+xlCylinderColStacked100 100% Stacked Cylinder Column 
+xlDoughnut Doughnut 
+xlDoughnutExploded Exploded Doughnut 
+xlLineMarkers Line with Markers 
+xlLineMarkersStacked100 100% Stacked Line with Markers 
+xlLineStacked100 100% Stacked Line 
+xlPieExploded Exploded Pie 
+xlPyramidBarClustered  Clustered Pyramid Bar 
+xlPyramidBarStacked100 100% Stacked Pyramid Bar 
+
+xlMarkerStyleAutomatic Automatic markers 
+xlMarkerStyleCircle Circular markers 
+xlMarkerStyleDash Long bar markers 
+xlMarkerStyleDiamond Diamond-shaped markers 
+xlMarkerStyleDot Short bar markers 
+xlMarkerStyleNone No markers 
+xlMarkerStylePicture Picture markers 
+xlMarkerStylePlus Square markers with a plus sign 
+xlMarkerStyleSquare Square markers 
+xlMarkerStyleStar Square markers with an asterisk 
+xlMarkerStyleTriangle Triangular markers 
+xlMarkerStyleX Square markers with an X 
+
+xlNone
+xlAutomatic
+xlCombination
+
+msoPattern10Percent 
+msoPattern20Percent 
+msoPattern25Percent 
+msoPattern30Percent 
+msoPattern40Percent 
+msoPattern50Percent 
+msoPattern5Percent 
+msoPattern60Percent 
+msoPattern70Percent 
+msoPattern75Percent 
+msoPattern80Percent 
+msoPattern90Percent 
+msoPatternDarkDownwardDiagonal 
+msoPatternDarkHorizontal 
+msoPatternDarkUpwardDiagonal 
+msoPatternDarkVertical 
+msoPatternDashedDownwardDiagonal 
+msoPatternDashedHorizontal 
+msoPatternDashedUpwardDiagonal 
+msoPatternDashedVertical 
+msoPatternDiagonalBrick 
+msoPatternDivot 
+msoPatternDottedDiamond 
+msoPatternDottedGrid 
+msoPatternHorizontalBrick 
+msoPatternLargeCheckerBoard 
+msoPatternLargeConfetti 
+msoPatternLargeGrid 
+msoPatternLightDownwardDiagonal 
+msoPatternLightHorizontal 
+msoPatternLightUpwardDiagonal 
+msoPatternLightVertical 
+msoPatternMixed 
+msoPatternNarrowHorizontal 
+msoPatternNarrowVertical 
+msoPatternOutlinedDiamond 
+msoPatternPlaid 
+msoPatternShingle 
+msoPatternSmallCheckerBoard 
+msoPatternSmallConfetti 
+msoPatternSmallGrid 
+msoPatternSolidDiamond 
+msoPatternSphere 
+msoPatternTrellis 
+msoPatternWave 
+msoPatternWeave 
+msoPatternWideDownwardDiagonal 
+msoPatternWideUpwardDiagonal 
+msoPatternZigZag 
+
+xlContinuous 
+xlDash 
+xlDashDot 
+xlDashDotDot 
+xlDot 
+xlDouble 
+xlSlantDashDot 
+xlLineStyleNone 
+xlGray50 
+
+xlHairline 
+xlThin 
+xlMedium 
+xlThick
+
+xlDataLabelsShowBubbleSizes 
+xlDataLabelsShowLabelAndPercent  Percentage of the total, and category for the point. Available only for pie charts and doughnut charts. 
+xlDataLabelsShowPercent  Percentage of the total. Available only for pie charts and doughnut charts. 
+xlDataLabelsShowLabel Category for the point. 
+xlDataLabelsShowNone No data labels. 
+xlDataLabelsShowValue default. Value for the point (assumed if this argument isn't specified). 
+
+xlDisplayShapes Show all shapes. 
+xlPlaceholders Show only placeholders. 
+xlHide Hide all shapes. 
+
+xlChart one of these XlSheetType constant
+xlDialogSheet one of these XlSheetType constant
+xlExcel4IntlMacroSheet one of these XlSheetType constant
+xlExcel4MacroSheet one of these XlSheetType constant
+xlWorksheet one of these XlSheetType constant
+
+xlValue one of xlAxisType constant
+xlCategory one of xlAxisType constant
+xlSeriesAxis one of xlAxisType constant
+
+xlPrimary (default) one of xlAxisGroup constant
+xlSecondary one of xlAxisGroup constant
+
+msoAutoShape one of these MsoShapeType constant
+msoCallout one of these MsoShapeType constant
+msoCanvas one of these MsoShapeType constant
+msoChart one of these MsoShapeType constant
+msoComment one of these MsoShapeType constant
+msoDiagram one of these MsoShapeType constant
+msoEmbeddedOLEObject one of these MsoShapeType constant
+msoFormControl one of these MsoShapeType constant
+msoFreeform one of these MsoShapeType constant
+msoGroup one of these MsoShapeType constant
+msoLine one of these MsoShapeType constant
+msoLinkedOLEObject one of these MsoShapeType constant
+msoLinkedPicture one of these MsoShapeType constant
+msoMedia  Can not be used with this property. This constant is used with shapes in other Microsoft Office applications. 
+msoOLEControlObject one of these MsoShapeType constant
+msoPicture one of these MsoShapeType constant
+msoPlaceholder  Can not be used with this property. This constant is used with shapes in other Microsoft Office applications. 
+msoScriptAnchor one of these MsoShapeType constant
+msoShapeTypeMixed one of these MsoShapeType constant
+msoTable one of these MsoShapeType constant
+msoTextBox one of these MsoShapeType constant
+msoTextEffect one of these MsoShapeType constant

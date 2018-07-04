@@ -75,11 +75,13 @@
 
     * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `au3`, then save and restart SciTE
     * [SciTE4AutoIt3 Website containing Auto It3 related properties and API files.](https://www.autoitscript.com/site/autoit-script-editor/)
+    * [au3 API file](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/au3.api)
 
 * AutoHotkey (AHK)
 
     * [AutoHotkey properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/ahk.properties)
     * [SciTE4AutoHotkey](https://github.com/fincs/SciTE4AutoHotkey) custom SciTE build for ahk
+    * [ahk API file](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/ahk.api)
 
 * AutoCAD Dialog Box components
 
@@ -140,7 +142,7 @@
 * Clojure
 
     * [a lisp.properties including support for Scheme and Clojure](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/lisp_and_closure.api)
-    * [api for Clojure](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/clojure.api)
+    * [api file for Clojure](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/clojure.api)
 
 * CMake
 
@@ -207,6 +209,7 @@
 * Forth
 
     * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `forth`, then save and restart SciTE
+    * [api file for Forth](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/forth.api)
     
 * Fortran
 
@@ -359,11 +362,12 @@
 * nncron / nncrontab
 
     * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `nncrontab`, then save and restart SciTE
-    * [nncron.api](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/nncron.api) 
+    * [nncron api file](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/nncron.api) 
 
 * NSIS (nullsoft install)
 
     * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `nsis`, then save and restart SciTE
+    * [nsis api file](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/nsis.api) 
 
 * Objective C
 
@@ -548,6 +552,7 @@
     * [vbscript api](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/vbscript.api)
     * vbscript [properties file](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/vbscript.properties)
     * [VBScript API, VBA API](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/vba,vbs2016.api.zip)
+    * [vba api file](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/vba.api)
 
 * visualprolog
 
@@ -557,6 +562,7 @@
 
     * [Properties files](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/windows_scripting.zip)
     * [More files and scripts](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/windows_scripting_scripts.zip), refer to readme.txt
+    * [wsh.api](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/wsh.api) for vbscript calling into ActiveX objects like Scripting.FileSystemObject
 
 * XML
 
