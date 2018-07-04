@@ -566,6 +566,11 @@
 
     * highlighting and folding is already enabled by default
 
+One can apply a patch to support even more languages, although it will require some configuration. Download [Scintillua](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/scintillua.zip) and follow the instructions in `doc/manual.md`. This will add the cabability of highlighting and folding, as long as a .properties file maps the filename extension to the lexer, for actionscript, ada, antlr, apdl, apl, applescript, asm, asp, autoit, awk, bash, batch, bibtex, boo, caml, chuck, cmake, coffeescript, conteXt, cpp, crystal, csharp, css, cuda, dart, desktop, diff, django, dmd, dockerfile, dot, eiffel, elixir, erlang, faust, fish, forth, fortran, fsharp, gap, gettext, gherkin, glsl, gnuplot, go, groovy, gtkrc, haskell, html, icon, idl, inform, ini, io_lang, java, javascript, json, jsp, latex, ledger, less, lexer, lilypond, lisp, litcoffee, logtalk, lua, makefile, man, markdown, matlab, moonscript, myrddin, nemerle, nim, nsis, objective_c, pascal, perl, php, pico8, pike, pkgbuild, powershell, prolog, props, protobuf, ps, pure, python, rails, rc, rebol, rest, rexx, rhtml, rstats, ruby, rust, sass, scala, scheme, smalltalk, sml, snobol4, sql, taskpaper, tcl, tex, texinfo, text, toml, vala, vb, vbscript, vcard, verilog, vhdl, wsf, xml, xtend, and yaml. [more information](https://foicica.com/scintillua/README.html).
+
+
+If SciTE is patched with [Scintillua's LPeg lexer] and recompiled, highlighting and folding will  
+
 To contribute a file to this list, send an e-mail to scitewiki at gmail dot com or submit a pull request. 
 
 How to install a file downloaded above? Refer to the links at the top of this page for instructions.

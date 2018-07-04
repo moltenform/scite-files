@@ -10,8 +10,6 @@ Helper scripts and addons for SciTE, including lua scripts and lua tips
 
 * [Mitchell's SciTE Tools](https://github.com/btakita/scite-tools), powerful text-editing utilities (including snippets.lua)
 
-* [lua-users SciTE Scripts](http://lua-users.org/wiki/SciteScripts) contains many lua scripts for SciTE
-
 * [swapheader](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/helpers/swapheader/swapheader.html) move from a .c to a .h, also describes how to set up a lua script in SciTE
 
 * [autoblock.zip](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/helpers/autoblock.zip) lua scripts for block completion, by Mario Ray M.
@@ -41,6 +39,10 @@ Helper scripts and addons for SciTE, including lua scripts and lua tips
 * [Steve D's SciTE-GUI](https://groups.google.com/forum/#!topic/scite-interest/yZubpejP-bM) extension for SciTE Lua to add lists, file and colour dialogs, floating toolbar, and more
 
 * [scite-gui](https://github.com/frank-w/scite-gui) GTK tool for changing SciTE settings, last updated 2010
+
+* I've [archived the content of lua-users SciTE scripts](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/helpers/lua-users-scite-scripts.zip) using wayback machine to recover most of the missing content. containing many lua scripts for SciTE, including scripts for AsciiTable, AutoCompleteAnyLanguage, AutoExpansion, BackupFile, BufferSwitch, Calculator, CleanDocWhitespace, CleanWhiteLines, ColouriseDemo, CommentBox, ConvertDecHex, CustomFolding, Debug, DeleteBlankLines, DisplayFunctions, EditWithVim, ElizaClassic, ExternalFileBrowser, ExtMan, Favs, FileBrowser, FuncList, HexEdit, Hexify, HtmlEntities, Indentation, InplaceCalculator, InsertDate, JavadocComment, Latex, LineBreak, ListAllOccurances, LuaDll, LuaPrompt, MacroExpander, MakeMonospace, ManPages, MarkWord, MergeOnChange, MiscScripts, NumberedBookmarks, OpenFilename, OpenPhpLocalhost, OpenToLine, OpenUrl, Other, ProcessString, Programmers, ProgrammingUtils, QuickStartXhtml, ReadTags, RunOneScript, ScriptManager, Scripts, SimpleTemplate, SortSelection, StripTrailings, TabsToSpacesObserveTabstop, Tags, TextFolding, TicTacToe, TitleCase, UnicodeInput, UsingUnicode, WordSelect, WordSubstitution, and XmlAutocompletion. The original wiki was [here](http://lua-users.org/wiki/SciteScripts)
+
+
 
 ### Lua utilities
 
