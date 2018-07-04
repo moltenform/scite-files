@@ -120,8 +120,3 @@ widows: <integer> | inherit
 width: <length> | <percentage> | auto | inherit
 word-spacing: normal | <length> | inherit
 z-index: auto | <integer> | inherit
-azimuthxxx
-heightxxx
-quotesxxx
-unicode-bidixxx
-z-indexxxx

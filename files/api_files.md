@@ -102,7 +102,7 @@
 * Batch files (MS-DOS)
 
     * highlighting and folding is already enabled by default
-    * [API Files for Batch](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/batch.api.zip) (API files for NT, XP/2003, GNUWin32 and SysInternals commands)
+    * [API Files for Batch](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/batch.api.zip) (API files for NT, XP/2003, GNUWin32 UnixUtils and SysInternals commands)
 
 * Bash
 
@@ -119,14 +119,14 @@
 * C/C++
 
     * highlighting and folding is already enabled by default
-    * [C standard library](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/c_withdoc.zip) with short doc strings, 2016 update
+    * [C standard library](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/c_withdoc.api) with short doc strings
     * [C standard library](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/c.api)
     * [C++ standard library, incl C++11](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/cpp.api)
     * [cpp_more.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/cpp_more.properties) adds highlighting for c99, c11, cpp98, cpp11, Objective C, idl, Doxygen, Arduino, go, Actionscript, vala, pike, swift
     * [Windows API, cpp](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/cpp_win32.api)
-    * [OpenGL 1.2 API](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/opengl.zip)
-    * [OpenGL 4.4 API](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/opengl4.4.zip)
-    * [Glut API](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/glut.zip)
+    * [OpenGL 1.2 API](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/opengl.api)
+    * [OpenGL 4.4 API](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/glext.api)
+    * [Glut API](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/glut.api)
     * [SDL API](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/sdl.api)
     * [Lua C API](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/c_lua_c.api)
 
@@ -168,10 +168,6 @@
 * csound
 
     * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `csound`, then save and restart SciTE
-
-* CSS
-
-    * highlighting and folding is already enabled by default
 
 * D
 
@@ -304,7 +300,7 @@
 
     * highlighting and folding is already enabled by default
     * [Lua API](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/lua.api)
-    * [Lua 5.0 C API and Lua functions](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/lua5.api.zip)
+    * [more Lua api files: C API and Lua functions](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/lua5.api.zip)
     * [Api for SciTE extension scripts](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/lua_scite_extension.api)
     * [scite-for-lua](https://code.google.com/archive/p/scite-for-lua/), extensive support for Lua programming, including debugging and a lint-based highlighter
     * [lua-inspect](https://github.com/davidm/lua-inspect), plugin for SciTE that does Lua code analysis and adds features like rename-occurrences and autocomplete
@@ -445,7 +441,7 @@
 * Python
 
     * highlighting and folding is already enabled by default
-    * [Python API](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/python.api.zip)
+    * [Python API](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/python.api)
     * [Automatically print the contents of local variables on unhandled exceptions](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/python_print_vars.zip)
     * api file for [numpy](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/py_numpy.zip)
     * api file for [scipy](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/py_scipy.zip)
@@ -572,10 +568,7 @@
 
     * highlighting and folding is already enabled by default
 
-One can apply a patch to support even more languages, although it will require some configuration. Download [Scintillua](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/scintillua.zip) and follow the instructions in `doc/manual.md`. This will add the cabability of highlighting and folding, as long as a .properties file maps the filename extension to the lexer, for actionscript, ada, antlr, apdl, apl, applescript, asm, asp, autoit, awk, bash, batch, bibtex, boo, caml, chuck, cmake, coffeescript, conteXt, cpp, crystal, csharp, css, cuda, dart, desktop, diff, django, dmd, dockerfile, dot, eiffel, elixir, erlang, faust, fish, forth, fortran, fsharp, gap, gettext, gherkin, glsl, gnuplot, go, groovy, gtkrc, haskell, html, icon, idl, inform, ini, io_lang, java, javascript, json, jsp, latex, ledger, less, lexer, lilypond, lisp, litcoffee, logtalk, lua, makefile, man, markdown, matlab, moonscript, myrddin, nemerle, nim, nsis, objective_c, pascal, perl, php, pico8, pike, pkgbuild, powershell, prolog, props, protobuf, ps, pure, python, rails, rc, rebol, rest, rexx, rhtml, rstats, ruby, rust, sass, scala, scheme, smalltalk, sml, snobol4, sql, taskpaper, tcl, tex, texinfo, text, toml, vala, vb, vbscript, vcard, verilog, vhdl, wsf, xml, xtend, and yaml. [more information](https://foicica.com/scintillua/README.html).
-
-
-If SciTE is patched with [Scintillua's LPeg lexer] and recompiled, highlighting and folding will  
+The scintillua project adds highlighting and folding for more than 120 languages, but it requires configuration to install. scintillua can be downloaded from [here](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/scintillua.zip), and see doc/manual.md. A .properties file is still needed to map the file extension to the lexer, more information [here](https://foicica.com/scintillua/README.html).
 
 To contribute a file to this list, send an e-mail to scitewiki at gmail dot com or submit a pull request. 
 
