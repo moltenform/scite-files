@@ -2,15 +2,17 @@
 
 ### Information
 
-* An [introduction to adding features to SciTE with Lua scripts](./files/helpers/using_lua_with_scite.md), read this to learn how to install a .lua script in the list below
+* An [introduction to adding features to SciTE with Lua scripts](./files/helpers/adding_scite_features_with_lua.md), read this to learn how to install a .lua script in the list below
 
-### Scripts/addons
+### Scripts for SciTE
 
-Helper scripts and addons for SciTE, including lua scripts and lua tips
+* [extman](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/helpers/extman.zip) 
 
-* [Mitchell's SciTE Tools](https://github.com/btakita/scite-tools), powerful text-editing utilities (including snippets.lua)
+    * dispatches scite events so that many lua scripts can be installed at the same time without conflict. For example, you might have several different scripts that each need to respond to the OnOpen event.
 
-* [swapheader](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/helpers/swapheader/swapheader.html) move from a .c to a .h, also describes how to set up a lua script in SciTE
+* [Mitchell's SciTE Tools](https://github.com/btakita/scite-tools), powerful text-editing utilities including snippets.lua
+
+* [swapheader](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/helpers/swapheader/swapheader.html) move from a .c to a .h, with installation tips
 
 * [autoblock.zip](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/helpers/autoblock.zip) lua scripts for block completion, by Mario Ray M.
 
@@ -20,25 +22,13 @@ Helper scripts and addons for SciTE, including lua scripts and lua tips
 
 * [scitecmd](http://www.frykholm.se/scitecmd.html) open files in SciTE from the Windows command line
 
-* [sciteproj](https://savannah.nongnu.org/projects/sciteproj/), project manager for SciTE 
-
-* [hilfer](https://rubygems.org/gems/hilfer/), keyboard-rich directory browser using ruby-gtk that talks to SciTE
-
-* [extman](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/helpers/extman.zip) 
-
-    * dispatches scite events so that many lua scripts can be installed at the same time without conflict. For example, you might have a few different scripts that each want to respond to the OnOpen event.
-
 * [Orthospell](http://tools.diorama.ch/orthospell.html), spellcheck for SciTE, based on [luahunspell](https://code.google.com/p/luahunspell/)
 
 * [Serge Baranov's scripts](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/helpers/perlformatters.txt) using Perl to reformat/clean up whitespace in a document
 
 * [live markdown preview from SciTE](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/helpers/markdown.txt)
 
-* [SciTE sidebar extension](http://valentin.dasdeck.com/projects/scite_sidebar/), adds tabs for opening files, ftp, functions, and more
-
-* [Steve D's SciTE-GUI](https://groups.google.com/forum/#!topic/scite-interest/yZubpejP-bM) extension for SciTE Lua to add lists, file and colour dialogs, floating toolbar, and more
-
-* [scite-gui](https://github.com/frank-w/scite-gui) GTK tool for changing SciTE settings, last updated 2010
+* yipf's [SciTEStartup.lua](https://github.com/yipf/scite-files/blob/master/SciTEStartup.lua) has some useful scripts for automatically closing braces, expanding snippets when Tab is pressed, spell check, word counting, moving to the beginning/end of a sentence, and more
 
 * adding features to scite with lua scripts, I've [archived the content of lua-users SciTE scripts](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/helpers/lua-users-scite-scripts.zip) using wayback machine to recover most of the missing content. containing many lua scripts for SciTE, including scripts for AsciiTable, AutoCompleteAnyLanguage, AutoExpansion, BackupFile, BufferSwitch, Calculator, CleanDocWhitespace, CleanWhiteLines, ColouriseDemo, CommentBox, ConvertDecHex, CustomFolding, Debug, DeleteBlankLines, DisplayFunctions, EditWithVim, ElizaClassic, ExternalFileBrowser, ExtMan, Favs, FileBrowser, FuncList, HexEdit, Hexify, HtmlEntities, Indentation, InplaceCalculator, InsertDate, JavadocComment, Latex, LineBreak, ListAllOccurances, LuaDll, LuaPrompt, MacroExpander, MakeMonospace, ManPages, MarkWord, MergeOnChange, MiscScripts, NumberedBookmarks, OpenFilename, OpenPhpLocalhost, OpenToLine, OpenUrl, Other, ProcessString, Programmers, ProgrammingUtils, QuickStartXhtml, ReadTags, RunOneScript, ScriptManager, Scripts, SimpleTemplate, SortSelection, StripTrailings, TabsToSpacesObserveTabstop, Tags, TextFolding, TicTacToe, TitleCase, UnicodeInput, UsingUnicode, WordSelect, WordSubstitution, and XmlAutocompletion. The original wiki was [here](http://lua-users.org/wiki/SciteScripts)
 
@@ -47,7 +37,7 @@ Helper scripts and addons for SciTE, including lua scripts and lua tips
 
 ### Lua utilities
 
-Useful building blocks for SciTE lua scripts
+Building blocks for SciTE lua scripts
 
 * [scite_msg](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/helpers/scite_msg.zip) 
 
@@ -74,6 +64,18 @@ Useful building blocks for SciTE lua scripts
 
     * the basis for `scite_lua_extensions`. this lua extension library, place in the same directory as scite, allows scite lua scripts to call:
     * `shell.exec` a prettier 'exec' (to start a process) that doesn't show a window
+
+### Gui addons
+
+* [sciteproj](https://savannah.nongnu.org/projects/sciteproj/), project manager for SciTE 
+
+* [hilfer](https://rubygems.org/gems/hilfer/), keyboard-rich directory browser using ruby-gtk that talks to SciTE
+
+* [SciTE sidebar extension](http://valentin.dasdeck.com/projects/scite_sidebar/), adds tabs for opening files, ftp, functions, and more
+
+* [Steve D's SciTE-GUI](https://groups.google.com/forum/#!topic/scite-interest/yZubpejP-bM) extension for SciTE Lua to add lists, file and colour dialogs, floating toolbar, and more
+
+* [scite-gui](https://github.com/frank-w/scite-gui) GTK tool for changing SciTE settings, last updated 2010
 
 ### Add to this page
 

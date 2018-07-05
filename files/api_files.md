@@ -1,11 +1,9 @@
 
 
 * [back](../README.md)
-* [how to install a .properties file from the list below](api_files_howto_properties.md)
-* [how to install a .api file from the list below](api_files_howto_install_api.md) (to enable calltips + completion)
+* [how to install a .api or .properties file from the list below](api_files_howto.md) (to enable calltips + completion)
 * [how to create a .api file for your own code](api_files_howto_create_api.md)
 * [how to add highlighting/folding for a new language](api_files_howto_create_lexer.md)
-* add to this page by submitting a pull request, or sending an e-mail to scitewiki at gmail dot com
 
 ### Languages
 
