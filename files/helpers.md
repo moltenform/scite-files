@@ -8,32 +8,39 @@
 
 * [extman](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/helpers/extman.zip) 
 
-    * dispatches scite events so that many lua scripts can be installed at the same time without conflict. For example, you might have several different scripts that each need to respond to the OnOpen event.
+    * dispatches scite events so that many lua scripts can be installed at the same time without conflict. You might have several different scripts that each need to respond to the OnOpen event, and extman lets each script coexist.
 
-* [Mitchell's SciTE Tools](https://github.com/btakita/scite-tools), powerful text-editing utilities including snippets.lua
+* [Orthospell](http://tools.diorama.ch/orthospell.html), spellcheck for SciTE, based on [luahunspell](https://code.google.com/p/luahunspell/)
 
-* [swapheader](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/helpers/swapheader/swapheader.html) move from a .c to a .h, with installation tips
+* [swapheader](./files/helpers/swapheader/swapheader.md) move from a .c to a .h, with installation tips
 
 * [autoblock.zip](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/helpers/autoblock.zip) lua scripts for block completion, by Mario Ray M.
 
-* [move selection up/down](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/helpers/move_or_copy_selection_up_or_down.lua), lua script from the scite-ru project
+* [smartpaste](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/helpers/smartpaste.lua), lua script to correctly indent pasted code
 
 * [SciTE Windows Context menu](https://github.com/andreburgaud/wscitecm), by andre burgaud
 
 * [scitecmd](http://www.frykholm.se/scitecmd.html) open files in SciTE from the Windows command line
 
-* [Orthospell](http://tools.diorama.ch/orthospell.html), spellcheck for SciTE, based on [luahunspell](https://code.google.com/p/luahunspell/)
-
-* [Serge Baranov's scripts](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/helpers/perlformatters.txt) using Perl to reformat/clean up whitespace in a document
+* [Mitchell's SciTE Tools](https://github.com/btakita/scite-tools), text-editing utilities including snippets.lua
 
 * [live markdown preview from SciTE](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/helpers/markdown.txt)
 
+* [Serge Baranov's scripts](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/helpers/perlformatters.txt) using Perl to reformat/clean up whitespace in a document
+
 * yipf's [SciTEStartup.lua](https://github.com/yipf/scite-files/blob/master/SciTEStartup.lua) has some useful scripts for automatically closing braces, expanding snippets when Tab is pressed, spell check, word counting, moving to the beginning/end of a sentence, and more
 
-* adding features to scite with lua scripts, I've [archived the content of lua-users SciTE scripts](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/helpers/lua-users-scite-scripts.zip) using wayback machine to recover most of the missing content. containing many lua scripts for SciTE, including scripts for AsciiTable, AutoCompleteAnyLanguage, AutoExpansion, BackupFile, BufferSwitch, Calculator, CleanDocWhitespace, CleanWhiteLines, ColouriseDemo, CommentBox, ConvertDecHex, CustomFolding, Debug, DeleteBlankLines, DisplayFunctions, EditWithVim, ElizaClassic, ExternalFileBrowser, ExtMan, Favs, FileBrowser, FuncList, HexEdit, Hexify, HtmlEntities, Indentation, InplaceCalculator, InsertDate, JavadocComment, Latex, LineBreak, ListAllOccurances, LuaDll, LuaPrompt, MacroExpander, MakeMonospace, ManPages, MarkWord, MergeOnChange, MiscScripts, NumberedBookmarks, OpenFilename, OpenPhpLocalhost, OpenToLine, OpenUrl, Other, ProcessString, Programmers, ProgrammingUtils, QuickStartXhtml, ReadTags, RunOneScript, ScriptManager, Scripts, SimpleTemplate, SortSelection, StripTrailings, TabsToSpacesObserveTabstop, Tags, TextFolding, TicTacToe, TitleCase, UnicodeInput, UsingUnicode, WordSelect, WordSubstitution, and XmlAutocompletion. The original wiki was [here](http://lua-users.org/wiki/SciteScripts)
+* I've [archived the content of lua-users SciTE scripts](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/helpers/lua-users-scite-scripts.zip) using wayback machine to recover most of the missing content. containing many lua scripts for SciTE, including scripts for AsciiTable, AutoCompleteAnyLanguage, AutoExpansion, BackupFile, BufferSwitch, Calculator, CleanDocWhitespace, CleanWhiteLines, ColouriseDemo, CommentBox, ConvertDecHex, CustomFolding, Debug, DeleteBlankLines, DisplayFunctions, EditWithVim, ElizaClassic, ExternalFileBrowser, ExtMan, Favs, FileBrowser, FuncList, HexEdit, Hexify, HtmlEntities, Indentation, InplaceCalculator, InsertDate, JavadocComment, Latex, LineBreak, ListAllOccurances, LuaDll, LuaPrompt, MacroExpander, MakeMonospace, ManPages, MarkWord, MergeOnChange, MiscScripts, NumberedBookmarks, OpenFilename, OpenPhpLocalhost, OpenToLine, OpenUrl, Other, ProcessString, Programmers, ProgrammingUtils, QuickStartXhtml, ReadTags, RunOneScript, ScriptManager, Scripts, SimpleTemplate, SortSelection, StripTrailings, TabsToSpacesObserveTabstop, Tags, TextFolding, TicTacToe, TitleCase, UnicodeInput, UsingUnicode, WordSelect, WordSubstitution, and XmlAutocompletion. The original wiki was [here](http://lua-users.org/wiki/SciteScripts)
 
-* adding features to scite with lua scripts, here are [some lua scripts from the scite-ru project](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/helpers/scite-ru-scripts.zip) including abbrevlist, ascii_table, auto_backup, auto_complete_object, change_comment_char, codepage, code_poster2, code_poster_html, color_set, copymarkedlines, css_formatter, event_manager, exec, find_text, fold_text, font_changer, goto_line, highlighting_identical_text, highlighting_text, highlight_links, html_tags_autoclose, indent_tab_to_space, insertspecialchar, lexer_name, luainspect_install, macro_support, make_abbrev, move_lines, movemenuitem, new_file, open_selected_filename, open_find_files, paired_tags, readonly, recode, rename, restore_recent, rocheck, rowrite, save_settings, set_html, showcalltip, sidebar, smartbraces, smartcomment, sort_text, style_changer, svn_menu, translit, url_detect, value, xcomment, and zoom
+* here are [some lua scripts from the scite-ru project](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/helpers/scite-ru-scripts.zip) including move_lines, abbrevlist, ascii_table, auto_backup, auto_complete_object, change_comment_char, codepage, code_poster2, code_poster_html, color_set, copymarkedlines, css_formatter, event_manager, exec, find_text, fold_text, font_changer, goto_line, highlighting_identical_text, highlighting_text, highlight_links, html_tags_autoclose, indent_tab_to_space, insertspecialchar, lexer_name, luainspect_install, macro_support, make_abbrev, movemenuitem, new_file, open_selected_filename, open_find_files, paired_tags, readonly, recode, rename, restore_recent, rocheck, rowrite, save_settings, set_html, showcalltip, sidebar, smartbraces, smartcomment, sort_text, style_changer, svn_menu, translit, url_detect, value, xcomment, and zoom
 
+* here are [some lua scripts from the my-scite project](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/helpers/my_scite_scripts.zip) including AutoComplete, Calculator, HexEdit, Socket, and sortText
+
+* here are [some lua scripts from the scite_scripts project](https://github.com/mkottman/scite_scripts) including gitdiff, mark_word, and xml_close_tag
+
+* [Lua Exporters](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/helpers/SciTELuaExporters-0.9.11.zip)  include an enhanced PDF exporter (with line wrapping and kerning), an OpenOffice.org format exporter, an AbiWord format exporter, and an ODT (Open Document) exporter.
+
+* Kein-Hong Man has developed a [calculator script](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/helpers/scite_calculator.zip) and [hex editor script](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/helpers/scite_hexedit.zip) that run within SciTE
 
 ### Lua utilities
 
@@ -64,6 +71,9 @@ Building blocks for SciTE lua scripts
 
     * the basis for `scite_lua_extensions`. this lua extension library, place in the same directory as scite, allows scite lua scripts to call:
     * `shell.exec` a prettier 'exec' (to start a process) that doesn't show a window
+    
+* [scite-strip-wrapper](https://github.com/klonuo/scite-strip-wrapper) shows how to add strip dialog in SciTE so that your lua scripts can show UI
+
 
 ### Gui addons
 

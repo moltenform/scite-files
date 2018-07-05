@@ -14,10 +14,8 @@
 * HTML, CSS, and JavaScript
 
     * HTML, CSS, and JavaScript have highlighting and folding already enabled by default
-    * [JavaScript API file](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/javascript.properties)
-    * [JavaScript JQuery API file](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/javascript.properties)
-    * [JavaScript, JQuery, and CSS api](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/css,js,jquery.zip)
-    * [PHP, abbreviations, CSS, JavaScript, and JQuery](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/css,js,jquery,php.zip)
+    * [JavaScript API file](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/javascript.api)
+    * [JavaScript JQuery API file](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/javascript_jquery.api) and [properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/javascript.properties)
     * [css api](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/css.api)
     * [html api](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/html.api)
 
@@ -139,7 +137,7 @@
 
 * Clojure
 
-    * [a lisp.properties including support for Scheme and Clojure](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/lisp_and_closure.api)
+    * [a lisp.properties including support for Scheme and Clojure](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/lisp_and_closure.properties)
     * [api file for Clojure](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/clojure.api)
 
 * CMake
@@ -545,7 +543,6 @@
     * highlighting and folding is already enabled by default
     * [vbscript api](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/vbscript.api)
     * vbscript [properties file](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/vbscript.properties)
-    * [VBScript API, VBA API](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/vba,vbs2016.api.zip)
     * [vba api file](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files/vba.api)
 
 * visualprolog
