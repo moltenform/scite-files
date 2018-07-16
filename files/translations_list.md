@@ -15,12 +15,12 @@
 | [locale.de.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.de.properties) | German (Deutsch) | Complete |
 | [locale.el.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.el.properties)<br>[See also, docs from 2006](http://web.archive.org/web/20071012092151/http://scite.hellug.gr/) | Greek (ελληνικά) | Updated 2.21 |
 | [locale.eo.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.eo.properties) | Esperanto | Updated 2.21 |
-| [locale.es.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.es.properties) | Spanish (español) | Updated 2.21 |
+| [locale.es.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.es.properties) | Spanish (español) | Complete |
 | [locale.es_MX.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.es_MX.properties) | Spanish es_mx (español) | Updated 1.72 |
 | [locale.et.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.et.properties) | Estonian (eesti) | Updated 1.73 |
 | [locale.eu.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.eu.properties) | Basque (euskara) | Updated 1.67 |
 | [locale.fi.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.fi.properties) | 	Finnish (suomi) | Updated 1.67 |
-| [locale.fr.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.fr.properties) | French (français) | Nearly complete, updated 3.2.3 |
+| [locale.fr.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.fr.properties) | French (français) | Complete |
 | [locale.gl.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.gl.properties) | Galician (galego) | Updated 1.62 |
 | [locale.hu.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.hu.properties) | Hungarian (magyar) | Updated 1.63 |
 | [locale.id.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.id.properties) | Indonesian (Bahasa Indonesia) | Updated 2.21 |
