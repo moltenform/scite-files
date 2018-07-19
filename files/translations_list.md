@@ -38,7 +38,7 @@
 | [locale.ru.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.ru.properties)<br>[See also, the scite-ru project](https://bitbucket.org/scite-ru/scite-ru.bitbucket.org/wiki/Home) | Russian (Русский) | Updated 2.21 |
 | [locale.sl.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.sl.properties) | Slovene (slovenski jezik) | Updated 1.62 |
 | [locale.sr.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.sr.properties) | Serbian (српски језик) | Updated 2.21 |
-| [locale.sv.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.sv.properties) | Swedish (svenska) | Nearly complete, updated 3.3.5 |
+| [locale.sv.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.sv.properties) | Swedish (svenska) | Complete |
 | [locale.sw_KE.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.sw_KE.properties) | Swahili (Kiswahili) | Updated 1.73 |
 | [locale.th.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.th.properties) | Thai (ไทย) | Updated 1.67 |
 | [locale.tr.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.tr.properties) | Turkish (Türkçe) | Nearly complete, updated 3.7.1 |
