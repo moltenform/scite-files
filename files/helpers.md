@@ -12,7 +12,7 @@
 
 * [Orthospell](http://tools.diorama.ch/orthospell.html), spellcheck for SciTE, based on [luahunspell](https://code.google.com/p/luahunspell/)
 
-* [swapheader](./files/helpers/swapheader/swapheader.md) move from a .c to a .h, with installation tips
+* [swapheader](./files/helpers/swapheader/swapheader.md) move from a .c to a .h, with installation tips. This guide might still be abetter starting place.
 
 * [autoblock.zip](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/helpers/autoblock.zip) lua scripts for block completion, by Mario Ray M.
 
