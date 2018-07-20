@@ -19,11 +19,6 @@
 
 * [SciTE Windows installer](https://www.ebswift.com/scite-text-editor-installer.html), includes a context menu entry for explorer
 
-
-### Patches to SciTE source code
-
-* [discussion around Ruby extension](https://groups.google.com/forum/#!topic/scite-interest/cl6DogvZz2k)
-
 ### Add to this page
 
 You can add to this page by submitting a pull request, or sending an e-mail to scitewiki at gmail dot com

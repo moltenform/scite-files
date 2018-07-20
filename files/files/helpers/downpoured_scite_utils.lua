@@ -328,12 +328,16 @@ function ScToolUIManagerClass:OnUserStrip(control, eventType)
 end
 
 function ScToolUIManagerClass:Show(toolUI)
-    if toolUI.spec then
+    if toolUI and toolUI.spec then
         scite.StripShow(toolUI.spec)
+        self.currentUserStrip = toolUI
+    elseif toolUI then
+        assert(false, 'ScToolUIManagerClass:Show given a table but no "spec" found')
+        self.currentUserStrip = nil
     else
         scite.StripShow('')
+        self.currentUserStrip = nil
     end
-    self.currentUserStrip = toolUI
 end
 
 function ScToolUIManagerClass:EnsureActive(toolUI)
@@ -730,5 +734,4 @@ function printTable(o)
       return tostring(o)
    end
 end
-
 

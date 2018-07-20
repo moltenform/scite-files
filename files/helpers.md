@@ -6,25 +6,27 @@
 
 ### Scripts for SciTE
 
+* [swapheader](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/helpers/swapheader.lua) move from a .c to a .h. Read the "Installing someone else's Lua script" section in [this guide](./files/helpers/adding_scite_features_with_lua.md) for installation instructions.
+
+* [autoblock.zip](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/helpers/autoblock.zip) lua scripts for block completion, by Mario Ray M.
+
+* [See ascii codes in selection](./files/helpers/see_ascii_selection.md)
+
+* [smartpaste](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/helpers/smartpaste.lua), lua script to correctly indent pasted code
+
+* [scitecmd](http://www.frykholm.se/scitecmd.html) open files in SciTE from the Windows command line
+
+* [SciTE Windows Context menu](https://github.com/andreburgaud/wscitecm), by andre burgaud
+
+* [Orthospell](http://tools.diorama.ch/orthospell.html), spellcheck for SciTE, based on [luahunspell](https://code.google.com/p/luahunspell/)
+
 * [extman](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/helpers/extman.zip) 
 
     * dispatches scite events so that many lua scripts can be installed at the same time without conflict. You might have several different scripts that each need to respond to the OnOpen event, and extman lets each script coexist.
 
-* [Orthospell](http://tools.diorama.ch/orthospell.html), spellcheck for SciTE, based on [luahunspell](https://code.google.com/p/luahunspell/)
-
-* [swapheader](./files/helpers/swapheader/swapheader.md) move from a .c to a .h, with installation tips. This guide might still be abetter starting place.
-
-* [autoblock.zip](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/helpers/autoblock.zip) lua scripts for block completion, by Mario Ray M.
-
-* [smartpaste](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/helpers/smartpaste.lua), lua script to correctly indent pasted code
-
-* [SciTE Windows Context menu](https://github.com/andreburgaud/wscitecm), by andre burgaud
-
-* [scitecmd](http://www.frykholm.se/scitecmd.html) open files in SciTE from the Windows command line
+* [live markdown preview from SciTE](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/helpers/markdown.txt)
 
 * [Mitchell's SciTE Tools](https://github.com/btakita/scite-tools), text-editing utilities including snippets.lua
-
-* [live markdown preview from SciTE](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/helpers/markdown.txt)
 
 * [Serge Baranov's scripts](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/helpers/perlformatters.txt) using Perl to reformat/clean up whitespace in a document
 
@@ -38,7 +40,7 @@
 
 * here are [some lua scripts from the scite_scripts project](https://github.com/mkottman/scite_scripts) including gitdiff, mark_word, and xml_close_tag
 
-* [Lua Exporters](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/helpers/SciTELuaExporters-0.9.11.zip)  include an enhanced PDF exporter (with line wrapping and kerning), an OpenOffice.org format exporter, an AbiWord format exporter, and an ODT (Open Document) exporter.
+* [Lua Exporters](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/helpers/SciTELuaExporters-0.9.11.zip)  includes an enhanced PDF exporter (with line wrapping and kerning), an OpenOffice.org format exporter, an AbiWord format exporter, and an ODT (Open Document) exporter.
 
 * Kein-Hong Man has developed a [calculator script](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/helpers/scite_calculator.zip) and [hex editor script](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/helpers/scite_hexedit.zip) that run within SciTE
 
@@ -46,13 +48,13 @@
 
 Building blocks for SciTE lua scripts
 
+* [downpoured_scite_utils.lua](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/helpers/downpoured_scite_utils.lua) and its [API documentation](./files/helpers/downpoured_scite_utils_api.md)
+
+* [extman](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/helpers/extman.zip)
+
 * [scite_msg](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/helpers/scite_msg.zip) 
 
     * a command-line tool that can send messages to a scite window, by Ben Fisher (uses some code from scite_other)
-
-* [SciTE.Helper](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/helpers/SciTE.Helper.zip) 
-
-    * an ActiveX control that can send messages to scite, can be used by jscript/vbscript and probably a hta UI
 
 * [scite_other](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/helpers/scite_other.zip) 
 
@@ -67,32 +69,32 @@ Building blocks for SciTE lua scripts
     * `shell.exec` a prettier 'exec' (to start a process) that doesn't show a window
     * `shell.findfiles` Searches for files and folders with mask and returned result as the table.
 
-* [scite_other](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/helpers/scite_lua_startprocess.zip) 
+* [scite_lua_startprocess](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/helpers/scite_lua_startprocess.zip) 
 
-    * the basis for `scite_lua_extensions`. this lua extension library, place in the same directory as scite, allows scite lua scripts to call:
+    * this lua extension library, place in the same directory as scite, allows scite lua scripts to call:
     * `shell.exec` a prettier 'exec' (to start a process) that doesn't show a window
+    
+* [SciTE.Helper](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/helpers/SciTE.Helper.zip) 
+
+    * an ActiveX control that can send messages to scite, can be used by jscript/vbscript and probably a hta UI
     
 * [scite-strip-wrapper](https://github.com/klonuo/scite-strip-wrapper) shows how to add strip dialog in SciTE so that your lua scripts can show UI
 
-
-### Gui addons
+### Gui addons / patches
 
 * [sciteproj](https://savannah.nongnu.org/projects/sciteproj/), project manager for SciTE 
 
-* [hilfer](https://rubygems.org/gems/hilfer/), keyboard-rich directory browser using ruby-gtk that talks to SciTE
-
 * [SciTE sidebar extension](http://valentin.dasdeck.com/projects/scite_sidebar/), adds tabs for opening files, ftp, functions, and more
+
+* [hilfer](https://rubygems.org/gems/hilfer/), keyboard-rich directory browser using ruby-gtk that talks to SciTE
 
 * [Steve D's SciTE-GUI](https://groups.google.com/forum/#!topic/scite-interest/yZubpejP-bM) extension for SciTE Lua to add lists, file and colour dialogs, floating toolbar, and more
 
 * [scite-gui](https://github.com/frank-w/scite-gui) GTK tool for changing SciTE settings, last updated 2010
 
+* [Example Ruby extension](https://groups.google.com/forum/#!topic/scite-interest/cl6DogvZz2k)
+
 ### Add to this page
 
 You can add to this page by submitting a pull request, or sending an e-mail to scitewiki at gmail dot com
-
-
-
-
-
 

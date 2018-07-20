@@ -3,9 +3,9 @@
 
 by Ben Fisher, 2018. First, here is a step-by-step guide to get started.
 
-* download SciTE from [scintilla.org](https://www.scintilla.org/SciTEDownload.html), or in Linux, install it from a package manager
+* download SciTE
 
-* open the directory that contains SciTE. In linux, this is typically /usr/bin/scite
+* open the directory that contains SciTE. In Linux, this is typically /usr/bin/scite
 
 * create a subdirectory called "scripts"
 
@@ -30,7 +30,7 @@ command.mode.9.*=subsystem:lua,savebefore:no
 command.9.*=dofile $(SciteDefaultHome)/scripts/example.lua
 ```
 
-* create a new file in SciTE and type a few words. In the Tools menu, you should now see "my lua example". If you click "my lua example" from the Tools menu, it will run our lua script. The `print` ed text will show in the output pane on the right, and the caret (current position) will be sent back to the beginning of the document because our script told SciTE to `GotoPos` 0.
+* create a new file in SciTE and type a few words. In the Tools menu, you should now see "my lua example". If you click "my lua example" from the Tools menu, it will run our lua script. The text "moving to the start" will show in the output pane on the right, and the current position will be sent back to the beginning of the document, as if you had hit the Home key, because our script told SciTE to `GotoPos` 0.
 
 ## More info about .properties files
 
@@ -50,20 +50,42 @@ If the command is between 1 and 9, command 1 can be started by pressing Ctrl-1, 
 
 You can also specify your own keyboard shortcut for the command, for example by adding the line: `command.shortcut.9.*=Ctrl+Shift+J`
 
-You can add a command to the context menu (the menu that appears on right-click) by adding a line like the following: `user.context.menu=my lua example|1109|` (The number 1109 is chosen because it is 1100 + 9, the command number).
+You can add a command to the context menu (the menu that appears on right-click) by adding a line like the following: `user.context.menu=my lua example|1109|` (We type 1109 because this is the sum of 1100 (the first tool command) and 9 (the tool command number we want to run)).
 
 ## Installing someone else's Lua script
 
+How to install a Lua script, for example, one of the scripts listed on the [helpers](../../helpers.md) page. In this example we are setting up gusnan's switch-from-cpp-to-header script.
+
+* perform the steps in the first section above to set up "my lua example".
+
+* download [swapheader.lua](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/helpers/swapheader.lua)
+
+* place `swapheader.lua` into the `scripts` directory mentioned earlier.
+
+* from the Options menu, choose open User Options File, this will open a file called SciTEUser.properties
+
+* add the following lines to SciTEUser.properties
+
+```
+command.name.20.*=Swap C / Header
+command.20.*=dofile $(SciteDefaultHome)/scripts/swapheader.lua
+command.subsystem.20.*=3
+command.mode.20.*=savebefore:no
+command.shortcut.20.*=F11
+```
+
+* Now, if you are writing C code, you can press F11 to switch between myfile.c and myfile.h
+
+(Some scripts use "extman" to register for events. Or, if the script has code like `AddEventHandler('OnOpen', ...)`, this can be replaced with `require('extman') ... scite_OnOpen(...)` Refer to the "Register for events" section below.)
 
 
-
-## Running Lua code
+## Writing Lua code
 
 Scripts are written in the Lua language. 
 
 I've written a small wrapper script to make it easier to direct SciTE from Lua. 
 
-* perform the steps in the section above to set up "my lua example".
+* perform the steps in the first section above to set up "my lua example".
 
 * download [downpoured_scite_utils.lua](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/helpers/downpoured_scite_utils.lua)
 
@@ -108,23 +130,23 @@ ScEditor:SetIndicatorCurrent(prev_indic)
 
 ```
 
-Open SciTE and choose "my lua example", and the code will run.
+Open SciTE, go the Tools menu, and choose "my lua example", and the code will run. Some of the letters will now have a red underline, as an example of what scripts can do.
 
 [Full api for downpoured_scite_utils](downpoured_scite_utils_api.md)
 
-Note that whenever a different document is opened, lua's global state is reset. This is why after any call to `ScApp:OpenFile` or `ScApp:menunew`, you need to `require` all script dependencies again. The example demonstrates some of what the api is capable of. Other lua example code can be seen [here](../../helpers.md).
+Note that whenever a different document is opened, lua's global state is reset. This is why after any call to `ScApp:OpenFile` or `ScApp:menunew`, you need to `require` all script dependencies again.
 
-Lua's builtin `os.execute` function can be used to run an external program. (In Windows, though, os.execute sometimes briefly shows a flash of cmd.exe instance on the screen, which looks distracting. A solution to this is the [scite_lua_startprocess](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/helpers/scite_lua_startprocess.zip) helper.) Lua's standard library is limited. One way to add features is to write a C extension, like the aforementioned lua\_startprocess. Another option is to use my fork of SciTE, [SciTE-with-Python](https://github.com/downpoured/scite-with-python), that uses Python in place of Lua because of Python's much larger standard library and ecosystem, and comes with many [plugins](https://github.com/downpoured/scite-with-python/wiki/Features).
+Lua's builtin `os.execute` function can be used to run an external program. (In Windows, though, os.execute sometimes briefly shows a flash of cmd.exe instance on the screen, which looks distracting. A solution to this is the [scite_lua_startprocess](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/helpers/scite_lua_startprocess.zip) helper.) 
 
-Lua code can be run when SciTE starts up by adding code to the 'lua startup script'; see the next example.
+Lua's standard library is limited. One way to add features is to write a C extension, like the aforementioned lua\_startprocess. Another option is to use my fork of SciTE, [SciTE-with-Python](https://github.com/downpoured/scite-with-python), that uses Python in place of Lua because of Python's much larger standard library and ecosystem, and comes with many [plugins](https://github.com/downpoured/scite-with-python/wiki/Features). Lua code can be run when SciTE starts up by adding code to the 'lua startup script'; see the next example.
 
 ## Register for events
 
 A lua script can also listen for events in SciTE and run code when the event is triggered. Here is an example of how to configure this:
 
-* perform the steps in the "Running Lua code" section above.
+* perform the steps in the "Writing Lua code" section above.
 
-* download [extman](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/helpers/extman.zip), unzip it, and place extman.lua into the "scripts" directory that you created earlier. (this version of extman won't automatically search for and run all lua scripts).
+* download [extman](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/helpers/extman.zip), unzip it, and place extman.lua into the "scripts" directory that you created earlier. (unlike other extman scripts, this version of extman won't automatically search for and run all lua scripts).
 
 * from the Options menu, choose open User Options File, this will open a file called SciTEUser.properties
 
@@ -142,20 +164,14 @@ ext.lua.startup.script=$(SciteDefaultHome)/scripts/startup.lua
 require('scripts/extman')
 require('scripts/downpoured_scite_utils')
 
-
-local function ends_with(str, ending)
-   return ending == "" or str:sub(-#ending) == ending
-end
-
 local function notifyWhenTextFileOpened(filename)
-    if filename:endswith('.txt') then
-        print('opening a text file')
-        ScApp:selectall()
+    if stringendswith(filename, '.txt') then
+        print('opening a text file ' .. filename)
     end
 end
 
 local function typingCapitalWTypesAnAInstead(key, shift, ctrl, alt)
-    if key == string.byte('W') and shift and ctrl and alt then
+    if key == string.byte('W') and shift and not ctrl and not alt then
         ScEditor:PaneWrite('A')
         return true -- stop normal handling
     end
@@ -191,7 +207,7 @@ scite_OnKey(typingCapitalWTypesAnAInstead)
 | scite_OnStyle(fn) | provide a callback function that recieves one parameter  |
 | scite_OnStrip(fn) | provide a callback function that recieves 2 parameters (controlNum, eventType)  |
 
-## Adding a UI for your lua script
+## Adding a UI ("user strip") for your lua script
 
 * perform the steps in the "Register for events" section above
 
@@ -235,11 +251,11 @@ function ExampleUIClass:OnOpen()
 end
     
 function ExampleUIClass:OnGo()
-    print('clicked Go with value '.. self:Get(self.idCombo) ..' and '.. self:Get(self.idEntry))
+    print('clicked Go, val='.. self:Get(self.idCombo) ..', entry='.. self:Get(self.idEntry))
 end
     
 function ExampleUIClass:OnOK()
-    print('clicked OK with value '.. self:Get(self.idCombo) ..' and '.. self:Get(self.idEntry))
+    print('clicked OK, val='.. self:Get(self.idCombo) ..', entry='.. self:Get(self.idEntry))
 end
 
 local instance = ExampleUIClass:create()
@@ -273,7 +289,4 @@ Further documentation for user strip: To use downpoured_scite_utils to show user
 | instance:OnEvent(controlId, eventType) | (optional) you can override this method to receive low-level events. eventType is usually one of the following: self.eventTypeClicked, self.eventTypeChange, self.eventTypeFocusIn, or self.eventTypeFocusOut  |
 
 (If you have questions or comments about the information here, I can be contacted at scitewiki at gmail dot com.)
-
-
-
 
