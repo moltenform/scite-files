@@ -121,10 +121,10 @@ print('selected text is ' .. tostring(ScEditor:GetSelText()))
 print('length of this line is ' .. ScEditor:LineLength(0))
 ScEditor:DocumentEnd()
 
--- highlight chars 2 to 5
-local red_underline = 2
+-- underline chars 2 to 5
+local underline = 4
 local prev_indic = ScEditor:GetIndicatorCurrent()
-ScEditor:SetIndicatorCurrent(red_underline)
+ScEditor:SetIndicatorCurrent(underline)
 ScEditor:IndicatorFillRange(2, 3)
 ScEditor:SetIndicatorCurrent(prev_indic)
 
@@ -186,6 +186,8 @@ scite_OnKey(typingCapitalWTypesAnAInstead)
 * Now, when you open a \.txt file, you'll see the message, and when you type W, it makes an A instead.
 
 * Note that the line `return true` is what causes the normal event handling to be stopped; without this line, the W might still appear.
+
+If a function is defined in the Lua startup script, it can be called by a command without needing to specify "dofile"; [this script](./see_ascii_selection.md) for showing ascii characters in the selection is an example.
 
 (What does "extman" do? SciTE only allows one handler for a lua event, extman dispatches the event to any number of callers, allowing different lua scripts to both be notified of the same event.) Other events that can be registered in extman are:
 
