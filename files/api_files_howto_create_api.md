@@ -28,9 +28,13 @@ To generate api files for your own source code, one of these tools may be helpfu
 * For C/C++ headers, an api file can be generated using [ctags](http://ctags.sourceforge.net/) and then the [tags2api](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files_gen/tags2api.py) Python script (which assumes C/C++ source) on the tags file to grab complete multiple line function prototypes. Some common headers surround parameter lists with a __P macro and may have comments. The [cleanapi](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files_gen/cleanapi.cc) utility may be used on these files
 * For Python modules, there is a [gen_python](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files_gen/gen_python_api.py) script
 * For Python 3, there is a [gen_python_3](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files_gen/gen_python_3_api.py) script
-* For Java classes, there is a [ApiBuilder.java](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files_gen/java_ApiBuilder.java) program
+* For Java classes, there is a [java_apibuilder.zip](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files_gen/java_apibuilder.zip) program
 * For C# classes, use [genapi.cs](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files_gen/gen_csgenapi.zip)
 * For PHP, use [php-api-generator](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files_gen/gen_php-api-generator.zip) or [phpapi.php](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files_gen/phpapi.php.txt)
+* API files for the latest C++ standard can be generated with the script [here](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files_gen/gen_cpp_cplusplusdotcom.zip)
+* API files for the latest jquery can be generated with the script [here](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files_gen/gen_jquery.zip)
+* API files for the latest javascript (from MSDN) can be generated with the script [here](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files_gen/gen_msdn_javascript.zip)
+* API files for the latest wsh/vbs/vba (from MSDN) can be generated with the script [here](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/api_files_gen/gen_msdn_wsh_vba.zip)
 
 Activate an api file by following the instructions [here](api_files_howto_install_api.md).
 
