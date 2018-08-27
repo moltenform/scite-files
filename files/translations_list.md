@@ -9,6 +9,8 @@
 | [locale.ar.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.ar.properties) | Arabic (العربية) | Updated 1.73 |
 | [locale.bg.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.bg.properties) | Bulgarian (български език) | Updated 1.73 |
 | [locale.ca.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.ca.properties) | Catalan (català) | Updated 2.21 |
+| [locale.zh_t.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.zh_t.properties) | Chinese Traditional (中文) | Updated 2.21 |
+| [locale.zh_s.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.zh_s.properties) | Chinese Simplified (中文) | Complete |
 | [locale.cs.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.cs.properties) | Czech (čeština) | Updated 3.0.4 |
 | [locale.cy.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.cy.properties) | Welsh (Cymraeg) | Updated 1.58 |
 | [locale.da.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.da.properties) | Danish (dansk) | Complete |
@@ -43,6 +45,4 @@
 | [locale.th.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.th.properties) | Thai (ไทย) | Updated 1.67 |
 | [locale.tr.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.tr.properties) | Turkish (Türkçe) | Complete |
 | [locale.uk.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.uk.properties) | Ukrainian (Українська) | Updated 1.73 |
-| [locale.zh_t.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.zh_t.properties) | Chinese Traditional (中文) | Updated 2.21 |
-| [locale.zh_s.properties](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/translations/locale.zh_s.properties) | Chinese Simplified (中文) GBK encoding | Updated 2.21 (set code.page=936, character.set=134) |
 
