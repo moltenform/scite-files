@@ -8,7 +8,7 @@
 
     * ![Screenshot right-click link](https://raw.githubusercontent.com/downpoured/scite-files/master/files/translations_install_win_right.png)
 
-* Navigate to the directory where SciTE.exe is located
+* Go to the folder where SciTE's ".properties" files are. If you installed SciTE from a .zip file, this is the folder where `SciTE.exe` is. If you installed SciTE from an installer, this is the folder where `SciTEGlobal.properties` is, for example `C:\ProgramData\SciTE`.
 
     * ![Screenshot navigate to SciTE directory](https://raw.githubusercontent.com/downpoured/scite-files/master/files/translations_install_win_path.png)
 
@@ -19,3 +19,5 @@
 * Re-open SciTE.exe, and the menus and dialogs will show translated text
 
 [back](translations.md)
+
+
