@@ -1,27 +1,29 @@
 
-## [Translations](./files/translations.md)
+# Welcome. Please choose one of these sections:
 
-Show SciTE in another language
+### [Translations](./files/translations.md)
 
-Example: show SciTE in German 
+* Show SciTE in another language
 
-## [API files](./files/api_files.md)
+* Example: show SciTE in German 
 
-Enable syntax highlighting, symbol completion, and documentation calltips
+### [API files](./files/api_files.md)
 
-Example: show inline documentation tooltips for the C standard library
+* Enable syntax highlighting, symbol completion, and documentation calltips
 
-## [Download releases](./files/releases.md)
+* Example: show inline documentation tooltips for the C standard library
 
-Download the latest SciTE, or an alternative unofficial build
+### [Download releases](./files/releases.md)
 
-Example: an alternative build of SciTE that lets you write plugins in Python 
+* Download the latest SciTE, or an alternative unofficial build
 
-## [Add features to SciTE](./files/helpers.md)
+* Example: an alternative build of SciTE that lets you write plugins in Python 
 
-Helper scripts and addons for SciTE, including lua information + scripts
+### [Add features to SciTE](./files/helpers.md)
 
-Example: configure SciTE so that you can press a keyboard shortcut to lint / autoformat your code
+* Helper scripts and addons for SciTE, including lua information + scripts
+
+* Example: configure SciTE so that you can press a keyboard shortcut to lint / autoformat your code
 
 <br /><br /><br />
 
