@@ -87,14 +87,14 @@ I've written a small wrapper script to make it easier to direct SciTE from Lua.
 
 * perform the steps in the first section above to set up "my lua example".
 
-* download [downpoured_scite_utils.lua](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/helpers/downpoured_scite_utils.lua)
+* download [moltenjs_scite_utils.lua](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/helpers/moltenjs_scite_utils.lua)
 
-* place `downpoured_scite_utils.lua` into the `scripts` directory mentioned earlier.
+* place `moltenjs_scite_utils.lua` into the `scripts` directory mentioned earlier.
 
 * Open the `example.lua` file that was created earlier, and change it to read
 
 ```
-require('scripts/downpoured_scite_utils')
+require('scripts/moltenjs_scite_utils')
 
 -- printing to the output pane without a newline
 ScApp:Trace('a')
@@ -108,7 +108,7 @@ ScApp:SetProperty('find.use.strip', '0')
 
 -- opening a new document
 ScApp:menunew()
-require('scripts/downpoured_scite_utils') -- remember to re-import after changing document
+require('scripts/moltenjs_scite_utils') -- remember to re-import after changing document
 
 -- adding text to the document
 ScEditor:PaneWrite('abcdefg')
@@ -132,13 +132,13 @@ ScEditor:SetIndicatorCurrent(prev_indic)
 
 Open SciTE, go the Tools menu, and choose "my lua example", and the code will run. Some of the letters will now have a red underline, as an example of what scripts can do.
 
-[Full api for downpoured_scite_utils](downpoured_scite_utils_api.md)
+[Full api for moltenjs_scite_utils](moltenjs_scite_utils_api.md)
 
 Note that whenever a different document is opened, lua's global state is reset. This is why after any call to `ScApp:OpenFile` or `ScApp:menunew`, you need to `require` all script dependencies again.
 
 Lua's builtin `os.execute` function can be used to run an external program. (In Windows, though, os.execute sometimes briefly shows a flash of cmd.exe instance on the screen, which looks distracting. A solution to this is the [scite_lua_startprocess](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/helpers/scite_lua_startprocess.zip) helper.) 
 
-Lua's standard library is limited. One way to add features is to write a C extension, like the aforementioned lua\_startprocess. Another option is to use my fork of SciTE, [SciTE-with-Python](https://github.com/downpoured/scite-with-python), that uses Python in place of Lua because of Python's much larger standard library and ecosystem, and comes with many [plugins](https://github.com/downpoured/scite-with-python/wiki/Features). Lua code can be run when SciTE starts up by adding code to the 'lua startup script'; see the next example.
+Lua's standard library is limited. One way to add features is to write a C extension, like the aforementioned lua\_startprocess. Another option is to use my fork of SciTE, [SciTE-with-Python](https://github.com/moltenjs/scite-with-python), that uses Python in place of Lua because of Python's much larger standard library and ecosystem, and comes with many [plugins](https://github.com/moltenjs/scite-with-python/wiki/Features). Lua code can be run when SciTE starts up by adding code to the 'lua startup script'; see the next example.
 
 ## Register for events
 
@@ -162,7 +162,7 @@ ext.lua.startup.script=$(SciteDefaultHome)/scripts/startup.lua
 
 ```
 require('scripts/extman')
-require('scripts/downpoured_scite_utils')
+require('scripts/moltenjs_scite_utils')
 
 local function notifyWhenTextFileOpened(filename)
     if stringendswith(filename, '.txt') then
@@ -229,7 +229,7 @@ command.8.*=dofile $(SciteDefaultHome)/scripts/userstrip_example.lua
 
 ```
 require('scripts/extman')
-require('scripts/downpoured_scite_utils')
+require('scripts/moltenjs_scite_utils')
 ScToolUIManager:RegisterEventWithExtman()
 
 ExampleUIClass = inheritsFrom(ScToolUIBase)
@@ -272,7 +272,7 @@ instance:Show()
 
 * if you click ok or cancel, the ui will close.
 
-Further documentation for user strip: To use downpoured_scite_utils to show user strip UI, create a class that inherits from ScToolUIBase, as seen in the example. Then, the following methods are available:
+Further documentation for user strip: To use moltenjs_scite_utils to show user strip UI, create a class that inherits from ScToolUIBase, as seen in the example. Then, the following methods are available:
 
 | Method |  |
 | ------------- | ------------- |

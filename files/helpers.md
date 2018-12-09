@@ -48,7 +48,7 @@
 
 Building blocks for SciTE lua scripts
 
-* [downpoured_scite_utils.lua](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/helpers/downpoured_scite_utils.lua) and its [API documentation](./files/helpers/downpoured_scite_utils_api.md)
+* [moltenjs_scite_utils.lua](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/helpers/moltenjs_scite_utils.lua) and its [API documentation](./files/helpers/moltenjs_scite_utils_api.md)
 
 * [extman](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/helpers/extman.zip)
 

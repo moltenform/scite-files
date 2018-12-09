@@ -1,9 +1,9 @@
--- downpoured_scite_utils.lua
+-- moltenjs_scite_utils.lua
 -- by Ben Fisher, 2018
 -- instructions + examples:
 -- https://github.com/moltenjs/scite-files/tree/master/files/files/helpers/adding_scite_features_with_lua.md
 -- list of available methods+documentation:
--- https://github.com/moltenjs/scite-files/tree/master/files/files/helpers/downpoured_scite_utils_api.md
+-- https://github.com/moltenjs/scite-files/tree/master/files/files/helpers/moltenjs_scite_utils_api.md
 
 ----------------------------------------------------------------------
 -- inheritsFrom
