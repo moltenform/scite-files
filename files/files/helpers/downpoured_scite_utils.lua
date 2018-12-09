@@ -1,9 +1,9 @@
 -- downpoured_scite_utils.lua
 -- by Ben Fisher, 2018
 -- instructions + examples:
--- https://github.com/downpoured/scite-files/tree/master/files/files/helpers/adding_scite_features_with_lua.md
+-- https://github.com/moltenjs/scite-files/tree/master/files/files/helpers/adding_scite_features_with_lua.md
 -- list of available methods+documentation:
--- https://github.com/downpoured/scite-files/tree/master/files/files/helpers/downpoured_scite_utils_api.md
+-- https://github.com/moltenjs/scite-files/tree/master/files/files/helpers/downpoured_scite_utils_api.md
 
 ----------------------------------------------------------------------
 -- inheritsFrom
@@ -297,7 +297,7 @@ ScApp:Init()
 -- ScToolUIManagerClass
 -- wrapper for showing custom ui in a strip
 -- you should create an instance of ScToolUIBase and pass it in as toolUI
--- refer to https://github.com/downpoured/scite-files/tree/master/files/files/helpers/adding_scite_features_with_lua.md
+-- refer to https://github.com/moltenjs/scite-files/tree/master/files/files/helpers/adding_scite_features_with_lua.md
 ----------------------------------------------------------------------
 local ScToolUIManagerClass = inheritsFrom(nil)
 function ScToolUIManagerClass:Init()
@@ -373,7 +373,7 @@ ScToolUIManager:Init()
 ----------------------------------------------------------------------
 -- ScToolUIBase
 -- you can use a class derived from ScToolUIBase to draw a strip dialog ui
--- refer to https://github.com/downpoured/scite-files/tree/master/files/files/helpers/adding_scite_features_with_lua.md
+-- refer to https://github.com/moltenjs/scite-files/tree/master/files/files/helpers/adding_scite_features_with_lua.md
 ----------------------------------------------------------------------
 ScToolUIBase = inheritsFrom(nil)
 function ScToolUIBase:Init()

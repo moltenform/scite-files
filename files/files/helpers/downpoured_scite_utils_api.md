@@ -3,7 +3,7 @@
 
 ## API 
 
-API for [downpoured_scite_utils.lua](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/helpers/downpoured_scite_utils.lua), by Ben Fisher.
+API for [downpoured_scite_utils.lua](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/helpers/downpoured_scite_utils.lua), by Ben Fisher.
 
 | ScApp methods |  |
 | ------------- | ------------- |

@@ -58,7 +58,7 @@ How to install a Lua script, for example, one of the scripts listed on the [help
 
 * perform the steps in the first section above to set up "my lua example".
 
-* download [swapheader.lua](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/helpers/swapheader.lua)
+* download [swapheader.lua](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/helpers/swapheader.lua)
 
 * place `swapheader.lua` into the `scripts` directory mentioned earlier.
 
@@ -87,7 +87,7 @@ I've written a small wrapper script to make it easier to direct SciTE from Lua.
 
 * perform the steps in the first section above to set up "my lua example".
 
-* download [downpoured_scite_utils.lua](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/helpers/downpoured_scite_utils.lua)
+* download [downpoured_scite_utils.lua](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/helpers/downpoured_scite_utils.lua)
 
 * place `downpoured_scite_utils.lua` into the `scripts` directory mentioned earlier.
 
@@ -136,7 +136,7 @@ Open SciTE, go the Tools menu, and choose "my lua example", and the code will ru
 
 Note that whenever a different document is opened, lua's global state is reset. This is why after any call to `ScApp:OpenFile` or `ScApp:menunew`, you need to `require` all script dependencies again.
 
-Lua's builtin `os.execute` function can be used to run an external program. (In Windows, though, os.execute sometimes briefly shows a flash of cmd.exe instance on the screen, which looks distracting. A solution to this is the [scite_lua_startprocess](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/helpers/scite_lua_startprocess.zip) helper.) 
+Lua's builtin `os.execute` function can be used to run an external program. (In Windows, though, os.execute sometimes briefly shows a flash of cmd.exe instance on the screen, which looks distracting. A solution to this is the [scite_lua_startprocess](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/helpers/scite_lua_startprocess.zip) helper.) 
 
 Lua's standard library is limited. One way to add features is to write a C extension, like the aforementioned lua\_startprocess. Another option is to use my fork of SciTE, [SciTE-with-Python](https://github.com/downpoured/scite-with-python), that uses Python in place of Lua because of Python's much larger standard library and ecosystem, and comes with many [plugins](https://github.com/downpoured/scite-with-python/wiki/Features). Lua code can be run when SciTE starts up by adding code to the 'lua startup script'; see the next example.
 
@@ -146,7 +146,7 @@ A lua script can also listen for events in SciTE and run code when the event is 
 
 * perform the steps in the "Writing Lua code" section above.
 
-* download [extman](https://raw.githubusercontent.com/downpoured/scite-files/master/files/files/helpers/extman.zip), unzip it, and place extman.lua into the "scripts" directory that you created earlier. (unlike other extman scripts, this version of extman won't automatically search for and run all lua scripts).
+* download [extman](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/helpers/extman.zip), unzip it, and place extman.lua into the "scripts" directory that you created earlier. (unlike other extman scripts, this version of extman won't automatically search for and run all lua scripts).
 
 * from the Options menu, choose open User Options File, this will open a file called SciTEUser.properties
 
