@@ -15,7 +15,7 @@
 
 * Right-click one of the links and choose "Save link as..." or "Save target as..."
 
-    * ![Screenshot right-click link](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/translations_install_linux_right.png)
+    * <a href="#">![Screenshot right-click link](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/translations_install_linux_right.png)</a>
     
 * Open the file. If you are opening the file in SciTE, you may want to confirm that the file is being viewed in UTF-8, by going from the File menu to Encoding, then choosing UTF-8
 
