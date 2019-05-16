@@ -31,6 +31,7 @@ To generate api files for your own source code, one of these tools may be helpfu
 * For Java classes, there is a [java_apibuilder.zip](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files_gen/java_apibuilder.zip) program
 * For C# classes, use [genapi.cs](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files_gen/gen_csgenapi.zip)
 * For PHP, use [php-api-generator](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files_gen/gen_php-api-generator.zip) or [phpapi.php](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files_gen/phpapi.php.txt)
+* API files for the latest PHP standard libraries can be generated with the tool [here](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files_gen/gen_php-from-online-docs.zip), contributed by arjunae
 * API files for the latest C++ standard can be generated with the script [here](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files_gen/gen_cpp_cplusplusdotcom.zip)
 * API files for the latest jquery can be generated with the script [here](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files_gen/gen_jquery.zip)
 * API files for the latest javascript (from MSDN) can be generated with the script [here](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files_gen/gen_msdn_javascript.zip)

@@ -400,11 +400,11 @@
     * [Perl API](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/perl.api)
     * [Parrot properties file](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/parrot_properties.zip)
 
-* PHP <!--  https://github.com/arjunae/myScite has php.properties and php.api that look good but aren't clearly better -->
+* PHP
 
     * highlighting and folding is already enabled by default
+    * [php7.2.api](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/php7.2.api) (including core, bundled, pecl, and external functions) contributed by [arjunae](https://github.com/arjunae/myScite/tree/devel/contrib/SciTE.apifiles/apiDogs)
     * [php.api, PHP 5](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/php.api)
-    * [php.api, possibly newer](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/php_z.api)
     * [php.api in Spanish, PHP 5](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/php-es.api)
     * [PHP properties](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/php.properties)
 
