@@ -1,7 +1,7 @@
 <a name="how_to_make_translation"></a>
 ### Making a translation
 
-* Download the latest [locale.properties](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/translations/latest/locale.properties) file. Version 3.7.5 is the most recent version that added text to translate
+* Download the latest [locale.properties](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/translations/latest/locale.properties) file. Version 3.7.5 is the most recent version that added text to translate
 
 * Edit this file and fill in each line that ends with =
 
@@ -15,11 +15,11 @@
 
 * Right-click one of the links and choose "Save link as..." or "Save target as..."
 
-    * <a href="#">![Screenshot right-click link](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/translations_install_linux_right.png)</a>
+    * <a href="#">![Screenshot right-click link](https://raw.githubusercontent.com/moltenform/scite-files/master/files/translations_install_linux_right.png)</a>
     
 * Open the file. If you are opening the file in SciTE, you may want to confirm that the file is being viewed in UTF-8, by going from the File menu to Encoding, then choosing UTF-8
 
-* Compare the file with the latest [locale.properties](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/translations/latest/locale.properties)
+* Compare the file with the latest [locale.properties](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/translations/latest/locale.properties)
 
 * If the latest locale.properties has strings that are not in the translation, copy the lines from locale.properties into the translation and fill in each line that ends with a =
 

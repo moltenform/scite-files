@@ -14,10 +14,10 @@
 * HTML, CSS, and JavaScript
 
     * HTML, CSS, and JavaScript have highlighting and folding already enabled by default
-    * [JavaScript API file](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/javascript.api)
-    * [JavaScript JQuery API file](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/javascript_jquery.api) and [properties](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/javascript.properties)
-    * [css api](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/css.api)
-    * [html api](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/html.api)
+    * [JavaScript API file](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/javascript.api)
+    * [JavaScript JQuery API file](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/javascript_jquery.api) and [properties](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/javascript.properties)
+    * [css api](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/css.api)
+    * [html api](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/html.api)
 
 * Abaqus
 
@@ -26,7 +26,7 @@
 * ActionScript (Flash)
 
     * highlighting and folding is already enabled by default
-    * [actionscript api](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/actionscript.api)
+    * [actionscript api](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/actionscript.api)
 
 * Ada
 
@@ -34,12 +34,12 @@
 
 * AMPL
 
-    * [Properties file, api file, tools and setup instructions.](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/ampl.zip)
+    * [Properties file, api file, tools and setup instructions.](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/ampl.zip)
 
 * APDL
 
     * highlighting and folding is enabled after the properties file below is installed
-    * [APDL properties and API](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/apdl.zip)
+    * [APDL properties and API](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/apdl.zip)
 
 * Assembler (NASM/MASM)
 
@@ -56,7 +56,7 @@
 * ASP
 
     * highlighting and folding is already enabled by default
-    * [ASP API methods](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/asp.api)
+    * [ASP API methods](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/asp.api)
     * Edit html.properties to set the language of scripts in ASP code
         * If asp.default.language=1, script in an ASP code block is JavaScript
         * If asp.default.language=2, script in an ASP code block is VBScript
@@ -65,23 +65,23 @@
 * Asymptote
 
     * highlighting and folding is enabled after the properties file below is installed
-    * [Properties file](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/asymptote.properties)
+    * [Properties file](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/asymptote.properties)
     
 * Auto It3 
 
     * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `au3`, then save and restart SciTE
     * [SciTE4AutoIt3 Website containing Auto It3 related properties and API files.](https://www.autoitscript.com/site/autoit-script-editor/)
-    * [au3 API file](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/au3.api)
+    * [au3 API file](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/au3.api)
 
 * AutoHotkey (AHK)
 
-    * [AutoHotkey properties](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/ahk.properties)
+    * [AutoHotkey properties](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/ahk.properties)
     * [SciTE4AutoHotkey](https://github.com/fincs/SciTE4AutoHotkey) custom SciTE build for ahk
-    * [ahk API file](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/ahk.api)
+    * [ahk API file](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/ahk.api)
 
 * AutoCAD Dialog Box components
 
-    * [DCL properties](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/adcl.properties)
+    * [DCL properties](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/adcl.properties)
 
 * Avenue (Ave)
 
@@ -98,7 +98,7 @@
 * Batch files (MS-DOS)
 
     * highlighting and folding is already enabled by default
-    * [API Files for Batch](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/batch.api.zip) (API files for NT, XP/2003, GNUWin32 UnixUtils and SysInternals commands)
+    * [API Files for Batch](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/batch.api.zip) (API files for NT, XP/2003, GNUWin32 UnixUtils and SysInternals commands)
 
 * Bash
 
@@ -115,35 +115,35 @@
 * C/C++
 
     * highlighting and folding is already enabled by default
-    * [C standard library](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/c_withdoc.api) with short doc strings
-    * [C standard library](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/c.api)
-    * [C++ standard library, incl C++11](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/cpp.api)
-    * [cpp_more.properties](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/cpp_more.properties) adds highlighting for c99, c11, cpp98, cpp11, Objective C, idl, Doxygen, Arduino, go, Actionscript, vala, pike, swift
-    * [Windows API, cpp](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/cpp_win32.api)
-    * [OpenGL 1.2 API](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/opengl.api)
-    * [OpenGL 4.4 API](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/glext.api)
-    * [Glut API](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/glut.api)
-    * [SDL API](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/sdl.api)
-    * [Lua C API](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/c_lua_c.api)
+    * [C standard library](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/c_withdoc.api) with short doc strings
+    * [C standard library](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/c.api)
+    * [C++ standard library, incl C++11](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/cpp.api)
+    * [cpp_more.properties](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/cpp_more.properties) adds highlighting for c99, c11, cpp98, cpp11, Objective C, idl, Doxygen, Arduino, go, Actionscript, vala, pike, swift
+    * [Windows API, cpp](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/cpp_win32.api)
+    * [OpenGL 1.2 API](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/opengl.api)
+    * [OpenGL 4.4 API](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/glext.api)
+    * [Glut API](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/glut.api)
+    * [SDL API](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/sdl.api)
+    * [Lua C API](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/c_lua_c.api)
 
 * C#
 
     * highlighting and folding is already enabled by default
-    * [C# csharp api](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/c_sharp.api)
+    * [C# csharp api](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/c_sharp.api)
 
 * CIL 
 
-    * [Properties for CIL/MSIL](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/il.properties)
+    * [Properties for CIL/MSIL](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/il.properties)
 
 * Clojure
 
-    * [a lisp.properties including support for Scheme and Clojure](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/lisp_and_closure.properties)
-    * [api file for Clojure](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/clojure.api)
+    * [a lisp.properties including support for Scheme and Clojure](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/lisp_and_closure.properties)
+    * [api file for Clojure](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/clojure.api)
 
 * CMake
 
     * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `cmake`, then save and restart SciTE
-    * [CMake API](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/cmake.api)
+    * [CMake API](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/cmake.api)
 
 * COBOL
 
@@ -151,7 +151,7 @@
 
 * Cobra
 
-    * [Properties for Cobra and Cobraproj](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/cobra.zip)
+    * [Properties for Cobra and Cobraproj](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/cobra.zip)
 
 * coffeescript
 
@@ -172,7 +172,7 @@
 * Delphi
 
     * highlighting and folding is already enabled by default
-    * [Delphi api files and abbrevs](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/delphi_extras.zip) 
+    * [Delphi api files and abbrevs](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/delphi_extras.zip) 
 
 * diff files
 
@@ -201,18 +201,18 @@
 * Forth
 
     * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `forth`, then save and restart SciTE
-    * [api file for Forth](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/forth.api)
+    * [api file for Forth](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/forth.api)
     
 * Fortran
 
     * highlighting and folding is already enabled by default
-    * [Standard FORTRAN API functions](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/fortran.api)
+    * [Standard FORTRAN API functions](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/fortran.api)
 
 * Freebasic
 
     * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `freebasic`, then save and restart SciTE
-    * [properties file](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/freebasic.properties) that highlights more keywords
-    * [api file](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/freebasic.api)
+    * [properties file](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/freebasic.properties) that highlights more keywords
+    * [api file](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/freebasic.api)
     
 * GAP
 
@@ -232,7 +232,7 @@
 
 * Haml
 
-    * [properties file](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/haml.properties)
+    * [properties file](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/haml.properties)
 
 * Haskell
 
@@ -263,9 +263,9 @@
 * Java <!-- used to link to https://www.burgaud.com/scite-java-api/ , but put this info in instructions instead -->
     
     * highlighting and folding is already enabled by default
-    * [Java properties](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/java.properties), including Java 1.8 keywords
-    * [Java API](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/java.api)
-    * [Java API, other versions incl 1.5 and 1.6](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/javaversions.api.zip)
+    * [Java properties](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/java.properties), including Java 1.8 keywords
+    * [Java API](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/java.api)
+    * [Java API, other versions incl 1.5 and 1.6](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/javaversions.api.zip)
     
 * json and json-ld
 
@@ -295,13 +295,13 @@
 * Lua  <!--  https://github.com/arjunae/myScite has a lua.properties with a few more keywords to highlight  -->
 
     * highlighting and folding is already enabled by default
-    * [Lua API](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/lua.api)
-    * [more Lua api files: C API and Lua functions](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/lua5.api.zip)
-    * [Api for SciTE extension scripts](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/lua_scite_extension.api)
+    * [Lua API](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/lua.api)
+    * [more Lua api files: C API and Lua functions](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/lua5.api.zip)
+    * [Api for SciTE extension scripts](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/lua_scite_extension.api)
     * [scite-for-lua](https://code.google.com/archive/p/scite-for-lua/), extensive support for Lua programming, including debugging and a lint-based highlighter
     * [lua-inspect](https://github.com/davidm/lua-inspect), plugin for SciTE that does Lua code analysis and adds features like rename-occurrences and autocomplete
-    * [Api for wxLua](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/wxlua.api)
-    * [Api for WoW lua](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/lua_wow.api)
+    * [Api for wxLua](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/wxlua.api)
+    * [Api for WoW lua](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/lua_wow.api)
 
 * Make / makefile
 
@@ -310,7 +310,7 @@
 * markdown
 
     * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `markdown`, then save and restart SciTE
-    * an alternate [properties file](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/markdown_alt.properties) for markdown
+    * an alternate [properties file](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/markdown_alt.properties) for markdown
 
 * Matlab
 
@@ -326,13 +326,13 @@
 
 * MetaQuotes language (MQL4, MQL5, MT4)
 
-    * [properties for MQL4, MQL5](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/mql.properties)
+    * [properties for MQL4, MQL5](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/mql.properties)
     * The [scite-mql](https://github.com/ylw633/scite-mql) project adds syntax highlighting, autocomplete, parameter hints, and more for MT4 based code
 
 * Microsoft SQL / MSSQL
 
     * highlighting and folding is already enabled by default
-    * [Replace sql.properties with this, for better MSSQL support](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/mssql.properties)
+    * [Replace sql.properties with this, for better MSSQL support](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/mssql.properties)
 
 * MMIXAL
 
@@ -344,7 +344,7 @@
 
 * moonscript
 
-    * [properties](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/moonscript.properties)
+    * [properties](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/moonscript.properties)
     * a package containing SciTE, scintillua, and moonscript highlighting can be found [here](http://leafo.net/posts/getting_started_with_moonscript.html)
 
 * Nimrod
@@ -354,12 +354,12 @@
 * nncron / nncrontab
 
     * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `nncrontab`, then save and restart SciTE
-    * [nncron api file](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/nncron.api) 
+    * [nncron api file](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/nncron.api) 
 
 * NSIS (nullsoft install)
 
     * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `nsis`, then save and restart SciTE
-    * [nsis api file](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/nsis.api) 
+    * [nsis api file](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/nsis.api) 
 
 * Objective C
 
@@ -372,7 +372,7 @@
 * Octave
 
     * highlighting and folding is already enabled by default
-    * [octave.api](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/octave.api)
+    * [octave.api](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/octave.api)
 
 * Opal
 
@@ -380,33 +380,33 @@
 
 * Oracle 
 
-    * [Extended properties file](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/sql_more.properties) with additional keywords and standard package names
-    * [sql plsql](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/sql_plsql.api.zip) properties file
+    * [Extended properties file](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/sql_more.properties) with additional keywords and standard package names
+    * [sql plsql](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/sql_plsql.api.zip) properties file
 
 * OScript
 
     * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `oscript`, then save and restart SciTE
-    * [oscript.api.zip](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/oscript.api.zip)
+    * [oscript.api.zip](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/oscript.api.zip)
 
 * Pascal
 
     * highlighting and folding is already enabled by default
-    * Pascal [API](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/pascal.api) 
-    * Pascal [Abbreviations](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/pascal.abbrev) 
+    * Pascal [API](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/pascal.api) 
+    * Pascal [Abbreviations](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/pascal.abbrev) 
 
 * Perl
 
     * highlighting and folding is already enabled by default
-    * [Perl API](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/perl.api)
-    * [Parrot properties file](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/parrot_properties.zip)
+    * [Perl API](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/perl.api)
+    * [Parrot properties file](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/parrot_properties.zip)
 
 * PHP
 
     * highlighting and folding is already enabled by default
-    * [php7.2.api](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/php7.2.api) (including core, bundled, pecl, and external functions) contributed by [arjunae](https://github.com/arjunae/myScite/tree/devel/contrib/SciTE.apifiles/apiDogs)
-    * [php.api, PHP 5](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/php.api)
-    * [php.api in Spanish, PHP 5](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/php-es.api)
-    * [PHP properties](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/php.properties)
+    * [php7.2.api](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/php7.2.api) (including core, bundled, pecl, and external functions) contributed by [arjunae](https://github.com/arjunae/myScite/tree/devel/contrib/SciTE.apifiles/apiDogs)
+    * [php.api, PHP 5](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/php.api)
+    * [php.api in Spanish, PHP 5](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/php-es.api)
+    * [PHP properties](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/php.properties)
 
 * PostScript
 
@@ -415,7 +415,7 @@
 * POV-Ray 
 
     * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `pov`, then save and restart SciTE
-    * [POV-Ray API](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/pov.api)
+    * [POV-Ray API](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/pov.api)
 
 * PowerPro
 
@@ -428,7 +428,7 @@
 * Progress
 
     * highlighting and folding is enabled after the properties file below is installed
-    * [Progress properties](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/progress.properties)
+    * [Progress properties](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/progress.properties)
 
 * PureBasic
 
@@ -437,15 +437,15 @@
 * Python
 
     * highlighting and folding is already enabled by default
-    * [Python API](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/python.api)
-    * [Automatically print the contents of local variables on unhandled exceptions](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/python_print_vars.zip)
-    * api file for [numpy](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/py_numpy.zip)
-    * api file for [scipy](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/py_scipy.zip)
+    * [Python API](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/python.api)
+    * [Automatically print the contents of local variables on unhandled exceptions](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/python_print_vars.zip)
+    * api file for [numpy](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/py_numpy.zip)
+    * api file for [scipy](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/py_scipy.zip)
 
 * R
 
     * to enable highlighting and folding, open `SciTEGlobal.properties`, look for `imports.exclude=`, delete `r`, then save and restart SciTE
-    * a [properties file](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/r.properties) with additional keyword highlighting
+    * a [properties file](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/r.properties) with additional keyword highlighting
 
 * Rebol
 
@@ -458,7 +458,7 @@
 * Ruby
 
     * highlighting and folding is already enabled by default
-    * [Ruby API](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/ruby.api)
+    * [Ruby API](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/ruby.api)
 
 * Rust
 
@@ -507,7 +507,7 @@
 * TADS3 
 
     * highlighting and folding is enabled after the properties file below is installed
-    * [TADS3 property file and explanation](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/tads3.zip)
+    * [TADS3 property file and explanation](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/tads3.zip)
 
 * TAL
 
@@ -536,14 +536,14 @@
 * Visual Basic
 
     * highlighting and folding is already enabled by default
-    * vb [properties file](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/vb.properties) with more keywords
+    * vb [properties file](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/vb.properties) with more keywords
 
 * VBScript
 
     * highlighting and folding is already enabled by default
-    * [vbscript api](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/vbscript.api)
-    * vbscript [properties file](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/vbscript.properties)
-    * [vba api file](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/vba.api)
+    * [vbscript api](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/vbscript.api)
+    * vbscript [properties file](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/vbscript.properties)
+    * [vba api file](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/vba.api)
 
 * visualprolog
 
@@ -551,9 +551,9 @@
 
 * Windows Scripting 
 
-    * [Properties files](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/windows_scripting.zip)
-    * [More files and scripts](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/windows_scripting_scripts.zip), refer to readme.txt
-    * [wsh.api](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/wsh.api) for vbscript calling into ActiveX objects like Scripting.FileSystemObject
+    * [Properties files](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/windows_scripting.zip)
+    * [More files and scripts](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/windows_scripting_scripts.zip), refer to readme.txt
+    * [wsh.api](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/wsh.api) for vbscript calling into ActiveX objects like Scripting.FileSystemObject
 
 * XML
 
@@ -563,7 +563,7 @@
 
     * highlighting and folding is already enabled by default
 
-The scintillua project adds highlighting and folding for more than 120 languages, but it requires configuration to install. scintillua can be downloaded from [here](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/scintillua.zip), and see doc/manual.md. A .properties file is still needed to map the file extension to the lexer, more information [here](https://foicica.com/scintillua/README.html).
+The scintillua project adds highlighting and folding for more than 120 languages, but it requires configuration to install. scintillua can be downloaded from [here](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/scintillua.zip), and see doc/manual.md. A .properties file is still needed to map the file extension to the lexer, more information [here](https://foicica.com/scintillua/README.html).
 
 To contribute a file to this list, send an e-mail to scitewiki at gmail dot com or submit a pull request. 
 

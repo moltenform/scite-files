@@ -15,5 +15,5 @@ If this does not work, you can write a piece of code that SciTE calls a "lexer".
 
 * documentation on [Writing a lexer in the Lua language](https://www.scintilla.org/ScriptLexer.html) 
 
-* Andreas Tscharner's tutorial for adding [Syntax Highlighting & Code Folding](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files_new_lexer/newlexertutorial.pdf), and [example code](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files_new_lexer/newlexertutorialcode.tar.bz2) in C++
+* Andreas Tscharner's tutorial for adding [Syntax Highlighting & Code Folding](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files_new_lexer/newlexertutorial.pdf), and [example code](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files_new_lexer/newlexertutorialcode.tar.bz2) in C++
 

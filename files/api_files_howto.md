@@ -6,7 +6,7 @@
 
 * As an example, let's set up the api file for the C standard library
 
-* Download [c.api](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/files/api_files/c.api)
+* Download [c.api](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/c.api)
 
 * Move `c.api` into the directory that contains SciTE. In Linux this is typically `/usr/bin/scite` or `/usr/local/bin/scite`
 

@@ -6,15 +6,15 @@
 
 * Right-click one of the links and choose "Save link as..." or "Save target as..."
 
-    * <a href="#">![Screenshot right-click link](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/translations_install_linux_right.png)</a>
+    * <a href="#">![Screenshot right-click link](https://raw.githubusercontent.com/moltenform/scite-files/master/files/translations_install_linux_right.png)</a>
 
 * Save to a writable directory, such as ~/Downloads.
 
-    * <a href="#">![Screenshot save to downloads](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/translations_install_linux_path.png)</a>
+    * <a href="#">![Screenshot save to downloads](https://raw.githubusercontent.com/moltenform/scite-files/master/files/translations_install_linux_path.png)</a>
 
 * Open a terminal, and using sudo, move the file to `/usr/share/scite/locale.properties`
 
-    * <a href="#">![Screenshot save to downloads](https://raw.githubusercontent.com/moltenjs/scite-files/master/files/translations_install_linux_terminal.png)</a>
+    * <a href="#">![Screenshot save to downloads](https://raw.githubusercontent.com/moltenform/scite-files/master/files/translations_install_linux_terminal.png)</a>
 
 * (Note that the destination filename is locale.properties). If `/usr/share/scite` does not exist, try `/usr/local/share/scite`. 
 
