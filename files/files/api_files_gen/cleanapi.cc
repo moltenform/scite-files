@@ -8,15 +8,15 @@
 
  #include <std_disclaimer.h>
 
-   "I do not accept responsibility for any effects, adverse or otherwise, 
-    that this code may have on you, your computer, your sanity, your dog, 
-    and anything else that you can think of. Use it at your own risk."
-    
- Usage:
-    cleanapi <in.api> <out.api> [OPTIONS]
+	"I do not accept responsibility for any effects, adverse or otherwise, 
+	that this code may have on you, your computer, your sanity, your dog, 
+	and anything else that you can think of. Use it at your own risk."
 
-    Options: -c -> Remove Comments
-             -v -> Be (frustratingly :) verbose..
+ Usage:
+	cleanapi <in.api> <out.api> [OPTIONS]
+
+	Options: -c -> Remove Comments
+			 -v -> Be (frustratingly :) verbose..
  
  By Deepak S.
  deepaks@operamail.com

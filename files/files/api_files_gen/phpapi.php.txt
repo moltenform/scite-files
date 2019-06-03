@@ -48,11 +48,11 @@ Requires ctags <http://ctags.sourceforge.net>
 Usage: php.exe -f phpapi.php [options] FOLDER
 
 Options:
-  --create       - creates SciTE.properties files in all subfolders of FOLDER,
-                   if they do not exist. if they do exist, then replaces
-                   the api.$(file.patterns.php)=... line in those files.
-  --api=apifile  - add apifile to the api.$(file.patterns.php)= line.
-  -v             - verbose
+	--create       - creates SciTE.properties files in all subfolders of FOLDER,
+				   if they do not exist. if they do exist, then replaces
+				   the api.$(file.patterns.php)=... line in those files.
+	--api=apifile  - add apifile to the api.$(file.patterns.php)= line.
+	-v             - verbose
 Sample usage:
 php -f phpapi.php --create --api='$(SciteDefaultHome)/api/php.api' ~/myproject/
 
