@@ -437,10 +437,11 @@
 * Python
 
     * highlighting and folding is already enabled by default
-    * [Python API](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/python.api)
+    * api files and keywords files for [Python 3.8](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/python38.api.zip), [Python 3.7](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/python37.api.zip)
     * [Automatically print the contents of local variables on unhandled exceptions](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/python_print_vars.zip)
     * api file for [numpy](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/py_numpy.zip)
     * api file for [scipy](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/py_scipy.zip)
+    * older [Python API](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/python.api) including PIL, psycho
 
 * R
 
