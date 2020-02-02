@@ -1,9 +1,10 @@
 #! /usr/bin/env python3
 # Author : Michael Heath
+# Github : https://github.com/mpheath/generate-python-3-api
+# Home   : http://users.tpg.com.au/mpheath/gen_python_3_api
 # Licence: GPLv3
 # Python : 3.2 to 3.8 or later
-# Version: 1.2
-# http://users.tpg.com.au/mpheath/gen_python_3_api/
+# Version: 1.4
 
 r'''Make files for SciTE and Notepad++ for autocomplete and styling.
 
@@ -150,17 +151,22 @@ settings['exclude_members_startswith_single_underscore_by_module'] = [
     'site', 'ssl', 'stat', 'sunau', 'symbol', 'time', 'tkinter',
     'tracemalloc', 'uuid', 'zipimport']
 
-# Exclude modules deprecated or unwanted.
+# Exclude modules that are unwanted.
 settings['exclude_modules_fullname'] = [
-    'antigravity', 'formatter', 'imp', 'macpath', 'this']
-
-settings['exclude_modules_startswith'] = ['_', 'gen_python_3_api']
+    'antigravity', 'pydoc_data', 'sqlite3.dbapi2',
+    'this', 'xml.etree.ElementPath']
 
 if sys.platform == 'win32':
 
     # Exclude modules known to cause import problems on win32.
     settings['exclude_modules_fullname'].extend([
         'crypt', 'curses', 'pty', 'tty'])
+
+# Exclude modules starts with. Does not include submodules.
+settings['exclude_modules_startswith'] = ['gen_python_3_api']
+
+# Exclude modules starts with underscore. Includes submodules. 0 or 1.
+settings['exclude_modules_startswith_underscore'] = 1
 
 # Escape long signatures to calltip_width. 0 or 1.
 settings['escape_long_signatures'] = 0
@@ -178,50 +184,44 @@ settings['include_keywords'] = 1
 
 # Include modules not listed by pydoc.
 settings['include_modules_fullname'] = [
-    'collections.abc',
     'concurrent.futures',
     'ctypes.util', 'ctypes.wintypes',
     'distutils.core',
-    'email.base64mime', 'email.charset',
-    'email.contentmanager', 'email.encoders',
-    'email.errors', 'email.feedparser',
-    'email.generator', 'email.header',
-    'email.headerregistry', 'email.iterators',
-    'email.message', 'email.mime',
-    'email.mime.application', 'email.mime.audio',
-    'email.mime.base', 'email.mime.image',
-    'email.mime.message', 'email.mime.multipart',
-    'email.mime.nonmultipart', 'email.mime.text',
-    'email.parser', 'email.policy',
-    'email.quoprimime', 'email.utils',
+    'email.contentmanager', 'email.headerregistry',
+    'email.mime', 'email.mime.application',
+    'email.mime.audio', 'email.mime.base',
+    'email.mime.image', 'email.mime.message',
+    'email.mime.multipart', 'email.mime.nonmultipart',
+    'email.mime.text', 'email.policy',
+    'encodings.idna',
     'html.entities', 'html.parser',
-    'http.client', 'http.server',
-    'http.cookies', 'http.cookiejar',
-    'importlib.abc', 'importlib.resources',
-    'importlib.machinery', 'importlib.util',
+    'http.client', 'http.cookiejar',
+    'http.cookies', 'http.server',
+    'importlib.abc', 'importlib.machinery',
+    'importlib.resources', 'importlib.util',
     'multiprocessing.connection', 'multiprocessing.dummy',
     'multiprocessing.managers', 'multiprocessing.pool',
     'multiprocessing.shared_memory', 'multiprocessing.sharedctypes',
-    'os.path',
-    'tkinter.colorchooser', 'tkinter.commondialog',
-    'tkinter.constants', 'tkinter.dialog',
+    'tkinter.colorchooser', 'tkinter.dialog',
     'tkinter.dnd', 'tkinter.filedialog',
-    'tkinter.font', 'tkinter.messagebox',
-    'tkinter.scrolledtext', 'tkinter.simpledialog',
+    'tkinter.font', 'tkinter.scrolledtext',
     'tkinter.tix', 'tkinter.ttk',
     'unittest.mock',
-    'urllib.error', 'urllib.parse',
-    'urllib.request', 'urllib.robotparser',
+    'urllib.error', 'urllib.request',
+    'urllib.robotparser',
     'wsgiref.handlers', 'wsgiref.headers',
     'wsgiref.simple_server', 'wsgiref.util',
     'wsgiref.validate',
-    'xml.dom', 'xml.dom.minidom',
-    'xml.dom.pulldom', 'xml.etree.ElementTree',
-    'xml.parsers.expat', 'xml.parsers.expat.errors',
-    'xml.parsers.expat.model',
+    'xml.dom.pulldom',
     'xml.sax', 'xml.sax.handler',
     'xml.sax.saxutils', 'xml.sax.xmlreader',
     'xmlrpc.client', 'xmlrpc.server']
+
+if sys.platform != 'win32':
+
+    # Include modules fullname for unix.
+    settings['include_modules_fullname'].extend([
+        'curses.ascii', 'curses.panel', 'curses.textpad'])
 
 # Include module names that need to be imported before others.
 # This might be useful for modules that require other modules to be imported first.
@@ -655,6 +655,11 @@ custom_signatures = {
             ['flag']
         ]
     },
+    'curses.panel': {
+        'new_panel': [
+            ['win']
+        ]
+    },
     'datetime': {
         'date': [
             ['year', 'month', 'day']
@@ -662,7 +667,7 @@ custom_signatures = {
         'datetime': [
             ['year', 'month', 'day', 'hour=0', 'minute=0', 'second=0', 'microsecond=0', 'tzinfo=None', '*', 'fold=0']
         ],
-        'time' : [
+        'time': [
             ['hour=0', 'minute=0', 'second=0', 'microsecond=0', 'tzinfo=None', '*', 'fold=0']
         ],
         'timedelta': [
@@ -730,8 +735,8 @@ custom_signatures = {
             ['*iterables']
         ],
         'islice': [
-            ['iterable', 'stop'],
-            ['iterable', 'start', 'stop[', 'step]']
+            ['iterable', 'start', 'stop[', 'step]'],
+            ['iterable', 'stop']
         ],
         'product': [
             ['*iterables', 'repeat=1']
@@ -1191,6 +1196,7 @@ class Calltips():
             'exclude_members_startswith_single_underscore_by_module': [],
             'exclude_modules_fullname': [],
             'exclude_modules_startswith': [],
+            'exclude_modules_startswith_underscore': 1,
             'escape_long_signatures': 0,
             'import_site': 0,
             'include_custom_signatures': 1,
@@ -1211,6 +1217,7 @@ class Calltips():
 
         # Update settings.
         print('settings:')
+
         if isinstance(settings, dict):
             print('  updating')
             self.settings.update(settings)
@@ -1314,8 +1321,14 @@ class Calltips():
 
             # Exclude modules by starts with.
             for prefix in self.settings['exclude_modules_startswith']:
-                for item in sorted(modules):
+                for item in modules.copy():
                     if item.startswith(prefix):
+                        modules.remove(item)
+
+            # Exclude modules by starts with underscore.
+            if self.settings['exclude_modules_startswith_underscore']:
+                for item in modules.copy():
+                    if item.startswith('_'):
                         modules.remove(item)
 
         self.modules = sorted(modules)
@@ -1324,6 +1337,7 @@ class Calltips():
         for item in reversed(self.settings['include_modules_fullname_import_first']):
             if item in self.modules:
                 self.modules.remove(item)
+
             self.modules.insert(0, item)
 
         return self.modules
@@ -1357,7 +1371,7 @@ class Calltips():
             else:
                 return ''
 
-        def _get_doc(module, member_object):
+        def _get_doc(module, member, member_object):
             '''Get the doc string.'''
 
             def _filter_doc(doc):
@@ -1368,11 +1382,21 @@ class Calltips():
 
                 doc = doc.strip()
 
+                # Fix formfeed and tab being spaces in Python 3.8.
+                if module == 'ast' and member == '_pad_whitespace':
+                    doc = doc.replace("'\f     '", "'\\f\\t'")
+
+                # Replace escape sequence with literal.
+                if '\f' in doc:
+                    doc = doc.replace('\f', '\\f')
+                    print(r'    info: Escape sequence \f replaced with \\f'
+                           ' in doc string of {}.{}'.format(module, member))
+
                 # These repetitive doc strings seem to be inherited and unwanted.
                 if module in ('ctypes', 'ctypes.wintypes'):
                     if doc == 'XXX to be provided':
                         return ''
-                elif module == 'typing':
+                elif module in ('importlib.resources', 'typing', 'typing.re'):
                     if doc.startswith('The central part of internal API.'):
                         return ''
 
@@ -1464,17 +1488,18 @@ class Calltips():
             else:
                 doc = inspect.getdoc(member_object)
 
-                dox = 'dir: {}.'.format(', '.join([x for x in dir(member_object)
-                                                     if not x.startswith('_')]))
-                if dox == 'dir: .':
-                    dox = ''
+                if self.settings['doc_type'] > 1:
+                    dox = 'dir: {}.'.format(', '.join([x for x in dir(member_object)
+                                                         if not x.startswith('_')]))
+                    if dox == 'dir: .':
+                        dox = ''
 
-                if self.settings['doc_type'] == 2:
-                    doc = doc or dox
-                elif self.settings['doc_type'] == 3:
-                    doc = dox or doc
-                elif self.settings['doc_type'] == 4:
-                    doc = dox
+                    if self.settings['doc_type'] == 2:
+                        doc = doc or dox
+                    elif self.settings['doc_type'] == 3:
+                        doc = dox or doc
+                    elif self.settings['doc_type'] == 4:
+                        doc = dox
 
                 doc = _filter_doc(doc)
 
@@ -1486,8 +1511,10 @@ class Calltips():
             def _get_more_members(members):
                 '''Get another level of members.'''
 
+                more_members = []
+
                 for member, member_object in members:
-                    if callable:
+                    if callable(member_object):
                         for submember, submember_object in inspect.getmembers(member_object):
 
                             # Exclude members that starts with underscores.
@@ -1502,9 +1529,11 @@ class Calltips():
                             if inspect.ismodule(submember_object):
                                 continue
 
-                            yield [member + '.' + submember, submember_object]
+                            more_members.append([member + '.' + submember, submember_object])
 
-                    yield [member, member_object]
+                    more_members.append([member, member_object])
+
+                return more_members
 
             # Get the members.
             members = inspect.getmembers(module_object)
@@ -1559,8 +1588,6 @@ class Calltips():
             last = ''
 
             for items in signature_object.parameters.items():
-                name = items[0]
-
                 if self.settings['unannotate_signatures']:
                     parameter_object = items[1].replace(annotation=inspect.Parameter.empty)
                 else:
@@ -1603,6 +1630,60 @@ class Calltips():
 
             return [signature]
 
+        def _import_modules(modules):
+            '''Import from a list of modules.'''
+
+            print('import:')
+
+            # Set the count of imports.
+            import_stats = {'fail': 0, 'pass': 0}
+
+            # Loop through the modules names.
+            for module in modules:
+                print(' ', module)
+
+                # Import the module.
+                if '.' in module:
+                    pkg, subpkg = module.split('.', 1)
+
+                try:
+                    if '.' in module:
+                        importlib.import_module('.' + subpkg, pkg)
+                    else:
+                        importlib.import_module(module)
+                except Exception as except_msg:
+                    print('    fail:', except_msg)
+                    import_stats['fail'] += 1
+                else:
+                    import_stats['pass'] += 1
+
+            # Get list of module names and module objects from copy of sys.modules.
+            sys_modules = sys.modules.copy()
+            modules = []
+
+            for module in sys_modules:
+                if module in self.settings['exclude_modules_fullname']:
+                    continue
+
+                if module.startswith(tuple(self.settings['exclude_modules_startswith'])):
+                    continue
+
+                if self.settings['exclude_modules_startswith_underscore']:
+                    passed = True
+
+                    for item in module.split('.'):
+                        if item.startswith('_'):
+                            passed = False
+                            break
+
+                    if not passed:
+                        continue
+
+                modules.append([module, sys_modules[module]])
+
+            return sorted(modules), import_stats
+
+
         if modules is None:
             modules = self.modules
 
@@ -1629,10 +1710,10 @@ class Calltips():
         os_environ = str(os.environ)
         sys_executable = "'" + sys.executable.replace('\\', '\\\\') + "'"
 
-        # Set the count of imports.
-        import_stats = {'fail': 0, 'pass': 0}
+        # Get the modules, module objects and statistics.
+        modules, import_stats = _import_modules(modules)
 
-        print('processing:')
+        print('generate:')
 
         # Add keywords to api.
         if self.settings['include_keywords']:
@@ -1643,25 +1724,9 @@ class Calltips():
         for item in keyword.kwlist:
             keywordclass0.add(item)
 
-        # Loop through the modules to do many tasks.
-        for module in modules:
+        # Add to api and keywordclasses by inspecting the modules and members.
+        for module, module_object in modules:
             print(' ', module)
-
-            # Import the module.
-            if '.' in module:
-                pkg, subpkg = module.split('.', 1)
-
-            try:
-                if '.' in module:
-                    module_object = importlib.import_module('.' + subpkg, pkg)
-                else:
-                    module_object = importlib.import_module(module)
-            except Exception as except_msg:
-                print('    fail:', except_msg)
-                import_stats['fail'] += 1
-                continue
-            else:
-                import_stats['pass'] += 1
 
             # Add module to api.
             if self.settings['include_module_names']:
@@ -1709,7 +1774,7 @@ class Calltips():
                     continue
 
                 # Get the doc string.
-                doc = _get_doc(module, member_object)
+                doc = _get_doc(module, member, member_object)
 
                 # Get the callable tag.
                 tag = _get_callable_tag(member_object)
@@ -1723,15 +1788,30 @@ class Calltips():
 
                 _add_api([module + '.' + member, signatures, tag, doc])
 
-        print('imports:\n'
-              '  passed {pass}\n'
-              '  failed {fail}'.format_map(import_stats))
+        # Reduce common keywords False, None and True.
+        keywordclass1 -= keywordclass0
 
         # Sort the sequences into lists.
         self.api = sorted(api)
         self.keywordclasses = (sorted(keywordclass0),
                                sorted(keywordclass1),
                                sorted(keywordclass2))
+
+        # Display statistics.
+        print('import_stats:\n'
+              '  passed {pass}\n'
+              '  failed {fail}'.format_map(import_stats))
+
+        print('generate_stats:\n'
+              '  {:<13} {}\n'
+              '  {:<13} {}\n'
+              '  {:<13} {}\n'
+              '  {:<13} {}\n'
+              '  {:<13} {}'.format('modules', len(modules),
+                                   'api', len(api),
+                                   'keywordclass0', len(keywordclass0),
+                                   'keywordclass1', len(keywordclass1),
+                                   'keywordclass2', len(keywordclass2)))
 
         return self.api, self.keywordclasses
 
@@ -1879,8 +1959,18 @@ class Calltips():
         if keywordclasses is None:
             keywordclasses = self.keywordclasses
 
+        # Build a comment header to describe the generator details.
+        header = ('# Generator: gen_python_3_api.py\n'
+                  '# Platform : {}\n'
+                  '# Python   : {}.{}.{} {}').format(sys.platform,
+                                                     sys.version_info[0],
+                                                     sys.version_info[1],
+                                                     sys.version_info[2],
+                                                     sys.version_info[3])
         # Write keywords to a property file.
         with open(file, 'w', encoding='utf-8') as w:
+            w.write(header + '\n\n')
+
             for index, keywordclass in enumerate(keywordclasses):
                 w.write('keywordclass{}.python3=\\\n'.format(index))
 
@@ -1931,7 +2021,7 @@ class Calltips():
 
         for items in self.api:
             if len(items) == 1:
-                name, signatures, tag, doc = items[0], '', '', ''
+                name, signatures, tag, doc = items[0], [], '', ''
             else:
                 name, signatures, tag, doc = items
                 doc = doc.replace('\n', '[INSERT_NEWLINE]')
@@ -1955,27 +2045,26 @@ class Calltips():
                        if signatures else {'name': name})
 
             # Add parameters into xml section.
-            if signatures:
-                for signature in signatures:
-                    if not signature and not doc:
-                        continue
+            for signature in signatures:
+                if not signature and not doc:
+                    continue
 
-                    length = len(name)
+                length = len(name)
 
-                    tree.start('Overload', {'descr': doc, 'retVal': ''})
+                tree.start('Overload', {'descr': doc, 'retVal': ''})
 
-                    for index, parameter in enumerate(signature):
-                        length += len(parameter) + 2
+                for index, parameter in enumerate(signature):
+                    length += len(parameter) + 2
 
-                        if index and self.settings['escape_long_signatures']:
-                            if length >= self.settings['calltip_width']:
-                                parameter = '[INSERT_NEWLINE]' + indent + parameter
-                                length = 0
+                    if index and self.settings['escape_long_signatures']:
+                        if length >= self.settings['calltip_width']:
+                            parameter = '[INSERT_NEWLINE]' + indent + parameter
+                            length = 0
 
-                        tree.start('Param', {'name': parameter})
-                        tree.end('Param')
+                    tree.start('Param', {'name': parameter})
+                    tree.end('Param')
 
-                    tree.end('Overload')
+                tree.end('Overload')
 
             tree.end('KeyWord')
 
@@ -1988,7 +2077,7 @@ class Calltips():
         root_string = xml.etree.ElementTree.tostring(root).decode()
 
         xml_string = (xml.dom.minidom.parseString(root_string)
-                      .toprettyxml(indent="\t", encoding='utf-8').decode())
+                      .toprettyxml(indent='\t', encoding='utf-8').decode())
 
         xml_string = xml_string.replace('[INSERT_NEWLINE]', '&#x0a;')
 
