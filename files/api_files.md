@@ -124,7 +124,6 @@
     * [OpenGL 4.4 API](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/glext.api)
     * [Glut API](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/glut.api)
     * [SDL API](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/sdl.api)
-    * [Lua C API](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/c_lua_c.api)
 
 * C#
 
@@ -295,12 +294,13 @@
 * Lua  <!--  https://github.com/arjunae/myScite has a lua.properties with a few more keywords to highlight  -->
 
     * highlighting and folding is already enabled by default
-    * [Lua API](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/lua.api)
-    * [more Lua api files: C API and Lua functions](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/lua5.api.zip)
+    * [Lua standard library](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/lua.api)
     * [Api for SciTE extension scripts](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/lua_scite_extension.api)
+    * [Lua 5.1, 5.2, 5.3 C API and luajit](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/lua_c_api.zip)
+    * [Lua 5.0 C API and standard library](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/lua_5.0_api.zip)
     * [scite-for-lua](https://code.google.com/archive/p/scite-for-lua/), extensive support for Lua programming, including debugging and a lint-based highlighter
     * [lua-inspect](https://github.com/davidm/lua-inspect), plugin for SciTE that does Lua code analysis and adds features like rename-occurrences and autocomplete
-    * [Api for wxLua](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/wxlua.api)
+    * [Api for wxLua](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/lua_wx.api)
     * [Api for WoW lua](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/lua_wow.api)
 
 * Make / makefile
