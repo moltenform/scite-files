@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 '''gen_python_api.py generates a python.api file for SciTE
 
 The generated api file includes

@@ -6,6 +6,7 @@
 # before running this program, create a tags file with
 # 	ctags --excmd=number --c-types=pcdgstu <header files>
 
+
 import fileinput
 import string
 import time
@@ -21,7 +22,7 @@ removePrivate=1
 winMode = 1
 include="A"	# Set to "W" if you want the UniCode prototypes.
 
-class FileCache:
+class FileCache(object):
 	'''Caches the contents of a set of files.
 	Avoids reading files repeatedly from disk by holding onto the
 	contents of each file as a list of strings.
@@ -34,7 +35,7 @@ class FileCache:
 		'''Return the contents of a file as a list of strings.
 		New line characters are removed.
 		'''
-		if not self.filecache.has_key(filename):
+		if filename not in self.filecache:
 			contents=[]
 			f = open(filename)
 			for line in f.readlines():
@@ -129,5 +130,5 @@ for line in fileinput.input():
 					apis.add(entityName)
 			else:
 				apis.add(entityName)
-print "\n".join(sorted(list(apis)))
+print("\n".join(sorted(list(apis))))
 
