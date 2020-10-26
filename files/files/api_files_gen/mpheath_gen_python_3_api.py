@@ -3,8 +3,8 @@
 # Github : https://github.com/mpheath/generate-python-3-api
 # Home   : http://users.tpg.com.au/mpheath/gen_python_3_api
 # Licence: GPLv3
-# Python : 3.2 to 3.8 or later
-# Version: 1.4
+# Python : 3.2 to 3.9 or later
+# Version: 1.5
 
 r'''Make files for SciTE and Notepad++ for autocomplete and styling.
 
@@ -296,8 +296,8 @@ settings['space_before_parameter_api'] = 1
 settings['space_before_doc_xml'] = 0
 settings['space_before_parameter_xml'] = 1
 
-# Remove annotations from signatures. 0 or 1.
-# Return annotation is always removed as usually end of signature in SciTE is ).
+# Remove parameter annotations from signatures. 0 or 1.
+# Return annotations are always removed as end of signature in SciTE is ).
 settings['unannotate_signatures'] = 0
 
 
@@ -751,6 +751,9 @@ custom_signatures = {
     'keyword': {
         'iskeyword': [
             ['s']
+        ],
+        'issoftkeyword': [
+            ['s']
         ]
     },
     'locale': {
@@ -977,6 +980,9 @@ custom_signatures = {
         ]
     },
     'struct': {
+        'Struct': [
+            ['format']
+        ],
         'pack': [
             ['format', 'v1', 'v2', '...']
         ],
@@ -1137,6 +1143,11 @@ custom_signatures = {
     'xml.parsers.expat': {
         'ParserCreate': [
             ['encoding=None', 'namespace_separator=None']
+        ]
+    },
+    'zoneinfo': {
+        'ZoneInfo': [
+            ['key']
         ]
     }}
 
@@ -1657,31 +1668,34 @@ class Calltips():
                 else:
                     import_stats['pass'] += 1
 
-            # Get list of module names and module objects from copy of sys.modules.
-            sys_modules = sys.modules.copy()
+            # Get list of module names and module objects from sys.modules.
             modules = []
+            prefixes = tuple(self.settings['exclude_modules_startswith'])
 
-            for module in sys_modules:
+            for module in sorted(sys.modules):
+                if module in ('__main__', '__mp_main__'):
+                    continue
+
                 if module in self.settings['exclude_modules_fullname']:
                     continue
 
-                if module.startswith(tuple(self.settings['exclude_modules_startswith'])):
+                if module.startswith(prefixes):
                     continue
 
                 if self.settings['exclude_modules_startswith_underscore']:
-                    passed = True
+                    underscored = False
 
                     for item in module.split('.'):
                         if item.startswith('_'):
-                            passed = False
+                            underscored = True
                             break
 
-                    if not passed:
+                    if underscored:
                         continue
 
-                modules.append([module, sys_modules[module]])
+                modules.append([module, sys.modules[module]])
 
-            return sorted(modules), import_stats
+            return modules, import_stats
 
 
         if modules is None:
@@ -1967,11 +1981,21 @@ class Calltips():
                                                      sys.version_info[1],
                                                      sys.version_info[2],
                                                      sys.version_info[3])
+
+        # Build section names to comment each keywordclass.
+        sections = ('keywords', 'builtins', 'modules')
+
+        if len(sections) != len(keywordclasses):
+            sections = None
+
         # Write keywords to a property file.
         with open(file, 'w', encoding='utf-8') as w:
             w.write(header + '\n\n')
 
             for index, keywordclass in enumerate(keywordclasses):
+                if sections:
+                    w.write('# Python3 {}\n'.format(sections[index]))
+
                 w.write('keywordclass{}.python3=\\\n'.format(index))
 
                 line_length = 0
