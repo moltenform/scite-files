@@ -21,7 +21,7 @@
 | [locale.es_MX.properties](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/translations/locale.es_MX.properties) | Spanish es_mx (español) | Updated 1.72 |
 | [locale.et.properties](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/translations/locale.et.properties) | Estonian (eesti) | Updated 1.73 |
 | [locale.eu.properties](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/translations/locale.eu.properties) | Basque (euskara) | Updated 1.67 |
-| [locale.fi.properties](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/translations/locale.fi.properties) | 	Finnish (suomi) | Updated 1.67 |
+| [locale.fi.properties](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/translations/locale.fi.properties) | 	Finnish (suomi) | Complete |
 | [locale.fr.properties](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/translations/locale.fr.properties) | French (français) | Complete |
 | [locale.gl.properties](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/translations/locale.gl.properties) | Galician (galego) | Updated 1.62 |
 | [locale.hu.properties](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/translations/locale.hu.properties) | Hungarian (magyar) | Updated 1.63 |
