@@ -3,8 +3,8 @@
 # Github : https://github.com/mpheath/generate-python-3-api
 # Home   : http://users.tpg.com.au/mpheath/gen_python_3_api
 # License: GPLv3
-# Python : 3.2 to 3.11 or later
-# Version: 1.6
+# Python : 3.2 to 3.12 or later
+# Version: 1.7
 
 r'''Make files for SciTE and Notepad++ for autocomplete and styling.
 
@@ -186,7 +186,6 @@ settings['include_keywords'] = 1
 settings['include_modules_fullname'] = [
     'concurrent.futures',
     'ctypes.util', 'ctypes.wintypes',
-    'distutils.core',
     'email.contentmanager', 'email.headerregistry',
     'email.mime', 'email.mime.application',
     'email.mime.audio', 'email.mime.base',
@@ -216,6 +215,11 @@ settings['include_modules_fullname'] = [
     'xml.sax', 'xml.sax.handler',
     'xml.sax.saxutils', 'xml.sax.xmlreader',
     'xmlrpc.client', 'xmlrpc.server']
+
+if sys.version_info < (3, 12):
+
+    # Include deprecated distutils module.
+    settings['include_modules_fullname'].append('distutils.core')
 
 if sys.platform != 'win32':
 
