@@ -38,6 +38,7 @@
 | [locale.pt_PT.properties](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/translations/locale.pt_PT.properties) | Portuguese (português) | Complete |
 | [locale.ro.properties](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/translations/locale.ro.properties) | Romanian (Română) | Updated 2.21 |
 | [locale.ru.properties](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/translations/locale.ru.properties)<br>[See also, the scite-ru project](https://bitbucket.org/scite-ru/scite-ru.bitbucket.org/wiki/Home) | Russian (Русский) | Complete |
+| [locale.sk.properties](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/translations/locale.sk.properties) | Slovak (slovenčina) | Complete |
 | [locale.sl.properties](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/translations/locale.sl.properties) | Slovene (slovenski jezik) | Updated 1.62 |
 | [locale.sr.properties](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/translations/locale.sr.properties) | Serbian (српски језик) | Updated 2.21 |
 | [locale.sv.properties](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/translations/locale.sv.properties) | Swedish (svenska) | Complete |
