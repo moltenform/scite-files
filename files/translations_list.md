@@ -30,6 +30,7 @@
 | [locale.ja.properties](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/translations/locale.ja.properties)<br>[Suzumizaki Kimitaka's 2005 translation of SciTEDoc](https://moltenform.com/page/scite-files/SciTEDocJa/SciTEDoc.html), [SciTEFaq](https://moltenform.com/page/scite-files/SciTEDocJa/SciTEFAQ.html), [ScintillaDoc](https://moltenform.com/page/scite-files/SciTEDocJa/ScintillaDoc.html) | Japanese (日本語) | Complete |
 | [locale.kk.properties](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/translations/locale.kk.properties) | Kazakh (қазақ тілі) | Nearly complete, updated 3.3.5 |
 | [locale.ko_KR.properties](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/translations/locale.ko_KR.properties) | Korean (한국어) | Nearly complete, updated 3.3.5 |
+| [locale.ltg.properties](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/translations/locale.ltg.properties) | Latgalian (Latgaliešu valoda) | Complete |
 | [locale.ms.properties](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/translations/locale.ms.properties) | Malay (Bahasa Melayu) | Updated 1.73 |
 | [locale.nb.properties](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/translations/locale.nb.properties) | Norwegian Bokmål (Norsk bokmål) | Updated 1.62 |
 | [locale.nl.properties](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/translations/locale.nl.properties) | Dutch (Nederlands) | Updated 1.73 |
