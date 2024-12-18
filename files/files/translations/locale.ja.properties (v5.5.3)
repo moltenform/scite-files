@@ -1,0 +1,354 @@
+# locale.properties by Neil Hodgson neilh@scintilla.org
+# Placed in the public domain 2001
+
+# locale.properties は、ユーザー インターフェイスのローカライズされたテキストを定義します。
+# 一部の定義は、別の文字列と重複するためコメント アウトされています。
+# 各行の形式は、File=&Fichier のように、original=翻訳語(文) です。
+# 元のテキストに省略記号 "...# やユーザー インターフェイスのアクセス キー 
+# インジケーター "&# が含まれている場合でも、元のテキストのこのファイルには表示されません。
+# 翻訳されたテキストには元のアクセス キーが含まれていない可能性があるため、
+# 必要に応じて翻訳されたテキストにアクセス キー インジケーターが必要です。
+# 省略記号は必要に応じて自動的に追加されます。
+# 「/」文字はメニュー エントリで使用しないでください。
+# GTK+ では「/」がメニュー階層を指定するために使用され、余分なメニュー項目が生成されます。
+# 元のテキストはそれぞれ、ユーザー インターフェイスの異なる部分に表示される場合でも、
+# 1 つの翻訳しか持つことができません。
+
+# 追加のライセンス条件および著作権通知を希望する場合は、その旨を明記してください。
+# 追加の通知がない場合、寄稿された翻訳は SciTE と同じ条件で無料で利用可能になるものとみなされます。
+# このファイルに含まれる電子メール アドレスは、ファイルが公開された場合にスパムの標的となる可能性があります。
+
+# このファイルのエンコーディングを定義して、GTK+ 2 でファイルを UTF-8 として再エンコードできるようにします。
+# これは GTK+ 2 ユーザー インターフェイスのエンコーディングです。
+# 翻訳では BOM なしの UTF-8 を使用することをお勧めします。
+translation.encoding=UTF-8
+
+# 翻訳に関する特記事項
+# Translated based on Version 5.5.3
+TranslationCredit=翻訳 : colvitto (https://coolvitto.hateblo.jp)
+
+# メニュー
+
+# ファイル メニュー
+File=ファイル(&F)
+New=新規作成(&N)
+Open=開く(&O)
+Open Selected Filename=選択したファイル名を開く(&F)
+Revert=再読込み(&R)
+Close=閉じる(&C)
+Save=保存(&S)
+Save As=名前を付けて保存(&A)
+Save a Copy=コピーを保存(&Y)
+Copy Path=パスのコピー(&H)
+
+# エンコーディング
+Encoding=エンコーディング(&G)
+Code Page Property=設定ファイル指定のコードページ(&C)
+UTF-16 Big Endian=UTF-16 ビッグエンディアン(&B)
+UTF-16 Little Endian=UTF-16 リトルエンディアン(&L)
+UTF-8 with BOM=UTF-8 BOM付き(&W)
+UTF-8=UTF-8(&U)
+
+# エクスポート
+Export=エクスポート(&E)
+As HTML=HTMLとして(&H)
+As RTF=RTFとして(&R)
+As PDF=PDFとして(&P)
+As LaTeX=LaTeXとして(&L)
+As XML=XMLとして(&X)
+
+Page Setup=印刷設定(&U)
+Print=印刷(&P)
+
+Load Session=セッションの読込(&L)
+Save Session=セッションを保存(&V)
+
+Exit=終了(&X)
+
+# 編集 メニュー
+Edit=編集(&E)
+Undo=取り消し(&U)
+Redo=やり直し(&R)
+
+Cut=切り取り(&T)
+Copy=コピー(&C)
+Paste=貼り付け(&P)
+Duplicate=複製(&E)
+Delete=削除(&D)
+Select All=すべて選択(&A)
+Copy as RTF=RTF としてコピー(&F)
+
+Match Brace=対応する括弧に移動(&B)
+Select to Brace=対応する括弧まで選択(&O)
+Show Calltip=コールチップの表示(&H)
+Complete Symbol=シンボルの補完(&Y)
+Complete Word=単語の補完(&W)
+Expand Abbreviation=略語を展開(&V)
+Insert Abbreviation=略語の挿入(&I)
+Block Comment or Uncomment=ブロック コメントの設定/解除(&M)
+Box Comment=ボックス コメント(&X)
+Stream Comment=ストリーム コメント(&N)
+Make Selection Uppercase=選択範囲を大文字に変換(&S)
+Make Selection Lowercase=選択範囲を小文字に変換(&L)
+Reverse Selected Lines=選択行を逆順で並べ替え
+
+# 段落
+Paragraph=段落(&G)
+Join=結合(&J)
+Split=分割(&S)
+
+# 検索 メニュー
+Search=検索(&S)
+Find=検索(&F)
+Find Next=次を検索(&N)
+Find Previous=前を検索(&S)
+Find in Files=ファイル内検索(&I)
+Replace=置き換え(&R)
+Incremental Search=逐次検索(&S)
+Filter=フィルター(&L)
+Selection Add Next=次の一致を選択範囲に追加(&A)
+Selection Add Each=すべての一致を選択範囲に追加(&E)
+
+Go to=移動(&G)
+Next Bookmark=次のブックマーク(&M)
+Previous Bookmark=前のブックマーク(&V)
+Toggle Bookmark=ブックマークの設定/解除(&T)
+Clear All Bookmarks=すべてのブックマークを消去(&C)
+Select All Bookmarks=すべてのブックマークを選択(&B)
+
+# 表示 メニュー
+View=表示(&V)
+Toggle current fold=現在のノードを折り畳み/展開(&T)
+Toggle all folds=すべてのノードを折り畳み/展開(&A)
+
+Full Screen=全画面表示(&N)
+Tool Bar=ツールバー(&T)
+Tab Bar=タブバー(&B)
+Status Bar=ステータスバー(&S)
+
+Whitespace=空白文字(&W)
+End of Line=行末文字(&E)
+Indentation Guides=インデントガイド(&I)
+Line Numbers=行番号(&L)
+Margin=余白(&M)
+Fold Margin=折り畳みマークの表示(&F)
+Output=出力パネル(&O)
+Parameters=引数パネル(&P)
+
+# ツール メニュー
+Tools=ツール(&T)
+Compile=コンパイル(&C)
+Build=ビルド(&B)
+Clean=消去(&C)
+Go=実行(&G)
+Stop Executing=実行の停止(&S)
+
+Next Message=次のメッセージ(&N)
+Previous Message=前のメッセージ(&P)
+Clear Output=出力画面のクリア(&O)
+Switch Pane=パネルのフォーカス切り替え(&S)
+
+# オプション メニュー
+Options=オプション(&O)
+Always On Top=常に手前に表示(&A)
+Open Files Here=ここにファイルを開く(&H)
+Vertical Split=表示パネルの分割方向切り替え(&S)
+Wrap=折り返し(&W)
+Wrap Output=出力パネルの折り返し(&P)
+Read-Only=読み取り専用(&R)
+
+Line End Characters=行末文字(&L)
+CR + LF=CR + LF(&+) (Windows)
+CR=CR(&C) (Mac)
+LF=LF(&L) (Unix)
+
+Convert Line End Characters=行末文字の変換(&C)
+Change Indentation Settings=インデントの設定変更(&T)
+Use Monospaced Font=等幅フォントを使用(&M)
+
+Open Local Options File=ローカル設定ファイルを開く(&O)
+Open Directory Options File=ディレクトリ設定ファイルを開く(&D)
+Open User Options File=ユーザー設定ファイルを開く(&U)
+Open Global Options File=共通設定ファイルを開く(&G)
+Open Abbreviations File=略語定義ファイルを開く(&B)
+Open Lua Startup Script=Lua の初期設定スクリプトを開く(&I)
+
+# 言語 メニュー
+Language=プログラム言語
+
+# バッファ メニュー
+Buffers=バッファ(&B)
+Previous=前のタブ(&P)
+Next=次のタブ(&N)
+Close All=すべて閉じる(&C)
+Save All=すべて保存(&S)
+
+# ヘルプ メニュー
+Help=ヘルプ(&H)
+SciTE Help=SciTE ヘルプ(&S)
+About SciTE=SciTE について(&A)
+
+# ダイアログ
+
+# 全般ダイアログ
+OK=OK
+Cancel=キャンセル
+Yes=はい
+No=いいえ
+
+# About ダイアログ
+# About SciTE=SciTE について
+Contributors:=貢献者 :
+
+# 開く、保存 ダイアログ
+Open File=ファイルを開く
+Save File=ファイルを保存
+Save File As=名前を付けて保存
+Export File As HTML=HTML としてエクスポート
+Export File As RTF=RTF としてエクスポート
+Save Current Session=現在のセッションを保存
+Custom Filter=カスタム フィルター
+
+# GOLINE (移動) ダイアログ
+Go To=移動
+Destination Line:=移動先の行番号(&D)
+Column:=列(&C) :
+Current line:=現在の行 :
+Last line:=最終行番号 :
+Go To=移動(&G)
+
+# GREP (ファイル内検索) ダイアログ
+# Find in Files=ファイル内検索
+Find what:=検索文字列(&N) :
+Files:=対象ファイル(&I) :
+Directory:=ディレクトリ(&D) :
+Match whole word only=完全一致のみ(&W)
+Case sensitive=大文字/小文字を区別する(&V)
+Find=検索(&F)
+Browse...=参照(&B)...
+Search for:=検索文字列 :
+Select a folder to search from=検索対象フォルダー
+
+# INSABBREV (略語の挿入) ダイアログ
+# Insert Abbreviation=略語の挿入
+Abbreviation:=略語(&A) :
+Insert=挿入(&I)
+
+# Parameters (引数) ダイアログ
+Execute=実行(&E)
+Set=設定(&S)
+
+# TABSIZE (インデントの設定) ダイアログ
+Indentation Settings=インデントの設定
+Tab Size:=タブのサイズ(&T) :
+Indent Size:=インデントのサイズ(&I) :
+Use tabs:=タブを使用(&U) :
+Convert=変換(&C)
+
+# 検索 ダイアログ
+# Find=検索
+Regular expression=正規表現(&E)
+Wrap around=折り返し検索(&O)
+Transform backslash expressions=バックスラッシュを変換する(&B)
+Search only in this style:=このスタイルのみを検索(&T) :
+Direction=検索方向
+Up=上へ(&U)
+Down=下へ(&D)
+Find:=検索文字 :
+Mark All=すべてマーク(&M)
+
+# 置き換え ダイアログ
+Replace with:=置換文字列(&P) :
+Replace:=置換文字 :
+Replace=置き換え(&R)
+Replace All=すべて置き換え(&A)
+Replace in Selection=選択範囲を置換(&S)
+In Selection=選択範囲を置換(&S)
+Replace in Buffers=バッファを置換(&U)
+Replacements:=置換数 :
+
+# オプション全般のプロパティ
+Text=テキスト
+All Source=すべてのソース
+All Files (*.*)=すべてのファイル (*.*)
+
+# その他の UI 文字列
+Untitled=無題
+
+8 Bit=
+Browse=参照
+Check if already open=すでに開いているかチェック
+Context=コンテキスト
+Drop Selection=選択範囲のドロップ
+Edit Properties=設定ファイルの編集
+Export File As LaTeX=LaTeXとしてエクスポート
+Export File As PDF=PDFとしてエクスポート
+Export File As TeX=TeXとしてエクスポート
+Export File As XML=XMLとしてエクスポート
+Filter:=フィルター :
+Hidden Files (.*)=隠しファイル (.*)
+Hide=隠す
+READ=読取
+Show hidden files=隠しファイルを表示
+List Macros=マクロ一覧
+Record Macro=マクロの記録
+Run Current Macro=現在のマクロを実行
+Stop Recording Macro=マクロの記録を停止
+Opening '^0'=読込中 '^0'
+Opening ^0 files =読込中 ^0 ファイル 
+Saving '^0'=保存中 '^0'
+Saving ^0 files =保存中 ^0 ファイル 
+UTF-8 Cookie=UTF-8 BOMなし(&C)
+Use tabs=タブを使用
+Version=バージョン
+by=
+in=
+of=
+
+# メッセージ
+# メッセージには、^0 で示されるファイル名や検索文字列などの変数が含まれる場合があります。
+# これらは表示前に値に置き換えられます。^1、^2、... は将来使用される可能性があります。
+Bad file.=不正なファイルです。
+Block comment variable '^0' is not defined in SciTE *.properties!=ブロックコメント変数 '^0' は SciTE *.properties で定義されていません!
+Box comment variables '^0', '^1' and '^2' are not defined in SciTE *.properties!=ボックス コメント変数 '^0'、'^1'、および '^2' は SciTE *.properties で定義されていません!
+Can not find the string '^0'.=文字列 '^0' が見つかりません。
+Can not start printer document.=印刷を開始できません。
+Could not open file '^0'.=ファイル '^0' を開けません。
+Could not save file '^0'. Save under a different name?=ファイル '^0' を保存できません。別の名前で保存しますか?
+Could not save file '^0'.=ファイル '^0' を保存できません。
+Failed to create dialog box: ^0.=ダイアログ ボックスの作成に失敗しました : ^0
+File '^0' is ^1 bytes long, larger than 2GB which is the largest SciTE can open.=ファイル '^0' のサイズは ^1 バイトで、SciTE が開くことができる最大サイズである 2GB を超えています。
+File '^0' is ^1 bytes long,\nlarger than the ^2 bytes limit set in the properties.\nDo you still want to open it?=ファイル '^0' のサイズは ^1 バイトで、\nプロパティで設定された ^2 バイトの制限を超えています。\nそれでも開きますか?
+File '^0' is already open in another buffer.=ファイル '^0' は別のバッファで既に開かれています。
+Find string must not be empty for 'Replace All' command.=「すべて置換」の場合、検索文字列は空にできません。
+Find string must not be empty for 'Replace in Buffers' command.=「バッファーを置換」の場合、検索文字列は空にできません。
+Find string must not be empty for 'Replace in Selection' command.=「選択範囲を置換」の場合、検索文字列は空にできません。
+Invalid directory '^0'.='^0' は不正なディレクトリです。
+Job is currently executing. Wait until it finishes.=ジョブは現在実行中です。終了するまでお待ちください。
+No replacements because string '^0' was not present.=文字列 '^0' が存在しないため、置換は行われません。
+Path '^0' is a directory so can not be opened.=パス '^0' はディレクトリなので開くことができません。
+Save changes to '^0'?='^0' への変更を保存しますか?
+Save changes to (Untitled)?=(無題) への変更を保存しますか?
+Selection must not be empty for 'Replace in Selection' command.=「選択範囲を置換」は選択範囲が空であってはなりません。
+Stream comment variables '^0' and '^1' are not defined in SciTE *.properties!=ストリーム コメント変数 '^0' および '^1' は SciTE *.properties で定義されていません!
+The file '^0' has been deleted.=ファイル '^0' は削除されました。
+The file '^0' has been modified outside SciTE. Should it be reloaded?=ファイル '^0' は SciTE の外部で変更されています。再読み込みしますか?
+The file '^0' has been modified outside SciTE. Should it be saved?=ファイル '^0' は SciTE の外部で変更されています。保存しますか?
+The file '^0' has been modified. Should it be reloaded?=ファイル '^0' が変更されました。再読み込みしますか?
+The file '^0' has not yet been loaded entirely, so it can not be saved right now. Please retry in a while.=ファイル '^0' はまだ完全に読み込まれていないため、今すぐ保存することはできません。しばらくしてから再試行してください。
+URI '^0' not understood.=URI '^0' はサポートされていません。
+
+# macOS
+Allow Access=アクセスを許可
+Enter Full Screen=フルスクリーン
+Hide Others=ほかを非表示
+Hide SciTE=SciTEを非表示
+No guesses for '^0'='^0' の推測候補なし
+Open Abbreviations Options File=略語設定ファイルを開く(&B)
+Open Recent=最近開いたファイル
+Quit SciTE=SciTEを終了
+Revert to Saved=保存した内容に戻す
+Show All=すべて表示
+Spelling=スペル
+Toolbar=ツールバー
+Use Selection for Find=選択範囲を検索に使用
