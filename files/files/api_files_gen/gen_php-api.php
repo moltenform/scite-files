@@ -118,7 +118,7 @@ foreach ($dirs as $dir) {
 				$decl = "(" . implode(", ", $params) . ")" . ($synopsis->type ? ": " . type($synopsis->type) : "");
 				method($synopsis->methodname, $decl, $description, isStatic($synopsis));
 			}
-		} elseif ($xml->refnamediv) {
+		} elseif ($xml->refnamediv && preg_match('~Alias ~', text($purpose))) {
 			method($xml->refnamediv->refname, "()", preg_replace('~Alias ~', 'Alias of ', text($purpose)));
 		} elseif ($xml["id"] && preg_match('~^class\.~', $xml["id"])) {
 			$section = $xml->partintro->section;

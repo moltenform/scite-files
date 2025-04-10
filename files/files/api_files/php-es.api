@@ -249,20 +249,6 @@ SensitiveParameterValue(mixed $value)	(new) Constructs a new SensitiveParameterV
 >getTraceAsString(): string	(Throwable) Obtener la traza de la pila como un string
 >__toString(): string	(Throwable) Obtiene un representación de string del objeto lanzado
 UnitEnum::cases(): array	Generates a list of cases on an enum
-$argc()	The number of arguments passed to script
-$argv()	Array of arguments passed to script
-$_COOKIE()	HTTP Cookies
-$_ENV()	Environment variables
-$_FILES()	HTTP File Upload variables
-$_GET()	HTTP GET variables
-$GLOBALS()	References all variables available in global scope
-$http_response_header()	HTTP response headers
-$php_errormsg()	The previous error message
-$_POST()	HTTP POST variables
-$_REQUEST()	HTTP Request variables
-$_SERVER()	Server and execution environment information
-$_SESSION()	Session variables
-Superglobals()	Built-in variables that are always available in all scopes
 >count(): int	(WeakMap) Counts the number of live entries in the map
 >getIterator(): Iterator	(WeakMap) Retrieve an external iterator
 >offsetExists(object $object): bool	(WeakMap) Checks whether a certain object is in the map
@@ -594,7 +580,6 @@ chmod(string $filename, int $permissions): bool	Cambia el modo de un fichero
 chown(string $filename, string|int $user): bool	Cambia el propietario del fichero
 clearstatcache(bool $clear_realpath_cache = false, string $filename = ""): void	Limpia la caché de estado de un archivo
 copy(string $from, string $to, resource|null $context = null): bool	Copia un fichero
-delete()	See unlink or unset
 dirname(string $path, int $levels = 1): string	Devuelve la ruta de un directorio padre
 disk_free_space(string $directory): float|false	Devuelve el espacio disponible de un sistema de archivos o partición de disco
 disk_total_space(string $directory): float|false	Devuelve el tamaño total de un sistema de archivos o partición de disco
@@ -1742,7 +1727,6 @@ stream_wrapper_unregister(string $protocol): bool	Deja de registrar una envoltur
 >onClose(): void	(php_user_filter) Llamado cuando se cierra el filtro
 >onCreate(): bool	(php_user_filter) Llamado cuando se crea el filtro
 streamWrapper()	(new) Construye una nueva envoltura de flujo
->__destruct()	(streamWrapper) Destructs an existing stream wrapper
 >dir_closedir(): bool	(streamWrapper) Cerrar un gestor de directorio
 >dir_opendir(string $path, int $options): bool	(streamWrapper) Abrir un gestor de directorio
 >dir_readdir(): string	(streamWrapper) Lee un archivo en un directorio
@@ -2947,7 +2931,6 @@ Phar::createDefaultStub(string|null $index = null, string|null $webIndex = null)
 >decompressFiles(): true	(Phar) Descomprimir todos los ficheros del archivo Phar actual
 >delMetadata(): true	(Phar) Eliminar la metainformación global del phar
 >delete(string $localName): true	(Phar) Borrar un fichero dentro de un archivo phar
->__destruct()	(Phar) Destructs a Phar archive object
 >extractTo(string $directory, array|string|null $files = null, bool $overwrite = false): bool	(Phar) Extraer el contenido de un archivo phar a un directorio
 >getAlias(): string|null	(Phar) Get the alias for Phar
 >getMetadata(array $unserializeOptions = []): mixed	(Phar) Devolver la metainformación de un archivo phar
@@ -2998,7 +2981,6 @@ PharData(string $filename, int $flags = FilesystemIterator::SKIP_DOTS | Filesyst
 >decompressFiles(): true	(PharData) Descomprimir todos los ficheros del archivo zip actual
 >delMetadata(): true	(PharData) Eliminar la metainformación global de un archivo zip
 >delete(string $localName): true	(PharData) Borrar un fichero dentro de un archivo tar/zip
->__destruct()	(PharData) Destructs a non-executable tar or zip archive object
 >extractTo(string $directory, array|string|null $files = null, bool $overwrite = false): bool	(PharData) Extraer el contenido de un archivo tar/zip a un directorio
 >isWritable(): bool	(PharData) Devolver si el archivo tar/zip se puede modificar
 >offsetSet(string $localName, resource|string $value): void	(PharData) Establecer el contenido de un fichero dentro de un tar/zip a aquel de un fichero o cadena externos
@@ -3013,7 +2995,6 @@ PharData(string $filename, int $flags = FilesystemIterator::SKIP_DOTS | Filesyst
 PharFileInfo(string $filename)	(new) Construir un objeto de entrada Phar
 >decompress(): true	(PharFileInfo) Descomprimir la entrada Phar actual dentro del phar
 >delMetadata(): true	(PharFileInfo) Eliminar la metainformación de una entrada
->__destruct()	(PharFileInfo) Destructs a Phar entry object
 >getCRC32(): int	(PharFileInfo) Devolver el códido CRC32 o lanzar una exepción si la CRC no ha sido verificado
 >getCompressedSize(): int	(PharFileInfo) Devolver el tamaño real de un fichero (con compresión) dentro de un archivo Phar
 >getContent(): string	(PharFileInfo) Get the complete file contents of the entry

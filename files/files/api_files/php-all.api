@@ -1086,7 +1086,6 @@ Dom\XPath()	(new) This is the modern, spec-compliant equivalent of DOMXPath
 Ds\Deque(mixed $values = ?)	(new) Creates a new instance
 >contains(mixed ...$values): bool	(Ds\Deque) Determines if the deque contains given values
 >copy(): Ds\Deque	(Ds\Deque) Returns a shallow copy of the deque
->count()	(Ds\Deque) Returns the number of values in the collection
 >filter(callable $callback = ?): Ds\Deque	(Ds\Deque) Creates a new deque using a callable to determine which values to include
 >find(mixed $value): mixed	(Ds\Deque) Attempts to find a value's index
 >first(): mixed	(Ds\Deque) Returns the first value in the deque
@@ -1094,7 +1093,6 @@ Ds\Deque(mixed $values = ?)	(new) Creates a new instance
 >insert(int $index, mixed ...$values): void	(Ds\Deque) Inserts values at a given index
 >isEmpty(): bool	(Ds\Deque) Returns whether the deque is empty
 >join(string $glue = ?): string	(Ds\Deque) Joins all values together as a string
->jsonSerialize()	(Ds\Deque) Returns a representation that can be converted to JSON
 >last(): mixed	(Ds\Deque) Returns the last value
 >map(callable $callback): Ds\Deque	(Ds\Deque) Returns the result of applying a callback to each value
 >merge(mixed $values): Ds\Deque	(Ds\Deque) Returns the result of adding all given values to the deque
@@ -1121,7 +1119,6 @@ Ds\Deque(mixed $values = ?)	(new) Creates a new instance
 >clear(): void	(Ds\Map) Removes all values
 Ds\Map(mixed ...$values)	(new) Creates a new instance
 >copy(): Ds\Map	(Ds\Map) Returns a shallow copy of the map
->count()	(Ds\Map) Returns the number of values in the map
 >diff(Ds\Map $map): Ds\Map	(Ds\Map) Creates a new map using keys that aren't in another map
 >filter(callable $callback = ?): Ds\Map	(Ds\Map) Creates a new map using a callable to determine which pairs to include
 >first(): Ds\Pair	(Ds\Map) Returns the first pair in the map
@@ -1130,7 +1127,6 @@ Ds\Map(mixed ...$values)	(new) Creates a new instance
 >hasValue(mixed $value): bool	(Ds\Map) Determines whether the map contains a given value
 >intersect(Ds\Map $map): Ds\Map	(Ds\Map) Creates a new map by intersecting keys with another map
 >isEmpty(): bool	(Ds\Map) Returns whether the map is empty
->jsonSerialize()	(Ds\Map) Returns a representation that can be converted to JSON
 >keys(): Ds\Set	(Ds\Map) Returns a set of the map's keys
 >ksort(callable $comparator = ?): void	(Ds\Map) Sorts the map in-place by key
 >ksorted(callable $comparator = ?): Ds\Map	(Ds\Map) Returns a copy, sorted by key
@@ -1157,16 +1153,13 @@ Ds\Map(mixed ...$values)	(new) Creates a new instance
 Ds\Pair(mixed $key = ?, mixed $value = ?)	(new) Creates a new instance
 >copy(): Ds\Pair	(Ds\Pair) Returns a shallow copy of the pair
 >isEmpty(): bool	(Ds\Pair) Returns whether the pair is empty
->jsonSerialize()	(Ds\Pair) Returns a representation that can be converted to JSON
 >toArray(): array	(Ds\Pair) Converts the pair to an array
 >allocate(int $capacity): void	(Ds\PriorityQueue) Allocates enough memory for a required capacity
 >capacity(): int	(Ds\PriorityQueue) Returns the current capacity
 >clear(): void	(Ds\PriorityQueue) Removes all values
 Ds\PriorityQueue()	(new) Creates a new instance
 >copy(): Ds\PriorityQueue	(Ds\PriorityQueue) Returns a shallow copy of the queue
->count()	(Ds\PriorityQueue) Returns the number of values in the queue
 >isEmpty(): bool	(Ds\PriorityQueue) Returns whether the queue is empty
->jsonSerialize()	(Ds\PriorityQueue) Returns a representation that can be converted to JSON
 >peek(): mixed	(Ds\PriorityQueue) Returns the value at the front of the queue
 >pop(): mixed	(Ds\PriorityQueue) Removes and returns the value with the highest priority
 >push(mixed $value, int $priority): void	(Ds\PriorityQueue) Pushes values into the queue
@@ -1176,9 +1169,7 @@ Ds\PriorityQueue()	(new) Creates a new instance
 >clear(): void	(Ds\Queue) Removes all values
 Ds\Queue(mixed $values = ?)	(new) Creates a new instance
 >copy(): Ds\Queue	(Ds\Queue) Returns a shallow copy of the queue
->count()	(Ds\Queue) Returns the number of values in the queue
 >isEmpty(): bool	(Ds\Queue) Returns whether the queue is empty
->jsonSerialize()	(Ds\Queue) Returns a representation that can be converted to JSON
 >peek(): mixed	(Ds\Queue) Returns the value at the front of the queue
 >pop(): mixed	(Ds\Queue) Removes and returns the value at the front of the queue
 >push(mixed ...$values): void	(Ds\Queue) Pushes values into the queue
@@ -1217,7 +1208,6 @@ Ds\Queue(mixed $values = ?)	(new) Creates a new instance
 Ds\Set(mixed $values = [])	(new) Creates a new instance
 >contains(mixed ...$values): bool	(Ds\Set) Determines if the set contains all values
 >copy(): Ds\Set	(Ds\Set) Returns a shallow copy of the set
->count()	(Ds\Set) Returns the number of values in the set
 >diff(Ds\Set $set): Ds\Set	(Ds\Set) Creates a new set using values that aren't in another set
 >filter(callable $callback = ?): Ds\Set	(Ds\Set) Creates a new set using a callable to determine which values to include
 >first(): mixed	(Ds\Set) Returns the first value in the set
@@ -1225,7 +1215,6 @@ Ds\Set(mixed $values = [])	(new) Creates a new instance
 >intersect(Ds\Set $set): Ds\Set	(Ds\Set) Creates a new set by intersecting values with another set
 >isEmpty(): bool	(Ds\Set) Returns whether the set is empty
 >join(string $glue = ?): string	(Ds\Set) Joins all values together as a string
->jsonSerialize()	(Ds\Set) Returns a representation that can be converted to JSON
 >last(): mixed	(Ds\Set) Returns the last value in the set
 >map(callable $callback): Ds\Set	(Ds\Set) Returns the result of applying a callback to each value
 >merge(mixed $values): Ds\Set	(Ds\Set) Returns the result of adding all given values to the set
@@ -1245,9 +1234,7 @@ Ds\Set(mixed $values = [])	(new) Creates a new instance
 >clear(): void	(Ds\Stack) Removes all values
 Ds\Stack(mixed $values = ?)	(new) Creates a new instance
 >copy(): Ds\Stack	(Ds\Stack) Returns a shallow copy of the stack
->count()	(Ds\Stack) Returns the number of values in the stack
 >isEmpty(): bool	(Ds\Stack) Returns whether the stack is empty
->jsonSerialize()	(Ds\Stack) Returns a representation that can be converted to JSON
 >peek(): mixed	(Ds\Stack) Returns the value at the top of the stack
 >pop(): mixed	(Ds\Stack) Removes and returns the value at the top of the stack
 >push(mixed ...$values): void	(Ds\Stack) Pushes values onto the stack
@@ -1259,7 +1246,6 @@ Ds\Stack(mixed $values = ?)	(new) Creates a new instance
 Ds\Vector(mixed $values = ?)	(new) Creates a new instance
 >contains(mixed ...$values): bool	(Ds\Vector) Determines if the vector contains given values
 >copy(): Ds\Vector	(Ds\Vector) Returns a shallow copy of the vector
->count()	(Ds\Vector) Returns the number of values in the collection
 >filter(callable $callback = ?): Ds\Vector	(Ds\Vector) Creates a new vector using a callable to determine which values to include
 >find(mixed $value): mixed	(Ds\Vector) Attempts to find a value's index
 >first(): mixed	(Ds\Vector) Returns the first value in the vector
@@ -1267,7 +1253,6 @@ Ds\Vector(mixed $values = ?)	(new) Creates a new instance
 >insert(int $index, mixed ...$values): void	(Ds\Vector) Inserts values at a given index
 >isEmpty(): bool	(Ds\Vector) Returns whether the vector is empty
 >join(string $glue = ?): string	(Ds\Vector) Joins all values together as a string
->jsonSerialize()	(Ds\Vector) Returns a representation that can be converted to JSON
 >last(): mixed	(Ds\Vector) Returns the last value
 >map(callable $callback): Ds\Vector	(Ds\Vector) Returns the result of applying a callback to each value
 >merge(mixed $values): Ds\Vector	(Ds\Vector) Returns the result of adding all given values to the vector
@@ -1880,7 +1865,6 @@ chmod(string $filename, int $permissions): bool	Changes file mode
 chown(string $filename, string|int $user): bool	Changes file owner
 clearstatcache(bool $clear_realpath_cache = false, string $filename = ""): void	Clears file status cache
 copy(string $from, string $to, resource|null $context = null): bool	Copies file
-delete()	See unlink or unset
 dirname(string $path, int $levels = 1): string	Returns a parent directory's path
 disk_free_space(string $directory): float|false	Returns available space on filesystem or disk partition
 disk_total_space(string $directory): float|false	Returns the total size of a filesystem or disk partition
@@ -5343,7 +5327,6 @@ ocidefinebyname()	Alias of oci_define_by_name
 ocierror()	Alias of oci_error
 ociexecute()	Alias of oci_execute
 ocifetch()	Alias of oci_fetch
-ocifetchinto()	Obsolete variant of oci_fetch_array, oci_fetch_object, oci_fetch_assoc and oci_fetch_row
 ocifetchstatement()	Alias of oci_fetch_all
 ocifreecollection()	Alias of OCICollection::free
 ocifreecursor()	Alias of oci_free_statement
@@ -5844,7 +5827,6 @@ Phar::createDefaultStub(string|null $index = null, string|null $webIndex = null)
 >decompressFiles(): true	(Phar) Decompresses all files in the current Phar archive
 >delMetadata(): true	(Phar) Deletes the global metadata of the phar
 >delete(string $localName): true	(Phar) Delete a file within a phar archive
->__destruct()	(Phar) Destructs a Phar archive object
 >extractTo(string $directory, array|string|null $files = null, bool $overwrite = false): bool	(Phar) Extract the contents of a phar archive to a directory
 >getAlias(): string|null	(Phar) Get the alias for Phar
 >getMetadata(array $unserializeOptions = []): mixed	(Phar) Returns phar archive meta-data
@@ -5895,7 +5877,6 @@ PharData(string $filename, int $flags = FilesystemIterator::SKIP_DOTS | Filesyst
 >decompressFiles(): true	(PharData) Decompresses all files in the current zip archive
 >delMetadata(): true	(PharData) Deletes the global metadata of a zip archive
 >delete(string $localName): true	(PharData) Delete a file within a tar/zip archive
->__destruct()	(PharData) Destructs a non-executable tar or zip archive object
 >extractTo(string $directory, array|string|null $files = null, bool $overwrite = false): bool	(PharData) Extract the contents of a tar/zip archive to a directory
 >isWritable(): bool	(PharData) Returns true if the tar/zip archive can be modified
 >offsetSet(string $localName, resource|string $value): void	(PharData) Set the contents of a file within the tar/zip to those of an external file or string
@@ -5910,7 +5891,6 @@ PharData(string $filename, int $flags = FilesystemIterator::SKIP_DOTS | Filesyst
 PharFileInfo(string $filename)	(new) Construct a Phar entry object
 >decompress(): true	(PharFileInfo) Decompresses the current Phar entry within the phar
 >delMetadata(): true	(PharFileInfo) Deletes the metadata of the entry
->__destruct()	(PharFileInfo) Destructs a Phar entry object
 >getCRC32(): int	(PharFileInfo) Returns CRC32 code or throws an exception if CRC has not been verified
 >getCompressedSize(): int	(PharFileInfo) Returns the actual size of the file (with compression) inside the Phar archive
 >getContent(): string	(PharFileInfo) Get the complete file contents of the entry
@@ -7031,7 +7011,6 @@ SolrClient(array $clientOptions)	(new) Constructor for the SolrClient object
 >deleteByIds(array $ids): SolrUpdateResponse	(SolrClient) Deletes by Ids
 >deleteByQueries(array $queries): SolrUpdateResponse	(SolrClient) Removes all documents matching any of the queries
 >deleteByQuery(string $query): SolrUpdateResponse	(SolrClient) Deletes all documents matching the given query
->__destruct()	(SolrClient) Destructor for SolrClient
 >getById(string $id): SolrQueryResponse	(SolrClient) Get Document By Id. Utilizes Solr Realtime Get (RTG)
 >getByIds(array $ids): SolrQueryResponse	(SolrClient) Get Documents by their Ids. Utilizes Solr Realtime Get (RTG)
 >getDebug(): string	(SolrClient) Returns the debug data for the last connection attempt
@@ -7094,7 +7073,6 @@ SolrDisMaxQuery(string $q = ?)	(new) Class Constructor
 SolrDocument()	(new) Constructor
 >current(): SolrDocumentField	(SolrDocument) Retrieves the current field
 >deleteField(string $fieldName): bool	(SolrDocument) Removes a field from the document
->__destruct()	(SolrDocument) Destructor
 >fieldExists(string $fieldName): bool	(SolrDocument) Checks if a field exists in the document
 >__get(string $fieldName): SolrDocumentField	(SolrDocument) Access the field as a property
 >getChildDocuments(): array	(SolrDocument) Returns an array of child documents (SolrDocument)
@@ -7122,10 +7100,8 @@ SolrDocument()	(new) Constructor
 >__unset(string $fieldName): bool	(SolrDocument) Removes a field from the document
 >valid(): bool	(SolrDocument) Checks if the current position internally is still valid
 SolrDocumentField()	(new) Constructor
->__destruct()	(SolrDocumentField) Destructor
 >getInternalInfo(): array	(SolrException) Returns internal information where the Exception was thrown
 SolrGenericResponse()	(new) Constructor
->__destruct()	(SolrGenericResponse) Destructor
 >getInternalInfo(): array	(SolrIllegalArgumentException) Returns internal information where the Exception was thrown
 >getInternalInfo(): array	(SolrIllegalOperationException) Returns internal information where the Exception was thrown
 >addChildDocument(SolrInputDocument $child): void	(SolrInputDocument) Adds a child document for block indexing
@@ -7135,7 +7111,6 @@ SolrGenericResponse()	(new) Constructor
 >__clone(): void	(SolrInputDocument) Creates a copy of a SolrDocument
 SolrInputDocument()	(new) Constructor
 >deleteField(string $fieldName): bool	(SolrInputDocument) Removes a field from the document
->__destruct()	(SolrInputDocument) Destructor
 >fieldExists(string $fieldName): bool	(SolrInputDocument) Checks if a field exists
 >getBoost(): float	(SolrInputDocument) Retrieves the current boost value for the document
 >getChildDocuments(): array	(SolrInputDocument) Returns an array of child documents (SolrInputDocument)
@@ -7152,9 +7127,7 @@ SolrInputDocument()	(new) Constructor
 >sort(int $sortOrderBy, int $sortDirection = SolrInputDocument::SORT_ASC): bool	(SolrInputDocument) Sorts the fields within the document
 >toArray(): array	(SolrInputDocument) Returns an array representation of the input document
 SolrModifiableParams()	(new) Constructor
->__destruct()	(SolrModifiableParams) Destructor
 SolrObject()	(new) Creates Solr object
->__destruct()	(SolrObject) Destructor
 >getPropertyNames(): array	(SolrObject) Returns an array of all the names of the properties
 >offsetExists(string $property_name): bool	(SolrObject) Checks if the property exists
 >offsetGet(string $property_name): mixed	(SolrObject) Used to retrieve a property
@@ -7172,7 +7145,6 @@ SolrObject()	(new) Creates Solr object
 >toString(bool $url_encode = false): string	(SolrParams) Returns all the name-value pair parameters in the object
 >unserialize(string $serialized): void	(SolrParams) Used for custom serialization
 SolrPingResponse()	(new) Constructor
->__destruct()	(SolrPingResponse) Destructor
 >getResponse(): string	(SolrPingResponse) Returns the response from the server
 >addExpandFilterQuery(string $fq): SolrQuery	(SolrQuery) Overrides main filter query, determines which documents to include in the main group
 >addExpandSortField(string $field, string $order = ?): SolrQuery	(SolrQuery) Orders the documents within the expanded groups (expand.sort parameter)
@@ -7194,7 +7166,6 @@ SolrPingResponse()	(new) Constructor
 >addStatsField(string $field): SolrQuery	(SolrQuery) Maps to stats.field parameter
 >collapse(SolrCollapseFunction $collapseFunction): SolrQuery	(SolrQuery) Collapses the result set to a single document per group
 SolrQuery(string $q = ?)	(new) Constructor
->__destruct()	(SolrQuery) Destructor
 >getExpand(): bool	(SolrQuery) Returns true if group expanding is enabled
 >getExpandFilterQueries(): array	(SolrQuery) Returns the expand filter queries
 >getExpandQuery(): array	(SolrQuery) Returns the expand query expand.q parameter
@@ -7370,7 +7341,6 @@ SolrQuery(string $q = ?)	(new) Constructor
 >setTermsUpperBound(string $upperBound): SolrQuery	(SolrQuery) Sets the term to stop at
 >setTimeAllowed(int $timeAllowed): SolrQuery	(SolrQuery) The time allowed for search to finish
 SolrQueryResponse()	(new) Constructor
->__destruct()	(SolrQueryResponse) Destructor
 >getDigestedResponse(): string	(SolrResponse) Returns the XML response as serialized PHP data
 >getHttpStatus(): int	(SolrResponse) Returns the HTTP status of the response
 >getHttpStatusMessage(): string	(SolrResponse) Returns more details on the HTTP status
@@ -7384,7 +7354,6 @@ SolrQueryResponse()	(new) Constructor
 >success(): bool	(SolrResponse) Was the request a success
 >getInternalInfo(): array	(SolrServerException) Returns internal information where the Exception was thrown
 SolrUpdateResponse()	(new) Constructor
->__destruct()	(SolrUpdateResponse) Destructor
 SolrUtils::digestXmlResponse(string $xmlresponse, int $parse_mode = ?): SolrObject	Parses an response XML string into a SolrObject
 SolrUtils::escapeQueryChars(string $str): string|false	Escapes a lucene query string
 SolrUtils::getSolrVersion(): string	Returns the current version of the Solr extension
@@ -8080,7 +8049,6 @@ stream_wrapper_unregister(string $protocol): bool	Unregister a URL wrapper
 >onClose(): void	(php_user_filter) Called when closing the filter
 >onCreate(): bool	(php_user_filter) Called when creating the filter
 streamWrapper()	(new) Constructs a new stream wrapper
->__destruct()	(streamWrapper) Destructs an existing stream wrapper
 >dir_closedir(): bool	(streamWrapper) Close directory handle
 >dir_opendir(string $path, int $options): bool	(streamWrapper) Open directory handle
 >dir_readdir(): string	(streamWrapper) Read entry from directory handle
@@ -9561,7 +9529,6 @@ Yaf_Application::app(): mixed	Retrieve an Application instance
 >bootstrap(Yaf_Bootstrap_Abstract $bootstrap = ?): void	(Yaf_Application) Call bootstrap
 >clearLastError(): Yaf_Application	(Yaf_Application) Clear the last error info
 Yaf_Application(mixed $config, string $envrion = ?)	(new) Yaf_Application constructor
->__destruct()	(Yaf_Application) The __destruct purpose
 >environ(): void	(Yaf_Application) Retrive environ
 >execute(callable $entry, string ...$args): void	(Yaf_Application) Execute a callback
 >getAppDirectory(): Yaf_Application	(Yaf_Application) Get the application directory
@@ -9728,7 +9695,6 @@ Yaf_Request_Simple(string $method = ?, string $module = ?, string $controller = 
 >clearBody(string $key = ?): bool	(Yaf_Response_Abstract) Discard all exists response body
 >clearHeaders(): void	(Yaf_Response_Abstract) Discard all set headers
 Yaf_Response_Abstract()	(new) The __construct purpose
->__destruct()	(Yaf_Response_Abstract) The __destruct purpose
 >getBody(string $key = ?): mixed	(Yaf_Response_Abstract) Retrieve a exists content
 >getHeader(): void	(Yaf_Response_Abstract) The getHeader purpose
 >prependBody(string $content, string $key = ?): bool	(Yaf_Response_Abstract) The prependBody purpose

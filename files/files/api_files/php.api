@@ -249,20 +249,6 @@ SensitiveParameterValue(mixed $value)	(new) Constructs a new SensitiveParameterV
 >getTraceAsString(): string	(Throwable) Gets the stack trace as a string
 >__toString(): string	(Throwable) Gets a string representation of the thrown object
 UnitEnum::cases(): array	Generates a list of cases on an enum
-$argc()	The number of arguments passed to script
-$argv()	Array of arguments passed to script
-$_COOKIE()	HTTP Cookies
-$_ENV()	Environment variables
-$_FILES()	HTTP File Upload variables
-$_GET()	HTTP GET variables
-$GLOBALS()	References all variables available in global scope
-$http_response_header()	HTTP response headers
-$php_errormsg()	The previous error message
-$_POST()	HTTP POST variables
-$_REQUEST()	HTTP Request variables
-$_SERVER()	Server and execution environment information
-$_SESSION()	Session variables
-Superglobals()	Built-in variables that are always available in all scopes
 >count(): int	(WeakMap) Counts the number of live entries in the map
 >getIterator(): Iterator	(WeakMap) Retrieve an external iterator
 >offsetExists(object $object): bool	(WeakMap) Checks whether a certain object is in the map
@@ -594,7 +580,6 @@ chmod(string $filename, int $permissions): bool	Changes file mode
 chown(string $filename, string|int $user): bool	Changes file owner
 clearstatcache(bool $clear_realpath_cache = false, string $filename = ""): void	Clears file status cache
 copy(string $from, string $to, resource|null $context = null): bool	Copies file
-delete()	See unlink or unset
 dirname(string $path, int $levels = 1): string	Returns a parent directory's path
 disk_free_space(string $directory): float|false	Returns available space on filesystem or disk partition
 disk_total_space(string $directory): float|false	Returns the total size of a filesystem or disk partition
@@ -1742,7 +1727,6 @@ stream_wrapper_unregister(string $protocol): bool	Unregister a URL wrapper
 >onClose(): void	(php_user_filter) Called when closing the filter
 >onCreate(): bool	(php_user_filter) Called when creating the filter
 streamWrapper()	(new) Constructs a new stream wrapper
->__destruct()	(streamWrapper) Destructs an existing stream wrapper
 >dir_closedir(): bool	(streamWrapper) Close directory handle
 >dir_opendir(string $path, int $options): bool	(streamWrapper) Open directory handle
 >dir_readdir(): string	(streamWrapper) Read entry from directory handle
@@ -2947,7 +2931,6 @@ Phar::createDefaultStub(string|null $index = null, string|null $webIndex = null)
 >decompressFiles(): true	(Phar) Decompresses all files in the current Phar archive
 >delMetadata(): true	(Phar) Deletes the global metadata of the phar
 >delete(string $localName): true	(Phar) Delete a file within a phar archive
->__destruct()	(Phar) Destructs a Phar archive object
 >extractTo(string $directory, array|string|null $files = null, bool $overwrite = false): bool	(Phar) Extract the contents of a phar archive to a directory
 >getAlias(): string|null	(Phar) Get the alias for Phar
 >getMetadata(array $unserializeOptions = []): mixed	(Phar) Returns phar archive meta-data
@@ -2998,7 +2981,6 @@ PharData(string $filename, int $flags = FilesystemIterator::SKIP_DOTS | Filesyst
 >decompressFiles(): true	(PharData) Decompresses all files in the current zip archive
 >delMetadata(): true	(PharData) Deletes the global metadata of a zip archive
 >delete(string $localName): true	(PharData) Delete a file within a tar/zip archive
->__destruct()	(PharData) Destructs a non-executable tar or zip archive object
 >extractTo(string $directory, array|string|null $files = null, bool $overwrite = false): bool	(PharData) Extract the contents of a tar/zip archive to a directory
 >isWritable(): bool	(PharData) Returns true if the tar/zip archive can be modified
 >offsetSet(string $localName, resource|string $value): void	(PharData) Set the contents of a file within the tar/zip to those of an external file or string
@@ -3013,7 +2995,6 @@ PharData(string $filename, int $flags = FilesystemIterator::SKIP_DOTS | Filesyst
 PharFileInfo(string $filename)	(new) Construct a Phar entry object
 >decompress(): true	(PharFileInfo) Decompresses the current Phar entry within the phar
 >delMetadata(): true	(PharFileInfo) Deletes the metadata of the entry
->__destruct()	(PharFileInfo) Destructs a Phar entry object
 >getCRC32(): int	(PharFileInfo) Returns CRC32 code or throws an exception if CRC has not been verified
 >getCompressedSize(): int	(PharFileInfo) Returns the actual size of the file (with compression) inside the Phar archive
 >getContent(): string	(PharFileInfo) Get the complete file contents of the entry
