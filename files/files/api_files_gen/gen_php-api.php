@@ -13,16 +13,18 @@ const SEP = "\t"; // calltip.hypertext.end.definition
 
 $dirs = array("../language/predefined");
 array_shift($argv);
+$enReference = "../../doc-en/reference/";
 if ($argv == array("all")) {
+	foreach (glob("$enReference*") as $dir) {
+		$dirs[] = substr($dir, strlen($enReference));
+	}
 	$dirs = glob("*", GLOB_ONLYDIR);
 } else {
 	$xml = simplexml("../../doc-en/appendices/extensions.xml");
-	foreach ($xml->section as $section) {
-		foreach ($section->section as $subsection) {
-			if (preg_match('~^extensions\.membership\.(core|bundled|external)$~', $subsection["id"])) {
-				foreach ($subsection->itemizedlist->listitem as $listitem) {
-					$dirs[] = preg_replace('~^(book|ref)\.~', '', str_replace("-", "_", $listitem->para->xref["linkend"]));
-				}
+	foreach ($xml->xpath("//section") as $section) {
+		if (preg_match('~^extensions\.membership\.(core|bundled|external)$~', $section["id"])) {
+			foreach ($section->itemizedlist->listitem as $listitem) {
+				$dirs[] = preg_replace('~^(book|ref)\.~', '', str_replace("-", "_", $listitem->para->xref["linkend"]));
 			}
 		}
 	}
@@ -66,10 +68,14 @@ __debugInfo(): array' . SEP . 'Called by var_dump()
 
 foreach ($dirs as $dir) {
 	echo ".";
+	
 	$translations = array();
 	if (basename(dirname(dirname(realpath($dir)))) != "doc-en") {
 		foreach (rglob("$dir/*.xml") as $filename) {
 			$xml = simplexml($filename);
+			if (!$xml) {
+				continue;
+			}
 			$purpose = $xml->refnamediv->refpurpose;
 			if ($purpose) {
 				$translations[substr($filename, strlen($dir))] = text($purpose);
@@ -78,16 +84,17 @@ foreach ($dirs as $dir) {
 				$translations[substr($filename, strlen($dir))] = text($section->para ?: $section->simpara);
 			}
 		}
-		$dir = "../../doc-en/reference/$dir";
+		$dir = $enReference . $dir;
 	}
+	
 	if (!is_dir($dir)) {
 		echo "\n$dir not found";
 	}
+	
 	$classes = array();
 	foreach (rglob("$dir/*.xml") as $filename) {
 		$xml = simplexml($filename);
 		if (!$xml) {
-			echo "\n$filename:1:parse error";
 			continue;
 		}
 		$purpose = $xml->refnamediv->refpurpose;
@@ -125,7 +132,7 @@ foreach ($dirs as $dir) {
 echo "\n";
 
 foreach ($dirs as $dir) {
-	foreach (glob("../../doc-en/reference/$dir/constants.xml") as $filename) {
+	foreach (glob("$enReference$dir/constants.xml") as $filename) {
 		$xml = simplexml($filename);
 		$count = 0;
 		foreach ($xml->xpath("//varlistentry") as $entry) {
@@ -187,7 +194,11 @@ function simplexml($filename) {
 	$file = str_replace('xml:id=', 'id=', $file);
 	$file = str_replace(' xmlns="http://docbook.org/ns/docbook"', '', $file);
 	$file = preg_replace('~&([-\w.]+);~', '\1', $file);
-	return @simplexml_load_string($file);
+	$return = @simplexml_load_string($file);
+	if (!$return) {
+		echo "\n$filename:1:parse error";
+	}
+	return $return;
 }
 
 function text(SimpleXMLElement $element) {

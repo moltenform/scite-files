@@ -144,8 +144,8 @@ never
 enum
 resource
 numeric
-__construct(mixed ...$values): void	Object constructor
-__destruct(): void	Object destructor
+__construct(mixed ...$values)	Object constructor
+__destruct()	Object destructor
 __call(string $name, array $arguments): mixed	Triggered when invoking inaccessible methods in an object context
 __callStatic(string $name, array $arguments): mixed	Triggered when invoking inaccessible methods in a static context
 __get(string $name): mixed	Utilized for reading data from inaccessible properties
