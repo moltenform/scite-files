@@ -6,6 +6,7 @@ Run this script from doc-en/reference/:
 - no parameters: Generate Core, Bundled and External extensions (https://php.net/extensions.membership)
 - parameter "all": Generate all extensions
 - other parameters, e.g. "sqlsrv pdo_sqlsrv": Generate Core, Bundled, External and the ones provided
+Translations: Put doc-es alongside doc-en and run from doc-es/reference/.
 */
 
 const SEP = "\t"; // calltip.hypertext.end.definition
@@ -15,7 +16,7 @@ array_shift($argv);
 if ($argv == array("all")) {
 	$dirs = glob("*", GLOB_ONLYDIR);
 } else {
-	$xml = simplexml("../appendices/extensions.xml");
+	$xml = simplexml("../../doc-en/appendices/extensions.xml");
 	foreach ($xml->section as $section) {
 		foreach ($section->section as $subsection) {
 			if (preg_match('~^extensions\.membership\.(core|bundled|external)$~', $subsection["id"])) {
@@ -65,6 +66,20 @@ __debugInfo(): array' . SEP . 'Called by var_dump()
 
 foreach ($dirs as $dir) {
 	echo ".";
+	$translations = array();
+	if (basename(dirname(dirname(realpath($dir)))) != "doc-en") {
+		foreach (rglob("$dir/*.xml") as $filename) {
+			$xml = simplexml($filename);
+			$purpose = $xml->refnamediv->refpurpose;
+			if ($purpose) {
+				$translations[substr($filename, strlen($dir))] = text($purpose);
+			} elseif ($xml["id"] && preg_match('~^class\.~', $xml["id"])) {
+				$section = $xml->partintro->section;
+				$translations[substr($filename, strlen($dir))] = text($section->para ?: $section->simpara);
+			}
+		}
+		$dir = "../../doc-en/reference/$dir";
+	}
 	if (!is_dir($dir)) {
 		echo "\n$dir not found";
 	}
@@ -78,6 +93,7 @@ foreach ($dirs as $dir) {
 		$purpose = $xml->refnamediv->refpurpose;
 		$synopses = $xml->refsect1->methodsynopsis ?: $xml->refsect1->constructorsynopsis;
 		if ($synopses) {
+			$description = $translations[substr($filename, strlen($dir))] ?? text($purpose);
 			foreach ($synopses as $synopsis) {
 				$params = array();
 				if ($synopsis->methodparam) {
@@ -93,13 +109,13 @@ foreach ($dirs as $dir) {
 					}
 				}
 				$decl = "(" . implode(", ", $params) . ")" . ($synopsis->type ? ": " . type($synopsis->type) : "");
-				method($synopsis->methodname, $decl, text($purpose), isStatic($synopsis));
+				method($synopsis->methodname, $decl, $description, isStatic($synopsis));
 			}
 		} elseif ($xml->refnamediv) {
 			method($xml->refnamediv->refname, "()", preg_replace('~Alias ~', 'Alias of ', text($purpose)));
 		} elseif ($xml["id"] && preg_match('~^class\.~', $xml["id"])) {
 			$section = $xml->partintro->section;
-			$classes["$xml->titleabbrev"] = text($section->para ?: $section->simpara);
+			$classes["$xml->titleabbrev"] = $translations[substr($filename, strlen($dir))] ?? text($section->para ?: $section->simpara);
 		}
 	}
 	foreach ($classes as $class => $purpose) {
@@ -109,7 +125,7 @@ foreach ($dirs as $dir) {
 echo "\n";
 
 foreach ($dirs as $dir) {
-	foreach (glob("$dir/constants.xml") as $filename) {
+	foreach (glob("../../doc-en/reference/$dir/constants.xml") as $filename) {
 		$xml = simplexml($filename);
 		$count = 0;
 		foreach ($xml->xpath("//varlistentry") as $entry) {

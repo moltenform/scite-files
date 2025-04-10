@@ -405,7 +405,7 @@
     * highlighting and folding is already enabled by default
     * [php.api](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/php.api) and [phpfunctions.properties](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/phpfunctions.properties) (without PECL extensions)
     * [php-all.api](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/php-all.api) and [phpfunctions-all.properties](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/phpfunctions-all.properties) (all extensions)
-    * [php.api in Spanish, PHP 5](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/php-es.api)
+    * [php.api in Spanish](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/php-es.api)
 
 * PostScript
 
