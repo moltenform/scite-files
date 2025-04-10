@@ -11,7 +11,7 @@
 | [locale.ca.properties](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/translations/locale.ca.properties) | Catalan (català) | Updated 2.21 |
 | [locale.zh_t.properties](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/translations/locale.zh_t.properties) | Chinese Traditional (中文) | Updated 2.21 |
 | [locale.zh_s.properties](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/translations/locale.zh_s.properties) | Chinese Simplified (中文) | Complete |
-| [locale.cs.properties](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/translations/locale.cs.properties) | Czech (čeština) | Updated 3.0.4 |
+| [locale.cs.properties](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/translations/locale.cs.properties) | Czech (čeština) | Updated 5.3.9 |
 | [locale.cy.properties](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/translations/locale.cy.properties) | Welsh (Cymraeg) | Updated 1.58 |
 | [locale.da.properties](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/translations/locale.da.properties) | Danish (dansk) | Complete |
 | [locale.de.properties](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/translations/locale.de.properties) | German (Deutsch) | Complete |
