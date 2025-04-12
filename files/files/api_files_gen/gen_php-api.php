@@ -5,7 +5,7 @@ Download PHP Manual: git clone https://github.com/php/doc-en
 Run this script from doc-en/reference/:
 - no parameters: Generate Core, Bundled and External extensions (https://php.net/extensions.membership)
 - parameter "all": Generate all extensions
-- other parameters, e.g. "sqlsrv pdo_sqlsrv": Generate Core, Bundled, External and the ones provided
+- other parameters, e.g. "imap mysql oci8 pdo_oci pdo_sqlsrv sqlsrv": Generate Core, Bundled, External and the ones provided
 Translations: Put doc-es alongside doc-en and run from doc-es/reference/.
 */
 
@@ -131,19 +131,10 @@ foreach ($dirs as $dir) {
 }
 echo "\n";
 
+fileConstants("$enReference../appendices/tokens.xml");
 foreach ($dirs as $dir) {
 	foreach (glob("$enReference$dir/constants.xml") as $filename) {
-		$xml = simplexml($filename);
-		$count = 0;
-		foreach ($xml->xpath("//varlistentry") as $entry) {
-			$count += termConstant($entry->term);
-		}
-		foreach ($xml->xpath("//row") as $row) {
-			$count += termConstant($row->entry);
-		}
-		if (!$count) {
-			echo "$filename:1:missing constants\n";
-		}
+		fileConstants($filename);
 	}
 }
 
@@ -224,6 +215,20 @@ function method($method, $decl, $purpose, $static = false) {
 		append(">$match[2]$decl" . SEP . "($match[1]) $purpose");
 	} elseif (!array_key_exists($match[1], $classes)) { // class
 		append($match[1] . $decl . SEP . "(new) $purpose");
+	}
+}
+
+function fileConstants($filename) {
+	$xml = simplexml($filename);
+	$count = 0;
+	foreach ($xml->xpath("//varlistentry") as $entry) {
+		$count += termConstant($entry->term);
+	}
+	foreach ($xml->xpath("//row") as $row) {
+		$count += termConstant($row->entry);
+	}
+	if (!$count) {
+		echo "$filename:1:missing constants\n";
 	}
 }
 
