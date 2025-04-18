@@ -201,7 +201,10 @@ function type(SimpleXMLElement $type) {
 	foreach ($type->type as $val) { // iterator_to_array() returns only the first one
 		$types[] = $val;
 	}
-	return ($type["class"] == "union" ? implode("|", $types) : $type);
+	return ($type["class"] == "union"
+		? (count($types) == 2 && $types[1] == "null" ? "?$types[0]" : implode("|", $types))
+		: $type
+	);
 }
 
 function method($method, $decl, $purpose, $static = false) {
