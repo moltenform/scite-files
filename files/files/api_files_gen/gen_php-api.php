@@ -112,7 +112,12 @@ foreach ($dirs as $dir) {
 						if (!$param->type || $param->type == 'Type') {
 							echo "\n$filename:1:missing type";
 						}
-						$params[] = type($param->type) . " " . ($param["rep"] ? "..." : "") . "\$$param->parameter" . ($initializer ? " = $initializer" : "");
+						$params[] = type($param->type) . " "
+							. ($param->parameter["role"] == "reference" ? "&" : "")
+							. ($param["rep"] ? "..." : "")
+							. "\$$param->parameter"
+							. ($initializer ? " = $initializer" : "")
+						;
 					}
 				}
 				$decl = "(" . implode(", ", $params) . ")" . ($synopsis->type ? ": " . type($synopsis->type) : "");

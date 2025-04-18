@@ -315,20 +315,20 @@ array_keys(array $array, mixed $filter_value, bool $strict = false): array	Devue
 array_map(?callable $callback, array $array, array ...$arrays): array	Aplica la retrollamada a los elementos de los arrays dados
 array_merge_recursive(array ...$arrays): array	Une dos o más arrays recursivamente
 array_merge(array ...$arrays): array	Combina dos o más arrays
-array_multisort(array $array1, mixed $array1_sort_order = SORT_ASC, mixed $array1_sort_flags = SORT_REGULAR, mixed ...$rest): bool	Ordena varios arrays, o arrays multidimensionales
+array_multisort(array &$array1, mixed $array1_sort_order = SORT_ASC, mixed $array1_sort_flags = SORT_REGULAR, mixed ...$rest): bool	Ordena varios arrays, o arrays multidimensionales
 array_pad(array $array, int $length, mixed $value): array	Rellena un array a la longitud especificada con un valor
-array_pop(array $array): mixed	Extrae el último elemento del final del array
+array_pop(array &$array): mixed	Extrae el último elemento del final del array
 array_product(array $array): int|float	Calcula el producto de los valores de un array
-array_push(array $array, mixed ...$values): int	Inserta uno o más elementos al final de un array
+array_push(array &$array, mixed ...$values): int	Inserta uno o más elementos al final de un array
 array_rand(array $array, int $num = 1): int|string|array	Seleccionar una o más claves aleatorias de un array
 array_reduce(array $array, callable $callback, mixed $initial = null): mixed	Reduce iterativamente un array a un solo valor usando una función llamada de retorno
 array_replace_recursive(array $array, array ...$replacements): array	Reemplaza los elementos de los arrays pasados al primer array de forma recursiva
 array_replace(array $array, array ...$replacements): array	Reemplaza los elementos del array original con elementos de array adicionales
 array_reverse(array $array, bool $preserve_keys = false): array	Devuelve un array con los elementos en orden inverso
 array_search(mixed $needle, array $haystack, bool $strict = false): int|string|false	Busca un valor determinado en un array y devuelve la primera clave correspondiente en caso de éxito
-array_shift(array $array): mixed	Quita un elemento del principio del array
+array_shift(array &$array): mixed	Quita un elemento del principio del array
 array_slice(array $array, int $offset, ?int $length = null, bool $preserve_keys = false): array	Extraer una parte de un array
-array_splice(array $array, int $offset, ?int $length = null, mixed $replacement = []): array	Elimina una porción del array y la reemplaza con otra cosa
+array_splice(array &$array, int $offset, ?int $length = null, mixed $replacement = []): array	Elimina una porción del array y la reemplaza con otra cosa
 array_sum(array $array): int|float	Calcular la suma de los valores de un array
 array_udiff_assoc(array $array, array ...$arrays, callable $value_compare_func): array	Computa la diferencia entre arrays con una comprobación de indices adicional, compara la información mediante una función de llamada de retorno
 array_udiff_uassoc(array $array, array ...$arrays, callable $value_compare_func, callable $key_compare_func): array	Computa la diferencia entre arrays con una verificación de índices adicional, compara la información y los índices mediante una función de llamada de retorno
@@ -337,39 +337,39 @@ array_uintersect_assoc(array $array, array ...$arrays, callable $value_compare_f
 array_uintersect_uassoc(array $array1, array ...$arrays, callable $value_compare_func, callable $key_compare_func): array	Calcula la intersección de arrays con una comprobación de índices adicional, compara la información y los índices mediante funciones de retrollamada por separado
 array_uintersect(array $array, array ...$arrays, callable $value_compare_func): array	Computa una intersección de arrays, compara la información mediante una función de llamada de retorno
 array_unique(array $array, int $flags = SORT_STRING): array	Elimina valores duplicados de un array
-array_unshift(array $array, mixed ...$values): int	Añadir al inicio de un array uno a más elementos
+array_unshift(array &$array, mixed ...$values): int	Añadir al inicio de un array uno a más elementos
 array_values(array $array): array	Devuelve todos los valores de un array
-array_walk_recursive(array|object $array, callable $callback, mixed $arg = null): true	Aplicar una función de usuario recursivamente a cada miembro de un array
-array_walk(array|object $array, callable $callback, mixed $arg = null): true	Aplicar una función proporcionada por el usuario a cada miembro de un array
+array_walk_recursive(array|object &$array, callable $callback, mixed $arg = null): true	Aplicar una función de usuario recursivamente a cada miembro de un array
+array_walk(array|object &$array, callable $callback, mixed $arg = null): true	Aplicar una función proporcionada por el usuario a cada miembro de un array
 array(mixed ...$values): array	Crea un array
-arsort(array $array, int $flags = SORT_REGULAR): true	Ordena un array en orden inverso y mantiene la asociación de índices
-asort(array $array, int $flags = SORT_REGULAR): true	Ordena un array y mantiene la asociación de índices
+arsort(array &$array, int $flags = SORT_REGULAR): true	Ordena un array en orden inverso y mantiene la asociación de índices
+asort(array &$array, int $flags = SORT_REGULAR): true	Ordena un array y mantiene la asociación de índices
 compact(array|string $var_name, array|string ...$var_names): array	Crear un array que contiene variables y sus valores
 count(Countable|array $value, int $mode = COUNT_NORMAL): int	Cuenta todos los elementos de un array o algo de un objeto
 current(array|object $array): mixed	Devuelve el elemento actual en un array
-each(array|object $array): array	Devolver el par clave/valor actual de un array y avanzar el cursor del array
-end(array|object $array): mixed	Establece el puntero interno de un array a su último elemento
-extract(array $array, int $flags = EXTR_OVERWRITE, string $prefix = ""): int	Importar variables a la tabla de símbolos actual desde un array
+each(array|object &$array): array	Devolver el par clave/valor actual de un array y avanzar el cursor del array
+end(array|object &$array): mixed	Establece el puntero interno de un array a su último elemento
+extract(array &$array, int $flags = EXTR_OVERWRITE, string $prefix = ""): int	Importar variables a la tabla de símbolos actual desde un array
 in_array(mixed $needle, array $haystack, bool $strict = false): bool	Comprueba si un valor existe en un array
 key_exists()	Alias of array_key_exists
 key(array|object $array): int|string|null	Obtiene una clave de un array
-krsort(array $array, int $flags = SORT_REGULAR): true	Ordena un array por clave en orden inverso
-ksort(array $array, int $flags = SORT_REGULAR): true	Ordena un array por clave
+krsort(array &$array, int $flags = SORT_REGULAR): true	Ordena un array por clave en orden inverso
+ksort(array &$array, int $flags = SORT_REGULAR): true	Ordena un array por clave
 list(mixed $var, mixed ...$vars = ?): array	Asignar variables como si fueran un array
-natcasesort(array $array): true	Ordenar un array usando un algoritmo de "orden natural" insensible a mayúsculas-minúsculas
-natsort(array $array): true	Ordena un array usando un algoritmo de "orden natural"
-next(array|object $array): mixed	Avanza el puntero interno de un array
+natcasesort(array &$array): true	Ordenar un array usando un algoritmo de "orden natural" insensible a mayúsculas-minúsculas
+natsort(array &$array): true	Ordena un array usando un algoritmo de "orden natural"
+next(array|object &$array): mixed	Avanza el puntero interno de un array
 pos()	Alias of current
-prev(array|object $array): mixed	Rebobina el puntero interno del array
+prev(array|object &$array): mixed	Rebobina el puntero interno del array
 range(string|int|float $start, string|int|float $end, int|float $step = 1): array	Crear un array que contiene un rango de elementos
-reset(array|object $array): mixed	Establece el puntero interno de un array a su primer elemento
-rsort(array $array, int $flags = SORT_REGULAR): true	Ordena un array en orden inverso
-shuffle(array $array): true	Mezcla un array
+reset(array|object &$array): mixed	Establece el puntero interno de un array a su primer elemento
+rsort(array &$array, int $flags = SORT_REGULAR): true	Ordena un array en orden inverso
+shuffle(array &$array): true	Mezcla un array
 sizeof()	Alias of count
-sort(array $array, int $flags = SORT_REGULAR): true	Ordena un array
-uasort(array $array, callable $callback): true	Ordena un array con una función de comparación definida por el usuario y mantiene la asociación de índices
-uksort(array $array, callable $callback): true	Ordena un array según sus claves usando una función de comparación definida por el usuario
-usort(array $array, callable $callback): true	Ordena un array según sus valores usando una función de comparación definida por el usuario
+sort(array &$array, int $flags = SORT_REGULAR): true	Ordena un array
+uasort(array &$array, callable $callback): true	Ordena un array con una función de comparación definida por el usuario y mantiene la asociación de índices
+uksort(array &$array, callable $callback): true	Ordena un array según sus claves usando una función de comparación definida por el usuario
+usort(array &$array, callable $callback): true	Ordena un array según sus valores usando una función de comparación definida por el usuario
 __autoload(string $class): void	Intenta cargar una clase sin definir
 class_alias(string $class, string $alias, bool $autoload = true): bool	Crea un alias para una clase
 class_exists(string $class, bool $autoload = true): bool	Verifica si la clase ha sido definida
@@ -565,15 +565,15 @@ trigger_error(string $message, int $error_level = E_USER_NOTICE): true	Generar u
 user_error()	Alias of trigger_error
 escapeshellarg(string $arg): string	Escapar una cadena a ser usada como argumento del intérprete de comandos
 escapeshellcmd(string $command): string	Escapar meta-caracteres del intérprete de comandos
-exec(string $command, array $output = null, int $result_code = null): string|false	Ejecutar un programa externo
-passthru(string $command, int $result_code = null): ?false	Ejecuta un programa externo y muestra la salida en bruto
+exec(string $command, array &$output = null, int &$result_code = null): string|false	Ejecutar un programa externo
+passthru(string $command, int &$result_code = null): ?false	Ejecuta un programa externo y muestra la salida en bruto
 proc_close(resource $process): int	Cierra un proceso abierto mediante proc_open y devuelve el códido de salida de tal proceso
 proc_get_status(resource $process): array	Obtiene información sobre un proceso abierto por proc_open
 proc_nice(int $priority): bool	Modificar la prioridad del proceso actual
-proc_open(array|string $command, array $descriptor_spec, array $pipes, ?string $cwd = null, ?array $env_vars = null, ?array $options = null): resource|false	Ejecuta un comando y abre un puntero de fichero para entrada/salida
+proc_open(array|string $command, array $descriptor_spec, array &$pipes, ?string $cwd = null, ?array $env_vars = null, ?array $options = null): resource|false	Ejecuta un comando y abre un puntero de fichero para entrada/salida
 proc_terminate(resource $process, int $signal = 15): bool	Mata un proceso abierto mediante proc_open
 shell_exec(string $command): string|false|null	Ejecutar un comando mediante el intérprete de comandos y devolver la salida completa como una cadena
-system(string $command, int $result_code = null): string|false	Ejecutar un programa externo y mostrar su salida
+system(string $command, int &$result_code = null): string|false	Ejecutar un programa externo y mostrar su salida
 basename(string $path, string $suffix = ""): string	Devuelve el último componente de nombre de una ruta
 chgrp(string $filename, string|int $group): bool	Cambia el grupo del archivo
 chmod(string $filename, int $permissions): bool	Cambia el modo de un fichero
@@ -605,14 +605,14 @@ fileowner(string $filename): int|false	Obtiene el propietario de un archivo
 fileperms(string $filename): int|false	Obtiene los permisos de un fichero
 filesize(string $filename): int|false	Obtiene el tamaño de un fichero
 filetype(string $filename): string|false	Obtiene el tipo de fichero
-flock(resource $stream, int $operation, int $would_block = null): bool	Bloqueo de ficheros recomendado y portable
+flock(resource $stream, int $operation, int &$would_block = null): bool	Bloqueo de ficheros recomendado y portable
 fnmatch(string $pattern, string $filename, int $flags = ?): bool	Compara un nombre de fichero con un patrón
 fopen(string $filename, string $mode, bool $use_include_path = false, ?resource $context = null): resource|false	Abre un fichero o un URL
 fpassthru(resource $stream): int	Escribe toda la información restante de un puntero a un archivo
 fputcsv(resource $stream, array $fields, string $separator = ",", string $enclosure = "\"", string $escape = "\\", string $eol = "\n"): int|false	Dar formato CSV a una línea y escribirla en un puntero a un fichero
 fputs()	Alias of fwrite
 fread(resource $stream, int $length): string|false	Lectura de un fichero en modo binario seguro
-fscanf(resource $stream, string $format, mixed ...$vars): array|int|false|null	Analiza la entrada desde un archivo de acuerdo a un formato
+fscanf(resource $stream, string $format, mixed &...$vars): array|int|false|null	Analiza la entrada desde un archivo de acuerdo a un formato
 fseek(resource $stream, int $offset, int $whence = SEEK_SET): int	Busca sobre un puntero a un fichero
 fstat(resource $stream): array|false	Obtiene información acerca de un archivo usando un puntero al archivo abierto
 fsync(resource $stream): bool	Synchronizes changes to the file (including meta-data)
@@ -718,7 +718,7 @@ getmygid(): int|false	Obtener el GID del dueño del script PHP
 getmyinode(): int|false	Obtiene el inode del script actual
 getmypid(): int|false	Obtiene el ID del proceso PHP
 getmyuid(): int|false	Obtiene el UID del dueño del script PHP
-getopt(string $short_options, array $long_options = [], int $rest_index = null): array|false	Obtiene las opciones de la lista de argumentos de la línea de comandos
+getopt(string $short_options, array $long_options = [], int &$rest_index = null): array|false	Obtiene las opciones de la lista de argumentos de la línea de comandos
 getrusage(int $mode = ?): array|false	Obtiene el uso de los recursos actuales
 ini_alter()	Alias of ini_set
 ini_get_all(?string $extension = null, bool $details = true): array|false	Obtiene todas las opciones de configuración
@@ -835,13 +835,13 @@ checkdnsrr(string $hostname, string $type = "MX"): bool	Comprueba registros DNS 
 closelog(): true	Cerrar conexión al log del sistema
 dns_check_record()	Alias of checkdnsrr
 dns_get_mx()	Alias of getmxrr
-dns_get_record(string $hostname, int $type = DNS_ANY, array $authoritative_name_servers = null, array $additional_records = null, bool $raw = false): array|false	Fetch DNS Resource Records associated with a hostname
-fsockopen(string $hostname, int $port = -1, int $error_code = null, string $error_message = null, ?float $timeout = null): resource|false	Abre un socket de conexión Internet o Unix
+dns_get_record(string $hostname, int $type = DNS_ANY, array &$authoritative_name_servers = null, array &$additional_records = null, bool $raw = false): array|false	Fetch DNS Resource Records associated with a hostname
+fsockopen(string $hostname, int $port = -1, int &$error_code = null, string &$error_message = null, ?float $timeout = null): resource|false	Abre un socket de conexión Internet o Unix
 gethostbyaddr(string $ip): string|false	Obtener el nombre del host de Internet correspondiente a una dirección IP dada
 gethostbyname(string $hostname): string	Obtener la dirección IPv4 que corresponde a un nombre de host de Internet dado
 gethostbynamel(string $hostname): array|false	Obtener una lista de direcciones IPv4 que corresponde a un nombre de host de Internet dado
 gethostname(): string|false	Obtiene el nombre de host
-getmxrr(string $hostname, array $hosts, array $weights = null): bool	Obtener los registros MX correspondientes a un nombre de host de Internet
+getmxrr(string $hostname, array &$hosts, array &$weights = null): bool	Obtener los registros MX correspondientes a un nombre de host de Internet
 getprotobyname(string $protocol): int|false	Obtener el número de protocolo asociado con el nombre de protocolo
 getprotobynumber(int $protocol): string|false	Obtiene el nombre de protocolo asociado con un número de protocolo
 getservbyname(string $service, string $protocol): int|false	Obtener el número de puerto asociado con un servicio y protocolo de Internet
@@ -850,7 +850,7 @@ header_register_callback(callable $callback): bool	Llamar a una función de cabe
 header_remove(?string $name = null): void	Elimina encabezados previamente establecidos
 header(string $header, bool $replace = true, int $response_code = ?): void	Enviar encabezado sin formato HTTP
 headers_list(): array	Devuelve una lista de encabezados de respuesta enviados (o listos para enviar)
-headers_sent(string $filename = null, int $line = null): bool	Comprueba si o donde han enviado cabeceras
+headers_sent(string &$filename = null, int &$line = null): bool	Comprueba si o donde han enviado cabeceras
 http_clear_last_response_headers(): void	Clears the stored HTTP response headers
 http_get_last_response_headers(): ?array	Retrieve last HTTP response headers
 http_response_code(int $response_code = ?): int|bool	Obtener o establecer el código de respuesta HTTP
@@ -860,7 +860,7 @@ ip2long(string $ip): int|false	Convierte una cadena que contiene una dirección 
 long2ip(int $ip): string	Convierte una dirección de red (IPv4) en una cadena de texto en formato con puntos estándar de internet
 net_get_interfaces(): array|false	Get network interfaces
 openlog(string $prefix, int $flags, int $facility): true	Open connection to system logger
-pfsockopen(string $hostname, int $port = -1, int $error_code = null, string $error_message = null, ?float $timeout = null): resource|false	Abre Internet persistente o conexión de socket de dominio Unix
+pfsockopen(string $hostname, int $port = -1, int &$error_code = null, string &$error_message = null, ?float $timeout = null): resource|false	Abre Internet persistente o conexión de socket de dominio Unix
 request_parse_body(?array $options = null): array	Read and parse the request body and return the result
 setcookie(string $name, string $value = "", int $expires_or_options = ?, string $path = "", string $domain = "", bool $secure = false, bool $httponly = false): bool	Enviar una cookie
 setcookie(string $name, string $value = "", array $options = []): bool	Enviar una cookie
@@ -897,16 +897,16 @@ password_get_info(string $hash): array	Devuelve información sobre el hash propo
 password_hash(string $password, string|int|null $algo, array $options = []): string	Crea un hash de contraseña
 password_needs_rehash(string $hash, string|int|null $algo, array $options = []): bool	Comprueba si el hash facilitado coincide con las opciones proporcionadas
 password_verify(string $password, string $hash): bool	Comprueba que la contraseña coincida con un hash
-preg_filter(string|array $pattern, string|array $replacement, string|array $subject, int $limit = -1, int $count = null): string|array|null	Realiza una búsqueda y sustitución de una expresión regular
+preg_filter(string|array $pattern, string|array $replacement, string|array $subject, int $limit = -1, int &$count = null): string|array|null	Realiza una búsqueda y sustitución de una expresión regular
 preg_grep(string $pattern, array $array, int $flags = ?): array|false	Devuelve entradas de matriz que coinciden con el patrón
 preg_last_error_msg(): string	Returns the error message of the last PCRE regex execution
 preg_last_error(): int	Devuelve el código de error de la última ejecución de expresión regular de PCRE
-preg_match_all(string $pattern, string $subject, array $matches = null, int $flags = ?, int $offset = ?): int|false	Realiza una comparación global de una expresión regular
-preg_match(string $pattern, string $subject, array $matches = null, int $flags = ?, int $offset = ?): int|false	Realiza una comparación con una expresión regular
+preg_match_all(string $pattern, string $subject, array &$matches = null, int $flags = ?, int $offset = ?): int|false	Realiza una comparación global de una expresión regular
+preg_match(string $pattern, string $subject, array &$matches = null, int $flags = ?, int $offset = ?): int|false	Realiza una comparación con una expresión regular
 preg_quote(string $str, ?string $delimiter = null): string	Escapar caracteres en una expresión regular
-preg_replace_callback_array(array $pattern, string|array $subject, int $limit = -1, int $count = null, int $flags = ?): string|array|null	Realizar una búsqueda y sustitución de expresión regular con retrollamadas
-preg_replace_callback(string|array $pattern, callable $callback, string|array $subject, int $limit = -1, int $count = null, int $flags = ?): string|array|null	Realiza una búsqueda y sustitución de una expresión regular usando una llamada de retorno
-preg_replace(string|array $pattern, string|array $replacement, string|array $subject, int $limit = -1, int $count = null): string|array|null	Realiza una búsqueda y sustitución de una expresión regular
+preg_replace_callback_array(array $pattern, string|array $subject, int $limit = -1, int &$count = null, int $flags = ?): string|array|null	Realizar una búsqueda y sustitución de expresión regular con retrollamadas
+preg_replace_callback(string|array $pattern, callable $callback, string|array $subject, int $limit = -1, int &$count = null, int $flags = ?): string|array|null	Realiza una búsqueda y sustitución de una expresión regular usando una llamada de retorno
+preg_replace(string|array $pattern, string|array $replacement, string|array $subject, int $limit = -1, int &$count = null): string|array|null	Realiza una búsqueda y sustitución de una expresión regular
 preg_split(string $pattern, string $subject, int $limit = -1, int $flags = ?): array|false	Divide un string mediante una expresión regular
 getrandmax(): int	Show largest possible random value
 lcg_value(): float	Combined linear congruential generator
@@ -993,7 +993,7 @@ ReflectionClass::export(mixed $argument, bool $return = false): string	Exporta u
 >getShortName(): string	(ReflectionClass) Obtiene el nombre abreviado
 >getStartLine(): int|false	(ReflectionClass) Obtiene el número de linea de inicio
 >getStaticProperties(): array	(ReflectionClass) Obtiene las propiedades estáticas
->getStaticPropertyValue(string $name, mixed $def_value = ?): mixed	(ReflectionClass) Obtiene el valor de una propiedad estática
+>getStaticPropertyValue(string $name, mixed &$def_value = ?): mixed	(ReflectionClass) Obtiene el valor de una propiedad estática
 >getTraitAliases(): array	(ReflectionClass) Obtiene un array con los alias usados con los traits
 >getTraitNames(): array	(ReflectionClass) Devuelve un array con los nombres de los traits usados por esta clase
 >getTraits(): array	(ReflectionClass) Obtiene un array con los traits que utiliza esta clase
@@ -1544,11 +1544,11 @@ SplFileObject(string $filename, string $mode = "r", bool $useIncludePath = false
 >fgetcsv(string $separator = ",", string $enclosure = "\"", string $escape = "\\"): array|false	(SplFileObject) Obtiene la línea del archivo y analiza como campos CSV
 >fgets(): string	(SplFileObject) Obtener la línea de el fichero
 >fgetss(string $allowable_tags = ?): string	(SplFileObject) Obtiene la línea de el fichero y elimina etiquetas HTML
->flock(int $operation, int $wouldBlock = null): bool	(SplFileObject) Bloqueo de ficheros portable
+>flock(int $operation, int &$wouldBlock = null): bool	(SplFileObject) Bloqueo de ficheros portable
 >fpassthru(): int	(SplFileObject) Imprimir todos los datos restantes en un apuntador de fichero
 >fputcsv(array $fields, string $separator = ",", string $enclosure = "\"", string $escape = "\\", string $eol = "\n"): int|false	(SplFileObject) Escribir un array de campos como una línea CSV
 >fread(int $length): string|false	(SplFileObject) Leer un fichero
->fscanf(string $format, mixed ...$vars): array|int|null	(SplFileObject) Analiza la entrada de un fichero de acuerdo a un formato
+>fscanf(string $format, mixed &...$vars): array|int|null	(SplFileObject) Analiza la entrada de un fichero de acuerdo a un formato
 >fseek(int $offset, int $whence = SEEK_SET): int	(SplFileObject) Busca una posiciónn
 >fstat(): array	(SplFileObject) Obtiene información de el fichero
 >ftell(): int|false	(SplFileObject) Devuelve la posición del fichero actual
@@ -1704,26 +1704,26 @@ stream_isatty(resource $stream): bool	Verifica si un flujo es un TTY
 (int $notification_code, int $severity, ?string $message, int $message_code, int $bytes_transferred, int $bytes_max): void	Una función de retrollamada para el parámetro de contexto de notificación
 stream_register_wrapper()	Alias of stream_wrapper_register
 stream_resolve_include_path(string $filename): string|false	Resuelve el nombre de archivo en la ruta incluida
-stream_select(?array $read, ?array $write, ?array $except, ?int $seconds, ?int $microseconds = null): int|false	Ejecuta el equivalente de la llamada al sistema select() sobre las matrices de flujos dadas con un tiempo de espera especificado por tv_sec y tv_usec
+stream_select(?array &$read, ?array &$write, ?array &$except, ?int $seconds, ?int $microseconds = null): int|false	Ejecuta el equivalente de la llamada al sistema select() sobre las matrices de flujos dadas con un tiempo de espera especificado por tv_sec y tv_usec
 stream_set_blocking(resource $stream, bool $enable): bool	Establecer el modo bloqueo/no-bloqueo en un flujo
 stream_set_chunk_size(resource $stream, int $size): int	Establecer el tamaño de trozo de flujo
 stream_set_read_buffer(resource $stream, int $size): int	Establece el búfer de lectura de archivos en el flujo dado
 stream_set_timeout(resource $stream, int $seconds, int $microseconds = ?): bool	Establecer un perido de tiempo de espera en un flujo
 stream_set_write_buffer(resource $stream, int $size): int	Establece el búfer para escritura de ficheros en el flujo dado
-stream_socket_accept(resource $socket, ?float $timeout = null, string $peer_name = null): resource|false	Acepta una conexión sobre un socket creado por stream_socket_server
-stream_socket_client(string $address, int $error_code = null, string $error_message = null, ?float $timeout = null, int $flags = STREAM_CLIENT_CONNECT, ?resource $context = null): resource|false	Abrir una conexión de socket de dominio de Internet o Unix
+stream_socket_accept(resource $socket, ?float $timeout = null, string &$peer_name = null): resource|false	Acepta una conexión sobre un socket creado por stream_socket_server
+stream_socket_client(string $address, int &$error_code = null, string &$error_message = null, ?float $timeout = null, int $flags = STREAM_CLIENT_CONNECT, ?resource $context = null): resource|false	Abrir una conexión de socket de dominio de Internet o Unix
 stream_socket_enable_crypto(resource $stream, bool $enable, ?int $crypto_method = null, ?resource $session_stream = null): int|bool	Activa/desactiva la encriptación en un socket ya conectado
 stream_socket_get_name(resource $socket, bool $remote): string|false	Recuperar el nombre de los sockets locales o remotos
 stream_socket_pair(int $domain, int $type, int $protocol): array|false	Crea un pareja de flujos de socket conectados e indistinguibles
-stream_socket_recvfrom(resource $socket, int $length, int $flags = ?, ?string $address = null): string|false	Recibir información de un socket, conectado o no
+stream_socket_recvfrom(resource $socket, int $length, int $flags = ?, ?string &$address = null): string|false	Recibir información de un socket, conectado o no
 stream_socket_sendto(resource $socket, string $data, int $flags = ?, string $address = ""): int|false	Envía un mensaje a un socket, ya esté conectado o no
-stream_socket_server(string $address, int $error_code = null, string $error_message = null, int $flags = STREAM_SERVER_BIND | STREAM_SERVER_LISTEN, ?resource $context = null): resource|false	Crear un socket de servidor de dominio de Internet o de Unix
+stream_socket_server(string $address, int &$error_code = null, string &$error_message = null, int $flags = STREAM_SERVER_BIND | STREAM_SERVER_LISTEN, ?resource $context = null): resource|false	Crear un socket de servidor de dominio de Internet o de Unix
 stream_socket_shutdown(resource $stream, int $mode): bool	Cerrar una conexión full-duplex
 stream_supports_lock(resource $stream): bool	Indica si el flujo soporta bloqueo
 stream_wrapper_register(string $protocol, string $class, int $flags = ?): bool	Registra una envoltura de URL implementada como una clase de PHP
 stream_wrapper_restore(string $protocol): bool	Restablece una envoltura incluida que se dejó de registrar previamente
 stream_wrapper_unregister(string $protocol): bool	Deja de registrar una envoltura de URL
->filter(resource $in, resource $out, int $consumed, bool $closing): int	(php_user_filter) Llamado cuando se aplica un filtro
+>filter(resource $in, resource $out, int &$consumed, bool $closing): int	(php_user_filter) Llamado cuando se aplica un filtro
 >onClose(): void	(php_user_filter) Llamado cuando se cierra el filtro
 >onCreate(): bool	(php_user_filter) Llamado cuando se crea el filtro
 streamWrapper()	(new) Construye una nueva envoltura de flujo
@@ -1740,7 +1740,7 @@ streamWrapper()	(new) Construye una nueva envoltura de flujo
 >stream_flush(): bool	(streamWrapper) Vuelca la salida
 >stream_lock(int $operation): bool	(streamWrapper) Bloqueo de archivos asesorado
 >stream_metadata(string $path, int $option, mixed $value): bool	(streamWrapper) Cambiar los metadatos del flujo
->stream_open(string $path, string $mode, int $options, ?string $opened_path): bool	(streamWrapper) Abre un archivo o una URL
+>stream_open(string $path, string $mode, int $options, ?string &$opened_path): bool	(streamWrapper) Abre un archivo o una URL
 >stream_read(int $count): string|false	(streamWrapper) Leer un flujo
 >stream_seek(int $offset, int $whence): bool	(streamWrapper) Busca la ubicación específica en un flujo
 >stream_set_option(int $option, int $arg1, int $arg2): bool	(streamWrapper) Cambiar las opciones del flujo
@@ -1791,7 +1791,7 @@ nl_langinfo(int $item): string|false	Consulta información sobre el idioma y la 
 nl2br(string $string, bool $use_xhtml = true): string	Inserta saltos de línea HTML antes de todas las nuevas líneas de un string
 number_format(float $num, int $decimals = ?, ?string $decimal_separator = ".", ?string $thousands_separator = ","): string	Formatear un número con los millares agrupados
 ord(string $character): int	Convierte el primer byte de un string a un valor entre 0 y 255
-parse_str(string $string, array $result): void	Analiza un string de una variable
+parse_str(string $string, array &$result): void	Analiza un string de una variable
 print(string $expression): int	Mostrar una cadena
 printf(string $format, mixed ...$values): int	Imprimir una cadena con formato
 quoted_printable_decode(string $string): string	Convierte un string quoted-printable en un string de 8 bits
@@ -1802,19 +1802,19 @@ setlocale(int $category, string $locales, string ...$rest): string|false	Estable
 setlocale(int $category, array $locale_array): string|false	Establecer la información del localismo
 sha1_file(string $filename, bool $binary = false): string|false	Calcula el hash sha1 de un archivo
 sha1(string $string, bool $binary = false): string	Calcula el 'hash' sha1 de un string
-similar_text(string $string1, string $string2, float $percent = null): int	Calcula la similitud entre dos strings
+similar_text(string $string1, string $string2, float &$percent = null): int	Calcula la similitud entre dos strings
 soundex(string $string): string	Calcula la clave soundex de un string
 sprintf(string $format, mixed ...$values): string	Devuelve un string formateado
-sscanf(string $string, string $format, mixed ...$vars): array|int|null	Interpreta un string de entrada de acuerdo con un formato
+sscanf(string $string, string $format, mixed &...$vars): array|int|null	Interpreta un string de entrada de acuerdo con un formato
 str_contains(string $haystack, string $needle): bool	Determina si una cadena contiene un substring dado
 str_decrement(string $string): string	Decrementa un string alfanumérico
 str_ends_with(string $haystack, string $needle): bool	Determina si una cadena termina con un substring dado
 str_getcsv(string $string, string $separator = ",", string $enclosure = "\"", string $escape = "\\"): array	Convierte un string con formato CSV a un array
 str_increment(string $string): string	Incrementa un string alfanumérica
-str_ireplace(array|string $search, array|string $replace, string|array $subject, int $count = null): string|array	Versión insensible a mayúsculas y minúsculas de str_replace
+str_ireplace(array|string $search, array|string $replace, string|array $subject, int &$count = null): string|array	Versión insensible a mayúsculas y minúsculas de str_replace
 str_pad(string $string, int $length, string $pad_string = " ", int $pad_type = STR_PAD_RIGHT): string	Rellena un string hasta una longitud determinada con otro string
 str_repeat(string $string, int $times): string	Repite un string
-str_replace(array|string $search, array|string $replace, string|array $subject, int $count = null): string|array	Reemplaza todas las apariciones del string buscado con el string de reemplazo
+str_replace(array|string $search, array|string $replace, string|array $subject, int &$count = null): string|array	Reemplaza todas las apariciones del string buscado con el string de reemplazo
 str_rot13(string $string): string	Realizar la transformación rot13 sobre una cadena
 str_shuffle(string $string): string	Reordena aleatoriamente una cadena
 str_split(string $string, int $length = 1): array	Convierte un string en un array
@@ -1885,7 +1885,7 @@ gettype(mixed $value): string	Obtener el tipo de una variable
 intval(mixed $value, int $base = 10): int	Obtiene el valor entero de una variable
 is_array(mixed $value): bool	Comprueba si una variable es un array
 is_bool(mixed $value): bool	Comprueba si una variable es de tipo booleano
-is_callable(mixed $value, bool $syntax_only = false, string $callable_name = null): bool	Verificar que los contenidos de una variable puedan ser llamados como una función
+is_callable(mixed $value, bool $syntax_only = false, string &$callable_name = null): bool	Verificar que los contenidos de una variable puedan ser llamados como una función
 is_countable(mixed $value): bool	Verifica que el contenido de una variable es un valor contable
 is_double()	Alias of is_float
 is_float(mixed $value): bool	Comprueba si el tipo de una variable es float
@@ -1903,7 +1903,7 @@ is_string(mixed $value): bool	Comprueba si una variable es de tipo string
 isset(mixed $var, mixed ...$vars): bool	Determina si una variable está definida y no es null
 print_r(mixed $value, bool $return = false): string|true	Imprime información legible para humanos sobre una variable
 serialize(mixed $value): string	Genera una representación apta para el almacenamiento de un valor
-settype(mixed $var, string $type): bool	Establece el tipo de una variable
+settype(mixed &$var, string $type): bool	Establece el tipo de una variable
 strval(mixed $value): string	Obtiene el valor de cadena de una variable
 unserialize(string $data, array $options = []): mixed	Crea un valor PHP a partir de una representación almacenada
 unset(mixed $var, mixed ...$vars): void	Destruye una o más variables especificadas
@@ -2046,7 +2046,7 @@ Dba\Connection()	(new) A fully opaque class which replaces a dba resource as of 
 exif_imagetype(string $filename): int|false	Determinar el tipo de una imagen
 exif_read_data(resource|string $file, ?string $required_sections = null, bool $as_arrays = false, bool $read_thumbnail = false): array|false	Lee las cabeceras EXIF desde un JPEG o un TIFF
 exif_tagname(int $index): string|false	Obtener el nombre de la cabecera de un índice
-exif_thumbnail(resource|string $file, int $width = null, int $height = null, int $image_type = null): string|false	Recuperar la miniatura embebida de una imagen TIFF o JPEG
+exif_thumbnail(resource|string $file, int &$width = null, int &$height = null, int &$image_type = null): string|false	Recuperar la miniatura embebida de una imagen TIFF o JPEG
 read_exif_data()	Alias of exif_read_data
 >getAlignment(): int	(FFI\CType) Description
 >getArrayElementType(): FFI\CType	(FFI\CType) Description
@@ -2064,23 +2064,23 @@ read_exif_data()	Alias of exif_read_data
 >getStructFieldNames(): array	(FFI\CType) Description
 >getStructFieldOffset(string $name): int	(FFI\CType) Description
 >getStructFieldType(string $name): FFI\CType	(FFI\CType) Description
-FFI::addr(FFI\CData $ptr): FFI\CData	Creates an unmanaged pointer to C data
-FFI::alignof(FFI\CData|FFI\CType $ptr): int	Gets the alignment
+FFI::addr(FFI\CData &$ptr): FFI\CData	Creates an unmanaged pointer to C data
+FFI::alignof(FFI\CData|FFI\CType &$ptr): int	Gets the alignment
 FFI::arrayType(FFI\CType $type, array $dimensions): FFI\CType	Dynamically constructs a new C array type
->cast(FFI\CType|string $type, FFI\CData|int|float|bool|null $ptr): ?FFI\CData	(FFI) Performs a C type cast
+>cast(FFI\CType|string $type, FFI\CData|int|float|bool|null &$ptr): ?FFI\CData	(FFI) Performs a C type cast
 FFI::cdef(string $code = "", ?string $lib = null): FFI	Creates a new FFI object
-FFI::free(FFI\CData $ptr): void	Releases an unmanaged data structure
-FFI::isNull(FFI\CData $ptr): bool	Checks whether a FFI\CData is a null pointer
+FFI::free(FFI\CData &$ptr): void	Releases an unmanaged data structure
+FFI::isNull(FFI\CData &$ptr): bool	Checks whether a FFI\CData is a null pointer
 FFI::load(string $filename): ?FFI	Loads C declarations from a C header file
-FFI::memcmp(string|FFI\CData $ptr1, string|FFI\CData $ptr2, int $size): int	Compares memory areas
-FFI::memcpy(FFI\CData $to, FFI\CData|string $from, int $size): void	Copies one memory area to another
-FFI::memset(FFI\CData $ptr, int $value, int $size): void	Fills a memory area
+FFI::memcmp(string|FFI\CData &$ptr1, string|FFI\CData &$ptr2, int $size): int	Compares memory areas
+FFI::memcpy(FFI\CData &$to, FFI\CData|string &$from, int $size): void	Copies one memory area to another
+FFI::memset(FFI\CData &$ptr, int $value, int $size): void	Fills a memory area
 FFI(FFI\CType|string $type, bool $owned = true, bool $persistent = false): ?FFI\CData	(new) Creates a C data structure
 FFI::scope(string $name): FFI	Instantiates an FFI object with C declarations parsed during preloading
-FFI::sizeof(FFI\CData|FFI\CType $ptr): int	Gets the size of C data or types
-FFI::string(FFI\CData $ptr, ?int $size = null): string	Creates a PHP string from a memory area
+FFI::sizeof(FFI\CData|FFI\CType &$ptr): int	Gets the size of C data or types
+FFI::string(FFI\CData &$ptr, ?int $size = null): string	Creates a PHP string from a memory area
 >type(string $type): ?FFI\CType	(FFI) Creates an FFI\CType object from a C declaration
-FFI::typeof(FFI\CData $ptr): FFI\CType	Gets the FFI\CType of FFI\CData
+FFI::typeof(FFI\CData &$ptr): FFI\CType	Gets the FFI\CType of FFI\CData
 FFI\CData()	(new) FFI\CData objects can be used in a number of ways as a regular PHP data: C data of scalar types can be read and assigned via the $cdata property, e
 FFI\CType()	(new) 
 FFI\Exception()	(new) 
@@ -2106,7 +2106,7 @@ filter_input(int $type, string $var_name, int $filter = FILTER_DEFAULT, array|in
 filter_list(): array	Devuelve una lista de todos los filtros soportados
 filter_var_array(array $array, array|int $options = FILTER_DEFAULT, bool $add_empty = true): array|false|null	Obtiene múltiple variables y opcionalmente las filtra
 filter_var(mixed $value, int $filter = FILTER_DEFAULT, array|int $options = ?): mixed	Filtra una variable con el filtro que se indique
-ftp_alloc(FTP\Connection $ftp, int $size, string $response = null): bool	Reserva espacio para que un archivo sea cargado
+ftp_alloc(FTP\Connection $ftp, int $size, string &$response = null): bool	Reserva espacio para que un archivo sea cargado
 ftp_append(FTP\Connection $ftp, string $remote_filename, string $local_filename, int $mode = FTP_BINARY): bool	Append the contents of a file to another file on the FTP server
 ftp_cdup(FTP\Connection $ftp): bool	Vuelve al directorio padre
 ftp_chdir(FTP\Connection $ftp, string $directory): bool	Cambia el directorio actual en un servidor FTP
@@ -2155,8 +2155,8 @@ iconv_substr(string $string, int $offset, ?int $length = null, ?string $encoding
 iconv(string $from_encoding, string $to_encoding, string $string): string|false	Convierte un string a la codificación de caracteres indicada
 ob_iconv_handler(string $contents, int $status): string	Convierte la codificación de caracteres al manejador del buffer de salida
 gd_info(): array	Reunir información acerca de la biblioteca GD instalada actualmente
-getimagesize(string $filename, array $image_info = null): array|false	Obtener el tamaño de una imagen
-getimagesizefromstring(string $string, array $image_info = null): array|false	Obtener el tamaño de una imagen desde una cadena
+getimagesize(string $filename, array &$image_info = null): array|false	Obtener el tamaño de una imagen
+getimagesizefromstring(string $string, array &$image_info = null): array|false	Obtener el tamaño de una imagen desde una cadena
 image_type_to_extension(int $image_type, bool $include_dot = true): string|false	Obtiene la extensión de un tipo de imagen
 image_type_to_mime_type(int $image_type): string	Obtiene el tipo Mime de un tipo de imagen devuelto por getimagesize, exif_read_data, exif_thumbnail, exif_imagetype
 image2wbmp(resource $image, string $filename = ?, int $foreground = ?): bool	gd.image.output
@@ -2276,8 +2276,8 @@ jpeg2wbmp(string $jpegname, string $wbmpname, int $dest_height, int $dest_width,
 png2wbmp(string $pngname, string $wbmpname, int $dest_height, int $dest_width, int $threshold): bool	Convertir un archivo de imagen PNG a un archivo de imagen WBMP
 GdFont()	(new) A fully opaque class which replaces gd font resources as of PHP 8
 GdImage()	(new) A fully opaque class which replaces gd resources as of PHP 8
->asort(array $array, int $flags = Collator::SORT_REGULAR): bool	(Collator) Ordenar un array manteniendo la relación de índices
-collator_asort(Collator $object, array $array, int $flags = Collator::SORT_REGULAR): bool	Ordenar un array manteniendo la relación de índices
+>asort(array &$array, int $flags = Collator::SORT_REGULAR): bool	(Collator) Ordenar un array manteniendo la relación de índices
+collator_asort(Collator $object, array &$array, int $flags = Collator::SORT_REGULAR): bool	Ordenar un array manteniendo la relación de índices
 >compare(string $string1, string $string2): int|false	(Collator) Comparar dos cadenas Unicode
 collator_compare(Collator $object, string $string1, string $string2): int|false	Comparar dos cadenas Unicode
 Collator(string $locale)	(new) Crear un objeto Collator
@@ -2299,10 +2299,10 @@ collator_get_strength(Collator $object): int	Obtener la fuerza de cotejo actual
 collator_set_attribute(Collator $object, int $attribute, int $value): bool	Establecer el atributo de cotejo
 >setStrength(int $strength): true	(Collator) Establecer la fuerza (strength) de un cotejo
 collator_set_strength(Collator $object, int $strength): true	Establecer la fuerza (strength) de un cotejo
->sortWithSortKeys(array $array): bool	(Collator) Ordenar un array usando el cotejador y las claves de ordenación especificados
-collator_sort_with_sort_keys(Collator $object, array $array): bool	Ordenar un array usando el cotejador y las claves de ordenación especificados
->sort(array $array, int $flags = Collator::SORT_REGULAR): bool	(Collator) Ordenar un array usando cotejador especificado
-collator_sort(Collator $object, array $array, int $flags = Collator::SORT_REGULAR): bool	Ordenar un array usando cotejador especificado
+>sortWithSortKeys(array &$array): bool	(Collator) Ordenar un array usando el cotejador y las claves de ordenación especificados
+collator_sort_with_sort_keys(Collator $object, array &$array): bool	Ordenar un array usando el cotejador y las claves de ordenación especificados
+>sort(array &$array, int $flags = Collator::SORT_REGULAR): bool	(Collator) Ordenar un array usando cotejador especificado
+collator_sort(Collator $object, array &$array, int $flags = Collator::SORT_REGULAR): bool	Ordenar un array usando cotejador especificado
 IntlDateFormatter::create(?string $locale, int $dateType = IntlDateFormatter::FULL, int $timeType = IntlDateFormatter::FULL, IntlTimeZone|DateTimeZone|string|null $timezone = null, IntlCalendar|int|null $calendar = null, ?string $pattern = null): ?IntlDateFormatter	Crear un formateador de fechas
 datefmt_create(?string $locale, int $dateType = IntlDateFormatter::FULL, int $timeType = IntlDateFormatter::FULL, IntlTimeZone|DateTimeZone|string|null $timezone = null, IntlCalendar|int|null $calendar = null, ?string $pattern = null): ?IntlDateFormatter	Crear un formateador de fechas
 >format(IntlCalendar|DateTimeInterface|array|string|int|float $datetime): string|false	(IntlDateFormatter) Formatear el valor fecha/hora como una cadena
@@ -2331,10 +2331,10 @@ datefmt_get_calendar_object(IntlDateFormatter $formatter): IntlCalendar|false|nu
 datefmt_get_timezone(IntlDateFormatter $formatter): IntlTimeZone|false	Obtener la zona horaria del formateador
 >isLenient(): bool	(IntlDateFormatter) Obtener la tolerancia usada por un formateador de IntlDateFormatter
 datefmt_is_lenient(IntlDateFormatter $formatter): bool	Obtener la tolerancia usada por un formateador de IntlDateFormatter
->localtime(string $string, int $offset = null): array|false	(IntlDateFormatter) Convertir una cadena en un valor de marca de tiempo basado en un campo
-datefmt_localtime(IntlDateFormatter $formatter, string $string, int $offset = null): array|false	Convertir una cadena en un valor de marca de tiempo basado en un campo
->parse(string $string, int $offset = null): int|float|false	(IntlDateFormatter) Convertir una cadena en un valor de marca de tiempo
-datefmt_parse(IntlDateFormatter $formatter, string $string, int $offset = null): int|float|false	Convertir una cadena en un valor de marca de tiempo
+>localtime(string $string, int &$offset = null): array|false	(IntlDateFormatter) Convertir una cadena en un valor de marca de tiempo basado en un campo
+datefmt_localtime(IntlDateFormatter $formatter, string $string, int &$offset = null): array|false	Convertir una cadena en un valor de marca de tiempo basado en un campo
+>parse(string $string, int &$offset = null): int|float|false	(IntlDateFormatter) Convertir una cadena en un valor de marca de tiempo
+datefmt_parse(IntlDateFormatter $formatter, string $string, int &$offset = null): int|float|false	Convertir una cadena en un valor de marca de tiempo
 >setCalendar(IntlCalendar|int|null $calendar): bool	(IntlDateFormatter) Establecer el tipo de calendario usado por el formateador
 datefmt_set_calendar(IntlDateFormatter $formatter, IntlCalendar|int|null $calendar): bool	Establecer el tipo de calendario usado por el formateador
 >setLenient(bool $lenient): void	(IntlDateFormatter) Establecer la tolerancia del analizador
@@ -2347,7 +2347,7 @@ intl_error_name(int $errorCode): string	Obtiene un nombre simbólico a partir de
 intl_get_error_code(): int	Obtiene el último código de error
 intl_get_error_message(): string	Obtener una descripción del último error
 intl_is_failure(int $errorCode): bool	Comprueba si el código de error dado indica un fallo
-grapheme_extract(string $haystack, int $size, int $type = GRAPHEME_EXTR_COUNT, int $offset = ?, int $next = null): string|false	Función para extraer una secuencia de un clúster de grafemas predeterminados desde un buffer de texto, que puede estar codificado en UTF-8
+grapheme_extract(string $haystack, int $size, int $type = GRAPHEME_EXTR_COUNT, int $offset = ?, int &$next = null): string|false	Función para extraer una secuencia de un clúster de grafemas predeterminados desde un buffer de texto, que puede estar codificado en UTF-8
 grapheme_str_split(string $string, int $length = 1): array|false	Split a string into an array
 grapheme_stripos(string $haystack, string $needle, int $offset = ?): int|false	Buscar la posición (en unidades de grafema) de la primera coincidencia de una cadena insensible a mayúsculas-minúsculas
 grapheme_stristr(string $haystack, string $needle, bool $beforeNeedle = false): string|false	Devolver parte de la cadena "pajar" desde la primera coincidencia de la cadena "aguja" insensible a mayúsculas-minúsculas hasta el final de "pajar"
@@ -2357,8 +2357,8 @@ grapheme_strripos(string $haystack, string $needle, int $offset = ?): int|false	
 grapheme_strrpos(string $haystack, string $needle, int $offset = ?): int|false	Buscar la posición (en unidades de grafema) de la última coincidencia de una cadena
 grapheme_strstr(string $haystack, string $needle, bool $beforeNeedle = false): string|false	Devolver parte de la cadena "pajar" desde la primera coincidencia de la cadena "aguja" hasta el final de "pajar"
 grapheme_substr(string $string, int $offset, ?int $length = null): string|false	Devolver parte de una cadena
-idn_to_ascii(string $domain, int $flags = IDNA_DEFAULT, int $variant = INTL_IDNA_VARIANT_UTS46, array $idna_info = null): string|false	Convierte un nombre de dominio a formato IDNA ASCII
-idn_to_utf8(string $domain, int $flags = IDNA_DEFAULT, int $variant = INTL_IDNA_VARIANT_UTS46, array $idna_info = null): string|false	Convierte un nombre de dominio de IDNA ASCII a Unicode
+idn_to_ascii(string $domain, int $flags = IDNA_DEFAULT, int $variant = INTL_IDNA_VARIANT_UTS46, array &$idna_info = null): string|false	Convierte un nombre de dominio a formato IDNA ASCII
+idn_to_utf8(string $domain, int $flags = IDNA_DEFAULT, int $variant = INTL_IDNA_VARIANT_UTS46, array &$idna_info = null): string|false	Convierte un nombre de dominio de IDNA ASCII a Unicode
 IntlBreakIterator()	(new) Constructor privado para denegar la instanciación
 IntlBreakIterator::createCharacterInstance(?string $locale = null): ?IntlBreakIterator	Crear un iterador de ruptura para los límites de secuencias de caracters combinados
 IntlBreakIterator::createCodePointInstance(): IntlCodePointBreakIterator	Crear un iterador de ruptura para los límites de puntos de código
@@ -2571,8 +2571,8 @@ IntlTimeZone::createTimeZoneIDEnumeration(int $type, ?string $region = null, ?in
 intltz_create_time_zone_id_enumeration(int $type, ?string $region = null, ?int $rawOffset = null): IntlIterator|false	Get an enumeration over system time zone IDs with the given filter conditions
 IntlTimeZone::fromDateTimeZone(DateTimeZone $timezone): ?IntlTimeZone	Crear un objeto de zona horaria desde DateTimeZone
 intltz_from_date_time_zone(DateTimeZone $timezone): ?IntlTimeZone	Crear un objeto de zona horaria desde DateTimeZone
-IntlTimeZone::getCanonicalID(string $timezoneId, bool $isSystemId = null): string|false	Obtener el ID canónico de la zona horaria del sistema o el ID normalizado de la zona horaria personalizada para el ID de zona horaria dado
-intltz_get_canonical_id(string $timezoneId, bool $isSystemId = null): string|false	Obtener el ID canónico de la zona horaria del sistema o el ID normalizado de la zona horaria personalizada para el ID de zona horaria dado
+IntlTimeZone::getCanonicalID(string $timezoneId, bool &$isSystemId = null): string|false	Obtener el ID canónico de la zona horaria del sistema o el ID normalizado de la zona horaria personalizada para el ID de zona horaria dado
+intltz_get_canonical_id(string $timezoneId, bool &$isSystemId = null): string|false	Obtener el ID canónico de la zona horaria del sistema o el ID normalizado de la zona horaria personalizada para el ID de zona horaria dado
 >getDisplayName(bool $dst = false, int $style = IntlTimeZone::DISPLAY_LONG, ?string $locale = null): string|false	(IntlTimeZone) Obtener un nombre de esta zona horaria apto para la presentación al usuario
 intltz_get_display_name(IntlTimeZone $timezone, bool $dst = false, int $style = IntlTimeZone::DISPLAY_LONG, ?string $locale = null): string|false	Obtener un nombre de esta zona horaria apto para la presentación al usuario
 >getDSTSavings(): int	(IntlTimeZone) Obtener la cantidad de tiempo a añadir a la hora local estándar para obtener la hora local actual
@@ -2589,8 +2589,8 @@ intltz_get_gmt(): IntlTimeZone	Crear una zona horaria GMT (UTC)
 intltz_get_id(IntlTimeZone $timezone): string|false	Obtener el ID de la zona horaria
 IntlTimeZone::getIDForWindowsID(string $timezoneId, ?string $region = null): string|false	Translate a Windows timezone into a system timezone
 intltz_get_id_for_windows_id(string $timezoneId, ?string $region = null): string|false	Translate a Windows timezone into a system timezone
->getOffset(float $timestamp, bool $local, int $rawOffset, int $dstOffset): bool	(IntlTimeZone) Obtener la zona horaria sin tratar y el índice GMT para el momento dado
-intltz_get_offset(IntlTimeZone $timezone, float $timestamp, bool $local, int $rawOffset, int $dstOffset): bool	Obtener la zona horaria sin tratar y el índice GMT para el momento dado
+>getOffset(float $timestamp, bool $local, int &$rawOffset, int &$dstOffset): bool	(IntlTimeZone) Obtener la zona horaria sin tratar y el índice GMT para el momento dado
+intltz_get_offset(IntlTimeZone $timezone, float $timestamp, bool $local, int &$rawOffset, int &$dstOffset): bool	Obtener la zona horaria sin tratar y el índice GMT para el momento dado
 >getRawOffset(): int	(IntlTimeZone) Obtener el índice GMT sin tratar (antes de tomar en cuenta el horario de verano)
 intltz_get_raw_offset(IntlTimeZone $timezone): int	Obtener el índice GMT sin tratar (antes de tomar en cuenta el horario de verano)
 IntlTimeZone::getRegion(string $timezoneId): string|false	Get the region code associated with the given system time zone ID
@@ -2688,10 +2688,10 @@ numfmt_get_pattern(NumberFormatter $formatter): string|false	Obtener el patrón 
 numfmt_get_symbol(NumberFormatter $formatter, int $symbol): string|false	Obtener el valor de un símbolo
 >getTextAttribute(int $attribute): string|false	(NumberFormatter) Obtiene un atributo de texto
 numfmt_get_text_attribute(NumberFormatter $formatter, int $attribute): string|false	Obtiene un atributo de texto
->parseCurrency(string $string, string $currency, int $offset = null): float|false	(NumberFormatter) Procesa un número monetario
-numfmt_parse_currency(NumberFormatter $formatter, string $string, string $currency, int $offset = null): float|false	Procesa un número monetario
->parse(string $string, int $type = NumberFormatter::TYPE_DOUBLE, int $offset = null): int|float|false	(NumberFormatter) Analiza un número
-numfmt_parse(NumberFormatter $formatter, string $string, int $type = NumberFormatter::TYPE_DOUBLE, int $offset = null): int|float|false	Analiza un número
+>parseCurrency(string $string, string &$currency, int &$offset = null): float|false	(NumberFormatter) Procesa un número monetario
+numfmt_parse_currency(NumberFormatter $formatter, string $string, string &$currency, int &$offset = null): float|false	Procesa un número monetario
+>parse(string $string, int $type = NumberFormatter::TYPE_DOUBLE, int &$offset = null): int|float|false	(NumberFormatter) Analiza un número
+numfmt_parse(NumberFormatter $formatter, string $string, int $type = NumberFormatter::TYPE_DOUBLE, int &$offset = null): int|float|false	Analiza un número
 >setAttribute(int $attribute, int|float $value): bool	(NumberFormatter) Establecer un atributo
 numfmt_set_attribute(NumberFormatter $formatter, int $attribute, int|float $value): bool	Establecer un atributo
 >setPattern(string $pattern): bool	(NumberFormatter) Establecer el patrón de un formateador
@@ -2712,9 +2712,9 @@ resourcebundle_get_error_message(ResourceBundle $bundle): string	Obtener el mens
 resourcebundle_get(ResourceBundle $bundle, string|int $index, bool $fallback = true): mixed	Obtener datos de un paquete
 ResourceBundle::getLocales(string $bundle): array|false	Obtener las configuraciones regionales soportadas
 resourcebundle_locales(string $bundle): array|false	Obtener las configuraciones regionales soportadas
->areConfusable(string $string1, string $string2, int $errorCode = null): bool	(Spoofchecker) Comprobar si un texto dado contiene carateres que pueden ser confusos
+>areConfusable(string $string1, string $string2, int &$errorCode = null): bool	(Spoofchecker) Comprobar si un texto dado contiene carateres que pueden ser confusos
 Spoofchecker()	(new) Constructor
->isSuspicious(string $string, int $errorCode = null): bool	(Spoofchecker) Comprobar si un texto dad contiene caracteres sospechosos
+>isSuspicious(string $string, int &$errorCode = null): bool	(Spoofchecker) Comprobar si un texto dad contiene caracteres sospechosos
 >setAllowedLocales(string $locales): void	(Spoofchecker) Las configuraciones regionales a usar cuando se ejecutan las comprobaciones
 >setChecks(int $checks): void	(Spoofchecker) Establecer las comprobaciones a ejecutar
 >setRestrictionLevel(int $level): void	(Spoofchecker) Set the restriction level
@@ -2735,7 +2735,7 @@ transliterator_list_ids(): array|false	Obtener los IDs de los transliterardores
 transliterator_transliterate(Transliterator|string $transliterator, string $string, int $start = ?, int $end = -1): string|false	Transliterar una cadena
 UConverter(?string $destination_encoding = null, ?string $source_encoding = null)	(new) Crea un objeto UConverter
 >convert(string $str, bool $reverse = false): string|false	(UConverter) Convertir un string de un juego de caracteres a otro
->fromUCallback(int $reason, array $source, int $codePoint, int $error): string|int|array|null	(UConverter) Función de retrollamada "from" predeterminada
+>fromUCallback(int $reason, array $source, int $codePoint, int &$error): string|int|array|null	(UConverter) Función de retrollamada "from" predeterminada
 UConverter::getAliases(string $name): array|false|null	Obtener los alias del nombre dado
 UConverter::getAvailable(): array	Obtener los nombres canónicos de los convertidores disponibles
 >getDestinationEncoding(): string|false|null	(UConverter) Obtener la codificación de destino
@@ -2750,7 +2750,7 @@ UConverter::reasonText(int $reason): string	Obtener la representación de string
 >setDestinationEncoding(string $encoding): bool	(UConverter) Establecer la codificación destino
 >setSourceEncoding(string $encoding): bool	(UConverter) Establecer la codificación origen
 >setSubstChars(string $chars): bool	(UConverter) Establecer los caracteres de sustitución
->toUCallback(int $reason, string $source, string $codeUnits, int $error): string|int|array|null	(UConverter) Función de retrollamada "to" predeterminada
+>toUCallback(int $reason, string $source, string $codeUnits, int &$error): string|int|array|null	(UConverter) Función de retrollamada "to" predeterminada
 UConverter::transcode(string $str, string $toEncoding, string $fromEncoding, ?array $options = null): string|false	Convertir un string de un juego de caracteres a otro
 IntlDateFormatter()	(new) Date Formatter es una clase concreta que permite el formateo/procesamiento dependiente de la configuración regional de fechas utilizando cadenas de patrones y/o patrones enlatados
 IntlChar()	(new) IntlChar proporciona acceso a varios métodos de utilidades que pueden emplearse para obtener información de caracteres Unicode
@@ -2769,7 +2769,7 @@ mb_chr(int $codepoint, ?string $encoding = null): string|false	Return character 
 mb_convert_case(string $string, int $mode, ?string $encoding = null): string	Realiza una conversión a mayúsculas/minúsculas de un string
 mb_convert_encoding(array|string $string, string $to_encoding, array|string|null $from_encoding = null): array|string|false	Convierte una codificación de caracteres
 mb_convert_kana(string $string, string $mode = "KV", ?string $encoding = null): string	Convierte un "kana" a otro ("zen-kaku", "han-kaku" y más)
-mb_convert_variables(string $to_encoding, array|string $from_encoding, mixed $var, mixed ...$vars): string|false	Convierte la codificación de variables
+mb_convert_variables(string $to_encoding, array|string $from_encoding, mixed &$var, mixed &...$vars): string|false	Convierte la codificación de variables
 mb_decode_mimeheader(string $string): string	Decodifica un string en el campo de cabecera MIME
 mb_decode_numericentity(string $string, array $map, ?string $encoding = null): string	Decodifica referencias a string numéricas de HTML en caracteres
 mb_detect_encoding(string $string, array|string|null $encodings = null, bool $strict = false): string|false	Detecta la codificación de caracteres
@@ -2787,9 +2787,9 @@ mb_ereg_search_pos(?string $pattern = null, ?string $options = null): array|fals
 mb_ereg_search_regs(?string $pattern = null, ?string $options = null): array|false	Devuelve la parte coincidente de una expresión regular multibyte
 mb_ereg_search_setpos(int $offset): bool	Establece el punto de inicio de la siguiente comparación de una expresión regular
 mb_ereg_search(?string $pattern = null, ?string $options = null): bool	Comparación de expresiones regulares multibyte para un string multibyte predefinido
-mb_ereg(string $pattern, string $string, array $matches = null): bool	Comparación de expresiones regulares con soporte multibyte
+mb_ereg(string $pattern, string $string, array &$matches = null): bool	Comparación de expresiones regulares con soporte multibyte
 mb_eregi_replace(string $pattern, string $replacement, string $string, ?string $options = null): string|false|null	Reemplaza una expresión regular con soporte multibyte ignorando mayúsculas/minúsculas
-mb_eregi(string $pattern, string $string, array $matches = null): bool	Comparación de expresiones regulares ignorando mayúsculas/minúsculas con soporte multibyte
+mb_eregi(string $pattern, string $string, array &$matches = null): bool	Comparación de expresiones regulares ignorando mayúsculas/minúsculas con soporte multibyte
 mb_get_info(string $type = "all"): array|string|int|false|null	Obtiene la configuración interna de mbstring
 mb_http_input(?string $type = null): array|string|false	Detecta la codificación de caracteres de entrada HTTP
 mb_http_output(?string $encoding = null): string|bool	Establece/obtiene la codificación de caracteres de salida HTTP
@@ -2800,7 +2800,7 @@ mb_list_encodings(): array	Devuelve un array con todos los tipos de codificacion
 mb_ltrim(string $string, ?string $characters = null, ?string $encoding = null): string	Strip whitespace (or other characters) from the beginning of a string
 mb_ord(string $string, ?string $encoding = null): int|false	Get Unicode code point of character
 mb_output_handler(string $string, int $status): string	Función de llamada de retorno que convierte la codificación de caracteres en búfer de salida
-mb_parse_str(string $string, array $result): bool	Analiza datos GET/POST/COOKIE y establece varialbes globales
+mb_parse_str(string $string, array &$result): bool	Analiza datos GET/POST/COOKIE y establece varialbes globales
 mb_preferred_mime_name(string $encoding): string|false	Obtener un string del conjunto de caracteres del MIME
 mb_regex_encoding(?string $encoding = null): string|bool	Establecer/obtener la codificación de caracteres para expresiones regulares multibyte
 mb_regex_set_options(?string $options = null): string	Establece/obtiene las opciones predeterminadas para las funciones mbregex
@@ -2848,14 +2848,14 @@ pcntl_setpriority(int $priority, ?int $process_id = null, int $mode = PRIO_PROCE
 pcntl_signal_dispatch(): bool	Llama a los gestores de señales para cada señal en espera
 pcntl_signal_get_handler(int $signal): callable|int	Recupera el gestor actual para la señal especificada
 pcntl_signal(int $signal, callable|int $handler, bool $restart_syscalls = true): bool	Instala un gestor de señales
-pcntl_sigprocmask(int $mode, array $signals, array $old_signals = null): bool	Lista y configura las señales bloqueadas
-pcntl_sigtimedwait(array $signals, array $info = [], int $seconds = ?, int $nanoseconds = ?): int|false	Espera una señal en un tiempo dado
-pcntl_sigwaitinfo(array $signals, array $info = []): int|false	Espera una señal
+pcntl_sigprocmask(int $mode, array $signals, array &$old_signals = null): bool	Lista y configura las señales bloqueadas
+pcntl_sigtimedwait(array $signals, array &$info = [], int $seconds = ?, int $nanoseconds = ?): int|false	Espera una señal en un tiempo dado
+pcntl_sigwaitinfo(array $signals, array &$info = []): int|false	Espera una señal
 pcntl_strerror(int $error_code): string	Recupera el mensaje de error del sistema asociado con el errno proporcionado
 pcntl_unshare(int $flags): bool	Disocia partes del contexto de ejecución del proceso
-pcntl_wait(int $status, int $flags = ?, array $resource_usage = []): int	Espera o devuelve el estado de un proceso hijo
-pcntl_waitid(int $idtype = P_ALL, ?int $id = null, array $info = [], int $flags = WEXITED): bool	Espera a que un proceso hijo cambie de estado
-pcntl_waitpid(int $process_id, int $status, int $flags = ?, array $resource_usage = []): int	Espera la finalización de la ejecución de un proceso hijo
+pcntl_wait(int &$status, int $flags = ?, array &$resource_usage = []): int	Espera o devuelve el estado de un proceso hijo
+pcntl_waitid(int $idtype = P_ALL, ?int $id = null, array &$info = [], int $flags = WEXITED): bool	Espera a que un proceso hijo cambie de estado
+pcntl_waitpid(int $process_id, int &$status, int $flags = ?, array &$resource_usage = []): int	Espera la finalización de la ejecución de un proceso hijo
 pcntl_wexitstatus(int $status): int|false	Devuelve el código de un proceso hijo terminado
 pcntl_wifexited(int $status): bool	Verifica si el código de retorno representa una finalización normal
 pcntl_wifsignaled(int $status): bool	Devuelve true si el código de estado representa una terminación debido a una señal
@@ -2882,8 +2882,8 @@ pdo_drivers(): array	Devuelve un array con los controladores de PDO disponibles
 >quote(string $string, int $type = PDO::PARAM_STR): string|false	(PDO) Entrecomilla una cadena de caracteres para usarla en una consulta
 >rollBack(): bool	(PDO) Revierte una transacción
 >setAttribute(int $attribute, mixed $value): bool	(PDO) Establece un atributo
->bindColumn(string|int $column, mixed $var, int $type = PDO::PARAM_STR, int $maxLength = ?, mixed $driverOptions = null): bool	(PDOStatement) Vincula una columna a una variable de PHP
->bindParam(string|int $param, mixed $var, int $type = PDO::PARAM_STR, int $maxLength = ?, mixed $driverOptions = null): bool	(PDOStatement) Vincula un parámetro al nombre de variable especificado
+>bindColumn(string|int $column, mixed &$var, int $type = PDO::PARAM_STR, int $maxLength = ?, mixed $driverOptions = null): bool	(PDOStatement) Vincula una columna a una variable de PHP
+>bindParam(string|int $param, mixed &$var, int $type = PDO::PARAM_STR, int $maxLength = ?, mixed $driverOptions = null): bool	(PDOStatement) Vincula un parámetro al nombre de variable especificado
 >bindValue(string|int $param, mixed $value, int $type = PDO::PARAM_STR): bool	(PDOStatement) Vincula un valor a un parámetro
 >closeCursor(): bool	(PDOStatement) Cierra un cursor, habilitando a la sentencia para que sea ejecutada otra vez
 >columnCount(): int	(PDOStatement) Devuelve el número de columnas de un conjunto de resultados
@@ -3060,9 +3060,9 @@ posix_uname(): array|false	Obtener el nombre del sistema
 ftok(string $filename, string $project_id): int	Convertir un nombre de ruta y un identificador de proyecto a una clave IPC de System V
 msg_get_queue(int $key, int $permissions = 0666): SysvMessageQueue|false	Crear o adjuntar a una cola de mensajes
 msg_queue_exists(int $key): bool	Verificar si una cola de mensajes existe
-msg_receive(SysvMessageQueue $queue, int $desired_message_type, int $received_message_type, int $max_message_size, mixed $message, bool $unserialize = true, int $flags = ?, int $error_code = null): bool	Recibir un mensaje de la cola de mensajes
+msg_receive(SysvMessageQueue $queue, int $desired_message_type, int &$received_message_type, int $max_message_size, mixed &$message, bool $unserialize = true, int $flags = ?, int &$error_code = null): bool	Recibir un mensaje de la cola de mensajes
 msg_remove_queue(SysvMessageQueue $queue): bool	Destruir una cola de mensajes
-msg_send(SysvMessageQueue $queue, int $message_type, string|int|float|bool $message, bool $serialize = true, bool $blocking = true, int $error_code = null): bool	Eviar un mensaje a una cola de mensajes
+msg_send(SysvMessageQueue $queue, int $message_type, string|int|float|bool $message, bool $serialize = true, bool $blocking = true, int &$error_code = null): bool	Eviar un mensaje a una cola de mensajes
 msg_set_queue(SysvMessageQueue $queue, array $data): bool	Establecer información en la estructura de datos de la cola de mensajes
 msg_stat_queue(SysvMessageQueue $queue): array|false	Devuelve información desde la estructura de datos de la cola de mensajes
 sem_acquire(SysvSemaphore $semaphore, bool $non_blocking = false): bool	Adquirir un semáforo
@@ -3143,21 +3143,21 @@ socket_close(Socket $socket): void	Cierra un recurso socket
 socket_cmsg_space(int $level, int $type, int $num = ?): ?int	Calcular el tamaño del búfer de mensajes
 socket_connect(Socket $socket, string $address, ?int $port = null): bool	Inicia una conexión sobre un socket
 socket_create_listen(int $port, int $backlog = SOMAXCONN): Socket|false	Abre un socket en un puerto para aceptar conexiones
-socket_create_pair(int $domain, int $type, int $protocol, array $pair): bool	Crea un par de sockets indistinguibles y los almacena en una matriz
+socket_create_pair(int $domain, int $type, int $protocol, array &$pair): bool	Crea un par de sockets indistinguibles y los almacena en una matriz
 socket_create(int $domain, int $type, int $protocol): Socket|false	Crear un socket (extremo de comunicación)
 socket_export_stream(Socket $socket): resource|false	Export a socket into a stream that encapsulates a socket
 socket_get_option(Socket $socket, int $level, int $option): array|int|false	Obtiene las opciones de socket para el socket
 socket_getopt()	Alias of socket_get_option
-socket_getpeername(Socket $socket, string $address, int $port = null): bool	Pregunta a la parte remota del socket dado que puede resultar en un host/puerto o en una ruta de sistema de archivos Unix, dependiendo de su tipo
-socket_getsockname(Socket $socket, string $address, int $port = null): bool	Preguntar a la parte local del socket dado que puede resultar en un host/puerto o en una ruta de sistema de archivos Unix, dependiendo de su tipo
+socket_getpeername(Socket $socket, string &$address, int &$port = null): bool	Pregunta a la parte remota del socket dado que puede resultar en un host/puerto o en una ruta de sistema de archivos Unix, dependiendo de su tipo
+socket_getsockname(Socket $socket, string &$address, int &$port = null): bool	Preguntar a la parte local del socket dado que puede resultar en un host/puerto o en una ruta de sistema de archivos Unix, dependiendo de su tipo
 socket_import_stream(resource $stream): Socket|false	Importar un flujo a stream
 socket_last_error(?Socket $socket = null): int	Devuelve el último error sobre un socket
 socket_listen(Socket $socket, int $backlog = ?): bool	Escucha una conexión sobre un socket
 socket_read(Socket $socket, int $length, int $mode = PHP_BINARY_READ): string|false	Lee un máximo de longitud de bytes desde un socket
-socket_recv(Socket $socket, ?string $data, int $length, int $flags): int|false	Recibe información desde un socket conectado
-socket_recvfrom(Socket $socket, string $data, int $length, int $flags, string $address, int $port = null): int|false	Recibe información desde un socket que esté o no orientado a conexión
-socket_recvmsg(Socket $socket, array $message, int $flags = ?): int|false	Leer un mensaje
-socket_select(?array $read, ?array $write, ?array $except, ?int $seconds, int $microseconds = ?): int|false	Ejecuta la llamada a select() del sistema sobre las matrices de sockets dadas con un tiempo límite especificado
+socket_recv(Socket $socket, ?string &$data, int $length, int $flags): int|false	Recibe información desde un socket conectado
+socket_recvfrom(Socket $socket, string &$data, int $length, int $flags, string &$address, int &$port = null): int|false	Recibe información desde un socket que esté o no orientado a conexión
+socket_recvmsg(Socket $socket, array &$message, int $flags = ?): int|false	Leer un mensaje
+socket_select(?array &$read, ?array &$write, ?array &$except, ?int $seconds, int $microseconds = ?): int|false	Ejecuta la llamada a select() del sistema sobre las matrices de sockets dadas con un tiempo límite especificado
 socket_send(Socket $socket, string $data, int $length, int $flags): int|false	Envía información a un socket conectado
 socket_sendmsg(Socket $socket, array $message, int $flags = ?): int|false	Enviar un mensaje
 socket_sendto(Socket $socket, string $data, int $length, int $flags, string $address, ?int $port = null): int|false	Envía un mensaje a un socket, ya esté conectado o no
@@ -3202,7 +3202,7 @@ SQLite3Result()	(new) Constructs an SQLite3Result
 >finalize(): true	(SQLite3Result) Cerrar el conjunto de resultados
 >numColumns(): int	(SQLite3Result) Devolver el número de columnas del conjunto de resultados
 >reset(): bool	(SQLite3Result) Reiniciar el conjunto de resultados a la primera fila
->bindParam(string|int $param, mixed $var, int $type = SQLITE3_TEXT): bool	(SQLite3Stmt) Vincular un parámetro a una variable de sentencia
+>bindParam(string|int $param, mixed &$var, int $type = SQLITE3_TEXT): bool	(SQLite3Stmt) Vincular un parámetro a una variable de sentencia
 >bindValue(string|int $param, mixed $value, int $type = SQLITE3_TEXT): bool	(SQLite3Stmt) Vincular el valor de un parámetro a una variable de sentencia
 >clear(): bool	(SQLite3Stmt) Limpiar todos los parámetros vinculados actuales
 >close(): true	(SQLite3Stmt) Cerrar una sentencia preparada
@@ -3282,9 +3282,9 @@ curl_init(?string $url = null): CurlHandle|false	Inicia sesión cURL
 curl_multi_add_handle(CurlMultiHandle $multi_handle, CurlHandle $handle): int	Añade un recurso cURL a un grupo de recursos cURL
 curl_multi_close(CurlMultiHandle $multi_handle): void	Cierra un grupo de recursos cURL
 curl_multi_errno(CurlMultiHandle $multi_handle): int	Devuelve el último número de error de cURL múltiple
-curl_multi_exec(CurlMultiHandle $multi_handle, int $still_running): int	Ejecuta las sub-conexiones del recurso cURL actual
+curl_multi_exec(CurlMultiHandle $multi_handle, int &$still_running): int	Ejecuta las sub-conexiones del recurso cURL actual
 curl_multi_getcontent(CurlHandle $handle): ?string	Devuelve el contenido del recurso cURL si CURLOPT_RETURNTRANSFER está activado
-curl_multi_info_read(CurlMultiHandle $multi_handle, int $queued_messages = null): array|false	Obtiene información de las transferencias en curso
+curl_multi_info_read(CurlMultiHandle $multi_handle, int &$queued_messages = null): array|false	Obtiene información de las transferencias en curso
 curl_multi_init(): CurlMultiHandle	Devuelve un nuevo multi recurso cURL
 curl_multi_remove_handle(CurlMultiHandle $multi_handle, CurlHandle $handle): int	Elimina un multi recurso de un conjunto de recursos cURL
 curl_multi_select(CurlMultiHandle $multi_handle, float $timeout = 1.0): int	Espera actividad en cualquier conexión en curl_multi
@@ -3546,7 +3546,7 @@ enchant_dict_describe(EnchantDictionary $dictionary): array	Describe un dicciona
 enchant_dict_get_error(EnchantDictionary $dictionary): string|false	Devuelve el último error de la sesión ortográfica actual
 enchant_dict_is_added(EnchantDictionary $dictionary, string $word): bool	Whether or not 'word' exists in this spelling-session
 enchant_dict_is_in_session()	Alias of enchant_dict_is_added
-enchant_dict_quick_check(EnchantDictionary $dictionary, string $word, array $suggestions = null): bool	Verifica si la palabra está correctamente escrita y proporciona sugerencias
+enchant_dict_quick_check(EnchantDictionary $dictionary, string $word, array &$suggestions = null): bool	Verifica si la palabra está correctamente escrita y proporciona sugerencias
 enchant_dict_store_replacement(EnchantDictionary $dictionary, string $misspelled, string $correct): void	Añadir una corrección a una palabra
 enchant_dict_suggest(EnchantDictionary $dictionary, string $word): array	Devolverá una lista de valores si no se reúnen esas pre-condiciones
 EnchantBroker()	(new) A fully opaque class which replaces enchant_broker resources as of PHP 8
@@ -3626,7 +3626,7 @@ ldap_compare(LDAP\Connection $ldap, string $dn, string $attribute, string $value
 ldap_connect_wallet(?string $uri = null, string $wallet, string $password, int $auth_mode = GSLC_SSL_NO_AUTH): LDAP\Connection|false	Connect to an LDAP server
 ldap_connect(?string $uri = null): LDAP\Connection|false	Abre una conexión a un servidor LDAP
 ldap_connect(?string $host = null, int $port = 389): LDAP\Connection|false	Abre una conexión a un servidor LDAP
-ldap_control_paged_result_response(resource $link, resource $result, string $cookie = ?, int $estimated = ?): bool	Recuperar la cookie de paginación LDAP
+ldap_control_paged_result_response(resource $link, resource $result, string &$cookie = ?, int &$estimated = ?): bool	Recuperar la cookie de paginación LDAP
 ldap_control_paged_result(resource $link, int $pagesize, bool $iscritical = false, string $cookie = ""): bool	Enviar el control de paginación LDAP
 ldap_count_entries(LDAP\Connection $ldap, LDAP\Result $result): int	Contar el número de entradas en una búsqueda
 ldap_count_references(LDAP\Connection $ldap, LDAP\Result $result): int	Counts the number of references in a search result
@@ -3637,11 +3637,11 @@ ldap_err2str(int $errno): string	Convertir un número de error de LDAP a una cad
 ldap_errno(LDAP\Connection $ldap): int	Devuelve el número de error LDAP del último comando LDAP
 ldap_error(LDAP\Connection $ldap): string	Devuelve el mensaje de error de LDAP del último comando LDAP
 ldap_escape(string $value, string $ignore = "", int $flags = ?): string	Escapa una cadena de texto para su uso en un filtro LDAP o DN
-ldap_exop_passwd(LDAP\Connection $ldap, string $user = "", string $old_password = "", string $new_password = "", array $controls = null): string|bool	PASSWD extended operation helper
+ldap_exop_passwd(LDAP\Connection $ldap, string $user = "", string $old_password = "", string $new_password = "", array &$controls = null): string|bool	PASSWD extended operation helper
 ldap_exop_refresh(LDAP\Connection $ldap, string $dn, int $ttl): int|false	Refresh extended operation helper
-ldap_exop_sync(LDAP\Connection $ldap, string $request_oid, ?string $request_data = null, ?array $controls = null, string $response_data = null, string $response_oid = null): LDAP\Result|bool	Performs an extended operation
+ldap_exop_sync(LDAP\Connection $ldap, string $request_oid, ?string $request_data = null, ?array $controls = null, string &$response_data = null, string &$response_oid = null): LDAP\Result|bool	Performs an extended operation
 ldap_exop_whoami(LDAP\Connection $ldap): string|false	WHOAMI extended operation helper
-ldap_exop(LDAP\Connection $ldap, string $request_oid, string $request_data = null, array $controls = null, string $response_data = ?, string $response_oid = ?): mixed	Performs an extended operation
+ldap_exop(LDAP\Connection $ldap, string $request_oid, string $request_data = null, array $controls = null, string &$response_data = ?, string &$response_oid = ?): mixed	Performs an extended operation
 ldap_explode_dn(string $dn, int $with_attrib): array|false	Divide un DN en sus partes componentes
 ldap_first_attribute(LDAP\Connection $ldap, LDAP\ResultEntry $entry): string|false	Devolver el primer atributo
 ldap_first_entry(LDAP\Connection $ldap, LDAP\Result $result): LDAP\ResultEntry|false	Devolver el primer resultado de identificación
@@ -3650,7 +3650,7 @@ ldap_free_result(LDAP\Result $result): bool	Liberar la memoria de resultado
 ldap_get_attributes(LDAP\Connection $ldap, LDAP\ResultEntry $entry): array	Obtener atributos de una entrada de búsqueda de resultados
 ldap_get_dn(LDAP\Connection $ldap, LDAP\ResultEntry $entry): string|false	Get the DN of a result entry
 ldap_get_entries(LDAP\Connection $ldap, LDAP\Result $result): array|false	Obtener todas las entradas de los resultados
-ldap_get_option(LDAP\Connection $ldap, int $option, array|string|int $value = null): bool	Obtener el valor actual para la opción dada
+ldap_get_option(LDAP\Connection $ldap, int $option, array|string|int &$value = null): bool	Obtener el valor actual para la opción dada
 ldap_get_values_len(LDAP\Connection $ldap, LDAP\ResultEntry $entry, string $attribute): array|false	Obtener todos los valores binarios desde una entrada de resultados
 ldap_get_values(LDAP\Connection $ldap, LDAP\ResultEntry $entry, string $attribute): array|false	Obtener todos los valores de una entrada de resultados
 ldap_list(LDAP\Connection|array $ldap, array|string $base, array|string $filter, array $attributes = [], int $attributes_only = ?, int $sizelimit = -1, int $timelimit = -1, int $deref = LDAP_DEREF_NEVER, ?array $controls = null): LDAP\Result|array|false	Búsqueda de un solo nivel
@@ -3665,9 +3665,9 @@ ldap_modify()	Alias of ldap_mod_replace
 ldap_next_attribute(LDAP\Connection $ldap, LDAP\ResultEntry $entry): string|false	Obtener el siguiente atributo en un resultado
 ldap_next_entry(LDAP\Connection $ldap, LDAP\ResultEntry $entry): LDAP\ResultEntry|false	Obtener el siguiente resultado de entrada
 ldap_next_reference(LDAP\Connection $ldap, LDAP\ResultEntry $entry): LDAP\ResultEntry|false	Obtener la siguiente referencia
-ldap_parse_exop(LDAP\Connection $ldap, LDAP\Result $result, string $response_data = null, string $response_oid = null): bool	Parse result object from an LDAP extended operation
-ldap_parse_reference(LDAP\Connection $ldap, LDAP\ResultEntry $entry, array $referrals): bool	Extraer información de la entrada de referencia
-ldap_parse_result(LDAP\Connection $ldap, LDAP\Result $result, int $error_code, string $matched_dn = null, string $error_message = null, array $referrals = null, array $controls = null): bool	Extraer información del resultado
+ldap_parse_exop(LDAP\Connection $ldap, LDAP\Result $result, string &$response_data = null, string &$response_oid = null): bool	Parse result object from an LDAP extended operation
+ldap_parse_reference(LDAP\Connection $ldap, LDAP\ResultEntry $entry, array &$referrals): bool	Extraer información de la entrada de referencia
+ldap_parse_result(LDAP\Connection $ldap, LDAP\Result $result, int &$error_code, string &$matched_dn = null, string &$error_message = null, array &$referrals = null, array &$controls = null): bool	Extraer información del resultado
 ldap_read(LDAP\Connection|array $ldap, array|string $base, array|string $filter, array $attributes = [], int $attributes_only = ?, int $sizelimit = -1, int $timelimit = -1, int $deref = LDAP_DEREF_NEVER, ?array $controls = null): LDAP\Result|array|false	Leer una entrada
 ldap_rename_ext(LDAP\Connection $ldap, string $dn, string $new_rdn, string $new_parent, bool $delete_old_rdn, ?array $controls = null): LDAP\Result|false	Modify the name of an entry
 ldap_rename(LDAP\Connection $ldap, string $dn, string $new_rdn, string $new_parent, bool $delete_old_rdn, ?array $controls = null): bool	Modificar el nombre de una entrada
@@ -3755,8 +3755,8 @@ mysqli_next_result(mysqli $mysql): bool	Prepara el siguiente resultado de multi_
 mysqli_options(mysqli $mysql, int $option, string|int $value): bool	Establecer opciones
 >ping(): bool	(mysqli) Comprueba la conexión al servidor, o trata de reconectar si se perdió la conexión
 mysqli_ping(mysqli $mysql): bool	Comprueba la conexión al servidor, o trata de reconectar si se perdió la conexión
-mysqli::poll(?array $read, ?array $error, array $reject, int $seconds, int $microseconds = ?): int|false	Almacena en caché conexiones
-mysqli_poll(?array $read, ?array $error, array $reject, int $seconds, int $microseconds = ?): int|false	Almacena en caché conexiones
+mysqli::poll(?array &$read, ?array &$error, array &$reject, int $seconds, int $microseconds = ?): int|false	Almacena en caché conexiones
+mysqli_poll(?array &$read, ?array &$error, array &$reject, int $seconds, int $microseconds = ?): int|false	Almacena en caché conexiones
 >prepare(string $query): mysqli_stmt|false	(mysqli) Prepara una sentencia SQL para su ejecución
 mysqli_prepare(mysqli $mysql, string $query): mysqli_stmt|false	Prepara una sentencia SQL para su ejecución
 >query(string $query, int $result_mode = MYSQLI_STORE_RESULT): mysqli_result|bool	(mysqli) Realiza una consulta a la base de datos
@@ -3839,10 +3839,10 @@ mysqli_stmt_affected_rows(mysqli_stmt $statement): int|string	Devuelve el númer
 mysqli_stmt_attr_get(mysqli_stmt $statement, int $attribute): int	Se utiliza para obtener el valor actual de un atributo de la sentencia
 >attr_set(int $attribute, int $value): bool	(mysqli_stmt) Se utiliza para modificar el comportamiento de una sentencia preparada
 mysqli_stmt_attr_set(mysqli_stmt $statement, int $attribute, int $value): bool	Se utiliza para modificar el comportamiento de una sentencia preparada
->bind_param(string $types, mixed $var, mixed ...$vars): bool	(mysqli_stmt) Agrega variables a una sentencia preparada como parámetros
-mysqli_stmt_bind_param(mysqli_stmt $statement, string $types, mixed $var, mixed ...$vars): bool	Agrega variables a una sentencia preparada como parámetros
->bind_result(mixed $var, mixed ...$vars): bool	(mysqli_stmt) Vincula variables a una sentencia preparada para el almacenamiento de resultados
-mysqli_stmt_bind_result(mysqli_stmt $statement, mixed $var, mixed ...$vars): bool	Vincula variables a una sentencia preparada para el almacenamiento de resultados
+>bind_param(string $types, mixed &$var, mixed &...$vars): bool	(mysqli_stmt) Agrega variables a una sentencia preparada como parámetros
+mysqli_stmt_bind_param(mysqli_stmt $statement, string $types, mixed &$var, mixed &...$vars): bool	Agrega variables a una sentencia preparada como parámetros
+>bind_result(mixed &$var, mixed &...$vars): bool	(mysqli_stmt) Vincula variables a una sentencia preparada para el almacenamiento de resultados
+mysqli_stmt_bind_result(mysqli_stmt $statement, mixed &$var, mixed &...$vars): bool	Vincula variables a una sentencia preparada para el almacenamiento de resultados
 >close(): true	(mysqli_stmt) Cierra una sentencia preparada
 mysqli_stmt_close(mysqli_stmt $statement): true	Cierra una sentencia preparada
 mysqli_stmt(mysqli $mysql, ?string $query = null)	(new) Construye un nuevo objeto mysqli_stmt
@@ -3890,19 +3890,19 @@ openssl_cipher_iv_length(string $cipher_algo): int|false	Obtener la longitud del
 openssl_cipher_key_length(string $cipher_algo): int|false	Gets the cipher key length
 openssl_cms_decrypt(string $input_filename, string $output_filename, OpenSSLCertificate|string $certificate, OpenSSLAsymmetricKey|OpenSSLCertificate|array|string|null $private_key = null, int $encoding = OPENSSL_ENCODING_SMIME): bool	Decrypt a CMS message
 openssl_cms_encrypt(string $input_filename, string $output_filename, OpenSSLCertificate|array|string $certificate, ?array $headers, int $flags = ?, int $encoding = OPENSSL_ENCODING_SMIME, int $cipher_algo = OPENSSL_CIPHER_AES_128_CBC): bool	Encrypt a CMS message
-openssl_cms_read(string $input_filename, array $certificates): bool	Export the CMS file to an array of PEM certificates
+openssl_cms_read(string $input_filename, array &$certificates): bool	Export the CMS file to an array of PEM certificates
 openssl_cms_sign(string $input_filename, string $output_filename, OpenSSLCertificate|string $certificate, OpenSSLAsymmetricKey|OpenSSLCertificate|array|string $private_key, ?array $headers, int $flags = ?, int $encoding = OPENSSL_ENCODING_SMIME, ?string $untrusted_certificates_filename = null): bool	Sign a file
 openssl_cms_verify(string $input_filename, int $flags = ?, ?string $certificates = null, array $ca_info = [], ?string $untrusted_certificates_filename = null, ?string $content = null, ?string $pk7 = null, ?string $sigfile = null, int $encoding = OPENSSL_ENCODING_SMIME): bool	Verify a CMS signature
 openssl_csr_export_to_file(OpenSSLCertificateSigningRequest|string $csr, string $output_filename, bool $no_text = true): bool	Exporta una CSR a un archivo
-openssl_csr_export(OpenSSLCertificateSigningRequest|string $csr, string $output, bool $no_text = true): bool	Exporta una CSR como una cadena
+openssl_csr_export(OpenSSLCertificateSigningRequest|string $csr, string &$output, bool $no_text = true): bool	Exporta una CSR como una cadena
 openssl_csr_get_public_key(OpenSSLCertificateSigningRequest|string $csr, bool $short_names = true): OpenSSLAsymmetricKey|false	Devuelve la clave púbilca de un CERT
 openssl_csr_get_subject(OpenSSLCertificateSigningRequest|string $csr, bool $short_names = true): array|false	Devuelve el sujeto de un CERT
-openssl_csr_new(array $distinguished_names, ?OpenSSLAsymmetricKey $private_key, ?array $options = null, ?array $extra_attributes = null): OpenSSLCertificateSigningRequest|bool	Genera una CSR
+openssl_csr_new(array $distinguished_names, ?OpenSSLAsymmetricKey &$private_key, ?array $options = null, ?array $extra_attributes = null): OpenSSLCertificateSigningRequest|bool	Genera una CSR
 openssl_csr_sign(OpenSSLCertificateSigningRequest|string $csr, OpenSSLCertificate|string|null $ca_certificate, OpenSSLAsymmetricKey|OpenSSLCertificate|array|string $private_key, int $days, ?array $options = null, int $serial = ?, ?string $serial_hex = null): OpenSSLCertificate|false	Firmar una CSR con otro certificado (o autofirmar) y generar un certificado
 openssl_decrypt(string $data, string $cipher_algo, string $passphrase, int $options = ?, string $iv = "", ?string $tag = null, string $aad = ""): string|false	Desencripta datos
 openssl_dh_compute_key(string $public_key, OpenSSLAsymmetricKey $private_key): string|false	Computa el secreto compartido para un valor público de una clave DH remota y una clave DH local
 openssl_digest(string $data, string $digest_algo, bool $binary = false): string|false	Computa un método de resumen
-openssl_encrypt(string $data, string $cipher_algo, string $passphrase, int $options = ?, string $iv = "", string $tag = null, string $aad = "", int $tag_length = 16): string|false	Cifra datos
+openssl_encrypt(string $data, string $cipher_algo, string $passphrase, int $options = ?, string $iv = "", string &$tag = null, string $aad = "", int $tag_length = 16): string|false	Cifra datos
 openssl_error_string(): string|false	Devolver un mensaje de error openSSL
 openssl_free_key(OpenSSLAsymmetricKey $key): void	Liberar el recurso de clave
 openssl_get_cert_locations(): array	Obtener las ubicaciones de certificados disponibles
@@ -3911,31 +3911,31 @@ openssl_get_curve_names(): array|false	Gets list of available curve names for EC
 openssl_get_md_methods(bool $aliases = false): array	Obtener los métodos de resumen disponibles
 openssl_get_privatekey()	Alias of openssl_pkey_get_private
 openssl_get_publickey()	Alias of openssl_pkey_get_public
-openssl_open(string $data, string $output, string $encrypted_key, OpenSSLAsymmetricKey|OpenSSLCertificate|array|string $private_key, string $cipher_algo, ?string $iv = null): bool	Abre información sellada
+openssl_open(string $data, string &$output, string $encrypted_key, OpenSSLAsymmetricKey|OpenSSLCertificate|array|string $private_key, string $cipher_algo, ?string $iv = null): bool	Abre información sellada
 openssl_pbkdf2(string $password, string $salt, int $key_length, int $iterations, string $digest_algo = "sha1"): string|false	Genera un string PKCS5 v2 PBKDF2, predeterminado a SHA-1
 openssl_pkcs12_export_to_file(OpenSSLCertificate|string $certificate, string $output_filename, OpenSSLAsymmetricKey|OpenSSLCertificate|array|string $private_key, string $passphrase, array $options = []): bool	Exporta un Archivo de Almacén de Certificado Compatible con PKCS#12
-openssl_pkcs12_export(OpenSSLCertificate|string $certificate, string $output, OpenSSLAsymmetricKey|OpenSSLCertificate|array|string $private_key, string $passphrase, array $options = []): bool	Exporta un Archivo de Almacén de Certificado Compatible con PKCS#12 a una variable
-openssl_pkcs12_read(string $pkcs12, array $certificates, string $passphrase): bool	Convierte un Almacén de Certificado PKCS#12 a una matriz
+openssl_pkcs12_export(OpenSSLCertificate|string $certificate, string &$output, OpenSSLAsymmetricKey|OpenSSLCertificate|array|string $private_key, string $passphrase, array $options = []): bool	Exporta un Archivo de Almacén de Certificado Compatible con PKCS#12 a una variable
+openssl_pkcs12_read(string $pkcs12, array &$certificates, string $passphrase): bool	Convierte un Almacén de Certificado PKCS#12 a una matriz
 openssl_pkcs7_decrypt(string $input_filename, string $output_filename, OpenSSLCertificate|string $certificate, OpenSSLAsymmetricKey|OpenSSLCertificate|array|string|null $private_key = null): bool	Desencripta un mensaje S/MIME encriptado
 openssl_pkcs7_encrypt(string $input_filename, string $output_filename, OpenSSLCertificate|array|string $certificate, ?array $headers, int $flags = ?, int $cipher_algo = OPENSSL_CIPHER_AES_128_CBC): bool	Encriptar un mensaje S/MIME
-openssl_pkcs7_read(string $data, array $certificates): bool	Export the PKCS7 file to an array of PEM certificates
+openssl_pkcs7_read(string $data, array &$certificates): bool	Export the PKCS7 file to an array of PEM certificates
 openssl_pkcs7_sign(string $input_filename, string $output_filename, OpenSSLCertificate|string $certificate, OpenSSLAsymmetricKey|OpenSSLCertificate|array|string $private_key, ?array $headers, int $flags = PKCS7_DETACHED, ?string $untrusted_certificates_filename = null): bool	Firma un mensaje S/MIME
 openssl_pkcs7_verify(string $input_filename, int $flags, ?string $signers_certificates_filename = null, array $ca_info = [], ?string $untrusted_certificates_filename = null, ?string $content = null, ?string $output_filename = null): bool|int	Verifica la firma de un mensaje S/MIME firmado
 openssl_pkey_derive(OpenSSLAsymmetricKey|OpenSSLCertificate|array|string $public_key, OpenSSLAsymmetricKey|OpenSSLCertificate|array|string $private_key, int $key_length = ?): string|false	Computes shared secret for public value of remote and local DH or ECDH key
 openssl_pkey_export_to_file(OpenSSLAsymmetricKey|OpenSSLCertificate|array|string $key, string $output_filename, ?string $passphrase = null, ?array $options = null): bool	Obtiene una representación de una clave exportable a un archivo
-openssl_pkey_export(OpenSSLAsymmetricKey|OpenSSLCertificate|array|string $key, string $output, ?string $passphrase = null, ?array $options = null): bool	Obtiene una representación de una clave exportable a una cadena
+openssl_pkey_export(OpenSSLAsymmetricKey|OpenSSLCertificate|array|string $key, string &$output, ?string $passphrase = null, ?array $options = null): bool	Obtiene una representación de una clave exportable a una cadena
 openssl_pkey_free(OpenSSLAsymmetricKey $key): void	Libera una clave privada
 openssl_pkey_get_details(OpenSSLAsymmetricKey $key): array|false	Devuelve una matriz con los detalles de la clave
 openssl_pkey_get_private(OpenSSLAsymmetricKey|OpenSSLCertificate|array|string $private_key, ?string $passphrase = null): OpenSSLAsymmetricKey|false	Obtener una clave privada
 openssl_pkey_get_public(OpenSSLAsymmetricKey|OpenSSLCertificate|array|string $public_key): OpenSSLAsymmetricKey|false	Extrae la clave pública del certificado y la prepara para usarla
 openssl_pkey_new(?array $options = null): OpenSSLAsymmetricKey|false	Genera una clave privada nueva
-openssl_private_decrypt(string $data, string $decrypted_data, OpenSSLAsymmetricKey|OpenSSLCertificate|array|string $private_key, int $padding = OPENSSL_PKCS1_PADDING): bool	Desencripta información con la clave privada
-openssl_private_encrypt(string $data, string $encrypted_data, OpenSSLAsymmetricKey|OpenSSLCertificate|array|string $private_key, int $padding = OPENSSL_PKCS1_PADDING): bool	Encripta información con la clave privada
-openssl_public_decrypt(string $data, string $decrypted_data, OpenSSLAsymmetricKey|OpenSSLCertificate|array|string $public_key, int $padding = OPENSSL_PKCS1_PADDING): bool	Desencripta información con la clave pública
-openssl_public_encrypt(string $data, string $encrypted_data, OpenSSLAsymmetricKey|OpenSSLCertificate|array|string $public_key, int $padding = OPENSSL_PKCS1_PADDING): bool	Encripta información con una clave pública
-openssl_random_pseudo_bytes(int $length, bool $strong_result = null): string	Genera una cadena de bytes pseudo-aleatoria
-openssl_seal(string $data, string $sealed_data, array $encrypted_keys, array $public_key, string $cipher_algo, string $iv = null): int|false	Sellar (encriptar) información
-openssl_sign(string $data, string $signature, OpenSSLAsymmetricKey|OpenSSLCertificate|array|string $private_key, string|int $algorithm = OPENSSL_ALGO_SHA1): bool	Genera una firma
+openssl_private_decrypt(string $data, string &$decrypted_data, OpenSSLAsymmetricKey|OpenSSLCertificate|array|string $private_key, int $padding = OPENSSL_PKCS1_PADDING): bool	Desencripta información con la clave privada
+openssl_private_encrypt(string $data, string &$encrypted_data, OpenSSLAsymmetricKey|OpenSSLCertificate|array|string $private_key, int $padding = OPENSSL_PKCS1_PADDING): bool	Encripta información con la clave privada
+openssl_public_decrypt(string $data, string &$decrypted_data, OpenSSLAsymmetricKey|OpenSSLCertificate|array|string $public_key, int $padding = OPENSSL_PKCS1_PADDING): bool	Desencripta información con la clave pública
+openssl_public_encrypt(string $data, string &$encrypted_data, OpenSSLAsymmetricKey|OpenSSLCertificate|array|string $public_key, int $padding = OPENSSL_PKCS1_PADDING): bool	Encripta información con una clave pública
+openssl_random_pseudo_bytes(int $length, bool &$strong_result = null): string	Genera una cadena de bytes pseudo-aleatoria
+openssl_seal(string $data, string &$sealed_data, array &$encrypted_keys, array $public_key, string $cipher_algo, string &$iv = null): int|false	Sellar (encriptar) información
+openssl_sign(string $data, string &$signature, OpenSSLAsymmetricKey|OpenSSLCertificate|array|string $private_key, string|int $algorithm = OPENSSL_ALGO_SHA1): bool	Genera una firma
 openssl_spki_export_challenge(string $spki): string|false	Exporta el desafío asociados con una clave pública y desafío firmados
 openssl_spki_export(string $spki): string|false	Exports a valid PEM formatted public key signed public key and challenge
 openssl_spki_new(OpenSSLAsymmetricKey $private_key, string $challenge, int $digest_algo = OPENSSL_ALGO_MD5): string|false	Generate a new signed public key and challenge
@@ -3944,7 +3944,7 @@ openssl_verify(string $data, string $signature, OpenSSLAsymmetricKey|OpenSSLCert
 openssl_x509_check_private_key(OpenSSLCertificate|string $certificate, OpenSSLAsymmetricKey|OpenSSLCertificate|array|string $private_key): bool	Comprueba si una clave privada se corresponde a un certificado
 openssl_x509_checkpurpose(OpenSSLCertificate|string $certificate, int $purpose, array $ca_info = [], ?string $untrusted_certificates_file = null): bool|int	Verifica si un certificado se puede usar para un propósito en particular
 openssl_x509_export_to_file(OpenSSLCertificate|string $certificate, string $output_filename, bool $no_text = true): bool	Exporta un certificado a un archivo
-openssl_x509_export(OpenSSLCertificate|string $certificate, string $output, bool $no_text = true): bool	Exporta un certificado como una cadena
+openssl_x509_export(OpenSSLCertificate|string $certificate, string &$output, bool $no_text = true): bool	Exporta un certificado como una cadena
 openssl_x509_fingerprint(OpenSSLCertificate|string $certificate, string $digest_algo = "sha1", bool $binary = false): string|false	Calculates the fingerprint, or digest, of a given X.509 certificate
 openssl_x509_free(OpenSSLCertificate $certificate): void	Liberar un recurso de certificado
 openssl_x509_parse(OpenSSLCertificate|string $certificate, bool $short_names = true): array|false	Analiza un certificado X509 y devuelve la información como un matriz
@@ -4175,7 +4175,7 @@ SoapClient(?string $wsdl, array $options = [])	(new) Constructor de SoapClient
 >__setCookie(string $name, ?string $value = null): void	(SoapClient) El propósito de __setCookie
 >__setLocation(?string $location = null): ?string	(SoapClient) Define la localización del servicio Web a utilizar
 >__setSoapHeaders(SoapHeader|array|null $headers = null): bool	(SoapClient) Define los encabezados SOAP para las subsiguentes llamadas
->__soapCall(string $name, array $args, ?array $options = null, SoapHeader|array|null $inputHeaders = null, array $outputHeaders = null): mixed	(SoapClient) Llama a una función SOAP
+>__soapCall(string $name, array $args, ?array $options = null, SoapHeader|array|null $inputHeaders = null, array &$outputHeaders = null): mixed	(SoapClient) Llama a una función SOAP
 SoapFault(array|string|null $code, string $string, ?string $actor = null, mixed $details = null, ?string $name = null, mixed $headerFault = null)	(new) Constructor de SoapFault
 >__toString(): string	(SoapFault) Obtiene una representación en formato cadena de SoapFault
 SoapHeader(string $namespace, string $name, mixed $data = ?, bool $mustunderstand = ?, string $actor = ?)	(new) Constructor de SoapHeader
@@ -4191,7 +4191,7 @@ SoapServer(?string $wsdl, array $options = [])	(new) Constructor de SoapServer
 >setObject(object $object): void	(SoapServer) Define el objecto que será usado para controlar las peticiones SOAP
 >setPersistence(int $mode): void	(SoapServer) Establece el modo de persistencia de SoapServer
 SoapVar(mixed $data, ?int $encoding, ?string $typeName = null, ?string $typeNamespace = null, ?string $nodeName = null, ?string $nodeNamespace = null)	(new) Constructor de SoapVar
-sodium_add(string $string1, string $string2): void	Add large numbers
+sodium_add(string &$string1, string $string2): void	Add large numbers
 sodium_base642bin(string $string, int $id, string $ignore = ""): string	Decodes a base64-encoded string into raw binary.
 sodium_bin2base64(string $string, int $id): string	Encodes a raw binary string with base64.
 sodium_bin2hex(string $string): string	Encode to hexadecimal
@@ -4241,10 +4241,10 @@ sodium_crypto_core_ristretto255_scalar_random(): string	Generates a random key
 sodium_crypto_core_ristretto255_scalar_reduce(string $s): string	Reduces a scalar value
 sodium_crypto_core_ristretto255_scalar_sub(string $x, string $y): string	Subtracts a scalar value
 sodium_crypto_core_ristretto255_sub(string $p, string $q): string	Subtracts an element
-sodium_crypto_generichash_final(string $state, int $length = SODIUM_CRYPTO_GENERICHASH_BYTES): string	Complete the hash
+sodium_crypto_generichash_final(string &$state, int $length = SODIUM_CRYPTO_GENERICHASH_BYTES): string	Complete the hash
 sodium_crypto_generichash_init(string $key = "", int $length = SODIUM_CRYPTO_GENERICHASH_BYTES): string	Initialize a hash for streaming
 sodium_crypto_generichash_keygen(): string	Generate a random generichash key
-sodium_crypto_generichash_update(string $state, string $message): true	Add message to a hash
+sodium_crypto_generichash_update(string &$state, string $message): true	Add message to a hash
 sodium_crypto_generichash(string $message, string $key = "", int $length = SODIUM_CRYPTO_GENERICHASH_BYTES): string	Get a hash of the message
 sodium_crypto_kdf_derive_from_key(int $subkey_length, int $subkey_id, string $context, string $key): string	Derive a subkey
 sodium_crypto_kdf_keygen(): string	Generate a random root key for the KDF interface
@@ -4271,9 +4271,9 @@ sodium_crypto_secretbox(string $message, string $nonce, string $key): string	Aut
 sodium_crypto_secretstream_xchacha20poly1305_init_pull(string $header, string $key): string	Initialize a secretstream context for decryption
 sodium_crypto_secretstream_xchacha20poly1305_init_push(string $key): array	Initialize a secretstream context for encryption
 sodium_crypto_secretstream_xchacha20poly1305_keygen(): string	Generate a random secretstream key.
-sodium_crypto_secretstream_xchacha20poly1305_pull(string $state, string $ciphertext, string $additional_data = ""): array|false	Decrypt a chunk of data from an encrypted stream
-sodium_crypto_secretstream_xchacha20poly1305_push(string $state, string $message, string $additional_data = "", int $tag = SODIUM_CRYPTO_SECRETSTREAM_XCHACHA20POLY1305_TAG_MESSAGE): string	Encrypt a chunk of data so that it can safely be decrypted in a streaming API
-sodium_crypto_secretstream_xchacha20poly1305_rekey(string $state): void	Explicitly rotate the key in the secretstream state
+sodium_crypto_secretstream_xchacha20poly1305_pull(string &$state, string $ciphertext, string $additional_data = ""): array|false	Decrypt a chunk of data from an encrypted stream
+sodium_crypto_secretstream_xchacha20poly1305_push(string &$state, string $message, string $additional_data = "", int $tag = SODIUM_CRYPTO_SECRETSTREAM_XCHACHA20POLY1305_TAG_MESSAGE): string	Encrypt a chunk of data so that it can safely be decrypted in a streaming API
+sodium_crypto_secretstream_xchacha20poly1305_rekey(string &$state): void	Explicitly rotate the key in the secretstream state
 sodium_crypto_shorthash_keygen(): string	Get random bytes for key
 sodium_crypto_shorthash(string $message, string $key): string	Compute a short hash of a message and key
 sodium_crypto_sign_detached(string $message, string $secret_key): string	Sign the message
@@ -4296,9 +4296,9 @@ sodium_crypto_stream_xchacha20(int $length, string $nonce, string $key): string	
 sodium_crypto_stream_xor(string $message, string $nonce, string $key): string	Encrypt a message without authentication
 sodium_crypto_stream(int $length, string $nonce, string $key): string	Generate a deterministic sequence of bytes from a seed
 sodium_hex2bin(string $string, string $ignore = ""): string	Decodes a hexadecimally encoded binary string
-sodium_increment(string $string): void	Increment large number
+sodium_increment(string &$string): void	Increment large number
 sodium_memcmp(string $string1, string $string2): int	Test for equality in constant-time
-sodium_memzero(string $string): void	Overwrite a string with NUL characters
+sodium_memzero(string &$string): void	Overwrite a string with NUL characters
 sodium_pad(string $string, int $block_size): string	Add padding data
 sodium_unpad(string $string, int $block_size): string	Remove padding data
 SodiumException()	(new) Exceptions thrown by the sodium functions
@@ -4377,7 +4377,7 @@ odbc_errormsg(?Odbc\Connection $odbc = null): string	Obtener el último mensaje 
 odbc_exec(Odbc\Connection $odbc, string $query): Odbc\Result|false	Preparar y ejecutar una sentencia SQL
 odbc_execute(Odbc\Result $statement, array $params = []): bool	Ejecutar una declaración preparada
 odbc_fetch_array(Odbc\Result $statement, ?int $row = null): array|false	Obtener una fila de resultados como una matriz asociativa
-odbc_fetch_into(Odbc\Result $statement, array $array, ?int $row = null): int|false	Traer una fila de resultados en una matriz
+odbc_fetch_into(Odbc\Result $statement, array &$array, ?int $row = null): int|false	Traer una fila de resultados en una matriz
 odbc_fetch_object(Odbc\Result $statement, ?int $row = null): stdClass|false	Obtener una fila de resultados como un objeto
 odbc_fetch_row(Odbc\Result $statement, ?int $row = null): bool	Traer una fila
 odbc_field_len(Odbc\Result $statement, int $field): int|false	Obtener la longitud (precisión) de un campo
@@ -4411,7 +4411,7 @@ xml_get_current_byte_index(XMLParser $parser): int	Obtiene la indexación del by
 xml_get_current_column_number(XMLParser $parser): int	Obtiene el número de columna actual para un intérprete XML
 xml_get_current_line_number(XMLParser $parser): int	Obtiene el número de línea actual para un intérprete XML
 xml_get_error_code(XMLParser $parser): int	Obtiene un código de error en un intérprete XML
-xml_parse_into_struct(XMLParser $parser, string $data, array $values, array $index = null): int|false	Interpreta datos XML en una estructura de array
+xml_parse_into_struct(XMLParser $parser, string $data, array &$values, array &$index = null): int|false	Interpreta datos XML en una estructura de array
 xml_parse(XMLParser $parser, string $data, bool $is_final = false): int	Inicia un intérprete sobre un documento XML
 xml_parser_create_ns(?string $encoding = null, string $separator = ":"): XMLParser	Crea un analizador XML con soporte para espacios de nombres
 xml_parser_create(?string $encoding = null): XMLParser	Crea un intérprete XML
@@ -4588,8 +4588,8 @@ zip_read(resource $zip): resource|false	Lee la siguiente entrada en un archivo Z
 >getArchiveFlag(int $flag, int $flags = ?): int	(ZipArchive) Devuelve el valor de una bandera global del archivo
 >getCommentIndex(int $index, int $flags = ?): string|false	(ZipArchive) Devuelve el comentario de una entrada usando la entrada díndice
 >getCommentName(string $name, int $flags = ?): string|false	(ZipArchive) Devuelve el comentario de una entrada usando el nombre de la entrada
->getExternalAttributesIndex(int $index, int $opsys, int $attr, int $flags = ?): bool	(ZipArchive) Obtener los atributos externos de una entrada definida por su índice
->getExternalAttributesName(string $name, int $opsys, int $attr, int $flags = ?): bool	(ZipArchive) Obtener los atributos externos de una entrada definida por su nombre
+>getExternalAttributesIndex(int $index, int &$opsys, int &$attr, int $flags = ?): bool	(ZipArchive) Obtener los atributos externos de una entrada definida por su índice
+>getExternalAttributesName(string $name, int &$opsys, int &$attr, int $flags = ?): bool	(ZipArchive) Obtener los atributos externos de una entrada definida por su nombre
 >getFromIndex(int $index, int $len = ?, int $flags = ?): string|false	(ZipArchive) Devuelve el contenido de la entrada usando su índice
 >getFromName(string $name, int $len = ?, int $flags = ?): string|false	(ZipArchive) Devuelve el contenido de la entrada utilizando su nombre
 >getNameIndex(int $index, int $flags = ?): string|false	(ZipArchive) Devuelve el nombre de una entrada utilizando su índice
