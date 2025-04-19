@@ -406,6 +406,7 @@
     * [php.api](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/php.api) and [phpfunctions.properties](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/phpfunctions.properties) (without PECL extensions)
     * [php-all.api](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/php-all.api) and [phpfunctions-all.properties](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/phpfunctions-all.properties) (all extensions)
     * [php.api in Spanish](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/php-es.api)
+    * older PHP files: [php7.2.api](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files/archived/older_php/php7.2.api), [other old scripts](https://github.com/moltenform/scite-files/tree/main/files/files/api_files/archived/older_php)
 
 * PostScript
 
