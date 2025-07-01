@@ -36,6 +36,6 @@ To generate api files for your own source code, one of these tools may be helpfu
 * API files for the latest javascript (from MSDN) can be generated with the script [here](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files_gen/gen_msdn_javascript.zip)
 * API files for the latest wsh/vbs/vba (from MSDN) can be generated with the script [here](https://raw.githubusercontent.com/moltenform/scite-files/master/files/files/api_files_gen/gen_msdn_wsh_vba.zip)
 
-Activate an api file by following the instructions [here](api_files_howto_install_api.md).
+Activate an api file by following the instructions [here](api_files_howto.md).
 
 To see more advanced settings, search for "calltip" in the [SciTE Documentation](http://www.scintilla.org/SciTEDoc.html).
