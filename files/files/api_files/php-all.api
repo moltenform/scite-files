@@ -22,7 +22,6 @@ callable
 case
 catch
 class
-clone
 const
 continue
 declare
@@ -144,6 +143,7 @@ never
 enum
 resource
 numeric
+clone(object $object, array $withProperties = []): object	Clone object
 __construct(mixed ...$values)	Object constructor
 __destruct()	Object destructor
 __call(string $name, array $arguments): mixed	Triggered when invoking inaccessible methods in an object context
@@ -189,7 +189,7 @@ apcu_clear_cache(): bool	Clears the APCu cache
 apcu_dec(string $key, int $step = 1, bool &$success = ?, int $ttl = ?): int|false	Decrease a stored number
 apcu_delete(mixed $key): mixed	Removes a stored variable from the cache
 apcu_enabled(): bool	Whether APCu is usable in the current environment
-apcu_entry(string $key, callable $generator, int $ttl = ?): mixed	Atomically fetch or generate a cache entry
+apcu_entry(string $key, callable $callback, int $ttl = ?): mixed	Atomically fetch or generate a cache entry
 apcu_exists(string|array $keys): bool|array	Checks if entry exists
 apcu_fetch(mixed $key, bool &$success = ?): mixed	Fetch a stored variable from the cache
 apcu_inc(string $key, int $step = 1, bool &$success = ?, int $ttl = ?): int|false	Increase a stored number
@@ -214,6 +214,7 @@ array_fill(int $start_index, int $count, mixed $value): array	Fill an array with
 array_filter(array $array, ?callable $callback = null, int $mode = ?): array	Filters elements of an array using a callback function
 array_find_key(array $array, callable $callback): mixed	Returns the key of the first element satisfying a callback function
 array_find(array $array, callable $callback): mixed	Returns the first element satisfying a callback function
+array_first(array $array): mixed	Gets the first value of an array
 array_flip(array $array): array	Exchanges all keys with their associated values in an array
 array_intersect_assoc(array $array, array ...$arrays): array	Computes the intersection of arrays with additional index check
 array_intersect_key(array $array, array ...$arrays): array	Computes the intersection of arrays using keys for comparison
@@ -226,10 +227,11 @@ array_key_first(array $array): int|string|null	Gets the first key of an array
 array_key_last(array $array): int|string|null	Gets the last key of an array
 array_keys(array $array): array	Return all the keys or a subset of the keys of an array
 array_keys(array $array, mixed $filter_value, bool $strict = false): array	Return all the keys or a subset of the keys of an array
+array_last(array $array): mixed	Gets the last value of an array
 array_map(?callable $callback, array $array, array ...$arrays): array	Applies the callback to the elements of the given arrays
 array_merge_recursive(array ...$arrays): array	Merge one or more arrays recursively
 array_merge(array ...$arrays): array	Merge one or more arrays
-array_multisort(array &$array1, mixed $array1_sort_order = SORT_ASC, mixed $array1_sort_flags = SORT_REGULAR, mixed ...$rest): bool	Sort multiple or multi-dimensional arrays
+array_multisort(array &$array1, mixed $array1_sort_order = SORT_ASC, mixed $array1_sort_flags = SORT_REGULAR, mixed ...$rest): true	Sort multiple or multi-dimensional arrays
 array_pad(array $array, int $length, mixed $value): array	Pad array to the specified length with a value
 array_pop(array &$array): mixed	Pop the element off the end of array
 array_product(array $array): int|float	Calculate the product of values in an array
@@ -677,6 +679,7 @@ DateTime::createFromFormat(string $format, string $datetime, ?DateTimeZone $time
 date_create_from_format(string $format, string $datetime, ?DateTimeZone $timezone = null): DateTime|false	Parses a time string according to a specified format
 DateTime::createFromImmutable(DateTimeImmutable $object): static	Returns new DateTime instance encapsulating the given DateTimeImmutable object
 DateTime::createFromInterface(DateTimeInterface $object): DateTime	Returns new DateTime object encapsulating the given DateTimeInterface object
+DateTime::createFromTimestamp(int|float $timestamp): static	Creates an instance from a Unix timestamp
 >getLastErrors()	(DateTime) Alias of DateTimeImmutable::getLastErrors
 >modify(string $modifier): DateTime	(DateTime) Alters the timestamp
 date_modify(DateTime $object, string $modifier): DateTime|false	Alters the timestamp
@@ -685,6 +688,7 @@ DateTime::__set_state(array $array): DateTime	The __set_state handler
 date_date_set(DateTime $object, int $year, int $month, int $day): DateTime	Sets the date
 >setISODate(int $year, int $week, int $dayOfWeek = 1): DateTime	(DateTime) Sets the ISO date
 date_isodate_set(DateTime $object, int $year, int $week, int $dayOfWeek = 1): DateTime	Sets the ISO date
+>setMicrosecond(int $microsecond): static	(DateTime) Sets microsecond part of the time
 >setTime(int $hour, int $minute, int $second = ?, int $microsecond = ?): DateTime	(DateTime) Sets the time
 date_time_set(DateTime $object, int $hour, int $minute, int $second = ?, int $microsecond = ?): DateTime	Sets the time
 >setTimestamp(int $timestamp): DateTime	(DateTime) Sets the date and time based on an Unix timestamp
@@ -699,11 +703,13 @@ DateTimeImmutable::createFromFormat(string $format, string $datetime, ?DateTimeZ
 date_create_immutable_from_format(string $format, string $datetime, ?DateTimeZone $timezone = null): DateTimeImmutable|false	Parses a time string according to a specified format
 DateTimeImmutable::createFromInterface(DateTimeInterface $object): DateTimeImmutable	Returns new DateTimeImmutable object encapsulating the given DateTimeInterface object
 DateTimeImmutable::createFromMutable(DateTime $object): static	Returns new DateTimeImmutable instance encapsulating the given DateTime object
+DateTimeImmutable::createFromTimestamp(int|float $timestamp): static	Creates an instance from a Unix timestamp
 DateTimeImmutable::getLastErrors(): array|false	Returns the warnings and errors
 >modify(string $modifier): DateTimeImmutable	(DateTimeImmutable) Creates a new object with modified timestamp
 DateTimeImmutable::__set_state(array $array): DateTimeImmutable	The __set_state handler
 >setDate(int $year, int $month, int $day): DateTimeImmutable	(DateTimeImmutable) Sets the date
 >setISODate(int $year, int $week, int $dayOfWeek = 1): DateTimeImmutable	(DateTimeImmutable) Sets the ISO date
+>setMicrosecond(int $microsecond): static	(DateTimeImmutable) Sets microsecond part of the time
 >setTime(int $hour, int $minute, int $second = ?, int $microsecond = ?): DateTimeImmutable	(DateTimeImmutable) Sets the time
 >setTimestamp(int $timestamp): DateTimeImmutable	(DateTimeImmutable) Sets the date and time based on a Unix timestamp
 >setTimezone(DateTimeZone $timezone): DateTimeImmutable	(DateTimeImmutable) Sets the time zone
@@ -716,6 +722,9 @@ date_diff(DateTimeInterface $baseObject, DateTimeInterface $targetObject, bool $
 >format(string $format): string	(DateTimeImmutable) Returns date formatted according to given format
 >format(string $format): string	(DateTime) Returns date formatted according to given format
 date_format(DateTimeInterface $object, string $format): string	Returns date formatted according to given format
+>getMicrosecond(): int	(DateTimeInterface) Gets the microsecond part of the Unix timestamp
+>getMicrosecond(): int	(DateTimeImmutable) Gets the microsecond part of the Unix timestamp
+>getMicrosecond(): int	(DateTime) Gets the microsecond part of the Unix timestamp
 >getOffset(): int	(DateTimeInterface) Returns the timezone offset
 >getOffset(): int	(DateTimeImmutable) Returns the timezone offset
 >getOffset(): int	(DateTime) Returns the timezone offset
@@ -728,6 +737,12 @@ date_timestamp_get(DateTimeInterface $object): int	Gets the Unix timestamp
 >getTimezone(): DateTimeZone|false	(DateTimeImmutable) Return time zone relative to given DateTime
 >getTimezone(): DateTimeZone|false	(DateTime) Return time zone relative to given DateTime
 date_timezone_get(DateTimeInterface $object): DateTimeZone|false	Return time zone relative to given DateTime
+>__serialize(): array	(DateTime) Serialize a DateTime
+>__serialize(): array	(DateTimeImmutable) Serialize a DateTime
+>__serialize(): array	(DateTimeInterface) Serialize a DateTime
+>__unserialize(array $data): void	(DateTime) Unserialize an Datetime
+>__unserialize(array $data): void	(DateTimeImmutable) Unserialize an Datetime
+>__unserialize(array $data): void	(DateTimeInterface) Unserialize an Datetime
 >__wakeup(): void	(DateTime) The __wakeup handler
 >__wakeup(): void	(DateTimeImmutable) The __wakeup handler
 >__wakeup(): void	(DateTimeInterface) The __wakeup handler
@@ -738,8 +753,8 @@ timezone_location_get(DateTimeZone $object): array|false	Returns location inform
 timezone_name_get(DateTimeZone $object): string	Returns the name of the timezone
 >getOffset(DateTimeInterface $datetime): int	(DateTimeZone) Returns the timezone offset from GMT
 timezone_offset_get(DateTimeZone $object, DateTimeInterface $datetime): int	Returns the timezone offset from GMT
->getTransitions(int $timestampBegin = PHP_INT_MIN, int $timestampEnd = PHP_INT_MAX): array|false	(DateTimeZone) Returns all transitions for the timezone
-timezone_transitions_get(DateTimeZone $object, int $timestampBegin = PHP_INT_MIN, int $timestampEnd = PHP_INT_MAX): array|false	Returns all transitions for the timezone
+>getTransitions(int $timestampBegin = PHP_INT_MIN, int $timestampEnd = 2147483647): array|false	(DateTimeZone) Returns all transitions for the timezone
+timezone_transitions_get(DateTimeZone $object, int $timestampBegin = PHP_INT_MIN, int $timestampEnd = 2147483647): array|false	Returns all transitions for the timezone
 DateTimeZone::listAbbreviations(): array	Returns associative array containing dst, offset and the timezone name
 timezone_abbreviations_list(): array	Returns associative array containing dst, offset and the timezone name
 DateTimeZone::listIdentifiers(int $timezoneGroup = DateTimeZone::ALL, ?string $countryCode = null): array	Returns a numerically indexed array containing all defined timezone identifiers
@@ -838,7 +853,7 @@ dbase_pack(resource $database): bool	Packs a database
 dbase_replace_record(resource $database, array $data, int $number): bool	Replaces a record in a database
 dio_close(resource $fd): void	Closes the file descriptor given by fd
 dio_fcntl(resource $fd, int $cmd, mixed $args = ?): mixed	Performs a c library fcntl on fd
-dio_open(string $filename, int $flags, int $mode = ?): resource	Opens a file (creating it if necessary) at a lower level than the C library input/ouput stream functions allow
+dio_open(string $filename, int $flags, int $mode = ?): resource	Opens a file (creating it if necessary) at a lower level than the C library input/output stream functions allow
 dio_read(resource $fd, int $len = 1024): string	Reads bytes from a file descriptor
 dio_seek(resource $fd, int $pos, int $whence = SEEK_SET): int	Seeks to pos on fd from whence
 dio_stat(resource $fd): array	Gets stat information about the file descriptor fd
@@ -1277,7 +1292,7 @@ Ds\Sequence()	(new) A Sequence describes the behaviour of values arranged in a s
 eio_busy(int $delay, int $pri = EIO_PRI_DEFAULT, callable $callback = NULL, mixed $data = NULL): resource	Artificially increase load. Could be useful in tests, benchmarking
 eio_cancel(resource $req): void	Cancels a request
 eio_chmod(string $path, int $mode, int $pri = EIO_PRI_DEFAULT, callable $callback = NULL, mixed $data = NULL): resource	Change file/directory permissions
-eio_chown(string $path, int $uid, int $gid = -1, int $pri = EIO_PRI_DEFAULT, callable $callback = NULL, mixed $data = NULL): resource	Change file/directory permissions
+eio_chown(string $path, int $uid, int $gid = -1, int $pri = EIO_PRI_DEFAULT, callable $callback = NULL, mixed $data = NULL): resource	Change file/directory ownership
 eio_close(mixed $fd, int $pri = EIO_PRI_DEFAULT, callable $callback = NULL, mixed $data = NULL): resource	Close file
 eio_custom(callable $execute, int $pri, callable $callback, mixed $data = NULL): resource	Execute custom request like any other eio_* call
 eio_dup2(mixed $fd, mixed $fd2, int $pri = EIO_PRI_DEFAULT, callable $callback = NULL, mixed $data = NULL): resource	Duplicate a file descriptor
@@ -1308,7 +1323,7 @@ eio_nready(): int	Returns number of not-yet handled requests
 eio_nreqs(): int	Returns number of requests to be processed
 eio_nthreads(): int	Returns number of threads currently in use
 eio_open(string $path, int $flags, int $mode, int $pri, callable $callback, mixed $data = NULL): resource	Opens a file
-eio_poll(): int	Can be to be called whenever there are pending requests that need finishing
+eio_poll(): int	Can be called whenever there are pending requests that need finishing
 eio_read(mixed $fd, int $length, int $offset, int $pri, callable $callback, mixed $data = NULL): resource	Read from a file descriptor at given offset
 eio_readahead(mixed $fd, int $offset, int $length, int $pri = EIO_PRI_DEFAULT, callable $callback = NULL, mixed $data = NULL): resource	Perform file readahead into page cache
 eio_readdir(string $path, int $flags, int $pri, callable $callback, string $data = NULL): resource	Reads through a whole directory
@@ -1334,12 +1349,12 @@ eio_unlink(string $path, int $pri = EIO_PRI_DEFAULT, callable $callback = NULL, 
 eio_utime(string $path, float $atime, float $mtime, int $pri = EIO_PRI_DEFAULT, callable $callback = NULL, mixed $data = NULL): resource	Change file last access and modification times
 eio_write(mixed $fd, string $str, int $length = ?, int $offset = ?, int $pri = EIO_PRI_DEFAULT, callable $callback = NULL, mixed $data = NULL): resource	Write to file
 enchant_broker_describe(EnchantBroker $broker): array	Enumerates the Enchant providers
-enchant_broker_dict_exists(EnchantBroker $broker, string $tag): bool	Whether a dictionary exists or not. Using non-empty tag
+enchant_broker_dict_exists(EnchantBroker $broker, string $tag): bool	Whether a dictionary exists or not
 enchant_broker_free_dict(EnchantDictionary $dictionary): bool	Free a dictionary resource
 enchant_broker_free(EnchantBroker $broker): bool	Free the broker resource and its dictionaries
 enchant_broker_get_dict_path(EnchantBroker $broker, int $type): string|false	Get the directory path for a given backend
 enchant_broker_get_error(EnchantBroker $broker): string|false	Returns the last error of the broker
-enchant_broker_init(): EnchantBroker|false	Create a new broker object capable of requesting
+enchant_broker_init(): EnchantBroker|false	Create a new broker object
 enchant_broker_list_dicts(EnchantBroker $broker): array	Returns a list of available dictionaries
 enchant_broker_request_dict(EnchantBroker $broker, string $tag): EnchantDictionary|false	Create a new dictionary using a tag
 enchant_broker_request_pwl_dict(EnchantBroker $broker, string $filename): EnchantDictionary|false	Creates a dictionary using a PWL file
@@ -1355,7 +1370,7 @@ enchant_dict_is_added(EnchantDictionary $dictionary, string $word): bool	Whether
 enchant_dict_is_in_session()	Alias of enchant_dict_is_added
 enchant_dict_quick_check(EnchantDictionary $dictionary, string $word, array &$suggestions = null): bool	Check the word is correctly spelled and provide suggestions
 enchant_dict_store_replacement(EnchantDictionary $dictionary, string $misspelled, string $correct): void	Add a correction for a word
-enchant_dict_suggest(EnchantDictionary $dictionary, string $word): array	Will return a list of values if any of those pre-conditions are not met
+enchant_dict_suggest(EnchantDictionary $dictionary, string $word): array	Suggest spellings for a word
 EnchantBroker()	(new) A fully opaque class which replaces enchant_broker resources as of PHP 8
 EnchantDictionary()	(new) A fully opaque class which replaces enchant_dict resources as of PHP 8
 debug_backtrace(int $options = DEBUG_BACKTRACE_PROVIDE_OBJECT, int $limit = ?): array	Generates a backtrace
@@ -1364,6 +1379,8 @@ error_clear_last(): void	Clear the most recent error
 error_get_last(): ?array	Get the last occurred error
 error_log(string $message, int $message_type = ?, ?string $destination = null, ?string $additional_headers = null): bool	Send an error message to the defined error handling routines
 error_reporting(?int $error_level = null): int	Sets which PHP errors are reported
+get_error_handler(): ?callable	Gets the user-defined error handler function
+get_exception_handler(): ?callable	Gets the user-defined exception handler function
 restore_error_handler(): true	Restores the previous error handler function
 restore_exception_handler(): true	Restores the previously defined exception handler function
 set_error_handler(?callable $callback, int $error_levels = E_ALL): ?callable	Sets a user-defined error handler function
@@ -1373,7 +1390,7 @@ user_error()	Alias of trigger_error
 Ev::backend(): int	Returns an integer describing the backend used by libev
 Ev::depth(): int	Returns recursion depth
 Ev::embeddableBackends(): int	Returns the set of backends that are embeddable in other event loops
-Ev::feedSignal(int $signum): void	Feed a signal event info Ev
+Ev::feedSignal(int $signum): void	Feed a signal event into Ev
 Ev::feedSignalEvent(int $signum): void	Feed signal event into the default loop
 Ev::iteration(): int	Return the number of times the default event loop has polled for new events
 Ev::now(): float	Returns the time when the last iteration of the default event loop has started
@@ -1390,7 +1407,7 @@ Ev::verify(): void	Performs internal consistency checks(for debugging)
 EvCheck(callable $callback, mixed $data = ?, int $priority = ?)	(new) Constructs the EvCheck watcher object
 EvCheck::createStopped(string $callback, string $data = ?, string $priority = ?): object	Create instance of a stopped EvCheck watcher
 EvChild(int $pid, bool $trace, callable $callback, mixed $data = null, int $priority = ?)	(new) Constructs the EvChild watcher object
-EvChild::createStopped(int $pid, bool $trace, callable $callback, mixed $data = ?, int $priority = ?): object	Create instance of a stopped EvCheck watcher
+EvChild::createStopped(int $pid, bool $trace, callable $callback, mixed $data = ?, int $priority = ?): object	Create instance of a stopped EvChild watcher
 >set(int $pid, bool $trace): void	(EvChild) Configures the watcher
 EvEmbed(object $other, callable $callback = ?, mixed $data = ?, int $priority = ?)	(new) Constructs the EvEmbed object
 EvEmbed::createStopped(object $other, callable $callback = ?, mixed $data = ?, int $priority = ?): void	Create stopped EvEmbed watcher object
@@ -1464,7 +1481,7 @@ Event(EventBase $base, mixed $fd, int $what, callable $cb, mixed $arg = NULL)	(n
 >delSignal()	(Event) Alias of Event::del
 >delTimer()	(Event) Alias of Event::del
 >free(): void	(Event) Make event non-pending and free resources allocated for this event
-Event::getSupportedMethods(): array	Returns array with of the names of the methods supported in this version of Libevent
+Event::getSupportedMethods(): array	Returns array of the names of the methods supported in this version of Libevent
 >pending(int $flags): bool	(Event) Detects whether event is pending or scheduled
 >set(EventBase $base, mixed $fd, int $what = ?, callable $cb = ?, mixed $arg = ?): bool	(Event) Re-configures event
 >setPriority(int $priority): bool	(Event) Set event priority
@@ -1496,19 +1513,19 @@ EventBuffer()	(new) Constructs EventBuffer object
 >lock(): void	(EventBuffer) Acquires a lock on buffer
 >prepend(string $data): bool	(EventBuffer) Prepend data to the front of the buffer
 >prependBuffer(EventBuffer $buf): bool	(EventBuffer) Moves all data from source buffer to the front of current buffer
->pullup(int $size): string	(EventBuffer) Linearizes data within buffer and returns it's contents as a string
+>pullup(int $size): string	(EventBuffer) Linearizes data within buffer and returns its contents as a string
 >read(int $max_bytes): string	(EventBuffer) Read data from an evbuffer and drain the bytes read
 >read(mixed $fd, int $howmuch): int	(EventBuffer) Read data from a file onto the end of the buffer
 >readLine(int $eol_style): string	(EventBuffer) Extracts a line from the front of the buffer
 >search(string $what, int $start = -1, int $end = -1): mixed	(EventBuffer) Scans the buffer for an occurrence of a string
 >searchEol(int $start = -1, int $eol_style = EventBuffer::EOL_ANY): mixed	(EventBuffer) Scans the buffer for an occurrence of an end of line
->substr(int $start, int $length = ?): string	(EventBuffer) Substracts a portion of the buffer data
+>substr(int $start, int $length = ?): string	(EventBuffer) Subtracts a portion of the buffer data
 >unfreeze(bool $at_front): bool	(EventBuffer) Re-enable calls that modify an event buffer
 >unlock(): bool	(EventBuffer) Releases lock acquired by EventBuffer::lock
 >write(mixed $fd, int $howmuch = ?): int	(EventBuffer) Write contents of the buffer to a file or socket
 >close(): void	(EventBufferEvent) Closes file descriptor associated with the current buffer event
 >connect(string $addr): bool	(EventBufferEvent) Connect buffer eventaposs file descriptor to given address or UNIX socket
->connectHost(EventDnsBase $dns_base, string $hostname, int $port, int $family = EventUtil::AF_UNSPEC): bool	(EventBufferEvent) Connects to a hostname with optionally asyncronous DNS resolving
+>connectHost(EventDnsBase $dns_base, string $hostname, int $port, int $family = EventUtil::AF_UNSPEC): bool	(EventBufferEvent) Connects to a hostname with optionally asynchronous DNS resolving
 EventBufferEvent(EventBase $base, mixed $socket = null, int $options = ?, callable $readcb = null, callable $writecb = null, callable $eventcb = null, mixed $arg = null)	(new) Constructs EventBufferEvent object
 EventBufferEvent::createPair(EventBase $base, int $options = ?): array	Creates two buffer events connected to each other
 >disable(int $events): bool	(EventBufferEvent) Disable events read, write, or both on a buffer event
@@ -1537,7 +1554,7 @@ EventBufferEvent::sslSocket(EventBase $base, mixed $socket, EventSslContext $ctx
 >avoidMethod(string $method): bool	(EventConfig) Tells libevent to avoid specific event method
 EventConfig()	(new) Constructs EventConfig object
 >requireFeatures(int $feature): bool	(EventConfig) Enters a required event method feature that the application demands
->setFlags(int $flags): bool	(EventConfig) Sets one or more flags to configure the eventual EventBase will be initialized
+>setFlags(int $flags): bool	(EventConfig) Sets one or more flags that configure how the eventual EventBase will be initialized
 >setMaxDispatchInterval(int $max_interval, int $max_callbacks, int $min_priority): void	(EventConfig) Prevents priority inversion
 >addNameserverIp(string $ip): bool	(EventDnsBase) Adds a nameserver to the DNS base
 >addSearch(string $domain): void	(EventDnsBase) Adds a domain to the list of search domains
@@ -1553,7 +1570,7 @@ EventDnsBase(EventBase $base, int|bool $initialize)	(new) Constructs EventDnsBas
 >bind(string $address, int $port): void	(EventHttp) Binds an HTTP server on the specified address and port
 EventHttp(EventBase $base, EventSslContext $ctx = null)	(new) Constructs EventHttp object (the HTTP server)
 >removeServerAlias(string $alias): bool	(EventHttp) Removes server alias
->setAllowedMethods(int $methods): void	(EventHttp) Sets the what HTTP methods are supported in requests accepted by this server, and passed to user callbacks
+>setAllowedMethods(int $methods): void	(EventHttp) Sets which HTTP methods are supported in requests accepted by this server, and passed to user callbacks
 >setCallback(string $path, string $cb, string $arg = ?): void	(EventHttp) Sets a callback for specified URI
 >setDefaultCallback(string $cb, string $arg = ?): void	(EventHttp) Sets default callback to handle requests that are not caught by specific callbacks
 >setMaxBodySize(int $value): void	(EventHttp) Sets maximum request body size
@@ -1575,9 +1592,9 @@ EventHttpConnection(EventBase $base, EventDnsBase $dns_base, string $address, in
 >clearHeaders(): void	(EventHttpRequest) Removes all output headers from the header list of the request
 >closeConnection(): void	(EventHttpRequest) Closes associated HTTP connection
 EventHttpRequest(callable $callback, mixed $data = null)	(new) Constructs EventHttpRequest object
->findHeader(string $key, string $type): void	(EventHttpRequest) Finds the value belonging a header
+>findHeader(string $key, string $type): void	(EventHttpRequest) Finds the value belonging to a header
 >free(): void	(EventHttpRequest) Frees the object and removes associated events
->closeConnection(): EventBufferEvent	(EventHttpRequest) Returns EventBufferEvent object
+>getBufferEvent(): EventBufferEvent	(EventHttpRequest) Returns EventBufferEvent object
 >getCommand(): void	(EventHttpRequest) Returns the request command(method)
 >closeConnection(): EventHttpConnection	(EventHttpRequest) Returns EventHttpConnection object
 >getHost(): string	(EventHttpRequest) Returns the request host
@@ -1597,7 +1614,7 @@ EventListener(EventBase $base, callable $cb, mixed $data, int $flags, int $backl
 >disable(): bool	(EventListener) Disables an event connect listener object
 >enable(): bool	(EventListener) Enables an event connect listener object
 >getBase(): void	(EventListener) Returns event base associated with the event listener
-EventListener::getSocketName(string &$address, mixed &$port = ?): bool	Retreives the current address to which the listeneraposs socket is bound
+EventListener::getSocketName(string &$address, mixed &$port = ?): bool	Retrieves the current address to which the listeneraposs socket is bound
 >setCallback(callable $cb, mixed $arg = null): void	(EventListener) The setCallback purpose
 >setErrorCallback(string $cb): void	(EventListener) Set event listener's error callback
 EventSslContext(string $method, string $options)	(new) Constructs an OpenSSL context for use with Event classes
@@ -1605,7 +1622,7 @@ EventUtil()	(new) The abstract constructor
 EventUtil::getLastSocketErrno(mixed $socket = null): int	Returns the most recent socket error number
 EventUtil::getLastSocketError(mixed $socket = ?): string	Returns the most recent socket error
 EventUtil::getSocketFd(mixed $socket): int	Returns numeric file descriptor of a socket, or stream
-EventUtil::getSocketName(mixed $socket, string &$address, mixed &$port = ?): bool	Retreives the current address to which the socket is bound
+EventUtil::getSocketName(mixed $socket, string &$address, mixed &$port = ?): bool	Retrieves the current address to which the socket is bound
 EventUtil::setSocketOption(mixed $socket, int $level, int $optname, mixed $optval): bool	Sets socket options
 EventUtil::sslRandPoll(): void	Generates entropy by means of OpenSSL's RAND_poll()
 EventException()	(new) A EventException is thrown when the Event extension methods encounter invalid user input or identify an unrecoverable error
@@ -1613,7 +1630,7 @@ escapeshellarg(string $arg): string	Escape a string to be used as a shell argume
 escapeshellcmd(string $command): string	Escape shell metacharacters
 exec(string $command, array &$output = null, int &$result_code = null): string|false	Execute an external program
 passthru(string $command, int &$result_code = null): ?false	Execute an external program and display raw output
-proc_close(resource $process): int	Close a process opened by proc_open and return the exit code of that process
+proc_close(resource $process): int	Close pipes to a process opened by proc_open, wait for it to terminate, and return its exit code
 proc_get_status(resource $process): array	Get information about a process opened by proc_open
 proc_nice(int $priority): bool	Change the priority of the current process
 proc_open(array|string $command, array $descriptor_spec, array &$pipes, ?string $cwd = null, ?array $env_vars = null, ?array $options = null): resource|false	Execute a command and open file pointers for input/output
@@ -1628,8 +1645,8 @@ read_exif_data()	Alias of exif_read_data
 expect_expectl(resource $expect, array $cases, array &$match = ?): int	Waits until the output from a process matches one of the patterns, a specified time period has passed, or an EOF is seen
 expect_popen(string $command): resource	Execute command via Bourne shell, and open the PTY stream to the process
 FANNConnection(int $from_neuron, int $to_neuron, float $weight)	(new) The connection constructor
->getFromNeuron(): int	(FANNConnection) Returns the postions of starting neuron
->getToNeuron(): int	(FANNConnection) Returns the postions of terminating neuron
+>getFromNeuron(): int	(FANNConnection) Returns the positions of starting neuron
+>getToNeuron(): int	(FANNConnection) Returns the positions of terminating neuron
 >getWeight(): void	(FANNConnection) Returns the connection weight
 >setWeight(float $weight): void	(FANNConnection) Sets the connections weight
 fann_cascadetrain_on_data(resource $ann, resource $data, int $max_neurons, int $neurons_between_reports, float $desired_error): bool	Trains on an entire dataset, for a period of time using the Cascade2 training algorithm
@@ -1637,8 +1654,8 @@ fann_cascadetrain_on_file(resource $ann, string $filename, int $max_neurons, int
 fann_clear_scaling_params(resource $ann): bool	Clears scaling parameters
 fann_copy(resource $ann): resource	Creates a copy of a fann structure
 fann_create_from_file(string $configuration_file): resource	Constructs a backpropagation neural network from a configuration file
-fann_create_shortcut_array(int $num_layers, array $layers): resource	Creates a standard backpropagation neural network which is not fully connectected and has shortcut connections
-fann_create_shortcut(int $num_layers, int $num_neurons1, int $num_neurons2, int ...$num_neuronsN): resource	Creates a standard backpropagation neural network which is not fully connectected and has shortcut connections
+fann_create_shortcut_array(int $num_layers, array $layers): resource	Creates a standard backpropagation neural network which is not fully connected and has shortcut connections
+fann_create_shortcut(int $num_layers, int $num_neurons1, int $num_neurons2, int ...$num_neuronsN): resource	Creates a standard backpropagation neural network which is not fully connected and has shortcut connections
 fann_create_sparse_array(float $connection_rate, int $num_layers, array $layers): resource	Creates a standard backpropagation neural network, which is not fully connected using an array of layer sizes
 fann_create_sparse(float $connection_rate, int $num_layers, int $num_neurons1, int $num_neurons2, int ...$num_neuronsN): resource	Creates a standard backpropagation neural network, which is not fully connected
 fann_create_standard_array(int $num_layers, array $layers): resource	Creates a standard fully connected backpropagation neural network using an array of layer sizes
@@ -1686,7 +1703,7 @@ fann_get_num_layers(resource $ann): int	Get the number of layers in the neural n
 fann_get_num_output(resource $ann): int	Get the number of output neurons
 fann_get_quickprop_decay(resource $ann): float	Returns the decay which is a factor that weights should decrease in each iteration during quickprop training
 fann_get_quickprop_mu(resource $ann): float	Returns the mu factor
-fann_get_rprop_decrease_factor(resource $ann): float	Returns the increase factor used during RPROP training
+fann_get_rprop_decrease_factor(resource $ann): float	Returns the decrease factor used during RPROP training
 fann_get_rprop_delta_max(resource $ann): float	Returns the maximum step-size
 fann_get_rprop_delta_min(resource $ann): float	Returns the minimum step-size
 fann_get_rprop_delta_zero(resource $ann): int	Returns the initial step-size
@@ -1815,7 +1832,7 @@ fdf_set_version(resource $fdf_document, string $version): bool	Sets version numb
 >getEnumKind(): int	(FFI\CType) Description
 >getFuncABI(): int	(FFI\CType) Description
 >getFuncParameterCount(): int	(FFI\CType) Retrieve the count of parameters of a function type
->getFuncParameterType(int $index): FFI\CType	(FFI\CType) Description
+>getFuncParameterType(int $index): FFI\CType	(FFI\CType) Retrieve the type of a function parameter
 >getFuncReturnType(): FFI\CType	(FFI\CType) Description
 >getKind(): int	(FFI\CType) Description
 >getName(): string	(FFI\CType) Description
@@ -1852,7 +1869,7 @@ finfo(int $flags = FILEINFO_NONE, ?string $magic_database = null)	(new) Alias fi
 >set_flags(int $flags): true	(finfo) Alias finfo_set_flags()
 finfo_buffer(finfo $finfo, string $string, int $flags = FILEINFO_NONE, ?resource $context = null): string|false	Return information about a string buffer
 >buffer(string $string, int $flags = FILEINFO_NONE, ?resource $context = null): string|false	(finfo) Return information about a string buffer
-finfo_close(finfo $finfo): bool	Close finfo instance
+finfo_close(finfo $finfo): true	Close finfo instance
 finfo_file(finfo $finfo, string $filename, int $flags = FILEINFO_NONE, ?resource $context = null): string|false	Return information about a file
 >file(string $filename, int $flags = FILEINFO_NONE, ?resource $context = null): string|false	(finfo) Return information about a file
 finfo_open(int $flags = FILEINFO_NONE, ?string $magic_database = null): finfo|false	Create a new finfo instance
@@ -1941,13 +1958,15 @@ tmpfile(): resource|false	Creates a temporary file
 touch(string $filename, ?int $mtime = null, ?int $atime = null): bool	Sets access and modification time of file
 umask(?int $mask = null): int	Changes the current umask
 unlink(string $filename, ?resource $context = null): bool	Deletes a file
-filter_has_var(int $input_type, string $var_name): bool	Checks if variable of specified type exists
+filter_has_var(int $input_type, string $var_name): bool	Checks if a variable of the specified type exists
 filter_id(string $name): int|false	Returns the filter ID belonging to a named filter
 filter_input_array(int $type, array|int $options = FILTER_DEFAULT, bool $add_empty = true): array|false|null	Gets external variables and optionally filters them
 filter_input(int $type, string $var_name, int $filter = FILTER_DEFAULT, array|int $options = ?): mixed	Gets a specific external variable by name and optionally filters it
 filter_list(): array	Returns a list of all supported filters
 filter_var_array(array $array, array|int $options = FILTER_DEFAULT, bool $add_empty = true): array|false|null	Gets multiple variables and optionally filters them
 filter_var(mixed $value, int $filter = FILTER_DEFAULT, array|int $options = ?): mixed	Filters a variable with a specified filter
+Filter\FilterException()	(new) The base class for Exceptions thrown by the Filter extension
+Filter\FilterFailedException()	(new) Thrown when a validation filter fails and the FILTER_THROW_ON_FAILURE flag is set
 fastcgi_finish_request(): bool	Flushes all response data to the client
 fpm_get_status(): array|false	Returns the current FPM pool status
 ftp_alloc(FTP\Connection $ftp, int $size, string &$response = null): bool	Allocates space for a file to be uploaded
@@ -1981,7 +2000,7 @@ ftp_raw(FTP\Connection $ftp, string $command): ?array	Sends an arbitrary command
 ftp_rawlist(FTP\Connection $ftp, string $directory, bool $recursive = false): array|false	Returns a detailed list of files in the given directory
 ftp_rename(FTP\Connection $ftp, string $from, string $to): bool	Renames a file or a directory on the FTP server
 ftp_rmdir(FTP\Connection $ftp, string $directory): bool	Removes a directory
-ftp_set_option(FTP\Connection $ftp, int $option, int|bool $value): bool	Set miscellaneous runtime FTP options
+ftp_set_option(FTP\Connection $ftp, int $option, int|bool $value): true	Set miscellaneous runtime FTP options
 ftp_site(FTP\Connection $ftp, string $command): bool	Sends a SITE command to the server
 ftp_size(FTP\Connection $ftp, string $filename): int	Returns the size of the given file
 ftp_ssl_connect(string $hostname, int $port = 21, int $timeout = 90): FTP\Connection|false	Opens a Secure SSL-FTP connection
@@ -2422,6 +2441,7 @@ hash_update_stream(HashContext $context, resource $stream, int $length = -1): in
 hash_update(HashContext $context, string $data): true	Pump data into an active hashing context
 hash(string $algo, string $data, bool $binary = false, array $options = []): string	Generate a hash value (message digest)
 HashContext()	(new) Private constructor to disallow direct instantiation
+>__debugInfo(): array	(HashContext) Returns debugging information about the hashing context
 >__serialize(): array	(HashContext) Serializes the HashContext object
 >__unserialize(array $data): void	(HashContext) Deserializes the $data parameter into a HashContext object
 HRTime\PerformanceCounter::getFrequency(): int	Timer frequency in ticks per second
@@ -2539,7 +2559,7 @@ ibase_service_detach(resource $service_handle): bool	Disconnect from the service
 ibase_set_event_handler(callable $event_handler, string $event_name, string ...$even_names): resource	Register a callback function to be called when events are posted
 ibase_set_event_handler(resource $connection, callable $event_handler, string $event_name, string ...$event_names): resource	Register a callback function to be called when events are posted
 ibase_trans(int $trans_args = ?, resource $link_identifier = ?): resource	Begin a transaction
-ibase_trans(resource $link_identifier = ?, int $trans_args = ?): resource	Begin a transaction
+ibase_trans(resource $link_identifier = ?): resource	Begin a transaction
 ibase_wait_event(string $event_name, string ...$event_names): string	Wait for an event to be posted by the database
 ibase_wait_event(resource $connection, string $event_name, string ...$event_names): string	Wait for an event to be posted by the database
 db2_autocommit(resource $connection, int $value = ?): int|bool	Returns or sets the AUTOCOMMIT state for a database connection
@@ -2615,23 +2635,23 @@ image2wbmp(resource $image, string $filename = ?, int $foreground = ?): bool	gd.
 imageaffine(GdImage $image, array $affine, ?array $clip = null): GdImage|false	Return an image containing the affine transformed src image, using an optional clipping area
 imageaffinematrixconcat(array $matrix1, array $matrix2): array|false	Concatenate two affine transformation matrices
 imageaffinematrixget(int $type, array|float $options): array|false	Get an affine transformation matrix
-imagealphablending(GdImage $image, bool $enable): bool	Set the blending mode for an image
-imageantialias(GdImage $image, bool $enable): bool	Should antialias functions be used or not
-imagearc(GdImage $image, int $center_x, int $center_y, int $width, int $height, int $start_angle, int $end_angle, int $color): bool	Draws an arc
+imagealphablending(GdImage $image, bool $enable): true	Set the blending mode for an image
+imageantialias(GdImage $image, bool $enable): true	Should antialias functions be used or not
+imagearc(GdImage $image, int $center_x, int $center_y, int $width, int $height, int $start_angle, int $end_angle, int $color): true	Draws an arc
 imageavif(GdImage $image, resource|string|null $file = null, int $quality = -1, int $speed = -1): bool	gd.image.output
 imagebmp(GdImage $image, resource|string|null $file = null, bool $compressed = true): bool	Output a BMP image to browser or file
-imagechar(GdImage $image, GdFont|int $font, int $x, int $y, string $char, int $color): bool	Draw a character horizontally
-imagecharup(GdImage $image, GdFont|int $font, int $x, int $y, string $char, int $color): bool	Draw a character vertically
+imagechar(GdImage $image, GdFont|int $font, int $x, int $y, string $char, int $color): true	Draw a character horizontally
+imagecharup(GdImage $image, GdFont|int $font, int $x, int $y, string $char, int $color): true	Draw a character vertically
 imagecolorallocate(GdImage $image, int $red, int $green, int $blue): int|false	Allocate a color for an image
 imagecolorallocatealpha(GdImage $image, int $red, int $green, int $blue, int $alpha): int|false	Allocate a color for an image
 imagecolorat(GdImage $image, int $x, int $y): int|false	Get the index of the color of a pixel
 imagecolorclosest(GdImage $image, int $red, int $green, int $blue): int	Get the index of the closest color to the specified color
 imagecolorclosestalpha(GdImage $image, int $red, int $green, int $blue, int $alpha): int	Get the index of the closest color to the specified color + alpha
 imagecolorclosesthwb(GdImage $image, int $red, int $green, int $blue): int	Get the index of the color which has the hue, white and blackness
-imagecolordeallocate(GdImage $image, int $color): bool	De-allocate a color for an image
+imagecolordeallocate(GdImage $image, int $color): true	De-allocate a color for an image
 imagecolorexact(GdImage $image, int $red, int $green, int $blue): int	Get the index of the specified color
 imagecolorexactalpha(GdImage $image, int $red, int $green, int $blue, int $alpha): int	Get the index of the specified color + alpha
-imagecolormatch(GdImage $image1, GdImage $image2): bool	Makes the colors of the palette version of an image more closely match the true color version
+imagecolormatch(GdImage $image1, GdImage $image2): true	Makes the colors of the palette version of an image more closely match the true color version
 imagecolorresolve(GdImage $image, int $red, int $green, int $blue): int	Get the index of the specified color or its closest possible alternative
 imagecolorresolvealpha(GdImage $image, int $red, int $green, int $blue, int $alpha): int	Get the index of the specified color + alpha or its closest possible alternative
 imagecolorset(GdImage $image, int $color, int $red, int $green, int $blue, int $alpha = ?): ?false	Set the color for the specified palette index
@@ -2639,11 +2659,11 @@ imagecolorsforindex(GdImage $image, int $color): array	Get the colors for an ind
 imagecolorstotal(GdImage $image): int	Find out the number of colors in an image's palette
 imagecolortransparent(GdImage $image, ?int $color = null): int	Define a color as transparent
 imageconvolution(GdImage $image, array $matrix, float $divisor, float $offset): bool	Apply a 3x3 convolution matrix, using coefficient and offset
-imagecopy(GdImage $dst_image, GdImage $src_image, int $dst_x, int $dst_y, int $src_x, int $src_y, int $src_width, int $src_height): bool	Copy part of an image
-imagecopymerge(GdImage $dst_image, GdImage $src_image, int $dst_x, int $dst_y, int $src_x, int $src_y, int $src_width, int $src_height, int $pct): bool	Copy and merge part of an image
-imagecopymergegray(GdImage $dst_image, GdImage $src_image, int $dst_x, int $dst_y, int $src_x, int $src_y, int $src_width, int $src_height, int $pct): bool	Copy and merge part of an image with gray scale
-imagecopyresampled(GdImage $dst_image, GdImage $src_image, int $dst_x, int $dst_y, int $src_x, int $src_y, int $dst_width, int $dst_height, int $src_width, int $src_height): bool	Copy and resize part of an image with resampling
-imagecopyresized(GdImage $dst_image, GdImage $src_image, int $dst_x, int $dst_y, int $src_x, int $src_y, int $dst_width, int $dst_height, int $src_width, int $src_height): bool	Copy and resize part of an image
+imagecopy(GdImage $dst_image, GdImage $src_image, int $dst_x, int $dst_y, int $src_x, int $src_y, int $src_width, int $src_height): true	Copy part of an image
+imagecopymerge(GdImage $dst_image, GdImage $src_image, int $dst_x, int $dst_y, int $src_x, int $src_y, int $src_width, int $src_height, int $pct): true	Copy and merge part of an image
+imagecopymergegray(GdImage $dst_image, GdImage $src_image, int $dst_x, int $dst_y, int $src_x, int $src_y, int $src_width, int $src_height, int $pct): true	Copy and merge part of an image with gray scale
+imagecopyresampled(GdImage $dst_image, GdImage $src_image, int $dst_x, int $dst_y, int $src_x, int $src_y, int $dst_width, int $dst_height, int $src_width, int $src_height): true	Copy and resize part of an image with resampling
+imagecopyresized(GdImage $dst_image, GdImage $src_image, int $dst_x, int $dst_y, int $src_x, int $src_y, int $dst_width, int $dst_height, int $src_width, int $src_height): true	Copy and resize part of an image
 imagecreate(int $width, int $height): GdImage|false	Create a new palette based image
 imagecreatefromavif(string $filename): GdImage|false	gd.image.new
 imagecreatefrombmp(string $filename): GdImage|false	gd.image.new
@@ -2662,23 +2682,23 @@ imagecreatefromxpm(string $filename): GdImage|false	gd.image.new
 imagecreatetruecolor(int $width, int $height): GdImage|false	Create a new true color image
 imagecrop(GdImage $image, array $rectangle): GdImage|false	Crop an image to the given rectangle
 imagecropauto(GdImage $image, int $mode = IMG_CROP_DEFAULT, float $threshold = 0.5, int $color = -1): GdImage|false	Crop an image automatically using one of the available modes
-imagedashedline(GdImage $image, int $x1, int $y1, int $x2, int $y2, int $color): bool	Draw a dashed line
-imagedestroy(GdImage $image): bool	Destroy an image
-imageellipse(GdImage $image, int $center_x, int $center_y, int $width, int $height, int $color): bool	Draw an ellipse
-imagefill(GdImage $image, int $x, int $y, int $color): bool	Flood fill
-imagefilledarc(GdImage $image, int $center_x, int $center_y, int $width, int $height, int $start_angle, int $end_angle, int $color, int $style): bool	Draw a partial arc and fill it
-imagefilledellipse(GdImage $image, int $center_x, int $center_y, int $width, int $height, int $color): bool	Draw a filled ellipse
+imagedashedline(GdImage $image, int $x1, int $y1, int $x2, int $y2, int $color): true	Draw a dashed line
+imagedestroy(GdImage $image): true	Destroy an image
+imageellipse(GdImage $image, int $center_x, int $center_y, int $width, int $height, int $color): true	Draw an ellipse
+imagefill(GdImage $image, int $x, int $y, int $color): true	Flood fill
+imagefilledarc(GdImage $image, int $center_x, int $center_y, int $width, int $height, int $start_angle, int $end_angle, int $color, int $style): true	Draw a partial arc and fill it
+imagefilledellipse(GdImage $image, int $center_x, int $center_y, int $width, int $height, int $color): true	Draw a filled ellipse
 imagefilledpolygon(GdImage $image, array $points, int $color): bool	Draw a filled polygon
 imagefilledpolygon(GdImage $image, array $points, int $num_points, int $color): bool	Draw a filled polygon
-imagefilledrectangle(GdImage $image, int $x1, int $y1, int $x2, int $y2, int $color): bool	Draw a filled rectangle
-imagefilltoborder(GdImage $image, int $x, int $y, int $border_color, int $color): bool	Flood fill to specific color
+imagefilledrectangle(GdImage $image, int $x1, int $y1, int $x2, int $y2, int $color): true	Draw a filled rectangle
+imagefilltoborder(GdImage $image, int $x, int $y, int $border_color, int $color): true	Flood fill to specific color
 imagefilter(GdImage $image, int $filter, array|int|float|bool ...$args): bool	Applies a filter to an image
-imageflip(GdImage $image, int $mode): bool	Flips an image using a given mode
+imageflip(GdImage $image, int $mode): true	Flips an image using a given mode
 imagefontheight(GdFont|int $font): int	Get font height
 imagefontwidth(GdFont|int $font): int	Get font width
 imageftbbox(float $size, float $angle, string $font_filename, string $string, array $options = []): array|false	Give the bounding box of a text using fonts via freetype2
 imagefttext(GdImage $image, float $size, float $angle, int $x, int $y, int $color, string $font_filename, string $text, array $options = []): array|false	Write text to the image using fonts using FreeType 2
-imagegammacorrect(GdImage $image, float $input_gamma, float $output_gamma): bool	Apply a gamma correction to a GD image
+imagegammacorrect(GdImage $image, float $input_gamma, float $output_gamma): true	Apply a gamma correction to a GD image
 imagegd(GdImage $image, ?string $file = null): bool	Output GD image to browser or file
 imagegd2(GdImage $image, ?string $file = null, int $chunk_size = 128, int $mode = IMG_GD2_RAW): bool	Output GD2 image to browser or file
 imagegetclip(GdImage $image): array	Get the clipping rectangle
@@ -2689,8 +2709,8 @@ imagegrabwindow(int $handle, bool $client_area = false): GdImage|false	Captures 
 imageinterlace(GdImage $image, ?bool $enable = null): bool	Enable or disable interlace
 imageistruecolor(GdImage $image): bool	Finds whether an image is a truecolor image
 imagejpeg(GdImage $image, resource|string|null $file = null, int $quality = -1): bool	gd.image.output
-imagelayereffect(GdImage $image, int $effect): bool	Set the alpha blending flag to use layering effects
-imageline(GdImage $image, int $x1, int $y1, int $x2, int $y2, int $color): bool	Draw a line
+imagelayereffect(GdImage $image, int $effect): true	Set the alpha blending flag to use layering effects
+imageline(GdImage $image, int $x1, int $y1, int $x2, int $y2, int $color): true	Draw a line
 imageloadfont(string $filename): GdFont|false	Load a new font
 imageopenpolygon(GdImage $image, array $points, int $color): bool	Draws an open polygon
 imageopenpolygon(GdImage $image, array $points, int $num_points, int $color): bool	Draws an open polygon
@@ -2699,20 +2719,20 @@ imagepalettetotruecolor(GdImage $image): bool	Converts a palette based image to 
 imagepng(GdImage $image, resource|string|null $file = null, int $quality = -1, int $filters = -1): bool	Output a PNG image to either the browser or a file
 imagepolygon(GdImage $image, array $points, int $color): bool	Draws a polygon
 imagepolygon(GdImage $image, array $points, int $num_points, int $color): bool	Draws a polygon
-imagerectangle(GdImage $image, int $x1, int $y1, int $x2, int $y2, int $color): bool	Draw a rectangle
-imageresolution(GdImage $image, ?int $resolution_x = null, ?int $resolution_y = null): array|bool	Get or set the resolution of the image
+imagerectangle(GdImage $image, int $x1, int $y1, int $x2, int $y2, int $color): true	Draw a rectangle
+imageresolution(GdImage $image, ?int $resolution_x = null, ?int $resolution_y = null): array|true	Get or set the resolution of the image
 imagerotate(GdImage $image, float $angle, int $background_color): GdImage|false	Rotate an image with a given angle
-imagesavealpha(GdImage $image, bool $enable): bool	Whether to retain full alpha channel information when saving images
+imagesavealpha(GdImage $image, bool $enable): true	Whether to retain full alpha channel information when saving images
 imagescale(GdImage $image, int $width, int $height = -1, int $mode = IMG_BILINEAR_FIXED): GdImage|false	Scale an image using the given new width and height
-imagesetbrush(GdImage $image, GdImage $brush): bool	Set the brush image for line drawing
-imagesetclip(GdImage $image, int $x1, int $y1, int $x2, int $y2): bool	Set the clipping rectangle
+imagesetbrush(GdImage $image, GdImage $brush): true	Set the brush image for line drawing
+imagesetclip(GdImage $image, int $x1, int $y1, int $x2, int $y2): true	Set the clipping rectangle
 imagesetinterpolation(GdImage $image, int $method = IMG_BILINEAR_FIXED): bool	Set the interpolation method
-imagesetpixel(GdImage $image, int $x, int $y, int $color): bool	Set a single pixel
+imagesetpixel(GdImage $image, int $x, int $y, int $color): true	Set a single pixel
 imagesetstyle(GdImage $image, array $style): bool	Set the style for line drawing
-imagesetthickness(GdImage $image, int $thickness): bool	Set the thickness for line drawing
-imagesettile(GdImage $image, GdImage $tile): bool	Set the tile image for filling
-imagestring(GdImage $image, GdFont|int $font, int $x, int $y, string $string, int $color): bool	Draw a string horizontally
-imagestringup(GdImage $image, GdFont|int $font, int $x, int $y, string $string, int $color): bool	Draw a string vertically
+imagesetthickness(GdImage $image, int $thickness): true	Set the thickness for line drawing
+imagesettile(GdImage $image, GdImage $tile): true	Set the tile image for filling
+imagestring(GdImage $image, GdFont|int $font, int $x, int $y, string $string, int $color): true	Draw a string horizontally
+imagestringup(GdImage $image, GdFont|int $font, int $x, int $y, string $string, int $color): true	Draw a string vertically
 imagesx(GdImage $image): int	Get image width
 imagesy(GdImage $image): int	Get image height
 imagetruecolortopalette(GdImage $image, bool $dither, int $num_colors): bool	Convert a true color image to a palette image
@@ -2942,7 +2962,7 @@ Imagick::listRegistry(): array	List all the registry settings
 >posterizeImage(int $levels, bool $dither): bool	(Imagick) Reduces the image to a limited number of color level
 >previewImages(int $preview): bool	(Imagick) Quickly pin-point appropriate parameters for image processing
 >previousImage(): bool	(Imagick) Move to the previous image in the object
->profileImage(string $name, ?string $profile): bool	(Imagick) Adds or removes a profile from an image
+>profileImage(string $name, string $profile = ?): bool	(Imagick) Adds or removes a profile from an image
 >quantizeImage(int $numberColors, int $colorspace, int $treedepth, bool $dither, bool $measureError): bool	(Imagick) Analyzes the colors within a reference image
 >quantizeImages(int $numberColors, int $colorspace, int $treedepth, bool $dither, bool $measureError): bool	(Imagick) Analyzes the colors within a sequence of images
 >queryFontMetrics(ImagickDraw $properties, string $text, bool $multiline = ?): array	(Imagick) Returns an array representing the font metrics
@@ -3083,18 +3103,18 @@ Imagick::setResourceLimit(int $type, int $limit): bool	Sets the limit for a part
 >writeImagesFile(resource $filehandle, string $format = ?): bool	(Imagick) Writes frames to a filehandle
 >affine(array $affine): bool	(ImagickDraw) Adjusts the current affine transformation matrix
 >annotation(float $x, float $y, string $text): bool	(ImagickDraw) Draws text on the image
->arc(float $sx, float $sy, float $ex, float $ey, float $sd, float $ed): bool	(ImagickDraw) Draws an arc
+>arc(float $start_x, float $start_y, float $end_x, float $end_y, float $start_angle, float $end_angle): bool	(ImagickDraw) Draws an arc
 >bezier(array $coordinates): bool	(ImagickDraw) Draws a bezier curve
->circle(float $ox, float $oy, float $px, float $py): bool	(ImagickDraw) Draws a circle
+>circle(float $origin_x, float $origin_y, float $perimeter_x, float $perimeter_y): bool	(ImagickDraw) Draws a circle
 >clear(): bool	(ImagickDraw) Clears the ImagickDraw
 >clone(): ImagickDraw	(ImagickDraw) Makes an exact copy of the specified ImagickDraw object
->color(float $x, float $y, int $paintMethod): bool	(ImagickDraw) Draws color on image
+>color(float $x, float $y, int $paint): bool	(ImagickDraw) Draws color on image
 >comment(string $comment): bool	(ImagickDraw) Adds a comment
->composite(int $compose, float $x, float $y, float $width, float $height, Imagick $compositeWand): bool	(ImagickDraw) Composites an image onto the current image
+>composite(int $composite, float $x, float $y, float $width, float $height, Imagick $image): bool	(ImagickDraw) Composites an image onto the current image
 ImagickDraw()	(new) The ImagickDraw constructor
 >destroy(): bool	(ImagickDraw) Frees all associated resources
->ellipse(float $ox, float $oy, float $rx, float $ry, float $start, float $end): bool	(ImagickDraw) Draws an ellipse on the image
->getClipPath(): string	(ImagickDraw) Obtains the current clipping path ID
+>ellipse(float $origin_x, float $origin_y, float $radius_x, float $radius_y, float $angle_start, float $angle_end): bool	(ImagickDraw) Draws an ellipse on the image
+>getClipPath(): false|string	(ImagickDraw) Obtains the current clipping path ID
 >getClipRule(): int	(ImagickDraw) Returns the current polygon fill rule
 >getClipUnits(): int	(ImagickDraw) Returns the interpretation of clip path units
 >getFillColor(): ImagickPixel	(ImagickDraw) Returns the fill color
@@ -3119,25 +3139,25 @@ ImagickDraw()	(new) The ImagickDraw constructor
 >getTextAlignment(): int	(ImagickDraw) Returns the text alignment
 >getTextAntialias(): bool	(ImagickDraw) Returns the current text antialias setting
 >getTextDecoration(): int	(ImagickDraw) Returns the text decoration
->getTextEncoding(): string	(ImagickDraw) Returns the code set used for text annotations
->getTextInterlineSpacing(): float	(ImagickDraw) Gets the text interword spacing
+>getTextEncoding(): false|string	(ImagickDraw) Returns the code set used for text annotations
+>getTextInterlineSpacing(): float	(ImagickDraw) Gets the text interline spacing
 >getTextInterwordSpacing(): float	(ImagickDraw) Gets the text interword spacing
 >getTextKerning(): float	(ImagickDraw) Gets the text kerning
 >getTextUnderColor(): ImagickPixel	(ImagickDraw) Returns the text under color
 >getVectorGraphics(): string	(ImagickDraw) Returns a string containing vector graphics
->line(float $sx, float $sy, float $ex, float $ey): bool	(ImagickDraw) Draws a line
->matte(float $x, float $y, int $paintMethod): bool	(ImagickDraw) Paints on the image's opacity channel
+>line(float $start_x, float $start_y, float $end_x, float $end_y): bool	(ImagickDraw) Draws a line
+>matte(float $x, float $y, int $paint): bool	(ImagickDraw) Paints on the image's opacity channel
 >pathClose(): bool	(ImagickDraw) Adds a path element to the current path
 >pathCurveToAbsolute(float $x1, float $y1, float $x2, float $y2, float $x, float $y): bool	(ImagickDraw) Draws a cubic Bezier curve
->pathCurveToQuadraticBezierAbsolute(float $x1, float $y1, float $x, float $y): bool	(ImagickDraw) Draws a quadratic Bezier curve
->pathCurveToQuadraticBezierRelative(float $x1, float $y1, float $x, float $y): bool	(ImagickDraw) Draws a quadratic Bezier curve
+>pathCurveToQuadraticBezierAbsolute(float $x1, float $y1, float $x_end, float $y): bool	(ImagickDraw) Draws a quadratic Bezier curve
+>pathCurveToQuadraticBezierRelative(float $x1, float $y1, float $x_end, float $y): bool	(ImagickDraw) Draws a quadratic Bezier curve
 >pathCurveToQuadraticBezierSmoothAbsolute(float $x, float $y): bool	(ImagickDraw) Draws a quadratic Bezier curve
 >pathCurveToQuadraticBezierSmoothRelative(float $x, float $y): bool	(ImagickDraw) Draws a quadratic Bezier curve
 >pathCurveToRelative(float $x1, float $y1, float $x2, float $y2, float $x, float $y): bool	(ImagickDraw) Draws a cubic Bezier curve
 >pathCurveToSmoothAbsolute(float $x2, float $y2, float $x, float $y): bool	(ImagickDraw) Draws a cubic Bezier curve
 >pathCurveToSmoothRelative(float $x2, float $y2, float $x, float $y): bool	(ImagickDraw) Draws a cubic Bezier curve
->pathEllipticArcAbsolute(float $rx, float $ry, float $x_axis_rotation, bool $large_arc_flag, bool $sweep_flag, float $x, float $y): bool	(ImagickDraw) Draws an elliptical arc
->pathEllipticArcRelative(float $rx, float $ry, float $x_axis_rotation, bool $large_arc_flag, bool $sweep_flag, float $x, float $y): bool	(ImagickDraw) Draws an elliptical arc
+>pathEllipticArcAbsolute(float $rx, float $ry, float $x_axis_rotation, bool $large_arc, bool $sweep, float $x, float $y): bool	(ImagickDraw) Draws an elliptical arc
+>pathEllipticArcRelative(float $rx, float $ry, float $x_axis_rotation, bool $large_arc, bool $sweep, float $x, float $y): bool	(ImagickDraw) Draws an elliptical arc
 >pathFinish(): bool	(ImagickDraw) Terminates the current path
 >pathLineToAbsolute(float $x, float $y): bool	(ImagickDraw) Draws a line path
 >pathLineToHorizontalAbsolute(float $x): bool	(ImagickDraw) Draws a horizontal line path
@@ -3159,49 +3179,49 @@ ImagickDraw()	(new) The ImagickDraw constructor
 >pushClipPath(string $clip_mask_id): bool	(ImagickDraw) Starts a clip path definition
 >pushDefs(): bool	(ImagickDraw) Indicates that following commands create named elements for early processing
 >pushPattern(string $pattern_id, float $x, float $y, float $width, float $height): bool	(ImagickDraw) Indicates that subsequent commands up to a ImagickDraw::opPattern() command comprise the definition of a named pattern
->rectangle(float $x1, float $y1, float $x2, float $y2): bool	(ImagickDraw) Draws a rectangle
+>rectangle(float $top_left_x, float $top_left_y, float $bottom_right_x, float $bottom_right_y): bool	(ImagickDraw) Draws a rectangle
 >render(): bool	(ImagickDraw) Renders all preceding drawing commands onto the image
 >resetVectorGraphics(): bool	(ImagickDraw) Resets the vector graphics
 >rotate(float $degrees): bool	(ImagickDraw) Applies the specified rotation to the current coordinate space
->roundRectangle(float $x1, float $y1, float $x2, float $y2, float $rx, float $ry): bool	(ImagickDraw) Draws a rounded rectangle
+>roundRectangle(float $top_left_x, float $top_left_y, float $bottom_right_x, float $bottom_right_y, float $rounding_x, float $rounding_y): bool	(ImagickDraw) Draws a rounded rectangle
 >scale(float $x, float $y): bool	(ImagickDraw) Adjusts the scaling factor
 >setClipPath(string $clip_mask): bool	(ImagickDraw) Associates a named clipping path with the image
->setClipRule(int $fill_rule): bool	(ImagickDraw) Set the polygon fill rule to be used by the clipping path
->setClipUnits(int $clip_units): bool	(ImagickDraw) Sets the interpretation of clip path units
->setFillAlpha(float $opacity): bool	(ImagickDraw) Sets the opacity to use when drawing using the fill color or fill texture
->setFillColor(ImagickPixel $fill_pixel): bool	(ImagickDraw) Sets the fill color to be used for drawing filled objects
->setFillOpacity(float $fillOpacity): bool	(ImagickDraw) Sets the opacity to use when drawing using the fill color or fill texture
+>setClipRule(int $fillrule): bool	(ImagickDraw) Set the polygon fill rule to be used by the clipping path
+>setClipUnits(int $pathunits): bool	(ImagickDraw) Sets the interpretation of clip path units
+>setFillAlpha(float $alpha): bool	(ImagickDraw) Sets the opacity to use when drawing using the fill color or fill texture
+>setFillColor(ImagickPixel|string $fill_color): bool	(ImagickDraw) Sets the fill color to be used for drawing filled objects
+>setFillOpacity(float $opacity): bool	(ImagickDraw) Sets the opacity to use when drawing using the fill color or fill texture
 >setFillPatternURL(string $fill_url): bool	(ImagickDraw) Sets the URL to use as a fill pattern for filling objects
->setFillRule(int $fill_rule): bool	(ImagickDraw) Sets the fill rule to use while drawing polygons
+>setFillRule(int $fillrule): bool	(ImagickDraw) Sets the fill rule to use while drawing polygons
 >setFont(string $font_name): bool	(ImagickDraw) Sets the fully-specified font to use when annotating with text
 >setFontFamily(string $font_family): bool	(ImagickDraw) Sets the font family to use when annotating with text
->setFontSize(float $pointsize): bool	(ImagickDraw) Sets the font pointsize to use when annotating with text
->setFontStretch(int $fontStretch): bool	(ImagickDraw) Sets the font stretch to use when annotating with text
+>setFontSize(float $point_size): bool	(ImagickDraw) Sets the font pointsize to use when annotating with text
+>setFontStretch(int $stretch): bool	(ImagickDraw) Sets the font stretch to use when annotating with text
 >setFontStyle(int $style): bool	(ImagickDraw) Sets the font style to use when annotating with text
->setFontWeight(int $font_weight): bool	(ImagickDraw) Sets the font weight
+>setFontWeight(int $weight): bool	(ImagickDraw) Sets the font weight
 >setGravity(int $gravity): bool	(ImagickDraw) Sets the text placement gravity
->setResolution(float $x_resolution, float $y_resolution): bool	(ImagickDraw) Sets the resolution
->setStrokeAlpha(float $opacity): bool	(ImagickDraw) Specifies the opacity of stroked object outlines
->setStrokeAntialias(bool $stroke_antialias): bool	(ImagickDraw) Controls whether stroked outlines are antialiased
->setStrokeColor(ImagickPixel $stroke_pixel): bool	(ImagickDraw) Sets the color used for stroking object outlines
->setStrokeDashArray(array $dashArray): bool	(ImagickDraw) Specifies the pattern of dashes and gaps used to stroke paths
+>setResolution(float $resolution_x, float $resolution_y): bool	(ImagickDraw) Sets the resolution
+>setStrokeAlpha(float $alpha): bool	(ImagickDraw) Specifies the opacity of stroked object outlines
+>setStrokeAntialias(bool $enabled): bool	(ImagickDraw) Controls whether stroked outlines are antialiased
+>setStrokeColor(ImagickPixel|string $color): bool	(ImagickDraw) Sets the color used for stroking object outlines
+>setStrokeDashArray(?array $dashes): bool	(ImagickDraw) Specifies the pattern of dashes and gaps used to stroke paths
 >setStrokeDashOffset(float $dash_offset): bool	(ImagickDraw) Specifies the offset into the dash pattern to start the dash
 >setStrokeLineCap(int $linecap): bool	(ImagickDraw) Specifies the shape to be used at the end of open subpaths when they are stroked
 >setStrokeLineJoin(int $linejoin): bool	(ImagickDraw) Specifies the shape to be used at the corners of paths when they are stroked
 >setStrokeMiterLimit(int $miterlimit): bool	(ImagickDraw) Specifies the miter limit
->setStrokeOpacity(float $stroke_opacity): bool	(ImagickDraw) Specifies the opacity of stroked object outlines
+>setStrokeOpacity(float $opacity): bool	(ImagickDraw) Specifies the opacity of stroked object outlines
 >setStrokePatternURL(string $stroke_url): bool	(ImagickDraw) Sets the pattern used for stroking object outlines
->setStrokeWidth(float $stroke_width): bool	(ImagickDraw) Sets the width of the stroke used to draw object outlines
->setTextAlignment(int $alignment): bool	(ImagickDraw) Specifies a text alignment
->setTextAntialias(bool $antiAlias): bool	(ImagickDraw) Controls whether text is antialiased
+>setStrokeWidth(float $width): bool	(ImagickDraw) Sets the width of the stroke used to draw object outlines
+>setTextAlignment(int $align): bool	(ImagickDraw) Specifies a text alignment
+>setTextAntialias(bool $antialias): bool	(ImagickDraw) Controls whether text is antialiased
 >setTextDecoration(int $decoration): bool	(ImagickDraw) Specifies a decoration
 >setTextEncoding(string $encoding): bool	(ImagickDraw) Specifies the text code set
 >setTextInterlineSpacing(float $spacing): bool	(ImagickDraw) Sets the text interline spacing
 >setTextInterwordSpacing(float $spacing): bool	(ImagickDraw) Sets the text interword spacing
 >setTextKerning(float $kerning): bool	(ImagickDraw) Sets the text kerning
->setTextUnderColor(ImagickPixel $under_color): bool	(ImagickDraw) Specifies the color of a background rectangle
+>setTextUnderColor(ImagickPixel|string $under_color): bool	(ImagickDraw) Specifies the color of a background rectangle
 >setVectorGraphics(string $xml): bool	(ImagickDraw) Sets the vector graphics
->setViewbox(int $x1, int $y1, int $x2, int $y2): bool	(ImagickDraw) Sets the overall canvas size
+>setViewbox(int $left_x, int $top_y, int $right_x, int $bottom_y): bool	(ImagickDraw) Sets the overall canvas size
 >skewX(float $degrees): bool	(ImagickDraw) Skews the current coordinate system in the horizontal direction
 >skewY(float $degrees): bool	(ImagickDraw) Skews the current coordinate system in the vertical direction
 >translate(float $x, float $y): bool	(ImagickDraw) Applies a translation to the current coordinate system
@@ -3246,8 +3266,12 @@ ImagickPixelIterator(Imagick $wand)	(new) The ImagickPixelIterator constructor
 >setIteratorLastRow(): bool	(ImagickPixelIterator) Sets the pixel iterator to the last pixel row
 >setIteratorRow(int $row): bool	(ImagickPixelIterator) Set the pixel iterator row
 >syncIterator(): bool	(ImagickPixelIterator) Syncs the pixel iterator
+ImagickDrawException()	(new) 
+ImagickException()	(new) 
 ImagickKernel()	(new) 
 ImagickKernelException()	(new) 
+ImagickPixelException()	(new) 
+ImagickPixelIteratorException()	(new) 
 imap_8bit(string $string): string|false	Convert an 8bit string to a quoted-printable string
 imap_alerts(): array|false	Returns all IMAP alert messages that have occurred
 imap_append(IMAP\Connection $imap, string $folder, string $message, ?string $options = null, ?string $internal_date = null): bool	Append a string message to a specified mailbox
@@ -3444,6 +3468,7 @@ datefmt_is_lenient(IntlDateFormatter $formatter): bool	Get the lenient used for 
 datefmt_localtime(IntlDateFormatter $formatter, string $string, int &$offset = null): array|false	Parse string to a field-based time value
 >parse(string $string, int &$offset = null): int|float|false	(IntlDateFormatter) Parse string to a timestamp value
 datefmt_parse(IntlDateFormatter $formatter, string $string, int &$offset = null): int|float|false	Parse string to a timestamp value
+>parseToCalendar(string $string, int &$offset = null): int|float|false	(IntlDateFormatter) Parse a string into a timestamp, updating an open calendar
 >setCalendar(IntlCalendar|int|null $calendar): bool	(IntlDateFormatter) Sets the calendar type used by the formatter
 datefmt_set_calendar(IntlDateFormatter $formatter, IntlCalendar|int|null $calendar): bool	Sets the calendar type used by the formatter
 >setLenient(bool $lenient): void	(IntlDateFormatter) Set the leniency of the parser
@@ -3458,14 +3483,14 @@ intl_get_error_message(): string	Get description of the last error
 intl_is_failure(int $errorCode): bool	Check whether the given error code indicates failure
 grapheme_extract(string $haystack, int $size, int $type = GRAPHEME_EXTR_COUNT, int $offset = ?, int &$next = null): string|false	Function to extract a sequence of default grapheme clusters from a text buffer, which must be encoded in UTF-8
 grapheme_str_split(string $string, int $length = 1): array|false	Split a string into an array
-grapheme_stripos(string $haystack, string $needle, int $offset = ?): int|false	Find position (in grapheme units) of first occurrence of a case-insensitive string
-grapheme_stristr(string $haystack, string $needle, bool $beforeNeedle = false): string|false	Returns part of haystack string from the first occurrence of case-insensitive needle to the end of haystack
+grapheme_stripos(string $haystack, string $needle, int $offset = ?, string $locale = ""): int|false	Find position (in grapheme units) of first occurrence of a case-insensitive string
+grapheme_stristr(string $haystack, string $needle, bool $beforeNeedle = false, string $locale = ""): string|false	Returns part of haystack string from the first occurrence of case-insensitive needle to the end of haystack
 grapheme_strlen(string $string): int|false|null	Get string length in grapheme units
-grapheme_strpos(string $haystack, string $needle, int $offset = ?): int|false	Find position (in grapheme units) of first occurrence of a string
-grapheme_strripos(string $haystack, string $needle, int $offset = ?): int|false	Find position (in grapheme units) of last occurrence of a case-insensitive string
-grapheme_strrpos(string $haystack, string $needle, int $offset = ?): int|false	Find position (in grapheme units) of last occurrence of a string
-grapheme_strstr(string $haystack, string $needle, bool $beforeNeedle = false): string|false	Returns part of haystack string from the first occurrence of needle to the end of haystack
-grapheme_substr(string $string, int $offset, ?int $length = null): string|false	Return part of a string
+grapheme_strpos(string $haystack, string $needle, int $offset = ?, string $locale = ""): int|false	Find position (in grapheme units) of first occurrence of a string
+grapheme_strripos(string $haystack, string $needle, int $offset = ?, string $locale = ""): int|false	Find position (in grapheme units) of last occurrence of a case-insensitive string
+grapheme_strrpos(string $haystack, string $needle, int $offset = ?, string $locale = ""): int|false	Find position (in grapheme units) of last occurrence of a string
+grapheme_strstr(string $haystack, string $needle, bool $beforeNeedle = false, string $locale = ""): string|false	Returns part of haystack string from the first occurrence of needle to the end of haystack
+grapheme_substr(string $string, int $offset, ?int $length = null, string $locale = ""): string|false	Return part of a string
 idn_to_ascii(string $domain, int $flags = IDNA_DEFAULT, int $variant = INTL_IDNA_VARIANT_UTS46, array &$idna_info = null): string|false	Convert domain name to IDNA ASCII form
 idn_to_utf8(string $domain, int $flags = IDNA_DEFAULT, int $variant = INTL_IDNA_VARIANT_UTS46, array &$idna_info = null): string|false	Convert domain name from IDNA ASCII to Unicode
 IntlBreakIterator()	(new) Private constructor for disallowing instantiation
@@ -3483,7 +3508,7 @@ intl_get_error_code(): int	Get last error code on the object
 >getErrorMessage(): string	(IntlBreakIterator) Get last error message on the object
 intl_get_error_message(): string	Get last error message on the object
 >getLocale(int $type): string|false	(IntlBreakIterator) Get the locale associated with the object
->getPartsIterator(string $type = IntlPartsIterator::KEY_SEQUENTIAL): IntlPartsIterator	(IntlBreakIterator) Create iterator for navigating fragments between boundaries
+>getPartsIterator(int $type = IntlPartsIterator::KEY_SEQUENTIAL): IntlPartsIterator	(IntlBreakIterator) Create iterator for navigating fragments between boundaries
 >getText(): ?string	(IntlBreakIterator) Get the text being scanned
 >isBoundary(int $offset): bool	(IntlBreakIterator) Tell whether an offset is a boundaryʼs offset
 >last(): int	(IntlBreakIterator) Set the iterator position to index beyond the last character
@@ -3672,8 +3697,8 @@ IntlTimeZone::countEquivalentIDs(string $timezoneId): int|false	Get the number o
 intltz_count_equivalent_ids(string $timezoneId): int|false	Get the number of IDs in the equivalency group that includes the given ID
 IntlTimeZone::createDefault(): IntlTimeZone	Create a new copy of the default timezone for this host
 intltz_create_default(): IntlTimeZone	Create a new copy of the default timezone for this host
-IntlTimeZone::createEnumeration(IntlTimeZone|string|int|float|null $countryOrRawOffset = null): IntlIterator|false	Get an enumeration over time zone IDs associated with the given country or offset
-intltz_create_enumeration(IntlTimeZone|string|int|float|null $countryOrRawOffset = null): IntlIterator|false	Get an enumeration over time zone IDs associated with the given country or offset
+IntlTimeZone::createEnumeration(string|int|null $countryOrRawOffset = null): IntlIterator|false	Get an enumeration over time zone IDs associated with the given country or offset
+intltz_create_enumeration(string|int|null $countryOrRawOffset = null): IntlIterator|false	Get an enumeration over time zone IDs associated with the given country or offset
 IntlTimeZone::createTimeZone(string $timezoneId): ?IntlTimeZone	Create a timezone object for the given ID
 intltz_create_time_zone(string $timezoneId): ?IntlTimeZone	Create a timezone object for the given ID
 IntlTimeZone::createTimeZoneIDEnumeration(int $type, ?string $region = null, ?int $rawOffset = null): IntlIterator|false	Get an enumeration over system time zone IDs with the given filter conditions
@@ -3694,6 +3719,8 @@ intltz_get_error_code(IntlTimeZone $timezone): int|false	Get last error code on 
 intltz_get_error_message(IntlTimeZone $timezone): string|false	Get last error message on the object
 IntlTimeZone::getGMT(): IntlTimeZone	Create GMT (UTC) timezone
 intltz_get_gmt(): IntlTimeZone	Create GMT (UTC) timezone
+IntlTimeZone::getIanaID(string $timezoneId): string|false	Translate a timezone identifier to its IANA equivalent
+intltz_get_iana_id(string $timezoneId): string|false	Translate a timezone identifier to its IANA equivalent
 >getID(): string|false	(IntlTimeZone) Get timezone ID
 intltz_get_id(IntlTimeZone $timezone): string|false	Get timezone ID
 IntlTimeZone::getIDForWindowsID(string $timezoneId, ?string $region = null): string|false	Translate a Windows timezone into a system timezone
@@ -3745,6 +3772,8 @@ Locale::getRegion(string $locale): ?string	Gets the region for the input locale
 locale_get_region(string $locale): ?string	Gets the region for the input locale
 Locale::getScript(string $locale): ?string	Gets the script for the input locale
 locale_get_script(string $locale): ?string	Gets the script for the input locale
+Locale::isRightToLeft(string $locale = ""): bool	Check whether a locale uses a right-to-left writing system
+locale_is_right_to_left(string $locale = ""): bool	Check whether a locale uses a right-to-left writing system
 Locale::lookup(array $languageTag, string $locale, bool $canonicalize = false, ?string $defaultLocale = null): ?string	Searches the language tag list for the best match to the language
 locale_lookup(array $languageTag, string $locale, bool $canonicalize = false, ?string $defaultLocale = null): ?string	Searches the language tag list for the best match to the language
 Locale::parseLocale(string $locale): ?array	Returns a key-value array of locale ID subtag elements
@@ -3817,13 +3846,14 @@ resourcebundle_create(?string $locale, ?string $bundle, bool $fallback = true): 
 resourcebundle_get_error_code(ResourceBundle $bundle): int	Get bundle's last error code
 >getErrorMessage(): string	(ResourceBundle) Get bundle's last error message
 resourcebundle_get_error_message(ResourceBundle $bundle): string	Get bundle's last error message
->get(string|int $index, bool $fallback = true): mixed	(ResourceBundle) Get data from the bundle
-resourcebundle_get(ResourceBundle $bundle, string|int $index, bool $fallback = true): mixed	Get data from the bundle
+>get(string|int $index, bool $fallback = true): ResourceBundle|array|string|int|null	(ResourceBundle) Get data from the bundle
+resourcebundle_get(ResourceBundle $bundle, string|int $index, bool $fallback = true): ResourceBundle|array|string|int|null	Get data from the bundle
 ResourceBundle::getLocales(string $bundle): array|false	Get supported locales
 resourcebundle_locales(string $bundle): array|false	Get supported locales
 >areConfusable(string $string1, string $string2, int &$errorCode = null): bool	(Spoofchecker) Checks if given strings can be confused
 Spoofchecker()	(new) Constructor
 >isSuspicious(string $string, int &$errorCode = null): bool	(Spoofchecker) Checks if a given text contains any suspicious characters
+>setAllowedChars(string $pattern, int $patternOptions = ?): void	(Spoofchecker) Set the set of characters allowed when running checks
 >setAllowedLocales(string $locales): void	(Spoofchecker) Locales to use when running checks
 >setChecks(int $checks): void	(Spoofchecker) Set the checks to run
 >setRestrictionLevel(int $level): void	(Spoofchecker) Set the restriction level
@@ -3834,10 +3864,10 @@ Transliterator::createFromRules(string $rules, int $direction = Transliterator::
 transliterator_create_from_rules(string $rules, int $direction = Transliterator::FORWARD): ?Transliterator	Create transliterator from rules
 >createInverse(): ?Transliterator	(Transliterator) Create an inverse transliterator
 transliterator_create_inverse(Transliterator $transliterator): ?Transliterator	Create an inverse transliterator
->getErrorCode(): int|false	(Transliterator) Get last error code
-transliterator_get_error_code(Transliterator $transliterator): int|false	Get last error code
->getErrorMessage(): string|false	(Transliterator) Get last error message
-transliterator_get_error_message(Transliterator $transliterator): string|false	Get last error message
+>getErrorCode(): int	(Transliterator) Get last error code
+transliterator_get_error_code(Transliterator $transliterator): int	Get last error code
+>getErrorMessage(): string	(Transliterator) Get last error message
+transliterator_get_error_message(Transliterator $transliterator): string	Get last error message
 Transliterator::listIDs(): array|false	Get transliterator IDs
 transliterator_list_ids(): array|false	Get transliterator IDs
 >transliterate(string $string, int $start = ?, int $end = -1): string|false	(Transliterator) Transliterate a string
@@ -3875,7 +3905,7 @@ NumberFormatter()	(new) For currencies you can use currency format type to creat
 ResourceBundle()	(new) Localized software products often require sets of data that are to be customized depending on current locale, e
 json_decode(string $json, ?bool $associative = null, int $depth = 512, int $flags = ?): mixed	Decodes a JSON string
 json_encode(mixed $value, int $flags = ?, int $depth = 512): string|false	Returns the JSON representation of a value
-json_last_error_msg(): string	Returns the error string of the last json_encode() or json_decode() call
+json_last_error_msg(): string	Returns the error string of the last json_validate(), json_encode() or json_decode() call
 json_last_error(): int	Returns the last error occurred
 json_validate(string $json, int $depth = 512, int $flags = ?): bool	Checks if a string contains valid JSON
 >jsonSerialize(): mixed	(JsonSerializable) Specify data which should be serialized to JSON
@@ -3906,7 +3936,7 @@ ldap_exop_passwd(LDAP\Connection $ldap, string $user = "", string $old_password 
 ldap_exop_refresh(LDAP\Connection $ldap, string $dn, int $ttl): int|false	Refresh extended operation helper
 ldap_exop_sync(LDAP\Connection $ldap, string $request_oid, ?string $request_data = null, ?array $controls = null, string &$response_data = null, string &$response_oid = null): LDAP\Result|bool	Performs an extended operation
 ldap_exop_whoami(LDAP\Connection $ldap): string|false	WHOAMI extended operation helper
-ldap_exop(LDAP\Connection $ldap, string $request_oid, string $request_data = null, array $controls = null, string &$response_data = ?, string &$response_oid = ?): mixed	Performs an extended operation
+ldap_exop(LDAP\Connection $ldap, string $request_oid, ?string $request_data = null, ?array $controls = null, string &$response_data = ?, string &$response_oid = ?): LDAP\Result|bool	Performs an extended operation
 ldap_explode_dn(string $dn, int $with_attrib): array|false	Splits DN into its component parts
 ldap_first_attribute(LDAP\Connection $ldap, LDAP\ResultEntry $entry): string|false	Return first attribute
 ldap_first_entry(LDAP\Connection $ldap, LDAP\Result $result): LDAP\ResultEntry|false	Return first result id
@@ -3915,7 +3945,7 @@ ldap_free_result(LDAP\Result $result): bool	Free result memory
 ldap_get_attributes(LDAP\Connection $ldap, LDAP\ResultEntry $entry): array	Get attributes from a search result entry
 ldap_get_dn(LDAP\Connection $ldap, LDAP\ResultEntry $entry): string|false	Get the DN of a result entry
 ldap_get_entries(LDAP\Connection $ldap, LDAP\Result $result): array|false	Get all result entries
-ldap_get_option(LDAP\Connection $ldap, int $option, array|string|int &$value = null): bool	Get the current value for given option
+ldap_get_option(?LDAP\Connection $ldap, int $option, array|string|int &$value = null): bool	Get the current value for given option
 ldap_get_values_len(LDAP\Connection $ldap, LDAP\ResultEntry $entry, string $attribute): array|false	Get all binary values from a result entry
 ldap_get_values(LDAP\Connection $ldap, LDAP\ResultEntry $entry, string $attribute): array|false	Get all values from a result entry
 ldap_list(LDAP\Connection|array $ldap, array|string $base, array|string $filter, array $attributes = [], int $attributes_only = ?, int $sizelimit = -1, int $timelimit = -1, int $deref = LDAP_DEREF_NEVER, ?array $controls = null): LDAP\Result|array|false	Single-level search
@@ -3952,10 +3982,13 @@ libxml_disable_entity_loader(bool $disable = true): bool	Disable the ability to 
 libxml_get_errors(): array	Retrieve array of errors
 libxml_get_external_entity_loader(): ?callable	Get the current external entity loader
 libxml_get_last_error(): LibXMLError|false	Retrieve last error from libxml
-libxml_set_external_entity_loader(?callable $resolver_function): bool	Changes the default external entity loader
+libxml_set_external_entity_loader(?callable $resolver_function): true	Changes the default external entity loader
 libxml_set_streams_context(resource $context): void	Set the streams context for the next libxml document load or write
 libxml_use_internal_errors(?bool $use_errors = null): bool	Disable libxml errors and allow user to fetch error information as needed
 LibXMLError()	(new) Contains various information about errors thrown by libxml
+litespeed_finish_request(): bool	Flushes all response data to the client
+litespeed_request_headers()	Alias of apache_request_headers
+litespeed_response_headers()	Alias of apache_response_headers
 >assign(string $name, string $value): mixed	(Lua) Assign a PHP variable to Lua
 >call(callable $lua_func, array $args = ?, int $use_self = ?): mixed	(Lua) Call Lua functions
 >__call(callable $lua_func, array $args = ?, int $use_self = ?): mixed	(Lua) Call Lua functions
@@ -4161,24 +4194,43 @@ mcrypt_module_self_test(string $algorithm, string $lib_dir = ?): bool	This funct
 mdecrypt_generic(resource $td, string $data): string	Decrypts data
 memcache_debug(bool $on_off): bool	Turn debug output on/off
 >add(string $key, mixed $var, int $flag = ?, int $expire = ?): bool	(Memcache) Add an item to the server
+memcache_add(Memcache $memcache, string $key, mixed $var, int $flag = ?, int $expire = ?): bool	Add an item to the server
 >addServer(string $host, int $port = 11211, bool $persistent = ?, int $weight = ?, int $timeout = ?, int $retry_interval = ?, bool $status = ?, callable $failure_callback = ?, int $timeoutms = ?): bool	(Memcache) Add a memcached server to connection pool
+memcache_add_server(Memcache $memcache, string $host, int $port = 11211, bool $persistent = ?, int $weight = ?, int $timeout = ?, int $retry_interval = ?, bool $status = ?, callable $failure_callback = ?, int $timeoutms = ?): bool	Add a memcached server to connection pool
 >close(): bool	(Memcache) Close memcached server connection
+memcache_close(Memcache $memcache): bool	Close memcached server connection
 >connect(string $host, int $port = ?, int $timeout = ?): bool	(Memcache) Open memcached server connection
+memcache_connect(string $host, int $port = ?, int $timeout = ?): Memcache	Open memcached server connection
 >decrement(string $key, int $value = 1): int|false	(Memcache) Decrement item's value
+memcache_decrement(Memcache $memcache, string $key, int $value = 1): int|false	Decrement item's value
 >delete(string $key, int $exptime = ?): bool	(Memcache) Delete item from the server
+memcache_delete(Memcache $memcache, string $key, int $exptime = ?): bool	Delete item from the server
 >flush(): bool	(Memcache) Flush all existing items at the server
+memcache_flush(Memcache $memcache): bool	Flush all existing items at the server
 >get(string $key, int &$flags = ?): string	(Memcache) Retrieve item from the server
 >get(array $keys, array &$flags = ?): array	(Memcache) Retrieve item from the server
+memcache_get(Memcache $memcache, string $key, int &$flags = ?): string	Retrieve item from the server
+memcache_get(Memcache $memcache, array $keys, array &$flags = ?): array	Retrieve item from the server
 >getExtendedStats(string $type = ?, int $slabid = ?, int $limit = 100): array	(Memcache) Get statistics from all servers in pool
+memcache_get_extended_stats(Memcache $memcache, string $type = ?, int $slabid = ?, int $limit = 100): array	Get statistics from all servers in pool
 >getServerStatus(string $host, int $port = 11211): int	(Memcache) Returns server status
+memcache_get_server_status(Memcache $memcache, string $host, int $port = 11211): int	Returns server status
 >getStats(string $type = ?, int $slabid = ?, int $limit = 100): array|false	(Memcache) Get statistics of the server
+memcache_get_stats(Memcache $memcache, string $type = ?, int $slabid = ?, int $limit = 100): array|false	Get statistics of the server
 >getVersion(): string|false	(Memcache) Return version of the server
+memcache_get_version(Memcache $memcache): string|false	Return version of the server
 >increment(string $key, int $value = 1): int|false	(Memcache) Increment item's value
->pconnect(string $host, int $port = ?, int $timeout = ?): mixed	(Memcache) Open memcached server persistent connection
+memcache_increment(Memcache $memcache, string $key, int $value = 1): int|false	Increment item's value
+>pconnect(string $host, int $port = ?, int $timeout = ?): bool	(Memcache) Open memcached server persistent connection
+>pconnect(string $host, int $port = ?, int $timeout = ?): Memcache	(Memcache) Open memcached server persistent connection
 >replace(string $key, mixed $var, int $flag = ?, int $expire = ?): bool	(Memcache) Replace value of the existing item
+memcache_replace(Memcache $memcache, string $key, mixed $var, int $flag = ?, int $expire = ?): bool	Replace value of the existing item
 >set(string $key, mixed $var, int $flag = ?, int $expire = ?): bool	(Memcache) Store data at the server
+memcache_set(Memcache $memcache, string $key, mixed $var, int $flag = ?, int $expire = ?): bool	Store data at the server
 >setCompressThreshold(int $threshold, float $min_savings = ?): bool	(Memcache) Enable automatic compression of large values
+memcache_set_compress_threshold(Memcache $memcache, int $threshold, float $min_savings = ?): bool	Enable automatic compression of large values
 >setServerParams(string $host, int $port = 11211, int $timeout = ?, int $retry_interval = false, bool $status = ?, callable $failure_callback = ?): bool	(Memcache) Changes server parameters and status at runtime
+memcache_set_server_params(Memcache $memcache, string $host, int $port = 11211, int $timeout = ?, int $retry_interval = false, bool $status = ?, callable $failure_callback = ?): bool	Changes server parameters and status at runtime
 Memcache()	(new) Represents a connection to a set of memcache servers
 >add(string $key, mixed $value, int $expiration = ?): bool	(Memcached) Add an item under a new key
 >addByKey(string $server_key, string $key, mixed $value, int $expiration = ?): bool	(Memcached) Add an item under a new key on a specific server
@@ -4214,7 +4266,7 @@ Memcached(?string $persistent_id = null, ?callable $callback = null, ?string $co
 >getVersion(): array|false	(Memcached) Get server pool version info
 >increment(string $key, int $offset = 1, int $initial_value = ?, int $expiry = ?): int|false	(Memcached) Increment numeric item's value
 >incrementByKey(string $server_key, string $key, int $offset = 1, int $initial_value = ?, int $expiry = ?): int|false	(Memcached) Increment numeric item's value, stored on a specific server
->isPersistent(): bool	(Memcached) Check if a persitent connection to memcache is being used
+>isPersistent(): bool	(Memcached) Check if a persistent connection to memcache is being used
 >isPristine(): bool	(Memcached) Check if the instance was recently created
 >prepend(string $key, string $value): ?bool	(Memcached) Prepend data to an existing item
 >prependByKey(string $server_key, string $key, string $value): ?bool	(Memcached) Prepend data to an existing item on a specific server
@@ -4270,9 +4322,12 @@ uniqid(string $prefix = "", bool $more_entropy = false): string	Generate a time-
 unpack(string $format, string $string, int $offset = ?): array|false	Unpack data from binary string
 usleep(int $microseconds): void	Delay execution in microseconds
 MongoDB\BSON\Binary(string $data, int $type = MongoDB\BSON\Binary::TYPE_GENERIC)	(new) Construct a new Binary
+MongoDB\BSON\Binary::fromVector(array $vector, MongoDB\BSON\VectorType $vectorType): MongoDB\BSON\Binary	Creates a new binary with subtype MongoDB\BSON\Binary::SUBTYPE_VECTOR from the given array and vector type
 >getData(): string	(MongoDB\BSON\Binary) Returns the Binaryaposs data
 >getType(): int	(MongoDB\BSON\Binary) Returns the Binaryaposs type
+>getVectorType(): MongoDB\BSON\VectorType	(MongoDB\BSON\Binary) Returns the data type for a Binary with the vector subtype
 >jsonSerialize(): mixed	(MongoDB\BSON\Binary) Returns a representation that can be converted to JSON
+>toArray(): array	(MongoDB\BSON\Binary) Returns the vector as an array for a Binary with subtype MongoDB\BSON\Binary::SUBTYPE_VECTOR
 >__toString(): string	(MongoDB\BSON\Binary) Returns the Binaryaposs data
 >getData(): string	(MongoDB\BSON\BinaryInterface) Returns the BinaryInterfaceaposs data
 >getType(): int	(MongoDB\BSON\BinaryInterface) Returns the BinaryInterfaceaposs type
@@ -4323,9 +4378,9 @@ MongoDB\BSON\MinKey()	(new) Construct a new MinKey
 MongoDB\BSON\ObjectId(?string $id = null)	(new) Construct a new ObjectId
 >getTimestamp(): int	(MongoDB\BSON\ObjectId) Returns the timestamp component of this ObjectId
 >jsonSerialize(): mixed	(MongoDB\BSON\ObjectId) Returns a representation that can be converted to JSON
->__toString(): string	(MongoDB\BSON\ObjectId) Returns the hexidecimal representation of this ObjectId
+>__toString(): string	(MongoDB\BSON\ObjectId) Returns the hexadecimal representation of this ObjectId
 >getTimestamp(): int	(MongoDB\BSON\ObjectIdInterface) Returns the timestamp component of this ObjectIdInterface
->__toString(): string	(MongoDB\BSON\ObjectIdInterface) Returns the hexidecimal representation of this ObjectIdInterface
+>__toString(): string	(MongoDB\BSON\ObjectIdInterface) Returns the hexadecimal representation of this ObjectIdInterface
 MongoDB\BSON\PackedArray()	(new) Construct a new BSON array (unused)
 MongoDB\BSON\PackedArray::fromJSON(string $json): MongoDB\BSON\PackedArray	Construct a new BSON array instance from a JSON string
 MongoDB\BSON\PackedArray::fromPHP(array $value): MongoDB\BSON\PackedArray	Construct a new BSON array instance from PHP data
@@ -4386,6 +4441,23 @@ MongoDB\Driver\BulkWrite(?array $options = null)	(new) Create a new BulkWrite
 >delete(array|object $filter, ?array $deleteOptions = null): void	(MongoDB\Driver\BulkWrite) Add a delete operation to the bulk
 >insert(array|object $document): mixed	(MongoDB\Driver\BulkWrite) Add an insert operation to the bulk
 >update(array|object $filter, array|object $newObj, ?array $updateOptions = null): void	(MongoDB\Driver\BulkWrite) Add an update operation to the bulk
+MongoDB\Driver\BulkWriteCommand(?array $options = null)	(new) Create a new BulkWriteCommand
+>count(): int	(MongoDB\Driver\BulkWriteCommand) Count number of write operations in the BulkWriteCommand
+>deleteMany(string $namespace, array|object $filter, ?array $options = null): void	(MongoDB\Driver\BulkWriteCommand) Add a deleteMany operation
+>deleteOne(string $namespace, array|object $filter, ?array $options = null): void	(MongoDB\Driver\BulkWriteCommand) Add a deleteOne operation
+>insertOne(string $namespace, array|object $document): mixed	(MongoDB\Driver\BulkWriteCommand) Add an insertOne operation
+>replaceOne(string $namespace, array|object $filter, array|object $replacement, ?array $options = null): void	(MongoDB\Driver\BulkWriteCommand) Add a replaceOne operation
+>updateMany(string $namespace, array|object $filter, array|object $update, ?array $options = null): void	(MongoDB\Driver\BulkWriteCommand) Add an updateMany operation
+>updateOne(string $namespace, array|object $filter, array|object $update, ?array $options = null): void	(MongoDB\Driver\BulkWriteCommand) Add an updateOne operation
+>getDeletedCount(): int	(MongoDB\Driver\BulkWriteCommandResult) Returns the number of documents deleted
+>getDeleteResults(): ?MongoDB\BSON\Document	(MongoDB\Driver\BulkWriteCommandResult) Returns verbose results for successful deletes
+>getInsertedCount(): int	(MongoDB\Driver\BulkWriteCommandResult) Returns the number of documents inserted
+>getInsertResults(): ?MongoDB\BSON\Document	(MongoDB\Driver\BulkWriteCommandResult) Returns verbose results for successful inserts
+>getMatchedCount(): int	(MongoDB\Driver\BulkWriteCommandResult) Returns the number of documents selected for update
+>getModifiedCount(): int	(MongoDB\Driver\BulkWriteCommandResult) Returns the number of existing documents updated
+>getUpdateResults(): ?MongoDB\BSON\Document	(MongoDB\Driver\BulkWriteCommandResult) Returns verbose results for successful updates
+>getUpsertedCount(): int	(MongoDB\Driver\BulkWriteCommandResult) Returns the number of documents upserted
+>isAcknowledged(): bool	(MongoDB\Driver\BulkWriteCommandResult) Returns whether the write was acknowledged
 >addKeyAltName(MongoDB\BSON\Binary $keyId, string $keyAltName): ?object	(MongoDB\Driver\ClientEncryption) Adds an alternate name to a key document
 MongoDB\Driver\ClientEncryption(array $options)	(new) Create a new ClientEncryption object
 >createDataKey(string $kmsProvider, ?array $options = null): MongoDB\BSON\Binary	(MongoDB\Driver\ClientEncryption) Creates a key document
@@ -4417,6 +4489,10 @@ MongoDB\Driver\CursorId()	(new) Create a new CursorId (not used)
 >isDead(): bool	(MongoDB\Driver\CursorInterface) Checks if the cursor may have additional results
 >setTypeMap(array $typemap): void	(MongoDB\Driver\CursorInterface) Sets a type map to use for BSON unserialization
 >toArray(): array	(MongoDB\Driver\CursorInterface) Returns an array containing all results for this cursor
+>getErrorReply(): ?MongoDB\BSON\Document	(MongoDB\Driver\Exception\BulkWriteCommandException) Returns any top-level command error
+>getPartialResult(): ?MongoDB\Driver\BulkWriteCommandResult	(MongoDB\Driver\Exception\BulkWriteCommandException) Returns the result of any successful write operations
+>getWriteConcernErrors(): array	(MongoDB\Driver\Exception\BulkWriteCommandException) Returns any write concern errors
+>getWriteErrors(): array	(MongoDB\Driver\Exception\BulkWriteCommandException) Returns any write errors
 >getWriteResult(): MongoDB\Driver\WriteResult	(MongoDB\Driver\Exception\BulkWriteException) Returns the WriteResult for the failed write operation
 >getResultDocument(): object	(MongoDB\Driver\Exception\CommandException) Returns the result document for the failed command
 >hasErrorLabel(string $errorLabel): bool	(MongoDB\Driver\Exception\RuntimeException) Returns whether an error label is associated with an exception
@@ -4425,6 +4501,7 @@ MongoDB\Driver\CursorId()	(new) Create a new CursorId (not used)
 MongoDB\Driver\Manager(?string $uri = null, ?array $uriOptions = null, ?array $driverOptions = null)	(new) Create new MongoDB Manager
 >createClientEncryption(array $options): MongoDB\Driver\ClientEncryption	(MongoDB\Driver\Manager) Create a new ClientEncryption object
 >executeBulkWrite(string $namespace, MongoDB\Driver\BulkWrite $bulk, ?array $options = null): MongoDB\Driver\WriteResult	(MongoDB\Driver\Manager) Execute one or more write operations
+>executeBulkWriteCommand(MongoDB\Driver\BulkWriteCommand $bulk, ?array $options = null): MongoDB\Driver\BulkWriteCommandResult	(MongoDB\Driver\Manager) Execute write operations using the bulkWrite command
 >executeCommand(string $db, MongoDB\Driver\Command $command, ?array $options = null): MongoDB\Driver\Cursor	(MongoDB\Driver\Manager) Execute a database command
 >executeQuery(string $namespace, MongoDB\Driver\Query $query, ?array $options = null): MongoDB\Driver\Cursor	(MongoDB\Driver\Manager) Execute a database query
 >executeReadCommand(string $db, MongoDB\Driver\Command $command, ?array $options = null): MongoDB\Driver\Cursor	(MongoDB\Driver\Manager) Execute a database command that reads
@@ -4527,6 +4604,7 @@ MongoDB\Driver\ReadPreference(string $mode, ?array $tagSets = null, ?array $opti
 >getTagSets(): array	(MongoDB\Driver\ReadPreference) Returns the ReadPreferenceaposs "tagSets" option
 MongoDB\Driver\Server()	(new) Create a new Server (not used)
 >executeBulkWrite(string $namespace, MongoDB\Driver\BulkWrite $bulk, ?array $options = null): MongoDB\Driver\WriteResult	(MongoDB\Driver\Server) Execute one or more write operations on this server
+>executeBulkWriteCommand(MongoDB\Driver\BulkWriteCommand $bulk, ?array $options = null): MongoDB\Driver\BulkWriteCommandResult	(MongoDB\Driver\Server) Execute write operations on this server using the bulkWrite command
 >executeCommand(string $db, MongoDB\Driver\Command $command, ?array $options = null): MongoDB\Driver\Cursor	(MongoDB\Driver\Server) Execute a database command on this server
 >executeQuery(string $namespace, MongoDB\Driver\Query $query, ?array $options = null): MongoDB\Driver\Cursor	(MongoDB\Driver\Server) Execute a database query on this server
 >executeReadCommand(string $db, MongoDB\Driver\Command $command, ?array $options = null): MongoDB\Driver\Cursor	(MongoDB\Driver\Server) Execute a database command that reads on this server
@@ -4607,6 +4685,7 @@ MongoDB\BSON\TimestampInterface()	(new) This interface is implemented by MongoDB
 MongoDB\BSON\Type()	(new) Abstract base interface that should not be implemented directly
 MongoDB\BSON\Unserializable()	(new) Classes that implement this interface may be specified in a type map for unserializing BSON arrays and documents (both root and embedded)
 MongoDB\BSON\UTCDateTimeInterface()	(new) This interface is implemented by MongoDB\BSON\UTCDateTime to be used as a parameter, return, or property type in userland classes
+MongoDB\Driver\BulkWriteCommandResult()	(new) The MongoDB\Driver\BulkWriteCommandResult class encapsulates information about an executed MongoDB\Driver\BulkWriteCommand and is returned by MongoDB\Driver\Manager::executeBulkWriteCommand
 MongoDB\Driver\CursorInterface()	(new) This interface is implemented by MongoDB\Driver\Cursor to be used as a parameter, return, or property type in userland classes
 MongoDB\Driver\ServerDescription()	(new) The MongoDB\Driver\ServerDescription class is a value object that represents a server to which the driver is connected
 MongoDB\Driver\TopologyDescription()	(new) The MongoDB\Driver\TopologyDescription class is a value object that represents a topology to which the driver is connected
@@ -4614,6 +4693,7 @@ MongoDB\Driver\WriteConcernError()	(new) The MongoDB\Driver\WriteConcernError cl
 MongoDB\Driver\WriteError()	(new) The MongoDB\Driver\WriteError class encapsulates information about a write error and may be returned as an array element from MongoDB\Driver\WriteResult::getWriteErrors
 MongoDB\Driver\WriteResult()	(new) The MongoDB\Driver\WriteResult class encapsulates information about an executed MongoDB\Driver\BulkWrite and may be returned by MongoDB\Driver\Manager::executeBulkWrite
 MongoDB\Driver\Exception\AuthenticationException()	(new) Thrown when the driver fails to authenticate with the server
+MongoDB\Driver\Exception\BulkWriteCommandException()	(new) Exception thrown due to failed execution of a MongoDB\Driver\BulkWriteCommand
 MongoDB\Driver\Exception\BulkWriteException()	(new) Thrown when a bulk write operation fails
 MongoDB\Driver\Exception\CommandException()	(new) Thrown when a command fails
 MongoDB\Driver\Exception\ConnectionException()	(new) Base class for exceptions thrown when the driver fails to establish a database connection
@@ -4819,7 +4899,7 @@ mysql_xdevapi\Session()	(new) Description constructor
 >createSchema(string $schema_name): mysql_xdevapi\Schema	(mysql_xdevapi\Session) Create new schema
 >dropSchema(string $schema_name): bool	(mysql_xdevapi\Session) Drop a schema
 >generateUUID(): string	(mysql_xdevapi\Session) Get new UUID
->getDefaultSchema(): string	(mysql_xdevapi\Session) Get default schema name
+>getDefaultSchema(): ?mysql_xdevapi\Schema	(mysql_xdevapi\Session) Get default schema name
 >getSchema(string $schema_name): mysql_xdevapi\Schema	(mysql_xdevapi\Session) Get a new schema object
 >getSchemas(): array	(mysql_xdevapi\Session) Get the schemas
 >getServerVersion(): int	(mysql_xdevapi\Session) Get server version
@@ -4974,8 +5054,8 @@ mysqli_poll(?array &$read, ?array &$error, array &$reject, int $seconds, int $mi
 mysqli_prepare(mysqli $mysql, string $query): mysqli_stmt|false	Prepares an SQL statement for execution
 >query(string $query, int $result_mode = MYSQLI_STORE_RESULT): mysqli_result|bool	(mysqli) Performs a query on the database
 mysqli_query(mysqli $mysql, string $query, int $result_mode = MYSQLI_STORE_RESULT): mysqli_result|bool	Performs a query on the database
->real_connect(?string $hostname = null, ?string $username = null, ?string $password = null, ?string $database = null, ?int $port = null, ?string $socket = null, int $flags = ?): bool	(mysqli) Opens a connection to a mysql server
-mysqli_real_connect(mysqli $mysql, ?string $hostname = null, ?string $username = null, ?string $password = null, ?string $database = null, ?int $port = null, ?string $socket = null, int $flags = ?): bool	Opens a connection to a mysql server
+>real_connect(?string $hostname = null, ?string $username = null, ?string $password = null, ?string $database = null, ?int $port = null, ?string $socket = null, int $flags = ?): bool	(mysqli) Opens a connection to the MySQL server
+mysqli_real_connect(mysqli $mysql, ?string $hostname = null, ?string $username = null, ?string $password = null, ?string $database = null, ?int $port = null, ?string $socket = null, int $flags = ?): bool	Opens a connection to the MySQL server
 >real_escape_string(string $string): string	(mysqli) Escapes special characters in a string for use in an SQL statement, taking into account the current charset of the connection
 mysqli_real_escape_string(mysqli $mysql, string $string): string	Escapes special characters in a string for use in an SQL statement, taking into account the current charset of the connection
 >real_query(string $query): bool	(mysqli) Execute an SQL query
@@ -5321,7 +5401,9 @@ opcache_compile_file(string $filename): bool	Compiles and caches a PHP script wi
 opcache_get_configuration(): array|false	Get configuration information about the cache
 opcache_get_status(bool $include_scripts = true): array|false	Get status information about the cache
 opcache_invalidate(string $filename, bool $force = false): bool	Invalidates a cached script
+opcache_is_script_cached_in_file_cache(string $filename): bool	Tells whether a script is cached in OPCache file cache
 opcache_is_script_cached(string $filename): bool	Tells whether a script is cached in OPCache
+opcache_jit_blacklist(Closure $closure): void	Blacklists a function from being JIT compiled
 opcache_reset(): bool	Resets the contents of the opcode cache
 openal_buffer_create(): resource	Generate OpenAL buffer
 openal_buffer_data(resource $buffer, int $format, string $data, int $freq): bool	Load a buffer with data
@@ -5349,7 +5431,7 @@ openal_stream(resource $source, int $format, int $rate): resource|false	Begin st
 openssl_cipher_iv_length(string $cipher_algo): int|false	Gets the cipher iv length
 openssl_cipher_key_length(string $cipher_algo): int|false	Gets the cipher key length
 openssl_cms_decrypt(string $input_filename, string $output_filename, OpenSSLCertificate|string $certificate, OpenSSLAsymmetricKey|OpenSSLCertificate|array|string|null $private_key = null, int $encoding = OPENSSL_ENCODING_SMIME): bool	Decrypt a CMS message
-openssl_cms_encrypt(string $input_filename, string $output_filename, OpenSSLCertificate|array|string $certificate, ?array $headers, int $flags = ?, int $encoding = OPENSSL_ENCODING_SMIME, int $cipher_algo = OPENSSL_CIPHER_AES_128_CBC): bool	Encrypt a CMS message
+openssl_cms_encrypt(string $input_filename, string $output_filename, OpenSSLCertificate|array|string $certificate, ?array $headers, int $flags = ?, int $encoding = OPENSSL_ENCODING_SMIME, string|int $cipher_algo = OPENSSL_CIPHER_AES_128_CBC): bool	Encrypt a CMS message
 openssl_cms_read(string $input_filename, array &$certificates): bool	Export the CMS file to an array of PEM certificates
 openssl_cms_sign(string $input_filename, string $output_filename, OpenSSLCertificate|string $certificate, OpenSSLAsymmetricKey|OpenSSLCertificate|array|string $private_key, ?array $headers, int $flags = ?, int $encoding = OPENSSL_ENCODING_SMIME, ?string $untrusted_certificates_filename = null): bool	Sign a file
 openssl_cms_verify(string $input_filename, int $flags = ?, ?string $certificates = null, array $ca_info = [], ?string $untrusted_certificates_filename = null, ?string $content = null, ?string $pk7 = null, ?string $sigfile = null, int $encoding = OPENSSL_ENCODING_SMIME): bool	Verify a CMS signature
@@ -5372,6 +5454,8 @@ openssl_get_md_methods(bool $aliases = false): array	Gets available digest metho
 openssl_get_privatekey()	Alias of openssl_pkey_get_private
 openssl_get_publickey()	Alias of openssl_pkey_get_public
 openssl_open(string $data, string &$output, string $encrypted_key, OpenSSLAsymmetricKey|OpenSSLCertificate|array|string $private_key, string $cipher_algo, ?string $iv = null): bool	Open sealed data
+openssl_password_hash(string $algo, string $password, array $options = []): string	Create a password hash using OpenSSL's Argon2 implementation
+openssl_password_verify(string $algo, string $password, string $hash): bool	Verify a password against a hash using OpenSSL's Argon2 implementation
 openssl_pbkdf2(string $password, string $salt, int $key_length, int $iterations, string $digest_algo = "sha1"): string|false	Generates a PKCS5 v2 PBKDF2 string
 openssl_pkcs12_export_to_file(OpenSSLCertificate|string $certificate, string $output_filename, OpenSSLAsymmetricKey|OpenSSLCertificate|array|string $private_key, string $passphrase, array $options = []): bool	Exports a PKCS#12 Compatible Certificate Store File
 openssl_pkcs12_export(OpenSSLCertificate|string $certificate, string &$output, OpenSSLAsymmetricKey|OpenSSLCertificate|array|string $private_key, string $passphrase, array $options = []): bool	Exports a PKCS#12 Compatible Certificate Store File to variable
@@ -5389,18 +5473,18 @@ openssl_pkey_get_details(OpenSSLAsymmetricKey $key): array|false	Returns an arra
 openssl_pkey_get_private(OpenSSLAsymmetricKey|OpenSSLCertificate|array|string $private_key, ?string $passphrase = null): OpenSSLAsymmetricKey|false	Get a private key
 openssl_pkey_get_public(OpenSSLAsymmetricKey|OpenSSLCertificate|array|string $public_key): OpenSSLAsymmetricKey|false	Extract public key from certificate and prepare it for use
 openssl_pkey_new(?array $options = null): OpenSSLAsymmetricKey|false	Generates a new private key
-openssl_private_decrypt(string $data, string &$decrypted_data, OpenSSLAsymmetricKey|OpenSSLCertificate|array|string $private_key, int $padding = OPENSSL_PKCS1_PADDING): bool	Decrypts data with private key
+openssl_private_decrypt(string $data, string &$decrypted_data, OpenSSLAsymmetricKey|OpenSSLCertificate|array|string $private_key, int $padding = OPENSSL_PKCS1_PADDING, ?string $digest_algo = null): bool	Decrypts data with private key
 openssl_private_encrypt(string $data, string &$encrypted_data, OpenSSLAsymmetricKey|OpenSSLCertificate|array|string $private_key, int $padding = OPENSSL_PKCS1_PADDING): bool	Encrypts data with private key
 openssl_public_decrypt(string $data, string &$decrypted_data, OpenSSLAsymmetricKey|OpenSSLCertificate|array|string $public_key, int $padding = OPENSSL_PKCS1_PADDING): bool	Decrypts data with public key
-openssl_public_encrypt(string $data, string &$encrypted_data, OpenSSLAsymmetricKey|OpenSSLCertificate|array|string $public_key, int $padding = OPENSSL_PKCS1_PADDING): bool	Encrypts data with public key
+openssl_public_encrypt(string $data, string &$encrypted_data, OpenSSLAsymmetricKey|OpenSSLCertificate|array|string $public_key, int $padding = OPENSSL_PKCS1_PADDING, ?string $digest_algo = null): bool	Encrypts data with public key
 openssl_random_pseudo_bytes(int $length, bool &$strong_result = null): string	Generate a pseudo-random string of bytes
 openssl_seal(string $data, string &$sealed_data, array &$encrypted_keys, array $public_key, string $cipher_algo, string &$iv = null): int|false	Seal (encrypt) data
-openssl_sign(string $data, string &$signature, OpenSSLAsymmetricKey|OpenSSLCertificate|array|string $private_key, string|int $algorithm = OPENSSL_ALGO_SHA1): bool	Generate signature
+openssl_sign(string $data, string &$signature, OpenSSLAsymmetricKey|OpenSSLCertificate|array|string $private_key, string|int $algorithm = OPENSSL_ALGO_SHA1, int $padding = ?): bool	Generate signature
 openssl_spki_export_challenge(string $spki): string|false	Exports the challenge associated with a signed public key and challenge
 openssl_spki_export(string $spki): string|false	Exports a valid PEM formatted public key signed public key and challenge
 openssl_spki_new(OpenSSLAsymmetricKey $private_key, string $challenge, int $digest_algo = OPENSSL_ALGO_MD5): string|false	Generate a new signed public key and challenge
 openssl_spki_verify(string $spki): bool	Verifies a signed public key and challenge
-openssl_verify(string $data, string $signature, OpenSSLAsymmetricKey|OpenSSLCertificate|array|string $public_key, string|int $algorithm = OPENSSL_ALGO_SHA1): int|false	Verify signature
+openssl_verify(string $data, string $signature, OpenSSLAsymmetricKey|OpenSSLCertificate|array|string $public_key, string|int $algorithm = OPENSSL_ALGO_SHA1, int $padding = ?): int|false	Verify signature
 openssl_x509_check_private_key(OpenSSLCertificate|string $certificate, OpenSSLAsymmetricKey|OpenSSLCertificate|array|string $private_key): bool	Checks if a private key corresponds to a certificate
 openssl_x509_checkpurpose(OpenSSLCertificate|string $certificate, int $purpose, array $ca_info = [], ?string $untrusted_certificates_file = null): bool|int	Verifies if a certificate can be used for a particular purpose
 openssl_x509_export_to_file(OpenSSLCertificate|string $certificate, string $output_filename, bool $no_text = true): bool	Exports a certificate to file
@@ -5548,14 +5632,19 @@ password_verify(string $password, string $hash): bool	Verifies that a password m
 pcntl_alarm(int $seconds): int	Set an alarm clock for delivery of a signal
 pcntl_async_signals(?bool $enable = null): bool	Enable/disable asynchronous signal handling or return the old setting
 pcntl_errno()	Alias of pcntl_get_last_error
-pcntl_exec(string $path, array $args = [], array $env_vars = []): bool	Executes specified program in current process space
+pcntl_exec(string $path, array $args = [], array $env_vars = []): false	Executes specified program in current process space
 pcntl_fork(): int	Forks the currently running process
+pcntl_forkx(int $flags): int	Create a child process using forkx(2)
 pcntl_get_last_error(): int	Retrieve the error number set by the last pcntl function which failed
-pcntl_getcpuaffinity(?int $pid = null): bool|array	Get the cpu affinity of a process
+pcntl_getcpu(): int	Get the CPU number on which the calling process last executed
+pcntl_getcpuaffinity(?int $process_id = null): array|false	Get the cpu affinity of a process
 pcntl_getpriority(?int $process_id = null, int $mode = PRIO_PROCESS): int|false	Get the priority of any process
+pcntl_getqos_class(): Pcntl\QosClass	Get the QoS class of the current thread
 pcntl_rfork(int $flags, int $signal = ?): int	Manipulates process resources
-pcntl_setcpuaffinity(?int $pid = null, array $hmask = ?): bool	Set the cpu affinity of a process
+pcntl_setcpuaffinity(?int $process_id = null, array $cpu_ids = []): bool	Set the cpu affinity of a process
+pcntl_setns(?int $process_id = null, int $nstype = CLONE_NEWNET): bool	Reassociate the calling process with a namespace of another process
 pcntl_setpriority(int $priority, ?int $process_id = null, int $mode = PRIO_PROCESS): bool	Change the priority of any process
+pcntl_setqos_class(Pcntl\QosClass $qos_class = Pcntl\QosClass::Default): void	Set the QoS class of the current thread
 pcntl_signal_dispatch(): bool	Calls signal handlers for pending signals
 pcntl_signal_get_handler(int $signal): callable|int	Get the current handler for specified signal
 pcntl_signal(int $signal, callable|int $handler, bool $restart_syscalls = true): bool	Installs a signal handler
@@ -5565,9 +5654,10 @@ pcntl_sigwaitinfo(array $signals, array &$info = []): int|false	Waits for signal
 pcntl_strerror(int $error_code): string	Retrieve the system error message associated with the given errno
 pcntl_unshare(int $flags): bool	Dissociates parts of the process execution context
 pcntl_wait(int &$status, int $flags = ?, array &$resource_usage = []): int	Waits on or returns the status of a forked child
-pcntl_waitid(int $idtype = P_ALL, ?int $id = null, array &$info = [], int $flags = WEXITED): bool	Waits for a child process to change state
+pcntl_waitid(int $idtype = P_ALL, ?int $id = null, array &$info = [], int $flags = WEXITED, array &$resource_usage = []): bool	Waits for a child process to change state
 pcntl_waitpid(int $process_id, int &$status, int $flags = ?, array &$resource_usage = []): int	Waits on or returns the status of a forked child
 pcntl_wexitstatus(int $status): int|false	Returns the return code of a terminated child
+pcntl_wifcontinued(int $status): bool	Checks whether the child process has continued from a job control stop
 pcntl_wifexited(int $status): bool	Checks if status code represents a normal exit
 pcntl_wifsignaled(int $status): bool	Checks whether the status code represents a termination due to a signal
 pcntl_wifstopped(int $status): bool	Checks whether the child process is currently stopped
@@ -5626,12 +5716,12 @@ pdo_drivers(): array	Return an array of available PDO drivers
 >nextRowset(): bool	(PDOStatement) Advances to the next rowset in a multi-rowset statement handle
 >rowCount(): int	(PDOStatement) Returns the number of rows affected by the last SQL statement
 >setAttribute(int $attribute, mixed $value): bool	(PDOStatement) Set a statement attribute
->setFetchMode(int $mode): bool	(PDOStatement) Set the default fetch mode for this statement
->setFetchMode(int $mode = PDO::FETCH_COLUMN, int $colno): bool	(PDOStatement) Set the default fetch mode for this statement
->setFetchMode(int $mode = PDO::FETCH_CLASS, string $class, ?array $constructorArgs = null): bool	(PDOStatement) Set the default fetch mode for this statement
->setFetchMode(int $mode = PDO::FETCH_INTO, object $object): bool	(PDOStatement) Set the default fetch mode for this statement
+>setFetchMode(int $mode): true	(PDOStatement) Set the default fetch mode for this statement
+>setFetchMode(int $mode = PDO::FETCH_COLUMN, int $colno): true	(PDOStatement) Set the default fetch mode for this statement
+>setFetchMode(int $mode = PDO::FETCH_CLASS, string $class, ?array $constructorArgs = null): true	(PDOStatement) Set the default fetch mode for this statement
+>setFetchMode(int $mode = PDO::FETCH_INTO, object $object): true	(PDOStatement) Set the default fetch mode for this statement
 PDOException()	(new) Represents an error raised by PDO
-PDORow()	(new) Represents a row from a result set returned by PDOStatement::fetch called with PDO_FETCH_LAZY fetch mode
+PDORow()	(new) Represents a row from a result set returned by PDOStatement::fetch called with PDO::FETCH_LAZY fetch mode
 PDOStatement()	(new) Represents a prepared statement and, after the statement is executed, an associated result set
 >cubrid_schema(int $schema_type, string $table_name = ?, string $col_name = ?): array	(PDO) Get the requested schema information
 Pdo\Dblib()	(new) A PDO subclass representing a connection using the DBLib PDO driver
@@ -5640,7 +5730,7 @@ Pdo\Firebird()	(new) A PDO subclass representing a connection using the Firebird
 >getWarningCount(): int	(Pdo\Mysql) Returns the number of warnings from the last executed query
 Pdo\Mysql()	(new) This driver supports a dedicated SQL query parser for the MySQL dialect
 Pdo\Odbc()	(new) A PDO subclass representing a connection using the ODBC PDO driver
->copyFromArray(string $tableName, array $rows, string $separator = "\t", string $nullAs = "\\\\N", ?string $fields = null): bool	(Pdo\Pgsql) Copy data from a PHP array into a table
+>copyFromArray(string $tableName, array|Traversable $rows, string $separator = "\t", string $nullAs = "\\\\N", ?string $fields = null): bool	(Pdo\Pgsql) Copy data from a PHP array into a table
 >copyFromFile(string $tableName, string $filename, string $separator = "\t", string $nullAs = "\\\\N", ?string $fields = null): bool	(Pdo\Pgsql) Copy data from file into table
 >copyToArray(string $tableName, string $separator = "\t", string $nullAs = "\\\\N", ?string $fields = null): array|false	(Pdo\Pgsql) Copy data from database table into PHP array
 >copyToFile(string $tableName, string $filename, string $separator = "\t", string $nullAs = "\\\\N", ?string $fields = null): bool	(Pdo\Pgsql) Copy data from table into file
@@ -5651,7 +5741,7 @@ Pdo\Odbc()	(new) A PDO subclass representing a connection using the ODBC PDO dri
 >lobOpen(string $oid, string $mode = "rb"): resource|false	(Pdo\Pgsql) Opens an existing large object stream
 >lobUnlink(string $oid): bool	(Pdo\Pgsql) Deletes the large object
 >setNoticeCallback(?callable $callback): void	(Pdo\Pgsql) Set a callback to handle notice and warning messages generated by the backend
->pgsqlCopyFromArray(string $tableName, array $rows, string $separator = "\t", string $nullAs = "\\\\N", ?string $fields = null): bool	(PDO) Alias Pdo\Pgsql::copyFromArray
+>pgsqlCopyFromArray(string $tableName, array|Traversable $rows, string $separator = "\t", string $nullAs = "\\\\N", ?string $fields = null): bool	(PDO) Alias Pdo\Pgsql::copyFromArray
 >pgsqlCopyFromFile(string $tableName, string $filename, string $separator = "\t", string $nullAs = "\\\\N", ?string $fields = null): bool	(PDO) Alias Pdo\Pgsql::copyFromFile
 >pgsqlCopyToArray(string $tableName, string $separator = "\t", string $nullAs = "\\\\N", ?string $fields = null): array|false	(PDO) Alias Pdo\Pgsql::copyToArray
 >pgsqlCopyToFile(string $tableName, string $filename, string $separator = "\t", string $nullAs = "\\\\N", ?string $fields = null): bool	(PDO) Alias Pdo\Pgsql::copyToFile
@@ -5672,6 +5762,7 @@ Pdo\Pgsql()	(new) This driver supports a dedicated SQL query parser for the Post
 Pdo\Sqlite()	(new) This driver supports a dedicated SQL query parser for the SQLite dialect
 pg_affected_rows(PgSql\Result $result): int	Returns number of affected records (tuples)
 pg_cancel_query(PgSql\Connection $connection): bool	Cancel an asynchronous query
+pg_change_password(PgSql\Connection $connection, string $user, string $password): bool	Change a PostgreSQL user's password
 pg_client_encoding(?PgSql\Connection $connection = null): string	Gets the client encoding
 pg_close(?PgSql\Connection $connection = null): true	Closes a PostgreSQL connection
 pg_connect_poll(PgSql\Connection $connection): int	Poll the status of an in-progress asynchronous PostgreSQL connection attempt
@@ -5681,16 +5772,16 @@ pg_connection_reset(PgSql\Connection $connection): bool	Reset connection (reconn
 pg_connection_status(PgSql\Connection $connection): int	Get connection status
 pg_consume_input(PgSql\Connection $connection): bool	Reads input on the connection
 pg_convert(PgSql\Connection $connection, string $table_name, array $values, int $flags = ?): array|false	Convert associative array values into forms suitable for SQL statements
-pg_copy_from(PgSql\Connection $connection, string $table_name, array $rows, string $separator = "\t", string $null_as = "\\\\N"): bool	Insert records into a table from an array
+pg_copy_from(PgSql\Connection $connection, string $table_name, array|Traversable $rows, string $separator = "\t", string $null_as = "\\\\N"): bool	Insert records into a table from an array
 pg_copy_to(PgSql\Connection $connection, string $table_name, string $separator = "\t", string $null_as = "\\\\N"): array|false	Copy a table to an array
 pg_dbname(?PgSql\Connection $connection = null): string	Get the database name
 pg_delete(PgSql\Connection $connection, string $table_name, array $conditions, int $flags = PGSQL_DML_EXEC): string|bool	Deletes records
 pg_end_copy(?PgSql\Connection $connection = null): bool	Sync with PostgreSQL backend
-pg_escape_bytea(PgSql\Connection $connection = ?, string $data): string	Escape a string for insertion into a bytea field
-pg_escape_identifier(PgSql\Connection $connection = ?, string $data): string	Escape a identifier for insertion into a text field
-pg_escape_literal(PgSql\Connection $connection = ?, string $data): string	Escape a literal for insertion into a text field
-pg_escape_string(PgSql\Connection $connection = ?, string $data): string	Escape a string for query
-pg_execute(PgSql\Connection $connection = ?, string $stmtname, array $params): PgSql\Result|false	Sends a request to execute a prepared statement with given parameters, and waits for the result
+pg_escape_bytea(PgSql\Connection $connection = ?, string $string): string	Escape a string for insertion into a bytea field
+pg_escape_identifier(PgSql\Connection $connection = ?, string $string): string|false	Escape an identifier for insertion into a text field
+pg_escape_literal(PgSql\Connection $connection = ?, string $string): string|false	Escape a literal for insertion into a text field
+pg_escape_string(PgSql\Connection $connection = ?, string $string): string	Escape a string for query
+pg_execute(PgSql\Connection $connection = ?, string $statement_name, array $params): PgSql\Result|false	Sends a request to execute a prepared statement with given parameters, and waits for the result
 pg_fetch_all_columns(PgSql\Result $result, int $field = ?): array	Fetches all rows in a particular result column as an array
 pg_fetch_all(PgSql\Result $result, int $mode = PGSQL_ASSOC): array	Fetches all rows from a result as an array
 pg_fetch_array(PgSql\Result $result, ?int $row = null, int $mode = PGSQL_BOTH): array|false	Fetch a row as an array
@@ -5716,14 +5807,15 @@ pg_get_pid(PgSql\Connection $connection): int	Gets the backend's process ID
 pg_get_result(PgSql\Connection $connection): PgSql\Result|false	Get asynchronous query result
 pg_host(?PgSql\Connection $connection = null): string	Returns the host name associated with the connection
 pg_insert(PgSql\Connection $connection, string $table_name, array $values, int $flags = PGSQL_DML_EXEC): PgSql\Result|string|bool	Insert array into table
+pg_jit(?PgSql\Connection $connection = null): array	Returns the JIT information of the server
 pg_last_error(?PgSql\Connection $connection = null): string	Get the last error message string of a connection
 pg_last_notice(PgSql\Connection $connection, int $mode = PGSQL_NOTICE_LAST): array|string|bool	Returns the last notice message from PostgreSQL server
 pg_last_oid(PgSql\Result $result): string|int|false	Returns the last row's OID
 pg_lo_close(PgSql\Lob $lob): bool	Close a large object
 pg_lo_create(PgSql\Connection $connection = ?, mixed $object_id = ?): int	Create a large object
 pg_lo_create(mixed $object_id): int	Create a large object
-pg_lo_export(PgSql\Connection $connection = ?, int $oid, string $pathname): bool	Export a large object to file
-pg_lo_import(PgSql\Connection $connection = ?, string $pathname, mixed $object_id = ?): int	Import a large object from file
+pg_lo_export(PgSql\Connection $connection = ?, int $oid, string $filename): bool	Export a large object to file
+pg_lo_import(PgSql\Connection $connection = ?, string $filename, int|string $oid = ?): int|string|false	Import a large object from file
 pg_lo_open(PgSql\Connection $connection, int $oid, string $mode): PgSql\Lob|false	Open a large object
 pg_lo_read_all(PgSql\Lob $lob): int	Reads an entire large object and send straight to browser
 pg_lo_read(PgSql\Lob $lob, int $length = 8192): string|false	Read a large object
@@ -5736,12 +5828,14 @@ pg_meta_data(PgSql\Connection $connection, string $table_name, bool $extended = 
 pg_num_fields(PgSql\Result $result): int	Returns the number of fields in a result
 pg_num_rows(PgSql\Result $result): int	Returns the number of rows in a result
 pg_options(?PgSql\Connection $connection = null): string	Get the options associated with the connection
-pg_parameter_status(PgSql\Connection $connection = ?, string $param_name): string	Looks up a current parameter setting of the server
+pg_parameter_status(PgSql\Connection $connection = ?, string $name): string|false	Looks up a current parameter setting of the server
 pg_pconnect(string $connection_string, int $flags = ?): PgSql\Connection|false	Open a persistent PostgreSQL connection
 pg_ping(?PgSql\Connection $connection = null): bool	Ping database connection
 pg_port(?PgSql\Connection $connection = null): string	Return the port number associated with the connection
-pg_prepare(PgSql\Connection $connection = ?, string $stmtname, string $query): PgSql\Result|false	Submits a request to the server to create a prepared statement with the given parameters, and waits for completion
-pg_put_line(PgSql\Connection $connection = ?, string $data): bool	Send a NULL-terminated string to PostgreSQL backend
+pg_prepare(PgSql\Connection $connection = ?, string $statement_name, string $query): PgSql\Result|false	Submits a request to the server to create a prepared statement with the given parameters, and waits for completion
+pg_put_copy_data(PgSql\Connection $connection, string $cmd): int	Send data to the server during a COPY operation
+pg_put_copy_end(PgSql\Connection $connection, ?string $error = null): int	Signal the completion of a COPY operation to the server
+pg_put_line(PgSql\Connection $connection = ?, string $query): bool	Send a NULL-terminated string to PostgreSQL backend
 pg_query_params(PgSql\Connection $connection = ?, string $query, array $params): PgSql\Result|false	Submits a command to the server and waits for the result, with the ability to pass parameters separately from the SQL command text
 pg_query(PgSql\Connection $connection = ?, string $query): PgSql\Result|false	Execute a query
 pg_result_error_field(PgSql\Result $result, int $field_code): string|false|null	Returns an individual field of an error report
@@ -5757,7 +5851,8 @@ pg_send_query(PgSql\Connection $connection, string $query): int|bool	Sends async
 pg_set_chunked_rows_size(PgSql\Connection $connection, int $size): bool	Set the query results to be retrieved in chunk mode
 pg_set_client_encoding(PgSql\Connection $connection = ?, string $encoding): int	Set the client encoding
 pg_set_error_context_visibility(PgSql\Connection $connection, int $visibility): int	Determines the visibility of the context's error messages returned by pg_last_error and pg_result_error
-pg_set_error_verbosity(PgSql\Connection $connection = ?, int $verbosity): int	Determines the verbosity of messages returned by pg_last_error and pg_result_error
+pg_set_error_verbosity(PgSql\Connection $connection = ?, int $verbosity): int|false	Determines the verbosity of messages returned by pg_last_error and pg_result_error
+pg_socket_poll(resource $socket, int $read, int $write, int $timeout = -1): int	Poll a PostgreSQL connection socket for read/write readiness
 pg_socket(PgSql\Connection $connection): resource|false	Get a read only handle to the socket underlying a PostgreSQL connection
 pg_trace(string $filename, string $mode = "w", ?PgSql\Connection $connection = null, int $trace_mode = ?): bool	Enable tracing a PostgreSQL connection
 pg_transaction_status(PgSql\Connection $connection): int	Returns the current in-transaction status of the server
@@ -5819,7 +5914,7 @@ Phar::running(bool $returnPhar = true): string	Returns the full path on disk or 
 >setDefaultStub(?string $index = null, ?string $webIndex = null): true	(Phar) Used to set the PHP loader or bootstrap stub of a Phar archive to the default loader
 >setMetadata(mixed $metadata): void	(Phar) Sets phar archive meta-data
 >setSignatureAlgorithm(int $algo, ?string $privateKey = null): void	(Phar) Set the signature algorithm for a phar and apply it
->setStub(resource|string $stub, int $length = -1): bool	(Phar) Used to set the PHP loader or bootstrap stub of a Phar archive
+>setStub(resource|string $stub, int $length = -1): true	(Phar) Used to set the PHP loader or bootstrap stub of a Phar archive
 >startBuffering(): void	(Phar) Start buffering Phar write operations, do not modify the Phar object on disk
 >stopBuffering(): void	(Phar) Stop buffering write requests to the Phar archive, and save changes to disk
 Phar::unlinkArchive(string $filename): true	Completely remove a phar archive from disk and from memory
@@ -5847,7 +5942,7 @@ PharData(string $filename, int $flags = FilesystemIterator::SKIP_DOTS | Filesyst
 >setDefaultStub(?string $index = null, ?string $webIndex = null): bool	(PharData) Dummy function (Phar::setDefaultStub is not valid for PharData)
 >setMetadata(mixed $metadata): void	(PharData) Sets phar archive meta-data
 >setSignatureAlgorithm(int $algo, ?string $privateKey = null): void	(PharData) Set the signature algorithm for a phar and apply it
->setStub(string $stub, int $len = -1): bool	(PharData) Dummy function (Phar::setStub is not valid for PharData)
+>setStub(resource|string $stub, int $length = -1): true	(PharData) Dummy function (Phar::setStub is not valid for PharData)
 >chmod(int $perms): void	(PharFileInfo) Sets file-specific permission bits
 >compress(int $compression): true	(PharFileInfo) Compresses the current Phar entry with either zlib or bzip2 compression
 PharFileInfo(string $filename)	(new) Construct a Phar entry object
@@ -5952,7 +6047,7 @@ ps_moveto(resource $psdoc, float $x, float $y): bool	Sets current point
 ps_new(): resource|false	Creates a new PostScript document object
 ps_open_file(resource $psdoc, string $filename = ?): bool	Opens a file for output
 ps_open_image_file(resource $psdoc, string $type, string $filename, string $stringparam = ?, int $intparam = ?): int	Opens image from file
-ps_open_image(resource $psdoc, string $type, string $source, string $data, int $lenght, int $width, int $height, int $components, int $bpc, string $params): int	Reads an image for later placement
+ps_open_image(resource $psdoc, string $type, string $source, string $data, int $length, int $width, int $height, int $components, int $bpc, string $params): int	Reads an image for later placement
 ps_open_memory_image(resource $psdoc, int $gd): int	Takes an GD image and returns an image for placement in a PS document
 ps_place_image(resource $psdoc, int $imageid, float $x, float $y, float $scale): bool	Places image on the page
 ps_rect(resource $psdoc, float $x, float $y, float $width, float $height): bool	Draws a rectangle
@@ -5963,7 +6058,7 @@ ps_scale(resource $psdoc, float $x, float $y): bool	Sets scaling factor
 ps_set_border_color(resource $psdoc, float $red, float $green, float $blue): bool	Sets color of border for annotations
 ps_set_border_dash(resource $psdoc, float $black, float $white): bool	Sets length of dashes for border of annotations
 ps_set_border_style(resource $psdoc, string $style, float $width): bool	Sets border style of annotations
-ps_set_info(resource $p, string $key, string $val): bool	Sets information fields of document
+ps_set_info(resource $psdoc, string $key, string $value): bool	Sets information fields of document
 ps_set_parameter(resource $psdoc, string $name, string $value): bool	Sets certain parameters
 ps_set_text_pos(resource $psdoc, float $x, float $y): bool	Sets position for text output
 ps_set_value(resource $psdoc, string $name, float $value): bool	Sets certain values
@@ -6063,7 +6158,7 @@ QuickHashIntHash::loadFromFile(string $filename, int $options = ?): QuickHashInt
 QuickHashIntHash::loadFromString(string $contents, int $options = ?): QuickHashIntHash	This factory method creates a hash from a string
 >saveToFile(string $filename): void	(QuickHashIntHash) This method stores an in-memory hash to disk
 >saveToString(): string	(QuickHashIntHash) This method returns a serialized version of the hash
->set(int $key, int $value): bool	(QuickHashIntHash) This method updates an entry in the hash with a new value, or adds a new one if the entry doesn't exist
+>set(int $key, int $value): int	(QuickHashIntHash) This method updates an entry in the hash with a new value, or adds a new one if the entry doesn't exist
 >update(int $key, int $value): bool	(QuickHashIntHash) This method updates an entry in the hash with a new value
 >add(int $key): bool	(QuickHashIntSet) This method adds a new entry to the set
 QuickHashIntSet(int $size, int $options = ?)	(new) Creates a new QuickHashIntSet object
@@ -6112,7 +6207,7 @@ radius_demangle(resource $radius_handle, string $mangled): string	Demangles data
 radius_get_attr(resource $radius_handle): mixed	Extracts an attribute
 radius_get_tagged_attr_data(string $data): string|false	Extracts the data from a tagged attribute
 radius_get_tagged_attr_tag(string $data): int|false	Extracts the tag from a tagged attribute
-radius_get_vendor_attr(string $data): array	Extracts a vendor specific attribute
+radius_get_vendor_attr(string $data): array|false	Extracts a vendor specific attribute
 radius_put_addr(resource $radius_handle, int $type, string $addr, int $options = ?, int $tag = ?): bool	Attaches an IP address attribute
 radius_put_attr(resource $radius_handle, int $type, string $value, int $options = ?, int $tag = ?): bool	Attaches a binary attribute
 radius_put_int(resource $radius_handle, int $type, int $value, int $options = ?, int $tag = ?): bool	Attaches an integer attribute
@@ -6264,7 +6359,7 @@ ReflectionClass::export(mixed $argument, bool $return = false): string	Exports a
 >getShortName(): string	(ReflectionClass) Gets short name
 >getStartLine(): int|false	(ReflectionClass) Gets starting line number
 >getStaticProperties(): array	(ReflectionClass) Gets static properties
->getStaticPropertyValue(string $name, mixed &$def_value = ?): mixed	(ReflectionClass) Gets static property value
+>getStaticPropertyValue(string $name, mixed &$default = ?): mixed	(ReflectionClass) Gets static property value
 >getTraitAliases(): array	(ReflectionClass) Returns an array of trait aliases
 >getTraitNames(): array	(ReflectionClass) Returns an array of names of traits used by this class
 >getTraits(): array	(ReflectionClass) Returns an array of traits used by this class
@@ -6653,7 +6748,7 @@ sem_get(int $key, int $max_acquire = 1, int $permissions = 0666, bool $auto_rele
 sem_release(SysvSemaphore $semaphore): bool	Release a semaphore
 sem_remove(SysvSemaphore $semaphore): bool	Remove a semaphore
 shm_attach(int $key, ?int $size = null, int $permissions = 0666): SysvSharedMemory|false	Creates or open a shared memory segment
-shm_detach(SysvSharedMemory $shm): bool	Disconnects from shared memory segment
+shm_detach(SysvSharedMemory $shm): true	Disconnects from shared memory segment
 shm_get_var(SysvSharedMemory $shm, int $key): mixed	Returns a variable from shared memory
 shm_has_var(SysvSharedMemory $shm, int $key): bool	Check whether a specific entry exists
 shm_put_var(SysvSharedMemory $shm, int $key, mixed $value): bool	Inserts or updates a variable in shared memory
@@ -6784,7 +6879,7 @@ is_soap_fault(mixed $object): bool	Checks if a SOAP call has failed
 use_soap_error_handler(bool $enable = true): bool	Set whether to use the SOAP error handler
 >__call(string $name, array $args): mixed	(SoapClient) Calls a SOAP function (deprecated)
 SoapClient(?string $wsdl, array $options = [])	(new) SoapClient constructor
->__doRequest(string $request, string $location, string $action, int $version, bool $oneWay = false): ?string	(SoapClient) Performs a SOAP request
+>__doRequest(string $request, string $location, string $action, int $version, bool $oneWay = false, ?string $uriParserClass = null): ?string	(SoapClient) Performs a SOAP request
 >__getCookies(): array	(SoapClient) Get list of cookies
 >__getFunctions(): ?array	(SoapClient) Returns list of available SOAP functions
 >__getLastRequest(): ?string	(SoapClient) Returns last SOAP request
@@ -6796,14 +6891,14 @@ SoapClient(?string $wsdl, array $options = [])	(new) SoapClient constructor
 >__setLocation(?string $location = null): ?string	(SoapClient) Sets the location of the Web service to use
 >__setSoapHeaders(SoapHeader|array|null $headers = null): bool	(SoapClient) Sets SOAP headers for subsequent calls
 >__soapCall(string $name, array $args, ?array $options = null, SoapHeader|array|null $inputHeaders = null, array &$outputHeaders = null): mixed	(SoapClient) Calls a SOAP function
-SoapFault(array|string|null $code, string $string, ?string $actor = null, mixed $details = null, ?string $name = null, mixed $headerFault = null)	(new) SoapFault constructor
+SoapFault(array|string|null $code, string $string, ?string $actor = null, mixed $details = null, ?string $name = null, mixed $headerFault = null, string $lang = "")	(new) SoapFault constructor
 >__toString(): string	(SoapFault) Obtain a string representation of a SoapFault
 SoapHeader(string $namespace, string $name, mixed $data = ?, bool $mustunderstand = ?, string $actor = ?)	(new) SoapHeader constructor
 SoapParam(mixed $data, string $name)	(new) SoapParam constructor
 >addFunction(array|string|int $functions): void	(SoapServer) Adds one or more functions to handle SOAP requests
 >addSoapHeader(SoapHeader $header): void	(SoapServer) Add a SOAP header to the response
 SoapServer(?string $wsdl, array $options = [])	(new) SoapServer constructor
->fault(string $code, string $string, string $actor = "", mixed $details = null, string $name = ""): void	(SoapServer) Issue SoapServer fault indicating an error
+>fault(string $code, string $string, string $actor = "", mixed $details = null, string $name = "", string $lang = ""): void	(SoapServer) Issue SoapServer fault indicating an error
 >getFunctions(): array	(SoapServer) Returns list of defined functions
 >__getLastResponse(): ?string	(SoapServer) Returns last SOAP response
 >handle(?string $request = null): void	(SoapServer) Handles a SOAP request
@@ -6811,6 +6906,8 @@ SoapServer(?string $wsdl, array $options = [])	(new) SoapServer constructor
 >setObject(object $object): void	(SoapServer) Sets the object which will be used to handle SOAP requests
 >setPersistence(int $mode): void	(SoapServer) Sets SoapServer persistence mode
 SoapVar(mixed $data, ?int $encoding, ?string $typeName = null, ?string $typeNamespace = null, ?string $nodeName = null, ?string $nodeNamespace = null)	(new) SoapVar constructor
+Soap\Sdl()	(new) A fully opaque class which replaces a soap_sdl resource as of PHP 8
+Soap\Url()	(new) A fully opaque class which replaces a soap_url resource as of PHP 8
 socket_accept(Socket $socket): Socket|false	Accepts a connection on a socket
 socket_addrinfo_bind(AddressInfo $address): Socket|false	Create and bind to a socket from a given addrinfo
 socket_addrinfo_connect(AddressInfo $address): Socket|false	Create and connect to a socket from a given addrinfo
@@ -7631,7 +7728,7 @@ SplFileObject(string $filename, string $mode = "r", bool $useIncludePath = false
 >fstat(): array	(SplFileObject) Gets information about the file
 >ftell(): int|false	(SplFileObject) Return current file position
 >ftruncate(int $size): bool	(SplFileObject) Truncates the file to a given length
->fwrite(string $data, int $length = ?): int|false	(SplFileObject) Write to file
+>fwrite(string $data, ?int $length = null): int|false	(SplFileObject) Write to file
 >getChildren(): null	(SplFileObject) No purpose
 >getCsvControl(): array	(SplFileObject) Get the delimiter, enclosure and escape character for CSV
 >getCurrentLine()	(SplFileObject) Alias of SplFileObject::fgets
@@ -7797,7 +7894,7 @@ SQLite3Exception()	(new) Represents a SQLite3 specific exception
 sqlsrv_begin_transaction(resource $conn): bool	Begins a database transaction
 sqlsrv_cancel(resource $stmt): bool	Cancels a statement
 sqlsrv_client_info(resource $conn): array	Returns information about the client and specified connection
-sqlsrv_close(resource $conn): bool	Closes an open connection and releases resourses associated with the connection
+sqlsrv_close(resource $conn): bool	Closes an open connection and releases resources associated with the connection
 sqlsrv_commit(resource $conn): bool	Commits a transaction that was begun with sqlsrv_begin_transaction
 sqlsrv_configure(string $setting, mixed $value): bool	Changes the driver error handling and logging configurations
 sqlsrv_connect(string $serverName, array $connectionInfo = ?): resource	Opens a connection to a Microsoft SQL Server database
@@ -7827,7 +7924,8 @@ ssh2_auth_agent(resource $session, string $username): bool	Authenticate over SSH
 ssh2_auth_hostbased_file(resource $session, string $username, string $hostname, string $pubkeyfile, string $privkeyfile, string $passphrase = ?, string $local_username = ?): bool	Authenticate using a public hostkey
 ssh2_auth_none(resource $session, string $username): mixed	Authenticate as "none"
 ssh2_auth_password(resource $session, string $username, string $password): bool	Authenticate over SSH using a plain password
-ssh2_auth_pubkey_file(resource $session, string $username, string $pubkeyfile, string $privkeyfile, string $passphrase = ?): bool	Authenticate using a public key
+ssh2_auth_pubkey_file(resource $session, string $username, string $pubkeyfile, string $privkeyfile, string $passphrase = ?): bool	Authenticate using a public key read from a file
+ssh2_auth_pubkey(resource $session, string $username, string $pubkey, string $privkey, string $passphrase = ?): bool	Authenticate using a public key in a variable
 ssh2_connect(string $host, int $port = 22, array $methods = ?, array $callbacks = ?): resource|false	Connect to an SSH server
 ssh2_disconnect(resource $session): bool	Close a connection to a remote SSH server
 ssh2_exec(resource $session, string $command, string $pty = ?, array $env = ?, int $width = 80, int $height = 25, int $width_height_type = SSH2_TERM_UNIT_CHARS): resource|false	Execute a command on a remote server
@@ -7845,13 +7943,13 @@ ssh2_scp_recv(resource $session, string $remote_file, string $local_file): bool	
 ssh2_scp_send(resource $session, string $local_file, string $remote_file, int $create_mode = 0644): bool	Send a file via SCP
 ssh2_send_eof(resource $channel): bool	Send EOF to stream
 ssh2_sftp_chmod(resource $sftp, string $filename, int $mode): bool	Changes file mode
-ssh2_sftp_lstat(resource $sftp, string $path): array	Stat a symbolic link
+ssh2_sftp_lstat(resource $sftp, string $path): array|false	Stat a symbolic link
 ssh2_sftp_mkdir(resource $sftp, string $dirname, int $mode = 0777, bool $recursive = false): bool	Create a directory
-ssh2_sftp_readlink(resource $sftp, string $link): string	Return the target of a symbolic link
-ssh2_sftp_realpath(resource $sftp, string $filename): string	Resolve the realpath of a provided path string
+ssh2_sftp_readlink(resource $sftp, string $link): string|false	Return the target of a symbolic link
+ssh2_sftp_realpath(resource $sftp, string $filename): string|false	Resolve the realpath of a provided path string
 ssh2_sftp_rename(resource $sftp, string $from, string $to): bool	Rename a remote file
 ssh2_sftp_rmdir(resource $sftp, string $dirname): bool	Remove a directory
-ssh2_sftp_stat(resource $sftp, string $path): array	Stat a file on a remote filesystem
+ssh2_sftp_stat(resource $sftp, string $path): array|false	Stat a file on a remote filesystem
 ssh2_sftp_symlink(resource $sftp, string $target, string $link): bool	Create a symlink
 ssh2_sftp_unlink(resource $sftp, string $filename): bool	Delete a file
 ssh2_sftp(resource $session): resource|false	Initialize SFTP subsystem
@@ -7969,12 +8067,12 @@ stream_context_get_default(?array $options = null): resource	Retrieve the defaul
 stream_context_get_options(resource $stream_or_context): array	Retrieve options for a stream/wrapper/context
 stream_context_get_params(resource $context): array	Retrieves parameters from a context
 stream_context_set_default(array $options): resource	Set the default stream context
-stream_context_set_option(resource $stream_or_context, string $wrapper, string $option, mixed $value): bool	Sets an option for a stream/wrapper/context
+stream_context_set_option(resource $stream_or_context, string $wrapper, string $option_name, mixed $value): bool	Sets an option for a stream/wrapper/context
 stream_context_set_options(resource $context, array $options): true	Sets options on the specified context
 stream_context_set_params(resource $context, array $params): true	Set parameters for a stream/wrapper/context
 stream_copy_to_stream(resource $from, resource $to, ?int $length = null, int $offset = ?): int|false	Copies data from one stream to another
-stream_filter_append(resource $stream, string $filtername, int $read_write = ?, mixed $params = ?): resource	Attach a filter to a stream
-stream_filter_prepend(resource $stream, string $filtername, int $read_write = ?, mixed $params = ?): resource	Attach a filter to a stream
+stream_filter_append(resource $stream, string $filter_name, int $mode = ?, mixed $params = ?): resource	Attach a filter to a stream
+stream_filter_prepend(resource $stream, string $filter_name, int $mode = ?, mixed $params = ?): resource	Attach a filter to a stream
 stream_filter_register(string $filter_name, string $class): bool	Register a user defined stream filter
 stream_filter_remove(resource $stream_filter): bool	Remove a filter from a stream
 stream_get_contents(resource $stream, ?int $length = null, int $offset = -1): string|false	Reads remainder of a stream into a string
@@ -8013,12 +8111,12 @@ stream_wrapper_unregister(string $protocol): bool	Unregister a URL wrapper
 streamWrapper()	(new) Constructs a new stream wrapper
 >dir_closedir(): bool	(streamWrapper) Close directory handle
 >dir_opendir(string $path, int $options): bool	(streamWrapper) Open directory handle
->dir_readdir(): string	(streamWrapper) Read entry from directory handle
+>dir_readdir(): string|bool	(streamWrapper) Read entry from directory handle
 >dir_rewinddir(): bool	(streamWrapper) Rewind directory handle
 >mkdir(string $path, int $mode, int $options): bool	(streamWrapper) Create a directory
 >rename(string $path_from, string $path_to): bool	(streamWrapper) Renames a file or directory
 >rmdir(string $path, int $options): bool	(streamWrapper) Removes a directory
->stream_cast(int $cast_as): resource	(streamWrapper) Retrieve the underlaying resource
+>stream_cast(int $cast_as): resource|false	(streamWrapper) Retrieve the underlying resource
 >stream_close(): void	(streamWrapper) Close a resource
 >stream_eof(): bool	(streamWrapper) Tests for end-of-file on a file pointer
 >stream_flush(): bool	(streamWrapper) Flushes the output
@@ -8075,14 +8173,14 @@ nl_langinfo(int $item): string|false	Query language and locale information
 nl2br(string $string, bool $use_xhtml = true): string	Inserts HTML line breaks before all newlines in a string
 number_format(float $num, int $decimals = ?, ?string $decimal_separator = ".", ?string $thousands_separator = ","): string	Format a number with grouped thousands
 ord(string $character): int	Convert the first byte of a string to a value between 0 and 255
-parse_str(string $string, array &$result): void	Parses the string into variables
+parse_str(string $string, array &$result): void	Parse a string as a URL query string
 print(string $expression): int	Output a string
 printf(string $format, mixed ...$values): int	Output a formatted string
 quoted_printable_decode(string $string): string	Convert a quoted-printable string to an 8 bit string
 quoted_printable_encode(string $string): string	Convert a 8 bit string to a quoted-printable string
 quotemeta(string $string): string	Quote meta characters
 rtrim(string $string, string $characters = " \n\r\t\v\x00"): string	Strip whitespace (or other characters) from the end of a string
-setlocale(int $category, string $locales, string ...$rest): string|false	Set locale information
+setlocale(int $category, ?string $locales, string ...$rest): string|false	Set locale information
 setlocale(int $category, array $locale_array): string|false	Set locale information
 sha1_file(string $filename, bool $binary = false): string|false	Calculate the sha1 hash of a file
 sha1(string $string, bool $binary = false): string	Calculate the sha1 hash of a string
@@ -8175,7 +8273,7 @@ svn_delete(string $path, bool $force = false): bool	Delete items from a working 
 svn_diff(string $path1, int $rev1, string $path2, int $rev2): array	Recursively diffs two paths
 svn_export(string $frompath, string $topath, bool $working_copy = true, int $revision_no = -1): bool	Export the contents of a SVN directory
 svn_fs_abort_txn(resource $txn): bool	Aborts a transaction
-svn_fs_apply_text(resource $root, string $path): resource	Creates and returns a stream that will be used to replace
+svn_fs_apply_text(resource $root, string $path): resource	Creates and returns a stream that will be used to replace the contents of a file
 svn_fs_begin_txn2(resource $repos, int $rev): resource	Create a new transaction
 svn_fs_change_node_prop(resource $root, string $path, string $name, string $value): bool	Return true if everything is ok, false otherwise
 svn_fs_check_path(resource $fsroot, string $path): int	Determines what kind of item lives at path in a given repository fsroot
@@ -8229,7 +8327,7 @@ swoole_event_set(int $fd, callable $read_callback = ?, callable $write_callback 
 swoole_event_wait(): void	Start the event loop
 swoole_event_write(int $fd, string $data): bool	Write data to a socket
 swoole_get_local_ip(): array	Get the IPv4 IP addresses of each NIC on the machine
-swoole_last_error(): int	Get the lastest error message
+swoole_last_error(): int	Get the latest error message
 swoole_load_module(string $filename): mixed	Load a swoole extension
 swoole_select(array &$read_array, array &$write_array, array &$error_array, float $timeout = ?): int	Select the file descriptions which are ready to read/write or error in the eventloop
 swoole_set_process_name(string $process_name, int $size = 128): void	Set the process name
@@ -8328,6 +8426,10 @@ Swoole\Coroutine\Http\Client()	(new) Description
 >setDefer(): ReturnType	(Swoole\Coroutine\Http\Client) Description
 >setHeaders(): ReturnType	(Swoole\Coroutine\Http\Client) Description
 >setMethod(): ReturnType	(Swoole\Coroutine\Http\Client) Description
+Swoole\Coroutine\Lock(): void	(new) Construct a new coroutine lock
+>lock(): bool	(Swoole\Coroutine\Lock) Acquire the lock, blocking if necessary
+>trylock(): bool	(Swoole\Coroutine\Lock) Attempt to acquire the lock without blocking
+>unlock(): bool	(Swoole\Coroutine\Lock) Release the lock
 >close(): ReturnType	(Swoole\Coroutine\MySQL) Description
 >connect(): ReturnType	(Swoole\Coroutine\MySQL) Description
 Swoole\Coroutine\MySQL()	(new) Description
@@ -8411,6 +8513,9 @@ Swoole\Process::wait(bool $blocking = ?): array	Wait for the events of child pro
 Swoole\Redis\Server::format(string $type, string $value = ?): ReturnType	Description
 >setHandler(string $command, string $callback, string $number_of_string_param = ?, string $type_of_array_param = ?): ReturnType	(Swoole\Redis\Server) Description
 >start(): ReturnType	(Swoole\Redis\Server) Description
+Swoole\Runtime::enableCoroutine(int $flags = SWOOLE_HOOK_ALL): void	Enable coroutine for specified functions
+Swoole\Runtime::getHookFlags(): int	Get current hook flags
+Swoole\Runtime::setHookFlags(int $flags): bool	Set hook flags for coroutine
 Swoole\Serialize::pack(string $data, int $is_fast = ?): ReturnType	Serialize the data.
 Swoole\Serialize::unpack(string $data, string $args = ?): ReturnType	Unserialize the data.
 >addlistener(string $host, int $port, string $socket_type): void	(Swoole\Server) Add a new listener to the server.
@@ -8455,21 +8560,21 @@ Swoole\Server\Port()	(new) Construct a server port
 >__destruct(): void	(Swoole\Server\Port) Destroy server port
 >on(string $event_name, callable $callback): ReturnType	(Swoole\Server\Port) Register callback functions by event.
 >set(array $settings): void	(Swoole\Server\Port) Set protocol of the server port.
->column(string $name, string $type, int $size = ?): ReturnType	(Swoole\Table) Set the data type and size of the columns.
+>column(string $name, string $type, int $size = ?): bool	(Swoole\Table) Set the data type and size of the columns.
 Swoole\Table(int $table_size)	(new) Construct a Swoole memory table with fixed size.
 >count(): int	(Swoole\Table) Count the rows in the table, or count all the elements in the table if $mode = 1.
->create(): void	(Swoole\Table) Create the swoole memory table.
+>create(): bool	(Swoole\Table) Create the swoole memory table.
 >current(): array	(Swoole\Table) Get the current row.
->decr(string $key, string $column, int $decrby = ?): ReturnType	(Swoole\Table) Decrement the value in the Swoole table by $row_key and $column_key.
->del(string $key): void	(Swoole\Table) Delete a row in the Swoole table by $row_key.
->destroy(): void	(Swoole\Table) Destroy the Swoole table.
+>decr(string $key, string $column, int $decrby = ?): int	(Swoole\Table) Decrement the value in the Swoole table by $key and $column
+>del(string $key): bool	(Swoole\Table) Delete a row in the Swoole table by $key
+>destroy(): bool	(Swoole\Table) Destroy the Swoole table.
 >exist(string $key): bool	(Swoole\Table) Check if a row is existed by $row_key.
->get(string $row_key, string $column_key): int	(Swoole\Table) Get the value in the Swoole table by $row_key and $column_key.
->incr(string $key, string $column, int $incrby = ?): void	(Swoole\Table) Increment the value by $row_key and $column_key.
->key(): string	(Swoole\Table) Get the key of current row.
->next(): ReturnType	(Swoole\Table) Iterator the next row.
+>get(string $key, string $field = ?): mixed	(Swoole\Table) Get the value in the Swoole table by $key and $field.
+>incr(string $key, string $column, int $incrby = ?): int	(Swoole\Table) Increment the value by $key and $column
+>key(): mixed	(Swoole\Table) Get the key of current row.
+>next(): void	(Swoole\Table) Advance the iterator to the next row
 >rewind(): void	(Swoole\Table) Rewind the iterator.
->set(string $key, array $value): VOID	(Swoole\Table) Update a row of the table by $row_key.
+>set(string $key, array $value): bool	(Swoole\Table) Update a row of the table by $key.
 >valid(): bool	(Swoole\Table) Check if the current row is valid.
 Swoole\Timer::after(int $after_time_ms, callable $callback): void	Trigger a callback function after a period of time.
 Swoole\Timer::clear(int $timer_id): void	Delete a timer by timer ID.
@@ -8493,6 +8598,7 @@ Swoole\Mmap()	(new)
 Swoole\Module()	(new) 
 Swoole\MySQL\Exception()	(new) 
 Swoole\Redis\Server()	(new) 
+Swoole\Runtime()	(new) Swoole\Runtime provides coroutine support for various PHP functions through hook mechanism, allowing synchronous code to work asynchronously in coroutine environment
 Swoole\Serialize()	(new) 
 Swoole\Timer()	(new) 
 Swoole\WebSocket\Frame()	(new) 
@@ -8942,7 +9048,7 @@ UI\Point(float $x, float $y)	(new) Construct a new Point
 >setY(float $point)	(UI\Point) Set Y
 UI\Size(float $width, float $height)	(new) Construct a new Size
 >getHeight(): float	(UI\Size) Retrieves Height
->getWidth(): float	(UI\Size) Retrives Width
+>getWidth(): float	(UI\Size) Retrieves Width
 UI\Size::of(float $size): UI\Size	Point Coercion
 UI\Size::of(UI\Point $point): UI\Size	Point Coercion
 >setHeight(float $size)	(UI\Size) Set Height
@@ -9034,6 +9140,8 @@ odbc_specialcolumns(Odbc\Connection $odbc, int $type, ?string $catalog, string $
 odbc_statistics(Odbc\Connection $odbc, ?string $catalog, string $schema, string $table, int $unique, int $accuracy): Odbc\Result|false	Retrieve statistics about a table
 odbc_tableprivileges(Odbc\Connection $odbc, ?string $catalog, string $schema, string $table): Odbc\Result|false	Lists tables and the privileges associated with each table
 odbc_tables(Odbc\Connection $odbc, ?string $catalog = null, ?string $schema = null, ?string $table = null, ?string $types = null): Odbc\Result|false	Get the list of table names stored in a specific data source
+Odbc\Connection()	(new) A fully opaque class which replaces an odbc_connection resource as of PHP 8
+Odbc\Result()	(new) A fully opaque class which replaces an odbc_result resource as of PHP 8
 uopz_add_function(string $function, Closure $handler, int &$flags = ZEND_ACC_PUBLIC): bool	Adds non-existent function or method
 uopz_add_function(string $class, string $function, Closure $handler, int &$flags = ZEND_ACC_PUBLIC, int &$all = true): bool	Adds non-existent function or method
 uopz_allow_exit(bool $allow): void	Allows control over disabled exit opcode
@@ -9085,6 +9193,70 @@ uopz_unset_return(string $function): bool	Unsets a previously set return value f
 uopz_unset_return(string $class, string $function): bool	Unsets a previously set return value for a function
 uopz_set_static(string $function, array $static): void	Sets the static variables in function or method scope
 uopz_set_static(string $class, string $function, array $static): void	Sets the static variables in function or method scope
+Uri\Rfc3986\Uri(string $uri, ?Uri\Rfc3986\Uri $baseUrl = null)	(new) Construct the Uri object
+>__debugInfo(): array	(Uri\Rfc3986\Uri) Return the internal state of the URI
+>equals(Uri\Rfc3986\Uri $uri, Uri\UriComparisonMode $comparisonMode = Uri\UriComparisonMode::ExcludeFragment): bool	(Uri\Rfc3986\Uri) Check if two URIs are equivalent
+>getFragment(): ?string	(Uri\Rfc3986\Uri) Retrieve the normalized fragment component
+>getHost(): ?string	(Uri\Rfc3986\Uri) Retrieve the normalized host component
+>getPassword(): ?string	(Uri\Rfc3986\Uri) Retrieve the normalized password
+>getPath(): string	(Uri\Rfc3986\Uri) Retrieve the normalized path component
+>getPort(): ?int	(Uri\Rfc3986\Uri) Retrieve the normalized port component
+>getQuery(): ?string	(Uri\Rfc3986\Uri) Retrieve the normalized query component
+>getRawFragment(): ?string	(Uri\Rfc3986\Uri) Retrieve the raw fragment component
+>getRawHost(): ?string	(Uri\Rfc3986\Uri) Retrieve the raw host component
+>getRawPassword(): ?string	(Uri\Rfc3986\Uri) Retrieve the raw password
+>getRawPath(): string	(Uri\Rfc3986\Uri) Retrieve the raw path component
+>getRawQuery(): ?string	(Uri\Rfc3986\Uri) Retrieve the raw query component
+>getRawScheme(): ?string	(Uri\Rfc3986\Uri) Retrieve the raw scheme component
+>getRawUserInfo(): ?string	(Uri\Rfc3986\Uri) Retrieve the raw userinfo component
+>getRawUsername(): ?string	(Uri\Rfc3986\Uri) Retrieve the raw username
+>getScheme(): ?string	(Uri\Rfc3986\Uri) Retrieve the normalized scheme component
+>getUserInfo(): ?string	(Uri\Rfc3986\Uri) Retrieve the normalized userinfo component
+>getUsername(): ?string	(Uri\Rfc3986\Uri) Retrieve the normalized username
+Uri\Rfc3986\Uri::parse(string $uri, ?Uri\Rfc3986\Uri $baseUrl = null): ?static	Parse a URI
+>resolve(string $uri): static	(Uri\Rfc3986\Uri) Resolve a URI with the current object as the base URL
+>__serialize(): array	(Uri\Rfc3986\Uri) Serialize the Uri object
+>toRawString(): string	(Uri\Rfc3986\Uri) Recompose the raw URI
+>toString(): string	(Uri\Rfc3986\Uri) Recompose the normalized URI
+>__unserialize(array $data): void	(Uri\Rfc3986\Uri) Deserialize the data parameter into a Uri object
+>withFragment(?string $fragment): static	(Uri\Rfc3986\Uri) Modify the fragment component
+>withHost(?string $host): static	(Uri\Rfc3986\Uri) Modify the host component
+>withPath(string $path): static	(Uri\Rfc3986\Uri) Modify the path component
+>withPort(?int $port): static	(Uri\Rfc3986\Uri) Modify the port component
+>withQuery(?string $query): static	(Uri\Rfc3986\Uri) Modify the query component
+>withScheme(?string $scheme): static	(Uri\Rfc3986\Uri) Modify the scheme component
+>withUserInfo(?string $userinfo): static	(Uri\Rfc3986\Uri) Modify the userinfo component
+Uri\WhatWg\InvalidUrlException(string $message = "", array $errors = [], int $code = ?, ?Throwable $previous = null)	(new) Construct an InvalidUrlException object
+Uri\WhatWg\Url(string $uri, ?Uri\WhatWg\Url $baseUrl = null, array &$softErrors = null)	(new) Construct the Url object
+>__debugInfo(): array	(Uri\WhatWg\Url) Return the internal state of the URL
+>equals(Uri\WhatWg\Url $url, Uri\UriComparisonMode $comparisonMode = Uri\UriComparisonMode::ExcludeFragment): bool	(Uri\WhatWg\Url) Check if two URLs are equivalent
+>getAsciiHost(): ?string	(Uri\WhatWg\Url) Retrieve the host component as an ASCII string
+>getFragment(): ?string	(Uri\WhatWg\Url) Retrieve the fragment component
+>getPassword(): ?string	(Uri\WhatWg\Url) Retrieve the password component
+>getPath(): string	(Uri\WhatWg\Url) Retrieve the path component
+>getPort(): ?int	(Uri\WhatWg\Url) Retrieve the port component
+>getQuery(): ?string	(Uri\WhatWg\Url) Retrieve the query component
+>getScheme(): string	(Uri\WhatWg\Url) Retrieve the scheme component
+>getUnicodeHost(): ?string	(Uri\WhatWg\Url) Retrieve the host component as an Unicode string
+>getUsername(): ?string	(Uri\WhatWg\Url) Retrieve the username component
+Uri\WhatWg\Url::parse(string $uri, ?Uri\WhatWg\Url $baseUrl = null, array &$errors = null): ?static	Parse a URL
+>resolve(string $uri, array &$softErrors = null): static	(Uri\WhatWg\Url) Resolve a URL with the current object as the base URL
+>__serialize(): array	(Uri\WhatWg\Url) Serialize the Url object
+>toAsciiString(): string	(Uri\WhatWg\Url) Recompose the URL as an ASCII string
+>toUnicodeString(): string	(Uri\WhatWg\Url) Recompose the URL as a Unicode string
+>__unserialize(array $data): void	(Uri\WhatWg\Url) Deserialize the data parameter into a Url object
+>withFragment(?string $fragment): static	(Uri\WhatWg\Url) Modify the fragment component
+>withHost(?string $host): static	(Uri\WhatWg\Url) Modify the host component
+>withPassword(?string $password): static	(Uri\WhatWg\Url) Modify the password component
+>withPath(string $path): static	(Uri\WhatWg\Url) Modify the path component
+>withPort(?int $port): static	(Uri\WhatWg\Url) Modify the port component
+>withQuery(?string $query): static	(Uri\WhatWg\Url) Modify the query component
+>withScheme(string $scheme): static	(Uri\WhatWg\Url) Modify the scheme component
+>withUsername(?string $username): static	(Uri\WhatWg\Url) Modify the username component
+Uri\WhatWg\UrlValidationError(string $context, Uri\WhatWg\UrlValidationErrorType $type, bool $failure)	(new) Construct a UrlValidationError object
+Uri\InvalidUriException()	(new) Indicates that a given URI is invalid or that an operation would result in an invalid URI
+Uri\UriError()	(new) The base class for Errors that occur during processing of URIs
+Uri\UriException()	(new) The base class for Exceptions that occur during processing of URIs
 base64_decode(string $string, bool $strict = false): string|false	Decodes data encoded with MIME base64
 base64_encode(string $string): string	Encodes data with MIME base64
 get_headers(string $url, bool $associative = false, ?resource $context = null): array|false	Fetches all the headers sent by the server in response to an HTTP request
@@ -9139,7 +9311,7 @@ serialize(mixed $value): string	Generates a storable representation of a value
 settype(mixed &$var, string $type): bool	Set the type of a variable
 strval(mixed $value): string	Get string value of a variable
 unserialize(string $data, array $options = []): mixed	Creates a PHP value from a stored representation
-unset(mixed $var, mixed ...$vars): void	Unset a given variable
+unset(mixed $var, mixed ...$vars): void	unset a given variable
 var_dump(mixed $value, mixed ...$values): void	Dumps information about a variable
 var_export(mixed $value, bool $return = false): ?string	Outputs or returns a parsable string representation of a variable
 var_representation(mixed $value, int $flags = ?): string	Returns a short, readable, parsable string representation of a variable
@@ -9257,10 +9429,10 @@ xdiff_string_diff(string $old_data, string $new_data, int $context = 3, bool $mi
 xdiff_string_merge3(string $old_data, string $new_data1, string $new_data2, string &$error = ?): mixed	Merge 3 strings into one
 xdiff_string_patch_binary(string $str, string $patch): string	Alias xdiff_string_bpatch
 xdiff_string_patch(string $str, string $patch, int $flags = ?, string &$error = ?): string	Patch a string with an unified diff
-xdiff_string_bdiff(string $old_data, string $new_data): string	Make binary diff of two strings using the Rabin's polynomial fingerprinting algorithm
-xhprof_disable(): array	Stops xhprof profiler
+xdiff_string_rabdiff(string $old_data, string $new_data): string|false	Make a binary diff of two strings using the Rabin's polynomial fingerprinting algorithm
+xhprof_disable(): ?array	Stops xhprof profiler
 xhprof_enable(int $flags = ?, array $options = ?): void	Start xhprof profiler
-xhprof_sample_disable(): array	Stops xhprof sample profiler
+xhprof_sample_disable(): ?array	Stops xhprof sample profiler
 xhprof_sample_enable(): void	Start XHProf profiling in sampling mode
 >align(resource $handle, int $style)	(Vtiful\Kernel\Format) Vtiful\Kernel\Format align
 >bold(resource $handle)	(Vtiful\Kernel\Format) Vtiful\Kernel\Format bold
@@ -9473,7 +9645,7 @@ XSLTProcessor()	(new) Creates a new XSLTProcessor object
 >add(array $key_vals): bool	(Yac) Store into cache
 Yac(string $prefix = "")	(new) Constructor
 >delete(string|array $keys, int $ttl = ?): bool	(Yac) Remove items from cache
->dump(int $$num): mixed	(Yac) Dump cache
+>dump(int $num): mixed	(Yac) Dump cache
 >flush(): bool	(Yac) Flush the cache
 >get(string|array $key, int &$cas = null): mixed	(Yac) Retrieve values from cache
 >__get(string $key): mixed	(Yac) Getter
@@ -9483,14 +9655,14 @@ Yac(string $prefix = "")	(new) Constructor
 >__set(string $keys, mixed $value): mixed	(Yac) Setter
 Yaconf::get(string $name, mixed $default_value = NULL): mixed	Retrieve a item
 Yaconf::has(string $name): bool	Determine if a item exists
-Yaconf()	(new) Yaconf is a configurations container, it parses INIT files, stores the result in PHP when PHP is started, the result lives with the whole PHP lifecycle
+Yaconf()	(new) Yaconf is a configurations container, it parses INI files, stores the result in PHP when PHP is started, the result lives with the whole PHP lifecycle
 >execute(mixed ...$args): mixed	(Yaf_Action_Abstract) Action entry point
 >getController(): Yaf_Controller_Abstract	(Yaf_Action_Abstract) Retrieve controller object
 >getControllerName(): string	(Yaf_Action_Abstract) Get controller name
 Yaf_Application::app(): mixed	Retrieve an Application instance
 >bootstrap(Yaf_Bootstrap_Abstract $bootstrap = ?): void	(Yaf_Application) Call bootstrap
 >clearLastError(): Yaf_Application	(Yaf_Application) Clear the last error info
-Yaf_Application(mixed $config, string $envrion = ?)	(new) Yaf_Application constructor
+Yaf_Application(mixed $config, string $environ = ?)	(new) Yaf_Application constructor
 >environ(): void	(Yaf_Application) Retrive environ
 >execute(callable $entry, string ...$args): void	(Yaf_Application) Execute a callback
 >getAppDirectory(): Yaf_Application	(Yaf_Application) Get the application directory
@@ -9508,7 +9680,7 @@ Yaf_Application(mixed $config, string $envrion = ?)	(new) Yaf_Application constr
 Yaf_Config_Ini(string $config_file, string $section = ?)	(new) Yaf_Config_Ini constructor
 >count(): void	(Yaf_Config_Ini) Count all elements in Yaf_Config.ini
 >current(): void	(Yaf_Config_Ini) Retrieve the current value
->__get(string $name = ?): void	(Yaf_Config_Ini) Retrieve a element
+>__get(string $name = ?): void	(Yaf_Config_Ini) Retrieve an element
 >__isset(string $name): void	(Yaf_Config_Ini) Determine if a key is exists
 >key(): void	(Yaf_Config_Ini) Fetch current element's key
 >next(): void	(Yaf_Config_Ini) Advance the internal pointer
@@ -9663,7 +9835,7 @@ Yaf_Response_Abstract()	(new) The __construct purpose
 >response(): void	(Yaf_Response_Abstract) Send response
 >setAllHeaders(): void	(Yaf_Response_Abstract) The setAllHeaders purpose
 >setBody(string $content, string $key = ?): bool	(Yaf_Response_Abstract) Set content to response
->setHeader(string $name, string $value, bool $replace = ?): bool	(Yaf_Response_Abstract) Set reponse header
+>setHeader(string $name, string $value, bool $replace = ?): bool	(Yaf_Response_Abstract) Set response header
 >setRedirect(string $url): bool	(Yaf_Response_Abstract) The setRedirect purpose
 >__toString(): string	(Yaf_Response_Abstract) Retrieve all bodys as string
 >assemble(array $info, array $query = ?): string	(Yaf_Route_Interface) Assemble a request
@@ -9728,7 +9900,7 @@ Yaf_View_Simple(string $template_dir, array $options = ?)	(new) Constructor of Y
 >__isset(string $name): void	(Yaf_View_Simple) The __isset purpose
 >render(string $tpl, array $tpl_vars = ?): string	(Yaf_View_Simple) Render template
 >__set(string $name, mixed $value): void	(Yaf_View_Simple) Set value to engine
->setScriptPath(string $template_dir): bool	(Yaf_View_Simple) Set tempaltes directory
+>setScriptPath(string $template_dir): bool	(Yaf_View_Simple) Set templates directory
 Yaf_Action_Abstract()	(new) A action can be defined in a separate file in Yaf(see Yaf_Controller_Abstract)
 Yaf_Bootstrap_Abstract()	(new) Bootstrap is a mechanism used to do some initial config before a Application run
 Yaf_Config_Abstract()	(new) 
@@ -9863,19 +10035,19 @@ ZipArchive::isEncryptionMethodSupported(int $method, bool $enc = true): bool	Che
 >unchangeName(string $name): bool	(ZipArchive) Revert all changes done to an entry with the given name
 ZipArchive()	(new) A file archive, compressed with Zip
 deflate_add(DeflateContext $context, string $data, int $flush_mode = ZLIB_SYNC_FLUSH): string|false	Incrementally deflate data
-deflate_init(int $encoding, array $options = []): DeflateContext|false	Initialize an incremental deflate context
+deflate_init(int $encoding, array|object $options = []): DeflateContext|false	Initialize an incremental deflate context
 gzclose(resource $stream): bool	Close an open gz-file pointer
 gzcompress(string $data, int $level = -1, int $encoding = ZLIB_ENCODING_DEFLATE): string|false	Compress a string
 gzdecode(string $data, int $max_length = ?): string|false	Decodes a gzip compressed string
 gzdeflate(string $data, int $level = -1, int $encoding = ZLIB_ENCODING_RAW): string|false	Deflate a string
 gzencode(string $data, int $level = -1, int $encoding = ZLIB_ENCODING_GZIP): string|false	Create a gzip compressed string
 gzeof(resource $stream): bool	Test for EOF on a gz-file pointer
-gzfile(string $filename, int $use_include_path = ?): array|false	Read entire gz-file into an array
+gzfile(string $filename, bool $use_include_path = false): array|false	Read entire gz-file into an array
 gzgetc(resource $stream): string|false	Get character from gz-file pointer
 gzgets(resource $stream, ?int $length = null): string|false	Get line from file pointer
 gzgetss(resource $zp, int $length, string $allowable_tags = ?): string	Get line from gz-file pointer and strip HTML tags
 gzinflate(string $data, int $max_length = ?): string|false	Inflate a deflated string
-gzopen(string $filename, string $mode, int $use_include_path = ?): resource|false	Open gz-file
+gzopen(string $filename, string $mode, bool $use_include_path = false): resource|false	Open gz-file
 gzpassthru(resource $stream): int	Output all remaining data on a gz-file pointer
 gzputs()	Alias of gzwrite
 gzread(resource $stream, int $length): string|false	Binary-safe gz-file read
@@ -9887,9 +10059,9 @@ gzwrite(resource $stream, string $data, ?int $length = null): int|false	Binary-s
 inflate_get_read_len(InflateContext $context): int	Get number of bytes read so far
 inflate_get_status(InflateContext $context): int	Get decompression status
 inflate_add(InflateContext $context, string $data, int $flush_mode = ZLIB_SYNC_FLUSH): string|false	Incrementally inflate encoded data
-inflate_init(int $encoding, array $options = []): InflateContext|false	Initialize an incremental inflate context
+inflate_init(int $encoding, array|object $options = []): InflateContext|false	Initialize an incremental inflate context
 ob_gzhandler(string $data, int $flags): string|false	ob_start callback function to gzip output buffer
-readgzfile(string $filename, int $use_include_path = ?): int|false	Output a gz-file
+readgzfile(string $filename, bool $use_include_path = false): int|false	Output a gz-file
 zlib_decode(string $data, int $max_length = ?): string|false	Uncompress any raw/gzip/zlib encoded data
 zlib_encode(string $data, int $encoding, int $level = -1): string|false	Compress data with the specified encoding
 zlib_get_coding_type(): string|false	Returns the coding type used for output compression
@@ -9939,7 +10111,7 @@ ZMQSocketException()	(new)
 zookeeper_dispatch(): void	Calls callbacks for pending operations
 >addAuth(string $scheme, string $cert, callable $completion_cb = null): bool	(Zookeeper) Specify application credentials
 >close(): void	(Zookeeper) Close the zookeeper handle and free up any resources
->connect(string $host, callable $watcher_cb = null, int $recv_timeout = 10000): void	(Zookeeper) Create a handle to used communicate with zookeeper
+>connect(string $host, callable $watcher_cb = null, int $recv_timeout = 10000): void	(Zookeeper) Create a handle used to communicate with zookeeper
 Zookeeper(string $host = '', callable $watcher_cb = null, int $recv_timeout = 10000)	(new) Create a handle to used communicate with zookeeper
 >create(string $path, string $value, array $acls, int $flags = null): string	(Zookeeper) Create a node synchronously
 >delete(string $path, int $version = -1): bool	(Zookeeper) Delete a node in zookeeper synchronously
@@ -10081,6 +10253,7 @@ T_OPEN_TAG
 T_OPEN_TAG_WITH_ECHO
 T_OR_EQUAL
 T_PAAMAYIM_NEKUDOTAYIM
+T_PIPE
 T_PLUS_EQUAL
 T_POW
 T_POW_EQUAL
@@ -10116,6 +10289,7 @@ T_UNSET_CAST
 T_USE
 T_VAR
 T_VARIABLE
+T_VOID_CAST
 T_WHILE
 T_WHITESPACE
 T_XOR_EQUAL
@@ -10265,6 +10439,12 @@ CUBRID_AUTOCOMMIT_TRUE
 CUBRID_AUTOCOMMIT_FALSE
 CUBRID_PARAM_ISOLATION_LEVEL
 CUBRID_PARAM_LOCK_TIMEOUT
+TRAN_COMMIT_CLASS_UNCOMMIT_INSTANCE
+TRAN_COMMIT_CLASS_COMMIT_INSTANCE
+TRAN_REP_CLASS_UNCOMMIT_INSTANCE
+TRAN_REP_CLASS_COMMIT_INSTANCE
+TRAN_REP_CLASS_REP_INSTANCE
+TRAN_SERIALIZABLE
 CUBRID_SCH_CLASS
 CUBRID_SCH_VCLASS
 CUBRID_SCH_QUERY_SPEC
@@ -10306,6 +10486,9 @@ CURLAUTH_NONE
 CURLAUTH_NTLM
 CURLAUTH_NTLM_WB
 CURLAUTH_ONLY
+CURLFOLLOW_ALL
+CURLFOLLOW_OBEYCODE
+CURLFOLLOW_FIRSTONLY
 CURLFTPAUTH_DEFAULT
 CURLFTPAUTH_SSL
 CURLFTPAUTH_TLS
@@ -10822,6 +11005,7 @@ FILTER_REQUIRE_SCALAR
 FILTER_REQUIRE_ARRAY
 FILTER_FORCE_ARRAY
 FILTER_NULL_ON_FAILURE
+FILTER_THROW_ON_FAILURE
 FILTER_FLAG_STRIP_LOW
 FILTER_FLAG_STRIP_HIGH
 FILTER_FLAG_STRIP_BACKTICK
@@ -11400,6 +11584,7 @@ IMAGETYPE_SWC
 IMAGETYPE_ICO
 IMAGETYPE_WEBP
 IMAGETYPE_AVIF
+IMAGETYPE_HEIF
 IMAGETYPE_UNKNOWN
 IMAGETYPE_COUNT
 PNG_NO_FILTER
@@ -12189,6 +12374,7 @@ LDAP_OPT_X_TLS_CRLFILE
 LDAP_OPT_X_TLS_DHFILE
 LDAP_OPT_X_TLS_KEYFILE
 LDAP_OPT_X_TLS_PROTOCOL_MIN
+LDAP_OPT_X_TLS_PROTOCOL_MAX
 LDAP_OPT_X_TLS_RANDOM_FILE
 LDAP_OPT_X_TLS_REQUIRE_CERT
 GSLC_SSL_NO_AUTH
@@ -12255,6 +12441,7 @@ LDAP_OPT_X_TLS_PROTOCOL_SSL3
 LDAP_OPT_X_TLS_PROTOCOL_TLS1_0
 LDAP_OPT_X_TLS_PROTOCOL_TLS1_1
 LDAP_OPT_X_TLS_PROTOCOL_TLS1_2
+LDAP_OPT_X_TLS_PROTOCOL_TLS1_3
 LIBXML_BIGLINES
 LIBXML_COMPACT
 LIBXML_DTDATTR
@@ -12826,10 +13013,13 @@ X509_PURPOSE_SMIME_SIGN
 X509_PURPOSE_SMIME_ENCRYPT
 X509_PURPOSE_CRL_SIGN
 X509_PURPOSE_ANY
+X509_PURPOSE_OCSP_HELPER
+X509_PURPOSE_TIMESTAMP_SIGN
 OPENSSL_PKCS1_PADDING
 OPENSSL_SSLV23_PADDING
 OPENSSL_NO_PADDING
 OPENSSL_PKCS1_OAEP_PADDING
+OPENSSL_PKCS1_PSS_PADDING
 OPENSSL_KEYTYPE_RSA
 OPENSSL_KEYTYPE_DSA
 OPENSSL_KEYTYPE_DH
@@ -12876,6 +13066,10 @@ PKCS7_NOATTR
 PKCS7_DETACHED
 PKCS7_NOSIGS
 PKCS7_NOOLDMIMETYPE
+PKCS7_NOSMIMECAP
+PKCS7_CRLFEOL
+PKCS7_NOCRL
+PKCS7_NO_DUAL_CONTENT
 OPENSSL_CMS_TEXT
 OPENSSL_CMS_BINARY
 OPENSSL_CMS_NOINTERN
@@ -13078,6 +13272,14 @@ PCRE_VERSION_MAJOR
 PCRE_VERSION_MINOR
 PCRE_JIT_SUPPORT
 PREG_GREP_INVERT
+PDO::FETCH_ORI_NEXT
+PDO::FETCH_ORI_PRIOR
+PDO::FETCH_ORI_FIRST
+PDO::FETCH_ORI_LAST
+PDO::FETCH_ORI_ABS
+PDO::FETCH_ORI_REL
+PDO::CURSOR_FWDONLY
+PDO::CURSOR_SCROLL
 PDO::PARAM_BOOL
 PDO::PARAM_NULL
 PDO::PARAM_INT
@@ -13087,24 +13289,6 @@ PDO::PARAM_STR_CHAR
 PDO::PARAM_LOB
 PDO::PARAM_STMT
 PDO::PARAM_INPUT_OUTPUT
-PDO::FETCH_DEFAULT
-PDO::FETCH_LAZY
-PDO::FETCH_ASSOC
-PDO::FETCH_NAMED
-PDO::FETCH_NUM
-PDO::FETCH_BOTH
-PDO::FETCH_OBJ
-PDO::FETCH_BOUND
-PDO::FETCH_COLUMN
-PDO::FETCH_CLASS
-PDO::FETCH_INTO
-PDO::FETCH_FUNC
-PDO::FETCH_GROUP
-PDO::FETCH_UNIQUE
-PDO::FETCH_KEY_PAIR
-PDO::FETCH_CLASSTYPE
-PDO::FETCH_SERIALIZE
-PDO::FETCH_PROPS_LATE
 PDO::ATTR_AUTOCOMMIT
 PDO::ATTR_PREFETCH
 PDO::ATTR_TIMEOUT
@@ -13136,14 +13320,6 @@ PDO::CASE_UPPER
 PDO::NULL_NATURAL
 PDO::NULL_EMPTY_STRING
 PDO::NULL_TO_STRING
-PDO::FETCH_ORI_NEXT
-PDO::FETCH_ORI_PRIOR
-PDO::FETCH_ORI_FIRST
-PDO::FETCH_ORI_LAST
-PDO::FETCH_ORI_ABS
-PDO::FETCH_ORI_REL
-PDO::CURSOR_FWDONLY
-PDO::CURSOR_SCROLL
 PDO::ERR_NONE
 PDO::PARAM_EVT_ALLOC
 PDO::PARAM_EVT_FREE
@@ -13214,6 +13390,11 @@ PDO::ODBC_SQL_USE_DRIVER
 PDO::ODBC_SQL_USE_ODBC
 PDO::ODBC_ATTR_ASSUME_UTF8
 PDO::PGSQL_ATTR_DISABLE_PREPARES
+PDO::PGSQL_TRANSACTION_IDLE
+PDO::PGSQL_TRANSACTION_ACTIVE
+PDO::PGSQL_TRANSACTION_INTRANS
+PDO::PGSQL_TRANSACTION_INERROR
+PDO::PGSQL_TRANSACTION_UNKNOWN
 PDO::SQLSRV_TXN_READ_UNCOMMITTED
 PDO::SQLSRV_TXN_READ_COMMITTED
 PDO::SQLSRV_TXN_REPEATABLE_READ
@@ -14061,6 +14242,7 @@ AF_UNIX
 AF_INET
 AF_INET6
 AF_DIVERT
+AF_PACKET
 SOCK_STREAM
 SOCK_DGRAM
 SOCK_RAW
@@ -14791,46 +14973,216 @@ SVN_NODE_NONE
 SVN_NODE_FILE
 SVN_NODE_DIR
 SVN_NODE_UNKNOWN
-SWOOLE_BASE
-SWOOLE_THREAD
-SWOOLE_PROCESS
-SWOOLE_IPC_UNSOCK
-SWOOLE_IPC_MSGQUEUE
-SWOOLE_IPC_PREEMPTIVE
+SWOOLE_VERSION
+SWOOLE_VERSION_ID
+SWOOLE_MAJOR_VERSION
+SWOOLE_MINOR_VERSION
+SWOOLE_RELEASE_VERSION
+SWOOLE_EXTRA_VERSION
+SWOOLE_DEBUG
+SWOOLE_HAVE_COMPRESSION
+SWOOLE_HAVE_ZLIB
+SWOOLE_HAVE_BROTLI
+SWOOLE_USE_HTTP2
+SWOOLE_USE_SHORTNAME
 SWOOLE_SOCK_TCP
 SWOOLE_SOCK_TCP6
 SWOOLE_SOCK_UDP
 SWOOLE_SOCK_UDP6
 SWOOLE_SOCK_UNIX_DGRAM
 SWOOLE_SOCK_UNIX_STREAM
-SWOOLE_TCP
-SWOOLE_TCP6
-SWOOLE_UDP
-SWOOLE_UDP6
-SWOOLE_UNIX_DGRAM
-SWOOLE_UNIX_STREAM
 SWOOLE_SOCK_SYNC
 SWOOLE_SOCK_ASYNC
-SWOOLE_SYNC
-SWOOLE_ASYNC
 SWOOLE_KEEP
+SWOOLE_SSL
+SWOOLE_SSLv3_METHOD
+SWOOLE_SSLv3_SERVER_METHOD
+SWOOLE_SSLv3_CLIENT_METHOD
+SWOOLE_TLSv1_METHOD
+SWOOLE_TLSv1_SERVER_METHOD
+SWOOLE_TLSv1_CLIENT_METHOD
+SWOOLE_TLSv1_1_METHOD
+SWOOLE_TLSv1_1_SERVER_METHOD
+SWOOLE_TLSv1_1_CLIENT_METHOD
+SWOOLE_TLSv1_2_METHOD
+SWOOLE_TLSv1_2_SERVER_METHOD
+SWOOLE_TLSv1_2_CLIENT_METHOD
+SWOOLE_DTLS_SERVER_METHOD
+SWOOLE_DTLS_CLIENT_METHOD
+SWOOLE_SSLv23_METHOD
+SWOOLE_SSLv23_SERVER_METHOD
+SWOOLE_SSLv23_CLIENT_METHOD
+SWOOLE_TLS_METHOD
+SWOOLE_TLS_SERVER_METHOD
+SWOOLE_TLS_CLIENT_METHOD
+SWOOLE_SSL_SSLv3
+SWOOLE_SSL_TLSv1
+SWOOLE_SSL_TLSv1_1
+SWOOLE_SSL_TLSv1_2
+SWOOLE_SSL_TLSv1_3
+SWOOLE_SSL_DTLS
+SWOOLE_SSL_SSLv2
 SWOOLE_EVENT_READ
 SWOOLE_EVENT_WRITE
-SWOOLE_VERSION
-SWOOLE_AIO_BASE
-SWOOLE_AIO_LINUX
-SWOOLE_FILELOCK
-SWOOLE_MUTEX
-SWOOLE_SEM
-SWOOLE_RWLOCK
-WEBSOCKET_OPCODE_TEXT
-WEBSOCKET_OPCODE_BINARY
-WEBSOCKET_OPCODE_PING
-WEBSOCKET_STATUS_CONNECTION
-WEBSOCKET_STATUS_HANDSHAKE
-WEBSOCKET_STATUS_FRAME
-WEBSOCKET_STATUS_ACTIVE
-SWOOLE_FAST_PACK
+SWOOLE_STRERROR_SYSTEM
+SWOOLE_STRERROR_GAI
+SWOOLE_STRERROR_DNS
+SWOOLE_STRERROR_SWOOLE
+SWOOLE_ERROR_MALLOC_FAIL
+SWOOLE_ERROR_SYSTEM_CALL_FAIL
+SWOOLE_ERROR_PHP_FATAL_ERROR
+SWOOLE_ERROR_NAME_TOO_LONG
+SWOOLE_ERROR_INVALID_PARAMS
+SWOOLE_ERROR_QUEUE_FULL
+SWOOLE_ERROR_OPERATION_NOT_SUPPORT
+SWOOLE_ERROR_PROTOCOL_ERROR
+SWOOLE_ERROR_WRONG_OPERATION
+SWOOLE_ERROR_PHP_RUNTIME_NOTICE
+SWOOLE_ERROR_FOR_TEST
+SWOOLE_ERROR_NO_PAYLOAD
+SWOOLE_ERROR_UNDEFINED_BEHAVIOR
+SWOOLE_ERROR_NOT_THREAD_SAFETY
+SWOOLE_ERROR_FILE_NOT_EXIST
+SWOOLE_ERROR_FILE_TOO_LARGE
+SWOOLE_ERROR_FILE_EMPTY
+SWOOLE_ERROR_DNSLOOKUP_DUPLICATE_REQUEST
+SWOOLE_ERROR_DNSLOOKUP_RESOLVE_FAILED
+SWOOLE_ERROR_DNSLOOKUP_RESOLVE_TIMEOUT
+SWOOLE_ERROR_DNSLOOKUP_UNSUPPORTED
+SWOOLE_ERROR_DNSLOOKUP_NO_SERVER
+SWOOLE_ERROR_BAD_IPV6_ADDRESS
+SWOOLE_ERROR_UNREGISTERED_SIGNAL
+SWOOLE_ERROR_BAD_HOST_ADDR
+SWOOLE_ERROR_EVENT_SOCKET_REMOVED
+SWOOLE_ERROR_SESSION_CLOSED_BY_SERVER
+SWOOLE_ERROR_SESSION_CLOSED_BY_CLIENT
+SWOOLE_ERROR_SESSION_CLOSING
+SWOOLE_ERROR_SESSION_CLOSED
+SWOOLE_ERROR_SESSION_NOT_EXIST
+SWOOLE_ERROR_SESSION_INVALID_ID
+SWOOLE_ERROR_SESSION_DISCARD_TIMEOUT_DATA
+SWOOLE_ERROR_SESSION_DISCARD_DATA
+SWOOLE_ERROR_OUTPUT_BUFFER_OVERFLOW
+SWOOLE_ERROR_OUTPUT_SEND_YIELD
+SWOOLE_ERROR_SSL_NOT_READY
+SWOOLE_ERROR_SSL_CANNOT_USE_SENFILE
+SWOOLE_ERROR_SSL_EMPTY_PEER_CERTIFICATE
+SWOOLE_ERROR_SSL_VERIFY_FAILED
+SWOOLE_ERROR_SSL_BAD_CLIENT
+SWOOLE_ERROR_SSL_BAD_PROTOCOL
+SWOOLE_ERROR_SSL_RESET
+SWOOLE_ERROR_SSL_HANDSHAKE_FAILED
+SWOOLE_ERROR_PACKAGE_LENGTH_TOO_LARGE
+SWOOLE_ERROR_PACKAGE_LENGTH_NOT_FOUND
+SWOOLE_ERROR_DATA_LENGTH_TOO_LARGE
+SWOOLE_ERROR_PACKAGE_MALFORMED_DATA
+SWOOLE_ERROR_TASK_PACKAGE_TOO_BIG
+SWOOLE_ERROR_TASK_DISPATCH_FAIL
+SWOOLE_ERROR_TASK_TIMEOUT
+SWOOLE_ERROR_HTTP2_STREAM_ID_TOO_BIG
+SWOOLE_ERROR_HTTP2_STREAM_NO_HEADER
+SWOOLE_ERROR_HTTP2_STREAM_NOT_FOUND
+SWOOLE_ERROR_HTTP2_STREAM_IGNORE
+SWOOLE_ERROR_HTTP2_SEND_CONTROL_FRAME_FAILED
+SWOOLE_ERROR_AIO_BAD_REQUEST
+SWOOLE_ERROR_AIO_CANCELED
+SWOOLE_ERROR_AIO_TIMEOUT
+SWOOLE_ERROR_CLIENT_NO_CONNECTION
+SWOOLE_ERROR_SOCKET_CLOSED
+SWOOLE_ERROR_SOCKET_POLL_TIMEOUT
+SWOOLE_ERROR_SOCKS5_UNSUPPORT_VERSION
+SWOOLE_ERROR_SOCKS5_UNSUPPORT_METHOD
+SWOOLE_ERROR_SOCKS5_AUTH_FAILED
+SWOOLE_ERROR_SOCKS5_SERVER_ERROR
+SWOOLE_ERROR_SOCKS5_HANDSHAKE_FAILED
+SWOOLE_ERROR_HTTP_PROXY_HANDSHAKE_ERROR
+SWOOLE_ERROR_HTTP_INVALID_PROTOCOL
+SWOOLE_ERROR_HTTP_PROXY_HANDSHAKE_FAILED
+SWOOLE_ERROR_HTTP_PROXY_BAD_RESPONSE
+SWOOLE_ERROR_HTTP_CONFLICT_HEADER
+SWOOLE_ERROR_HTTP_CONTEXT_UNAVAILABLE
+SWOOLE_ERROR_HTTP_COOKIE_UNAVAILABLE
+SWOOLE_ERROR_WEBSOCKET_BAD_CLIENT
+SWOOLE_ERROR_WEBSOCKET_BAD_OPCODE
+SWOOLE_ERROR_WEBSOCKET_UNCONNECTED
+SWOOLE_ERROR_WEBSOCKET_HANDSHAKE_FAILED
+SWOOLE_ERROR_WEBSOCKET_PACK_FAILED
+SWOOLE_ERROR_WEBSOCKET_UNPACK_FAILED
+SWOOLE_ERROR_WEBSOCKET_INCOMPLETE_PACKET
+SWOOLE_ERROR_SERVER_MUST_CREATED_BEFORE_CLIENT
+SWOOLE_ERROR_SERVER_TOO_MANY_SOCKET
+SWOOLE_ERROR_SERVER_WORKER_TERMINATED
+SWOOLE_ERROR_SERVER_INVALID_LISTEN_PORT
+SWOOLE_ERROR_SERVER_TOO_MANY_LISTEN_PORT
+SWOOLE_ERROR_SERVER_PIPE_BUFFER_FULL
+SWOOLE_ERROR_SERVER_NO_IDLE_WORKER
+SWOOLE_ERROR_SERVER_ONLY_START_ONE
+SWOOLE_ERROR_SERVER_SEND_IN_MASTER
+SWOOLE_ERROR_SERVER_INVALID_REQUEST
+SWOOLE_ERROR_SERVER_CONNECT_FAIL
+SWOOLE_ERROR_SERVER_INVALID_COMMAND
+SWOOLE_ERROR_SERVER_IS_NOT_REGULAR_FILE
+SWOOLE_ERROR_SERVER_SEND_TO_WOKER_TIMEOUT
+SWOOLE_ERROR_SERVER_INVALID_CALLBACK
+SWOOLE_ERROR_SERVER_UNRELATED_THREAD
+SWOOLE_ERROR_SERVER_WORKER_EXIT_TIMEOUT
+SWOOLE_ERROR_SERVER_WORKER_ABNORMAL_PIPE_DATA
+SWOOLE_ERROR_SERVER_WORKER_UNPROCESSED_DATA
+SWOOLE_ERROR_CO_OUT_OF_COROUTINE
+SWOOLE_ERROR_CO_HAS_BEEN_BOUND
+SWOOLE_ERROR_CO_HAS_BEEN_DISCARDED
+SWOOLE_ERROR_CO_MUTEX_DOUBLE_UNLOCK
+SWOOLE_ERROR_CO_BLOCK_OBJECT_LOCKED
+SWOOLE_ERROR_CO_BLOCK_OBJECT_WAITING
+SWOOLE_ERROR_CO_YIELD_FAILED
+SWOOLE_ERROR_CO_GETCONTEXT_FAILED
+SWOOLE_ERROR_CO_SWAPCONTEXT_FAILED
+SWOOLE_ERROR_CO_MAKECONTEXT_FAILED
+SWOOLE_ERROR_CO_IOCPINIT_FAILED
+SWOOLE_ERROR_CO_PROTECT_STACK_FAILED
+SWOOLE_ERROR_CO_STD_THREAD_LINK_ERROR
+SWOOLE_ERROR_CO_DISABLED_MULTI_THREAD
+SWOOLE_ERROR_CO_CANNOT_CANCEL
+SWOOLE_ERROR_CO_NOT_EXISTS
+SWOOLE_ERROR_CO_CANCELED
+SWOOLE_ERROR_CO_TIMEDOUT
+SWOOLE_ERROR_CO_SOCKET_CLOSE_WAIT
+SWOOLE_TRACE_SERVER
+SWOOLE_TRACE_CLIENT
+SWOOLE_TRACE_BUFFER
+SWOOLE_TRACE_CONN
+SWOOLE_TRACE_EVENT
+SWOOLE_TRACE_WORKER
+SWOOLE_TRACE_MEMORY
+SWOOLE_TRACE_REACTOR
+SWOOLE_TRACE_PHP
+SWOOLE_TRACE_HTTP
+SWOOLE_TRACE_HTTP2
+SWOOLE_TRACE_EOF_PROTOCOL
+SWOOLE_TRACE_LENGTH_PROTOCOL
+SWOOLE_TRACE_CLOSE
+SWOOLE_TRACE_WEBSOCKET
+SWOOLE_TRACE_REDIS_CLIENT
+SWOOLE_TRACE_MYSQL_CLIENT
+SWOOLE_TRACE_HTTP_CLIENT
+SWOOLE_TRACE_AIO
+SWOOLE_TRACE_SSL
+SWOOLE_TRACE_NORMAL
+SWOOLE_TRACE_CHANNEL
+SWOOLE_TRACE_TIMER
+SWOOLE_TRACE_SOCKET
+SWOOLE_TRACE_COROUTINE
+SWOOLE_TRACE_CONTEXT
+SWOOLE_TRACE_CO_HTTP_SERVER
+SWOOLE_TRACE_TABLE
+SWOOLE_TRACE_CO_CURL
+SWOOLE_TRACE_CARES
+SWOOLE_TRACE_ZLIB
+SWOOLE_TRACE_CO_PGSQL
+SWOOLE_TRACE_CO_ODBC
+SWOOLE_TRACE_CO_ORACLE
+SWOOLE_TRACE_CO_SQLITE
+SWOOLE_TRACE_ALL
 SWOOLE_LOG_DEBUG
 SWOOLE_LOG_TRACE
 SWOOLE_LOG_INFO
@@ -14838,6 +15190,137 @@ SWOOLE_LOG_NOTICE
 SWOOLE_LOG_WARNING
 SWOOLE_LOG_ERROR
 SWOOLE_LOG_NONE
+SWOOLE_LOG_ROTATION_SINGLE
+SWOOLE_LOG_ROTATION_MONTHLY
+SWOOLE_LOG_ROTATION_DAILY
+SWOOLE_LOG_ROTATION_HOURLY
+SWOOLE_LOG_ROTATION_EVERY_MINUTE
+SWOOLE_IPC_NONE
+SWOOLE_IPC_UNIXSOCK
+SWOOLE_IPC_SOCKET
+SWOOLE_IOV_MAX
+SWOOLE_IOURING_DEFAULT
+SWOOLE_IOURING_SQPOLL
+SWOOLE_BASE
+SWOOLE_PROCESS
+SWOOLE_THREAD
+SWOOLE_IPC_UNSOCK
+SWOOLE_IPC_MSGQUEUE
+SWOOLE_IPC_PREEMPTIVE
+SWOOLE_SERVER_COMMAND_MASTER
+SWOOLE_SERVER_COMMAND_MANAGER
+SWOOLE_SERVER_COMMAND_REACTOR_THREAD
+SWOOLE_SERVER_COMMAND_EVENT_WORKER
+SWOOLE_SERVER_COMMAND_TASK_WORKER
+SWOOLE_DISPATCH_ROUND
+SWOOLE_DISPATCH_FDMOD
+SWOOLE_DISPATCH_IDLE_WORKER
+SWOOLE_DISPATCH_IPMOD
+SWOOLE_DISPATCH_UIDMOD
+SWOOLE_DISPATCH_USERFUNC
+SWOOLE_DISPATCH_CO_CONN_LB
+SWOOLE_DISPATCH_CO_REQ_LB
+SWOOLE_DISPATCH_CONCURRENT_LB
+SWOOLE_WORKER_BUSY
+SWOOLE_WORKER_IDLE
+SWOOLE_WORKER_EXIT
+SWOOLE_MUTEX
+SWOOLE_RWLOCK
+SWOOLE_SPINLOCK
+SWOOLE_CORO_MAX_NUM_LIMIT
+SWOOLE_CORO_INIT
+SWOOLE_CORO_WAITING
+SWOOLE_CORO_RUNNING
+SWOOLE_CORO_END
+SWOOLE_EXIT_IN_COROUTINE
+SWOOLE_EXIT_IN_SERVER
+SWOOLE_HTTP2_TYPE_DATA
+SWOOLE_HTTP2_TYPE_HEADERS
+SWOOLE_HTTP2_TYPE_PRIORITY
+SWOOLE_HTTP2_TYPE_RST_STREAM
+SWOOLE_HTTP2_TYPE_SETTINGS
+SWOOLE_HTTP2_TYPE_PUSH_PROMISE
+SWOOLE_HTTP2_TYPE_PING
+SWOOLE_HTTP2_TYPE_GOAWAY
+SWOOLE_HTTP2_TYPE_WINDOW_UPDATE
+SWOOLE_HTTP2_TYPE_CONTINUATION
+SWOOLE_HTTP2_ERROR_NO_ERROR
+SWOOLE_HTTP2_ERROR_PROTOCOL_ERROR
+SWOOLE_HTTP2_ERROR_INTERNAL_ERROR
+SWOOLE_HTTP2_ERROR_FLOW_CONTROL_ERROR
+SWOOLE_HTTP2_ERROR_SETTINGS_TIMEOUT
+SWOOLE_HTTP2_ERROR_STREAM_CLOSED
+SWOOLE_HTTP2_ERROR_FRAME_SIZE_ERROR
+SWOOLE_HTTP2_ERROR_REFUSED_STREAM
+SWOOLE_HTTP2_ERROR_CANCEL
+SWOOLE_HTTP2_ERROR_COMPRESSION_ERROR
+SWOOLE_HTTP2_ERROR_CONNECT_ERROR
+SWOOLE_HTTP2_ERROR_ENHANCE_YOUR_CALM
+SWOOLE_HTTP2_ERROR_INADEQUATE_SECURITY
+SWOOLE_HTTP2_ERROR_HTTP_1_1_REQUIRED
+SWOOLE_HTTP_CLIENT_ESTATUS_CONNECT_FAILED
+SWOOLE_HTTP_CLIENT_ESTATUS_REQUEST_TIMEOUT
+SWOOLE_HTTP_CLIENT_ESTATUS_SERVER_RESET
+SWOOLE_HTTP_CLIENT_ESTATUS_SEND_FAILED
+SWOOLE_MSGQUEUE_ORIENT
+SWOOLE_MSGQUEUE_BALANCE
+SWOOLE_HOOK_TCP
+SWOOLE_HOOK_UDP
+SWOOLE_HOOK_UNIX
+SWOOLE_HOOK_UDG
+SWOOLE_HOOK_SSL
+SWOOLE_HOOK_TLS
+SWOOLE_HOOK_STREAM_FUNCTION
+SWOOLE_HOOK_FILE
+SWOOLE_HOOK_STDIO
+SWOOLE_HOOK_SLEEP
+SWOOLE_HOOK_PROC
+SWOOLE_HOOK_CURL
+SWOOLE_HOOK_NATIVE_CURL
+SWOOLE_HOOK_BLOCKING_FUNCTION
+SWOOLE_HOOK_SOCKETS
+SWOOLE_HOOK_PDO_PGSQL
+SWOOLE_HOOK_PDO_ODBC
+SWOOLE_HOOK_PDO_ORACLE
+SWOOLE_HOOK_PDO_SQLITE
+SWOOLE_HOOK_ALL
+SOCKET_ECANCELED
+TCP_INFO
+SWOOLE_TIMER_MIN_MS
+SWOOLE_TIMER_MIN_SEC
+SWOOLE_TIMER_MAX_MS
+SWOOLE_TIMER_MAX_SEC
+SWOOLE_WEBSOCKET_STATUS_CONNECTION
+SWOOLE_WEBSOCKET_STATUS_HANDSHAKE
+SWOOLE_WEBSOCKET_STATUS_ACTIVE
+SWOOLE_WEBSOCKET_STATUS_CLOSING
+SWOOLE_WEBSOCKET_OPCODE_CONTINUATION
+SWOOLE_WEBSOCKET_OPCODE_TEXT
+SWOOLE_WEBSOCKET_OPCODE_BINARY
+SWOOLE_WEBSOCKET_OPCODE_CLOSE
+SWOOLE_WEBSOCKET_OPCODE_PING
+SWOOLE_WEBSOCKET_OPCODE_PONG
+SWOOLE_WEBSOCKET_FLAG_FIN
+SWOOLE_WEBSOCKET_FLAG_RSV1
+SWOOLE_WEBSOCKET_FLAG_RSV2
+SWOOLE_WEBSOCKET_FLAG_RSV3
+SWOOLE_WEBSOCKET_FLAG_MASK
+SWOOLE_WEBSOCKET_FLAG_COMPRESS
+SWOOLE_WEBSOCKET_CLOSE_NORMAL
+SWOOLE_WEBSOCKET_CLOSE_GOING_AWAY
+SWOOLE_WEBSOCKET_CLOSE_PROTOCOL_ERROR
+SWOOLE_WEBSOCKET_CLOSE_DATA_ERROR
+SWOOLE_WEBSOCKET_CLOSE_STATUS_ERROR
+SWOOLE_WEBSOCKET_CLOSE_ABNORMAL
+SWOOLE_WEBSOCKET_CLOSE_MESSAGE_ERROR
+SWOOLE_WEBSOCKET_CLOSE_POLICY_ERROR
+SWOOLE_WEBSOCKET_CLOSE_MESSAGE_TOO_BIG
+SWOOLE_WEBSOCKET_CLOSE_EXTENSION_MISSING
+SWOOLE_WEBSOCKET_CLOSE_SERVER_ERROR
+SWOOLE_WEBSOCKET_CLOSE_CLOSE_SERVICE_RESTART
+SWOOLE_WEBSOCKET_CLOSE_TRY_AGAIN_LATER
+SWOOLE_WEBSOCKET_CLOSE_BAD_GATEWAY
+SWOOLE_WEBSOCKET_CLOSE_TLS
 TIDY_TAG_UNKNOWN
 TIDY_TAG_A
 TIDY_TAG_ABBR
@@ -15341,6 +15824,8 @@ CRYPT_PREFIX_SHA512
 CRYPT_PREFIX_SCRYPT
 CRYPT_PREFIX_GOST_YESCRYPT
 CRYPT_PREFIX_YESCRYPT
+CRYPT_PREFIX_SM3CRYPT
+CRYPT_PREFIX_SM3_YESCRYPT
 CRYPT_SALT_OK
 CRYPT_SALT_INVALID
 CRYPT_SALT_METHOD_DISABLED
@@ -15348,6 +15833,8 @@ CRYPT_SALT_METHOD_LEGACY
 CRYPT_SALT_TOO_CHEAP
 PASSWORD_SHA512
 PASSWORD_YESCRYPT
+PASSWORD_SM3CRYPT
+PASSWORD_SM3_YESCRYPT
 XSL_CLONE_AUTO
 XSL_CLONE_NEVER
 XSL_CLONE_ALWAYS
