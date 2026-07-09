@@ -43,10 +43,11 @@ extensions constants
 */
 file_put_contents("php.api", str_replace(" ", "\n", 'self parent $this'
 	. ' $GLOBALS $_SERVER $_GET $_POST $_FILES $_REQUEST $_SESSION $_ENV $_COOKIE $php_errormsg $http_response_header $argc $argv'
-	. ' abstract and as break callable case catch class clone const continue declare default do echo else elseif enddeclare endfor endforeach endif endswitch endwhile extends final finally fn for foreach function global goto if implements include include_once instanceof insteadof interface match namespace new or print private protected public readonly require require_once return static switch throw trait try use var while xor yield from'
+	. ' abstract and as break callable case catch class const continue declare default do echo else elseif enddeclare endfor endforeach endif endswitch endwhile extends final finally fn for foreach function global goto if implements include include_once instanceof insteadof interface match namespace new or print private protected public readonly require require_once return static switch throw trait try use var while xor yield from'
 	. ' __CLASS__ __DIR__ __FILE__ __FUNCTION__ __LINE__ __METHOD__ __PROPERTY__ __NAMESPACE__ __TRAIT__'
 	. ' PHP_VERSION PHP_MAJOR_VERSION PHP_MINOR_VERSION PHP_RELEASE_VERSION PHP_VERSION_ID PHP_EXTRA_VERSION ZEND_THREAD_SAFE ZEND_DEBUG_BUILD PHP_ZTS PHP_DEBUG DEBUG_BACKTRACE_PROVIDE_OBJECT DEBUG_BACKTRACE_IGNORE_ARGS PHP_MAXPATHLEN PHP_OS PHP_OS_FAMILY PHP_SAPI PHP_EOL PHP_INT_MAX PHP_INT_MIN PHP_INT_SIZE PHP_FLOAT_DIG PHP_FLOAT_EPSILON PHP_FLOAT_MIN PHP_FLOAT_MAX DEFAULT_INCLUDE_PATH PHP_PREFIX PHP_BINDIR PHP_SBINDIR PHP_BINARY PHP_MANDIR PHP_LIBDIR PHP_DATADIR PHP_SYSCONFDIR PHP_LOCALSTATEDIR PHP_CONFIG_FILE_PATH PHP_CONFIG_FILE_SCAN_DIR PHP_SHLIB_SUFFIX PHP_FD_SETSIZE PHP_WINDOWS_EVENT_CTRL_C PHP_WINDOWS_EVENT_CTRL_BREAK PHP_CLI_PROCESS_TITLE STDERR STDIN STDOUT'
 	. ' int float bool string true false null void iterable object mixed never enum resource numeric') . '
+clone(object $object, array $withProperties = []): object' . SEP . 'Clone object
 __construct(mixed ...$values)' . SEP . 'Object constructor
 __destruct()' . SEP . 'Object destructor
 __call(string $name, array $arguments): mixed' . SEP . 'Triggered when invoking inaccessible methods in an object context
