@@ -1070,6 +1070,7 @@ ReflectionClassConstant::export(mixed $class, string $name, bool $return = ?): s
 >isPublic(): bool	(ReflectionClassConstant) Verifica si la constante de clase es pública
 >__toString(): string	(ReflectionClassConstant) Devuelve la representación en forma de string del objeto ReflectionClassConstant
 ReflectionConstant(string $name)	(new) Construye un ReflectionConstant
+>getAttributes(?string $name = null, int $flags = ?): array	(ReflectionConstant) Gets Attributes
 >getExtension(): ?ReflectionExtension	(ReflectionConstant) Devuelve la ReflectionExtension de la extensión definitoria
 >getExtensionName(): string|false	(ReflectionConstant) Devuelve el nombre de la extensión definitoria
 >getFileName(): string|false	(ReflectionConstant) Devuelve el nombre del fichero que define
@@ -4421,8 +4422,8 @@ tidy_config_count(tidy $tidy): int	Devuelve el número de errores de configuraci
 tidy_error_count(tidy $tidy): int	Devuelve el número de errores Tidy encontrados en un documento dado
 tidy_get_output(tidy $tidy): string	Devuelve una cadena que contiene las etiquetas analizadas por Tidy
 tidy_warning_count(tidy $tidy): int	Devuelve el número de alertas encontradas en un documento dado
->body(): ?tidyNode	(tidy) Devuelve un objeto tidyNode empezando con la etiqueta ltbodygt
-tidy_get_body(tidy $tidy): ?tidyNode	Devuelve un objeto tidyNode empezando con la etiqueta ltbodygt
+>body(): ?tidyNode	(tidy) Devuelve un objeto tidyNode empezando con la etiqueta <body>
+tidy_get_body(tidy $tidy): ?tidyNode	Devuelve un objeto tidyNode empezando con la etiqueta <body>
 >cleanRepair(): bool	(tidy) Ejecuta una operación de limpieza y reparación de las etiquetas HTML
 tidy_clean_repair(tidy $tidy): bool	Ejecuta una operación de limpieza y reparación de las etiquetas HTML
 tidy(?string $filename = null, array|string|null $config = null, ?string $encoding = null, bool $useIncludePath = false)	(new) Construye un nuevo objeto tidy
@@ -4441,10 +4442,10 @@ tidy_get_opt_doc(tidy $tidy, string $option): string|false	Devuelve la documenta
 tidy_get_release(): string	Obtiene la fecha de lanzamiento (versión) de la librería Tidy
 >getStatus(): int	(tidy) Obtiene el status de un documento especificado
 tidy_get_status(tidy $tidy): int	Obtiene el status de un documento especificado
->head(): ?tidyNode	(tidy) Devuelve un objeto tidyNode empezando con la etiqueta ltheadgt
-tidy_get_head(tidy $tidy): ?tidyNode	Devuelve un objeto tidyNode empezando con la etiqueta ltheadgt
->html(): ?tidyNode	(tidy) Devuelve un objeto tidyNode empezando con la etiqueta lthtmlgt
-tidy_get_html(tidy $tidy): ?tidyNode	Devuelve un objeto tidyNode empezando con la etiqueta lthtmlgt
+>head(): ?tidyNode	(tidy) Devuelve un objeto tidyNode empezando con la etiqueta <head>
+tidy_get_head(tidy $tidy): ?tidyNode	Devuelve un objeto tidyNode empezando con la etiqueta <head>
+>html(): ?tidyNode	(tidy) Devuelve un objeto tidyNode empezando con la etiqueta <html>
+tidy_get_html(tidy $tidy): ?tidyNode	Devuelve un objeto tidyNode empezando con la etiqueta <html>
 >isXhtml(): bool	(tidy) Indica si el documento es XHTML
 tidy_is_xhtml(tidy $tidy): bool	Indica si el documento es XHTML
 >isXml(): bool	(tidy) Indica si el documento es XML (no HTML/XHTML)

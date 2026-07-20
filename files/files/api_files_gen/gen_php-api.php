@@ -15,10 +15,9 @@ $dirs = array("../language/predefined");
 array_shift($argv);
 $enReference = "../../doc-en/reference/";
 if ($argv == array("all")) {
-	foreach (glob("$enReference*") as $dir) {
+	foreach (glob("$enReference*", GLOB_ONLYDIR) as $dir) {
 		$dirs[] = substr($dir, strlen($enReference));
 	}
-	$dirs = glob("*", GLOB_ONLYDIR);
 } else {
 	$xml = simplexml("../../doc-en/appendices/extensions.xml");
 	foreach ($xml->xpath("//section") as $section) {
@@ -69,7 +68,7 @@ __debugInfo(): array' . SEP . 'Called by var_dump()
 
 foreach ($dirs as $dir) {
 	echo ".";
-	
+
 	$translations = array();
 	if (basename(dirname(dirname(realpath($dir)))) != "doc-en") {
 		foreach (rglob("$dir/*.xml") as $filename) {
@@ -87,11 +86,12 @@ foreach ($dirs as $dir) {
 		}
 		$dir = $enReference . $dir;
 	}
-	
+
 	if (!is_dir($dir)) {
 		echo "\n$dir not found";
+		continue;
 	}
-	
+
 	$classes = array();
 	foreach (rglob("$dir/*.xml") as $filename) {
 		$xml = simplexml($filename);
@@ -190,7 +190,7 @@ function simplexml($filename) {
 	$file = file_get_contents($filename);
 	$file = str_replace('xml:id=', 'id=', $file);
 	$file = str_replace(' xmlns="http://docbook.org/ns/docbook"', '', $file);
-	$file = preg_replace('~&([-\w.]+);~', '\1', $file);
+	$file = preg_replace('~&(?!(?:amp|lt|gt|quot|apos);)([-\w.]+);~', '\1', $file);
 	$return = @simplexml_load_string($file);
 	if (!$return) {
 		echo "\n$filename:1:parse error";

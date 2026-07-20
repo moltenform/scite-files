@@ -1070,6 +1070,7 @@ ReflectionClassConstant::export(mixed $class, string $name, bool $return = ?): s
 >isPublic(): bool	(ReflectionClassConstant) Checks if class constant is public
 >__toString(): string	(ReflectionClassConstant) Returns the string representation of the ReflectionClassConstant object
 ReflectionConstant(string $name)	(new) Constructs a ReflectionConstant
+>getAttributes(?string $name = null, int $flags = ?): array	(ReflectionConstant) Gets Attributes
 >getExtension(): ?ReflectionExtension	(ReflectionConstant) Gets ReflectionExtension of the defining extension
 >getExtensionName(): string|false	(ReflectionConstant) Gets name of the defining extension
 >getFileName(): string|false	(ReflectionConstant) Gets name of the defining file
@@ -4421,8 +4422,8 @@ tidy_config_count(tidy $tidy): int	Returns the Number of Tidy configuration erro
 tidy_error_count(tidy $tidy): int	Returns the Number of Tidy errors encountered for specified document
 tidy_get_output(tidy $tidy): string	Return a string representing the parsed tidy markup
 tidy_warning_count(tidy $tidy): int	Returns the Number of Tidy warnings encountered for specified document
->body(): ?tidyNode	(tidy) Returns a tidyNode object starting from the ltbodygt tag of the tidy parse tree
-tidy_get_body(tidy $tidy): ?tidyNode	Returns a tidyNode object starting from the ltbodygt tag of the tidy parse tree
+>body(): ?tidyNode	(tidy) Returns a tidyNode object starting from the <body> tag of the tidy parse tree
+tidy_get_body(tidy $tidy): ?tidyNode	Returns a tidyNode object starting from the <body> tag of the tidy parse tree
 >cleanRepair(): bool	(tidy) Execute configured cleanup and repair operations on parsed markup
 tidy_clean_repair(tidy $tidy): bool	Execute configured cleanup and repair operations on parsed markup
 tidy(?string $filename = null, array|string|null $config = null, ?string $encoding = null, bool $useIncludePath = false)	(new) Constructs a new tidy object
@@ -4441,10 +4442,10 @@ tidy_get_opt_doc(tidy $tidy, string $option): string|false	Returns the documenta
 tidy_get_release(): string	Get release date (version) for Tidy library
 >getStatus(): int	(tidy) Get status of specified document
 tidy_get_status(tidy $tidy): int	Get status of specified document
->head(): ?tidyNode	(tidy) Returns a tidyNode object starting from the ltheadgt tag of the tidy parse tree
-tidy_get_head(tidy $tidy): ?tidyNode	Returns a tidyNode object starting from the ltheadgt tag of the tidy parse tree
->html(): ?tidyNode	(tidy) Returns a tidyNode object starting from the lthtmlgt tag of the tidy parse tree
-tidy_get_html(tidy $tidy): ?tidyNode	Returns a tidyNode object starting from the lthtmlgt tag of the tidy parse tree
+>head(): ?tidyNode	(tidy) Returns a tidyNode object starting from the <head> tag of the tidy parse tree
+tidy_get_head(tidy $tidy): ?tidyNode	Returns a tidyNode object starting from the <head> tag of the tidy parse tree
+>html(): ?tidyNode	(tidy) Returns a tidyNode object starting from the <html> tag of the tidy parse tree
+tidy_get_html(tidy $tidy): ?tidyNode	Returns a tidyNode object starting from the <html> tag of the tidy parse tree
 >isXhtml(): bool	(tidy) Indicates if the document is a XHTML document
 tidy_is_xhtml(tidy $tidy): bool	Indicates if the document is a XHTML document
 >isXml(): bool	(tidy) Indicates if the document is a generic (non HTML/XHTML) XML document

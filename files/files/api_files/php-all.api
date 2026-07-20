@@ -161,6 +161,131 @@ __invoke(mixed ...$values): mixed	Called when a script tries to call an object a
 __set_state(array $properties): object	Called by var_export() result
 __clone(): void	Called after cloning
 __debugInfo(): array	Called by var_dump()
+AllowDynamicProperties()	(new) Construct a new AllowDynamicProperties attribute instance
+>offsetExists(mixed $offset): bool	(ArrayAccess) Whether an offset exists
+>offsetGet(mixed $offset): mixed	(ArrayAccess) Offset to retrieve
+>offsetSet(mixed $offset, mixed $value): void	(ArrayAccess) Assign a value to the specified offset
+>offsetUnset(mixed $offset): void	(ArrayAccess) Unset an offset
+Attribute(int $flags = Attribute::TARGET_ALL)	(new) Construct a new Attribute instance
+Deprecated(?string $message = null, ?string $since = null)	(new) Construct a new Deprecated attribute instance
+NoDiscard(?string $message = null)	(new) Construct a new NoDiscard attribute instance
+Override()	(new) Construct a new Override attribute instance
+BackedEnum::from(int|string $value): static	Maps a scalar to an enum instance
+BackedEnum::tryFrom(int|string $value): ?static	Maps a scalar to an enum instance or null
+Closure::bind(Closure $closure, ?object $newThis, object|string|null $newScope = "static"): ?Closure	Duplicates a closure with a specific bound object and class scope
+>bindTo(?object $newThis, object|string|null $newScope = "static"): ?Closure	(Closure) Duplicates the closure with a new bound object and class scope
+>call(object $newThis, mixed ...$args): mixed	(Closure) Binds and calls the closure
+Closure()	(new) Constructor that disallows instantiation
+Closure::fromCallable(callable $callback): Closure	Converts a callable into a closure
+Closure::getCurrent(): Closure	Returns the currently executing closure
+>count(): int	(Countable) Count elements of an object
+>__clone(): void	(Error) Clone the error
+Error(string $message = "", int $code = ?, ?Throwable $previous = null)	(new) Construct the error object
+>getCode(): int	(Error) Gets the error code
+>getFile(): string	(Error) Gets the file in which the error occurred
+>getLine(): int	(Error) Gets the line in which the error occurred
+>getMessage(): string	(Error) Gets the error message
+>getPrevious(): ?Throwable	(Error) Returns previous Throwable
+>getTrace(): array	(Error) Gets the stack trace
+>getTraceAsString(): string	(Error) Gets the stack trace as a string
+>__toString(): string	(Error) String representation of the error
+ErrorException(string $message = "", int $code = ?, int $severity = E_ERROR, ?string $filename = null, ?int $line = null, ?Throwable $previous = null)	(new) Constructs the exception
+>getSeverity(): int	(ErrorException) Gets the exception severity
+>__clone(): void	(Exception) Clone the exception
+Exception(string $message = "", int $code = ?, ?Throwable $previous = null)	(new) Construct the exception
+>getCode(): int	(Exception) Gets the Exception code
+>getFile(): string	(Exception) Gets the file in which the exception was created
+>getLine(): int	(Exception) Gets the line in which the exception was created
+>getMessage(): string	(Exception) Gets the Exception message
+>getPrevious(): ?Throwable	(Exception) Returns previous Throwable
+>getTrace(): array	(Exception) Gets the stack trace
+>getTraceAsString(): string	(Exception) Gets the stack trace as a string
+>__toString(): string	(Exception) String representation of the exception
+Fiber(callable $callback)	(new) Creates a new Fiber instance
+Fiber::getCurrent(): ?Fiber	Gets the currently executing Fiber instance
+>getReturn(): mixed	(Fiber) Gets the value returned by the Fiber
+>isRunning(): bool	(Fiber) Determines if the fiber is running
+>isStarted(): bool	(Fiber) Determines if the fiber has started
+>isSuspended(): bool	(Fiber) Determines if the fiber is suspended
+>isTerminated(): bool	(Fiber) Determines if the fiber has terminated
+>resume(mixed $value = null): mixed	(Fiber) Resumes execution of the fiber with a value
+>start(mixed ...$args): mixed	(Fiber) Start execution of the fiber
+Fiber::suspend(mixed $value = null): mixed	Suspends execution of the current fiber
+>throw(Throwable $exception): mixed	(Fiber) Resumes execution of the fiber with an exception
+FiberError()	(new) Constructor to disallow direct instantiation
+>current(): mixed	(Generator) Get the yielded value
+>getReturn(): mixed	(Generator) Get the return value of a generator
+>key(): mixed	(Generator) Get the yielded key
+>next(): void	(Generator) Resume execution of the generator
+>rewind(): void	(Generator) Execute the generator up to and including the first yield
+>send(mixed $value): mixed	(Generator) Send a value to the generator
+>throw(Throwable $exception): mixed	(Generator) Throw an exception into the generator
+>valid(): bool	(Generator) Check if the iterator has been closed
+>__wakeup(): void	(Generator) Serialize callback
+InternalIterator()	(new) Private constructor to disallow direct instantiation
+>current(): mixed	(InternalIterator) Return the current element
+>key(): mixed	(InternalIterator) Return the key of the current element
+>next(): void	(InternalIterator) Move forward to next element
+>rewind(): void	(InternalIterator) Rewind the Iterator to the first element
+>valid(): bool	(InternalIterator) Check if current position is valid
+>current(): mixed	(Iterator) Return the current element
+>key(): mixed	(Iterator) Return the key of the current element
+>next(): void	(Iterator) Move forward to next element
+>rewind(): void	(Iterator) Rewind the Iterator to the first element
+>valid(): bool	(Iterator) Checks if current position is valid
+>getIterator(): Traversable	(IteratorAggregate) Retrieve an external iterator or traversable
+ReturnTypeWillChange()	(new) Construct a new ReturnTypeWillChange attribute instance
+SensitiveParameter()	(new) Construct a new SensitiveParameter attribute instance
+SensitiveParameterValue(mixed $value)	(new) Constructs a new SensitiveParameterValue object
+>__debugInfo(): array	(SensitiveParameterValue) Protects the sensitive value against accidental exposure
+>getValue(): mixed	(SensitiveParameterValue) Returns the sensitive value
+>serialize(): ?string	(Serializable) String representation of object
+>unserialize(string $data): void	(Serializable) Constructs the object
+>__toString(): string	(Stringable) Gets a string representation of the object
+>getCode(): int	(Throwable) Gets the exception code
+>getFile(): string	(Throwable) Gets the file in which the object was created
+>getLine(): int	(Throwable) Gets the line on which the object was instantiated
+>getMessage(): string	(Throwable) Gets the message
+>getPrevious(): ?Throwable	(Throwable) Returns the previous Throwable
+>getTrace(): array	(Throwable) Gets the stack trace
+>getTraceAsString(): string	(Throwable) Gets the stack trace as a string
+>__toString(): string	(Throwable) Gets a string representation of the thrown object
+UnitEnum::cases(): array	Generates a list of cases on an enum
+>count(): int	(WeakMap) Counts the number of live entries in the map
+>getIterator(): Iterator	(WeakMap) Retrieve an external iterator
+>offsetExists(object $object): bool	(WeakMap) Checks whether a certain object is in the map
+>offsetGet(object $object): mixed	(WeakMap) Returns the value pointed to by a certain object
+>offsetSet(object $object, mixed $value): void	(WeakMap) Updates the map with a new key-value pair
+>offsetUnset(object $object): void	(WeakMap) Removes an entry from the map
+WeakReference()	(new) Constructor that disallows instantiation
+WeakReference::create(object $object): WeakReference	Create a new weak reference
+>get(): ?object	(WeakReference) Get a weakly referenced Object
+ArgumentCountError()	(new) ArgumentCountError is thrown when too few arguments are passed to a user-defined function or method
+ArithmeticError()	(new) ArithmeticError is thrown when an error occurs while performing mathematical operations
+ArrayAccess()	(new) Interface to provide accessing objects as arrays
+AssertionError()	(new) AssertionError is thrown when an assertion made via assert fails
+BackedEnum()	(new) The BackedEnum interface is automatically applied to backed enumerations by the engine
+ClosedGeneratorException()	(new) A ClosedGeneratorException is thrown when trying to retrieve a value from a closed Generator
+CompileError()	(new) CompileError is thrown for some compilation errors, which formerly issued a fatal error
+Countable()	(new) Classes implementing Countable can be used with the count function
+DivisionByZeroError()	(new) DivisionByZeroError is thrown when an attempt is made to divide a number by zero
+Generator()	(new) Generator objects are returned from generators
+Iterator()	(new) Interface for external iterators or objects that can be iterated themselves internally
+IteratorAggregate()	(new) Interface to create an external Iterator
+ParseError()	(new) ParseError is thrown when an error occurs while parsing PHP code, such as when eval is called
+__PHP_Incomplete_Class()	(new) Created by unserialize when trying to unserialize an undefined class or a class that is not listed in the allowed_classes of unserialize's $options array
+RequestParseBodyException()	(new) A RequestParseBodyException is thrown in request_parse_body when the request body is invalid, according to the Content-Type header
+Serializable()	(new) Interface for customized serializing
+stdClass()	(new) A generic empty class with dynamic properties
+Stringable()	(new) The Stringable interface denotes a class as having a __toString() method
+Throwable()	(new) Throwable is the base interface for any object that can be thrown via a throw statement, including Error and Exception
+Traversable()	(new) Abstract base interface that cannot be implemented alone
+TypeError()	(new) A TypeError may be thrown when: The value being set for a class property does not match the property's corresponding declared type
+UnhandledMatchError()	(new) An UnhandledMatchError is thrown when the subject passed to a match expression is not handled by any arm of the match expression
+UnitEnum()	(new) The UnitEnum interface is automatically applied to all enumerations by the engine
+ValueError()	(new) A ValueError is thrown when the type of an argument is correct but the value of it is incorrect
+WeakMap()	(new) A WeakMap is map (or dictionary) that accepts objects as keys
+DelayedTargetValidation()	(new) This attribute delays target validation errors for internal attributes from compile time to when the attribute is instantiated via the Reflection API
 apache_child_terminate(): void	Terminate apache process after this request
 apache_get_modules(): array	Get a list of loaded Apache modules
 apache_get_version(): string|false	Fetch Apache version
@@ -1524,7 +1649,7 @@ EventBuffer()	(new) Constructs EventBuffer object
 >unlock(): bool	(EventBuffer) Releases lock acquired by EventBuffer::lock
 >write(mixed $fd, int $howmuch = ?): int	(EventBuffer) Write contents of the buffer to a file or socket
 >close(): void	(EventBufferEvent) Closes file descriptor associated with the current buffer event
->connect(string $addr): bool	(EventBufferEvent) Connect buffer eventaposs file descriptor to given address or UNIX socket
+>connect(string $addr): bool	(EventBufferEvent) Connect buffer event's file descriptor to given address or UNIX socket
 >connectHost(EventDnsBase $dns_base, string $hostname, int $port, int $family = EventUtil::AF_UNSPEC): bool	(EventBufferEvent) Connects to a hostname with optionally asynchronous DNS resolving
 EventBufferEvent(EventBase $base, mixed $socket = null, int $options = ?, callable $readcb = null, callable $writecb = null, callable $eventcb = null, mixed $arg = null)	(new) Constructs EventBufferEvent object
 EventBufferEvent::createPair(EventBase $base, int $options = ?): array	Creates two buffer events connected to each other
@@ -1535,7 +1660,7 @@ EventBufferEvent::createPair(EventBase $base, int $options = ?): array	Creates t
 >getEnabled(): int	(EventBufferEvent) Returns bitmask of events currently enabled on the buffer event
 >getInput(): EventBuffer	(EventBufferEvent) Returns underlying input buffer associated with current buffer event
 >getOutput(): EventBuffer	(EventBufferEvent) Returns underlying output buffer associated with current buffer event
->read(int $size): string	(EventBufferEvent) Read bufferaposs data
+>read(int $size): string	(EventBufferEvent) Read buffer's data
 >readBuffer(EventBuffer $buf): bool	(EventBufferEvent) Drains the entire contents of the input buffer and places them into buf
 >setCallbacks(callable $readcb, callable $writecb, callable $eventcb, mixed $arg = ?): void	(EventBufferEvent) Assigns read, write and event(status) callbacks
 >setPriority(int $priority): bool	(EventBufferEvent) Assign a priority to a bufferevent
@@ -1549,8 +1674,8 @@ EventBufferEvent::sslFilter(EventBase $base, EventBufferEvent $underlying, Event
 >sslGetProtocol(): string	(EventBufferEvent) Returns the name of the protocol used for current SSL connection
 >sslRenegotiate(): void	(EventBufferEvent) Tells a bufferevent to begin SSL renegotiation
 EventBufferEvent::sslSocket(EventBase $base, mixed $socket, EventSslContext $ctx, int $state, int $options = ?): EventBufferEvent	Creates a new SSL buffer event to send its data over an SSL on a socket
->write(string $data): bool	(EventBufferEvent) Adds data to a buffer eventaposs output buffer
->writeBuffer(EventBuffer $buf): bool	(EventBufferEvent) Adds contents of the entire buffer to a buffer eventaposs output buffer
+>write(string $data): bool	(EventBufferEvent) Adds data to a buffer event's output buffer
+>writeBuffer(EventBuffer $buf): bool	(EventBufferEvent) Adds contents of the entire buffer to a buffer event's output buffer
 >avoidMethod(string $method): bool	(EventConfig) Tells libevent to avoid specific event method
 EventConfig()	(new) Constructs EventConfig object
 >requireFeatures(int $feature): bool	(EventConfig) Enters a required event method feature that the application demands
@@ -1614,7 +1739,7 @@ EventListener(EventBase $base, callable $cb, mixed $data, int $flags, int $backl
 >disable(): bool	(EventListener) Disables an event connect listener object
 >enable(): bool	(EventListener) Enables an event connect listener object
 >getBase(): void	(EventListener) Returns event base associated with the event listener
-EventListener::getSocketName(string &$address, mixed &$port = ?): bool	Retrieves the current address to which the listeneraposs socket is bound
+EventListener::getSocketName(string &$address, mixed &$port = ?): bool	Retrieves the current address to which the listener's socket is bound
 >setCallback(callable $cb, mixed $arg = null): void	(EventListener) The setCallback purpose
 >setErrorCallback(string $cb): void	(EventListener) Set event listener's error callback
 EventSslContext(string $method, string $options)	(new) Constructs an OpenSSL context for use with Event classes
@@ -4323,15 +4448,15 @@ unpack(string $format, string $string, int $offset = ?): array|false	Unpack data
 usleep(int $microseconds): void	Delay execution in microseconds
 MongoDB\BSON\Binary(string $data, int $type = MongoDB\BSON\Binary::TYPE_GENERIC)	(new) Construct a new Binary
 MongoDB\BSON\Binary::fromVector(array $vector, MongoDB\BSON\VectorType $vectorType): MongoDB\BSON\Binary	Creates a new binary with subtype MongoDB\BSON\Binary::SUBTYPE_VECTOR from the given array and vector type
->getData(): string	(MongoDB\BSON\Binary) Returns the Binaryaposs data
->getType(): int	(MongoDB\BSON\Binary) Returns the Binaryaposs type
+>getData(): string	(MongoDB\BSON\Binary) Returns the Binary's data
+>getType(): int	(MongoDB\BSON\Binary) Returns the Binary's type
 >getVectorType(): MongoDB\BSON\VectorType	(MongoDB\BSON\Binary) Returns the data type for a Binary with the vector subtype
 >jsonSerialize(): mixed	(MongoDB\BSON\Binary) Returns a representation that can be converted to JSON
 >toArray(): array	(MongoDB\BSON\Binary) Returns the vector as an array for a Binary with subtype MongoDB\BSON\Binary::SUBTYPE_VECTOR
->__toString(): string	(MongoDB\BSON\Binary) Returns the Binaryaposs data
->getData(): string	(MongoDB\BSON\BinaryInterface) Returns the BinaryInterfaceaposs data
->getType(): int	(MongoDB\BSON\BinaryInterface) Returns the BinaryInterfaceaposs type
->__toString(): string	(MongoDB\BSON\BinaryInterface) Returns the BinaryInterfaceaposs data
+>__toString(): string	(MongoDB\BSON\Binary) Returns the Binary's data
+>getData(): string	(MongoDB\BSON\BinaryInterface) Returns the BinaryInterface's data
+>getType(): int	(MongoDB\BSON\BinaryInterface) Returns the BinaryInterface's type
+>__toString(): string	(MongoDB\BSON\BinaryInterface) Returns the BinaryInterface's data
 MongoDB\BSON\DBPointer()	(new) Construct a new DBPointer (unused)
 >jsonSerialize(): mixed	(MongoDB\BSON\DBPointer) Returns a representation that can be converted to JSON
 >__toString(): string	(MongoDB\BSON\DBPointer) Returns an empty string
@@ -4364,13 +4489,13 @@ MongoDB\BSON\Iterator()	(new) Construct a new BSON iterator (unused)
 >rewind(): void	(MongoDB\BSON\Iterator) Rewinds the Iterator to the first element
 >valid(): bool	(MongoDB\BSON\Iterator) Checks if current position is valid
 MongoDB\BSON\Javascript(string $code, array|object|null $scope = null)	(new) Construct a new Javascript
->getCode(): string	(MongoDB\BSON\Javascript) Returns the Javascriptaposs code
->getScope(): ?object	(MongoDB\BSON\Javascript) Returns the Javascriptaposs scope document
+>getCode(): string	(MongoDB\BSON\Javascript) Returns the Javascript's code
+>getScope(): ?object	(MongoDB\BSON\Javascript) Returns the Javascript's scope document
 >jsonSerialize(): mixed	(MongoDB\BSON\Javascript) Returns a representation that can be converted to JSON
->__toString(): string	(MongoDB\BSON\Javascript) Returns the Javascriptaposs code
->getCode(): string	(MongoDB\BSON\JavascriptInterface) Returns the JavascriptInterfaceaposs code
->getScope(): ?object	(MongoDB\BSON\JavascriptInterface) Returns the JavascriptInterfaceaposs scope document
->__toString(): string	(MongoDB\BSON\JavascriptInterface) Returns the JavascriptInterfaceaposs code
+>__toString(): string	(MongoDB\BSON\Javascript) Returns the Javascript's code
+>getCode(): string	(MongoDB\BSON\JavascriptInterface) Returns the JavascriptInterface's code
+>getScope(): ?object	(MongoDB\BSON\JavascriptInterface) Returns the JavascriptInterface's scope document
+>__toString(): string	(MongoDB\BSON\JavascriptInterface) Returns the JavascriptInterface's code
 MongoDB\BSON\MaxKey()	(new) Construct a new MaxKey
 >jsonSerialize(): mixed	(MongoDB\BSON\MaxKey) Returns a representation that can be converted to JSON
 MongoDB\BSON\MinKey()	(new) Construct a new MinKey
@@ -4397,12 +4522,12 @@ MongoDB\BSON\PackedArray::fromPHP(array $value): MongoDB\BSON\PackedArray	Constr
 >__toString(): string	(MongoDB\BSON\PackedArray) Returns the string representation of this BSON array
 >bsonSerialize(): array|stdClass|MongoDB\BSON\Document	(MongoDB\BSON\Persistable) Provides an array or document to serialize as BSON
 MongoDB\BSON\Regex(string $pattern, string $flags = "")	(new) Construct a new Regex
->getFlags(): string	(MongoDB\BSON\Regex) Returns the Regexaposs flags
->getPattern(): string	(MongoDB\BSON\Regex) Returns the Regexaposs pattern
+>getFlags(): string	(MongoDB\BSON\Regex) Returns the Regex's flags
+>getPattern(): string	(MongoDB\BSON\Regex) Returns the Regex's pattern
 >jsonSerialize(): mixed	(MongoDB\BSON\Regex) Returns a representation that can be converted to JSON
 >__toString(): string	(MongoDB\BSON\Regex) Returns the string representation of this Regex
->getFlags(): string	(MongoDB\BSON\RegexInterface) Returns the RegexInterfaceaposs flags
->getPattern(): string	(MongoDB\BSON\RegexInterface) Returns the RegexInterfaceaposs pattern
+>getFlags(): string	(MongoDB\BSON\RegexInterface) Returns the RegexInterface's flags
+>getPattern(): string	(MongoDB\BSON\RegexInterface) Returns the RegexInterface's pattern
 >__toString(): string	(MongoDB\BSON\RegexInterface) Returns the string representation of this RegexInterface
 >bsonSerialize(): array|stdClass|MongoDB\BSON\Document|MongoDB\BSON\PackedArray	(MongoDB\BSON\Serializable) Provides an array or document to serialize as BSON
 MongoDB\BSON\Symbol()	(new) Construct a new Symbol (unused)
@@ -4476,7 +4601,7 @@ MongoDB\Driver\Cursor()	(new) Create a new Cursor (not used)
 >getId(): MongoDB\BSON\Int64	(MongoDB\Driver\Cursor) Returns the ID for this cursor
 >getServer(): MongoDB\Driver\Server	(MongoDB\Driver\Cursor) Returns the server associated with this cursor
 >isDead(): bool	(MongoDB\Driver\Cursor) Checks if the cursor is exhausted or may have additional results
->key(): int	(MongoDB\Driver\Cursor) Returns the current resultaposs index within the cursor
+>key(): int	(MongoDB\Driver\Cursor) Returns the current result's index within the cursor
 >next(): void	(MongoDB\Driver\Cursor) Advances the cursor to the next result
 >rewind(): void	(MongoDB\Driver\Cursor) Rewind the cursor to the first result
 >setTypeMap(array $typemap): void	(MongoDB\Driver\Cursor) Sets a type map to use for BSON unserialization
@@ -4593,15 +4718,15 @@ MongoDB\Driver\Manager(?string $uri = null, ?array $uriOptions = null, ?array $d
 MongoDB\Driver\Query(array|object $filter, ?array $queryOptions = null)	(new) Create a new Query
 >bsonSerialize(): stdClass	(MongoDB\Driver\ReadConcern) Returns an object for BSON serialization
 MongoDB\Driver\ReadConcern(?string $level = null)	(new) Create a new ReadConcern
->getLevel(): ?string	(MongoDB\Driver\ReadConcern) Returns the ReadConcernaposs "level" option
+>getLevel(): ?string	(MongoDB\Driver\ReadConcern) Returns the ReadConcern's "level" option
 >isDefault(): bool	(MongoDB\Driver\ReadConcern) Checks if this is the default read concern
 >bsonSerialize(): stdClass	(MongoDB\Driver\ReadPreference) Returns an object for BSON serialization
 MongoDB\Driver\ReadPreference(string $mode, ?array $tagSets = null, ?array $options = null)	(new) Create a new ReadPreference
->getHedge(): ?object	(MongoDB\Driver\ReadPreference) Returns the ReadPreferenceaposs "hedge" option
->getMaxStalenessSeconds(): int	(MongoDB\Driver\ReadPreference) Returns the ReadPreferenceaposs "maxStalenessSeconds" option
->getMode(): int	(MongoDB\Driver\ReadPreference) Returns the ReadPreferenceaposs "mode" option
->getModeString(): string	(MongoDB\Driver\ReadPreference) Returns the ReadPreferenceaposs "mode" option
->getTagSets(): array	(MongoDB\Driver\ReadPreference) Returns the ReadPreferenceaposs "tagSets" option
+>getHedge(): ?object	(MongoDB\Driver\ReadPreference) Returns the ReadPreference's "hedge" option
+>getMaxStalenessSeconds(): int	(MongoDB\Driver\ReadPreference) Returns the ReadPreference's "maxStalenessSeconds" option
+>getMode(): int	(MongoDB\Driver\ReadPreference) Returns the ReadPreference's "mode" option
+>getModeString(): string	(MongoDB\Driver\ReadPreference) Returns the ReadPreference's "mode" option
+>getTagSets(): array	(MongoDB\Driver\ReadPreference) Returns the ReadPreference's "tagSets" option
 MongoDB\Driver\Server()	(new) Create a new Server (not used)
 >executeBulkWrite(string $namespace, MongoDB\Driver\BulkWrite $bulk, ?array $options = null): MongoDB\Driver\WriteResult	(MongoDB\Driver\Server) Execute one or more write operations on this server
 >executeBulkWriteCommand(MongoDB\Driver\BulkWriteCommand $bulk, ?array $options = null): MongoDB\Driver\BulkWriteCommandResult	(MongoDB\Driver\Server) Execute write operations on this server using the bulkWrite command
@@ -4651,17 +4776,17 @@ MongoDB\Driver\Session()	(new) Create a new Session (not used)
 >hasWritableServer(): bool	(MongoDB\Driver\TopologyDescription) Returns whether the topology has a writable server
 >bsonSerialize(): stdClass	(MongoDB\Driver\WriteConcern) Returns an object for BSON serialization
 MongoDB\Driver\WriteConcern(string|int $w, ?int $wtimeout = null, ?bool $journal = null)	(new) Create a new WriteConcern
->getJournal(): ?bool	(MongoDB\Driver\WriteConcern) Returns the WriteConcernaposs "journal" option
->getW(): string|int|null	(MongoDB\Driver\WriteConcern) Returns the WriteConcernaposs "w" option
->getWtimeout(): int	(MongoDB\Driver\WriteConcern) Returns the WriteConcernaposs "wtimeout" option
+>getJournal(): ?bool	(MongoDB\Driver\WriteConcern) Returns the WriteConcern's "journal" option
+>getW(): string|int|null	(MongoDB\Driver\WriteConcern) Returns the WriteConcern's "w" option
+>getWtimeout(): int	(MongoDB\Driver\WriteConcern) Returns the WriteConcern's "wtimeout" option
 >isDefault(): bool	(MongoDB\Driver\WriteConcern) Checks if this is the default write concern
->getCode(): int	(MongoDB\Driver\WriteConcernError) Returns the WriteConcernErroraposs error code
+>getCode(): int	(MongoDB\Driver\WriteConcernError) Returns the WriteConcernError's error code
 >getInfo(): ?object	(MongoDB\Driver\WriteConcernError) Returns metadata document for the WriteConcernError
->getMessage(): string	(MongoDB\Driver\WriteConcernError) Returns the WriteConcernErroraposs error message
->getCode(): int	(MongoDB\Driver\WriteError) Returns the WriteErroraposs error code
+>getMessage(): string	(MongoDB\Driver\WriteConcernError) Returns the WriteConcernError's error message
+>getCode(): int	(MongoDB\Driver\WriteError) Returns the WriteError's error code
 >getIndex(): int	(MongoDB\Driver\WriteError) Returns the index of the write operation corresponding to this WriteError
 >getInfo(): ?object	(MongoDB\Driver\WriteError) Returns metadata document for the WriteError
->getMessage(): string	(MongoDB\Driver\WriteError) Returns the WriteErroraposs error message
+>getMessage(): string	(MongoDB\Driver\WriteError) Returns the WriteError's error message
 >getDeletedCount(): int	(MongoDB\Driver\WriteResult) Returns the number of documents deleted
 >getInsertedCount(): int	(MongoDB\Driver\WriteResult) Returns the number of documents inserted (excluding upserts)
 >getMatchedCount(): int	(MongoDB\Driver\WriteResult) Returns the number of documents selected for update
@@ -4680,7 +4805,7 @@ MongoDB\BSON\MinKeyInterface()	(new) This interface is implemented by MongoDB\BS
 MongoDB\BSON\ObjectIdInterface()	(new) This interface is implemented by MongoDB\BSON\ObjectId to be used as a parameter, return, or property type in userland classes
 MongoDB\BSON\Persistable()	(new) Classes may implement this interface to take advantage of automatic ODM (object document mapping) behavior in the extension
 MongoDB\BSON\RegexInterface()	(new) This interface is implemented by MongoDB\BSON\Regex to be used as a parameter, return, or property type in userland classes
-MongoDB\BSON\Serializable()	(new) Classes that implement this interface may return data to be serialized as a BSON array or document in lieu of the objectaposs public properties
+MongoDB\BSON\Serializable()	(new) Classes that implement this interface may return data to be serialized as a BSON array or document in lieu of the object's public properties
 MongoDB\BSON\TimestampInterface()	(new) This interface is implemented by MongoDB\BSON\Timestamp to be used as a parameter, return, or property type in userland classes
 MongoDB\BSON\Type()	(new) Abstract base interface that should not be implemented directly
 MongoDB\BSON\Unserializable()	(new) Classes that implement this interface may be specified in a type map for unserializing BSON arrays and documents (both root and embedded)
@@ -6413,6 +6538,7 @@ ReflectionClassConstant::export(mixed $class, string $name, bool $return = ?): s
 >isPublic(): bool	(ReflectionClassConstant) Checks if class constant is public
 >__toString(): string	(ReflectionClassConstant) Returns the string representation of the ReflectionClassConstant object
 ReflectionConstant(string $name)	(new) Constructs a ReflectionConstant
+>getAttributes(?string $name = null, int $flags = ?): array	(ReflectionConstant) Gets Attributes
 >getExtension(): ?ReflectionExtension	(ReflectionConstant) Gets ReflectionExtension of the defining extension
 >getExtensionName(): string|false	(ReflectionConstant) Gets name of the defining extension
 >getFileName(): string|false	(ReflectionConstant) Gets name of the defining file
@@ -8633,8 +8759,8 @@ tidy_config_count(tidy $tidy): int	Returns the Number of Tidy configuration erro
 tidy_error_count(tidy $tidy): int	Returns the Number of Tidy errors encountered for specified document
 tidy_get_output(tidy $tidy): string	Return a string representing the parsed tidy markup
 tidy_warning_count(tidy $tidy): int	Returns the Number of Tidy warnings encountered for specified document
->body(): ?tidyNode	(tidy) Returns a tidyNode object starting from the ltbodygt tag of the tidy parse tree
-tidy_get_body(tidy $tidy): ?tidyNode	Returns a tidyNode object starting from the ltbodygt tag of the tidy parse tree
+>body(): ?tidyNode	(tidy) Returns a tidyNode object starting from the <body> tag of the tidy parse tree
+tidy_get_body(tidy $tidy): ?tidyNode	Returns a tidyNode object starting from the <body> tag of the tidy parse tree
 >cleanRepair(): bool	(tidy) Execute configured cleanup and repair operations on parsed markup
 tidy_clean_repair(tidy $tidy): bool	Execute configured cleanup and repair operations on parsed markup
 tidy(?string $filename = null, array|string|null $config = null, ?string $encoding = null, bool $useIncludePath = false)	(new) Constructs a new tidy object
@@ -8653,10 +8779,10 @@ tidy_get_opt_doc(tidy $tidy, string $option): string|false	Returns the documenta
 tidy_get_release(): string	Get release date (version) for Tidy library
 >getStatus(): int	(tidy) Get status of specified document
 tidy_get_status(tidy $tidy): int	Get status of specified document
->head(): ?tidyNode	(tidy) Returns a tidyNode object starting from the ltheadgt tag of the tidy parse tree
-tidy_get_head(tidy $tidy): ?tidyNode	Returns a tidyNode object starting from the ltheadgt tag of the tidy parse tree
->html(): ?tidyNode	(tidy) Returns a tidyNode object starting from the lthtmlgt tag of the tidy parse tree
-tidy_get_html(tidy $tidy): ?tidyNode	Returns a tidyNode object starting from the lthtmlgt tag of the tidy parse tree
+>head(): ?tidyNode	(tidy) Returns a tidyNode object starting from the <head> tag of the tidy parse tree
+tidy_get_head(tidy $tidy): ?tidyNode	Returns a tidyNode object starting from the <head> tag of the tidy parse tree
+>html(): ?tidyNode	(tidy) Returns a tidyNode object starting from the <html> tag of the tidy parse tree
+tidy_get_html(tidy $tidy): ?tidyNode	Returns a tidyNode object starting from the <html> tag of the tidy parse tree
 >isXhtml(): bool	(tidy) Indicates if the document is a XHTML document
 tidy_is_xhtml(tidy $tidy): bool	Indicates if the document is a XHTML document
 >isXml(): bool	(tidy) Indicates if the document is a generic (non HTML/XHTML) XML document
