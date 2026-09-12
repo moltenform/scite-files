@@ -2,32 +2,43 @@
 <?php
 /* Instructions:
 Download PHP Manual: git clone https://github.com/php/doc-en
-Run this script from doc-en/reference/:
-- no parameters: Generate Core, Bundled and External extensions (https://php.net/extensions.membership)
-- parameter "all": Generate all extensions
-- other parameters, e.g. "imap mysql oci8 pdo_oci pdo_sqlsrv sqlsrv": Generate Core, Bundled, External and the ones provided
+Third-party extensions: git clone https://github.com/php/doc-extensions alongside doc-en
+Run this script from:
+- doc-en/reference/: Generate Core, Bundled and External extensions (https://php.net/extensions.membership) - publish as php.api, phpfunctions.properties
+- doc-extensions/reference/: Generate all extensions from both repositories - publish as php-all.api, phpfunctions-all.properties
+Parameters, e.g. "imap mysql oci8 pdo_oci pdo_sqlsrv sqlsrv": Extensions to add to Core, Bundled and External
 Translations: Put doc-es alongside doc-en and run from doc-es/reference/.
 */
 
 const SEP = "\t"; // calltip.hypertext.end.definition
 
-$dirs = array("../language/predefined");
+$enRoot = "../../doc-en/";
+$extRoot = "../../doc-extensions/"; // third-party extensions moved out of doc-en
+$repo = basename(realpath(".."));
+$isExtensions = ($repo == "doc-extensions");
+$isTranslation = (!$isExtensions && $repo != "doc-en");
+
 array_shift($argv);
-$enReference = "../../doc-en/reference/";
-if ($argv == array("all")) {
-	foreach (glob("$enReference*", GLOB_ONLYDIR) as $dir) {
-		$dirs[] = substr($dir, strlen($enReference));
+$dirs = array("language/predefined" => $enRoot); // directory => repository with the English version
+if ($isExtensions) {
+	foreach (array($enRoot, $extRoot) as $root) { // doc-extensions overwrites the copies not removed from doc-en yet
+		foreach (glob($root . "reference/*", GLOB_ONLYDIR) as $dir) {
+			$dirs["reference/" . basename($dir)] = $root;
+		}
 	}
 } else {
-	$xml = simplexml("../../doc-en/appendices/extensions.xml");
+	$xml = simplexml($enRoot . "appendices/extensions.xml");
 	foreach ($xml->xpath("//section") as $section) {
 		if (preg_match('~^extensions\.membership\.(core|bundled|external)$~', $section["id"])) {
 			foreach ($section->itemizedlist->listitem as $listitem) {
-				$dirs[] = preg_replace('~^(book|ref)\.~', '', str_replace("-", "_", $listitem->para->xref["linkend"]));
+				$name = preg_replace('~^(book|ref)\.~', '', str_replace("-", "_", $listitem->para->xref["linkend"]));
+				$dirs["reference/$name"] = root($name);
 			}
 		}
 	}
-	$dirs = array_merge($dirs, $argv);
+}
+foreach ($argv as $name) {
+	$dirs["reference/$name"] = root($name);
 }
 
 /* Structure of php.api:
@@ -66,30 +77,31 @@ __clone(): void' . SEP . 'Called after cloning
 __debugInfo(): array' . SEP . 'Called by var_dump()
 ');
 
-foreach ($dirs as $dir) {
+foreach ($dirs as $key => $root) {
 	echo ".";
+	$dir = $root . $key;
+
+	if (!is_dir($dir)) {
+		echo "\n$dir not found";
+		continue;
+	}
 
 	$translations = array();
-	if (basename(dirname(dirname(realpath($dir)))) != "doc-en") {
-		foreach (rglob("$dir/*.xml") as $filename) {
+	if ($isTranslation) {
+		$translated = "../$key";
+		foreach (rglob("$translated/*.xml") as $filename) {
 			$xml = simplexml($filename);
 			if (!$xml) {
 				continue;
 			}
 			$purpose = $xml->refnamediv->refpurpose;
 			if ($purpose) {
-				$translations[substr($filename, strlen($dir))] = text($purpose);
+				$translations[substr($filename, strlen($translated))] = text($purpose);
 			} elseif ($xml["id"] && preg_match('~^class\.~', $xml["id"])) {
 				$section = $xml->partintro->section;
-				$translations[substr($filename, strlen($dir))] = text($section->para ?: $section->simpara);
+				$translations[substr($filename, strlen($translated))] = text($section->para ?: $section->simpara);
 			}
 		}
-		$dir = $enReference . $dir;
-	}
-
-	if (!is_dir($dir)) {
-		echo "\n$dir not found";
-		continue;
 	}
 
 	$classes = array();
@@ -137,9 +149,9 @@ foreach ($dirs as $dir) {
 }
 echo "\n";
 
-fileConstants("$enReference../appendices/tokens.xml");
-foreach ($dirs as $dir) {
-	foreach (glob("$enReference$dir/constants.xml") as $filename) {
+fileConstants($enRoot . "appendices/tokens.xml");
+foreach ($dirs as $key => $root) {
+	foreach (glob("$root$key/constants.xml") as $filename) {
 		fileConstants($filename);
 	}
 }
@@ -177,6 +189,11 @@ if PLAT_MAC
 
 keywordclass.php=\\
 '. implode(" \\\n", array_keys($keywords)) . "\n");
+
+function root($name) { // doc-extensions is authoritative for what it documents
+	global $enRoot, $extRoot;
+	return (is_dir($extRoot . "reference/$name") ? $extRoot : $enRoot);
+}
 
 function isStatic($synopsis) {
 	foreach ($synopsis->modifier as $modifier) {
