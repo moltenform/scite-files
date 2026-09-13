@@ -173,7 +173,7 @@ Override()	(new) Construye una nueva instancia del atributo Override
 BackedEnum::from(int|string $value): static	Convierte un escalar en una instancia de enum
 BackedEnum::tryFrom(int|string $value): ?static	Asocia un escalar a una instancia de enum o a null
 Closure::bind(Closure $closure, ?object $newThis, object|string|null $newScope = "static"): ?Closure	Duplicar un cierre con un objeto vinculado y ámbito de clase especificados
->bindTo(?object $newThis, object|string|null $newScope = "static"): ?Closure	(Closure) Duplica la cierre con un nuevo objeto vinculado y un nuevo contexto de clase.
+>bindTo(?object $newThis, object|string|null $newScope = "static"): ?Closure	(Closure) Duplica el cierre con un nuevo objeto vinculado y un nuevo ámbito de clase.
 >call(object $newThis, mixed ...$args): mixed	(Closure) Vincula y llama al cierre
 Closure()	(new) Constructor que anula la instanciación
 Closure::fromCallable(callable $callback): Closure	Convierte un 'callable' en un cierre
@@ -279,12 +279,12 @@ Serializable()	(new) Interfaz que permite personalizar la serialización
 stdClass()	(new) Una clase genérica vacía con propiedades dinámicas
 Stringable()	(new) La interfaz Stringable designa una clase que posee un método __toString()
 Throwable()	(new) Throwable es la interfaz base para cualquier objeto que pueda ser lanzado mediante una sentencia throw, incluyendo Error y Exception
-Traversable()	(new) Interfaz para detectar si una clase puede recorrerse mediante foreach
+Traversable()	(new) Una interfaz abstracta base no puede ser implementada sola
 TypeError()	(new) Una TypeError puede ser lanzada cuando: El valor que se define para una propiedad de clase no corresponde al tipo declarado de la propiedad correspondiente
 UnhandledMatchError()	(new) Una UnhandledMatchError es lanzada cuando el sujeto transmitido a una expresión match no es tratado por ningún brazo de esta misma expresión
 UnitEnum()	(new) La interfaz UnitEnum es automáticamente aplicada a todas las enumeraciones por el motor
 ValueError()	(new) Una ValueError se lanza cuando el tipo de un argumento es correcto pero su valor es incorrecto
-WeakMap()	(new) Un WeakMap es un array asociativo (o diccionario) que acepta objetos como claves
+WeakMap()	(new) WeakMap implementa ArrayAccess, Traversable (vía IteratorAggregate), y Countable, de modo que, en la mayoría de los casos, puede ser utilizado de la misma manera que un array asociativo
 DelayedTargetValidation()	(new) This attribute delays target validation errors for internal attributes from compile time to when the attribute is instantiated via the Reflection API
 array_all(array $array, callable $callback): bool	Verifica si todos los elementos del array validan la función de retrollamada
 array_any(array $array, callable $callback): bool	Verifica que al menos un elemento del array valide la función de retrollamada
@@ -681,8 +681,8 @@ fpm_get_status(): array|false	Devuelve el estado actual del pool FPM
 call_user_func_array(callable $callback, array $args): mixed	Llama a una función de retorno con los argumentos agrupados en un array
 call_user_func(callable $callback, mixed ...$args): mixed	Llama a una función de retorno proporcionada por el primer argumento
 create_function(string $args, string $code): string	Crea una función anónima
-forward_static_call_array(callable $callback, array $args): mixed	Llamar a un método estático y pasar los argumentos como matriz
-forward_static_call(callable $callback, mixed ...$args): mixed	Llamar a un método estático
+forward_static_call_array(callable $callback, array $args): mixed	Llama a una función de devolución de llamada con una matriz de parámetros, preservando la clase llamada actual
+forward_static_call(callable $callback, mixed ...$args): mixed	Llama a una función de devolución de llamada preservando la clase llamada actual
 func_get_arg(int $position): mixed	Devuelve un elemento de la lista de argumentos
 func_get_args(): array	Devuelve los argumentos de una función en forma de array
 func_num_args(): int	Devuelve el número de argumentos pasados a la función
@@ -748,7 +748,7 @@ ini_parse_quantity(string $shorthand): int	Devuelve el tamaño interpretado a pa
 ini_restore(string $option): void	Restaura el valor de la opción de configuración
 ini_set(string $option, string|int|float|bool|null $value): string|false	Modifica el valor de una opción de configuración
 memory_get_peak_usage(bool $real_usage = false): int	Devuelve la cantidad máxima de memoria asignada por PHP
-memory_get_usage(bool $real_usage = false): int	Indica la cantidad de memoria utilizada por PHP
+memory_get_usage(bool $real_usage = false): int	Indica la cantidad de memoria asignada al script PHP, o reservada al sistema por el gestor de memoria de PHP
 memory_reset_peak_usage(): void	Reinicia el uso máximo de memoria
 php_ini_loaded_file(): string|false	Obtiene la ruta de un archivo php.ini cargado
 php_ini_scanned_files(): string|false	Devuelve la lista de ficheros .ini analizados en los directorios de configuración adicionales
@@ -1050,7 +1050,7 @@ ReflectionClass::export(mixed $argument, bool $return = false): string	Exporta u
 >newLazyProxy(callable $factory, int $options = ?): object	(ReflectionClass) Crear una nueva instancia proxy perezosa
 >resetAsLazyGhost(object $object, callable $initializer, int $options = ?): void	(ReflectionClass) Reinicia un objeto y lo marca como perezoso
 >resetAsLazyProxy(object $object, callable $factory, int $options = ?): void	(ReflectionClass) Reinicia un objeto y lo marca como perezoso
->setStaticPropertyValue(string $name, mixed $value): void	(ReflectionClass) Define el valor de una propiedad estática pública
+>setStaticPropertyValue(string $name, mixed $value): void	(ReflectionClass) Establece el valor de una propiedad estática
 >__toString(): string	(ReflectionClass) Crea una representación textual del objeto
 ReflectionClassConstant(object|string $class, string $constant)	(new) Construye una ReflectionClassConstant
 ReflectionClassConstant::export(mixed $class, string $name, bool $return = ?): string	Exporta
@@ -1070,7 +1070,7 @@ ReflectionClassConstant::export(mixed $class, string $name, bool $return = ?): s
 >isPublic(): bool	(ReflectionClassConstant) Verifica si la constante de clase es pública
 >__toString(): string	(ReflectionClassConstant) Devuelve la representación en forma de string del objeto ReflectionClassConstant
 ReflectionConstant(string $name)	(new) Construye un ReflectionConstant
->getAttributes(?string $name = null, int $flags = ?): array	(ReflectionConstant) Gets Attributes
+>getAttributes(?string $name = null, int $flags = ?): array	(ReflectionConstant) Obtiene los atributos
 >getExtension(): ?ReflectionExtension	(ReflectionConstant) Devuelve la ReflectionExtension de la extensión definitoria
 >getExtensionName(): string|false	(ReflectionConstant) Devuelve el nombre de la extensión definitoria
 >getFileName(): string|false	(ReflectionConstant) Devuelve el nombre del fichero que define
@@ -1219,6 +1219,7 @@ ReflectionProperty::export(mixed $class, string $name, bool $return = ?): string
 >getDocComment(): string|false	(ReflectionProperty) Recupera el comentario de documentación de una propiedad
 >getHook(PropertyHookType $type): ?ReflectionMethod	(ReflectionProperty) Devuelve un objeto de reflexión para un hook dado
 >getHooks(): array	(ReflectionProperty) Devuelve un array de todos los hooks en esta propiedad
+>getMangledName(): string	(ReflectionProperty) Obtiene el nombre modificado de la propiedad
 >getModifiers(): int	(ReflectionProperty) Obtiene los modificadores de propiedad
 >getName(): string	(ReflectionProperty) Obtiene el nombre de la propiedad
 >getRawValue(object $object): mixed	(ReflectionProperty) Devuelve el valor de la propiedad, evitando un hook get si está definido
@@ -2439,6 +2440,7 @@ intl_get_error_code(): int	Lee el último código de error
 intl_get_error_message(): string	Lee la descripción del último error
 intl_is_failure(int $errorCode): bool	Verifica si un código de error indica un fallo
 grapheme_extract(string $haystack, int $size, int $type = GRAPHEME_EXTR_COUNT, int $offset = ?, int &$next = null): string|false	Extrae un grupo de grafemas de una cadena UTF-8
+grapheme_levenshtein(string $string1, string $string2, int $insertion_cost = 1, int $replacement_cost = 1, int $deletion_cost = 1, string $locale = ""): int|false	Calcula la distancia de Levenshtein entre dos cadenas en unidades de grafema
 grapheme_str_split(string $string, int $length = 1): array|false	Divide una string en un array
 grapheme_stripos(string $haystack, string $needle, int $offset = ?, string $locale = ""): int|false	Encuentra la posición en grafema de la primera ocurrencia en una cadena, insensible a mayúsculas/minúsculas
 grapheme_stristr(string $haystack, string $needle, bool $beforeNeedle = false, string $locale = ""): string|false	Devuelve la parte de una cadena a partir de una ocurrencia
@@ -2636,13 +2638,18 @@ IntlGregorianCalendar(int $timeZoneOrYear, int $localeOrMonth, int $dayOfMonth, 
 IntlGregorianCalendar::createFromDate(int $year, int $month, int $dayOfMonth): static	Crear una nueva instancia de IntlGregorianCalendar a partir de una fecha
 IntlGregorianCalendar::createFromDateTime(int $year, int $month, int $dayOfMonth, int $hour, int $minute, ?int $second = null): static	Crear una nueva instancia de IntlGregorianCalendar a partir de una fecha y hora
 >getGregorianChange(): float	(IntlGregorianCalendar) Devuelve la fecha de cambio del calendario gregoriano
+intlgregcal_get_gregorian_change(IntlGregorianCalendar $calendar): float	Devuelve la fecha de cambio del calendario gregoriano
 >isLeapYear(int $year): bool	(IntlGregorianCalendar) Determina si el año dado es un año bisiesto
+intlgregcal_is_leap_year(IntlGregorianCalendar $calendar, int $year): bool	Determina si el año dado es un año bisiesto
 >setGregorianChange(float $timestamp): bool	(IntlGregorianCalendar) Establece la fecha de cambio del calendario gregoriano
+intlgregcal_set_gregorian_change(IntlGregorianCalendar $calendar, float $timestamp): bool	Establece la fecha de cambio del calendario gregoriano
 >current(): mixed	(IntlIterator) Obtiene el elemento actual
 >key(): mixed	(IntlIterator) Obtiene la clave actual
 >next(): void	(IntlIterator) Se desplaza al elemento siguiente
 >rewind(): void	(IntlIterator) Reubica el iterador en el primer elemento
 >valid(): bool	(IntlIterator) Verifica si la posición actual es válida
+IntlListFormatter(string $locale, int $type = IntlListFormatter::TYPE_AND, int $width = IntlListFormatter::WIDTH_WIDE)	(new) Crea una nueva instancia de IntlListFormatter
+>format(array $list): string|false	(IntlListFormatter) Formatea una lista de elementos
 >getBreakIterator(): IntlBreakIterator	(IntlPartsIterator) Obtiene IntlBreakIterator, preservando así esta parte del iterador
 IntlRuleBasedBreakIterator(string $rules, bool $compiled = false)	(new) Crea un iterador desde un conjunto de reglas
 >getBinaryRules(): string|false	(IntlRuleBasedBreakIterator) Obtiene la forma binaria de las reglas compiladas
@@ -2702,6 +2709,8 @@ intltz_to_date_time_zone(IntlTimeZone $timezone): DateTimeZone|false	Convierte u
 intltz_use_daylight_time(IntlTimeZone $timezone): bool	Verifica si este huso horario utiliza la hora de verano
 Locale::acceptFromHttp(string $header): string|false	Determina la mejor configuración local a partir del encabezado HTTP "Accept-Language"
 locale_accept_from_http(string $header): string|false	Determina la mejor configuración local a partir del encabezado HTTP "Accept-Language"
+Locale::addLikelySubtags(string $locale): string|false	Añade las subetiquetas probables a una locale
+locale_add_likely_subtags(string $locale): string|false	Añade las subetiquetas probables a una locale
 Locale::canonicalize(string $locale): ?string	Canoniza la cadena que representa la configuración local
 Locale::composeLocale(array $subtags): string|false	Retorna un identificador de configuración regional correcto
 locale_compose(array $subtags): string|false	Retorna un identificador de configuración regional correcto
@@ -2733,6 +2742,8 @@ Locale::isRightToLeft(string $locale = ""): bool	Comprueba si una configuración
 locale_is_right_to_left(string $locale = ""): bool	Comprueba si una configuración regional usa un sistema de escritura de derecha a izquierda
 Locale::lookup(array $languageTag, string $locale, bool $canonicalize = false, ?string $defaultLocale = null): ?string	Búsqueda en la lista de la mejor lengua
 locale_lookup(array $languageTag, string $locale, bool $canonicalize = false, ?string $defaultLocale = null): ?string	Búsqueda en la lista de la mejor lengua
+Locale::minimizeSubtags(string $locale): string|false	Elimina las subetiquetas probables de una locale
+locale_minimize_subtags(string $locale): string|false	Elimina las subetiquetas probables de una locale
 Locale::parseLocale(string $locale): ?array	Devuelve los subelementos de la configuración regional
 locale_parse(string $locale): ?array	Devuelve los subelementos de la configuración regional
 Locale::setDefault(string $locale): true	Configura la configuración local por defecto
@@ -2944,7 +2955,7 @@ pcntl_getcpu(): int	Obtiene el número de CPU en la que el proceso llamante se e
 pcntl_getcpuaffinity(?int $process_id = null): array|false	Devuelve la afinidad de CPU de un proceso
 pcntl_getpriority(?int $process_id = null, int $mode = PRIO_PROCESS): int|false	Devuelve la prioridad de un proceso
 pcntl_getqos_class(): Pcntl\QosClass	Obtiene la clase de calidad de servicio del hilo actual
-pcntl_rfork(int $flags, int $signal = ?): int	Manipula los recursos del proceso
+pcntl_rfork(int $flags, int $signal = ?): int	Manipula los recursos de un proceso
 pcntl_setcpuaffinity(?int $process_id = null, array $cpu_ids = []): bool	Define la afinidad de CPU de un proceso
 pcntl_setns(?int $process_id = null, int $nstype = CLONE_NEWNET): bool	Reasocia el proceso llamante con un espacio de nombres de otro proceso
 pcntl_setpriority(int $priority, ?int $process_id = null, int $mode = PRIO_PROCESS): bool	Cambia la prioridad de un proceso
@@ -3287,10 +3298,12 @@ SQLite3(string $filename, int $flags = SQLITE3_OPEN_READWRITE | SQLITE3_OPEN_CRE
 >createCollation(string $name, callable $callback): bool	(SQLite3) Registra una función PHP para utilizarla como función de clasificación SQL
 >createFunction(string $name, callable $callback, int $argCount = -1, int $flags = ?): bool	(SQLite3) Registra una función PHP para su uso como función escalar SQL
 >enableExceptions(bool $enable = false): bool	(SQLite3) Activa el lanzamiento de excepciones
+>enableExtendedResultCodes(bool $enable = true): bool	(SQLite3) Enables or disables the use of extended result codes
 SQLite3::escapeString(string $string): string	Devuelve una cadena limpiada
 >exec(string $query): bool	(SQLite3) Ejecuta una consulta en una base de datos
 >lastErrorCode(): int	(SQLite3) Devuelve el código de error de la última consulta SQL que ha fallado
 >lastErrorMsg(): string	(SQLite3) Devuelve el mensaje de error, en inglés, de la última consulta que ha fallado
+>lastExtendedErrorCode(): int	(SQLite3) Returns the numeric extended result code of the most recent failed SQLite request
 >lastInsertRowID(): int	(SQLite3) Devuelve el identificador de la fila correspondiente a la última consulta de tipo INSERT
 >loadExtension(string $name): bool	(SQLite3) Intenta cargar una extensión de la biblioteca SQLite
 >open(string $filename, int $flags = SQLITE3_OPEN_READWRITE | SQLITE3_OPEN_CREATE, string $encryptionKey = ""): void	(SQLite3) Abre una base de datos SQLite
@@ -3309,14 +3322,17 @@ SQLite3Result()	(new) Construye un SQLite3Result
 >reset(): bool	(SQLite3Result) Reposiciona el puntero en la primera línea del conjunto de resultados
 >bindParam(string|int $param, mixed &$var, int $type = SQLITE3_TEXT): bool	(SQLite3Stmt) Asocia un parámetro a una variable de declaración
 >bindValue(string|int $param, mixed $value, int $type = SQLITE3_TEXT): bool	(SQLite3Stmt) Asocia el valor de un parámetro a una variable de declaración
+>busy(): bool	(SQLite3Stmt) Indica si el comando se ha ejecutado pero aún no ha terminado
 >clear(): bool	(SQLite3Stmt) Elimina todos los parámetros actualmente vinculados
 >close(): true	(SQLite3Stmt) Cierra una consulta preparada
 SQLite3Stmt(SQLite3 $sqlite3, string $query)	(new) Construye un objeto SQLite3Stmt
 >execute(): SQLite3Result|false	(SQLite3Stmt) Ejecuta una consulta preparada
+>explain(): int	(SQLite3Stmt) Devuelve el modo explain del comando
 >getSQL(bool $expand = false): string|false	(SQLite3Stmt) Recupera el SQL de una declaración
 >paramCount(): int	(SQLite3Stmt) Devuelve el número de argumentos de una consulta preparada
 >readOnly(): bool	(SQLite3Stmt) Determina si una declaración es de solo lectura
 >reset(): bool	(SQLite3Stmt) Reinicia una consulta preparada
+>setExplain(int $mode): bool	(SQLite3Stmt) Modifica el modo explain del comando
 SQLite3Exception()	(new) Representa una excepción específica de SQLite3
 token_get_all(string $code, int $flags = ?): array	Divide la fuente dada en tokens PHP
 token_name(int $id): string	Obtiene el nombre simbólico de un token PHP dado
@@ -3387,7 +3403,7 @@ curl_init(?string $url = null): CurlHandle|false	Inicializa una sesión cURL
 curl_multi_add_handle(CurlMultiHandle $multi_handle, CurlHandle $handle): int	Añade un recurso cURL a un cURL múltiple
 curl_multi_close(CurlMultiHandle $multi_handle): void	Eliminar todos los gestores cURL de un gestor múltiple
 curl_multi_errno(CurlMultiHandle $multi_handle): int	Devuelve el último número de error múltiple cURL
-curl_multi_exec(CurlMultiHandle $multi_handle, int &$still_running): int	Ejecuta las subpeticiones de la sesión cURL
+curl_multi_exec(CurlMultiHandle $multi_handle, int &$still_running): int	Procesa cada uno de los gestores de la pila
 curl_multi_getcontent(CurlHandle $handle): ?string	Devuelve el contenido obtenido con la opción CURLOPT_RETURNTRANSFER
 curl_multi_info_read(CurlMultiHandle $multi_handle, int &$queued_messages = null): array|false	Lee las informaciones sobre las transferencias actuales
 curl_multi_init(): CurlMultiHandle	Devuelve un nuevo cURL múltiple
@@ -3652,6 +3668,8 @@ enchant_dict_get_error(EnchantDictionary $dictionary): string|false	Devuelve el 
 enchant_dict_is_added(EnchantDictionary $dictionary, string $word): bool	Si la palabra existe o no en esta sesión de ortografía
 enchant_dict_is_in_session()	Alias of enchant_dict_is_added
 enchant_dict_quick_check(EnchantDictionary $dictionary, string $word, array &$suggestions = null): bool	Verifica si la palabra está correctamente escrita y proporciona sugerencias
+enchant_dict_remove_from_session(EnchantDictionary $dictionary, string $word): void	Remove a word from the session dictionary
+enchant_dict_remove(EnchantDictionary $dictionary, string $word): void	Add a word to the exclusion list and remove it from the personal dictionary
 enchant_dict_store_replacement(EnchantDictionary $dictionary, string $misspelled, string $correct): void	Añade una ortografía para una palabra
 enchant_dict_suggest(EnchantDictionary $dictionary, string $word): array	Sugerir ortografías para una palabra
 EnchantBroker()	(new) Una clase totalmente opaca que reemplaza los recursos enchant_broker a partir de PHP 8
@@ -3796,13 +3814,9 @@ libxml_set_external_entity_loader(?callable $resolver_function): true	Cambia el 
 libxml_set_streams_context(resource $context): void	Configura el contexto de flujos para la próxima operación libxml
 libxml_use_internal_errors(?bool $use_errors = null): bool	Se desactiva el reporte de errores de libxml y se almacenan para su lectura posterior
 LibXMLError()	(new) Contiene diversas informaciones sobre los errores emitidos por la biblioteca libxml
-mysqli_connect()	Alias of mysqli::__construct
->escape_string()	(mysqli) Alias of mysqli_real_escape_string
 mysqli_execute()	Alias of mysqli_stmt_execute
 mysqli_get_client_stats(): array	Devuelve las estadísticas del cliente por proceso
 mysqli_get_links_stats(): array	Devuelve información sobre los enlaces abiertos y almacenados en caché
-mysqli_report()	Alias of mysqli_driver->report_mode
->set_opt()	(mysqli) Alias of mysqli_options
 mysqli_affected_rows(mysqli $mysql): int|string	Devuelve el número de filas afectadas por la última operación MySQL
 >autocommit(bool $enable): bool	(mysqli) Activa o desactiva el modo auto-commit
 mysqli_autocommit(mysqli $mysql, bool $enable): bool	Activa o desactiva el modo auto-commit
@@ -3827,6 +3841,7 @@ mysqli_dump_debug_info(mysqli $mysql): bool	Escribe la información de depuraci�
 mysqli_errno(mysqli $mysql): int	Devuelve el último código de error producido
 mysqli_error_list(mysqli $mysql): array	Devuelve una lista de errores desde el último comando ejecutado
 mysqli_error(mysqli $mysql): string	Devuelve un string que describe el último error
+>escape_string()	(mysqli) Alias of mysqli_real_escape_string
 >execute_query(string $query, ?array $params = null): mysqli_result|bool	(mysqli) Prepara, vincula los parámetros y ejecuta una sentencia SQL
 mysqli_execute_query(mysqli $mysql, string $query, ?array $params = null): mysqli_result|bool	Prepara, vincula los parámetros y ejecuta una sentencia SQL
 mysqli_field_count(mysqli $mysql): int	Devuelve el número de columnas para la última consulta
@@ -3886,6 +3901,7 @@ mysqli_savepoint(mysqli $mysql, string $name): bool	Establece un punto de guarda
 mysqli_select_db(mysqli $mysql, string $database): bool	Selecciona una base de datos por defecto para las consultas
 >set_charset(string $charset): bool	(mysqli) Define el juego de caracteres del cliente
 mysqli_set_charset(mysqli $mysql, string $charset): bool	Define el juego de caracteres del cliente
+>set_opt()	(mysqli) Alias of mysqli_options
 mysqli_sqlstate(mysqli $mysql): string	Devuelve el error SQLSTATE de la última operación MySQL
 >ssl_set(?string $key, ?string $certificate, ?string $ca_certificate, ?string $ca_path, ?string $cipher_algos): true	(mysqli) Utilizada para establecer una conexión segura con SSL
 mysqli_ssl_set(mysqli $mysql, ?string $key, ?string $certificate, ?string $ca_certificate, ?string $ca_path, ?string $cipher_algos): true	Utilizada para establecer una conexión segura con SSL
@@ -4092,6 +4108,7 @@ Pdo\Pgsql()	(new) Este controlador admite un analizador de consultas SQL dedicad
 >createFunction(string $function_name, callable $callback, int $num_args = -1, int $flags = ?): bool	(Pdo\Sqlite) Registra una función de usuario para su uso en las sentencias SQL
 >loadExtension(string $name): void	(Pdo\Sqlite) Descripción
 >openBlob(string $table, string $column, int $rowid, ?string $dbname = "main", int $flags = Pdo\Sqlite::OPEN_READONLY): resource|false	(Pdo\Sqlite) Descripción
+>setAuthorizer(?callable $callback): void	(Pdo\Sqlite) Configura una retrollamada para usarla como autorizador y limitar lo que puede hacer una sentencia
 >sqliteCreateAggregate(string $name, callable $step, callable $finalize, int $numArgs = -1): bool	(PDO) Alias Pdo\Sqlite::createAggregate
 >sqliteCreateCollation(string $name, callable $callback): bool	(PDO) Alias Pdo\Sqlite::createCollation
 >sqliteCreateFunction(string $function_name, callable $callback, int $num_args = -1, int $flags = ?): bool	(PDO) Alias Pdo\Sqlite::createFunction
@@ -4100,6 +4117,7 @@ pg_affected_rows(PgSql\Result $result): int	Devuelve el número de filas afectad
 pg_cancel_query(PgSql\Connection $connection): bool	Cancela una consulta asíncrona
 pg_change_password(PgSql\Connection $connection, string $user, string $password): bool	Cambia la contraseña de un usuario de PostgreSQL
 pg_client_encoding(?PgSql\Connection $connection = null): string	Lee la codificación del cliente
+pg_close_stmt(PgSql\Connection $connection, string $statement_name): PgSql\Result|false	Closes a prepared statement
 pg_close(?PgSql\Connection $connection = null): true	Finaliza una conexión PostgreSQL
 pg_connect_poll(PgSql\Connection $connection): int	Prueba el estado de un intento de conexión asíncrona a PostgreSQL en curso
 pg_connect(string $connection_string, int $flags = ?): PgSql\Connection|false	Establece una conexión PostgreSQL
@@ -4184,6 +4202,7 @@ pg_send_execute(PgSql\Connection $connection, string $statement_name, array $par
 pg_send_prepare(PgSql\Connection $connection, string $statement_name, string $query): int|bool	Envía una solicitud para crear una consulta preparada con los argumentos dados, sin esperar el final de su ejecución
 pg_send_query_params(PgSql\Connection $connection, string $query, array $params): int|bool	Envía un comando y separa los parámetros al servidor sin esperar el/los resultado(s)
 pg_send_query(PgSql\Connection $connection, string $query): int|bool	Ejecuta una consulta PostgreSQL asíncrona
+pg_service(?PgSql\Connection $connection = null): string	Gets the service name of the connection
 pg_set_chunked_rows_size(PgSql\Connection $connection, int $size): bool	Establece los resultados de la consulta a recuperar en modo chunk
 pg_set_client_encoding(PgSql\Connection $connection = ?, string $encoding): int	Establece la codificación del cliente PostgreSQL
 pg_set_error_context_visibility(PgSql\Connection $connection, int $visibility): int	Determina la visibilidad de los mensajes de error de contexto devueltos por pg_last_error y pg_result_error
@@ -5949,7 +5968,6 @@ SI_NOINFO
 SI_KERNEL
 SI_QUEUE
 SI_TIMER
-SI_MSGGQ
 SI_ASYNCIO
 SI_SIGIO
 SI_TKILL
@@ -6461,6 +6479,20 @@ SO_EXCLBIND
 SO_NOSIGPIPE
 SO_LINGER_SEC
 SO_BINDTOIFINDEX
+SHUT_RD
+SHUT_WR
+SHUT_RDWR
+UDP_SEGMENT
+SO_BUSY_POLL
+IP_BINDANY
+TCP_FUNCTION_BLK
+TCP_FUNCTION_ALIAS
+TCP_REUSPORT_LB_NUMA
+TCP_REUSPORT_LB_NUMA_NODOM
+TCP_REUSPORT_LB_NUMA_CURDOM
+TCP_BBR_ALGORITHM
+IPPROTO_ICMP
+IPPROTO_ICMPV6
 SQLITE3_ASSOC
 SQLITE3_NUM
 SQLITE3_BOTH

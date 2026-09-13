@@ -262,7 +262,7 @@ WeakReference::create(object $object): WeakReference	Create a new weak reference
 >get(): ?object	(WeakReference) Get a weakly referenced Object
 ArgumentCountError()	(new) ArgumentCountError is thrown when too few arguments are passed to a user-defined function or method
 ArithmeticError()	(new) ArithmeticError is thrown when an error occurs while performing mathematical operations
-ArrayAccess()	(new) Interface to provide accessing objects as arrays
+ArrayAccess()	(new) Interface to provide access to objects as arrays
 AssertionError()	(new) AssertionError is thrown when an assertion made via assert fails
 BackedEnum()	(new) The BackedEnum interface is automatically applied to backed enumerations by the engine
 ClosedGeneratorException()	(new) A ClosedGeneratorException is thrown when trying to retrieve a value from a closed Generator
@@ -283,8 +283,8 @@ Traversable()	(new) Abstract base interface that cannot be implemented alone
 TypeError()	(new) A TypeError may be thrown when: The value being set for a class property does not match the property's corresponding declared type
 UnhandledMatchError()	(new) An UnhandledMatchError is thrown when the subject passed to a match expression is not handled by any arm of the match expression
 UnitEnum()	(new) The UnitEnum interface is automatically applied to all enumerations by the engine
-ValueError()	(new) A ValueError is thrown when the type of an argument is correct but the value of it is incorrect
-WeakMap()	(new) A WeakMap is map (or dictionary) that accepts objects as keys
+ValueError()	(new) A ValueError is thrown when the type of an argument is correct but its value is incorrect
+WeakMap()	(new) WeakMap implements ArrayAccess, Traversable (via IteratorAggregate), and Countable, so in most cases it can be used in the same fashion as an associative array
 DelayedTargetValidation()	(new) This attribute delays target validation errors for internal attributes from compile time to when the attribute is instantiated via the Reflection API
 array_all(array $array, callable $callback): bool	Checks if all array elements satisfy a callback function
 array_any(array $array, callable $callback): bool	Checks if at least one array element satisfies a callback function
@@ -681,8 +681,8 @@ fpm_get_status(): array|false	Returns the current FPM pool status
 call_user_func_array(callable $callback, array $args): mixed	Call a callback with an array of parameters
 call_user_func(callable $callback, mixed ...$args): mixed	Call the callback given by the first parameter
 create_function(string $args, string $code): string	Create a function dynamically by evaluating a string of code
-forward_static_call_array(callable $callback, array $args): mixed	Call a static method and pass the arguments as array
-forward_static_call(callable $callback, mixed ...$args): mixed	Call a static method
+forward_static_call_array(callable $callback, array $args): mixed	Call a callback with an array of parameters, preserving the current called class
+forward_static_call(callable $callback, mixed ...$args): mixed	Call a callback while preserving the current called class
 func_get_arg(int $position): mixed	Return an item from the argument list
 func_get_args(): array	Returns an array comprising a function's argument list
 func_num_args(): int	Returns the number of arguments passed to the function
@@ -748,7 +748,7 @@ ini_parse_quantity(string $shorthand): int	Get interpreted size from ini shortha
 ini_restore(string $option): void	Restores the value of a configuration option
 ini_set(string $option, string|int|float|bool|null $value): string|false	Sets the value of a configuration option
 memory_get_peak_usage(bool $real_usage = false): int	Returns the peak of memory allocated by PHP
-memory_get_usage(bool $real_usage = false): int	Returns the amount of memory allocated to PHP
+memory_get_usage(bool $real_usage = false): int	Returns the amount of memory allocated to the PHP script, or reserved from the system by PHP's memory manager
 memory_reset_peak_usage(): void	Reset the peak memory usage
 php_ini_loaded_file(): string|false	Retrieve a path to the loaded php.ini file
 php_ini_scanned_files(): string|false	Return a list of .ini files parsed from the additional ini dir
@@ -1050,7 +1050,7 @@ ReflectionClass::export(mixed $argument, bool $return = false): string	Exports a
 >newLazyProxy(callable $factory, int $options = ?): object	(ReflectionClass) Creates a new lazy proxy instance
 >resetAsLazyGhost(object $object, callable $initializer, int $options = ?): void	(ReflectionClass) Resets an object and marks it as lazy
 >resetAsLazyProxy(object $object, callable $factory, int $options = ?): void	(ReflectionClass) Resets an object and marks it as lazy
->setStaticPropertyValue(string $name, mixed $value): void	(ReflectionClass) Sets public static property value
+>setStaticPropertyValue(string $name, mixed $value): void	(ReflectionClass) Sets static property value
 >__toString(): string	(ReflectionClass) Returns the string representation of the ReflectionClass object
 ReflectionClassConstant(object|string $class, string $constant)	(new) Constructs a ReflectionClassConstant
 ReflectionClassConstant::export(mixed $class, string $name, bool $return = ?): string	Export
@@ -1219,6 +1219,7 @@ ReflectionProperty::export(mixed $class, string $name, bool $return = ?): string
 >getDocComment(): string|false	(ReflectionProperty) Gets the property doc comment
 >getHook(PropertyHookType $type): ?ReflectionMethod	(ReflectionProperty) Returns a reflection object for a specified hook
 >getHooks(): array	(ReflectionProperty) Returns an array of all hooks on this property
+>getMangledName(): string	(ReflectionProperty) Gets the mangled name of the property
 >getModifiers(): int	(ReflectionProperty) Gets the property modifiers
 >getName(): string	(ReflectionProperty) Gets property name
 >getRawValue(object $object): mixed	(ReflectionProperty) Returns the value of a property, bypassing a get hook if defined
@@ -2439,6 +2440,7 @@ intl_get_error_code(): int	Get the last error code
 intl_get_error_message(): string	Get description of the last error
 intl_is_failure(int $errorCode): bool	Check whether the given error code indicates failure
 grapheme_extract(string $haystack, int $size, int $type = GRAPHEME_EXTR_COUNT, int $offset = ?, int &$next = null): string|false	Function to extract a sequence of default grapheme clusters from a text buffer, which must be encoded in UTF-8
+grapheme_levenshtein(string $string1, string $string2, int $insertion_cost = 1, int $replacement_cost = 1, int $deletion_cost = 1, string $locale = ""): int|false	Calculate Levenshtein distance between two strings in grapheme units
 grapheme_str_split(string $string, int $length = 1): array|false	Split a string into an array
 grapheme_stripos(string $haystack, string $needle, int $offset = ?, string $locale = ""): int|false	Find position (in grapheme units) of first occurrence of a case-insensitive string
 grapheme_stristr(string $haystack, string $needle, bool $beforeNeedle = false, string $locale = ""): string|false	Returns part of haystack string from the first occurrence of case-insensitive needle to the end of haystack
@@ -2636,13 +2638,18 @@ IntlGregorianCalendar(int $timeZoneOrYear, int $localeOrMonth, int $dayOfMonth, 
 IntlGregorianCalendar::createFromDate(int $year, int $month, int $dayOfMonth): static	Create a new IntlGregorianCalendar instance from date
 IntlGregorianCalendar::createFromDateTime(int $year, int $month, int $dayOfMonth, int $hour, int $minute, ?int $second = null): static	Create a new IntlGregorianCalendar instance from date and time
 >getGregorianChange(): float	(IntlGregorianCalendar) Get the Gregorian Calendar change date
+intlgregcal_get_gregorian_change(IntlGregorianCalendar $calendar): float	Get the Gregorian Calendar change date
 >isLeapYear(int $year): bool	(IntlGregorianCalendar) Determine if the given year is a leap year
->setGregorianChange(float $timestamp): bool	(IntlGregorianCalendar) Set the Gregorian Calendar the change date
+intlgregcal_is_leap_year(IntlGregorianCalendar $calendar, int $year): bool	Determine if the given year is a leap year
+>setGregorianChange(float $timestamp): bool	(IntlGregorianCalendar) Set the Gregorian Calendar change date
+intlgregcal_set_gregorian_change(IntlGregorianCalendar $calendar, float $timestamp): bool	Set the Gregorian Calendar change date
 >current(): mixed	(IntlIterator) Get the current element
 >key(): mixed	(IntlIterator) Get the current key
 >next(): void	(IntlIterator) Move forward to the next element
 >rewind(): void	(IntlIterator) Rewind the iterator to the first element
 >valid(): bool	(IntlIterator) Check if current position is valid
+IntlListFormatter(string $locale, int $type = IntlListFormatter::TYPE_AND, int $width = IntlListFormatter::WIDTH_WIDE)	(new) Creates a new IntlListFormatter instance
+>format(array $list): string|false	(IntlListFormatter) Format a list of items
 >getBreakIterator(): IntlBreakIterator	(IntlPartsIterator) Get IntlBreakIterator backing this parts iterator
 IntlRuleBasedBreakIterator(string $rules, bool $compiled = false)	(new) Create iterator from ruleset
 >getBinaryRules(): string|false	(IntlRuleBasedBreakIterator) Get the binary form of compiled rules
@@ -2702,6 +2709,8 @@ intltz_to_date_time_zone(IntlTimeZone $timezone): DateTimeZone|false	Convert to 
 intltz_use_daylight_time(IntlTimeZone $timezone): bool	Check if this time zone uses daylight savings time
 Locale::acceptFromHttp(string $header): string|false	Tries to find out best available locale based on HTTP "Accept-Language" header
 locale_accept_from_http(string $header): string|false	Tries to find out best available locale based on HTTP "Accept-Language" header
+Locale::addLikelySubtags(string $locale): string|false	Add likely subtags to a locale
+locale_add_likely_subtags(string $locale): string|false	Add likely subtags to a locale
 Locale::canonicalize(string $locale): ?string	Canonicalize the locale string
 Locale::composeLocale(array $subtags): string|false	Returns a correctly ordered and delimited locale ID
 locale_compose(array $subtags): string|false	Returns a correctly ordered and delimited locale ID
@@ -2733,6 +2742,8 @@ Locale::isRightToLeft(string $locale = ""): bool	Check whether a locale uses a r
 locale_is_right_to_left(string $locale = ""): bool	Check whether a locale uses a right-to-left writing system
 Locale::lookup(array $languageTag, string $locale, bool $canonicalize = false, ?string $defaultLocale = null): ?string	Searches the language tag list for the best match to the language
 locale_lookup(array $languageTag, string $locale, bool $canonicalize = false, ?string $defaultLocale = null): ?string	Searches the language tag list for the best match to the language
+Locale::minimizeSubtags(string $locale): string|false	Remove likely subtags from a locale
+locale_minimize_subtags(string $locale): string|false	Remove likely subtags from a locale
 Locale::parseLocale(string $locale): ?array	Returns a key-value array of locale ID subtag elements
 locale_parse(string $locale): ?array	Returns a key-value array of locale ID subtag elements
 Locale::setDefault(string $locale): true	Sets the default runtime locale
@@ -3287,10 +3298,12 @@ SQLite3(string $filename, int $flags = SQLITE3_OPEN_READWRITE | SQLITE3_OPEN_CRE
 >createCollation(string $name, callable $callback): bool	(SQLite3) Registers a PHP function for use as an SQL collating function
 >createFunction(string $name, callable $callback, int $argCount = -1, int $flags = ?): bool	(SQLite3) Registers a PHP function for use as an SQL scalar function
 >enableExceptions(bool $enable = false): bool	(SQLite3) Enable throwing exceptions
+>enableExtendedResultCodes(bool $enable = true): bool	(SQLite3) Enables or disables the use of extended result codes
 SQLite3::escapeString(string $string): string	Returns a string that has been properly escaped
 >exec(string $query): bool	(SQLite3) Executes a result-less query against a given database
 >lastErrorCode(): int	(SQLite3) Returns the numeric result code of the most recent failed SQLite request
 >lastErrorMsg(): string	(SQLite3) Returns English text describing the most recent failed SQLite request
+>lastExtendedErrorCode(): int	(SQLite3) Returns the numeric extended result code of the most recent failed SQLite request
 >lastInsertRowID(): int	(SQLite3) Returns the row ID of the most recent INSERT into the database
 >loadExtension(string $name): bool	(SQLite3) Attempts to load an SQLite extension library
 >open(string $filename, int $flags = SQLITE3_OPEN_READWRITE | SQLITE3_OPEN_CREATE, string $encryptionKey = ""): void	(SQLite3) Opens an SQLite database
@@ -3309,14 +3322,17 @@ SQLite3Result()	(new) Constructs an SQLite3Result
 >reset(): bool	(SQLite3Result) Resets the result set back to the first row
 >bindParam(string|int $param, mixed &$var, int $type = SQLITE3_TEXT): bool	(SQLite3Stmt) Binds a parameter to a statement variable
 >bindValue(string|int $param, mixed $value, int $type = SQLITE3_TEXT): bool	(SQLite3Stmt) Binds the value of a parameter to a statement variable
+>busy(): bool	(SQLite3Stmt) Returns whether the statement has been fetched but not yet completed
 >clear(): bool	(SQLite3Stmt) Clears all current bound parameters
 >close(): true	(SQLite3Stmt) Closes the prepared statement
 SQLite3Stmt(SQLite3 $sqlite3, string $query)	(new) Constructs an SQLite3Stmt object
 >execute(): SQLite3Result|false	(SQLite3Stmt) Executes a prepared statement and returns a result set object
+>explain(): int	(SQLite3Stmt) Returns the explain mode of the statement
 >getSQL(bool $expand = false): string|false	(SQLite3Stmt) Get the SQL of the statement
 >paramCount(): int	(SQLite3Stmt) Returns the number of parameters within the prepared statement
 >readOnly(): bool	(SQLite3Stmt) Returns whether a statement is definitely read only
 >reset(): bool	(SQLite3Stmt) Resets the prepared statement
+>setExplain(int $mode): bool	(SQLite3Stmt) Changes the explain mode of the statement
 SQLite3Exception()	(new) Represents a SQLite3 specific exception
 token_get_all(string $code, int $flags = ?): array	Split given source into PHP tokens
 token_name(int $id): string	Get the symbolic name of a given PHP token
@@ -3387,7 +3403,7 @@ curl_init(?string $url = null): CurlHandle|false	Initialize a cURL session
 curl_multi_add_handle(CurlMultiHandle $multi_handle, CurlHandle $handle): int	Add a normal cURL handle to a cURL multi handle
 curl_multi_close(CurlMultiHandle $multi_handle): void	Remove all cURL handles from a multi handle
 curl_multi_errno(CurlMultiHandle $multi_handle): int	Return the last multi curl error number
-curl_multi_exec(CurlMultiHandle $multi_handle, int &$still_running): int	Run the sub-connections of the current cURL handle
+curl_multi_exec(CurlMultiHandle $multi_handle, int &$still_running): int	Processes each of the handles in the stack
 curl_multi_getcontent(CurlHandle $handle): ?string	Return the content of a cURL handle if CURLOPT_RETURNTRANSFER is set
 curl_multi_info_read(CurlMultiHandle $multi_handle, int &$queued_messages = null): array|false	Get information about the current transfers
 curl_multi_init(): CurlMultiHandle	Returns a new cURL multi handle
@@ -3652,6 +3668,8 @@ enchant_dict_get_error(EnchantDictionary $dictionary): string|false	Returns the 
 enchant_dict_is_added(EnchantDictionary $dictionary, string $word): bool	Whether or not 'word' exists in this spelling-session
 enchant_dict_is_in_session()	Alias of enchant_dict_is_added
 enchant_dict_quick_check(EnchantDictionary $dictionary, string $word, array &$suggestions = null): bool	Check the word is correctly spelled and provide suggestions
+enchant_dict_remove_from_session(EnchantDictionary $dictionary, string $word): void	Remove a word from the session dictionary
+enchant_dict_remove(EnchantDictionary $dictionary, string $word): void	Add a word to the exclusion list and remove it from the personal dictionary
 enchant_dict_store_replacement(EnchantDictionary $dictionary, string $misspelled, string $correct): void	Add a correction for a word
 enchant_dict_suggest(EnchantDictionary $dictionary, string $word): array	Suggest spellings for a word
 EnchantBroker()	(new) A fully opaque class which replaces enchant_broker resources as of PHP 8
@@ -3796,13 +3814,9 @@ libxml_set_external_entity_loader(?callable $resolver_function): true	Changes th
 libxml_set_streams_context(resource $context): void	Set the streams context for the next libxml document load or write
 libxml_use_internal_errors(?bool $use_errors = null): bool	Disable libxml errors and allow user to fetch error information as needed
 LibXMLError()	(new) Contains various information about errors thrown by libxml
-mysqli_connect()	Alias of mysqli::__construct
->escape_string()	(mysqli) Alias of mysqli_real_escape_string
 mysqli_execute()	Alias of mysqli_stmt_execute
 mysqli_get_client_stats(): array	Returns client per-process statistics
 mysqli_get_links_stats(): array	Return information about open and cached links
-mysqli_report()	Alias of mysqli_driver->report_mode
->set_opt()	(mysqli) Alias of mysqli_options
 mysqli_affected_rows(mysqli $mysql): int|string	Gets the number of affected rows in a previous MySQL operation
 >autocommit(bool $enable): bool	(mysqli) Turns on or off auto-committing database modifications
 mysqli_autocommit(mysqli $mysql, bool $enable): bool	Turns on or off auto-committing database modifications
@@ -3827,6 +3841,7 @@ mysqli_dump_debug_info(mysqli $mysql): bool	Dump debugging information into the 
 mysqli_errno(mysqli $mysql): int	Returns the error code for the most recent function call
 mysqli_error_list(mysqli $mysql): array	Returns a list of errors from the last command executed
 mysqli_error(mysqli $mysql): string	Returns a string description of the last error
+>escape_string()	(mysqli) Alias of mysqli_real_escape_string
 >execute_query(string $query, ?array $params = null): mysqli_result|bool	(mysqli) Prepares, binds parameters, and executes SQL statement
 mysqli_execute_query(mysqli $mysql, string $query, ?array $params = null): mysqli_result|bool	Prepares, binds parameters, and executes SQL statement
 mysqli_field_count(mysqli $mysql): int	Returns the number of columns for the most recent query
@@ -3886,6 +3901,7 @@ mysqli_savepoint(mysqli $mysql, string $name): bool	Set a named transaction save
 mysqli_select_db(mysqli $mysql, string $database): bool	Selects the default database for database queries
 >set_charset(string $charset): bool	(mysqli) Sets the client character set
 mysqli_set_charset(mysqli $mysql, string $charset): bool	Sets the client character set
+>set_opt()	(mysqli) Alias of mysqli_options
 mysqli_sqlstate(mysqli $mysql): string	Returns the SQLSTATE error from previous MySQL operation
 >ssl_set(?string $key, ?string $certificate, ?string $ca_certificate, ?string $ca_path, ?string $cipher_algos): true	(mysqli) Used for establishing secure connections using SSL
 mysqli_ssl_set(mysqli $mysql, ?string $key, ?string $certificate, ?string $ca_certificate, ?string $ca_path, ?string $cipher_algos): true	Used for establishing secure connections using SSL
@@ -4092,6 +4108,7 @@ Pdo\Pgsql()	(new) This driver supports a dedicated SQL query parser for the Post
 >createFunction(string $function_name, callable $callback, int $num_args = -1, int $flags = ?): bool	(Pdo\Sqlite) Registers a user-defined function for use in SQL statements
 >loadExtension(string $name): void	(Pdo\Sqlite) Description
 >openBlob(string $table, string $column, int $rowid, ?string $dbname = "main", int $flags = Pdo\Sqlite::OPEN_READONLY): resource|false	(Pdo\Sqlite) Description
+>setAuthorizer(?callable $callback): void	(Pdo\Sqlite) Configures a callback to be used as an authorizer to limit what a statement can do
 >sqliteCreateAggregate(string $name, callable $step, callable $finalize, int $numArgs = -1): bool	(PDO) Alias Pdo\Sqlite::createAggregate
 >sqliteCreateCollation(string $name, callable $callback): bool	(PDO) Alias Pdo\Sqlite::createCollation
 >sqliteCreateFunction(string $function_name, callable $callback, int $num_args = -1, int $flags = ?): bool	(PDO) Alias Pdo\Sqlite::createFunction
@@ -4100,6 +4117,7 @@ pg_affected_rows(PgSql\Result $result): int	Returns number of affected records (
 pg_cancel_query(PgSql\Connection $connection): bool	Cancel an asynchronous query
 pg_change_password(PgSql\Connection $connection, string $user, string $password): bool	Change a PostgreSQL user's password
 pg_client_encoding(?PgSql\Connection $connection = null): string	Gets the client encoding
+pg_close_stmt(PgSql\Connection $connection, string $statement_name): PgSql\Result|false	Closes a prepared statement
 pg_close(?PgSql\Connection $connection = null): true	Closes a PostgreSQL connection
 pg_connect_poll(PgSql\Connection $connection): int	Poll the status of an in-progress asynchronous PostgreSQL connection attempt
 pg_connect(string $connection_string, int $flags = ?): PgSql\Connection|false	Open a PostgreSQL connection
@@ -4184,6 +4202,7 @@ pg_send_execute(PgSql\Connection $connection, string $statement_name, array $par
 pg_send_prepare(PgSql\Connection $connection, string $statement_name, string $query): int|bool	Sends a request to create a prepared statement with the given parameters, without waiting for completion
 pg_send_query_params(PgSql\Connection $connection, string $query, array $params): int|bool	Submits a command and separate parameters to the server without waiting for the result(s)
 pg_send_query(PgSql\Connection $connection, string $query): int|bool	Sends asynchronous query
+pg_service(?PgSql\Connection $connection = null): string	Gets the service name of the connection
 pg_set_chunked_rows_size(PgSql\Connection $connection, int $size): bool	Set the query results to be retrieved in chunk mode
 pg_set_client_encoding(PgSql\Connection $connection = ?, string $encoding): int	Set the client encoding
 pg_set_error_context_visibility(PgSql\Connection $connection, int $visibility): int	Determines the visibility of the context's error messages returned by pg_last_error and pg_result_error
@@ -5949,7 +5968,6 @@ SI_NOINFO
 SI_KERNEL
 SI_QUEUE
 SI_TIMER
-SI_MSGGQ
 SI_ASYNCIO
 SI_SIGIO
 SI_TKILL
@@ -6461,6 +6479,20 @@ SO_EXCLBIND
 SO_NOSIGPIPE
 SO_LINGER_SEC
 SO_BINDTOIFINDEX
+SHUT_RD
+SHUT_WR
+SHUT_RDWR
+UDP_SEGMENT
+SO_BUSY_POLL
+IP_BINDANY
+TCP_FUNCTION_BLK
+TCP_FUNCTION_ALIAS
+TCP_REUSPORT_LB_NUMA
+TCP_REUSPORT_LB_NUMA_NODOM
+TCP_REUSPORT_LB_NUMA_CURDOM
+TCP_BBR_ALGORITHM
+IPPROTO_ICMP
+IPPROTO_ICMPV6
 SQLITE3_ASSOC
 SQLITE3_NUM
 SQLITE3_BOTH

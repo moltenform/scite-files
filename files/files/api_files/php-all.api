@@ -262,7 +262,7 @@ WeakReference::create(object $object): WeakReference	Create a new weak reference
 >get(): ?object	(WeakReference) Get a weakly referenced Object
 ArgumentCountError()	(new) ArgumentCountError is thrown when too few arguments are passed to a user-defined function or method
 ArithmeticError()	(new) ArithmeticError is thrown when an error occurs while performing mathematical operations
-ArrayAccess()	(new) Interface to provide accessing objects as arrays
+ArrayAccess()	(new) Interface to provide access to objects as arrays
 AssertionError()	(new) AssertionError is thrown when an assertion made via assert fails
 BackedEnum()	(new) The BackedEnum interface is automatically applied to backed enumerations by the engine
 ClosedGeneratorException()	(new) A ClosedGeneratorException is thrown when trying to retrieve a value from a closed Generator
@@ -283,8 +283,8 @@ Traversable()	(new) Abstract base interface that cannot be implemented alone
 TypeError()	(new) A TypeError may be thrown when: The value being set for a class property does not match the property's corresponding declared type
 UnhandledMatchError()	(new) An UnhandledMatchError is thrown when the subject passed to a match expression is not handled by any arm of the match expression
 UnitEnum()	(new) The UnitEnum interface is automatically applied to all enumerations by the engine
-ValueError()	(new) A ValueError is thrown when the type of an argument is correct but the value of it is incorrect
-WeakMap()	(new) A WeakMap is map (or dictionary) that accepts objects as keys
+ValueError()	(new) A ValueError is thrown when the type of an argument is correct but its value is incorrect
+WeakMap()	(new) WeakMap implements ArrayAccess, Traversable (via IteratorAggregate), and Countable, so in most cases it can be used in the same fashion as an associative array
 DelayedTargetValidation()	(new) This attribute delays target validation errors for internal attributes from compile time to when the attribute is instantiated via the Reflection API
 apache_child_terminate(): void	Terminate apache process after this request
 apache_get_modules(): array	Get a list of loaded Apache modules
@@ -759,7 +759,7 @@ curl_init(?string $url = null): CurlHandle|false	Initialize a cURL session
 curl_multi_add_handle(CurlMultiHandle $multi_handle, CurlHandle $handle): int	Add a normal cURL handle to a cURL multi handle
 curl_multi_close(CurlMultiHandle $multi_handle): void	Remove all cURL handles from a multi handle
 curl_multi_errno(CurlMultiHandle $multi_handle): int	Return the last multi curl error number
-curl_multi_exec(CurlMultiHandle $multi_handle, int &$still_running): int	Run the sub-connections of the current cURL handle
+curl_multi_exec(CurlMultiHandle $multi_handle, int &$still_running): int	Processes each of the handles in the stack
 curl_multi_getcontent(CurlHandle $handle): ?string	Return the content of a cURL handle if CURLOPT_RETURNTRANSFER is set
 curl_multi_info_read(CurlMultiHandle $multi_handle, int &$queued_messages = null): array|false	Get information about the current transfers
 curl_multi_init(): CurlMultiHandle	Returns a new cURL multi handle
@@ -1494,6 +1494,8 @@ enchant_dict_get_error(EnchantDictionary $dictionary): string|false	Returns the 
 enchant_dict_is_added(EnchantDictionary $dictionary, string $word): bool	Whether or not 'word' exists in this spelling-session
 enchant_dict_is_in_session()	Alias of enchant_dict_is_added
 enchant_dict_quick_check(EnchantDictionary $dictionary, string $word, array &$suggestions = null): bool	Check the word is correctly spelled and provide suggestions
+enchant_dict_remove_from_session(EnchantDictionary $dictionary, string $word): void	Remove a word from the session dictionary
+enchant_dict_remove(EnchantDictionary $dictionary, string $word): void	Add a word to the exclusion list and remove it from the personal dictionary
 enchant_dict_store_replacement(EnchantDictionary $dictionary, string $misspelled, string $correct): void	Add a correction for a word
 enchant_dict_suggest(EnchantDictionary $dictionary, string $word): array	Suggest spellings for a word
 EnchantBroker()	(new) A fully opaque class which replaces enchant_broker resources as of PHP 8
@@ -2134,8 +2136,8 @@ FTP\Connection()	(new) A fully opaque class which replaces a ftp resource as of 
 call_user_func_array(callable $callback, array $args): mixed	Call a callback with an array of parameters
 call_user_func(callable $callback, mixed ...$args): mixed	Call the callback given by the first parameter
 create_function(string $args, string $code): string	Create a function dynamically by evaluating a string of code
-forward_static_call_array(callable $callback, array $args): mixed	Call a static method and pass the arguments as array
-forward_static_call(callable $callback, mixed ...$args): mixed	Call a static method
+forward_static_call_array(callable $callback, array $args): mixed	Call a callback with an array of parameters, preserving the current called class
+forward_static_call(callable $callback, mixed ...$args): mixed	Call a callback while preserving the current called class
 func_get_arg(int $position): mixed	Return an item from the argument list
 func_get_args(): array	Returns an array comprising a function's argument list
 func_num_args(): int	Returns the number of arguments passed to the function
@@ -3018,7 +3020,7 @@ Imagick::getHomeURL(): string	Returns the ImageMagick home URL
 >getImageSize(): int	(Imagick) Returns the image length in bytes
 >getImageTicksPerSecond(): int	(Imagick) Gets the image ticks-per-second
 >getImageTotalInkDensity(): float	(Imagick) Gets the image total ink density
->getImageType(): int	(Imagick) Gets the potential image type
+>getImageType(): int	(Imagick) Gets the image type
 >getImageUnits(): int	(Imagick) Gets the image units of resolution
 >getImageVirtualPixelMethod(): int	(Imagick) Returns the virtual pixel method
 >getImageWhitePoint(): array	(Imagick) Returns the chromaticity white point
@@ -3512,7 +3514,7 @@ ini_parse_quantity(string $shorthand): int	Get interpreted size from ini shortha
 ini_restore(string $option): void	Restores the value of a configuration option
 ini_set(string $option, string|int|float|bool|null $value): string|false	Sets the value of a configuration option
 memory_get_peak_usage(bool $real_usage = false): int	Returns the peak of memory allocated by PHP
-memory_get_usage(bool $real_usage = false): int	Returns the amount of memory allocated to PHP
+memory_get_usage(bool $real_usage = false): int	Returns the amount of memory allocated to the PHP script, or reserved from the system by PHP's memory manager
 memory_reset_peak_usage(): void	Reset the peak memory usage
 php_ini_loaded_file(): string|false	Retrieve a path to the loaded php.ini file
 php_ini_scanned_files(): string|false	Return a list of .ini files parsed from the additional ini dir
@@ -3607,6 +3609,7 @@ intl_get_error_code(): int	Get the last error code
 intl_get_error_message(): string	Get description of the last error
 intl_is_failure(int $errorCode): bool	Check whether the given error code indicates failure
 grapheme_extract(string $haystack, int $size, int $type = GRAPHEME_EXTR_COUNT, int $offset = ?, int &$next = null): string|false	Function to extract a sequence of default grapheme clusters from a text buffer, which must be encoded in UTF-8
+grapheme_levenshtein(string $string1, string $string2, int $insertion_cost = 1, int $replacement_cost = 1, int $deletion_cost = 1, string $locale = ""): int|false	Calculate Levenshtein distance between two strings in grapheme units
 grapheme_str_split(string $string, int $length = 1): array|false	Split a string into an array
 grapheme_stripos(string $haystack, string $needle, int $offset = ?, string $locale = ""): int|false	Find position (in grapheme units) of first occurrence of a case-insensitive string
 grapheme_stristr(string $haystack, string $needle, bool $beforeNeedle = false, string $locale = ""): string|false	Returns part of haystack string from the first occurrence of case-insensitive needle to the end of haystack
@@ -3804,13 +3807,18 @@ IntlGregorianCalendar(int $timeZoneOrYear, int $localeOrMonth, int $dayOfMonth, 
 IntlGregorianCalendar::createFromDate(int $year, int $month, int $dayOfMonth): static	Create a new IntlGregorianCalendar instance from date
 IntlGregorianCalendar::createFromDateTime(int $year, int $month, int $dayOfMonth, int $hour, int $minute, ?int $second = null): static	Create a new IntlGregorianCalendar instance from date and time
 >getGregorianChange(): float	(IntlGregorianCalendar) Get the Gregorian Calendar change date
+intlgregcal_get_gregorian_change(IntlGregorianCalendar $calendar): float	Get the Gregorian Calendar change date
 >isLeapYear(int $year): bool	(IntlGregorianCalendar) Determine if the given year is a leap year
->setGregorianChange(float $timestamp): bool	(IntlGregorianCalendar) Set the Gregorian Calendar the change date
+intlgregcal_is_leap_year(IntlGregorianCalendar $calendar, int $year): bool	Determine if the given year is a leap year
+>setGregorianChange(float $timestamp): bool	(IntlGregorianCalendar) Set the Gregorian Calendar change date
+intlgregcal_set_gregorian_change(IntlGregorianCalendar $calendar, float $timestamp): bool	Set the Gregorian Calendar change date
 >current(): mixed	(IntlIterator) Get the current element
 >key(): mixed	(IntlIterator) Get the current key
 >next(): void	(IntlIterator) Move forward to the next element
 >rewind(): void	(IntlIterator) Rewind the iterator to the first element
 >valid(): bool	(IntlIterator) Check if current position is valid
+IntlListFormatter(string $locale, int $type = IntlListFormatter::TYPE_AND, int $width = IntlListFormatter::WIDTH_WIDE)	(new) Creates a new IntlListFormatter instance
+>format(array $list): string|false	(IntlListFormatter) Format a list of items
 >getBreakIterator(): IntlBreakIterator	(IntlPartsIterator) Get IntlBreakIterator backing this parts iterator
 IntlRuleBasedBreakIterator(string $rules, bool $compiled = false)	(new) Create iterator from ruleset
 >getBinaryRules(): string|false	(IntlRuleBasedBreakIterator) Get the binary form of compiled rules
@@ -3870,6 +3878,8 @@ intltz_to_date_time_zone(IntlTimeZone $timezone): DateTimeZone|false	Convert to 
 intltz_use_daylight_time(IntlTimeZone $timezone): bool	Check if this time zone uses daylight savings time
 Locale::acceptFromHttp(string $header): string|false	Tries to find out best available locale based on HTTP "Accept-Language" header
 locale_accept_from_http(string $header): string|false	Tries to find out best available locale based on HTTP "Accept-Language" header
+Locale::addLikelySubtags(string $locale): string|false	Add likely subtags to a locale
+locale_add_likely_subtags(string $locale): string|false	Add likely subtags to a locale
 Locale::canonicalize(string $locale): ?string	Canonicalize the locale string
 Locale::composeLocale(array $subtags): string|false	Returns a correctly ordered and delimited locale ID
 locale_compose(array $subtags): string|false	Returns a correctly ordered and delimited locale ID
@@ -3901,6 +3911,8 @@ Locale::isRightToLeft(string $locale = ""): bool	Check whether a locale uses a r
 locale_is_right_to_left(string $locale = ""): bool	Check whether a locale uses a right-to-left writing system
 Locale::lookup(array $languageTag, string $locale, bool $canonicalize = false, ?string $defaultLocale = null): ?string	Searches the language tag list for the best match to the language
 locale_lookup(array $languageTag, string $locale, bool $canonicalize = false, ?string $defaultLocale = null): ?string	Searches the language tag list for the best match to the language
+Locale::minimizeSubtags(string $locale): string|false	Remove likely subtags from a locale
+locale_minimize_subtags(string $locale): string|false	Remove likely subtags from a locale
 Locale::parseLocale(string $locale): ?array	Returns a key-value array of locale ID subtag elements
 locale_parse(string $locale): ?array	Returns a key-value array of locale ID subtag elements
 Locale::setDefault(string $locale): true	Sets the default runtime locale
@@ -5109,13 +5121,9 @@ mysql_xdevapi\Exception()	(new)
 mysql_xdevapi\Executable()	(new) 
 mysql_xdevapi\FieldMetadata()	(new) 
 mysql_xdevapi\SchemaObject()	(new) 
-mysqli_connect()	Alias of mysqli::__construct
->escape_string()	(mysqli) Alias of mysqli_real_escape_string
 mysqli_execute()	Alias of mysqli_stmt_execute
 mysqli_get_client_stats(): array	Returns client per-process statistics
 mysqli_get_links_stats(): array	Return information about open and cached links
-mysqli_report()	Alias of mysqli_driver->report_mode
->set_opt()	(mysqli) Alias of mysqli_options
 mysqli_affected_rows(mysqli $mysql): int|string	Gets the number of affected rows in a previous MySQL operation
 >autocommit(bool $enable): bool	(mysqli) Turns on or off auto-committing database modifications
 mysqli_autocommit(mysqli $mysql, bool $enable): bool	Turns on or off auto-committing database modifications
@@ -5140,6 +5148,7 @@ mysqli_dump_debug_info(mysqli $mysql): bool	Dump debugging information into the 
 mysqli_errno(mysqli $mysql): int	Returns the error code for the most recent function call
 mysqli_error_list(mysqli $mysql): array	Returns a list of errors from the last command executed
 mysqli_error(mysqli $mysql): string	Returns a string description of the last error
+>escape_string()	(mysqli) Alias of mysqli_real_escape_string
 >execute_query(string $query, ?array $params = null): mysqli_result|bool	(mysqli) Prepares, binds parameters, and executes SQL statement
 mysqli_execute_query(mysqli $mysql, string $query, ?array $params = null): mysqli_result|bool	Prepares, binds parameters, and executes SQL statement
 mysqli_field_count(mysqli $mysql): int	Returns the number of columns for the most recent query
@@ -5199,6 +5208,7 @@ mysqli_savepoint(mysqli $mysql, string $name): bool	Set a named transaction save
 mysqli_select_db(mysqli $mysql, string $database): bool	Selects the default database for database queries
 >set_charset(string $charset): bool	(mysqli) Sets the client character set
 mysqli_set_charset(mysqli $mysql, string $charset): bool	Sets the client character set
+>set_opt()	(mysqli) Alias of mysqli_options
 mysqli_sqlstate(mysqli $mysql): string	Returns the SQLSTATE error from previous MySQL operation
 >ssl_set(?string $key, ?string $certificate, ?string $ca_certificate, ?string $ca_path, ?string $cipher_algos): true	(mysqli) Used for establishing secure connections using SSL
 mysqli_ssl_set(mysqli $mysql, ?string $key, ?string $certificate, ?string $ca_certificate, ?string $ca_path, ?string $cipher_algos): true	Used for establishing secure connections using SSL
@@ -5881,6 +5891,7 @@ Pdo\Pgsql()	(new) This driver supports a dedicated SQL query parser for the Post
 >createFunction(string $function_name, callable $callback, int $num_args = -1, int $flags = ?): bool	(Pdo\Sqlite) Registers a user-defined function for use in SQL statements
 >loadExtension(string $name): void	(Pdo\Sqlite) Description
 >openBlob(string $table, string $column, int $rowid, ?string $dbname = "main", int $flags = Pdo\Sqlite::OPEN_READONLY): resource|false	(Pdo\Sqlite) Description
+>setAuthorizer(?callable $callback): void	(Pdo\Sqlite) Configures a callback to be used as an authorizer to limit what a statement can do
 >sqliteCreateAggregate(string $name, callable $step, callable $finalize, int $numArgs = -1): bool	(PDO) Alias Pdo\Sqlite::createAggregate
 >sqliteCreateCollation(string $name, callable $callback): bool	(PDO) Alias Pdo\Sqlite::createCollation
 >sqliteCreateFunction(string $function_name, callable $callback, int $num_args = -1, int $flags = ?): bool	(PDO) Alias Pdo\Sqlite::createFunction
@@ -5889,6 +5900,7 @@ pg_affected_rows(PgSql\Result $result): int	Returns number of affected records (
 pg_cancel_query(PgSql\Connection $connection): bool	Cancel an asynchronous query
 pg_change_password(PgSql\Connection $connection, string $user, string $password): bool	Change a PostgreSQL user's password
 pg_client_encoding(?PgSql\Connection $connection = null): string	Gets the client encoding
+pg_close_stmt(PgSql\Connection $connection, string $statement_name): PgSql\Result|false	Closes a prepared statement
 pg_close(?PgSql\Connection $connection = null): true	Closes a PostgreSQL connection
 pg_connect_poll(PgSql\Connection $connection): int	Poll the status of an in-progress asynchronous PostgreSQL connection attempt
 pg_connect(string $connection_string, int $flags = ?): PgSql\Connection|false	Open a PostgreSQL connection
@@ -5973,6 +5985,7 @@ pg_send_execute(PgSql\Connection $connection, string $statement_name, array $par
 pg_send_prepare(PgSql\Connection $connection, string $statement_name, string $query): int|bool	Sends a request to create a prepared statement with the given parameters, without waiting for completion
 pg_send_query_params(PgSql\Connection $connection, string $query, array $params): int|bool	Submits a command and separate parameters to the server without waiting for the result(s)
 pg_send_query(PgSql\Connection $connection, string $query): int|bool	Sends asynchronous query
+pg_service(?PgSql\Connection $connection = null): string	Gets the service name of the connection
 pg_set_chunked_rows_size(PgSql\Connection $connection, int $size): bool	Set the query results to be retrieved in chunk mode
 pg_set_client_encoding(PgSql\Connection $connection = ?, string $encoding): int	Set the client encoding
 pg_set_error_context_visibility(PgSql\Connection $connection, int $visibility): int	Determines the visibility of the context's error messages returned by pg_last_error and pg_result_error
@@ -6518,7 +6531,7 @@ ReflectionClass::export(mixed $argument, bool $return = false): string	Exports a
 >newLazyProxy(callable $factory, int $options = ?): object	(ReflectionClass) Creates a new lazy proxy instance
 >resetAsLazyGhost(object $object, callable $initializer, int $options = ?): void	(ReflectionClass) Resets an object and marks it as lazy
 >resetAsLazyProxy(object $object, callable $factory, int $options = ?): void	(ReflectionClass) Resets an object and marks it as lazy
->setStaticPropertyValue(string $name, mixed $value): void	(ReflectionClass) Sets public static property value
+>setStaticPropertyValue(string $name, mixed $value): void	(ReflectionClass) Sets static property value
 >__toString(): string	(ReflectionClass) Returns the string representation of the ReflectionClass object
 ReflectionClassConstant(object|string $class, string $constant)	(new) Constructs a ReflectionClassConstant
 ReflectionClassConstant::export(mixed $class, string $name, bool $return = ?): string	Export
@@ -6687,6 +6700,7 @@ ReflectionProperty::export(mixed $class, string $name, bool $return = ?): string
 >getDocComment(): string|false	(ReflectionProperty) Gets the property doc comment
 >getHook(PropertyHookType $type): ?ReflectionMethod	(ReflectionProperty) Returns a reflection object for a specified hook
 >getHooks(): array	(ReflectionProperty) Returns an array of all hooks on this property
+>getMangledName(): string	(ReflectionProperty) Gets the mangled name of the property
 >getModifiers(): int	(ReflectionProperty) Gets the property modifiers
 >getName(): string	(ReflectionProperty) Gets property name
 >getRawValue(object $object): mixed	(ReflectionProperty) Returns the value of a property, bypassing a get hook if defined
@@ -7397,7 +7411,7 @@ SolrQuery(string $q = ?)	(new) Constructor
 >getHighlightMaxAlternateFieldLength(string $field_override = ?): int	(SolrQuery) Returns the maximum number of characters of the field to return
 >getHighlightMaxAnalyzedChars(): int	(SolrQuery) Returns the maximum number of characters into a document to look for suitable snippets
 >getHighlightMergeContiguous(string $field_override = ?): bool	(SolrQuery) Returns whether or not the collapse contiguous fragments into a single fragment
->getHighlightQuery(): string	(SolrQuery) return the highlightquery (hl.q)
+>getHighlightQuery(): ?string	(SolrQuery) Return the highlight query
 >getHighlightRegexMaxAnalyzedChars(): int	(SolrQuery) Returns the maximum number of characters from a field when using the regex fragmenter
 >getHighlightRegexPattern(): string	(SolrQuery) Returns the regular expression for fragmenting
 >getHighlightRegexSlop(): float	(SolrQuery) Returns the deviation factor from the ideal fragment size
@@ -7488,7 +7502,7 @@ SolrQuery(string $q = ?)	(new) Constructor
 >setHighlightMaxAlternateFieldLength(int $fieldLength, string $field_override = ?): SolrQuery	(SolrQuery) Sets the maximum number of characters of the field to return
 >setHighlightMaxAnalyzedChars(int $value): SolrQuery	(SolrQuery) Specifies the number of characters into a document to look for suitable snippets
 >setHighlightMergeContiguous(bool $flag, string $field_override = ?): SolrQuery	(SolrQuery) Whether or not to collapse contiguous fragments into a single fragment
->setHighlightQuery(string $q): SolrQuery	(SolrQuery) A query designated for highlighting (hl.q)
+>setHighlightQuery(string $q): SolrQuery	(SolrQuery) A query designated for highlighting
 >setHighlightRegexMaxAnalyzedChars(int $maxAnalyzedChars): SolrQuery	(SolrQuery) Specify the maximum number of characters to analyze
 >setHighlightRegexPattern(string $value): SolrQuery	(SolrQuery) Specify the regular expression for fragmenting
 >setHighlightRegexSlop(float $factor): SolrQuery	(SolrQuery) Sets the factor by which the regex fragmenter can stray from the ideal fragment size
@@ -7986,10 +8000,12 @@ SQLite3(string $filename, int $flags = SQLITE3_OPEN_READWRITE | SQLITE3_OPEN_CRE
 >createCollation(string $name, callable $callback): bool	(SQLite3) Registers a PHP function for use as an SQL collating function
 >createFunction(string $name, callable $callback, int $argCount = -1, int $flags = ?): bool	(SQLite3) Registers a PHP function for use as an SQL scalar function
 >enableExceptions(bool $enable = false): bool	(SQLite3) Enable throwing exceptions
+>enableExtendedResultCodes(bool $enable = true): bool	(SQLite3) Enables or disables the use of extended result codes
 SQLite3::escapeString(string $string): string	Returns a string that has been properly escaped
 >exec(string $query): bool	(SQLite3) Executes a result-less query against a given database
 >lastErrorCode(): int	(SQLite3) Returns the numeric result code of the most recent failed SQLite request
 >lastErrorMsg(): string	(SQLite3) Returns English text describing the most recent failed SQLite request
+>lastExtendedErrorCode(): int	(SQLite3) Returns the numeric extended result code of the most recent failed SQLite request
 >lastInsertRowID(): int	(SQLite3) Returns the row ID of the most recent INSERT into the database
 >loadExtension(string $name): bool	(SQLite3) Attempts to load an SQLite extension library
 >open(string $filename, int $flags = SQLITE3_OPEN_READWRITE | SQLITE3_OPEN_CREATE, string $encryptionKey = ""): void	(SQLite3) Opens an SQLite database
@@ -8008,14 +8024,17 @@ SQLite3Result()	(new) Constructs an SQLite3Result
 >reset(): bool	(SQLite3Result) Resets the result set back to the first row
 >bindParam(string|int $param, mixed &$var, int $type = SQLITE3_TEXT): bool	(SQLite3Stmt) Binds a parameter to a statement variable
 >bindValue(string|int $param, mixed $value, int $type = SQLITE3_TEXT): bool	(SQLite3Stmt) Binds the value of a parameter to a statement variable
+>busy(): bool	(SQLite3Stmt) Returns whether the statement has been fetched but not yet completed
 >clear(): bool	(SQLite3Stmt) Clears all current bound parameters
 >close(): true	(SQLite3Stmt) Closes the prepared statement
 SQLite3Stmt(SQLite3 $sqlite3, string $query)	(new) Constructs an SQLite3Stmt object
 >execute(): SQLite3Result|false	(SQLite3Stmt) Executes a prepared statement and returns a result set object
+>explain(): int	(SQLite3Stmt) Returns the explain mode of the statement
 >getSQL(bool $expand = false): string|false	(SQLite3Stmt) Get the SQL of the statement
 >paramCount(): int	(SQLite3Stmt) Returns the number of parameters within the prepared statement
 >readOnly(): bool	(SQLite3Stmt) Returns whether a statement is definitely read only
 >reset(): bool	(SQLite3Stmt) Resets the prepared statement
+>setExplain(int $mode): bool	(SQLite3Stmt) Changes the explain mode of the statement
 SQLite3Exception()	(new) Represents a SQLite3 specific exception
 sqlsrv_begin_transaction(resource $conn): bool	Begins a database transaction
 sqlsrv_cancel(resource $stmt): bool	Cancels a statement
@@ -8059,6 +8078,8 @@ ssh2_fetch_stream(resource $channel, int $streamid): resource	Fetch an extended 
 ssh2_fingerprint(resource $session, int $flags = SSH2_FINGERPRINT_MD5 | SSH2_FINGERPRINT_HEX): string	Retrieve fingerprint of remote server
 ssh2_forward_accept(resource $listener): resource|false	Accept a connection created by a listener
 ssh2_forward_listen(resource $session, int $port, string $host = ?, int $max_connections = 16): resource|false	Bind a port on the remote server and listen for connections
+ssh2_keepalive_config(resource $session, bool $want_reply, int $interval): void	Configure how often keepalive messages should be sent
+ssh2_keepalive_send(resource $session): int|false	Send a keepalive message
 ssh2_methods_negotiated(resource $session): array	Return list of negotiated methods
 ssh2_poll(array &$desc, int $timeout = 30): int	Poll the channels/listeners/streams for events
 ssh2_publickey_add(resource $pkey, string $algoname, string $blob, bool $overwrite = false, array $attributes = ?): bool	Add an authorized publickey
@@ -8068,6 +8089,8 @@ ssh2_publickey_remove(resource $pkey, string $algoname, string $blob): bool	Remo
 ssh2_scp_recv(resource $session, string $remote_file, string $local_file): bool	Request a file via SCP
 ssh2_scp_send(resource $session, string $local_file, string $remote_file, int $create_mode = 0644): bool	Send a file via SCP
 ssh2_send_eof(resource $channel): bool	Send EOF to stream
+ssh2_send_signal(resource $channel, string $signal): bool	Send a signal to a remote process
+ssh2_set_timeout(resource $session, int $seconds, int $microseconds = ?): void	Set the timeout for blocking operations on a session
 ssh2_sftp_chmod(resource $sftp, string $filename, int $mode): bool	Changes file mode
 ssh2_sftp_lstat(resource $sftp, string $path): array|false	Stat a symbolic link
 ssh2_sftp_mkdir(resource $sftp, string $dirname, int $mode = 0777, bool $recursive = false): bool	Create a directory
@@ -8079,6 +8102,7 @@ ssh2_sftp_stat(resource $sftp, string $path): array|false	Stat a file on a remot
 ssh2_sftp_symlink(resource $sftp, string $target, string $link): bool	Create a symlink
 ssh2_sftp_unlink(resource $sftp, string $filename): bool	Delete a file
 ssh2_sftp(resource $session): resource|false	Initialize SFTP subsystem
+ssh2_shell_resize(resource $channel, int $width, int $height, int $width_px = ?, int $height_px = ?): bool	Change the dimensions of a channel's pseudo-terminal
 ssh2_shell(resource $session, string $termtype = "vanilla", ?array $env = null, int $width = 80, int $height = 25, int $width_height_type = SSH2_TERM_UNIT_CHARS): resource|false	Request an interactive shell
 ssh2_tunnel(resource $session, string $host, int $port): resource	Open a tunnel through a remote server
 stats_absolute_deviation(array $a): float	Returns the absolute deviation of an array of values
@@ -8564,13 +8588,15 @@ Swoole\Coroutine\MySQL()	(new) Description
 >query(): ReturnType	(Swoole\Coroutine\MySQL) Description
 >recv(): ReturnType	(Swoole\Coroutine\MySQL) Description
 >setDefer(): ReturnType	(Swoole\Coroutine\MySQL) Description
-Swoole\Event::add(int $fd, callable $read_callback, callable $write_callback = ?, string $events = ?): bool	Add new callback functions of a socket into the EventLoop.
-Swoole\Event::defer(mixed $callback): void	Add a callback function to the next event loop.
-Swoole\Event::del(string $fd): bool	Remove all event callback functions of a socket.
-Swoole\Event::exit(): void	Exit the eventloop, only available at client side.
-Swoole\Event::set(int $fd, string $read_callback = ?, string $write_callback = ?, string $events = ?): bool	Update the event callback functions of a socket.
-Swoole\Event::wait(): void	Description
-Swoole\Event::write(string $fd, string $data): void	Write data to the socket.
+Swoole\Event::add(mixed $sock, callable $read_callback, callable $write_callback = ?, int $flags = ?): bool	Add a socket to the underlying reactor event listener
+Swoole\Event::cycle(callable $callback, bool $before = false): bool	Define a function to execute at the end of each event loop iteration
+Swoole\Event::defer(callable $callback_function): void	Execute a function at the start of the next event loop
+Swoole\Event::del(mixed $sock): bool	Remove a socket from reactor event listener
+Swoole\Event::dispatch(): void	Perform a single event loop iteration
+Swoole\Event::isset(mixed $fd, int $events = SWOOLE_EVENT_READ | SWOOLE_EVENT_WRITE): bool	Check if a socket is being monitored in the event loop
+Swoole\Event::set(mixed $sock, callable $read_callback, callable $write_callback = ?, int $flags = ?): bool	Modify event listener callbacks and mask
+Swoole\Event::wait(): void	Start event loop
+Swoole\Event::write(mixed $fd, mixed $data): bool	Write data to socket asynchronously
 >addFile(string $path, string $name, string $type = ?, string $filename = ?, string $offset = ?): void	(Swoole\Http\Client) Add a file to the post form.
 >close(): void	(Swoole\Http\Client) Close the http connection.
 Swoole\Http\Client(string $host, string $port = ?, bool $ssl = ?)	(new) Construct the async HTTP client.
@@ -8702,10 +8728,15 @@ Swoole\Table(int $table_size)	(new) Construct a Swoole memory table with fixed s
 >rewind(): void	(Swoole\Table) Rewind the iterator.
 >set(string $key, array $value): bool	(Swoole\Table) Update a row of the table by $key.
 >valid(): bool	(Swoole\Table) Check if the current row is valid.
-Swoole\Timer::after(int $after_time_ms, callable $callback): void	Trigger a callback function after a period of time.
-Swoole\Timer::clear(int $timer_id): void	Delete a timer by timer ID.
+Swoole\Timer::after(int $ms, callable $callback, mixed ...$params): int|false	Execute a function after a specified time
+Swoole\Timer::clear(int $timer_id): bool	Delete a timer by ID
+Swoole\Timer::clearAll(): bool	Clear all timers in the current process.
 Swoole\Timer::exists(int $timer_id): bool	Check if a timer is existed.
-Swoole\Timer::tick(int $interval_ms, callable $callback, string $param = ?): void	Repeats a given function at every given time-interval.
+Swoole\Timer::info(int $timer_id): ?array	Get information about a timer.
+Swoole\Timer::list(): Swoole\Timer\Iterator	Get an iterator over the timers of the current process
+Swoole\Timer::set(array $settings): void	Set timer-related parameters
+Swoole\Timer::stats(): array	Get timer statistics.
+Swoole\Timer::tick(int $ms, callable $callback, mixed ...$params): int|false	Set a repeating interval timer
 >exist(int $fd): bool	(Swoole\WebSocket\Server) Check if the file descriptor exists.
 >on(string $event_name, callable $callback): ReturnType	(Swoole\WebSocket\Server) Register event callback function
 Swoole\WebSocket\Server::pack(string $data, string $opcode = ?, string $finish = ?, string $mask = ?): binary	Get a pack of binary data to send in a single frame.
@@ -8715,7 +8746,7 @@ Swoole\Async()	(new)
 Swoole\Connection\Iterator()	(new) 
 Swoole\Coroutine\MySQL\Exception()	(new) 
 Swoole\Coroutine()	(new) 
-Swoole\Event()	(new) 
+Swoole\Event()	(new) The Swoole extension provides low-level interfaces to directly manipulate the underlying epoll/kqueue/poll/select event loop
 Swoole\Exception()	(new) 
 Swoole\Http\Request()	(new) 
 Swoole\Http\Response()	(new) 
@@ -8726,7 +8757,7 @@ Swoole\MySQL\Exception()	(new)
 Swoole\Redis\Server()	(new) 
 Swoole\Runtime()	(new) Swoole\Runtime provides coroutine support for various PHP functions through hook mechanism, allowing synchronous code to work asynchronously in coroutine environment
 Swoole\Serialize()	(new) 
-Swoole\Timer()	(new) 
+Swoole\Timer()	(new) The underlying system does not support timers with a delay of 0; values below 1 millisecond emit an E_WARNING and the call fails
 Swoole\WebSocket\Frame()	(new) 
 Swoole\WebSocket\Server()	(new) 
 SyncEvent(string $name = ?, bool $manual = false, bool $prefire = false)	(new) Constructs a new SyncEvent object
@@ -8749,9 +8780,9 @@ SyncSharedMemory(string $name, int $size)	(new) Constructs a new SyncSharedMemor
 >read(int $start = ?, int $length = ?)	(SyncSharedMemory) Copy data from named shared memory
 >size(): int	(SyncSharedMemory) Returns the size of the named shared memory
 >write(string $string = ?, int $start = ?)	(SyncSharedMemory) Copy data to named shared memory
-is_tainted(string $string): bool	Checks whether a string is tainted
-taint(string &$string, string ...$strings): bool	Taint a string
-untaint(string &$string, string ...$strings): bool	Untaint strings
+is_tainted(string $string): bool	Check whether a string is tainted
+taint(string &$string, string &...$strings): bool	Mark strings as tainted
+untaint(string &$string, string &...$strings): bool	Remove the taint mark from strings
 tcpwrap_check(string $daemon, string $address, string $user = ?, bool $nodns = false): bool	Performs a tcpwrap check
 ob_tidyhandler(string $input, int $mode = ?): string	ob_start callback function to repair the buffer
 tidy_access_count(tidy $tidy): int	Returns the Number of Tidy accessibility warnings encountered for specified document
@@ -9767,310 +9798,308 @@ XSLTProcessor()	(new) Creates a new XSLTProcessor object
 >transformToDoc(object $document, ?string $returnClass = null): object|false	(XSLTProcessor) Transform to a document
 >transformToUri(object $document, string $uri): int	(XSLTProcessor) Transform to URI
 >transformToXml(object $document): string|null|false	(XSLTProcessor) Transform to XML
->add(string $keys, mixed $value, int $ttl = ?): bool	(Yac) Store into cache
->add(array $key_vals): bool	(Yac) Store into cache
+>add(string|array $key, mixed $value, int $ttl = ?): bool	(Yac) Store a value without overwriting an existing one
+>add(array $values, int $ttl = ?): bool	(Yac) Store a value without overwriting an existing one
 Yac(string $prefix = "")	(new) Constructor
->delete(string|array $keys, int $ttl = ?): bool	(Yac) Remove items from cache
->dump(int $num): mixed	(Yac) Dump cache
+>delete(string|array $key, int $delay = ?): bool	(Yac) Remove items from cache
+>dump(int $limit = 100, int $offset = ?): array	(Yac) Dump cache entries for inspection
 >flush(): bool	(Yac) Flush the cache
->get(string|array $key, int &$cas = null): mixed	(Yac) Retrieve values from cache
->__get(string $key): mixed	(Yac) Getter
+>get(string|array $key, mixed $default = null): mixed	(Yac) Retrieve values from cache
+>__get(string $key): mixed	(Yac) Retrieve a value using property syntax
 >info(): array	(Yac) Status of cache
->set(string $keys, mixed $value, int $ttl = ?): bool	(Yac) Store into cache
->add(array $key_vals): bool	(Yac) Store into cache
->__set(string $keys, mixed $value): mixed	(Yac) Setter
-Yaconf::get(string $name, mixed $default_value = NULL): mixed	Retrieve a item
-Yaconf::has(string $name): bool	Determine if a item exists
+>set(string|array $key, mixed $value, int $ttl = ?): bool	(Yac) Store a value into the cache
+>set(array $values, int $ttl = ?): bool	(Yac) Store a value into the cache
+>__set(string $key, mixed $value): mixed	(Yac) Store a value using property syntax
+Yaconf::__debug_info(string $name): ?array	Inspect how a configuration value is stored
+Yaconf::get(string $name, mixed $default = null): mixed	Retrieve a configuration value by name
+Yaconf::has(string $name): bool	Check whether a configuration value exists
 Yaconf()	(new) Yaconf is a configurations container, it parses INI files, stores the result in PHP when PHP is started, the result lives with the whole PHP lifecycle
 >execute(mixed ...$args): mixed	(Yaf_Action_Abstract) Action entry point
->getController(): Yaf_Controller_Abstract	(Yaf_Action_Abstract) Retrieve controller object
->getControllerName(): string	(Yaf_Action_Abstract) Get controller name
-Yaf_Application::app(): mixed	Retrieve an Application instance
->bootstrap(Yaf_Bootstrap_Abstract $bootstrap = ?): void	(Yaf_Application) Call bootstrap
->clearLastError(): Yaf_Application	(Yaf_Application) Clear the last error info
-Yaf_Application(mixed $config, string $environ = ?)	(new) Yaf_Application constructor
->environ(): void	(Yaf_Application) Retrive environ
->execute(callable $entry, string ...$args): void	(Yaf_Application) Execute a callback
->getAppDirectory(): Yaf_Application	(Yaf_Application) Get the application directory
->getConfig(): Yaf_Config_Abstract	(Yaf_Application) Retrive the config instance
->getDispatcher(): Yaf_Dispatcher	(Yaf_Application) Get Yaf_Dispatcher instance
->getLastErrorMsg(): string	(Yaf_Application) Get message of the last occurred error
->getLastErrorNo(): int	(Yaf_Application) Get code of last occurred error
->getModules(): array	(Yaf_Application) Get defined module names
->run(): void	(Yaf_Application) Start Yaf_Application
->setAppDirectory(string $directory): Yaf_Application	(Yaf_Application) Change the application directory
->get(string $name, mixed $value): mixed	(Yaf_Config_Abstract) Getter
->readonly(): bool	(Yaf_Config_Abstract) Find a config whether readonly
->set(): Yaf_Config_Abstract	(Yaf_Config_Abstract) Setter
->toArray(): array	(Yaf_Config_Abstract) Cast to array
-Yaf_Config_Ini(string $config_file, string $section = ?)	(new) Yaf_Config_Ini constructor
->count(): void	(Yaf_Config_Ini) Count all elements in Yaf_Config.ini
->current(): void	(Yaf_Config_Ini) Retrieve the current value
->__get(string $name = ?): void	(Yaf_Config_Ini) Retrieve an element
->__isset(string $name): void	(Yaf_Config_Ini) Determine if a key is exists
->key(): void	(Yaf_Config_Ini) Fetch current element's key
->next(): void	(Yaf_Config_Ini) Advance the internal pointer
->offsetExists(string $name): void	(Yaf_Config_Ini) The offsetExists purpose
->offsetGet(string $name): void	(Yaf_Config_Ini) The offsetGet purpose
->offsetSet(string $name, string $value): void	(Yaf_Config_Ini) The offsetSet purpose
->offsetUnset(string $name): void	(Yaf_Config_Ini) The offsetUnset purpose
->readonly(): void	(Yaf_Config_Ini) The readonly purpose
->rewind(): void	(Yaf_Config_Ini) The rewind purpose
->__set(string $name, mixed $value): void	(Yaf_Config_Ini) The __set purpose
->toArray(): array	(Yaf_Config_Ini) Return config as a PHP array
->valid(): void	(Yaf_Config_Ini) The valid purpose
-Yaf_Config_Simple(array $configs, bool $readonly = false)	(new) The __construct purpose
->count(): void	(Yaf_Config_Simple) The count purpose
->current(): void	(Yaf_Config_Simple) The current purpose
->__get(string $name = ?): void	(Yaf_Config_Simple) The __get purpose
->__isset(string $name): void	(Yaf_Config_Simple) The __isset purpose
->key(): void	(Yaf_Config_Simple) The key purpose
->next(): void	(Yaf_Config_Simple) The next purpose
->offsetExists(string $name): void	(Yaf_Config_Simple) The offsetExists purpose
->offsetGet(string $name): void	(Yaf_Config_Simple) The offsetGet purpose
->offsetSet(string $name, string $value): void	(Yaf_Config_Simple) The offsetSet purpose
->offsetUnset(string $name): void	(Yaf_Config_Simple) The offsetUnset purpose
->readonly(): void	(Yaf_Config_Simple) The readonly purpose
->rewind(): void	(Yaf_Config_Simple) The rewind purpose
->__set(string $name, string $value): void	(Yaf_Config_Simple) The __set purpose
->toArray(): array	(Yaf_Config_Simple) Returns a PHP array
->valid(): void	(Yaf_Config_Simple) The valid purpose
-Yaf_Controller_Abstract()	(new) Yaf_Controller_Abstract constructor
->display(string $tpl, array $parameters = ?): bool	(Yaf_Controller_Abstract) The display purpose
->forward(string $action, array $paramters = ?): bool	(Yaf_Controller_Abstract) Forward to another action
->forward(string $controller, string $action, array $paramters = ?): bool	(Yaf_Controller_Abstract) Forward to another action
->forward(string $module, string $controller, string $action, array $paramters = ?): bool	(Yaf_Controller_Abstract) Forward to another action
->getInvokeArg(string $name): void	(Yaf_Controller_Abstract) The getInvokeArg purpose
->getInvokeArgs(): void	(Yaf_Controller_Abstract) The getInvokeArgs purpose
->getModuleName(): string	(Yaf_Controller_Abstract) Get module name
->getName(): string	(Yaf_Controller_Abstract) Get self name
->getRequest(): Yaf_Request_Abstract	(Yaf_Controller_Abstract) Retrieve current request object
->getResponse(): Yaf_Response_Abstract	(Yaf_Controller_Abstract) Retrieve current response object
->getView(): Yaf_View_Interface	(Yaf_Controller_Abstract) Retrieve the view engine
->getViewpath(): string	(Yaf_Controller_Abstract) The getViewpath purpose
+>getController(): ?Yaf_Controller_Abstract	(Yaf_Action_Abstract) Retrieve controller object
+>getControllerName(): ?string	(Yaf_Action_Abstract) Get controller name
+Yaf_Application::app(): ?Yaf_Application	Retrieve an Application instance
+>bootstrap(): Yaf_Application|false	(Yaf_Application) Call bootstrap
+>clearLastError(): ?Yaf_Application	(Yaf_Application) Clear the last error info
+Yaf_Application(string|array $config, ?string $environ = null)	(new) Yaf_Application constructor
+>environ(): ?string	(Yaf_Application) Retrieve the environment
+>execute(callable $callback, mixed ...$args): mixed	(Yaf_Application) Execute a callback
+>getAppDirectory(): ?string	(Yaf_Application) Get the application directory
+>getConfig(): ?Yaf_Config_Abstract	(Yaf_Application) Retrieve the config instance
+>getDispatcher(): ?Yaf_Dispatcher	(Yaf_Application) Get Yaf_Dispatcher instance
+>getLastErrorMsg(): ?string	(Yaf_Application) Get message of the last occurred error
+>getLastErrorNo(): ?int	(Yaf_Application) Get code of the last occurred error
+>getModules(): ?array	(Yaf_Application) Get defined module names
+>run(): Yaf_Response_Abstract|false	(Yaf_Application) Start Yaf_Application
+>setAppDirectory(string $directory): Yaf_Application|null|false	(Yaf_Application) Change the application directory
+>get(string $name = NULL): mixed	(Yaf_Config_Abstract) Retrieve a configuration value
+>readonly(): bool	(Yaf_Config_Abstract) Check if configuration is read-only
+>set(string $name, mixed $value): bool	(Yaf_Config_Abstract) Set a configuration value
+>toArray(): array	(Yaf_Config_Abstract) Export configuration as array
+Yaf_Config_Ini(mixed $config_file, string $section = NULL)	(new) Constructor of Yaf_Config_Ini
+>count(): int	(Yaf_Config_Ini) Count configuration entries
+>current(): mixed	(Yaf_Config_Ini) Get current entry value
+>get(string $name = NULL): mixed	(Yaf_Config_Ini) Retrieve a configuration value
+>__isset(string $name): bool	(Yaf_Config_Ini) Check if a key exists
+>key(): mixed	(Yaf_Config_Ini) Get current entry key
+>next(): void	(Yaf_Config_Ini) Advance to next entry
+>offsetExists(mixed $name): bool	(Yaf_Config_Ini) Check if a key exists (ArrayAccess)
+>offsetGet(mixed $name): mixed	(Yaf_Config_Ini) Get a value (ArrayAccess)
+>offsetSet(mixed $name, mixed $value): void	(Yaf_Config_Ini) Set a configuration value (ArrayAccess)
+>offsetUnset(mixed $name): void	(Yaf_Config_Ini) Remove a key (ArrayAccess)
+>readonly(): bool	(Yaf_Config_Ini) Check if configuration is read-only
+>rewind(): void	(Yaf_Config_Ini) Reset iterator to first entry
+>set(string $name, mixed $value): bool	(Yaf_Config_Ini) Set a configuration value
+>toArray(): array	(Yaf_Config_Ini) Export configuration as array
+>valid(): bool	(Yaf_Config_Ini) Check if current position is valid
+Yaf_Config_Simple(array $values, bool $readonly = false)	(new) Constructor of Yaf_Config_Simple
+>count(): int	(Yaf_Config_Simple) Count configuration entries
+>current(): mixed	(Yaf_Config_Simple) Get current entry value
+>get(string $name = NULL): mixed	(Yaf_Config_Simple) Retrieve a configuration value
+>__isset(string $name): bool	(Yaf_Config_Simple) Check if a key exists
+>key(): mixed	(Yaf_Config_Simple) Get current entry key
+>next(): void	(Yaf_Config_Simple) Advance to next entry
+>offsetExists(mixed $name): bool	(Yaf_Config_Simple) Check if a key exists (ArrayAccess)
+>offsetGet(mixed $name): mixed	(Yaf_Config_Simple) Get a value (ArrayAccess)
+>offsetSet(mixed $name, mixed $value): void	(Yaf_Config_Simple) Set a configuration value (ArrayAccess)
+>offsetUnset(mixed $name): void	(Yaf_Config_Simple) Remove a key (ArrayAccess)
+>readonly(): bool	(Yaf_Config_Simple) Check if configuration is read-only
+>rewind(): void	(Yaf_Config_Simple) Reset iterator to first entry
+>set(string $name, mixed $value): bool	(Yaf_Config_Simple) Set a configuration value
+>toArray(): array	(Yaf_Config_Simple) Export configuration as array
+>valid(): bool	(Yaf_Config_Simple) Check if current position is valid
+Yaf_Controller_Abstract()	(new) Constructor of Yaf_Controller_Abstract
+>display(string $tpl, ?array $parameters = ?): ?bool	(Yaf_Controller_Abstract) Render and display a view
+>forward(string $action, ?array $parameters = ?): ?bool	(Yaf_Controller_Abstract) Forward the current request to another action
+>forward(string $controller, string $action, ?array $parameters = ?): ?bool	(Yaf_Controller_Abstract) Forward the current request to another action
+>forward(string $module, string $controller, string $action, ?array $parameters = ?): ?bool	(Yaf_Controller_Abstract) Forward the current request to another action
+>getInvokeArg(string $name): ?string	(Yaf_Controller_Abstract) Retrieve one action invocation argument
+>getInvokeArgs(): ?array	(Yaf_Controller_Abstract) Retrieve all action invocation arguments
+>getModuleName(): ?string	(Yaf_Controller_Abstract) Get module name
+>getName(): ?string	(Yaf_Controller_Abstract) Get controller name
+>getRequest(): ?Yaf_Request_Abstract	(Yaf_Controller_Abstract) Retrieve current request object
+>getResponse(): ?Yaf_Response_Abstract	(Yaf_Controller_Abstract) Retrieve current response object
+>getView(): ?Yaf_View_Interface	(Yaf_Controller_Abstract) Retrieve the view engine
+>getViewpath(): ?string	(Yaf_Controller_Abstract) Get the view path
 >init(): void	(Yaf_Controller_Abstract) Controller initializer
->initView(array $options = ?): void	(Yaf_Controller_Abstract) The initView purpose
->redirect(string $url): bool	(Yaf_Controller_Abstract) Redirect to a URL
->render(string $tpl, array $parameters = ?): string	(Yaf_Controller_Abstract) Render view template
->setViewpath(string $view_directory): void	(Yaf_Controller_Abstract) The setViewpath purpose
->autoRender(bool $flag = ?): Yaf_Dispatcher	(Yaf_Dispatcher) Switch on/off autorendering
->catchException(bool $flag = ?): Yaf_Dispatcher	(Yaf_Dispatcher) Switch on/off exception catching
+>initView(?array $options = ?): ?Yaf_View_Interface	(Yaf_Controller_Abstract) Initialize the view and return it
+>redirect(string $url): ?bool	(Yaf_Controller_Abstract) Redirect to a URL
+>render(string $tpl, ?array $parameters = ?): string|bool|null	(Yaf_Controller_Abstract) Render view template
+>setViewpath(string $view_directory): ?bool	(Yaf_Controller_Abstract) Set the view path
+>autoRender(?bool $flag = null): Yaf_Dispatcher|bool	(Yaf_Dispatcher) Switch on/off autorendering
+>catchException(?bool $flag = null): Yaf_Dispatcher|bool	(Yaf_Dispatcher) Switch on/off exception catching
 Yaf_Dispatcher()	(new) Yaf_Dispatcher constructor
->disableView(): bool	(Yaf_Dispatcher) Disable view rendering
->dispatch(Yaf_Request_Abstract $request): Yaf_Response_Abstract	(Yaf_Dispatcher) Dispatch a request
->enableView(): Yaf_Dispatcher	(Yaf_Dispatcher) Enable view rendering
->flushInstantly(bool $flag = ?): Yaf_Dispatcher	(Yaf_Dispatcher) Switch on/off the instant flushing
->getApplication(): Yaf_Application	(Yaf_Dispatcher) Retrieve the application
->getDefaultAction(): string	(Yaf_Dispatcher) Retrive the default action name
->getDefaultController(): string	(Yaf_Dispatcher) Retrive the default controller name
->getDefaultModule(): string	(Yaf_Dispatcher) Retrive the default module name
-Yaf_Dispatcher::getInstance(): Yaf_Dispatcher	Retrive the dispatcher instance
->getRequest(): Yaf_Request_Abstract	(Yaf_Dispatcher) Retrive the request instance
->getRouter(): Yaf_Router	(Yaf_Dispatcher) Retrive router instance
->initView(string $templates_dir, array $options = ?): Yaf_View_Interface	(Yaf_Dispatcher) Initialize view and return it
->registerPlugin(Yaf_Plugin_Abstract $plugin): Yaf_Dispatcher	(Yaf_Dispatcher) Register a plugin
->returnResponse(bool $flag): Yaf_Dispatcher	(Yaf_Dispatcher) The returnResponse purpose
->setDefaultAction(string $action): Yaf_Dispatcher	(Yaf_Dispatcher) Change default action name
->setDefaultController(string $controller): Yaf_Dispatcher	(Yaf_Dispatcher) Change default controller name
->setDefaultModule(string $module): Yaf_Dispatcher	(Yaf_Dispatcher) Change default module name
->setErrorHandler(call $callback, int $error_types): Yaf_Dispatcher	(Yaf_Dispatcher) Set error handler
->setRequest(Yaf_Request_Abstract $request): Yaf_Dispatcher	(Yaf_Dispatcher) The setRequest purpose
->setView(Yaf_View_Interface $view): Yaf_Dispatcher	(Yaf_Dispatcher) Set a custom view engine
->throwException(bool $flag = ?): Yaf_Dispatcher	(Yaf_Dispatcher) Switch on/off exception throwing
-Yaf_Exception()	(new) The __construct purpose
->getPrevious(): void	(Yaf_Exception) The getPrevious purpose
->autoload(): void	(Yaf_Loader) The autoload purpose
->clearLocalNamespace(): void	(Yaf_Loader) The clearLocalNamespace purpose
-Yaf_Loader()	(new) The __construct purpose
-Yaf_Loader::getInstance(): void	The getInstance purpose
->getLibraryPath(bool $is_global = false): Yaf_Loader	(Yaf_Loader) Get the library path
->getLocalNamespace(): void	(Yaf_Loader) The getLocalNamespace purpose
->getNamespacePath(string $namespaces): string	(Yaf_Loader) Retieve path of a registered namespace
->getNamespaces(): array	(Yaf_Loader) Retrive all register namespaces info
-Yaf_Loader::import(): void	The import purpose
->isLocalName(): void	(Yaf_Loader) The isLocalName purpose
->registerLocalNamespace(mixed $prefix): void	(Yaf_Loader) Register local class prefix
->registerNamespace(string|array $namespaces, string $path = ?): bool	(Yaf_Loader) Register namespace with searching path
->setLibraryPath(string $directory, bool $is_global = false): Yaf_Loader	(Yaf_Loader) Change the library path
->dispatchLoopShutdown(Yaf_Request_Abstract $request, Yaf_Response_Abstract $response): void	(Yaf_Plugin_Abstract) The dispatchLoopShutdown purpose
+>disableView(): ?Yaf_Dispatcher	(Yaf_Dispatcher) Disable view rendering
+>dispatch(Yaf_Request_Abstract $request): Yaf_Response_Abstract|null|false	(Yaf_Dispatcher) Dispatch a request
+>enableView(): ?Yaf_Dispatcher	(Yaf_Dispatcher) Enable view rendering
+>flushInstantly(?bool $flag = null): Yaf_Dispatcher|bool	(Yaf_Dispatcher) Switch on/off the instant flushing
+>getApplication(): ?Yaf_Application	(Yaf_Dispatcher) Retrieve the application
+>getDefaultAction(): ?string	(Yaf_Dispatcher) Retrieve the default action name
+>getDefaultController(): ?string	(Yaf_Dispatcher) Retrieve the default controller name
+>getDefaultModule(): ?string	(Yaf_Dispatcher) Retrieve the default module name
+Yaf_Dispatcher::getInstance(): ?Yaf_Dispatcher	Retrieve the dispatcher instance
+>getRequest(): ?Yaf_Request_Abstract	(Yaf_Dispatcher) Retrieve the request instance
+>getResponse(): ?Yaf_Response_Abstract	(Yaf_Dispatcher) Get the response object
+>getRouter(): ?Yaf_Router	(Yaf_Dispatcher) Retrieve router instance
+>initView(string $templates_dir, ?array $options = null): Yaf_View_Interface|null|false	(Yaf_Dispatcher) Initialize view and return it
+>registerPlugin(Yaf_Plugin_Abstract $plugin): Yaf_Dispatcher|null|false	(Yaf_Dispatcher) Register a plugin
+>returnResponse(bool $flag = false): Yaf_Dispatcher|bool	(Yaf_Dispatcher) Switch on/off returning the response
+>setDefaultAction(string $action): Yaf_Dispatcher|null|false	(Yaf_Dispatcher) Change default action name
+>setDefaultController(string $controller): Yaf_Dispatcher|null|false	(Yaf_Dispatcher) Change default controller name
+>setDefaultModule(string $module): Yaf_Dispatcher|null|false	(Yaf_Dispatcher) Change default module name
+>setErrorHandler(mixed $callback, int $error_types = ?): Yaf_Dispatcher|null|false	(Yaf_Dispatcher) Set error handler
+>setRequest(Yaf_Request_Abstract $request): ?Yaf_Dispatcher	(Yaf_Dispatcher) Set the request object
+>setResponse(Yaf_Response_Abstract $response): ?Yaf_Dispatcher	(Yaf_Dispatcher) Set the response object
+>setView(Yaf_View_Interface $view): ?Yaf_Dispatcher	(Yaf_Dispatcher) Set a custom view engine
+>throwException(?bool $flag = null): Yaf_Dispatcher|bool	(Yaf_Dispatcher) Switch on/off exception throwing
+Yaf_Exception(string $message = "", int $code = ?)	(new) Construct a Yaf exception
+>getPrevious(): Throwable	(Yaf_Exception) Retrieve the previous exception
+>autoload(string $class_name): bool	(Yaf_Loader) Autoload a class
+>clearLocalNamespace(): bool	(Yaf_Loader) Clear registered namespaces
+Yaf_Loader()	(new) The constructor is private
+>getInstance(string $local_library_path = null, string $global_library_path = null): Yaf_Loader|false	(Yaf_Loader) Retrieve the Yaf_Loader instance
+>getLibraryPath(bool $is_global = false): string	(Yaf_Loader) Retrieve the library path
+>getLocalNamespace(): array	(Yaf_Loader) Retrieve registered namespaces
+>getNamespacePath(string $class_name): string	(Yaf_Loader) Retrieve the library path of a class
+>getNamespaces(): array	(Yaf_Loader) Alias of getLocalNamespace
+>import(string $file): bool	(Yaf_Loader) Load a PHP script
+>isLocalName(string $class_name): bool	(Yaf_Loader) Whether a class is local
+>registerLocalNamespace(string|array $namespace, string $path = null): Yaf_Loader|false	(Yaf_Loader) Register local namespace
+>registerNamespace(string|array $namespace, string $path = null): Yaf_Loader|false	(Yaf_Loader) Alias of registerLocalNamespace
+>setLibraryPath(string $library_path, bool $is_global = false): Yaf_Loader	(Yaf_Loader) Change the library path
+>dispatchLoopShutdown(Yaf_Request_Abstract $request, Yaf_Response_Abstract $response): void	(Yaf_Plugin_Abstract) Hook after dispatch loop
 >dispatchLoopStartup(Yaf_Request_Abstract $request, Yaf_Response_Abstract $response): void	(Yaf_Plugin_Abstract) Hook before dispatch loop
->postDispatch(Yaf_Request_Abstract $request, Yaf_Response_Abstract $response): void	(Yaf_Plugin_Abstract) The postDispatch purpose
->preDispatch(Yaf_Request_Abstract $request, Yaf_Response_Abstract $response): void	(Yaf_Plugin_Abstract) The preDispatch purpose
->preResponse(Yaf_Request_Abstract $request, Yaf_Response_Abstract $response): void	(Yaf_Plugin_Abstract) The preResponse purpose
->routerShutdown(Yaf_Request_Abstract $request, Yaf_Response_Abstract $response): void	(Yaf_Plugin_Abstract) The routerShutdown purpose
->routerStartup(Yaf_Request_Abstract $request, Yaf_Response_Abstract $response): void	(Yaf_Plugin_Abstract) RouterStartup hook
-Yaf_Registry()	(new) Yaf_Registry implements singleton
-Yaf_Registry::del(string $name): void	Remove an item from registry
+>postDispatch(Yaf_Request_Abstract $request, Yaf_Response_Abstract $response): void	(Yaf_Plugin_Abstract) Hook after each dispatch
+>preDispatch(Yaf_Request_Abstract $request, Yaf_Response_Abstract $response): void	(Yaf_Plugin_Abstract) Hook before each dispatch
+>preResponse(Yaf_Request_Abstract $request, Yaf_Response_Abstract $response): void	(Yaf_Plugin_Abstract) Hook before the response is sent
+>routerShutdown(Yaf_Request_Abstract $request, Yaf_Response_Abstract $response): void	(Yaf_Plugin_Abstract) Hook after routing
+>routerStartup(Yaf_Request_Abstract $request, Yaf_Response_Abstract $response): void	(Yaf_Plugin_Abstract) Hook before routing
+Yaf_Registry()	(new) Constructor of Yaf_Registry
+Yaf_Registry::del(string $name): bool	Remove an item from registry
 Yaf_Registry::get(string $name): mixed	Retrieve an item from registry
 Yaf_Registry::has(string $name): bool	Check whether an item exists
-Yaf_Registry::set(string $name, string $value): bool	Add an item into registry
->clearParams(): bool	(Yaf_Request_Abstract) Remove all params
->getActionName(): void	(Yaf_Request_Abstract) The getActionName purpose
->getBaseUri(): void	(Yaf_Request_Abstract) The getBaseUri purpose
->getControllerName(): void	(Yaf_Request_Abstract) The getControllerName purpose
->getEnv(string $name, string $default = ?): void	(Yaf_Request_Abstract) Retrieve ENV varialbe
->getException(): void	(Yaf_Request_Abstract) The getException purpose
->getLanguage(): void	(Yaf_Request_Abstract) Retrieve client's preferred language
->getMethod(): string	(Yaf_Request_Abstract) Retrieve the request method
->getModuleName(): void	(Yaf_Request_Abstract) The getModuleName purpose
->getParam(string $name, string $default = ?): mixed	(Yaf_Request_Abstract) Retrieve calling parameter
->getParams(): array	(Yaf_Request_Abstract) Retrieve all calling parameters
->getRequestUri(): void	(Yaf_Request_Abstract) The getRequestUri purpose
->getServer(string $name, string $default = ?): void	(Yaf_Request_Abstract) Retrieve SERVER variable
->isCli(): bool	(Yaf_Request_Abstract) Determine if request is CLI request
->isDispatched(): bool	(Yaf_Request_Abstract) Determin if the request is dispatched
->isGet(): bool	(Yaf_Request_Abstract) Determine if request is GET request
->isHead(): bool	(Yaf_Request_Abstract) Determine if request is HEAD request
->isOptions(): bool	(Yaf_Request_Abstract) Determine if request is OPTIONS request
->isPost(): bool	(Yaf_Request_Abstract) Determine if request is POST request
->isPut(): bool	(Yaf_Request_Abstract) Determine if request is PUT request
->isRouted(): bool	(Yaf_Request_Abstract) Determin if request has been routed
->isXmlHttpRequest(): bool	(Yaf_Request_Abstract) Determine if request is AJAX request
->setActionName(string $action, bool $format_name = true): void	(Yaf_Request_Abstract) Set action name
->setBaseUri(string $uir): bool	(Yaf_Request_Abstract) Set base URI
->setControllerName(string $controller, bool $format_name = true): void	(Yaf_Request_Abstract) Set controller name
->setDispatched(): void	(Yaf_Request_Abstract) The setDispatched purpose
->setModuleName(string $module, bool $format_name = true): void	(Yaf_Request_Abstract) Set module name
->setParam(string $name, string $value = ?): bool	(Yaf_Request_Abstract) Set a calling parameter to a request
->setRequestUri(string $uir): void	(Yaf_Request_Abstract) The setRequestUri purpose
->setRouted(string $flag = ?): void	(Yaf_Request_Abstract) The setRouted purpose
+Yaf_Registry::set(string $name, mixed $value): bool	Add an item into registry
+>clearParams(): ?Yaf_Request_Abstract	(Yaf_Request_Abstract) Remove all parameters
+>get(string $name, mixed $default = ?): mixed	(Yaf_Request_Abstract) Retrieve a variable from the request
+>getActionName(): ?string	(Yaf_Request_Abstract) Retrieve the action name
+>getBaseUri(): ?string	(Yaf_Request_Abstract) Retrieve the base URI
+>getControllerName(): ?string	(Yaf_Request_Abstract) Retrieve the controller name
+>getCookie(string $name = ?, mixed $default = ?): mixed	(Yaf_Request_Abstract) Fetch a COOKIE variable
+>getEnv(string $name, mixed $default = ?): mixed	(Yaf_Request_Abstract) Retrieve an ENV variable
+>getException(): ?Exception	(Yaf_Request_Abstract) Retrieve the exception
+>getFiles(string $name = ?, mixed $default = ?): mixed	(Yaf_Request_Abstract) Fetch uploaded files
+>getLanguage(): ?string	(Yaf_Request_Abstract) Retrieve the client's preferred language
+>getMethod(): ?string	(Yaf_Request_Abstract) Retrieve the request method
+>getModuleName(): ?string	(Yaf_Request_Abstract) Retrieve the module name
+>getParam(string $name, mixed $default = ?): mixed	(Yaf_Request_Abstract) Retrieve a parameter
+>getParams(): ?array	(Yaf_Request_Abstract) Retrieve all parameters
+>getPost(string $name = ?, mixed $default = ?): mixed	(Yaf_Request_Abstract) Fetch a POST parameter
+>getQuery(string $name = ?, mixed $default = ?): mixed	(Yaf_Request_Abstract) Fetch a query parameter
+>getRaw(): ?string	(Yaf_Request_Abstract) Retrieve the raw request body
+>getRequest(string $name = ?, mixed $default = ?): mixed	(Yaf_Request_Abstract) Fetch a REQUEST variable
+>getRequestUri(): ?string	(Yaf_Request_Abstract) Retrieve the request URI
+>getServer(string $name, mixed $default = ?): mixed	(Yaf_Request_Abstract) Retrieve a SERVER variable
+>isCli(): bool	(Yaf_Request_Abstract) Determine if the request is a CLI request
+>isDelete(): bool	(Yaf_Request_Abstract) Determine if the request is a DELETE request
+>isDispatched(): bool	(Yaf_Request_Abstract) Determine if the request is dispatched
+>isGet(): bool	(Yaf_Request_Abstract) Determine if the request is a GET request
+>isHead(): bool	(Yaf_Request_Abstract) Determine if the request is a HEAD request
+>isOptions(): bool	(Yaf_Request_Abstract) Determine if the request is a OPTIONS request
+>isPatch(): bool	(Yaf_Request_Abstract) Determine if the request is a PATCH request
+>isPost(): bool	(Yaf_Request_Abstract) Determine if the request is a POST request
+>isPut(): bool	(Yaf_Request_Abstract) Determine if the request is a PUT request
+>isRouted(): bool	(Yaf_Request_Abstract) Determine if the request has been routed
+>isXmlHttpRequest(): bool	(Yaf_Request_Abstract) Determine if the request is an Ajax request
+>setActionName(string $action, bool $format_name = true): ?Yaf_Request_Abstract	(Yaf_Request_Abstract) Set action name
+>setBaseUri(string $uir): Yaf_Request_Abstract|false	(Yaf_Request_Abstract) Set base URI
+>setControllerName(string $controller, bool $format_name = true): ?Yaf_Request_Abstract	(Yaf_Request_Abstract) Set controller name
+>setDispatched(bool $flag = true): Yaf_Request_Abstract	(Yaf_Request_Abstract) Mark the request as dispatched
+>setModuleName(string $module, bool $format_name = true): ?Yaf_Request_Abstract	(Yaf_Request_Abstract) Set module name
+>setParam(mixed $name, mixed $value = ?): Yaf_Request_Abstract|bool|null	(Yaf_Request_Abstract) Set a parameter to the request
+>setRequestUri(string $uri): Yaf_Request_Abstract	(Yaf_Request_Abstract) Set the request URI
+>setRouted(bool $flag = true): Yaf_Request_Abstract	(Yaf_Request_Abstract) Mark the request as routed
 Yaf_Request_Http(string $request_uri = ?, string $base_uri = ?)	(new) Constructor of Yaf_Request_Http
->get(string $name, string $default = ?): mixed	(Yaf_Request_Http) Retrieve variable from client
->getCookie(string $name, string $default = ?): mixed	(Yaf_Request_Http) Retrieve Cookie variable
->getFiles(): void	(Yaf_Request_Http) The getFiles purpose
->getPost(string $name, string $default = ?): mixed	(Yaf_Request_Http) Retrieve POST variable
->getQuery(string $name, string $default = ?): mixed	(Yaf_Request_Http) Fetch a query parameter
->getRaw(): mixed	(Yaf_Request_Http) Retrieve Raw request body
->getRequest(): void	(Yaf_Request_Http) The getRequest purpose
->isXmlHttpRequest(): bool	(Yaf_Request_Http) Determin if request is Ajax Request
 Yaf_Request_Simple(string $method = ?, string $module = ?, string $controller = ?, string $action = ?, array $params = ?)	(new) Constructor of Yaf_Request_Simple
->get(): void	(Yaf_Request_Simple) The get purpose
->getCookie(): void	(Yaf_Request_Simple) The getCookie purpose
->getFiles(): void	(Yaf_Request_Simple) The getFiles purpose
->getPost(): void	(Yaf_Request_Simple) The getPost purpose
->getQuery(): void	(Yaf_Request_Simple) The getQuery purpose
->getRequest(): void	(Yaf_Request_Simple) The getRequest purpose
->isXmlHttpRequest(): void	(Yaf_Request_Simple) Determin if request is AJAX request
->appendBody(string $content, string $key = ?): bool	(Yaf_Response_Abstract) Append to response body
->clearBody(string $key = ?): bool	(Yaf_Response_Abstract) Discard all exists response body
->clearHeaders(): void	(Yaf_Response_Abstract) Discard all set headers
-Yaf_Response_Abstract()	(new) The __construct purpose
->getBody(string $key = ?): mixed	(Yaf_Response_Abstract) Retrieve a exists content
->getHeader(): void	(Yaf_Response_Abstract) The getHeader purpose
->prependBody(string $content, string $key = ?): bool	(Yaf_Response_Abstract) The prependBody purpose
->response(): void	(Yaf_Response_Abstract) Send response
->setAllHeaders(): void	(Yaf_Response_Abstract) The setAllHeaders purpose
->setBody(string $content, string $key = ?): bool	(Yaf_Response_Abstract) Set content to response
->setHeader(string $name, string $value, bool $replace = ?): bool	(Yaf_Response_Abstract) Set response header
->setRedirect(string $url): bool	(Yaf_Response_Abstract) The setRedirect purpose
+>appendBody(string $body, string $key = ?): Yaf_Response_Abstract|false|null	(Yaf_Response_Abstract) Append to the response body
+>clearBody(string $key = ?): Yaf_Response_Abstract|false|null	(Yaf_Response_Abstract) Discard all existing response bodies
+>clearHeaders(): Yaf_Response_Abstract|false|null	(Yaf_Response_Abstract) Remove all response headers
+Yaf_Response_Abstract()	(new) Construct a response
+>getBody(string $key = ?): mixed	(Yaf_Response_Abstract) Retrieve a response body block
+>getHeader(string $name = ?): string|array|null	(Yaf_Response_Abstract) Retrieve an HTTP response header
+>prependBody(string $body, string $key = ?): Yaf_Response_Abstract|false|null	(Yaf_Response_Abstract) Prepend to the response body
+>response(): ?bool	(Yaf_Response_Abstract) Send the response
+>setAllHeaders(array $headers): bool	(Yaf_Response_Abstract) Set all HTTP response headers
+>setBody(string $body, string $key = ?): Yaf_Response_Abstract|false|null	(Yaf_Response_Abstract) Set content to the response
+>setHeader(string $name, string $value, bool $replace = false, int $response_code = ?): bool	(Yaf_Response_Abstract) Set an HTTP response header
+>setRedirect(string $url): ?bool	(Yaf_Response_Abstract) Redirect to another URL
 >__toString(): string	(Yaf_Response_Abstract) Retrieve all bodys as string
 >assemble(array $info, array $query = ?): string	(Yaf_Route_Interface) Assemble a request
 >route(Yaf_Request_Abstract $request): bool	(Yaf_Route_Interface) Route a request
 >assemble(array $info, array $query = ?): string	(Yaf_Route_Map) Assemble a url
-Yaf_Route_Map(string $controller_prefer = false, string $delimiter = "")	(new) The __construct purpose
->route(Yaf_Request_Abstract $request): bool	(Yaf_Route_Map) The route purpose
+Yaf_Route_Map(bool $controller_prefer = false, string $delimiter = '')	(new) Construct a map route
+>route(Yaf_Request_Abstract $request): bool	(Yaf_Route_Map) Route a request
 >assemble(array $info, array $query = ?): ?string	(Yaf_Route_Regex) Assemble a url
-Yaf_Route_Regex(string $match, array $route, array $map = ?, array $verify = ?, string $reverse = ?)	(new) Yaf_Route_Regex constructor
->route(Yaf_Request_Abstract $request): bool	(Yaf_Route_Regex) The route purpose
+Yaf_Route_Regex(string $match, array $route, ?array $map = null, ?array $verify = null, ?string $reverse = null)	(new) Yaf_Route_Regex constructor
+>route(Yaf_Request_Abstract $request): bool	(Yaf_Route_Regex) Route a request
 >assemble(array $info, array $query = ?): string	(Yaf_Route_Rewrite) Assemble a url
 Yaf_Route_Rewrite(string $match, array $route, array $verify = ?)	(new) Yaf_Route_Rewrite constructor
->route(Yaf_Request_Abstract $request): bool	(Yaf_Route_Rewrite) The route purpose
+>route(Yaf_Request_Abstract $request): bool	(Yaf_Route_Rewrite) Route a request
 >assemble(array $info, array $query = ?): string	(Yaf_Route_Simple) Assemble a url
-Yaf_Route_Simple(string $module_name, string $controller_name, string $action_name)	(new) Yaf_Route_Simple constructor
+Yaf_Route_Simple(string $module_name, string $controller_name, string $action_name)	(new) Construct a simple route
 >route(Yaf_Request_Abstract $request): bool	(Yaf_Route_Simple) Route a request
 >assemble(array $info, array $query = ?): string	(Yaf_Route_Static) Assemble a url
->match(string $uri): void	(Yaf_Route_Static) The match purpose
+>match(string $uri): bool	(Yaf_Route_Static) Whether the route matches a URI
 >route(Yaf_Request_Abstract $request): bool	(Yaf_Route_Static) Route a request
 >assemble(array $info, array $query = ?): string	(Yaf_Route_Supervar) Assemble a url
-Yaf_Route_Supervar(string $supervar_name)	(new) The __construct purpose
->route(Yaf_Request_Abstract $request): bool	(Yaf_Route_Supervar) The route purpose
+Yaf_Route_Supervar(string $supervar_name)	(new) Construct a supervar route
+>route(Yaf_Request_Abstract $request): bool	(Yaf_Route_Supervar) Route a request
 >addConfig(Yaf_Config_Abstract $config): bool	(Yaf_Router) Add config-defined routes into Router
 >addRoute(string $name, Yaf_Route_Abstract $route): bool	(Yaf_Router) Add new Route into Router
 Yaf_Router()	(new) Yaf_Router constructor
 >getCurrentRoute(): string	(Yaf_Router) Get the effective route name
 >getRoute(string $name): Yaf_Route_Interface	(Yaf_Router) Retrieve a route by name
 >getRoutes(): mixed	(Yaf_Router) Retrieve registered routes
->route(Yaf_Request_Abstract $request): bool	(Yaf_Router) The route purpose
+>route(Yaf_Request_Abstract $request): ?bool	(Yaf_Router) Route a request
 Yaf_Session()	(new) Constructor of Yaf_Session
->count(): void	(Yaf_Session) The count purpose
->current(): void	(Yaf_Session) The current purpose
->del(string $name): void	(Yaf_Session) The del purpose
->__get(string $name): void	(Yaf_Session) The __get purpose
-Yaf_Session::getInstance(): void	The getInstance purpose
->has(string $name): void	(Yaf_Session) The has purpose
->__isset(string $name): void	(Yaf_Session) The __isset purpose
->key(): void	(Yaf_Session) The key purpose
->next(): void	(Yaf_Session) The next purpose
->offsetExists(string $name): void	(Yaf_Session) The offsetExists purpose
->offsetGet(string $name): void	(Yaf_Session) The offsetGet purpose
->offsetSet(string $name, string $value): void	(Yaf_Session) The offsetSet purpose
->offsetUnset(string $name): void	(Yaf_Session) The offsetUnset purpose
->rewind(): void	(Yaf_Session) The rewind purpose
->__set(string $name, string $value): void	(Yaf_Session) The __set purpose
->start(): void	(Yaf_Session) The start purpose
->__unset(string $name): void	(Yaf_Session) The __unset purpose
->valid(): void	(Yaf_Session) The valid purpose
->assign(string $name, string $value = ?): bool	(Yaf_View_Interface) Assign value to View engine
->display(string $tpl, array $tpl_vars = ?): bool	(Yaf_View_Interface) Render and output a template
->getScriptPath(): void	(Yaf_View_Interface) The getScriptPath purpose
->render(string $tpl, array $tpl_vars = ?): string	(Yaf_View_Interface) Render a template
->setScriptPath(string $template_dir): void	(Yaf_View_Interface) The setScriptPath purpose
->assign(string $name, mixed $value = ?): bool	(Yaf_View_Simple) Assign values
->assignRef(string $name, mixed &$value): bool	(Yaf_View_Simple) The assignRef purpose
->clear(string $name = ?): bool	(Yaf_View_Simple) Clear Assigned values
-Yaf_View_Simple(string $template_dir, array $options = ?)	(new) Constructor of Yaf_View_Simple
->display(string $tpl, array $tpl_vars = ?): bool	(Yaf_View_Simple) Render and display
->eval(string $tpl_content, array $tpl_vars = ?): string	(Yaf_View_Simple) Render template
->__get(string $name = ?): void	(Yaf_View_Simple) Retrieve assigned variable
->getScriptPath(): string	(Yaf_View_Simple) Get templates directory
->__isset(string $name): void	(Yaf_View_Simple) The __isset purpose
->render(string $tpl, array $tpl_vars = ?): string	(Yaf_View_Simple) Render template
->__set(string $name, mixed $value): void	(Yaf_View_Simple) Set value to engine
->setScriptPath(string $template_dir): bool	(Yaf_View_Simple) Set templates directory
-Yaf_Action_Abstract()	(new) A action can be defined in a separate file in Yaf(see Yaf_Controller_Abstract)
+>count(): int	(Yaf_Session) Count session entries
+>current(): mixed	(Yaf_Session) Get current session entry value
+>del(string $name): bool	(Yaf_Session) Remove a session key
+>get(string $name = NULL): mixed	(Yaf_Session) Get a session value
+Yaf_Session::getInstance(): Yaf_Session	Get the session singleton
+>has(string $name): bool	(Yaf_Session) Check if a session key exists
+>__isset(string $name): bool	(Yaf_Session) Check if a session key exists
+>key(): mixed	(Yaf_Session) Get current session entry key
+>next(): void	(Yaf_Session) Advance to next session entry
+>offsetExists(mixed $name): bool	(Yaf_Session) Check if a session key exists (ArrayAccess)
+>offsetGet(mixed $name): mixed	(Yaf_Session) Get a session value (ArrayAccess)
+>offsetSet(mixed $name, mixed $value): void	(Yaf_Session) Set a session value (ArrayAccess)
+>offsetUnset(mixed $name): void	(Yaf_Session) Remove a session key (ArrayAccess)
+>rewind(): void	(Yaf_Session) Reset session iterator to first entry
+>set(string $name, mixed $value): bool	(Yaf_Session) Set a session value
+>start(): Yaf_Session	(Yaf_Session) Start the session
+>__unset(string $name): void	(Yaf_Session) Remove a session key
+>valid(): bool	(Yaf_Session) Check if current session position is valid
+>assign(mixed $name, mixed $value = NULL): bool	(Yaf_View_Interface) Assign a variable to the view
+>display(string $tpl, array $tpl_vars = NULL): bool	(Yaf_View_Interface) Render and emit a template
+>getScriptPath(): string	(Yaf_View_Interface) Get the template directory
+>render(string $tpl, array $tpl_vars = NULL): string	(Yaf_View_Interface) Render a template
+>setScriptPath(string $template_dir): Yaf_View_Interface	(Yaf_View_Interface) Set the template directory
+>assign(mixed $name, mixed $value = NULL): bool	(Yaf_View_Simple) Assign a variable to the view
+>assignRef(string $name, mixed $value): bool	(Yaf_View_Simple) Alias of Yaf_View_Simple::assign
+>clear(string $name = NULL): bool	(Yaf_View_Simple) Remove an assigned variable
+Yaf_View_Simple(string $template_dir, array $options = NULL)	(new) Constructor of Yaf_View_Simple
+>display(string $tpl, array $vars = NULL): bool	(Yaf_View_Simple) Render and store a template in the response
+>eval(string $tpl_content, array $vars = NULL): string	(Yaf_View_Simple) Render a template string
+>get(string $name = NULL): mixed	(Yaf_View_Simple) Get an assigned variable
+>getScriptPath(): string	(Yaf_View_Simple) Get the template directory
+>__isset(string $name): bool	(Yaf_View_Simple) Check whether a variable is assigned
+>render(string $tpl, array $vars = NULL): string	(Yaf_View_Simple) Render a template
+>__set(string $name, mixed $value): void	(Yaf_View_Simple) Assign a variable via property write
+>setScriptPath(string $template_dir): Yaf_View_Simple	(Yaf_View_Simple) Set the template directory
+Yaf_Action_Abstract()	(new) Since there should be a entry point which can be called by Yaf, you must implement the abstract method Yaf_Action_Abstract::execute in your custom action class
 Yaf_Bootstrap_Abstract()	(new) Bootstrap is a mechanism used to do some initial config before a Application run
-Yaf_Config_Abstract()	(new) 
-Yaf_Exception_DispatchFailed()	(new) 
-Yaf_Exception_LoadFailed_Action()	(new) 
-Yaf_Exception_LoadFailed_Controller()	(new) 
-Yaf_Exception_LoadFailed_Module()	(new) 
-Yaf_Exception_LoadFailed_View()	(new) 
-Yaf_Exception_LoadFailed()	(new) 
-Yaf_Exception_RouterFailed()	(new) 
-Yaf_Exception_StartupError()	(new) 
-Yaf_Exception_TypeError()	(new) 
+Yaf_Config_Abstract()	(new) Yaf_Config_Abstract is the base class of the configuration adapters
+Yaf_Exception_DispatchFailed()	(new) Yaf_Exception_DispatchFailed is thrown when the dispatcher fails to dispatch the routed request to a controller action
+Yaf_Exception_LoadFailed_Action()	(new) Yaf_Exception_LoadFailed_Action is thrown when the requested action cannot be found or loaded
+Yaf_Exception_LoadFailed_Controller()	(new) Yaf_Exception_LoadFailed_Controller is thrown when the requested controller cannot be found or loaded
+Yaf_Exception_LoadFailed_Module()	(new) Yaf_Exception_LoadFailed_Module is thrown when the requested module cannot be found or loaded
+Yaf_Exception_LoadFailed_View()	(new) Yaf_Exception_LoadFailed_View is thrown when the requested view (template) script cannot be found or loaded
+Yaf_Exception_LoadFailed()	(new) Yaf_Exception_LoadFailed is thrown when the loader fails to load a required script
+Yaf_Exception_RouterFailed()	(new) Yaf_Exception_RouterFailed is thrown when routing fails, for instance when no registered route matches the incoming request
+Yaf_Exception_StartupError()	(new) Yaf_Exception_StartupError is thrown when the application fails to start up, i
+Yaf_Exception_TypeError()	(new) Yaf_Exception_TypeError is thrown when an argument passed to a Yaf method is of an unexpected type or an invalid value
 Yaf_Plugin_Abstract()	(new) Plugins allow for easy extensibility and customization of the framework
-Yaf_Request_Abstract()	(new) 
-Yaf_Response_Cli()	(new) 
-Yaf_Response_Http()	(new) 
-Yaf_Route_Interface()	(new) Yaf_Route_Interface used for developer defined their custom route
-Yaf_Route_Static()	(new) Defaultly, Yaf_Router only have a Yaf_Route_Static as its default route
+Yaf_Request_Abstract()	(new) Yaf_Request_Abstract is the base class of the request objects
+Yaf_Response_Cli()	(new) Yaf_Response_Cli is the response adapter used for command-line (CLI) requests
+Yaf_Response_Http()	(new) Yaf_Response_Http is the response adapter used for web requests
+Yaf_Route_Interface()	(new) Yaf_Route_Interface defines the contract every route must implement: Yaf_Route_Interface::route, which inspects the request and claims it by setting the module, controller and action (and optionally request parameters), and Yaf_Route_Interface::assemble, which builds a URL from route info
+Yaf_Route_Static()	(new) Yaf_Route_Static is the default route of Yaf_Router: it parses the URI path as /module/controller/action segments and is designed to handle most routing needs out of the box
 Yaf_View_Interface()	(new) Yaf provides a ability for developers to use custom view engine instead of built-in engine which is Yaf_View_Simple
 yaml_emit_file(string $filename, mixed $data, int $encoding = YAML_ANY_ENCODING, int $linebreak = YAML_ANY_BREAK, array $callbacks = null): bool	Send the YAML representation of a value to a file
 yaml_emit(mixed $data, int $encoding = YAML_ANY_ENCODING, int $linebreak = YAML_ANY_BREAK, array $callbacks = null): string	Returns the YAML representation of a value
 yaml_parse_file(string $filename, int $pos = ?, int &$ndocs = ?, array $callbacks = null): mixed	Parse a YAML stream from a file
 yaml_parse_url(string $url, int $pos = ?, int &$ndocs = ?, array $callbacks = null): mixed	Parse a Yaml stream from a URL
 yaml_parse(string $input, int $pos = ?, int &$ndocs = ?, array $callbacks = null): mixed	Parse a YAML stream
->__call(string $method, array $parameters): void	(Yar_Client) Call service
-Yar_Client(string $url, array $options = ?)	(new) Create a client
->setOpt(int $name, mixed $value): Yar_Client|false	(Yar_Client) Set calling contexts
+>call(string $method, array $arguments): mixed	(Yar_Client) Call a remote service
+Yar_Client(string $uri, ?array $options = null)	(new) Create a client
+>getOpt(int $name): mixed	(Yar_Client) Read a client option
+>setOpt(int $name, mixed $value): Yar_Client|bool	(Yar_Client) Set client options
 >getType(): string	(Yar_Client_Exception) Retrieve exception's type
-Yar_Concurrent_Client::call(string $uri, string $method, array $parameters = ?, callable $callback = ?, callable $error_callback = ?, array $options = ?): int	Register a concurrent call
-Yar_Concurrent_Client::loop(callable $callback = ?, callable $error_callback = ?): bool	Send all calls
+Yar_Concurrent_Client::call(string $uri, string $method, ?array $parameters = null, ?callable $callback = null, ?callable $error_callback = null, ?array $options = null): int|false|null	Register a concurrent call
+Yar_Concurrent_Client::loop(?callable $callback = null, ?callable $error_callback = null, ?array $options = null): ?bool	Send and wait for all registered calls
 Yar_Concurrent_Client::reset(): bool	Clean all registered calls
-Yar_Server(Object $obj)	(new) Register a server
->handle(): bool	(Yar_Server) Start RPC Server
->getType(): string	(Yar_Server_Exception) Retrieve exception's type
-Yar_Client_Exception()	(new) 
-Yar_Client_Packager_Exception()	(new) 
-Yar_Client_Protocol_Exception()	(new) 
-Yar_Client_Transport_Exception()	(new) 
-Yar_Concurrent_Client()	(new) 
-Yar_Server_Exception()	(new) If service threw exceptions, A Yar_Server_Exception will be threw in client side
-Yar_Server_Output_Exception()	(new) 
-Yar_Server_Packager_Exception()	(new) 
-Yar_Server_Protocol_Exception()	(new) 
-Yar_Server_Request_Exception()	(new) 
+Yar_Server(object $executor)	(new) Create an RPC server
+>handle(): bool	(Yar_Server) Start the RPC server
+>getType(): string|int	(Yar_Server_Exception) Retrieve exception's type
+Yar_Client_Exception()	(new) Base class of the exceptions thrown when a request fails before, during or after reaching the remote service: a subclass is thrown depending on where the failure occurred
+Yar_Client_Packager_Exception()	(new) Thrown when the response body cannot be unpacked with the requested packager (exception code YAR_ERR_PACKAGER)
+Yar_Client_Protocol_Exception()	(new) Thrown when the response from the RPC service violates the Yar protocol, for example an unsupported protocol address or a malformed response header (exception code YAR_ERR_PROTOCOL)
+Yar_Client_Transport_Exception()	(new) Thrown when the connection to the RPC service fails: connection refused, timeout, or an empty response (exception code YAR_ERR_TRANSPORT)
+Yar_Concurrent_Client()	(new) A static helper that batches remote RPC calls
+Yar_Server_Exception()	(new) Thrown on the client side when the RPC request failed on the server
+Yar_Server_Output_Exception()	(new) Thrown when the server cannot capture the output of the service method (exception code YAR_ERR_OUTPUT)
+Yar_Server_Packager_Exception()	(new) Thrown when the request body cannot be unpacked with the packager announced in the request (exception code YAR_ERR_PACKAGER)
+Yar_Server_Protocol_Exception()	(new) Thrown when the incoming request violates the Yar protocol, for example a malformed request header (exception code YAR_ERR_PROTOCOL)
+Yar_Server_Request_Exception()	(new) Thrown when the requested remote method does not exist on the server object, or is not public (exception code YAR_ERR_REQUEST)
 yaz_addinfo(resource $id): string	Returns additional error information
 yaz_ccl_conf(resource $id, array $config): void	Configure CCL parser
 yaz_ccl_parse(resource $id, string $query, array &$result): bool	Invoke CCL Parser
@@ -11852,6 +11881,7 @@ imagick::IMGTYPE_TRUECOLOR
 imagick::IMGTYPE_TRUECOLORMATTE
 imagick::IMGTYPE_COLORSEPARATION
 imagick::IMGTYPE_COLORSEPARATIONMATTE
+imagick::IMGTYPE_PALETTEBILEVELMATTE
 imagick::IMGTYPE_OPTIMIZE
 imagick::RESOLUTION_UNDEFINED
 imagick::RESOLUTION_PIXELSPERINCH
@@ -13286,7 +13316,6 @@ SI_NOINFO
 SI_KERNEL
 SI_QUEUE
 SI_TIMER
-SI_MSGGQ
 SI_ASYNCIO
 SI_SIGIO
 SI_TKILL
@@ -14648,6 +14677,20 @@ SO_EXCLBIND
 SO_NOSIGPIPE
 SO_LINGER_SEC
 SO_BINDTOIFINDEX
+SHUT_RD
+SHUT_WR
+SHUT_RDWR
+UDP_SEGMENT
+SO_BUSY_POLL
+IP_BINDANY
+TCP_FUNCTION_BLK
+TCP_FUNCTION_ALIAS
+TCP_REUSPORT_LB_NUMA
+TCP_REUSPORT_LB_NUMA_NODOM
+TCP_REUSPORT_LB_NUMA_CURDOM
+TCP_BBR_ALGORITHM
+IPPROTO_ICMP
+IPPROTO_ICMPV6
 SODIUM_LIBRARY_VERSION
 SODIUM_LIBRARY_MAJOR_VERSION
 SODIUM_LIBRARY_MINOR_VERSION
@@ -15989,13 +16032,14 @@ YAF_ENVIRON
 YAF_ERR_STARTUP_FAILED
 YAF_ERR_ROUTE_FAILED
 YAF_ERR_DISPATCH_FAILED
-YAF_ERR_AUTOLOAD_FAILED
 YAF_ERR_NOTFOUND_MODULE
 YAF_ERR_NOTFOUND_CONTROLLER
 YAF_ERR_NOTFOUND_ACTION
 YAF_ERR_NOTFOUND_VIEW
 YAF_ERR_CALL_FAILED
+YAF_ERR_AUTOLOAD_FAILED
 YAF_ERR_TYPE_ERROR
+YAF_ERR_ACCESS_ERROR
 YAML_ANY_SCALAR_STYLE
 YAML_PLAIN_SCALAR_STYLE
 YAML_SINGLE_QUOTED_SCALAR_STYLE
@@ -16020,20 +16064,30 @@ YAML_CR_BREAK
 YAML_LN_BREAK
 YAML_CRLN_BREAK
 YAR_VERSION
+YAR_HAS_MSGPACK
 YAR_CLIENT_PROTOCOL_HTTP
+YAR_CLIENT_PROTOCOL_TCP
+YAR_CLIENT_PROTOCOL_UNIX
 YAR_OPT_PACKAGER
+YAR_OPT_PERSISTENT
 YAR_OPT_TIMEOUT
 YAR_OPT_CONNECT_TIMEOUT
 YAR_OPT_HEADER
+YAR_OPT_RESOLVE
+YAR_OPT_PROXY
+YAR_OPT_PROVIDER
+YAR_OPT_TOKEN
 YAR_PACKAGER_PHP
 YAR_PACKAGER_JSON
+YAR_PACKAGER_MSGPACK
 YAR_ERR_OKEY
+YAR_ERR_PACKAGER
+YAR_ERR_PROTOCOL
+YAR_ERR_REQUEST
 YAR_ERR_OUTPUT
 YAR_ERR_TRANSPORT
-YAR_ERR_REQUEST
-YAR_ERR_PROTOCOL
-YAR_ERR_PACKAGER
 YAR_ERR_EXCEPTION
+YAR_ERR_FORBIDDEN
 ZipArchive::CREATE
 ZipArchive::OVERWRITE
 ZipArchive::EXCL
